@@ -2,6 +2,7 @@
 id: docker-before-you-begin
 title: Before You Begin
 description: Make sure you follow the pre-requisites before installing AI Unlimited.
+sidebar_position: 1
 tags:
   - Install AI Unlimited
   - Install using Docker
