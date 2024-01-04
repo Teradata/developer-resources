@@ -1,28 +1,25 @@
 ---
 id: deploy-jupyter-docker
-title: Deploy JupyterLab Using Docker
-description: Steps to deploy JupyterLab using Docker Engine and Compose file
+title: Deploy JupyterLab using Docker
+description: Steps to deploy JupyterLab using Docker Engine and Compose file.
 sidebar_position: 6
 tags:
   - Install AI Unlimited
-  - Install using Docker
-  - Load Docker Image
+  - Deploy JupyterLab
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deploy JupyterLab Using Docker
+# Deploy JupyterLab using Docker
 
-This document outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
+This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
 
 You can deploy JupyterLab using:
 
 - Docker Engine
+- Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
 
-- Docker Compose
-
-For information about workspace client, see .
-
+For information about workspace client, see **insert link**.
 
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>
@@ -30,7 +27,9 @@ For information about workspace client, see .
    
   2. Run the Docker image once you’ve set the `JUPYTER_HOME` variable.
     
-NOTE: Modify the directories based on your requirements.
+:::note
+Modify the directories based on your requirements.
+:::
 
    ```bash title="Docker Engine Run"
 docker run -detach \
@@ -42,15 +41,12 @@ docker run -detach \
    ```
   The command downloads and starts a workspace service container and publishes the ports needed The command downloads and starts a JupyterLab container and publishes the ports needed to access it.
 
-  Connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted. For detailed instructions, see https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter [Teradata Vantage™ Modules for Jupyter Installation Guide] or https://quickstarts.teradata.com/jupyter.html [Use Vantage from a Jupyter Notebook].
+  Connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted. For detailed instructions, see [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter) or [Use Vantage from a Jupyter Notebook](https://quickstarts.teradata.com/jupyter.html).
 
 
   </TabItem>
   <TabItem value="Compose" label="Docker Compose">
    
-With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
-
-
 1. Install Docker Compose. See https://docs.docker.com/compose/install/.
 
 2.	Create a **jupyter.yml** file.

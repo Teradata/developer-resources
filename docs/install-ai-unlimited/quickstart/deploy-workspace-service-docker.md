@@ -1,7 +1,7 @@
 ---
 id: deploy-workspace-service-docker
-title: Deploy workspace service
-description: Steps to deploy AI Unlimited using Docker Engine and Docker Compose
+title: Deploy workspace service using Docker
+description: Steps to deploy AI Unlimited using Docker Engine and Docker Compose.
 sidebar_position: 3
 tags:
   - Install AI Unlimited
@@ -11,25 +11,29 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deploy Workspace Service Using Docker
+# Deploy workspace service using Docker
 
 You can install the workspace service using:
 
-- Docker Engine
-- Docker Compose
+- Docker Engine: Text insert
+- Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation. 
 
-NOTE: For Azure, Teradata recommends deploying workspace service using Docker Compose.
 
-To use Teradata AI Unlimited with the workspace client, see Use Teradata AI Unlimited With Workspace Client.
+:::note 
+For Azure, Teradata recommends deploying workspace service using Docker Compose.
+:::
+
+To use Teradata AI Unlimited with the workspace client, see Use Teradata AI Unlimited With Workspace Client[*Insert link*].
 
 Run the Docker image once you've set the `WORKSPACES_HOME` variable.
-
-
 
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>
 
-NOTE: Modify the directories based on your requirements.
+:::info
+ Modify the directories based on your requirements.
+ :::
+
    ```bash title="Docker Engine Run"
     docker run -detach \
   --env accept_license="Y" \
@@ -46,19 +50,19 @@ NOTE: Modify the directories based on your requirements.
   </TabItem>
   <TabItem value="Compose" label="Docker Compose">
    
-   With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation. 
-
-1. Install Docker Compose. See link:https://docs.docker.com/compose/install/[https://docs.docker.com/compose/install/].
+1. Install Docker Compose. See https://docs.docker.com/compose/install/.
 
 2.	Create a **workspaces.yml** file.
 
-NOTE: The following example uses a local volume to store your CSP credentials. You can create a separate YAML file containing CSP environment variables and run the Docker Compose file. For other options, see link:https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md[AI Unlimited GitHub: Install AI Unlimited Using Docker Compose].
+:::note 
+The following example uses a local volume to store your CSP credentials. You can create a separate YAML file containing CSP environment variables and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Install AI Unlimited Using Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
+:::
 
    <Tabs>
    <TabItem value="aws1" label="AWS">
    
    ```bash title="AWS Docker Compose"
-   version: "3.9"
+version: "3.9"
 
 services:
   workspaces:
@@ -88,7 +92,7 @@ services:
    <TabItem value="azure" label="Azure">
 
    ```bash title="Azure Docker Compose"
-      version: "3.9"
+version: "3.9"
 
 services:
   workspaces:
@@ -118,7 +122,7 @@ services:
    </Tabs>
    3.	Go to the directory where the **workspaces.yml** file is located and start the workspace service.
 
-```bash title="Docker Compose Run
+```bash title="Docker Compose Run"
 docker compose -f workspaces.yaml
 ```
 Once the workspace service server is initialized and started, you can access it using the URL: http://ip_or_hostname:3000/.

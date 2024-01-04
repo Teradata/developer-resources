@@ -18,10 +18,10 @@ import TabItem from '@theme/TabItem';
     Insert image
 
 2. Apply the following general service configuration under **Setup**.
-S
+
     | Setting | Description | Required? |
     |---------|-------------|-----------|
-    | Service Base URL | [Non-Editable] The root URL of the service. | Yes |
+    | Service Base URL | **`[Non-Editable]`** The root URL of the service. | Yes |
     | Git Provider | The provider for Git integration. Currently, Teradata AI Unlimited supports GitHub and GitLab. | Yes |
     | Service Log Lev | The level of logging.| Yes|
     | Engine IP Network Type | The type of network assigned to an engine instance, which can be either public or private. Select the **Private** option if you're deploying the engine in the same VPC as the workspace service.| Yes |
@@ -62,4 +62,6 @@ S
 
     After authentication, you are redirected to the Workspace service **Profile** page, and an API Key is generated. You can use the API Key to make requests to the workspace service.
 
-NOTE: A new API Key is generated each time you connect to workspace service.
+:::note
+ A new API Key is generated each time you connect to workspace service.
+:::

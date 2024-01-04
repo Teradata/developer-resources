@@ -1,11 +1,12 @@
 ---
 id: docker-before-you-begin
-title: Before You Begin
-description: Make sure you follow the pre-requisites before installing AI Unlimited.
+title: Before you begin
+description: Review the set of instructions and prerequisites before installing Teradata AI Unlimited.
 sidebar_position: 1
 tags:
   - Install AI Unlimited
-  - Install using Docker
+  - Install AI Unlimited using Docker
+  - Prerequisites to install AI Unlimited
   - Getting started
 ---
 import Tabs from '@theme/Tabs';
@@ -23,7 +24,7 @@ Make sure you have the following:
   <TabItem value="aws" label="AWS" default>
     - Sign up for an AWS Free Tier account at https://aws.amazon.com/free/.
     
-    - To set up AWS CLI, see https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html.
+    - Set up AWS CLI. See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html.
     
   </TabItem>
   <TabItem value="azure" label="Azure">
@@ -33,4 +34,4 @@ Make sure you have the following:
   </TabItem>
   </Tabs>
 
-- Docker: To download and install Docker, see https://docs.docker.com/docker-for-windows/install/.
+- Docker: Download and install Docker. See https://docs.docker.com/docker-for-windows/install/.
