@@ -17,6 +17,7 @@ import TabItem from '@theme/TabItem';
 Make sure you have the following:
 
 - GitHub account: If you don't already have a GitHub account, create one at https://github.com/.
+***TEST EDIT My understanding is that they can also use a GitLab account.This seems to be the url for getting one: https://gitlab.com/users/sign_up.So how about: "GitHub or GitLab account: If you don't already have one, create a GitHub account at https://github.com/ or a GitLab account at https://gitlab.com/.***
 - CSP account: You can host the engine on AWS or Azure. 
 
 
