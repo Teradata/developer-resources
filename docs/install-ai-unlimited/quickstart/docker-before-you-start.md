@@ -20,7 +20,7 @@ Make sure you have the following:
 
 ***MEM: They can also use a GitLab account, I think. How about: "GitHub or GitLab account: If you don't already have one, create a GitHub account at https://github.com/ or a GitLab account at https://gitlab.com/."*** 
 
-***(Unless, as GitLab is a whole devops solution, maybe it's unlikely they'd get an account for it during this workflow? Might they use an existing GitLab account? Any reason why for this Quickstart install type they would only use GitHub? We can ask.)***
+***(Unless, as GitLab is a whole devops solution, maybe it's unlikely they'd get an account for it during this workflow? We can ask.)***
 
 - CSP account: You can host the engine on AWS or Azure. 
 
@@ -28,7 +28,7 @@ Make sure you have the following:
 
 ***MEM: Let's use "AI Unlimited engine" to reinforce that it's not an ordinary engine and help with branding.***
 
-***MEM: Possible to pull the tabs up closer to the bullet above them? When my comments are gone, this comment will make more sense.***
+***MEM: Possible to pull the tabs up closer to the bullet above them? When all the comments are gone, this will make more sense.***
   <Tabs>
   <TabItem value="aws" label="AWS" default>
     - Sign up for an AWS Free Tier account at https://aws.amazon.com/free/.
