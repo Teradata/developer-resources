@@ -45,7 +45,7 @@ Make sure you have the following:
    
    - Install Azure CLI and configure the credentials on the machine running ***the*** workspace service. See https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli. 
 
-***MEM: Let's use "the Azure command line interface (CLI)" at least for this first occurrence.***
+***MEM: Let's use "the Azure command line interface (CLI)" at least for this first occurrence..***
 
 ***MEM: We'll introduce the concept of the workspace service in the Quickstart parent topic--so that will help their understanding here. Thinking... for this install type, the machine running the workspace service is always going to be their local machine, I think--so let's revisit the phrasing after we work through more content.***
 
