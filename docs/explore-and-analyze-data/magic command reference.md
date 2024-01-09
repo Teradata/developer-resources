@@ -1,19 +1,17 @@
 ---
 id: magic-command-reference
-title: Magic Command Reference
+title: Magic command reference
 description: Learn about Teradata AI Unlimited JupyterLab magic commands.
 sidebar_position: 3
 tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Load Docker Image
+  - AI Unlimited Magic Commands
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Magic Command Reference
+# Magic command reference
 
-AI Unlimited JupyterLab supports the following magic commands in addition to the existing Teradata SQL Kernel magic commands. See https://github.com/Teradata/jupyterextensions/blob/master/notebooks/sql/GettingStarted.ipynb[Teradata JupyterLab Getting Started Guide].
+AI Unlimited JupyterLab supports the following magic commands in addition to the existing Teradata SQL Kernel magic commands. See [Teradata JupyterLab Getting Started Guide](https://github.com/Teradata/jupyterextensions/blob/master/notebooks/sql/GettingStarted.ipynb).
 
 ## %workspaces_config
 
@@ -21,7 +19,7 @@ AI Unlimited JupyterLab supports the following magic commands in addition to the
 
 **Usage**:
 
-```bash title="Magic Workspace Config"
+```bash 
 %workspaces_config host=`RPC_Service_URL`, apikey=`Workspace_API_Key`, withtls=`T|F`
 ```
 Where:
@@ -30,13 +28,12 @@ Where:
 
 - apikey: API Key value from the workspace service **Profile** page.
 
-- [Optional] withTLS: If False (F), the default client-server communication does not use TLS.
+- `*[Optional]*` withTLS: If False (F), the default client-server communication does not use TLS.
 
 Output:
 
 ```
 Workspace configured for host=`RPC_Service_URL`
-
 ```
 
 ## %project_create
@@ -45,9 +42,7 @@ Workspace configured for host=`RPC_Service_URL`
 
 **Usage**:
 
-[source, bash, id="magic_project_create", role="content-editable emits-gtm-events"]
-
-```bash title="Magic Project Create"
+```bash
 %project_create project=`Project_Name`, env=`CSP`, team=`Project_Team`
 ```
 Where:
@@ -56,7 +51,7 @@ Where:
 
 - env: Cloud environment where the project is hosted. The value can be aws, azure, gcp, or vsphere. For the current release, AWS and Azure are supported.
 
-- [Optional] team: Name of the team collaborating on the project.
+- `*[Optional]*` team: Name of the team collaborating on the project.
 
 **Output**:
 
@@ -68,11 +63,13 @@ Project `Project_Name` created
 
 **Description**: Delete a project.
 
-WARNING: Running this command removes the GitHub repository containing the objects created using Teradata AI Unlimited.
+:::warning
+Running this command removes the GitHub repository containing the objects created using Teradata AI Unlimited.
+:::
 
 **Usage**:
 
-```bash title="Magic Project Delete
+```bash 
 %project_delete project=`Project_Name`, team=`Project_Team`
 ```
 
@@ -80,7 +77,7 @@ Where:
 
 - project: Name of the project to be deleted.
 
-- [Optional] team: Name of the team collaborating on the project.
+- `*[Optional]*` team: Name of the team collaborating on the project.
 
 **Output**:
 
@@ -103,9 +100,9 @@ Where:
 - project: Name of the project to be listed.
 
 **Output**:
-
+```
 Insert Code
-
+```
 
 ## %project_auth_create
 
@@ -131,9 +128,9 @@ Where:
 
 - region: Region of the object store; local for the local object store.
 
-- [Optional] token: Session token for the object store access.
+- `*[Optional]*` token: Session token for the object store access.
 
-- [Optional] role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
+- `*[Optional]*` role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
 
 - ExternalID: External ID used to access object store.
 
@@ -150,7 +147,7 @@ Authorization 'name' created
 
 **Usage**:
 
-```bash title="Magic Auth Update"
+```bash 
 
 %project_auth_update project=`Project_Name`, name=`Auth_Name`, key=`Auth_Key`, secret=`Auth_Secret`, region=`ObjectStore_Region`, token=`Session_Token`, role=`Role`, ExternalID=`External_ID`
 
@@ -160,10 +157,10 @@ Where:
 - project: Name of the project.
 - name: Authorization name for the object store.
 - key: Authorization key of the object store.
-- [Optional] secret: Authorization secret access ID of the object store.
-- [Optional] region: Region of the object store; local for the local object store.
-- [Optional] token: Session token for the object store access.
-- [Optional] role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
+- `*[Optional]*` secret: Authorization secret access ID of the object store.
+- `*[Optional]*` region: Region of the object store; local for the local object store.
+- `*[Optional]*` token: Session token for the object store access.
+- `*[Optional]*` role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
 - ExternalID: External ID used to access object store.
 
 **Output**:
@@ -178,7 +175,7 @@ Authorization 'name' updated
 
 **Usage**:
 
-```bash title="Magic Auth Delete"
+```bash
 %project_auth_delete project=`Project_Name`, name=`Auth_Name`
 ```
 Where:
@@ -214,23 +211,24 @@ Insert Code Snippet
 **Description**: Deploy an engine for the project. The deployment process takes a few minutes to complete. On successful deployment, a password is generated.
 
 **Usage**:
-```bash title="Magic Engine Deploy"
-
+```bash 
 %project_engine_deploy project=`Project_Name`, size=`Size_of_Engine`, node=`Number_of_Nodes`, subnet=`Subnet_id`, region=`Region`, secgroups=`Security_Group, cidrs=`CIDR`
 ```
 Where:
 
 - project:	Name of the project.
 - size: Size of the engine. The value can be:
--- small
--- medium
--- large
--- extralarge
-- [Optional] node: Number of engine nodes to be deployed. The default value is 1.
-- [Optional] subnet: Subnet used for the engine if there are no default values from the service.
-- [Optional] region: Region used for the engine if there are no default values from service.
-- [Optional] secgroups: List of security groups for the VPC in each region. If you don't specify a security group, the engine is automatically associated with the default security group for the VPC.
-- [Optional] cidr: List of CIDR addresses used for the engine.
+
+  - small
+  - medium
+  - large
+  - extralarge
+
+- `*[Optional]*` node: Number of engine nodes to be deployed. The default value is 1.
+- `*[Optional]*` subnet: Subnet used for the engine if there are no default values from the service.
+- `*[Optional]*` region: Region used for the engine if there are no default values from service.
+- `*[Optional]*` secgroups: List of security groups for the VPC in each region. If you don't specify a security group, the engine is automatically associated with the default security group for the VPC.
+- `*[Optional]*` cidr: List of CIDR addresses used for the engine.
 
 
 **Output**:
@@ -239,14 +237,12 @@ Started deploying.
 Success: Compute Engine setup, look at the connection manager
 ```
 
-Insert Code Snippet
-
 ## %project_engine_suspend
 
 **Description**: Stop the engine after you're done with your work.
 
 **Usage**:
-```bash title="Magic Engine Suspend"
+```bash 
 %project_engine_suspend `Project_Name`
 ```
 Where:
@@ -274,33 +270,31 @@ Where:
 
 **Output**:
 
-Insert Code Snippet
+```Insert Code Snippet```
 
 ## %project_user_list
 
 **Description**: View the list of collaborators assigned to the project.
 
 **Usage**:
-```bash title="Magic Project List"
-
+```bash
 %project_user_list project=`Project_Name`
 ```
 
 Where:
 
-- [Optional] project: Name of the project.
+- `*[Optional]*` project: Name of the project.
 
 **Output**:
 
-Insert Code Snippet
+```Insert Code Snippet```
 
 ## %project_backup
 
 **Description**: Back up your project metadata and object definition inside the engine.
 
 **Usage**:
-```bash title="Magic Project Backup"
-
+```bash
 %project_backup project=`Project_Name`
 ```
 Where:
@@ -324,7 +318,7 @@ Backup of the object definitions created
 Where:
 
 - project:	Name of the project.
-- [Optional] gitref: Git reference.
+- `*[Optional]*` gitref: Git reference.
 
 **Output**:
 ```

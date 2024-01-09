@@ -16,16 +16,16 @@ This article outlines the steps for deploying and setting up a Teradata AI Unlim
 
 You can deploy JupyterLab using:
 
-- Docker Engine
+- Docker Engine: With Docker Engine, you can facilitate uniform and efficient Docker-based JupyterLab installation.
 - Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
 
 For information about workspace client, see **insert link**.
 
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>
-  1. Pull the Docker image from the DockerHub at https://hub.docker.com/r/teradata/ai-unlimited-jupyter.
+  1. Pull the Docker image from the [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
    
-  2. Run the Docker image once you’ve set the `JUPYTER_HOME` variable.
+  2. Set the `JUPYTER_HOME` variable and run the Docker image.
     
 :::note
 Modify the directories based on your requirements.
@@ -39,7 +39,7 @@ docker run -detach \
   teradata/ai-unlimited-jupyter:latest
    
    ```
-  The command downloads and starts a workspace service container and publishes the ports needed The command downloads and starts a JupyterLab container and publishes the ports needed to access it.
+  The command downloads and starts a JupyterLab container and publishes the ports needed to access it.
 
   Connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted. For detailed instructions, see [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter) or [Use Vantage from a Jupyter Notebook](https://quickstarts.teradata.com/jupyter.html).
 
@@ -79,11 +79,11 @@ networks:
 3. Go to the directory where the **jupyter.yml** file is located and start JupyterLab.
 
 ```bash title="Docker Compose Run
-docker compose -f jupyter.yaml up
+docker compose -f jupyter.yml up
 ```
 Once the JupyterLab server is initialized and started, you can connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted. 
 
-For detailed instructions, see link:https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter[Teradata Vantage™ Modules for Jupyter Installation Guide] or link:https://quickstarts.teradata.com/jupyter.html[Use Vantage from a Jupyter Notebook].
+For detailed instructions, see [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter) or [Use Vantage from a Jupyter Notebook](https://quickstarts.teradata.com/jupyter.html).
 
   </TabItem>
   </Tabs>
