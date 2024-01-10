@@ -19,17 +19,19 @@ The Docker image is a monolithic image of the workspace service running the nece
 
 MEM: "Monolithic" is accurate, but I wonder if everyone reading this will understand its software-architecture-specific meaning. I asked Bard and ChatGPT and came up with this sentence which seems more complete: "A Docker image is an executable package that includes everything needed to run a piece of software in a Docker container." Let's try that.
 
+MEM: So they must be doing this from a terminal. Should we tell them to open it?
+
 Pull the Docker image for the AI Unlimited workspace service from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
 ```bash title="Docker Pull Command"
 docker pull teradata/ai-unlimited-workspaces
 ```
+MEM: new on 1/9 - Interesting that the icon for copying code appears only when you hover over the code block. Do you know if it's possible to make it appear always? Seems it should always appear, for all code blocks.
+
 Before proceeding, make sure to:
 
 MEM: For machine translation reasons, we can't use an intro phrase that relies on its bullets to make it a complete sentence (because different languages have different grammar and syntax). But something like "Before proceeding, do the following" is ok, because grammatically it stands on its own as a sentence. 
 
 MEM: That said, could we just have steps 1, 2, and 3? 1 pull the image, 2 copy and retain the variables, and 3 set the environment variable? Being sequential, then there's no need to say anything like "before continuing."
-
-MEM: So I guess they are doing this from some sort of terminal window. Should we tell them to open one?
 
 - Copy and retain the CSP environment variables from your console. 
 
@@ -42,6 +44,8 @@ MEM: We could replace "your console" with "the CSP console" for clarity. Or, bet
     `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
 
     See [AWS Environment Variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
+	
+	MEM to MEM: Gain knowledge and come back to this. Same for Azure.
 	
 	MEM: Let's change the link text to "Environment variables" (lowercase v) so it more closely matches what they see after they click it (and it matches the left nav item).
 

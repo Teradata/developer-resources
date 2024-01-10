@@ -25,7 +25,7 @@ Make sure you have the following:
     <TabItem value="aws" label="AWS" default>
       - Sign up for an AWS Free Tier account at https://aws.amazon.com/free/.
     
-      - Download and set up AWS Command Line Interface (CLI). See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html.
+      - Download and set up the AWS Command Line Interface (CLI). See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html.
 
      ***MEM: Do they have to download the AWS CLI before they set it up? https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html***
     
