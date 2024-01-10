@@ -21,7 +21,7 @@ MEM: "Monolithic" is accurate, but I wonder if everyone reading this will unders
 
 MEM: So they must be doing this from a terminal. Should we tell them to open it?
 
-Pull the Docker image for the AI Unlimited workspace service from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
+Open a terminal window and pull the Docker image for the AI Unlimited workspace service from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
 ```bash title="Docker Pull Command"
 docker pull teradata/ai-unlimited-workspaces
 ```
