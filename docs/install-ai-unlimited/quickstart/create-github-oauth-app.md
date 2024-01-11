@@ -1,7 +1,7 @@
 ---
 id: create-github-oauth-app
-title: Create GitHub OAuth App
-description: Steps to create GitHub OAuth App.
+title: Create a GitHub OAuth app
+description: Steps to create a GitHub OAuth app.
 sidebar_position: 4
 tags:
   - Install AI Unlimited
@@ -9,7 +9,7 @@ tags:
   - Create OAuth App
 ---
 
-# Create GitHub OAuth App
+# Create a GitHub OAuth app
 
 Workspace service uses the GitHub OAuth App to authorize users and manage the project state. To authorize the workspace service to save your project instance configuration, use the Client ID and Client secret key generated during the GitHub OAuth App registration. The project instance configuration values are maintained in your GitHub repositories and you can view them on the Workspace service **Profile** page.
 

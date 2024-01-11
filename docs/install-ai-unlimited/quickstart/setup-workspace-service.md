@@ -1,6 +1,6 @@
 ---
 id: setup-workspace-service
-title: Setup Workspace Service
+title: Set up the workspace service
 description: Steps to setup workspace service
 sidebar_position: 5
 tags:
@@ -11,11 +11,15 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Setup Workspace Service
+# Set up the workspace service
 
-1. Access workspace service using the URL: http://*`ip_or_hostname`*:3000/.
+1. Access the workspace service using this URL: http://*`ip_or_hostname`*:3000/.
 
     Insert image
+	
+	***MEM: In this context, we don't need the screenshot. They'll be looking at the screen. We can use screenshots when justified, for instance, if something is hard to find on the screen and we want to call it out. You might know this, but just in case... when we include screenshots... for each language, Yoichi or his colleague has to find the screen in the UI set to the right language, take a new screenshot, and add it to the translated file. (He likes folks to let him know how to get to the screen and show the right data.) I don't know when the workspace UI will start to get translated, but it will. Sometimes, a screenshot makes all the difference. Other times, it's just more scrolling.***
+	
+	***MEM: *Maybe*, after more discussion, we'll be able to say "Access AI Unlimited setup here:." Or maybe use phrasing like that, at least, in management topics (after the installation is done). A service is really something users should not have to be concerned about. So far at least, it seems necessary to speak of it, at least, in the installation topics. Once the content is all here, we can look at it fresh.***
 
 2. Apply the following general service configuration under **Setup**.
 
