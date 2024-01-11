@@ -15,7 +15,7 @@ MEM: Put the elements that follow in a separate topic?
 The AI Unlimited platform has these elements:
 - The engine, on AWS or Azure
 - Your object storage on AWS or Azure
-- JupyterLab with the AI Unlimited kerneI, for running workloads in notebooks
+- JupyterLab with the AI Unlimited kernel, for running workloads in notebooks
 - Your GitHub or GitLab repository for storing user and project information, enabling you to restore projects 
 - A web-based user interface and a command line interface (CLI) for the AI Unlimited workspace service, which orchestrates the platform’s elements and enables you to complete project management tasks
 
