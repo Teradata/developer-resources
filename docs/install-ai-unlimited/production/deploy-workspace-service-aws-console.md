@@ -46,128 +46,30 @@ In the following tables, parameters are listed by category:
 |IamPermissionsBoundary	| The ARN of the IAM permissions boundary to associate with the IAM role assigned to the instance. | Optional | | |
 |AvailabilityZone | The availability zone to which you want to deploy the instance. |Required | |The value must match the subnet, the zone of any pre-existing volumes, and the instance type must be available in the selected zone. |
 |LoadBalancing		|Specifies whether the instance is accessed via an NLB. |Required with default |NetworkLoadBalancer |Supported options are: NetworkLoadBalancer or None |
+|LoadBalancerScheme	| If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC.	|Optional with default	|Internet-facing	|The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet. The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.|
+|Private	|Specifies whether the service is deployed in a private network without public IPs.|Required|false| |
+|Session	|Specifies whether you can use the AWS Session Manager to access the instance.|Required|false| |
+|Vpc		|The network to which you want to deploy the instance.|Required|||
+|Subnet	|The subnetwork to which you want to deploy the instance.|Required||The subnet must reside in the selected availability zone.|
+|KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional||Leave this field blank if you do not want to include the SSH keys.|
+|AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional||Teradata recommends setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|PrefixList			|The prefix list that you can use to communicate with the instance.|Optional||Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance.	|Optional|
+|SecurityGroup is implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default|None|Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
+|ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the workspace service instance.|
+|PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
+|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
 
-
-
-|**`[Non-Editable]`** 
-
-
-
-|LoadBalancerScheme	
-|If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC.	
-|Optional with default	
-|Internet-facing	
-|The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet. The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.
-
-|Private			
-|Specifies whether the service is deployed in a private network without public IPs.
-|Required
-|false
-|
-
-|Session			
-|Specifies whether you can use the AWS Session Manager to access the instance.
-|Required
-|false
-|
-
-|Vpc		
-|The network to which you want to deploy the instance.
-|Required
-|
-|
-
-|Subnet				
-|The subnetwork to which you want to deploy the instance.
-|Required
-|
-|The subnet must reside in the selected availability zone.
-
-|KeyName				
-|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.
-|Optional
-|
-|Leave this field blank if you do not want to include the SSH keys.
-
-|AccessCIDR	
-|The CIDR IP address range that is permitted to access the instance. 
-|Optional
-|
-|Teradata recommends setting this value to a trusted IP range. 
-Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.
-
-|PrefixList			
-|The prefix list that you can use to communicate with the instance.
-|Optional
-|
-|Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.
-
-|SecurityGroup			
-|The virtual firewall that controls inbound and outbound traffic to the instance.	
-|Optional
-|
-|SecurityGroup is implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance.
-Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.
-
-|UsePersistentVolume	 			
-|Specifies whether you want to use persistent volume to store data.
-|Optional with default
-|None
-|Supported options are: new persistent volume, an existing one, or none, depending on your use case.
-
-|PersistentVolumeSize				
-|The size of the persistent volume that you can attach to the instance, in GB.
-|Required with default
-|8
-|Supports values between 8 and 1000
-
-|ExistingPersistentVolumeId			
-|The ID of the existing persistent volume that you can attach to the instance. 
-|Required if UsePersistentVolume is set to Existing	
-|
-|The persistent volume must be in the same availability zone as the workspace service instance.
-
-|PersistentVolumeDeletionPolicy				
-|The persistent volume behavior when you delete the CloudFormations deployment.
-|Required with default
-|Delete
-|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.
-
-|LatestAmiId	 
-|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.
-|Required with defaults	
-|
-|This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available.
-IMPORTANT: Changing this value may break the stack.
-|===
-
-+
 **Workspace service parameters**
-+
-[cols="1,1,1,1,1"]
-|===
-|Parameter |Description |Required? |Default |Notes
 
-|WorkspacesHttpPort		
-|The port to access the workspace service UI.
-|Required with default	
-|3000
-|
+| Parameter | Description | Required? | Default | Notes
+|---------|-------------|-----------|-----------|-----------|
+|WorkspacesHttpPort		|The port to access the workspace service UI.|Required with default	|3000||
+|WorkspacesGrpcPort		|The port to access the workspace service API.|Required with default|3282||
+|WorkspacesVersion		|The version of the workspace service you want to deploy.|Required with default|latest|The value is a container version tag, for example, latest.|
 
-|WorkspacesGrpcPort			
-|The port to access the workspace service API.
-|Required with default
-|3282
-|
-
-|WorkspacesVersion				
-|The version of the workspace service you want to deploy.
-|Required with default
-|latest
-|The value is a container version tag, for example, latest.
-|===
-
-+
 :::note
 If the account deploying workspace service does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
 :::
@@ -177,7 +79,7 @@ If the account deploying workspace service does not have sufficient IAM permissi
 9.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, the Teradata AI Unlimited workspace service is ready. 
 10. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
 
-If you have only deployed the workspace service, you must deploy an interface before running your workload. To deploy the interface locally on Docker, see xref::install-ai-unlimited-interface-docker.adoc[]. You can also use the link:https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws#jupyter-template[Jupyter Template] to deploy a single instance with JupyterLab running in a container controlled by systemd.
+If you have only deployed the workspace service, you must deploy an interface before running your workload. To deploy the interface locally on Docker, see xref::install-ai-unlimited-interface-docker.adoc[]. You can also use the [Jupyter Template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws#jupyter-template) to deploy a single instance with JupyterLab running in a container controlled by systemd.
 
 Teradata AI Unlimited is ready!
 
