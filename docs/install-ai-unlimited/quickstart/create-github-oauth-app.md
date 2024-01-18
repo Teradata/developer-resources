@@ -26,7 +26,7 @@ While registering the OAuth App, type the following workspace service URLs in th
 
 
 
-MEM: Here's my suggestion for tightening this topic (see comments below for the reasoning): 
+***MEM: Here's my suggestion for tightening this topic (see comments below it for the reasoning):*** 
 
 "The workspace service uses the GitHub OAuth App to authorize users and manage the project state, and it stores this information in your GitHub repository.
 
@@ -37,16 +37,16 @@ MEM: Here's my suggestion for tightening this topic (see comments below for the 
 3. Copy and retain the **Client ID** and **Client secret key**. You'll use them to authorize the workspace service to save user and project information."
 
 
-MEM: They don't yet know what the **Profile** page is--and don't need to know yet.
+***MEM: They don't yet know what the **Profile** page is--and don't need to know yet.***
 
-MEM: Does "first-time user" mean anything other than a user who is doing the QuickStart install? If that's the case, no need to call out the user.  
+***MEM: Does "first-time user" mean anything other than a user who is doing the QuickStart install? If that's the case, no need to call out the user.***
 
-MEM: Since the topic is in a sequence of topics, we don't need to say "complete the following steps before proceeding." 
+***MEM: Since the topic is in a sequence of topics, we don't need to say "complete the following steps before proceeding."***
 
-MEM: I chose "log in" over "log on." I asked Bard and got some great info about those options. Log in is more current and applies better to accessing individual accounts. Log on is used less these days, and applies more to accessing networks or servers. Pretty sure docs.td is inconsistent, and the CDUG, overall, needs to be updated. Anyway, let's go with "log in." We can set precedents for the AI Unlimited site. 
+***MEM: I chose "log in" over "log on." I asked Bard and got some great info about those options. Log in is more current and applies better to accessing individual accounts. Log on is used less these days, and applies more to accessing networks or servers. Pretty sure docs.td is inconsistent, and the CDUG, overall, needs to be updated. Anyway, let's go with "log in." We can set precedents for the AI Unlimited site.***
 
-MEM: I wonder if we should add something about not using a GutHub App, assuming they should not use one? So they can skim through the intro in the GitHub doc faster.
+***MEM: I wonder if we should add something about not using a GutHub App, assuming they should not use one? So they can skim through the intro in the GitHub doc faster.***
 
-MEM: I wonder if they should select Enable Device Flow? My wild guess is that they should not. Will they know? 
+***MEM: I wonder if they should select Enable Device Flow? My wild guess is that they should not. Will they know?***
 
-MEM: Saving this for the next topic: "If you are unsure about your VPC configuration or permissions, contact your organization administrator." ("Organization administrator," coincidentally, is a user role in VantageCloud Lake. I wonder if it's the right term here. Let's spell out Virtual Private Cloud (VPC) at least at its first occurrence.)
+***MEM: Saving this for the next topic: "If you are unsure about your VPC configuration or permissions, contact your organization administrator." ("Organization administrator," coincidentally, is a user role in VantageCloud Lake. I wonder if it's the right term here. Let's spell out Virtual Private Cloud (VPC) at least at its first occurrence.)***

@@ -20,6 +20,8 @@ import TabItem from '@theme/TabItem';
 	***MEM: In this context, we don't need the screenshot. They'll be looking at the screen. We can use screenshots when justified, for instance, if something is hard to find on the screen and we want to call it out. You might know this, but just in case... when we include screenshots... for each language, Yoichi or his colleague has to find the screen in the UI set to the right language, take a new screenshot, and add it to the translated file. (He likes folks to let him know how to get to the screen and show the right data.) I don't know when the workspace UI will start to get translated, but it will. Sometimes, a screenshot makes all the difference. Other times, it's just more scrolling.***
 	
 	***MEM: *Maybe*, after more discussion, we'll be able to say "Access AI Unlimited setup here:." Or maybe use phrasing like that, at least, in management topics (after the installation is done). A service is really something users should not have to be concerned about. So far at least, it seems necessary to speak of it, at least, in the installation topics. Once the content is all here, we can look at it fresh.***
+	
+	***MEM: We'll end up removing much of the content in this topic--so we don't repeat what's on the UI. When more content is needed than what the UI can show, we can put that content here.***
 
 2. Apply the following general service configuration under **Setup**.
 
