@@ -13,12 +13,18 @@ import TabItem from '@theme/TabItem';
 
 # Load the Docker image and prepare the environment
 
+***MEM: For the title, let's say "Get the Docker image for the workspace service and prepre your environment" 1. so it's not confused with the Jupyter Docker image, 2. to make clear they're not actually installing it yet, 3. to make it more personalble ("you").***
+
 The Docker image is an executable package that includes everything needed to run the workspace service in a Docker container.
+
+***MEM: To make it more personable, let's replace "needed" with "you need."***
 
 1. Open a terminal window and pull the Docker image for the workspace service from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
     ```bash
     docker pull teradata/ai-unlimited-workspaces
     ```
+***MEM: In step 1, let's remove "for the workspace service" b/c it's now mentioned twice, the link takes them to the right image, and it's in the code they copy.***
+
 ***MEM: new on 1/9 - Interesting that the icon for copying code appears only when you hover over the code block. Do you know if it's possible to make it appear always? Seems it should always appear, for all code blocks.***
 
 2. In the CSP console, copy and retain these CSP environment variables. 
@@ -39,7 +45,9 @@ The Docker image is an executable package that includes everything needed to run
 
     To learn how to get these environment variables using the Azure CLI, see [Azure authentication](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication).
 	
-		***MEM: I'm not familiar with Terraform, but Bard says "Terraform is an open-source, infrastructure-as-code (IaC) platform created by HashiCorp. It provides a way to define, provision, and manage infrastructure on various cloud platforms and on-premises data centers in a human-readable and declarative way." Do they have to use Terraform?***
+		***MEM: I'm not familiar with Terraform, but Bard says "Terraform is an open-source, infrastructure-as-code (IaC) platform created by HashiCorp. It provides a way to define, provision, and manage infrastructure on various cloud platforms and on-premises data centers in a human-readable and declarative way." Do they have to use Terraform? Is there an Azure doc site link that's more appropriate?***
+
+		***MEM: On the AWS tab, there's no explanation of why they might want to go to the linked article, but that seems OK. Would that be OK here too--especially if we use an Azure doc site link--or am I not understanding?***
     </TabItem>
     </Tabs>
 

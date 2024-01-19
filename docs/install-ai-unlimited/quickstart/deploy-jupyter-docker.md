@@ -12,6 +12,8 @@ import TabItem from '@theme/TabItem';
 
 # Deploy JupyterLab for AI Unlimited using Docker
 
+***MEM to MEM: Compare this more closely w/topics 2 and 3 in QuickStart.*** 
+
 This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
 
 ***MEM: Generally, we can avoid sentences like the first one. The topic's context and title aleady convey that meaning.***
