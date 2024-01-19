@@ -13,7 +13,9 @@ import TabItem from '@theme/TabItem';
 
 # Deploy the workspace service using Docker
 
-***MEM: I added "the" before "workspace" for grammar and readability.***
+***MEM: In the title, I added "the" before "workspace" for grammar and readability.***
+
+***MEM: Let's add a sentence that defines the workspace service - in simple terms. You could grab that from the Welcome topic (not that it won't change of course). Then the user will know why this topic matters.***
 
 You can install the workspace service using:
 
