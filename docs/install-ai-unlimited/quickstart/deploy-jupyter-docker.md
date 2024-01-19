@@ -1,6 +1,6 @@
 ---
 id: deploy-jupyter-docker
-title: Deploy JupyterLab using Docker
+title: Deploy JupyterLab for AI Unlimited using Docker
 description: Steps to deploy JupyterLab using Docker Engine and Compose file.
 sidebar_position: 6
 tags:
@@ -10,7 +10,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deploy JupyterLab using Docker
+# Deploy JupyterLab for AI Unlimited using Docker
 
 This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
 
@@ -18,28 +18,18 @@ This article outlines the steps for deploying and setting up a Teradata AI Unlim
 
 ***MEM: Instead, dive into why users should care. How about "You start analytics projects, manage them, and run them in Jupyter notebooks that use the AI Unlimited Jupyter Kernel."***
 
-***MEM: Let's not mention the workspaces CLI here. See related comment in the workspaces Docker topic.***
-
-You can deploy JupyterLab using: ***MEM: Let's say "JupyterLab for AI Unlimited..." 
+You can deploy JupyterLab for AI Unlimited using the following: 
 
 - Docker Engine: With Docker Engine, you can facilitate uniform and efficient Docker-based JupyterLab installation.
 - Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
 
 ***MEM: I'm trying to figure out what facts are the same for Engine and Compose, and what facts are different. Is the difference that they can use Compose to configure and upgrade--but they can't do that using Engine? Let's get to the heart of why they would choose one or the other--maybe ask Jack. See my comment in the workspace Docker topic***
 
-***MEM: For translation, rewrite so the bullets don't finish the sentence. The intro has to stand on its own as a complete thought/sentence.***
-
-For information about workspace client, see **insert link**.
-
-***MEM: Can remove the "For information..." sentence.***
-
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>
-  1. Pull the Docker image from the [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
+  1. Pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
    
   2. Set the `JUPYTER_HOME` variable and run the Docker image.
-  
-  ***MEM: In step 1, I lean toward removing "the" before "DockerHub" as DockerHub is the whole site. Otherwise, it's like "buy the [thing] from the Amazon."***
     
 :::note
 Modify the directories based on your requirements.
