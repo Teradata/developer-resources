@@ -13,21 +13,27 @@ import TabItem from '@theme/TabItem';
 
 # Load the Docker image and prepare the environment
 
-***MEM: For the title, let's say "Get the Docker image for the workspace service and prepre your environment" 1. so it's not confused with the Jupyter Docker image, 2. to make clear they're not actually installing it yet, 3. to make it more personalble ("you").***
+***MEM: For the title, let's say "Get the Docker image for the workspace service and prepare the cloud environment" 1. so it's not confused with the Jupyter Docker image, 2. to make clear they're not actually installing it yet, 3. to make it more personalble ("you").***
 
 The Docker image is an executable package that includes everything needed to run the workspace service in a Docker container.
 
 ***MEM: To make it more personable, let's replace "needed" with "you need."***
 
+***MEM: Let's add a sentence that defines the workspace service--in simple terms. You could grab that from the Welcome topic (not that it won't change of course).***
+
 1. Open a terminal window and pull the Docker image for the workspace service from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
     ```bash
     docker pull teradata/ai-unlimited-workspaces
     ```
-***MEM: In step 1, let's remove "for the workspace service" b/c it's now mentioned twice, the link takes them to the right image, and it's in the code they copy.***
+***MEM: In step 1, let's remove "for the workspace service" b/c it's now mentioned twice and they can see it in the code.***
+
+***MEM: Later, let's look (throughout the topics) at how/when to tell them to open a terminal window. Maybe make it a separate step.***
 
 ***MEM: new on 1/9 - Interesting that the icon for copying code appears only when you hover over the code block. Do you know if it's possible to make it appear always? Seems it should always appear, for all code blocks.***
 
 2. In the CSP console, copy and retain these CSP environment variables. 
+
+***MEM: I guess some users will use the CSP CLI. Should we say "In the CSP console or CLI,"?***
 
     <Tabs>
     <TabItem value="aws" label="AWS" default>
@@ -37,7 +43,7 @@ The Docker image is an executable package that includes everything needed to run
 	
 	***MEM to MEM: Gain knowledge and come back to this. Same for Azure.***
 	
-	***MEM: Let's change the link text to "Environment variables" (lowercase v) so it more closely matches what they see after they click it (and it matches the left nav item).***
+	***MEM: UPDATE - Let's use "Learn about AWS environment variables." And have the link text be only "environment variables" (both words lowercase). This might end up working on the Azure tab too.***
 
     </TabItem>
     <TabItem value="azure" label="Azure">
@@ -47,13 +53,13 @@ The Docker image is an executable package that includes everything needed to run
 	
 		***MEM: I'm not familiar with Terraform, but Bard says "Terraform is an open-source, infrastructure-as-code (IaC) platform created by HashiCorp. It provides a way to define, provision, and manage infrastructure on various cloud platforms and on-premises data centers in a human-readable and declarative way." Do they have to use Terraform? Is there an Azure doc site link that's more appropriate?***
 
-		***MEM: On the AWS tab, there's no explanation of why they might want to go to the linked article, but that seems OK. Would that be OK here too--especially if we use an Azure doc site link--or am I not understanding?***
+		***MEM: Is this specifically to help Azure CLI users find the variables or is it to provide info about the variables more generally--which is how it seems on the AWS tab? What I'm going for is parallelism between the tabs, if possible. So we'd have "Learn about Azure environment variables." with only "environment variables" as the link text.***
+
     </TabItem>
     </Tabs>
 
 3. Set the environment variable `WORKSPACES_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/workspaces**.
 
-***MEM: Do they do this last part in the CSP console as well? I'm not understanding this step yet, but I think that's just my lack of knowledge. I think there's a recording of this install type I'll re-watch.***
 
   | Local Location | Container Location | Usage |
   |----------------|--------------------|-------|
@@ -62,6 +68,8 @@ The Docker image is an executable package that includes everything needed to run
   
  
   ***MEM: Should "etc" be replaced with a more standard way of showing unkown directories in a path? Or is that the actual path?***
+  
+  ***MEM: It's a little odd that the first setp is in the terminal, the second step tells them to use the CSP console/CLI, and the third step assumes they are still in the console/CLI. Step 1 is for one thing, steps 2 and 3 for something else. Logically, we'd have get the image, prep the environment, and install the container in one topic or in 3.***
 
 
 

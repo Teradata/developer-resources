@@ -15,24 +15,24 @@ import TabItem from '@theme/TabItem';
 
 ***MEM: In the title, I added "the" before "workspace" for grammar and readability.***
 
-***MEM: Let's add a sentence that defines the workspace service - in simple terms. You could grab that from the Welcome topic (not that it won't change of course). Then the user will know why this topic matters.***
+***MEM: In the title, let's say "Install" instead of "Deploy" as the latter sounds like a bigger effort, and to use plain language.***
 
 You can install the workspace service using:
 
 - Docker Engine: Text insert
 - Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation. 
 
-***MEM: Let's use these links: https://docs.docker.com/engine/ and https://docs.docker.com/compose/.*** 
+***MEM: UPDATED It seems that Engine is for single-container applications, and Compose is for multi-container applications. And Compose adds efficiency to managing multi-container applications. Workspaces has a single container, so Compose might not add efficiency. But maybe some users just like Compose--personal preference. If that's all true (ask Jack), let's not try to explain why they might choose one over the other.***
 
-***MEM: What I learned: Engine seems to be for building and running individual containers, while Compose is a higher-level tool for managing multi-container applications. Let's ask Jack if there's a simple way to say why (AWS) users might prefer one over the other.***
+***MEM: How about simply "Use [Docker Engine](https://docs.docker.com/engine/) or [Docker Compose](https://docs.docker.com/compose/) to install the workspace service.***
 
-***MEM: Just noting we'll have to re-write so the bullets don't complete the sentence (see comment about that in the previous topic). (But we might not end up with bullets afterall--due to rewriting for why they would chooose one over the other. We'll see.)***
+***MEM: Link "workspace service" to the glossary term. Possible to add anchors?***
 
 :::note 
 For Azure, Teradata recommends deploying workspace service using Docker Compose.
 :::
 
-***MEM: In the note, you can remove "deploying workspace service" because the context makes that clear.***
+***MEM: In the note, replace "deploying" with "installing the"***
 
 To use Teradata AI Unlimited with the workspace client, see Use Teradata AI Unlimited With Workspace Client[*Insert link*].
 
@@ -40,8 +40,7 @@ To use Teradata AI Unlimited with the workspace client, see Use Teradata AI Unli
 
 Run the Docker image once you've set the `WORKSPACES_HOME` variable.
 
-***MEM: Because setting WORKSPACES_HOME is addressed in the previous topic, we don't need to repeat it. (Unless this refers to something else?) Generally, we can assume they do what we tell them to do. Otherwise we'd have lots of repetition, and they might wonder whether or not it's the same thing they already did. We don't want them to have to wonder. So you can end the sentence with "image."***
-
+***MEM: Because setting WORKSPACES_HOME is addressed in the previous topic, we don't need to repeat it. (Unless this refers to something else?) Generally, we can assume they do what we tell them to do. Otherwise we'd have lots of repetition, and they might wonder whether or not it's the same thing they already did. We don't want them to have to wonder. So you can end the sentence with "image." Actually, you can remove the whole sentence. Running the image is addressed on the tabs.***
 
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>
@@ -50,7 +49,7 @@ Run the Docker image once you've set the `WORKSPACES_HOME` variable.
  Modify the directories based on your requirements.
  :::
  
- ***MEM: Maybe telling them to modify the directories doesn't really qualify as an "INFO" admonition? It doesn't seem like additional info, expanding on a point, a reminder to do something later, a best practice, etc. It just tells them to do something now. I see the benefit of emphasizing it, though. And, WARNING is too strong... I'll probably run this by the UX designers.***
+ ***MEM: Maybe telling them to modify the directories doesn't really qualify as an "INFO" admonition? It doesn't seem like additional info, expanding on a point, a reminder to do something later, a best practice, etc. It just tells them to do something now. I see the benefit of emphasizing it, though. And, WARNING is too strong.***
 
    ```bash title="Docker Engine Run"
     docker run -detach \
@@ -63,9 +62,11 @@ Run the Docker image once you've set the `WORKSPACES_HOME` variable.
   --volume ${WORKSPACES_HOME}:/etc/td \
   teradata/ai-unlimited-workspaces:latest
    ```
-  ***MEM: Do they need to install Docker Engine before they run the command?***
+  ***MEM: Do they need to install Docker Engine (https://docs.docker.com/engine/install/) before they run the command? Is that step 1, like in Compose?***
   
-  ***MEM: Same question as in the previous topic about "etc" in the directory path--I bet there's a standard.***
+  ***MEM: Then step 2 could be "Run Docker Engine, modifying the WORKSPACES_HOME directories as needed."***
+  
+  ***MEM: For the code, same question as in the previous topic about "etc" in the directory path--I bet there's a standard.***
   
   The command downloads and starts a workspace service container, and publishes the ports needed to access it. Once the workspace service server is initialized and started, you can access it using this URL: http://ip_or_hostname:3000/.
   
@@ -83,15 +84,15 @@ Run the Docker image once you've set the `WORKSPACES_HOME` variable.
 The following example uses a local volume to store your CSP credentials. You can create a separate YAML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Install AI Unlimited Using Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
 :::
 
-***MEM to MEM: Reminder to come back to this note. I need to gain some knowledge. What is the relationship between the first and second sentences?***
+***MEM: Do "CSP credentials" = "CSP environment variables"? Does the "YAML file" = "the Docker Compose file"? Adding "Instead," at the beginning of the second sentence might help, if that's accurate. If we changed "and run the Docker Compose file" to "and run it using Docker Compose" would the sentence still be correct?***
 
-***MEM: In the note, should the link text be "Deploy with Docker Compose" followed by "in the AI Unlimited GitHub repository"? so they know they ended up in the right place? Or, the link text could be "this README" followed by "in the AI Unlimited GitHub repository."*** 
+***MEM: Should the link text be "Deploy with Docker Compose" followed by "in the AI Unlimited GitHub repository"? so they know they ended up in the right place? Or, the link text could be "this README" followed by "in the AI Unlimited GitHub repository." We'll have to make sure they don't confuse that repo with their own.*** 
 
-***MEM: Not sure I'm loving sending them to the repo. Do you know if the content in the readme is likely to change or grow--a syncing challenge? Maybe the other options could be expandable text?***
+***MEM: Not sure I'm loving sending them to the repo for this. Maybe the "other options" could be in expandable text?***
 
-***MEM: Do they copy the code on a tab and put that in the workspaces.yml file? Should we make that more explicit? Something like: "2. Create a workspaces.yml file containing the appropriate code for your CSP." That way, there's a lead-in to the tabs.***
+***MEM: Do they copy the code on a tab and put that in the workspaces.yml file? Should we make that more explicit? Something like: "2. Create a workspaces.yml file containing the code for your CSP." That way, there's a lead-in to the tabs.***
 
-***MEM: In the AWS and Azure code, do users need to change anything? The platform? Or "etc" in the directory path? If so, it's ok to use the INFO admonition--until we figure out our standard.***
+***MEM: In the AWS and Azure code, do users need to change anything? The platform? Or "etc" in the directory path? So then step 2 would be "Create a workspaces.yml file containing the code for your CSP, modifying the platform and WORKSPACES_HOME directories as needed." (Anything else to modify?) Maybe there's a convention for this sort of thing we can find and follow.***
 
 
    <Tabs>

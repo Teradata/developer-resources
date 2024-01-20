@@ -12,6 +12,8 @@ import TabItem from '@theme/TabItem';
 
 # Deploy JupyterLab for AI Unlimited using Docker
 
+***MEM: In the title, let's say "Install" instead of "Deploy" as the latter sounds like a bigger effort, and to use plain language.***
+
 ***MEM to MEM: Compare this more closely w/topics 2 and 3 in QuickStart.*** 
 
 This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
@@ -20,12 +22,14 @@ This article outlines the steps for deploying and setting up a Teradata AI Unlim
 
 ***MEM: Instead, dive into why users should care. How about "You start analytics projects, manage them, and run them in Jupyter notebooks that use the AI Unlimited Jupyter Kernel."***
 
+***MEM: Let's not mention the workspaces service client in this topic, as that's not for running analytics. That will go with the management topics, or maybe in its own developer section--for users developing automation.***
+
 You can deploy JupyterLab for AI Unlimited using the following: 
 
 - Docker Engine: With Docker Engine, you can facilitate uniform and efficient Docker-based JupyterLab installation.
 - Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
 
-***MEM: I'm trying to figure out what facts are the same for Engine and Compose, and what facts are different. Is the difference that they can use Compose to configure and upgrade--but they can't do that using Engine? Let's get to the heart of why they would choose one or the other--maybe ask Jack. See my comment in the workspace Docker topic***
+***MEM: See comments in the install workspace topic.***
 
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>

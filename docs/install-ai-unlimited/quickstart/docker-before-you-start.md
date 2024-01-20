@@ -19,6 +19,8 @@ Make sure you have the following:
 - GitHub or GitLab account: If you don't already have an account, create a GitHub account at https://github.com/ or a GitLab account at https://gitlab.com/.
 
   ***MEM: (Unless, as GitLab is a whole devops solution, maybe it's unlikely they'd get an account for it during this workflow? We can ask.)***
+  
+  ***MEM: The first bullet can be even shorter: "GitHub or GitLab account: If you don't already have one, create a [GitHub](https://github.com/) or [GitLab](https://gitlab.com/) account."***
 
 - Cloud Service Provider (CSP) account: You can host the AI Unlimited engine on AWS or Azure. 
     <Tabs>
@@ -26,12 +28,14 @@ Make sure you have the following:
       - Sign up for an AWS Free Tier account at https://aws.amazon.com/free/.
     
       - Download and set up the AWS Command Line Interface (CLI). See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html.
-	  
-	  ***MEM: Mention the credentials, like what's on the Azure tab?*** 
-
-     ***MEM: Is this a better link? The other one goes straight to setup, but I assume they have to download first? https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html***
+	
+	 ***MEM: The link text can be regular words. It's ok not to show the urls. The bullets can be simply: "Sign up for an [AWS Free Tier](https://aws.amazon.com/free/) account." and "Download and set up the [AWS Command Line Interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)."***
 	 
-	 ***MEM: The bullets can be the link text. It's ok not to show the urls (same for the Azure tab). And we can remove "Docker:" from the Docker bullet.***
+	 ***MEM: Is this a better link? The other one goes straight to setup, but I assume they have to download first? https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html***
+	 
+	 ***MEM: Should we add "Optionally," before the AWS CLI bullet?***
+	 
+	 ***MEM: Mention credentials, like what's on the Azure tab?*** 
     
     </TabItem>
 
@@ -40,13 +44,22 @@ Make sure you have the following:
    
    - Install Azure Command Line Interface (CLI) and configure the credentials on the machine running the workspace service. See https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli. 
 
-   ***MEM: We'll introduce the concept of the workspace service in the overall Welcome topic--so that will help their understanding here. Thinking... for this install type, the machine running the workspace service is always going to be their local machine, I think--so let's revisit the phrasing after we work through more content.***
+   ***MEM: See comments on the AWS tab about not showing the urls, as a way to shorten content.***
+	
+   ***MEM: Add "the" before "Azure Command Line Interface (CLI)"***
+   
+   ***MEM: Should we add "Optionally," before the Azure CLI bullet?***
+   
+   ***MEM: We'll introduce the concept of the workspace service in the overall Welcome topic--so that will help their understanding here, hopefully. Thinking... for this install type, the machine running the workspace service is always going to be their local machine, I think. Better to say "your machine"? Or just end the sentence with "the credentials"?***
+   
+   ***MEM: And does "configure the credentials" refer to the section called "How to sign into the Azure CLI"? Wondering if we can align the language, b/c the word "credentials" seems to occur only once and is burried.***   
+  
 
-   ***MEM: Wondering if this is a better link: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli? Not yet sure.***
-
-   ***MEM: Thinking more... do they even need the AWS or Azure CLI if they are installing W and J via Docker?***
+  
 
   </TabItem>
     </Tabs>
 
 - Docker: Download and install Docker. See https://www.docker.com/get-started/.
+
+***MEM: In the last bulet, the second "Docker" can be the link text.***

@@ -19,6 +19,8 @@ The workspace service uses the GitHub OAuth App to authorize users and manage th
 
     * **Homepage URL**: http://ip_or_hostname:3000/
     * **Authorization callback URL**: http://ip_or_hostname:3000/auth/github/callback
+	
+***MEM: The link text can be "Create an OAuth app"***
 
 2.	Copy and retain the **Client ID** and **Client secret key**. You'll use them to authorize the workspace service to save user and project information.
 
