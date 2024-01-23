@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Welcome to AI Unlimited
 
-AI Unlimited is a self-service, on-demand platform that enables you to deploy a compute engine and connect it to your data lake. It includes Teradata’s powerful, scalable AI Unlimited compute engine running on the public cloud. AI Unlimited stores no permanent data, which frees you from database management.
+AI Unlimited is a self-service, on-demand platform that enables you to deploy a compute engine and connect it to your data lake. It includes Teradata’s AI Unlimited compute engine running on the public cloud. AI Unlimited stores no permanent data, which frees you from database management.
 
 ***MEM: I feel like we should say something like "Unlike x," at the beginning of the no-permanent-data sentence, but what should x be? "Unlike other analytics solutions,"? This makes the point more distingishing and helps the flow.***
 

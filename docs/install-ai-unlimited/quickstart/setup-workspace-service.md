@@ -15,15 +15,30 @@ import TabItem from '@theme/TabItem';
 
 1. Access the workspace service using this URL: http://*`ip_or_hostname`*:3000/.
 
-***MEM: Replace "using this URL" with "here"? Bold the url?***
-
     Insert image
 	
 	***MEM: In this context, we don't need the screenshot. They'll be looking at the screen. We can use screenshots when justified, for instance, if something is hard to find on the screen and we want to call it out. You might know this, but just in case... when we include screenshots... for each language, Yoichi or his colleague has to find the screen in the UI set to the right language, take a new screenshot, and add it to the translated file. (He likes folks to let him know how to get to the screen and show the right data.) Sometimes, a screenshot makes all the difference. Other times, it's just more scrolling.***
 	
 	***MEM: *Maybe*, after more discussion, we'll be able to say "Access AI Unlimited setup" instead of "Access the workspace service." Or something like that, at least in management topics (after the installation is done). A service is really something users should not have to be concerned about. So far at least, it seems necessary to speak of it, at least, in the installation topics. Once the content is all here, we can look at it fresh.***
 	
-	***MEM: We'll end up removing much of the content in this topic--so we don't repeat what's on the UI. When more content is needed than what the UI can show, we can put that content here.***
+	***MEM: We'll end up removing much of the content in this topic--so we don't repeat what's on the UI for no good reason.***
+	
+	***MEM: For now at least, let's just say "Access the workspace service at http://*`ip_or_hostname`*:3000/, and complete the setup steps." Bold the url.***
+	
+	***MEM: Then: "In step 2, Git integration [bold "Git integration"], after you select Authenticate [bold], you are redirected to GitHub or GitLab. 1. Log in to complete the authentication. 2. You are redirected to the workspace service Profile [bold] page. 3. On the Profile page, note the API key. Each time you connect to the workspace service [should we add, "by going to the Profile page?"], a new API key is gen erated. You will need the API key to start a project... what else?]***
+	
+	***MEM: Third para: "To change settings later, go to Setup [bold] in the workspace service user interface."
+	
+	***MEM: Current Figma shows it's not really on the Profile page.***
+	
+	***MEM to MEM: Reminder to re-watch the demo. What's the best way to say what's happening?***
+	
+	***MEM: How do they connect to the workspace service after the install phase? Or do they go back to step 2 on the UI?***
+	
+	***MEM: What about users who don't use the workspace service UI at all? Maybe not relevant in this topic, as an admin types do the install. But I want to understand better how non-admins get the API key other then the admin giving it to them (do they just use the same for a while--project stays active, and don't reconnect to the workspace service themselves?). Maybe that should be explained here.***
+	
+	
+
 
 2. Apply the following general service configuration under **Setup**.
 

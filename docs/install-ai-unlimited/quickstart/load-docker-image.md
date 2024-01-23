@@ -69,7 +69,7 @@ The Docker image is an executable package that includes everything needed to run
  
   ***MEM: Should "etc" be replaced with a more standard way of showing unkown directories in a path? Or is that the actual path?***
   
-  ***MEM: It's a little odd that the first setp is in the terminal, the second step tells them to use the CSP console/CLI, and the third step assumes they are still in the console/CLI. Step 1 is for one thing, steps 2 and 3 for something else. Logically, we'd have get the image, prep the environment, and install the container in one topic or in 3.***
+  ***MEM: So the first step is in the terminal, the second step is in the CSP console/CLI, and the third step assumes they are still in the console/CLI. Step 1 is for one thing, steps 2 and 3 for something else. For at-a-glance clarity, let's add "In the CSP console," or "In the CSP console or CLI," to the beginning of step 2 as well.***
 
 
 

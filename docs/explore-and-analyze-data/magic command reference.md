@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 # Magic command reference
 
+***Per discussion in one of the feature discovery meetings, we can remove this topic b/c the info is in the notebook. But maybe store it, just in case? Is there any benefit to having it here as well?***
+
 AI Unlimited JupyterLab supports the following magic commands in addition to the existing Teradata SQL Kernel magic commands. See [Teradata JupyterLab Getting Started Guide](https://github.com/Teradata/jupyterextensions/blob/master/notebooks/sql/GettingStarted.ipynb).
 
 ## %workspaces_config
