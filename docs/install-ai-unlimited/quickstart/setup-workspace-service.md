@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 	
 	***MEM: Then: "In step 2, Git integration [bold "Git integration"], after you select Authenticate [bold], you are redirected to GitHub or GitLab. 1. Log in to complete the authentication. 2. You are redirected to the workspace service Profile [bold] page. 3. On the Profile page, note the API key. Each time you connect to the workspace service [should we add, "by going to the Profile page?"], a new API key is gen erated. You will need the API key to start a project... what else?]***
 	
-	***MEM: Third para: "To change settings later, go to Setup [bold] in the workspace service user interface."
+	***MEM: Third para: "To change settings later, go to Setup [bold] in the workspace service user interface."***
 	
 	***MEM: Current Figma shows it's not really on the Profile page.***
 	
@@ -88,3 +88,5 @@ import TabItem from '@theme/TabItem';
 :::note
  A new API Key is generated each time you connect to workspace service.
 :::
+
+***MEM: We can remove the note. See messages in regulus_ie_ui_dev_sync Slack channel.***
