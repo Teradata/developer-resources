@@ -22,7 +22,7 @@ The workspace service uses the GitHub OAuth App to authorize users and manage th
 
 ***MEM: The link text can be "Create an OAuth app"***
 
-***MEM: Is there also a link for GitLab?"***
+***MEM: Is there also a link for GitLab? Maybe this: https://docs.gitlab.com/ee/integration/oauth_provider.html. It's what I suggested to Smit for the UI.***
 
   While registering the OAuth App, type the following workspace service URLs in the URL fields:
   
@@ -35,7 +35,7 @@ The workspace service uses the GitHub OAuth App to authorize users and manage th
 
 **TA: This is a one-time effort, shouldn't we let the users know that they can skip the workflow the next time they need to deploy the workspace service using Docker? As a user, one needs to register the workspace service, once the registartion is complete, user can skip this workflow and directly connect to GitHub from the Profile page.**
 
-***MEM: I'm seeing all the install topics as one-time tasks. My thinking (which is is often wrong! :-)): They do the install (any of the 3 types), then every time they run a workload (start a project), they 1. get their environment variables from the CSP, 2. get the API key from the Profile page, 3. go to a notebook. And 1-3 is addressed in topics under "Explore and analyze data" on the doc site. But, if they aren't an admin, and they don't use the workspace service UI... well I need to understand that flow better.***
+***MEM: I'm seeing all the install topics as one-time tasks. My thinking (which is is often wrong! :-)): They do the install (any of the 3 types), then every time they run a workload (start a project), they 1. get their environment variables from the CSP, 2. get the API key from the Profile page, 3. go to a notebook. And 1-3 is addressed in topics under "Explore and analyze data" on the doc site. But, if they aren't an admin, and they don't use the workspace service UI... well I need to understand that flow better. UPDATE: Now I understand that non-admins log in to the workspace service to grab their API key. That seems to be the only thing non-admins use the workspace service UI for.***
 
 ***MEM: I wonder if we should add something about not using a GitHub App, assuming they should not use one? So they can skim through the intro in the GitHub doc faster.***
 

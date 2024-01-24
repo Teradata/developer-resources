@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Deploy JupyterLab for AI Unlimited using Docker
 
-***MEM: Let's try moving this topic to before the create OAuth topic. Then all intall types will go from setting up workspaces to next steps.
+***MEM: Let's try moving this topic to before the OAuth topic. Then all install types will go from setting up workspaces to next steps.***
 
 ***TA: To set up workspace, won't user need to create OAuth app first?***
 
@@ -28,7 +28,7 @@ This article outlines the steps for deploying and setting up a Teradata AI Unlim
 
 ***MEM: Generally, we can avoid sentences like the first one. The topic's context and title aleady convey that meaning.***
 
-***MEM: Instead, dive into why users should care... "You start analytics projects, run them, and manage them in Jupyter notebooks that use the AI Unlimited Jupyter Kernel."***
+***MEM: Instead, dive into why users should care... "You create analytics projects, run them, and manage them in Jupyter notebooks that use the AI Unlimited Jupyter Kernel."***
 
 ***TA: with a tinge of marketing language: Leverage the AI Unlimited Kernel within the JupyterLab Notebook to write and run data projects, connect to the Teradata systems, and visualize data.*** 
 

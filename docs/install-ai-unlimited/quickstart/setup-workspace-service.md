@@ -90,3 +90,13 @@ import TabItem from '@theme/TabItem';
 :::
 
 ***MEM: We can remove the note. See messages in regulus_ie_ui_dev_sync Slack channel.***
+
+***Based on working on the UI's inline content, these fields will probably need supporting content in this topic: Default IAM role (in step 3 on UI), what else...***
+
+***Stab at what to put in the doc for Default IAM role [needs Jack’s input]:***
+
+The default IAM role for the cluster that deploys the engine. Typically, you can leave this field blank to allow the workspace service to try to create an IAM role for the cluster. But if the environment’s security does not allow the workspace service to create IAM roles [how will they know?], indicate the role.
+
+See [Example IAM Policies](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/README.md#workspaces-without-iam-role-permissions.json) and this [policy](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/workspaces-without-iam-role-permissions.json).
+
+Allowing the workspace service to create an IAM role is preferable, because the cluster secret is more secure. [Do we want to say that?]

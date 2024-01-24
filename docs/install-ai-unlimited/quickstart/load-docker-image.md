@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ***MEM: For the title, let's say "Get the Docker image for the workspace service and prepare the cloud environment" 1. so it's not confused with the Jupyter Docker image, 2. to make clear they're not actually installing it yet, 3. to make it more personalble ("you").***
 
-***TA: We are not preparing the cloud environment, the environment term is used for setting the environment variable". How about: Get the workspace service Docker image (or Docker image for workspace service : is it too long for a heading?) and prepare the environment?***
+***TA: We are not preparing the cloud environment, the environment term is used for setting the environment variable". How about: Get the workspace service Docker image (or Docker image for workspace service : is it too long for a heading?) and prepare the environment? MEM: Yes, that's good (the shorter way).***
 
 The Docker image is an executable package that includes everything you need to run the workspace service in a Docker container.
 
