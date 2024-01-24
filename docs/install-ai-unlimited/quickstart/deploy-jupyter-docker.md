@@ -14,11 +14,17 @@ import TabItem from '@theme/TabItem';
 
 ***MEM: Let's try moving this topic to before the create OAuth topic. Then all intall types will go from setting up workspaces to next steps.
 
+***TA: To set up workspace, won't user need to create OAuth app first?***
+
 ***MEM: In the title, let's say "Install" instead of "Deploy" as the latter sounds like a bigger effort, and to use plain language.***
+
+***TA: Install gives a sense of placing software to a machine/system where as deploy is widely used  for cloud environment?***
 
 ***MEM: Also in the title, I'm now thinking we can delete "for AI Unlimited." Yes, that's part of the official, long name, but it ends up looking like just extra words--users know they are installing it for AI Unlimited.***
 
-This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
+***TA: JupyterLab for AI Unlimited is different from the normal version available. Won't users need to differentiate between the two versions available?***
+
+Use JupyterLab for AI Unlimited to write and run data projects, connect to the Teradata system, and visualize data.This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
 
 ***MEM: Generally, we can avoid sentences like the first one. The topic's context and title aleady convey that meaning.***
 
