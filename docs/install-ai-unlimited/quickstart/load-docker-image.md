@@ -15,17 +15,19 @@ import TabItem from '@theme/TabItem';
 
 ***MEM: For the title, let's say "Get the Docker image for the workspace service and prepare the cloud environment" 1. so it's not confused with the Jupyter Docker image, 2. to make clear they're not actually installing it yet, 3. to make it more personalble ("you").***
 
-The Docker image is an executable package that includes everything needed to run the workspace service in a Docker container.
+***TA: We are not preparing the cloud environment, the environment term is used for setting the environment variable". How about: Get the workspace service Docker image (or Docker image for workspace service : is it too long for a heading?) and prepare the environment?***
+
+The Docker image is an executable package that includes everything you need to run the workspace service in a Docker container.
 
 ***MEM: To make it more personable, let's replace "needed" with "you need."***
 
 ***MEM: Let's add a sentence that defines the workspace service--in simple terms. You could grab that from the Welcome topic (not that it won't change of course).***
 
-1. Open a terminal window and pull the Docker image for the workspace service from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
+1. Open a terminal window and pull the Docker image from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
+
     ```bash
     docker pull teradata/ai-unlimited-workspaces
     ```
-***MEM: In step 1, let's remove "for the workspace service" b/c it's now mentioned twice and they can see it in the code.***
 
 ***MEM: Later, let's look (throughout the topics) at how/when to tell them to open a terminal window. Maybe make it a separate step.***
 
@@ -34,6 +36,7 @@ The Docker image is an executable package that includes everything needed to run
 2. In the CSP console, copy and retain these CSP environment variables. 
 
 ***MEM: I guess some users will use the CSP CLI. Should we say "In the CSP console or CLI,"?***
+***TA: The CLI step to retrieve the variable is different. Based on your comment, I need to add that code***
 
     <Tabs>
     <TabItem value="aws" label="AWS" default>
