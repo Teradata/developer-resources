@@ -31,7 +31,7 @@ The Docker image is an executable package that includes everything you need to r
 
 ***MEM: Later, let's look (throughout the topics) at how/when to tell them to open a terminal window. Maybe make it a separate step.***
 
-***MEM: new on 1/9 - Interesting that the icon for copying code appears only when you hover over the code block. Do you know if it's possible to make it appear always? Seems it should always appear, for all code blocks.***
+***MEM: new on 1/9 - Interesting that the icon for copying code appears only when you hover over the code block. Do you know if it's possible to make it appear always? Seems it should always appear, for all code blocks. UPDATE: I asked Smit. He said it's fine as is and seems to be a widely used convention.***
 
 2. In the CSP console, copy and retain these CSP environment variables. 
 

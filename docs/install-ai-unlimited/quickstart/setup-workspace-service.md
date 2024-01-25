@@ -33,9 +33,9 @@ import TabItem from '@theme/TabItem';
 	
 	***MEM to MEM: Reminder to re-watch the demo. What's the best way to say what's happening?***
 	
-	***MEM: How do they connect to the workspace service after the install phase? Or do they go back to step 2 on the UI?***
+	***MEM: How do they connect to the workspace service after the install phase? Or do they go back to step 2 on the UI? UPDATE: they just log in to the workspace service UI with GitHub or GitLab.***
 	
-	***MEM: What about users who don't use the workspace service UI at all? Maybe not relevant in this topic, as an admin types do the install. But I want to understand better how non-admins get the API key other then the admin giving it to them (do they just use the same for a while--project stays active, and don't reconnect to the workspace service themselves?). Maybe that should be explained here.***
+	***MEM: What about users who don't use the workspace service UI at all? Maybe not relevant in this topic, as an admin types do the install. But I want to understand better how non-admins get the API key other then the admin giving it to them (do they just use the same for a while--project stays active, and don't reconnect to the workspace service themselves?). Maybe that should be explained here. UPDATE: they just log in to the workspace service UI and copy their key***
 	
 	
 
