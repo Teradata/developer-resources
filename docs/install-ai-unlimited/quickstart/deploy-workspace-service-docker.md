@@ -1,6 +1,6 @@
 ---
 id: deploy-workspace-service-docker
-title: Deploy the workspace service using Docker
+title: Install the workspace service using Docker
 description: Steps to deploy AI Unlimited using Docker Engine and Docker Compose.
 sidebar_position: 3
 tags:
@@ -11,45 +11,39 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deploy the workspace service using Docker
+# Install the workspace service using Docker
 
-***MEM: In the title, I added "the" before "workspace" for grammar and readability.***
-
-***MEM: In the title, let's say "Install" instead of "Deploy" as the latter sounds like a bigger effort, and to use plain language.***
-
-You can install the workspace service using:
+Use [Docker Engine](https://docs.docker.com/engine/) or [Docker Compose](https://docs.docker.com/compose/) to install the workspace service.
 
 - Docker Engine: Text insert
 - Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation. 
 
 ***MEM: UPDATED It seems that Engine is for single-container applications, and Compose is for multi-container applications. And Compose adds efficiency to managing multi-container applications. Workspaces has a single container, so Compose might not add efficiency. But maybe some users just like Compose--personal preference. If that's all true (ask Jack), let's not try to explain why they might choose one over the other.***
 
-***MEM: How about simply "Use [Docker Engine](https://docs.docker.com/engine/) or [Docker Compose](https://docs.docker.com/compose/) to install the workspace service.***
-
 ***MEM: Link "workspace service" to the glossary term. Possible to add anchors?***
 
 :::note 
-For Azure, Teradata recommends deploying workspace service using Docker Compose.
+For Azure, Teradata recommends installing workspace service using Docker Compose.
 :::
-
-***MEM: In the note, replace "deploying" with "installing the"***
-
-To use Teradata AI Unlimited with the workspace client, see Use Teradata AI Unlimited With Workspace Client[*Insert link*].
 
 ***MEM: Let's remove this reference to the workspace service CLI. It's just for a portion of the overall audience and needs more explanation than I think we want to include in this workflow (for instance, that it's for developers working on automation, etc.). Was good to get that clarification from Jack on 1/9--he explained that to me previously, and I forgot!***
 
-Run the Docker image once you've set the `WORKSPACES_HOME` variable.
+Run the Docker image.
 
 ***MEM: Because setting WORKSPACES_HOME is addressed in the previous topic, we don't need to repeat it. (Unless this refers to something else?) Generally, we can assume they do what we tell them to do. Otherwise we'd have lots of repetition, and they might wonder whether or not it's the same thing they already did. We don't want them to have to wonder. So you can end the sentence with "image." Actually, you can remove the whole sentence. Running the image is addressed on the tabs.***
+
+***TA: I feel, we need to retain 'Run the Docker image'. Else, users are directly taken to the tab,
 
 <Tabs>
   <TabItem value="Engine" label="Docker Engine" default>
 
-:::info
+:::note
  Modify the directories based on your requirements.
  :::
  
  ***MEM: Maybe telling them to modify the directories doesn't really qualify as an "INFO" admonition? It doesn't seem like additional info, expanding on a point, a reminder to do something later, a best practice, etc. It just tells them to do something now. I see the benefit of emphasizing it, though. And, WARNING is too strong.***
+
+ ***TA: there are some variables in the following code that users need to replace.***
 
    ```bash title="Docker Engine Run"
     docker run -detach \
@@ -63,6 +57,8 @@ Run the Docker image once you've set the `WORKSPACES_HOME` variable.
   teradata/ai-unlimited-workspaces:latest
    ```
   ***MEM: Do they need to install Docker Engine (https://docs.docker.com/engine/install/) before they run the command? Is that step 1, like in Compose?***
+
+  ***TA: No, we have already installed Docker is before you begin. That is enough to run the command.***
   
   ***MEM: Then step 2 could be "Run Docker Engine, modifying the WORKSPACES_HOME directories as needed."***
   
@@ -74,14 +70,12 @@ Run the Docker image once you've set the `WORKSPACES_HOME` variable.
   </TabItem>
   <TabItem value="Compose" label="Docker Compose">
    
-1. Install Docker Compose. See https://docs.docker.com/compose/install/.
+1. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
-***MEM: The words "Install Docker Compose" can be the link text (followed by the period).***
-
-2.	Create a **workspaces.yml** file.
+2.	Create a **workspaces.yml** file and copy the code in the tab.
 
 :::note 
-The following example uses a local volume to store your CSP credentials. You can create a separate YAML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Install AI Unlimited Using Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
+The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Install AI Unlimited Using Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
 :::
 
 ***MEM: Do "CSP credentials" = "CSP environment variables"? Does the "YAML file" = "the Docker Compose file"? Adding "Instead," at the beginning of the second sentence might help, if that's accurate. If we changed "and run the Docker Compose file" to "and run it using Docker Compose" would the sentence still be correct?***
@@ -89,6 +83,8 @@ The following example uses a local volume to store your CSP credentials. You can
 ***MEM: Should the link text be "Deploy with Docker Compose" followed by "in the AI Unlimited GitHub repository"? so they know they ended up in the right place? Or, the link text could be "this README" followed by "in the AI Unlimited GitHub repository." We'll have to make sure they don't confuse that repo with their own.*** 
 
 ***MEM: Not sure I'm loving sending them to the repo for this. Maybe the "other options" could be in expandable text?***
+
+***TA: There are multiple options. Would it be an ideal path for a quickstart?***
 
 ***MEM: Do they copy the code on a tab and put that in the workspaces.yml file? Should we make that more explicit? Something like: "2. Create a workspaces.yml file containing the code for your CSP." That way, there's a lead-in to the tabs.***
 
