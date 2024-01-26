@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
 
 ***TA: We are not preparing the cloud environment, the environment term is used for setting the environment variable". How about: Get the workspace service Docker image (or Docker image for workspace service : is it too long for a heading?) and prepare the environment? MEM: Yes, that's good (the shorter way).***
 
+***MEM: 1/25/24 - the more I think about it, the more I think we can combine this topic with the workspace install topic - both topics are shrinking and they really belong together - gets rid of the long title challenge - and we'll have parallelism with the Jupyter Docker install topic ("Install the workspace service [new name?] using Docker" and "Install JupyterLab using Docker']***
+
 The Docker image is an executable package that includes everything you need to run the workspace service in a Docker container.
 
 ***MEM: To make it more personable, let's replace "needed" with "you need."***

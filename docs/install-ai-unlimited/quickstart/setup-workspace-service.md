@@ -13,41 +13,42 @@ import TabItem from '@theme/TabItem';
 
 # Set up the workspace service
 
+***MEM: I suggested a structure for this topic. See NEW START below the initial comments and existing content.***
+
 1. Access the workspace service using this URL: http://*`ip_or_hostname`*:3000/.
 
     Insert image
 	
 	***MEM: In this context, we don't need the screenshot. They'll be looking at the screen. We can use screenshots when justified, for instance, if something is hard to find on the screen and we want to call it out. You might know this, but just in case... when we include screenshots... for each language, Yoichi or his colleague has to find the screen in the UI set to the right language, take a new screenshot, and add it to the translated file. (He likes folks to let him know how to get to the screen and show the right data.) Sometimes, a screenshot makes all the difference. Other times, it's just more scrolling.***
 	
-	***MEM: *Maybe*, after more discussion, we'll be able to say "Access AI Unlimited setup" instead of "Access the workspace service." Or something like that, at least in management topics (after the installation is done). A service is really something users should not have to be concerned about. So far at least, it seems necessary to speak of it, at least, in the installation topics. Once the content is all here, we can look at it fresh.***
+	***MEM: *Maybe*, after more discussion, we'll be able to say "Access AI Unlimited setup" instead of "Access the workspace service." Or something like that. A service is something users should not have to be concerned about. So far at least, it seems necessary to speak of it, at least, in the installation topics. Once the content is all here, we can look at it fresh. UPDATE: Smit has some direction from Jenn that he's working with.***
 	
-	***MEM: We'll end up removing much of the content in this topic--so we don't repeat what's on the UI for no good reason.***
+	***MEM: We'll end up removing much of the content in this topic--so we don't repeat what's on the UI.***
 	
-	***MEM: For now at least, let's just say "Access the workspace service at http://*`ip_or_hostname`*:3000/, and complete the setup steps." Bold the url.***
+	***MEM: As you noted, this UI has changed.***
 	
-	***MEM: Then: "In step 2, Git integration [bold "Git integration"], after you select Authenticate [bold], you are redirected to GitHub or GitLab. 1. Log in to complete the authentication. 2. You are redirected to the workspace service Profile [bold] page. 3. On the Profile page, note the API key. Each time you connect to the workspace service [should we add, "by going to the Profile page?"], a new API key is gen erated. You will need the API key to start a project... what else?]***
-	
-	***MEM: Third para: "To change settings later, go to Setup [bold] in the workspace service user interface."***
-	
-	***MEM: Current Figma shows it's not really on the Profile page.***
-	
-	***MEM to MEM: Reminder to re-watch the demo. What's the best way to say what's happening?***
-	
-	***MEM: How do they connect to the workspace service after the install phase? Or do they go back to step 2 on the UI? UPDATE: they just log in to the workspace service UI with GitHub or GitLab.***
-	
-	***MEM: What about users who don't use the workspace service UI at all? Maybe not relevant in this topic, as an admin types do the install. But I want to understand better how non-admins get the API key other then the admin giving it to them (do they just use the same for a while--project stays active, and don't reconnect to the workspace service themselves?). Maybe that should be explained here. UPDATE: they just log in to the workspace service UI and copy their key***
-	
-	
-
 
 2. Apply the following general service configuration under **Setup**.
 
     | Setting | Description | Required? |
     |---------|-------------|-----------|
     | Service Base URL | **`[Non-Editable]`** The root URL of the service. | Yes |
+	
+	***MEM: The user does have to enter the URL--confirmed w/Smit, so not sure about "non-editable"***
+	
     | Git Provider | The provider for Git integration. Currently, Teradata AI Unlimited supports GitHub and GitLab. | Yes |
     | Service Log Lev | The level of logging.| Yes|
-    | Engine IP Network Type | The type of network assigned to an engine instance, which can be either public or private. Select the **Private** option if you're deploying the engine in the same VPC as the workspace service.| Yes |
+		
+	***MEM: This is a great example of what we don't need to say. :-) We don't have to account for fields. We just need to make clear what the UI cannot.*** 
+		
+    | Engine IP Network Type | The type of network assigned to an engine instance, which can be either public or private. 
+	
+	***MEM: no need to say what they see in the list of options*** 
+	
+	Select the **Private** option if you're deploying the engine in the same VPC as the workspace service.| Yes | 
+	
+	***MEM: But this second sentence is truly helpful***
+	
     | Use TLS | Indicates if TLS support is enabled. If your instance is only accessible from within a private network and to trusted users, you can ignore the default value. Teradata recommends enabling the TLS option for sensitive data, public networks, and compliance requirements. | Yes |
     | Service TLS Certification | The server certificate to authenticate the server identity. | No |
     | Service TLS Certificate Key | The server certificate key. | No |
@@ -84,14 +85,14 @@ import TabItem from '@theme/TabItem';
 9.	Log on with your GitHub credentials to authorize workspace service.
 
     After authentication, you are redirected to the Workspace service **Profile** page, and an API Key is generated. You can use the API Key to make requests to the workspace service.
-
+	
 :::note
  A new API Key is generated each time you connect to workspace service.
 :::
 
 ***MEM: We can remove the note. See messages in regulus_ie_ui_dev_sync Slack channel.***
 
-***Based on working on the UI's inline content, these fields will probably need supporting content in this topic: Default IAM role (in step 3 on UI), what else...***
+***Based on working on the UI's inline content, these fields will probably need supporting content, so far... Default IAM role (in step 3 on UI), what else...***
 
 ***Stab at what to put in the doc for Default IAM role [needs Jack’s input]:***
 
@@ -99,4 +100,52 @@ The default IAM role for the cluster that deploys the engine. Typically, you can
 
 See [Example IAM Policies](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/README.md#workspaces-without-iam-role-permissions.json) and this [policy](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/workspaces-without-iam-role-permissions.json).
 
-Allowing the workspace service to create an IAM role is preferable, because the cluster secret is more secure. [Do we want to say that?]
+Allowing the workspace service to create an IAM role is preferable, because then the cluster secret is more secure. [Do we want to say that?]
+
+
+
+***NEW START***
+
+Access the [hoping for new name for the workspace service UI], using the url you received when you installed it.
+
+[we might want to be more specific - I put a question about the url in the team slack channel]
+
+[Jack says for workspaces in Docker it's always http://localhost:3000/. On AWS or Azure, he says it's the "connection string from your template outputs" which is interesting. Maybe "url" does not apply for workspaces on AWS/Azure?]
+
+In the [name for workspace service UI], complete the setup steps. 
+
+[Something about the fact that these are defaults that they can change in a notebook? Which settings exactly? And that they can change these default setting later.]
+
+[maybe a little redundant to say "In the blah," but we want to be clear about where this work is done, considering they've already done work elsewhere - not sure it's necessary though] 
+
+For help, select a step below. [not sure yet if we'll really need info for each step (working to get the UI as self-explanatory as possible), but might look silly to omit any of the 3]
+
+[maybe these could be expandable text?]
+
+**Step 1: Service setup** [step name might change]
+
+[anything to say about logging level? suggestion to start with detailed log info until they have used AI Unlim for a bit? Actually, I remembered we'll have a whole topic on logging levels - need to figure out the user flow - link to that other topic from the field in the UI, but mention the advice for the initial set up here, as well, and link there? (users could come here from the UI or just from exploring the doc]
+
+[more info about TLS? we want them to use it - maybe info on the edge cases for why they wouldn't? - private network with trusted users? - they do have a choice - what did Jack say about that...]
+
+**Step 2: Git integration**
+
+[this should all be pretty smooth - do they want to understand what's really happening though? not sure - if we think yes, could say this:]
+
+After you complete the fields, and select **Authenticate**, you are redirected to GitHub or GitLab. You log in. This authorizes the workspace service [can we just say AI Unlimited?] to access your Git repo.
+
+After you are redirected back to [name of workspace service UI], you can see that an API key was generated for you. 
+
+You'll use your API key whenever you create a project in a Jupyter notebook. When a new user logs in to [name of workspace service IU], an API key is generated for that user. 
+
+[is there more to it? is creating a project really the only time they'll need it? when they resume a suspended project do they need it? so the API key must connect the notebook to the workspace service, and accordingly, the engine and their Git provider--but pretty sure it has nothing to do with their connection to their data lake--is that right?]
+
+
+**Step 3: Cloud integration**
+
+[As you said, this has several fields for which we have existing content (from the tech preview), but we'll need to make more clear what those fields mean for AI Unlimited (as opposed to describing network/security concepts in general)].
+
+[I put field description ideas on the Figma
+(https://www.figma.com/file/rN0xsSfOzxUxspvsAAqnBC/(IN-PROGRESS)-AVCD-E-15%3A-AI-Unlimited-workspace-service---UX-enhancements?type=design&node-id=4%3A18&mode=design&t=nQIYNRMtN4dYrlnb-1). Sounds like the step 3 UI will change more--field names and placement. Anyway, will need to harmonize the field names/descriptions there with additional details here - trying to avoid redundancy. "Ugh. Why did they say to click this link? I already see this info on the UI!" If in a sour mood, they might also think: "Geez, doesn't Teradata know my time is precious? I'm so tired. And hungry." :-)]. 
+
+[then not in the expandable text...] Remember, you can return to the [workspace service UI] later to change these settings. [all of them? any restrictions? how does the workspace service know who is an admin and who is a regular user? maybe there's always only 1 admin, and that is the user who does the initial Git provider authentication? or can they add admins (so they can go o vaca)?]

@@ -165,7 +165,7 @@ docker compose -f workspaces.yaml
 ```
 Once the workspace service server is initialized and started, you can access it using the URL: http://ip_or_hostname:3000/.
 
-***MEM: For my understanding... isn't the workspace service running locally in the Docker container? "Server" is throwing me off a bit, because it sounds like a separate computer. Can we delete "server"?***
+***MEM: For my understanding... isn't the workspace service running locally in the Docker container? "Server" is throwing me off a bit, because it sounds like a separate computer. Can we delete "server"? Learned more: a "server" can run locally. Simpler language could work here: "When the [name for workspace servier UI] is ready [does it take some time?], you can access it at [url - and I put a question about the url in the slack channel]***
 
 ***We should probably bold the url.***
   </TabItem>
