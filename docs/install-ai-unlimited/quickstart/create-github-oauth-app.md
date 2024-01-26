@@ -9,27 +9,21 @@ tags:
   - Create GitHub OAuth App
 ---
 
-# Create a GitHub OAuth app
+# Create a GitHub or GitLab OAuth app
 
-***MEM: In the title, let's use "GitHub or GitLab OAuth app." And adjust the rest of the topic to include GitLab. Can probably use "Git repository" where appropriate.***
+The workspace service uses the GitHub or GitLab OAuth app to authorize users and manage the project state, and it stores this information in your Git repository.
 
-The workspace service uses the GitHub OAuth App to authorize users and manage the project state, and it stores this information in your GitHub repository.
-
-  ***MEM: Can be lowercase "app." Sigh... their site is inconsistent, though. Can revisit this. But let's go with lowercase.***
-
-1.	Log in to your GitHub account.
-2. Create an OAuth App. See [GitHub Documentation](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app).
-
-***MEM: The link text can be "Create an OAuth app"***
-
-***MEM: Is there also a link for GitLab? Maybe this: https://docs.gitlab.com/ee/integration/oauth_provider.html. It's what I suggested to Smit for the UI.***
-
-  While registering the OAuth App, type the following workspace service URLs in the URL fields:
+1. Log in to your Git repository account.
+2. Create an OAuth app. See [GitHub: Create an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) or [GitLab: Create an OAuth app](https://docs.gitlab.com/ee/integration/oauth_provider.html).
+  
+    While registering the OAuth app, type the following workspace service URLs in the URL fields:
   
     * **Homepage URL**: http://ip_or_hostname:3000/
     * **Authorization callback URL**: http://ip_or_hostname:3000/auth/github/callback
-	
-2.	Copy and retain the **Client ID** and **Client secret key**. You'll use them to authorize the workspace service to save user and project information.
+
+***TA: Are there any fields users need to enter for GitLab. Ilsun mentioned 'scope' for GitLab. The list of scope is mentioned in the GitLab table. Ilsun to confirm Teradata recommendation.***
+
+3.	Copy and retain the **Client ID** and **Client secret key**. You'll use them to authorize the workspace service to save user and project information.
 
 ***MEM: Does "first-time user" mean anything other than a user who is doing the QuickStart install? If that's the case, no need to call out the user.***
 
