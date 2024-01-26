@@ -2,7 +2,7 @@
 id: magic-command-reference
 title: Magic command reference
 description: Learn about Teradata AI Unlimited JupyterLab magic commands.
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - AI Unlimited Magic Commands
 ---

@@ -2,7 +2,7 @@
 id: run-sample-workload
 title: Run a Sample Workload
 description: Run a simple workflow and learn how to use Teradata AI Unlimited.
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - Install AI Unlimited
   - Install using Docker

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Getting started with AI Unlimited
+# Get started
 
 ***MEM: I just threw this content here. Is it what we need? Should be in context. What is the user thinking, feeling, and doing when they first arrive here? How did they get here?***
 
@@ -21,12 +21,10 @@ You initiate each interaction with AI Unlimited. Meaning, you deploy the engine 
 The AI Unlimited platform has these elements:
 - The engine, on your cloud service provider (CSP)
 - Jupyter notebooks, with the AI Unlimited Jupyter Kernel, for running analytic workloads
-- Your object storage ***[better to say "data lake"?]***, on your CSP
-- Your GitHub or GitLab repository, for storing user and project information 
+- Your object storage, on your CSP
+- Your GitHub or GitLab repository, for user authentication and storing project information
 - A web-based user interface and command line interface (CLI) for the AI Unlimited workspace service, which orchestrates the platform’s elements and supports project management tasks 
 
-***MEM: Trying to get away from "service" - users care about what they can do, not what makes the product go - UI naming will hopefully change***
+***MEM: Trying to get away from "service" - users care about what they can do, not what makes the product go - UI naming will hopefully change. Not sure users care about what does the "orchestration." They would just assume that the elements talk to each other somehow. So again, "what do I do where?"***
 
-***MEM: Last bullet will probably be like "A project workspace for setting up AI Unlimited and managing projects"***
-
-***MEM: We might want to add explicit content about what's the same/different among the 3 interfaces: 1. notebook, 2. workspace UI, 3. workspace CLI. #3 is for developers/automation work. Might users assume that the workspace UI and workspace CLI have the same functionality? They don't.***
+***MEM: Last bullet will probably be like "A web-based project workspace in which the administrator user sets up AI Unlimited and can later change settings." Then another bullet for the CLI for deveoping automation - how to word that?***
