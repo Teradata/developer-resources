@@ -1,52 +1,66 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Project lifecycle
+# The project lifecycle
 
-You create, run, and manage projects in a Jupyter notebook using the AI Unlimited Jupyter Kernel. 
+[will work on this after "Run a Sample Workload" - don't want this to be too redundant with that - was hoping to show here, at-a-glance, what happens in a project - maybe not a good idea - or maybe this does not show any code (that's in the magic command reference in the notebook) - maybe can keep this at a higher level - is there other storytelling about a project that should go here that's not in the the sample workload topic and not in a nb? - re-watch demos]
 
-Analytic workloads aside, this is the project lifecycle in terms of what you do:
+You create, run, and manage an analytics project in a Jupyter notebook using the AI Unlimited Jupyter Kernel and the magic commands it provides. Learn more (link) about Jupyter notebooks [maybe something comparable to the Vantage  links Thripti found? Current assumption is that Vantage doc links are not ok, but we'll ask].
+
+Analytic workloads aside, here's the project lifecycle, in terms of what you do:
 
 
 **Get your API key.**
-The first time you log in to the [workspace service] using your credentials for your AI Unlimited Git repo, an API key is generated for you. Log back into [workspace service] any time to copy the key. You'll need it every time you....
+The first time you log in to the workspace service using your credentials for your AI Unlimited Git repo, your API key is generated. Copy it.
 
-image of the key in workspaces
+[image of the key in workspaces--to show its location there - this is good use of a screenshot, because the user is not necessarily in workspaces now, and we want to point out where this one small thing is on that UI]
 
 
 **Create the project.**
-Provide the API key and your CSP environment variables. What else... Use the magic commands, provided by the AI Unlimited Jupyter Kernel to run workloads.
+Provide the API key and the CSP environment variables. [add how-to details]
 
-code
+[code]
 
 
-**Optionally, add users** (supported for [demo](docs\install-ai-unlimited\demo\index.md) and [production](link) installations)
+**Connect to your data**
 
-code
+
+
+**Optionally, add collaborators to the project--WHEN? before or after running workload(s)** (supported for [demo](docs\install-ai-unlimited\demo\index.md) and [production](link) installations only)
+
+[code]
+
+
+
+
+
+**Back up project information**
+
+[code]
 
 
 **Suspend the project**
-When you're done for the time-being, you can suspend the project. You only pay for the time a project is active. [Blah] gets retained so you can resume the project [something like, "in tact"].
+When you're done for the time-being, you can suspend the project. You only pay for the time a project is active. [Blah] gets retained so you can resume the project [just as it is now]
 
-code
+[code]
 
 
 **Resume the project**
-Whenever you like, resume the project.
+Whenever you like, resume the project. [what details to add?]
 
-code
+[code]
 
 
 **What else...**
-Blah blah
+[Blah blah]
 
-code
+[code]
 
 
 **Do they ever remove a project completely?**
-Why they might want to... what it means... totally irrecoverable?
+[Why they might want to... what it means... totally irrecoverable?]
 
-code
+[code]
 
 
