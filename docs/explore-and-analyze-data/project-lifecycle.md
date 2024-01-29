@@ -1,4 +1,7 @@
 ---
+id: project-lifecycle
+title: The project lifecycle
+description: See the whole project lifecycle at a glance.
 sidebar_position: 2
 ---
 
