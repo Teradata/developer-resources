@@ -11,3 +11,4 @@ tags:
 
 # Try some use cases
 
+***MEM: Artur to adjust example notebooks that were used in a workshop. Artur to record accompanying videos.***
