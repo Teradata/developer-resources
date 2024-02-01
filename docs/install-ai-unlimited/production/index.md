@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Are you ready to scale? Use the production installation to prepare for enterprise use. 
 
-This puts AI Unlimited on your CSP on an instance without JupyterLab. Security and sizing are simpler this way. For the location of JupyterLab, you have these options:
+This puts AI Unlimited on your cloud service provider (CSP) on an instance without JupyterLab, which simplifies security and sizing. For the JupyterLab location, you have these options:
 
 - On your CSP on a separate instance from AI Unlimited:
   - Installed using the AI Unlimited cloud template for JupyterLab, which includes the AI Unlimited kernel 
