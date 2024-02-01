@@ -1,17 +1,15 @@
 ---
 id: project-lifecycle
-title: The project lifecycle
+title: Project lifecycle
 description: See the whole project lifecycle at a glance.
 sidebar_position: 2
 ---
 
-# The project lifecycle
+# Project lifecycle
 
-***will work on this after "Run a Sample Workload" - don't want this to be too redundant with that - was hoping to show here, at-a-glance, what happens in a project - maybe not a good idea - or maybe this does not show any code (that's in the magic command reference in the notebook) - maybe can keep this at a higher level - is there other storytelling about a project that should go here that's not in the the sample workload topic and not in a nb? - re-watch demos]***
+***figuring out what this should be - maybe just a high-level view - maybe as a graphic - "Create your first project" topic and the example projects involve a bit of scrolling and are specific to workloads, so thinking would be good to show the forest (vs. trees) here - wrestling with whether to include code here - could link to specific topics like "Suspend and resume a project"***
 
-You create, run, and manage an analytics project in a Jupyter notebook using the AI Unlimited Jupyter Kernel and the magic commands it provides. Learn more (link) about Jupyter notebooks ***Maybe something comparable to the Vantage links Thripti included? My current assumption is that Vantage doc links are not ok, but we'll ask.***
-
-Analytic workloads aside, here's the project lifecycle:
+You create, run, and manage analytics projects in [Jupyter](https://docs.jupyter.org/en/latest/) notebooks that use the AI Unlimited Jupyter Kernel, which provides AI Unlimited magic commands.  ***Is that Jupyter doc a reasonable place to send them?***
 
 
 **Get your API key.**

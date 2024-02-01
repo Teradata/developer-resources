@@ -4,4 +4,6 @@ sidebar_position: 3
 
 # Add collaborators to a project
 
-[not the magic command, but what's really happening here... what do they need to know - anything?]
+***not just the magic commands, but what's really happening here... what do they need to know?***
+
+***project owner can add collaborators, and we will automate creating them inside the engine (this gives them automated engine experience) - Artur will write this up*** 

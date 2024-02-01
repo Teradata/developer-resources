@@ -1,6 +1,6 @@
 ---
-id: create-and-run-first-project
-title: Create and run your first project
+id: create-first-project
+title: Create your first project
 description: Run a simple workflow and learn how to use Teradata AI Unlimited.
 sidebar_position: 1
 tags:
@@ -9,7 +9,7 @@ tags:
   - Load Docker Image
 ---
 
-# Create and run your first project
+# Create your first project
 
 **TA: Do we require to chunk this section? This is a simple workflow and wouldn't it be easier for users to quickly run a use case without having to navigate through multiple pages? If we are introducing connecting to an external data source, make sense to split this into smaller chunks. Examples:https://docs.databricks.com/en/getting-started/etl-quick-start.html**
 

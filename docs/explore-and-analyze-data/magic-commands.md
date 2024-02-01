@@ -1,6 +1,6 @@
 ---
-id: magic-command-reference
-title: Magic command reference
+id: magic-commands
+title: Magic commands
 description: Learn about Teradata AI Unlimited JupyterLab magic commands.
 sidebar_position: 4
 tags:
@@ -9,7 +9,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Magic command reference
+# Magic commands
 
 ***Keep, per Jack, even though the commands are in the notebook. In the notebook, the general commands and AI Unlimited commands are all together, so good to see a list of the AI Unlimited ones only. The kernel is in dev - updates to this topic needed.***
 
