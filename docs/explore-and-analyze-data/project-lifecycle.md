@@ -13,7 +13,7 @@ You create, run, and manage analytics projects in [Jupyter](https://docs.jupyter
 
 
 **Get your API key.**
-The first time you log in to the workspace service using your AI Unlimited Git repository credentials, your API key is generated. Copy it.
+Sign in to AI Unlimited, and copy your API key.
 
 ***image of the key in workspaces--to show its location there - this is good use of a screenshot, because the user is not necessarily in workspaces now, and we want to point out where this one small thing is on that UI***
 
