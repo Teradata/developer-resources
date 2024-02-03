@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Are you ready to scale? Use the production installation to prepare for enterprise use. 
 
-This puts AI Unlimited on your cloud service provider (CSP) on an instance without JupyterLab, which simplifies security and sizing. For the JupyterLab location, you have these options:
+This puts AI Unlimited on your cloud service provider (CSP) on a server instance without JupyterLab, which simplifies security and sizing. For the JupyterLab location, you have these options:
 
 - On your CSP on a separate instance from AI Unlimited:
   - Installed using the AI Unlimited cloud template for JupyterLab, which includes the AI Unlimited kernel 
@@ -15,7 +15,5 @@ This puts AI Unlimited on your cloud service provider (CSP) on an instance witho
 - On your computer, but not in a ***Docker?*** container, in which case you need to add the AI Unlimited kernel
 
 ***Might they have it, without the kernel, on their computer in a container that's not a Docker container?***
-
-***same "instance" question in the demo install intro applies here***
 
 
