@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Next steps
 
-Now that you've set up AI Unlimited, you can [create your first project](/docs/explore-and-analyze-data/create-first-project.md)!
+Now you're ready to [create your first project](/docs/explore-and-analyze-data/create-first-project.md)!
 
 Or, proceed with any of these steps:
 - See the [project lifecycle](/docs/explore-and-analyze-data/project-lifecycle.md), at a glance from beginning to end
