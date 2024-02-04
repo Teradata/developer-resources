@@ -2,7 +2,7 @@
 id: setup-workspace-service
 title: Set up the workspace service
 description: Steps to setup workspace service
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - Install AI Unlimited
   - Install using Docker

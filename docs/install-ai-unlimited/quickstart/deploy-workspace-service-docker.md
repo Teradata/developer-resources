@@ -2,7 +2,7 @@
 id: deploy-workspace-service-docker
 title: Install the workspace service using Docker
 description: Steps to deploy AI Unlimited using Docker Engine and Docker Compose.
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - Install AI Unlimited
   - Install using Docker

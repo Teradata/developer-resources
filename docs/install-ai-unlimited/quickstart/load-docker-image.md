@@ -2,7 +2,7 @@
 id: load-docker-image
 title: Load the Docker image and prepare the environment
 description: Steps to load the AI Unlimited Docker image and set the environment.
-sidebar_position: 2
+sidebar_position: 3
 tags:
   - Install AI Unlimited
   - Install AI Unlimited using Docker

@@ -2,7 +2,7 @@
 id: deploy-jupyter-docker
 title: Deploy JupyterLab for AI Unlimited using Docker
 description: Steps to deploy JupyterLab using Docker Engine and Compose file.
-sidebar_position: 6
+sidebar_position: 7
 tags:
   - Install AI Unlimited
   - Deploy JupyterLab
