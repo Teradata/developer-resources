@@ -1,6 +1,6 @@
 ---
 id: create-github-oauth-app
-title: Create a GitHub OAuth app
+title: Create a GitHub or GitLab OAuth app
 description: Steps to create a GitHub OAuth app and authorize users.
 sidebar_position: 4
 tags:
