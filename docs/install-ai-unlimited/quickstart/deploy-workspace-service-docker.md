@@ -13,63 +13,10 @@ import TabItem from '@theme/TabItem';
 
 # Install the workspace service using Docker
 
-Use [Docker Engine](https://docs.docker.com/engine/) or [Docker Compose](https://docs.docker.com/compose/) to install the workspace service.
-
-- Docker Engine: Text insert
-- Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation. 
-
-***MEM: UPDATED It seems that Engine is for single-container applications, and Compose is for multi-container applications. And Compose adds efficiency to managing multi-container applications. Workspaces has a single container, so Compose might not add efficiency. But maybe some users just like Compose--personal preference. If that's all true (ask Jack), let's not try to explain why they might choose one over the other.***
+Use [Docker Compose](https://docs.docker.com/compose/) to install the workspace service. With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation.
 
 ***MEM: Link "workspace service" to the glossary term. Possible to add anchors?***
-
-:::note 
-For Azure, Teradata recommends installing workspace service using Docker Compose.
-:::
-
-***MEM: Let's remove this reference to the workspace service CLI. It's just for a portion of the overall audience and needs more explanation than I think we want to include in this workflow (for instance, that it's for developers working on automation, etc.). Was good to get that clarification from Jack on 1/9--he explained that to me previously, and I forgot!***
-
-Run the Docker image.
-
-***MEM: Because setting WORKSPACES_HOME is addressed in the previous topic, we don't need to repeat it. (Unless this refers to something else?) Generally, we can assume they do what we tell them to do. Otherwise we'd have lots of repetition, and they might wonder whether or not it's the same thing they already did. We don't want them to have to wonder. So you can end the sentence with "image." Actually, you can remove the whole sentence. Running the image is addressed on the tabs.***
-
-***TA: I feel, we need to retain 'Run the Docker image'. Else, users are directly taken to the tab,
-
-<Tabs>
-  <TabItem value="Engine" label="Docker Engine" default>
-
-:::note
- Modify the directories based on your requirements.
- :::
- 
- ***MEM: Maybe telling them to modify the directories doesn't really qualify as an "INFO" admonition? It doesn't seem like additional info, expanding on a point, a reminder to do something later, a best practice, etc. It just tells them to do something now. I see the benefit of emphasizing it, though. And, WARNING is too strong.***
-
- ***TA: there are some variables in the following code that users need to replace.***
-
-   ```bash title="Docker Engine Run"
-    docker run -detach \
-  --env accept_license="Y" \
-  --env AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
-  --env AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
-  --env AWS_SESSION_TOKEN="${AWS_SESSION_TOKEN}" \
-  --publish 3000:3000 \
-  --publish 3282:3282 \
-  --volume ${WORKSPACES_HOME}:/etc/td \
-  teradata/ai-unlimited-workspaces:latest
-   ```
-  ***MEM: Do they need to install Docker Engine (https://docs.docker.com/engine/install/) before they run the command? Is that step 1, like in Compose?***
-
-  ***TA: No, we have already installed Docker is before you begin. That is enough to run the command.***
   
-  ***MEM: Then step 2 could be "Run Docker Engine, modifying the WORKSPACES_HOME directories as needed."***
-  
-  ***MEM: For the code, same question as in the previous topic about "etc" in the directory path--I bet there's a standard.***
-  
-  The command downloads and starts a workspace service container, and publishes the ports needed to access it. Once the workspace service server is initialized and started, you can access it using this URL: http://ip_or_hostname:3000/.
-  
-
-  </TabItem>
-  <TabItem value="Compose" label="Docker Compose">
-   
 1. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
 2.	Create a **workspaces.yml** file and copy the code in the tab.
@@ -159,14 +106,5 @@ services:
 ```bash title="Docker Compose Run"
 docker compose -f workspaces.yaml
 ```
-Once the workspace service server is initialized and started, you can access it using the URL: http://ip_or_hostname:3000/.
-
-***MEM: For my understanding... isn't the workspace service running locally in the Docker container? "Server" is throwing me off a bit, because it sounds like a separate computer. Can we delete "server"? Learned more: a "server" can run locally. Simpler language could work here: "When the [name for workspace servier UI] is ready [does it take some time?], you can access it at [url - and I put a question about the url in the slack channel]***
-
-***We should probably bold the url.***
-  </TabItem>
-  </Tabs>
-
-
-
+When the workspace service UI is ready, you can access it at **http://[ip_or_hostname]:3000/**.
 
