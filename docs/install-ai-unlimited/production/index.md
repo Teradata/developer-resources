@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Production installation
 
-Are you ready to scale? Use the production installation to prepare for enterprise use. 
+Are you ready to scale? Use the production installation to be ready for enterprise use. 
 
 This puts AI Unlimited on your cloud service provider (CSP) on a server instance without JupyterLab, which simplifies security and sizing. For the JupyterLab location, you have these options:
 
