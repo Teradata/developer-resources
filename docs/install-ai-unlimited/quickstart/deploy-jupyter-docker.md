@@ -1,7 +1,7 @@
 ---
 id: deploy-jupyter-docker
-title: Deploy JupyterLab for AI Unlimited using Docker
-description: Steps to deploy JupyterLab using Docker Engine and Compose file.
+title: Install JupyterLab for AI Unlimited using Docker
+description: Steps to install JupyterLab using Docker Engine and Compose file.
 sidebar_position: 7
 tags:
   - Install AI Unlimited
@@ -10,7 +10,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deploy JupyterLab for AI Unlimited using Docker
+# Install JupyterLab for AI Unlimited using Docker
 
 ***MEM: Let's try moving this topic to before the OAuth topic. Then all install types will go from setting up workspaces to next steps.***
 
@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 
 ***TA: JupyterLab for AI Unlimited is different from the normal version available. Won't users need to differentiate between the two versions available?***
 
-This article outlines the steps for deploying and setting up a Teradata AI Unlimited interface using Docker. You can use JupyterLab or workspace client as your Teradata AI Unlimited interface.
+Create, run, and manage your analytics projects in Jupyter notebooks that use the AI Unlimited Jupyter Kernel.
 
 ***MEM: Generally, we can avoid sentences like the first one. The topic's context and title aleady convey that meaning.***
 
@@ -36,9 +36,7 @@ This article outlines the steps for deploying and setting up a Teradata AI Unlim
 
 ***MEM: Let's not mention the workspaces service CLI in this topic, as that's not for running analytics and seems to not be the usual way to manage projects That will go with the management topics, or maybe in its own developer section--for users developing automation.***
 
-You can deploy JupyterLab for AI Unlimited using the following: 
-
-***MEM: In the sentence above, it seems good to keep the long name. It's just nice to have the topic's title be shorter--easier to skim the left nav. And we can replace "deploy" with "install."***
+You can install JupyterLab for AI Unlimited using the following: 
 
 - Docker Engine: With Docker Engine, you can facilitate uniform and efficient Docker-based JupyterLab installation.
 - Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
@@ -50,9 +48,6 @@ To load your Docker image and prepare your environment, do the following:
   2. Set the `JUPYTER_HOME` variable.
 
 ***MEM: See comments in the install workspace service topic--let's handle Engine vs. Compose the same way.***
-
-***MEM: Are pulling the Docker image and setting JUPYTER_HOME things they do whether they use Engine or Compose (like in the workspace service flow)? Or, is the Docker image for Engine only? Trying to make sure we have the right stuff on the tabs and the right stuff before the tabs--for this topic and for the workspace service install.***
-***TA: Yes, the image is require whether the user runs the command via Engine or Compose. I will correct this section and align it.***
 
 ***Just noting that, for the workspace service flow, we might end with 1. getting the image, 2. doing the variables, and 3. using Engine/Compose all in the same topic afterall (like how it is for Jupyter, to be consistent)--it's just hard for me to see that clearly now. I'll stop marking this topic, and let's see how things look after you've made changes.***
 
@@ -115,7 +110,7 @@ docker compose -f jupyter.yml up
   </TabItem>
   </Tabs>
 
-Once the JupyterLab server is initialized and started, you can connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted. 
+When the JupyterLab server is ready, you can access it at http://localhost:8888 and enter the token when prompted. 
 
 For detailed instructions, see [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter) or [Use Vantage from a Jupyter Notebook](https://quickstarts.teradata.com/jupyter.html).
 

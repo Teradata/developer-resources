@@ -11,17 +11,19 @@ tags:
 
 # Create a GitHub or GitLab OAuth app
 
-The workspace service uses the GitHub or GitLab OAuth app to authorize users and manage the project state, and it stores this information in your Git repository.
+The workspace service uses the GitHub or GitLab OAuth app to authorize users and manage the project state. It then stores this information in your Git repository.
 
 1. Log in to your Git repository account.
 2. Create an OAuth app. See [GitHub: Create an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) or [GitLab: Create an OAuth app](https://docs.gitlab.com/ee/integration/oauth_provider.html).
   
     While registering the OAuth app, type the following workspace service URLs in the URL fields:
   
-    * **Homepage URL**: http://ip_or_hostname:3000/
-    * **Authorization callback URL**: http://ip_or_hostname:3000/auth/github/callback
+    * **Homepage URL**: **http://[ip_or_hostname]:3000/**
+    * **Authorization callback URL**: **http://[ip_or_hostname]:3000/auth/github/callback**
+    
+    For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).
 
-***TA: Are there any fields users need to enter for GitLab. Ilsun mentioned 'scope' for GitLab. The list of scope is mentioned in the GitLab table. Ilsun to confirm Teradata recommendation.***
+***TA: Ilsun to confirm Teradata recommendation.***
 
 3.	Copy and retain the **Client ID** and **Client secret key**. You'll use them to authorize the workspace service to save user and project information.
 
