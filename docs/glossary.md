@@ -8,11 +8,11 @@ sidebar_position: 6
 
 (What kind of terms do we want?)
 
-**Term**
+## Term
 Definition
 
-**Term**
+## Term
 Definition
 
-**Term**
+## Term
 Definition
