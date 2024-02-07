@@ -2,7 +2,7 @@
 id: deploy-jupyter-docker
 title: Install JupyterLab for AI Unlimited using Docker
 description: Steps to install JupyterLab using Docker Engine and Compose file.
-sidebar_position: 7
+sidebar_position: 8
 tags:
   - Install AI Unlimited
   - Deploy JupyterLab
@@ -16,67 +16,28 @@ import TabItem from '@theme/TabItem';
 
 ***TA: To set up workspace, won't user need to create OAuth app first?***
 
-***MEM: In the title, let's say "Install" instead of "Deploy" as the latter sounds like a bigger effort, and to use plain language.***
-
-***TA: Install gives a sense of placing software to a machine/system where as deploy is widely used  for cloud environment?***
-
 ***MEM: Also in the title, I'm now thinking we can delete "for AI Unlimited." Yes, that's part of the official, long name, but it ends up looking like just extra words--users know they are installing it for AI Unlimited.***
 
 ***TA: JupyterLab for AI Unlimited is different from the normal version available. Won't users need to differentiate between the two versions available?***
 
-Create, run, and manage your analytics projects in Jupyter notebooks that use the AI Unlimited Jupyter Kernel.
-
-***MEM: Generally, we can avoid sentences like the first one. The topic's context and title aleady convey that meaning.***
-
-***MEM: Instead, dive into why users should care... "You create analytics projects, run them, and manage them in Jupyter notebooks that use the AI Unlimited Jupyter Kernel."***
-
-***TA: with a tinge of marketing language: Leverage the AI Unlimited Kernel within the JupyterLab Notebook to write and run data projects, connect to the Teradata systems, and visualize data.*** 
+Create, run, and manage your analytics projects in Jupyter notebooks that use the AI Unlimited Jupyter Kernel. You can use Docker Compose to install JupyterLab for AI Unlimited. 
 
 ***MEM: Let's add a note here: "Administrators can manage projects through the workspace service interface. Jupyter notebook users can manage a project in its notebook." (This will have to be refined, discussed with Artur/Jack.)***
 
-***MEM: Let's not mention the workspaces service CLI in this topic, as that's not for running analytics and seems to not be the usual way to manage projects That will go with the management topics, or maybe in its own developer section--for users developing automation.***
-
-You can install JupyterLab for AI Unlimited using the following: 
-
-- Docker Engine: With Docker Engine, you can facilitate uniform and efficient Docker-based JupyterLab installation.
-- Docker Compose: With Docker Compose, you can easily configure, install, and upgrade your Docker-based JupyterLab installation.
-
 To load your Docker image and prepare your environment, do the following:
 
-  1. Open a terminal window and pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
+1. Open a terminal window and pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
    
-  2. Set the `JUPYTER_HOME` variable.
+2. Set the `JUPYTER_HOME` variable.
 
-***MEM: See comments in the install workspace service topic--let's handle Engine vs. Compose the same way.***
+3. Install Docker Compose. See https://docs.docker.com/compose/install/.
 
-***Just noting that, for the workspace service flow, we might end with 1. getting the image, 2. doing the variables, and 3. using Engine/Compose all in the same topic afterall (like how it is for Jupyter, to be consistent)--it's just hard for me to see that clearly now. I'll stop marking this topic, and let's see how things look after you've made changes.***
-
-<Tabs>
-  <TabItem value="Engine" label="Docker Engine" default>
-  Run the Docker image once you’ve set the `JUPYTER_HOME` variable.
-    
-:::note
+4. Create a **jupyter.yml** file.
+ :::note
 Modify the directories based on your requirements.
 :::
 
-   ```bash title="Docker Engine Run"
-docker run -detach \
-  --env “accept_license=Y” \
-  --publish 8888:8888 \
-  --volume ${JUPYTER_HOME}:/home/jovyan/JupyterLabRoot \
-  teradata/ai-unlimited-jupyter:latest
-   
-   ```
-  The command downloads and starts a JupyterLab container and publishes the ports needed to access it.
-
-  </TabItem>
-  <TabItem value="Compose" label="Docker Compose">
-   
-1. Install Docker Compose. See https://docs.docker.com/compose/install/.
-
-2.	Create a **jupyter.yml** file.
-
-```bash title="Jupyter Docker Compose"
+```bash 
 
     version: "3.9"
 
@@ -100,16 +61,11 @@ networks:
   td-ai-unlimited:
 
 ```
-   
-3. Go to the directory where the **jupyter.yml** file is located and start JupyterLab.
+5. Go to the directory where the **jupyter.yml** file is located and start JupyterLab.
 
-```bash title="Docker Compose Run
+```bash 
 docker compose -f jupyter.yml up
 ```
-
-  </TabItem>
-  </Tabs>
-
 When the JupyterLab server is ready, you can access it at http://localhost:8888 and enter the token when prompted. 
 
 For detailed instructions, see [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/Teradata-VantageTM-Modules-for-Jupyter-Installation-Guide/Teradata-Vantage-Modules-for-Jupyter/Teradata-Vantage-Modules-for-Jupyter) or [Use Vantage from a Jupyter Notebook](https://quickstarts.teradata.com/jupyter.html).

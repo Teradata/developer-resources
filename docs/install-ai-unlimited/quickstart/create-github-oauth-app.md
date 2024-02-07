@@ -1,8 +1,8 @@
 ---
 id: create-github-oauth-app
 title: Create a GitHub or GitLab OAuth app
-description: Steps to create a GitHub OAuth app and authorize users.
-sidebar_position: 5
+description: Steps to create a Git OAuth app and authorize users.
+sidebar_position: 6
 tags:
   - Install AI Unlimited
   - Install using Docker

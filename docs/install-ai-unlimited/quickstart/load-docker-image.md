@@ -2,7 +2,7 @@
 id: load-docker-image
 title: Load the Docker image and prepare the environment
 description: Steps to load the AI Unlimited Docker image and set the environment.
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - Install AI Unlimited
   - Install AI Unlimited using Docker
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ***TA: Agree, it will be easier for user to get the image and install in one-go. We can take a decision based on how UI evolves.***
 
-The Docker image is an executable package that includes everything you need to run the workspace service in a Docker container. The workspace service orchestrates the AI Unlimited elements and supports project management tasks.
+The Docker image is an executable package that includes everything you need to run AI Unlimited in a Docker container. The AI Unlimited UI orchestrates the AI Unlimited elements and supports project management tasks.
 
 ***MEM: Let's add a sentence that defines the workspace service--in simple terms. You could grab that from the Welcome topic (not that it won't change of course).***
 
@@ -37,8 +37,23 @@ The Docker image is an executable package that includes everything you need to r
 
 ***TA: Yes, the option is displayed only on hover, for most companies, however, Google documents have the copy option enabled by default.***
 
-2. Copy and retain these CSP environment variables from your CSP console or using CLI. 
+2. Set the environment variable `WORKSPACES_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/workspaces**.
 
+    | Local Location | Container Location | Usage |
+    |----------------|--------------------|-------|
+    | $WORKSPACES_HOME | /etc/td | Stores data and configuration |
+    | $WORKSPACES_HOME/tls | /etc/td/tls | Stores certificate files |
+  
+ 
+  ***MEM: Should "etc" be replaced with a more standard way of showing unkown directories in a path? Or is that the actual path?***
+
+  ***TA: etc is actual path and a standard representation within the dev community. We can ask Jack for better understanding***
+  
+  ***MEM: So the first step is in the terminal, the second step is in the CSP console/CLI, and the third step assumes they are still in the console/CLI. Step 1 is for one thing, steps 2 and 3 for something else. For at-a-glance clarity, let's add "In the CSP console," or "In the CSP console or CLI," to the beginning of step 2 as well.***
+
+  ***TA: Users need the copy the CSP environment variable before running the docker run command. The problem with the environment variables is that they are short term, if you copy and retain it at the beginning of the process, most likely they will expire by the time you run the command. Step 3 has no relation to CSP, the workspace Home variable is for Docker configuration. You can run your commands without setting that, however, there are chances you may encounter errors, mostly when you're using CLI.***
+
+3. Copy and retain these CSP environment variables from your CSP console or using CLI. 
 
     <Tabs>
     <TabItem value="aws" label="AWS" default>
@@ -62,20 +77,5 @@ The Docker image is an executable package that includes everything you need to r
 
     </TabItem>
     </Tabs>
-
-3. Set the environment variable `WORKSPACES_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/workspaces**.
-
-    | Local Location | Container Location | Usage |
-    |----------------|--------------------|-------|
-    | $WORKSPACES_HOME | /etc/td | Stores data and configuration |
-    | $WORKSPACES_HOME/tls | /etc/td/tls | Stores certificate files |
-  
- 
-  ***MEM: Should "etc" be replaced with a more standard way of showing unkown directories in a path? Or is that the actual path?***
-
-  ***TA: etc is actual path and a standard representation within the dev community. We can ask Jack for better understanding***
-  
-  ***MEM: So the first step is in the terminal, the second step is in the CSP console/CLI, and the third step assumes they are still in the console/CLI. Step 1 is for one thing, steps 2 and 3 for something else. For at-a-glance clarity, let's add "In the CSP console," or "In the CSP console or CLI," to the beginning of step 2 as well.***
-
 
 
