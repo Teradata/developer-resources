@@ -13,14 +13,13 @@ import TabItem from '@theme/TabItem';
 
 # Install AI Unlimited using Docker
 
-**Step 1: Get the AI Unlimited Docker image and prepare the environment**
+Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited. With Docker Compose, you can easily configure, install, and upgrade your Docker-based AI Unlimited installation.
 
 1. Open a terminal window and pull the Docker image from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
 
 ```bash
 docker pull teradata/ai-unlimited-workspaces
 ```
-
 2. Set the environment variable `WORKSPACES_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/workspaces**.
 
     | **Local location** | **Container location** | **Usage** |
@@ -45,13 +44,9 @@ docker pull teradata/ai-unlimited-workspaces
     </TabItem>
     </Tabs>
 
-**Step 2: Install AI Unlimited using Docker**
+4. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
-Use [Docker Compose](https://docs.docker.com/compose/) to install the workspace service. With Docker Compose, you can easily configure, install, and upgrade your Docker-based workspace service installation.
-
-1. Install [Docker Compose](https://docs.docker.com/compose/install/). 
-
-2.	Create a **workspaces.yml** file and copy the code in the tab.
+5.	Create a **workspaces.yml** file and copy the code in the tab.
 
 :::note 
 The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Install AI Unlimited Using Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
@@ -121,10 +116,10 @@ services:
    </TabItem>
    </Tabs>
    
-   3.	Go to the directory where the **workspaces.yml** file is located and start the workspace service.
+6.	Go to the directory where the **workspaces.yml** file is located and start the workspace service.
 
 ```bash title="Docker Compose Run"
 docker compose -f workspaces.yaml
 ```
-When the workspace service UI is ready, you can access it at **http://[ip_or_hostname]:3000/**.
+When the AI Unlimited UI is ready, you can access it at **http://[ip_or_hostname]:3000/**.
 
