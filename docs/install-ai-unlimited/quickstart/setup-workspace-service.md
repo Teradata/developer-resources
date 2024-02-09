@@ -1,6 +1,6 @@
 ---
 id: setup-workspace-service
-title: Set up the workspace service
+title: Set up AI Unlimited
 description: Steps to setup workspace service
 sidebar_position: 6
 tags:
@@ -11,7 +11,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Set up the workspace service
+# Set up AI Unlimited
 
 Access the the workspace service UI using the url **http://[ip_or_hostname]:3000/** if you installed the workspace service using Docker or using the URL from your CSP console.
 

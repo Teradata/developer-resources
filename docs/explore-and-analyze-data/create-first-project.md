@@ -11,9 +11,8 @@ tags:
 
 # Create your first project
 
-**TA: Do we require to chunk this section? This is a simple workflow and wouldn't it be easier for users to quickly run a use case without having to navigate through multiple pages? If we are introducing connecting to an external data source, make sense to split this into smaller chunks. Examples:https://docs.databricks.com/en/getting-started/etl-quick-start.html**
+Glossary term link test: [term](/docs/glossary.md#glo-term)
 
-**MEM: Agree--it works well as 1 topic.**
 
 This document walks you through a simple workflow where you can use AI Unlimited and JupyterLab to:
 
