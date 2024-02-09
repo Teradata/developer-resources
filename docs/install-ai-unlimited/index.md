@@ -27,3 +27,8 @@ AI Unlimited has these elements:
 - A command line interface (CLI) for... ***developing automation, etc. - need to better understand the specifics***
 
 ***MEM: Embed or link to a video: An authentic, technical introduction, educational not marketing***
+
+Choose an installation type:
+- [QuickStart (just for you)](/docs/install-ai-unlimited/quickstart/index.md)
+- [Demo (to show your team)](/docs/install-ai-unlimited/demo/index.md)
+- [Production (for wider organizational use)](docs/install-ai-unlimited/production/index.md)

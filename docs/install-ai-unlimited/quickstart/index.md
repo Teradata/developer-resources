@@ -1,5 +1,5 @@
 ---
-id: index
+id: quickstart
 title: Quickstart
 description: If you're looking to install AI Unlimited using Docker, start here.
 sidebar_position: 1
