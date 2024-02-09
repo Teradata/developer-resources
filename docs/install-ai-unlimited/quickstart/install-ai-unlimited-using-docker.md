@@ -116,7 +116,7 @@ services:
    </TabItem>
    </Tabs>
    
-6.	Go to the directory where the **workspaces.yml** file is located and start the workspace service.
+6.	Go to the directory where the **workspaces.yml** file is located and start AI Unlimited.
 
 ```bash title="Docker Compose Run"
 docker compose -f workspaces.yaml

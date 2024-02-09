@@ -12,14 +12,14 @@ import TabItem from '@theme/TabItem';
 
 # Install JupyterLab for AI Unlimited using Docker
 
-Create analytics projects, run them, and visualize data in Jupyter notebooks that use the AI Unlimited Jupyter Kernel. The JupyterLab for AI Unlimited Docker image includes the kernel. You can use Docker Compose to install JupyterLab for AI Unlimited. 
+Create, run, and manage your analytics projects in Jupyter notebooks that use the AI Unlimited Jupyter Kernel. The JupyterLab for AI Unlimited Docker image includes the kernel. You can use Docker Compose to install JupyterLab for AI Unlimited. 
 
 
 1. Open a terminal window and pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
    
 2. Set the `JUPYTER_HOME` variable.
 
-3. Install Docker Compose. See https://docs.docker.com/compose/install/.
+3. Install [Docker Compose](https://docs.docker.com/compose/install/).
 
 4. Create a **jupyter.yml** file.
  :::note
