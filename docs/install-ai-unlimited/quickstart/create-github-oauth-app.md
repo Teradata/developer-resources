@@ -17,6 +17,8 @@ AI Unlimited uses the GitHub or GitLab OAuth app to authorize users and manage t
 2. Create an OAuth app. See [GitHub: Create an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) or [GitLab: Create an OAuth app](https://docs.gitlab.com/ee/integration/oauth_provider.html).
   
     While registering the OAuth app, use these URLs:
+	
+	***MEM: Having what's before the colon and what's after the colon in bold is hard on the eyes, isn't it. It defeats the purpose. Maybe we can bend the rules here. Just bold what's before the colon?***
   
     * **Homepage URL**: **http://[ip_or_hostname]:3000/**
     * **Authorization callback URL**: **http://[ip_or_hostname]:3000/auth/github/callback**

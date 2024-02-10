@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited. With Docker Compose, you can easily configure, install, and upgrade your Docker-based AI Unlimited installation.
 
+***MEM: Let's remove the second intro sentence. If they want to learn about Compose, they can click the link. We don't need to say it's easy--or sell them on the idea of using Compose--as we're not giving them a choice of options.***
+
 1. Open a terminal window and pull the Docker image from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
 
 ```bash
@@ -22,13 +24,19 @@ docker pull teradata/ai-unlimited-workspaces
 ```
 2. Set the environment variable `WORKSPACES_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/workspaces**.
 
+	***MEM: Is Jack making changes so that we will no longer have to use "workspaces" anywhere?***
+
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
     | $WORKSPACES_HOME | /etc/td | Stores data and configuration |
     | $WORKSPACES_HOME/tls | /etc/td/tls | Stores certificate files |
+	
   
 3. Copy and retain these CSP environment variables from your CSP console or using CLI. 
 
+***MEM: add "the" before CLI, but...***
+
+***MEM: For Jack - not sure "or using the CLI" is even appropriate here, based on slack Q&A***
     <Tabs>
     <TabItem value="aws" label="AWS" default>
     `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
@@ -46,12 +54,15 @@ docker pull teradata/ai-unlimited-workspaces
 
 4. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
-5.	Create a **workspaces.yml** file and copy the code in the tab.
+5.	Create a **workspaces.yml** file, and copy the code in the tab.
+
+***MEM: I wonder if there's a convention for how to word this. They are copying and pasting--but that seems silly to specify--for this audience.  Would "Create a [filename] file containing the code for your CSP" work? That states the result they need. Kind of like how step 1 does it. They'll see the code and know what to do with it.***
 
 :::note 
 The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Install AI Unlimited Using Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
 :::
 
+***MEM: In the note, the link should reflect what they see when they arrive at the destination. Otherwise, they might at first think they landed in the wrong place. They might expect to see a heading "Install AI Unlimited Using Docker Compose"--especially due to the title case. So how about: "AI Unlimited GitHub: Deploy with Docker Compose."***
 
    <Tabs>
    <TabItem value="aws1" label="AWS">
@@ -116,10 +127,12 @@ services:
    </TabItem>
    </Tabs>
    
-6.	Go to the directory where the **workspaces.yml** file is located and start AI Unlimited.
+6.	Go to the directory where the **workspaces.yml** file is located, and start AI Unlimited.
 
 ```bash title="Docker Compose Run"
 docker compose -f workspaces.yaml
 ```
 When the AI Unlimited UI is ready, you can access it at **http://[ip_or_hostname]:3000/**.
+
+***MEM: I think I said to use "the AI Unlimited UI." But let's just use "AI Unlimited."***
 
