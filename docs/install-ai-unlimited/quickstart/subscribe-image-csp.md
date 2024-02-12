@@ -14,12 +14,7 @@ import TabItem from '@theme/TabItem';
 
 # Subscribe to the engine image
 
-To use AI Unlimited, you must have an image subscription. Complete the steps for your Cloud Service Provider (CSP).
-
-***MEM: Let's remove the first sentence. The topic title makes clear they must have an engine image subscription. All QS topics are things they need to do to use AI Unlimited; the sense that this task is required is already established. To keep text lean, we can ask: What is sentence X saying that its context does not already say?***
-
-***MEM: Can use "cloud service provider" because it's not a proper noun - it's generic.***
-
+Complete the steps for your cloud service provider (CSP).
 
 <Tabs>
 <TabItem value="aws" label="AWS" default>

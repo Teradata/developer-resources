@@ -50,7 +50,7 @@ On the **Configure Git** page, enter the details in the fields, and then select 
 After you are redirected back to AI Unlimited, you can see that an API key was generated for you. 
 **TA: Don't users need to fill in the Step 3 details to view API key?**
 
-You'll use your API key whenever you create a project in a Jupyter notebook. When a new user logs in to [name of workspace service IU], an API key is generated for that user. 
+You'll use your API key whenever you create a project in a Jupyter notebook. When a new user logs in to the AI Unlimited UI, an API key is generated for that user. 
 
 </details>
 
@@ -58,7 +58,7 @@ You'll use your API key whenever you create a project in a Jupyter notebook. Whe
 
 <summary>Step 3: Cloud integration</summary>
 
-Fill in your CSP parameters in the following fields. Before you start with this section, verify that your CSP account has all the resources required by the AI Unlimited engine and that your organization administrator has adequate permissions to configure the resources and services in your CSP.
+Fill in your CSP parameters in the following fields. Before you start, verify that your CSP account has all the resources required by the AI Unlimited engine and that your organization administrator has adequate permissions to configure the resources and services in your CSP.
 
 :::note
 You can modify these parameters directly from the Jupyter notebook while connecting to the AI Unlimited engine.
@@ -78,7 +78,7 @@ You can modify these parameters directly from the Jupyter notebook while connect
 - **Default region**: A single Azure environment corresponds to a single VNet located in a specific region, and all the resources deployed by AI Unlimited on Azure are deployed into that VNet. Teradata recommends selecting a region closest to your primary work location or the region where your data is located.
 - **Default CIDRs**: The address range to define the range of private IPs for VM instances provisioned into the subnets. The CIDR range must be between /16 and /24. The default is 10.0.0.0/16.
 - **Default security group**: Controls inbound and outbound traffic to and from Azure resources within a specified network. Use this field to allow users from your organization access to the resources.
-- **Resouce tags**: The key-value pairs that help you identify resources based on settings that are relevant to your organization. Use tag ai-unlimited to your resources for effective resource and cost management.
+- **Resouce tags**: The key-value pair that help you identify resources based on settings that are relevant to your organization. Use the ai-unlimited tag for effective resource and cost management.
   
 </TabItem>
 </Tabs>
