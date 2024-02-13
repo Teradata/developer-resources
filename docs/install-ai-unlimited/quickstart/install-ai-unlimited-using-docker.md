@@ -20,6 +20,9 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
     ```bash
     docker pull teradata/ai-unlimited-workspaces
     ```
+	
+***MEM: Jack, will the Docker image be renamed "ai-unlimited"?***	
+	
 2. Set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
     | **Local location** | **Container location** | **Usage** |
