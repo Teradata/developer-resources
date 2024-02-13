@@ -4,10 +4,14 @@ sidebar_position: 5
 
 # Update the compute engine version
 
-and what about updates to:
+(how-to)
 
-- workspace service - we provide a new W Docker image, and new cloud templates (W single and all-in-one)?
+(and what about updates to:
 
-- the kernel - we provide a new J Docker image (b/c it includes the kernel), and new cloud templates (J single and all-in-one--because they include the kernel)?
+- what we used to call the "workspace service" - will we provide a new Docker image and new cloud templates?
 
-- JupyterLab... if JL is a cloud installation, whether an existing installation or via our cloud template, maybe it gets automatic updates--so not our concern. But if it's running in the Docker container we provided, then do we need to provide a new Docker image with the new JL version?
+- the kernel - will we provide a new Docker image and new cloud templates if we add/change magic commands? I think it was mentioned that they will be pretty stable though.
+
+- JupyterLab itself, aside from the kernel... will we update the Docker image and cloud templates for the JL version once in a while?
+
+- how will we communicate the updates to users? A What's New link in the header on the doc site?

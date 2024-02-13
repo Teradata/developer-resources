@@ -4,9 +4,9 @@ sidebar_position: 5
 
 # FAQ
 
-(MEM will play w/expandable text. Create facets or role-based sections?)
+(Just brainstorming ideas for Q's, for now.)
 
-(Just brainstorming for now. Please help. Ideas/corrections needed!)
+(MEM will play w/expandable text. Create facets or role-based sections?)
 
 
 **What's the difference between AI Unlimited and Teradata Vantage?**
