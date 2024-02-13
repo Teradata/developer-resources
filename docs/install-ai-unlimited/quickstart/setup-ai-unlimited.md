@@ -13,10 +13,6 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-Access the AI Unlimited UI using the URL **http://[ip_or_hostname]:3000/** if you installed AI Unlimited using Docker or the URL from your CSP console.
-
-***MEM: I'm playing with how to make the above sentence quicker to grasp. It will help when we have the "final" demo and production install content--so we can dovetail that with this. But for now, we could try:*** 
-
 Access the AI Unlimited setup one of these ways:
 
 - **http://[needs further discussion]:3000/** ([QuickStart](/docs/install-ai-unlimited/quickstart/index.md) installation)
@@ -44,7 +40,7 @@ Complete the setup. For additional information, click a section below.
 
 <details>
 
-<summary>Step 1: Service setup</summary>
+<summary>Step 1: The basics</summary>
 
 1. Fill in the details for the following fields:
 

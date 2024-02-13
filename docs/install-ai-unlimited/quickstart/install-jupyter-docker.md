@@ -16,10 +16,11 @@ Create, run, and manage your analytics projects in Jupyter notebooks that use th
 
 Use Docker Compose to install JupyterLab for AI Unlimited. 
 
-***MEM: I removed "You can" so the Compose sentence begins with "Use..." That's a little stronger. And I made that sentence its own para - so it stands out.***
-
-
 1. Open a terminal window, and pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
+
+```bash
+docker pull teradata/ai-unlimited-jupyter
+```
    
 2. Set the `JUPYTER_HOME` variable.
 
@@ -27,14 +28,11 @@ Use Docker Compose to install JupyterLab for AI Unlimited.
 
 3. Install [Docker Compose](https://docs.docker.com/compose/install/).
 
-4. Create a **jupyter.yml** file.
+4. Create a **jupyter.yml** file containing the following code.
 
-***MEM: Add "containing this code"?***
  :::note
-Modify the directories based on your requirements.
+Modify the directories as needed.
 :::
-
-***MEM: How do you feel about "Modify the directories as needed." to be less formal, more friendly, shorter?***
 
 ```bash 
 

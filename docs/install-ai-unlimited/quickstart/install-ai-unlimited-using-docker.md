@@ -17,12 +17,9 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
 
 1. Open a terminal window, and pull the Docker image from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
 
-```bash
-docker pull teradata/ai-unlimited-workspaces
-```
-
-***MEM: Let's make step 1 here and step 1 in the Jupyter install the same. So we either exclude the code here or add the code to step 1 for Jupyter. I'm learning toward no code both places. It forces them to go to Docker Hub and see when the image was last updated, and see any other info Jack/Artur want there for PPP. What do you think?***
-
+    ```bash
+    docker pull teradata/ai-unlimited-workspaces
+    ```
 2. Set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
     | **Local location** | **Container location** | **Usage** |
@@ -30,7 +27,6 @@ docker pull teradata/ai-unlimited-workspaces
     | $AI_UNLIMITED_HOME | /etc/td | Stores data and configuration |
     | $AI_UNLIMITED_HOME/tls | /etc/td/tls | Stores certificate files |
 	
-  
 3. Copy and retain these CSP environment variables from your CSP console or using the CLI. 
 
 ***MEM: For Jack - not sure "or using the CLI" is even appropriate here, based on slack Q&A***
@@ -64,12 +60,12 @@ The following example uses a local volume to store your CSP credentials. You can
 version: "3.9"
 
 services:
-  workspaces:
+  ai-unlimited:
     deploy:
       replicas: 1
     platform: linux/amd64
-    container_name: workspaces
-    image: ${WORKSPACES_IMAGE_NAME:-teradata/ai-unlimited-workspaces}:${WORKSPACES_IMAGE_TAG:-latest}
+    container_name: ai-unlimited-workspaces
+    image: ${AI_UNLIMITED_IMAGE_NAME:-teradata/ai-unlimited-workspaces}:${AI_UNLIMITED_IMAGE_TAG:-latest}
     command: workspaces serve -v
     restart: unless-stopped
     ports:
@@ -78,10 +74,10 @@ services:
       - "3282:3282/tcp"
     environment:
       accept_license: "Y"
-      TZ: ${WS_TZ:-UTC}
+      TZ: ${AI_UNLIMITED_TZ:-UTC}
     volumes:
-    - ${WORKSPACES_HOME:-./volumes/workspaces}:/etc/td
-    - ${WORKSPACES_AWS_CONFIG:-~/.aws}:/root/.aws
+    - ${AI_UNLIMITED_HOME:-./volumes/ai-unlimited-workspaces}:/etc/td
+    - ${AI_UNLIMITED_AWS_CONFIG:-~/.aws}:/root/.aws
 
     networks:
       - td-ai-unlimited
@@ -94,12 +90,12 @@ services:
 version: "3.9"
 
 services:
-  workspaces:
+  ai-unlimited:
     deploy:
       replicas: 1
     platform: linux/amd64
-    container_name: workspaces
-    image: ${WORKSPACES_IMAGE_NAME:-teradata/ai-unlimited-workspaces}:${WORKSPACES_IMAGE_TAG:-latest}
+    container_name: ai-unlimited-workspaces
+    image: ${AI_UNLIMITED_IMAGE_NAME:-teradata/ai-unlimited-workspaces}:${AI_UNLIMITED_IMAGE_TAG:-latest}
     command: workspaces serve -v
     restart: unless-stopped
     ports:
@@ -108,10 +104,10 @@ services:
       - "3282:3282/tcp"
     environment:
       accept_license: "Y"
-      TZ: ${WS_TZ:-UTC}
+      TZ: ${AI_UNLIMITED_TZ:-UTC}
     volumes:
-      - ${WORKSPACES_HOME:-./volumes/workspaces}:/etc/td
-      - ${WS_HOME:-~/.azure}:/root/.azure
+      - ${AI_UNLIMITED_HOME:-./volumes/ai-unlimited-workspaces}:/etc/td
+      - ${AI_UNLIMITED_AZURE_CONFIG:-~/.azure}:/root/.azure
 
     networks:
       - td-ai-unlimited
