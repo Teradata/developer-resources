@@ -12,19 +12,29 @@ import TabItem from '@theme/TabItem';
 
 # Install JupyterLab for AI Unlimited using Docker
 
-Create, run, and manage your analytics projects in Jupyter notebooks that use the AI Unlimited Jupyter Kernel. The JupyterLab for AI Unlimited Docker image includes the kernel. You can use Docker Compose to install JupyterLab for AI Unlimited. 
+Create, run, and manage your analytics projects in Jupyter notebooks that use the AI Unlimited Jupyter Kernel. The JupyterLab for AI Unlimited Docker image includes the kernel. 
+
+Use Docker Compose to install JupyterLab for AI Unlimited. 
+
+***MEM: I removed "You can" so the Compose sentence begins with "Use..." That's a little stronger. And I made that sentence its own para - so it stands out.***
 
 
-1. Open a terminal window and pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
+1. Open a terminal window, and pull the Docker image from [DockerHub](https://hub.docker.com/r/teradata/ai-unlimited-jupyter).
    
 2. Set the `JUPYTER_HOME` variable.
+
+***MEM: Gemini says JUPYTER_HOME "defines the location where JupyterLab stores essential data and configuration files. This includes blah blah blah..." So maybe we say "Set the JUPYTER_HOME variable to the directory for storing the JupyterLab data and configuration files." Something like that? Can it be any directory?***
 
 3. Install [Docker Compose](https://docs.docker.com/compose/install/).
 
 4. Create a **jupyter.yml** file.
+
+***MEM: Add "containing this code"?***
  :::note
 Modify the directories based on your requirements.
 :::
+
+***MEM: How do you feel about "Modify the directories as needed." to be less formal, more friendly, shorter?***
 
 ```bash 
 

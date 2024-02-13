@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Get started
 
-***MEM: Is this content what we need here? Should be in context: What is the user thinking, feeling, and doing when they first arrive here? How did they get here?***
+***MEM: Does this content pick up from the right context? What is the user thinking, feeling, and doing when they first arrive here? How did they get here?***
 
 AI Unlimited is a self-service, on-demand platform that enables you to deploy Teradata's compute engine on your cloud service provider (CSP) and connect it to your data lake. You deploy the engine only as needed for your analytics projects.
 

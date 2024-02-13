@@ -15,14 +15,15 @@ import TabItem from '@theme/TabItem';
 
 Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited. 
 
-1. Open a terminal window and pull the Docker image from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
+1. Open a terminal window, and pull the Docker image from [Docker Hub](https://hub.docker.com/r/teradata/ai-unlimited-workspaces). 
 
 ```bash
 docker pull teradata/ai-unlimited-workspaces
 ```
-2. Set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
-	***MEM: Is Jack making changes so that we will no longer have to use "workspaces" anywhere?***
+***MEM: Let's make step 1 here and step 1 in the Jupyter install the same. So we either exclude the code here or add the code to step 1 for Jupyter. I'm learning toward no code both places. It forces them to go to Docker Hub and see when the image was last updated, and see any other info Jack/Artur want there for PPP. What do you think?***
+
+2. Set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
@@ -50,7 +51,7 @@ docker pull teradata/ai-unlimited-workspaces
 
 4. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
-5.	Create a **ai-unlimited.yml** file containing the code for your CSP.
+5.	Create an **ai-unlimited.yml** file containing the code for your CSP.
 
 :::note 
 The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
@@ -125,5 +126,7 @@ services:
 docker compose -f ai-unlimited.yaml
 ```
 When AI Unlimited is ready, you can access it at **http://[ip_or_hostname]:3000/**.
+
+***MEM: As this topic is only for the local, Docker install, can we just say http://localhost:3000/? The same approach as what's at the end of the Jupyter install topic. In the OAuth topic, and setup, which will be re-used for the other install types, it makes sense to use [ip_or_hostname]. Or maybe I'm misunderstanding something?***
 
 
