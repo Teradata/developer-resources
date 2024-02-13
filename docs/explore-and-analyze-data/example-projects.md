@@ -11,4 +11,4 @@ tags:
 
 # Example projects
 
-***MEM: Artur to adjust example notebooks that were used in a workshop. For PPP, Artur to record accompanying videos (They need Marketing-approved beginning & end from the branding guidelines. Tool? Host location?)***
+(Artur to adjust example notebooks that were used in a workshop. For PPP, Artur to record accompanying videos. They need the animated TD logo (or animated TD AI Unlimited logo--it's in a marketing video) at beginning & end.)

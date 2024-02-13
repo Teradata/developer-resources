@@ -11,7 +11,9 @@ tags:
 
 # Create your first project
 
-Glossary term link test: [term](/docs/glossary.md#glo-term)
+(Glossary term link test: [term](/docs/glossary.md#glo-term))
+
+(topic is not yet edited)
 
 
 This document walks you through a simple workflow where you can use AI Unlimited and JupyterLab to:

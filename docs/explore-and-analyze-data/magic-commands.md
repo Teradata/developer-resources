@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 # Magic commands
 
-***Keep, per Jack, even though the commands are in the notebook. In the notebook, the general commands and AI Unlimited commands are all together, so good to see a list of the AI Unlimited ones only. The kernel is in dev - updates to this topic needed.***
+(Keep, per Jack, even though command descriptions are in the notebook. In the notebook, the general commands and AI Unlimited commands are all together. Will be good for users to see here a list of the AI Unlimited ones only. The kernel is in dev - updates to this topic needed.)
 
 AI Unlimited JupyterLab supports the following magic commands in addition to the existing Teradata SQL Kernel magic commands. See [Teradata JupyterLab Getting Started Guide](https://github.com/Teradata/jupyterextensions/blob/master/notebooks/sql/GettingStarted.ipynb).
 

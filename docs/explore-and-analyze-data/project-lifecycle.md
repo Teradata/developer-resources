@@ -7,58 +7,62 @@ sidebar_position: 2
 
 # Project lifecycle
 
-***figuring out what this should be - maybe just a high-level view - maybe as a graphic - "Create your first project" topic and the example projects involve a bit of scrolling and are specific to workloads, so thinking would be good to show the forest (vs. trees) here - wrestling with whether to include code here - could link to specific topics like "Suspend and resume a project"***
+(Figuring out what this should be - maybe a high-level view - maybe as a graphic.)
 
-You create, run, and manage analytics projects in [Jupyter](https://docs.jupyter.org/en/latest/) notebooks that use the AI Unlimited Jupyter Kernel, which provides AI Unlimited magic commands.  ***Is that Jupyter doc a reasonable place to send them?***
+(The "Create your first project" topic and the notebooks in the "Example projects" topic involve a bit of scrolling and are specific to workloads, so thinking might be good to have a forest, no trees, view.)
+
+(Use color to separate the lifecycle steps from the workload, and to indicate essential vs. optional lifecycle steps?)
+
+You create, run, and manage analytics projects in [Jupyter](https://docs.jupyter.org/en/latest/) notebooks that have the AI Unlimited Jupyter Kernel, which provides [AI Unlimited magic commands](/docs/explore-and-analyze-data/magic-commands.md).
 
 
-**Get your API key.**
+**Get your API key**
 Sign in to AI Unlimited, and copy your API key.
 
-***image of the key in workspaces--to show its location there - this is good use of a screenshot, because the user is not necessarily in workspaces now, and we want to point out where this one small thing is on that UI***
+(image of the key in the UI--to show its location)
 
 
-**In Jupyter, open a notebook (mention the kernel)**
-***What details do they need here?***
+**In JupyterLab, add/open/create (?) a notebook**
+(Details...)
 
 
-**Create the project.**
-Provide the API key and the CSP environment variables. ***add how-to details here or no?***
-
-***include the code?***
+**Do x, y, and z**
+(Details... ip/hostname, API key, tls)
 
 
-**Connect to your data**
+**Create a project**
+(Details... name, CSP, team...)
 
 
-
-**Optionally, add collaborators to the project--WHEN? before or after running workload(s)** (supported for [demo](docs\install-ai-unlimited\demo\index.md) and [production](docs\install-ai-unlimited\production\index.md) installations only)
-
-***include the code?***
+**Deploy the project's engine**
+(Details... project name, size)
 
 
+**Connect**
+(Details... project name)
 
-**Back up project information**
-***include the code?***
 
+**Run your workload (best way to say that?)** (Different color)
+(Details...)
+
+
+**How to address connecting to data in a generic way?** (Different color)
+(Details..)
+
+
+**Back up project information?**
+(Details... Always do before suspending?)
 
 
 **Suspend the project**
-When you're done for the time-being, you can suspend the project. You only pay for the time a project is active. ABC gets retained so you can resume the project just as it is now.
-
-***include the code?***
-
+You only pay for the compute resources used when the project is active. So when you're done for the time-being, you can suspend the project. A, B, and C gets retained, so you can resume the project and pick up right where you left off.
 
 
 **Resume the project**
-Whenever you like, resume the project. ***what details to include about what this really means? or, link to a separate topic? Currently it's under Management, but not sure it should stay there.**
-
-***include the code?***
+Whenever you like, resume the project. (What details to include about what this really means? Link to a separate topic? Currently it's under Manage AI Unlimited, but not sure it should stay there.)
 
 
-
-**What else...**
-
+**What else is mainstream...**
 
 
 **Do they ever remove a project completely?**
