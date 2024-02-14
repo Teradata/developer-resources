@@ -48,7 +48,7 @@ Complete the setup. For additional information, click a section below.
 
 * **Git provider**: The Git provider used to store project details. Currently, Teradata AI Unlimited supports GitHub and GitLab.
 
-* **Service log levels**: Teradata recommends selecting the **Debug** option. This option ensures fine-grained informational events are captured that could help users debug any errors.
+* **Service log levels**: Teradata recommends selecting the **Debug** option. This option captures fine-grained informational events that could help users debug errors.
 
 * **Engine IP network type**: The type of network assigned to an engine instance, which can be either public or private. Select the **Private** option if you're deploying the engine in the same VPC as AI Unlimited.
 
@@ -100,7 +100,7 @@ You can modify these parameters directly from the Jupyter notebook while connect
 - **Default region**: A single Azure environment corresponds to a single VNet located in a specific region, and all the resources deployed by AI Unlimited on Azure are deployed into that VNet. Teradata recommends selecting a region closest to your primary work location or the region where your data is located.
 - **Default CIDRs**: The address range to define the range of private IPs for VM instances provisioned into the subnets. The CIDR range must be between /16 and /24. The default is 10.0.0.0/16.
 - **Default security group**: Controls inbound and outbound traffic to and from Azure resources within a specified network. Use this field to allow users from your organization access to the resources.
-- **Resouce tags**: The key-value pair that help you identify resources based on settings that are relevant to your organization. Use the ai-unlimited tag for effective resource and cost management.
+- **Resource tags**: The key-value pair that helps you identify resources based on settings that are relevant to your organization. Use the ai-unlimited tag to quickly identify, organize, and manage the resources you use in your environment.
   
 </TabItem>
 </Tabs>
