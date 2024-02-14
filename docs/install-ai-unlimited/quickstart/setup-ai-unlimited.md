@@ -15,27 +15,19 @@ import TabItem from '@theme/TabItem';
 
 Access the AI Unlimited setup one of these ways:
 
-- **http://[needs further discussion]:3000/** ([QuickStart](/docs/install-ai-unlimited/quickstart/index.md) installation)
+- **http://localhost:3000/** ([QuickStart](/docs/install-ai-unlimited/quickstart/index.md) installation)
 
-- **http://[best way to represent the URL]/** ([demo](/docs/install-ai-unlimited/demo/index.md) or [production](/docs/install-ai-unlimited/production/index.md) installation)
+- **http://[ip_or_hostname]/** ([demo](/docs/install-ai-unlimited/demo/index.md) or [production](/docs/install-ai-unlimited/production/index.md) installation)
 
 Complete the setup. For additional information, click a section below. 
 
-***MEM: The content in the sections does not need to say anything about "completing fields," "clicking next," etc. We don't need to tell users how to use the UI. The UI makes itself clear on that level. "Step x" in each section's summary is to help users know where to find any additional info for the step they are on.***
+***MEM: The content in the expandable text below will not say anything about "completing fields," "clicking next," etc. We don't need to tell users how to use the UI."***
 
-***MEM: The content here is a reference--for when the information users need is too much to be directly on the UI. So some (just some) fields will have a "Learn more" link that takes users here. If a field is straighforward, no need to include it here.***
+***The content here is a reference--for when the information users need is too lengthly for the UI. So some (just some) fields will have a "Learn more" link that takes users here.***
 
-***MEM: Unfortunately, I don't *think* we can include anchor links so that the Learn more links go to the right step in this topic.(That's just based on a little experimenting I did for the glossary--tried to put anchors, which require headings, in the summary of expandable text. Didn't work. But there's probably a way.) We can at least get them to this topic. The content itself is much more important. We can address certain luxury design items in the future. :-)***
+***I started to work on the field descriptions for the UI and got sidetracked. That's essential for figuring out which fields need to be in this topic and what to say about them. We'll request a review for this topic separately, understanding that some fields on the UI might still change.***
 
-***MEM: For step 1, candidates to include might just be Engine IP network type and the TLS fields (and button).***
-
-***MEM: For step 2, I think the content on the UI will make all the fields clear. I was thinking about helping users understand the authentication that is taking place. Something like "After you complete the fields and authenticate, the authentication process redirects you to your Git provider. Signing in to your GitHub or GitLab account [they know which one they are using, no need to tie it back to step 1] authorizes AI Unlimited to authenticate you as a user and access your Git repo. [Do they get redirected back to the AI Unlimited UI or has that changed since the demo I watched was recorded?]***
-
-***MEM: For step 3... I get the feeling that the fields are still somewhat in flux. But looking at the figma and my (unfinished) comments on it for the field descriptions, it seems that the Default IAM role description is too long for the UI. So that can be a short description on the UI with a Learn more link. Maybe default CIDRs too.***
-
-***MEM: Bottom line... I started to work on the field descriptions for the UI and got sidetracked. That's essential for figuring out which fields need to be in this topic and what to say about them. I will work on them on Wednesday, as tomorrow is the Learning Day. But I'm sure we'll make changes as time goes on. We'll get the QS out for review with tentative content for the Setup topic - so show intent and show how this topic is an extension of the field descriptions on the UI.***
-
-***Step 1 is "The basics" (part of removing "service" from the UI)***
+***This topic will be re-used across the 3 install types.***
 
 
 <details>

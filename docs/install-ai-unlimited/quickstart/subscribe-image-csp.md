@@ -18,6 +18,8 @@ Complete the steps for your cloud service provider (CSP).
 
 ***MEM: Once we have the actual Marketplace pages, let's validate the AWS and Azure steps.***
 
+***This topic will be re-used across the 3 install types.***
+
 <Tabs>
 <TabItem value="aws" label="AWS" default>
 1. Sign in to your AWS account.
