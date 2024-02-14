@@ -30,14 +30,14 @@ This document walks you through a simple workflow where you can use AI Unlimited
 - Copy and retain the following:
 
   - CSP environment variables from your Console. See [Environment Variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
-  - API Key from the workspace service.
+  - API Key from the AI Unlimited.
 
 ## Run your first workload
 
-Run `%help` or `%help <command>` for details on any magic command. See xref::ai-unlimited-magic-reference.adoc[] for more details.
+Run `%help` or `%help <command>` for details on any magic command. See [Magic commands](/docs/explore-and-analyze-data/magic-commands.md) for more details.
 
 1. Connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted.
-2. Connect to the workspace service using the API Key.
+2. Connect to AI Unlimited using the API Key.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=F
     ```

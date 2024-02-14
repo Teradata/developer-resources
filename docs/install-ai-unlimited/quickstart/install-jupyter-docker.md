@@ -22,7 +22,7 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install JupyterLab for
 docker pull teradata/ai-unlimited-jupyter
 ```
    
-2. Set the `JUPYTER_HOME` variable.
+2. [Optional] Set the `JUPYTER_HOME` variable.
 
 ***MEM: Gemini says JUPYTER_HOME "defines the location where JupyterLab stores essential data and configuration files. This includes blah blah blah..." So maybe we say "Set the JUPYTER_HOME variable to the directory for storing the JupyterLab data and configuration files." Something like that? Can it be any directory?***
 
