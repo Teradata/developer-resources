@@ -25,7 +25,7 @@ This document walks you through a simple workflow where you can use AI Unlimited
 
 ## Before you begin
 
-- Deploy and configure Teradata AI Unlimited Workspaces and JupyterLab. See xref::install-ai-unlimited-workspaces-docker.adoc[] and xref::install-ai-unlimited-interface-docker.adoc[].
+- Deploy and configure [Teradata AI Unlimited](/docs/install-ai-unlimited/quickstart/install-ai-unlimited-using-docker.md) and [JupyterLab](/docs/install-ai-unlimited/quickstart/install-jupyter-docker.md).
 
 - Copy and retain the following:
 
