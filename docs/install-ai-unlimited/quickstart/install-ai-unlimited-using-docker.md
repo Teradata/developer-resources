@@ -23,7 +23,7 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
 	
 ***MEM: Jack, will the Docker image be renamed "ai-unlimited"?***	
 	
-2. Set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
+2. [Optional] Set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
@@ -50,7 +50,7 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
 
 4. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
-5.	Create an **ai-unlimited.yml** file containing the code for your CSP.
+5. Create an **ai-unlimited.yml** file containing the code for your CSP.
 
 :::note 
 The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
@@ -124,8 +124,7 @@ services:
 ```bash title="Docker Compose Run"
 docker compose -f ai-unlimited.yaml
 ```
-When AI Unlimited is ready, you can access it at **http://[ip_or_hostname]:3000/**.
+When AI Unlimited is ready, you can access it at **http://localhost:3000/**.
 
-***MEM: As this topic is only for the local, Docker install, can we just say http://localhost:3000/? The same approach as what's at the end of the Jupyter install topic. In the OAuth topic, and setup, which will be re-used for the other install types, it makes sense to use [ip_or_hostname]. Or maybe I'm misunderstanding something?***
 
 
