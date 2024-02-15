@@ -21,7 +21,7 @@ Access the AI Unlimited setup one of these ways:
 
 Complete the setup. For additional information, click a section below. 
 
-***MEM: The content in the expandable text below will not say anything about "completing fields," "clicking next," etc. We don't need to tell users how to use the UI."***
+***MEM: The content in the expandable text below will not say anything about "completing fields," "clicking next," etc. We don't need to tell users how to use the UI.***
 
 ***The content here is a reference--for when the information users need is too lengthly for the UI. So some (just some) fields will have a "Learn more" link that takes users here.***
 

@@ -3,6 +3,7 @@ id: get-started
 title: Get started
 description: Learn about the AI Unlimited platform
 sidebar_position: 1
+pagination_next: null
 tags:
   - Getting started
   - Install AI Unlimited
