@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Explore and analyze data
 
-Learn about AI Unlimited projects, and how to use [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) functions with your large-scale data sets.
+Learn about AI Unlimited projects, and how to use [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) functions with your large-scale datasets.
 
 - [Create your first project](/docs/explore-and-analyze-data/create-first-project.md)
 - See the [project lifecycle](/docs/explore-and-analyze-data/project-lifecycle.md), at a glance
