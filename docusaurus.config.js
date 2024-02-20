@@ -65,6 +65,9 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      metadata: [
+        {name: 'keywords', content: 'Teradata, AI Unlimited'},
+      ],
       navbar: {
         title: 'AI Unlimited',
         logo: {
