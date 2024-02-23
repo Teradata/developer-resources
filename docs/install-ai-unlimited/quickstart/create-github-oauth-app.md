@@ -1,7 +1,8 @@
 ---
 id: create-github-oauth-app
-title: Create a Git OAuth app
+title: Teradata | AI Unlimited | Installation | Create a Git OAuth app
 description: Steps to create a Git OAuth app to authorize users.
+sidebar_label: Create a Git OAuth app
 sidebar_position: 6
 tags:
   - Install AI Unlimited
