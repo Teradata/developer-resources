@@ -15,14 +15,14 @@ tags:
 
 ***MEM: This topic will be re-used across the 3 install types.***
 
-AI Unlimited uses the GitHub or GitLab OAuth app to authorize users and manage the project state. It then stores this information in your Git repository.
+AI Unlimited uses the GitHub or GitLab OAuth app to authorize users and manage the project. It then stores this information in your Git repository.
 
 1. Log in to your Git repository.
 2. Create an OAuth app. See [GitHub: Create an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) or [GitLab: Create an OAuth app](https://docs.gitlab.com/ee/integration/oauth_provider.html).
   
     While registering the OAuth app, use these URLs:
  
-    * **Homepage URL**: http://[ip_or_hostname]:3000/
+    * **Homepage URL**: http://[ip_or_hostname]:3000
     * **Authorization callback URL**: http://[ip_or_hostname]:3000/auth/github/callback
     
     For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).

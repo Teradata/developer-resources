@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 Access the AI Unlimited setup one of these ways:
 
-- **http://localhost:3000/** ([QuickStart](/docs/install-ai-unlimited/quickstart/index.md) installation)
+- **http://localhost:3000** ([QuickStart](/docs/install-ai-unlimited/quickstart/index.md) installation)
 
 - **http://[ip_or_hostname]/** ([demo](/docs/install-ai-unlimited/demo/index.md) or [production](/docs/install-ai-unlimited/production/index.md) installation)
 

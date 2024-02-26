@@ -26,9 +26,7 @@ docker pull teradata/ai-unlimited-jupyter
 
 ***MEM: Gemini says JUPYTER_HOME "defines the location where JupyterLab stores essential data and configuration files. This includes blah blah blah..." So maybe we say "Set the JUPYTER_HOME variable to the directory for storing the JupyterLab data and configuration files." Something like that? Can it be any directory?***
 
-3. Install [Docker Compose](https://docs.docker.com/compose/install/).
-
-4. Create a **jupyter.yml** file containing the following code.
+3. Create a **jupyter.yaml** file containing the following code.
 
  :::note
 Modify the directories as needed.
@@ -58,9 +56,9 @@ networks:
   td-ai-unlimited:
 
 ```
-5. Go to the directory where the **jupyter.yml** file is located and start JupyterLab.
+5. Go to the directory where the **jupyter.yaml** file is located and start JupyterLab.
 
 ```bash 
-docker compose -f jupyter.yml up
+docker compose -f jupyter.yaml up
 ```
 The command downloads and starts a JupyterLab container and publishes the port and token needed to access it. You can then access JupyterLab at http://localhost:8888 and enter the token when prompted. 

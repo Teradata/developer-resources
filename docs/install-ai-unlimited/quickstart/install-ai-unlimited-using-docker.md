@@ -48,12 +48,10 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
     </TabItem>
     </Tabs>
 
-4. Install [Docker Compose](https://docs.docker.com/compose/install/). 
-
-5. Create an **ai-unlimited.yml** file containing the code for your CSP.
+4. Create an **ai-unlimited.yml** file containing the code for your CSP.
 
 :::note 
-The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
+The following example uses a seperate YAML file to store CSP environment variables. You can also use a local volume to store your CSP credentials, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
 :::
 
    <Tabs>
@@ -119,12 +117,25 @@ services:
    </TabItem>
    </Tabs>
    
-6.	Go to the directory where the **ai-unlimited.yml** file is located, and start AI Unlimited.
+6.	Go to the directory where the **ai-unlimited.yaml** and CSP credential files are located, and start AI Unlimited.
 
-```bash title="Docker Compose Run"
-docker compose -f ai-unlimited.yaml
-```
-When AI Unlimited is ready, you can access it at **http://localhost:3000/**.
+<Tabs>
+   <TabItem value="aws1" label="AWS">
+   
+   ```bash title="AWS Docker Compose Run"
+    docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml up
+
+   ```
+   </TabItem>
+   <TabItem value="azure" label="Azure">
+
+   ```bash title="Azure Docker Compose Run"
+   docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml up
+   ```
+   </TabItem>
+   </Tabs>
+
+When AI Unlimited is ready, you can access it at **http://localhost:3000**.
 
 
 
