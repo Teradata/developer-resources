@@ -1,7 +1,8 @@
 ---
 id: create-first-project
-title: Create your first project
-description: Run a simple workflow and learn how to use Teradata AI Unlimited.
+title: Teradata - AI Unlimited - create your first project
+description: Learn how to use AI Unlimited by running a simple workflow in a Jupyter notebook.
+sidebar_label: Create your first project
 sidebar_position: 1
 tags:
   - Install AI Unlimited

@@ -1,4 +1,7 @@
 ---
+title: Teradata - AI Unlimited - glossary
+description: Terminology regarding the installation and use of AI Unlimited.
+sidebar_label: Glossary
 sidebar_position: 7
 ---
 

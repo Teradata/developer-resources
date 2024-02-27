@@ -17,21 +17,20 @@ import TabItem from '@theme/TabItem';
 
 ***The first sentence should probably convey that this is for data engineers, data scientists, and developers--and what value it enables them to reap (the overall use case).***
 
-AI Unlimited is a self-service, on-demand platform that enables you to deploy Teradata's compute engine on your cloud service provider (CSP) and connect it to your data lake. You deploy the engine only as needed for your analytics projects.
+AI Unlimited is a self-service, on-demand platform for deploying Teradata's compute engine on your cloud service provider (CSP) and connecting the engine to your data lake. You deploy the engine as needed for your analytics projects.
 
-In a JupyterLab notebook, you use Teradata's [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) functions to explore your large-scale datasets and experiment with analytics. You can suspend your project, then resume it, whenever you want and pay only for the compute resources you use.
+In a JupyterLab notebook, you use Teradata's [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) functions to explore your large-scale datasets and experiment with analytics. You can suspend and resume your project, and pay only for the compute resources you use.
 
-AI Unlimited has these elements:
+The AI Unlimited elements:
 - The engine, on your cloud service provider (CSP)&mdash;AWS or Azure
 - Jupyter notebooks, with the AI Unlimited Jupyter Kernel, for running your workloads
 - Your object storage, on your CSP
 - Your GitHub or GitLab repository, for user authentication and storing project information
-- A web-based user interface where the administrator user monitors projects and all users copy their API key for connecting to the engine ***The purpose of the UI will rapidly evolve. Future-proof this bullet or be specific to PPP?***
-- A command line interface (CLI) for... ***developing automation, etc. - need to better understand the specifics***
+- A web-based application for monitoring projects and providing each user with an API key to connect to the engine 
 
 ***MEM: Embed or link to a video: An authentic, technical introduction, educational not marketing***
 
 Choose an installation type:
-- [QuickStart (just for you)](/docs/install-ai-unlimited/quickstart/index.md)
-- [Demo (to show your team)](/docs/install-ai-unlimited/demo/index.md)
-- [Production (for team use)](docs/install-ai-unlimited/production/index.md)
+- [QuickStart](/docs/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to begin
+- [Demo](/docs/install-ai-unlimited/demo/index.md)&mdash;to show your team
+- [Production](docs/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin

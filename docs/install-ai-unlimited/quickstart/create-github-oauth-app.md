@@ -1,7 +1,7 @@
 ---
 id: create-github-oauth-app
-title: Teradata | AI Unlimited | Installation | Create a Git OAuth app
-description: Steps to create a Git OAuth app to authorize users.
+title: Teradata - AI Unlimited - installation - create a Git OAuth app
+description: Steps to create a GitHub or GitLab OAuth app to authorize users.
 sidebar_label: Create a Git OAuth app
 sidebar_position: 6
 tags:
@@ -22,7 +22,7 @@ AI Unlimited uses the GitHub or GitLab OAuth app to authorize users and manage t
   
     While registering the OAuth app, use these URLs:
  
-    * **Homepage URL**: http://[ip_or_hostname]:3000/
+    * **Homepage URL**: http://[ip_or_hostname]:3000
     * **Authorization callback URL**: http://[ip_or_hostname]:3000/auth/github/callback
     
     For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).

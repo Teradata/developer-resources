@@ -124,7 +124,7 @@ services:
 ```bash title="Docker Compose Run"
 docker compose -f ai-unlimited.yaml
 ```
-When AI Unlimited is ready, you can access it at **http://localhost:3000/**.
+When AI Unlimited is ready, you can access it at **http://localhost:3000**.
 
 
 
