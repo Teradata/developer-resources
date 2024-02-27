@@ -30,7 +30,7 @@ Complete the steps for your cloud service provider (CSP).
 
 4. Wait for AWS to process your subscription. It can take a few minutes for your subscription to become active.
   
-  The subscription status is displayed on the page. Alternatively, you can go to the **Manage subscriptions** page on the AWS Marketplace console to view your active subscriptions.
+  The subscription status is displayed on the page. 
 
 </TabItem>
 <TabItem value="azure" label="Azure">
@@ -42,7 +42,7 @@ Complete the steps for your cloud service provider (CSP).
 
 4. Wait for Azure to process your subscription. It can take a few minutes for your subscription to become active.
   
-  The subscription status is displayed on the page. Alternatively, you can go to the **Subscriptions** page on the Azure portal to view your active subscriptions.
+  The subscription status is displayed on the page.
 
 </TabItem>
 </Tabs>

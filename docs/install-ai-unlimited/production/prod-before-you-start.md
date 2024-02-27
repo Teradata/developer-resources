@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 Make sure you have the following:
 
-- GitHub or GitLab account: If you don't already have an account, create a GitHub account at https://github.com/ or a GitLab account at https://gitlab.com/.
+- GitHub or GitLab account: If you don't already have an account, create a free GitHub account at https://github.com/ or a GitLab account at https://gitlab.com/.
 
 - Open a terminal window and clone the [Teradata AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). This repository includes sample CloudFormation templates to deploy the workspace service and JupyterLab.
 
