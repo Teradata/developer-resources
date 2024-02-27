@@ -30,7 +30,7 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
     | $AI_UNLIMITED_HOME | /etc/td | Stores data and configuration |
     | $AI_UNLIMITED_HOME/tls | /etc/td/tls | Stores certificate files |
 	
-3. Copy and retain these CSP environment variables from your CSP console or using the CLI. 
+3. Copy and retain these [CSP](/docs/glossary.md#glo-csp) environment variables from your [CSP](/docs/glossary.md#glo-csp) console or using the CLI. 
 
 ***MEM: For Jack - not sure "or using the CLI" is even appropriate here, based on slack Q&A***
     <Tabs>
@@ -50,7 +50,7 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited.
 
 4. Install [Docker Compose](https://docs.docker.com/compose/install/). 
 
-5. Create an **ai-unlimited.yml** file containing the code for your CSP.
+5. Create an **ai-unlimited.yml** file containing the code for your [CSP](/docs/glossary.md#glo-csp).
 
 :::note 
 The following example uses a local volume to store your CSP credentials. You can create a separate YML file containing CSP environment variables, and run the Docker Compose file. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).

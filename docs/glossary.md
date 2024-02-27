@@ -38,7 +38,9 @@ Definition
 
 ## C <a id="c"></a>
 
-### term
+<a id="glo-csp"></a>
+
+### cloud service provider (CSP) 
 
 Definition
 

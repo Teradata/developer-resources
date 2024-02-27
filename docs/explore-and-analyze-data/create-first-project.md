@@ -12,8 +12,6 @@ tags:
 
 # Create your first project
 
-(Glossary term link test: [term](/docs/glossary.md#glo-term))
-
 (topic is not yet edited)
 
 

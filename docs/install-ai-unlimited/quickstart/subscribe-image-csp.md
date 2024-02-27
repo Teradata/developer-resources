@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 # Subscribe to the engine image
 
-Complete the steps for your cloud service provider (CSP).
+Complete the steps for your [cloud service provider (CSP)](/docs/glossary.md#glo-csp).
 
 ***MEM: Once we have the actual Marketplace pages, let's validate the AWS and Azure steps.***
 

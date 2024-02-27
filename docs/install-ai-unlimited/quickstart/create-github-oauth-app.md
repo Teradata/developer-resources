@@ -22,8 +22,10 @@ AI Unlimited uses the GitHub or GitLab OAuth app to authorize users and manage t
   
     While registering the OAuth app, use these URLs:
  
-    * **Homepage URL**: http://[ip_or_hostname]:3000
-    * **Authorization callback URL**: http://[ip_or_hostname]:3000/auth/github/callback
+    - **Homepage URL**: 
+	  - If you are using the QuickStart, http://localhost:3000
+      - For a demo or production installation, http://[ip_or_hostname]:[port]
+    - **Authorization callback URL**: [Homepage URL]/auth/github/callback
     
     For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).
 
