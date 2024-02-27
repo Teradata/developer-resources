@@ -26,7 +26,11 @@ Complete the steps for your cloud service provider (CSP).
 
 2. Open the [AWS Marketplace](https://aws.amazon.com/marketplace) page for Teradata AI Unlimited and choose **Continue**.
 
-3. Review and accept the [terms and conditions](Insert a link to the image) for the engine Amazon Machine Image (AMI).
+3. Review and accept the [terms and conditions](Insert a link to the image) for the engine Amazon Machine Image (AMI). 
+
+4. Wait for AWS to process your subscription. It can take a few minutes for your subscription to become active.
+  
+  The subscription status is displayed on the page. Alternatively, you can go to the **Manage subscriptions** page on the AWS Marketplace console to view your active subscriptions.
 
 </TabItem>
 <TabItem value="azure" label="Azure">
@@ -35,6 +39,10 @@ Complete the steps for your cloud service provider (CSP).
 2. Open the [Azure Marketplace](https://azuremarketplace.microsoft.com) page for Teradata AI Unlimited and choose **Get It Now**.
 
 3. Review and accept the [terms and conditions](Insert a link to the image) for the engine Azure VM Image.
+
+4. Wait for Azure to process your subscription. It can take a few minutes for your subscription to become active.
+  
+  The subscription status is displayed on the page. Alternatively, you can go to the **Subscriptions** page on the Azure portal to view your active subscriptions.
 
 </TabItem>
 </Tabs>
