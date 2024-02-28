@@ -18,6 +18,8 @@ Make sure you have the following:
 
 - GitHub or GitLab account: If you don't already have one, create a [GitHub](https://github.com) or [GitLab](https://gitlab.com) account.
 
+- Custom GitHub or GitLab App: Connect your GitHub or GitLab identity to AI Unlimited using OAuth 2.0 authentication. See [Create a GitHub or GitLab OAuth app](/docs/install-ai-unlimited/quickstart/create-github-oauth-app.md)
+
 - [Cloud service provider (CSP)](/docs/glossary.md#glo-csp) account: You can host the AI Unlimited engine on AWS or Azure. 
 
     <Tabs>
