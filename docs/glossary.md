@@ -42,12 +42,11 @@ Definition
 
 ### cloud service provider (CSP) 
 
-Definition
+A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service.
 
-### term
+### compute cluster
 
-Definition
-
+A group of interconnected computers that work together as a single system for enhanced processing power, scalability, and reliability.
 
 
 ## D <a id="d"></a>
@@ -55,6 +54,16 @@ Definition
 ### term
 
 Definition
+
+### term
+
+Definition
+
+## I <a id="i"></a>
+
+### IAM role
+
+short def, link to AWS doc
 
 ### term
 
