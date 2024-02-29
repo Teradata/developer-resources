@@ -70,6 +70,17 @@ short def, link to AWS doc
 Definition
 
 
+## IM<a id="m"></a>
+
+### mounting volumes <a id="glo-mounting-volumes"></a>
+
+A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers (the host) to a directory within a container to share data and files between the host and container.
+
+### term
+
+Definition
+
+
 
 ## S <a id="s"></a>
 
