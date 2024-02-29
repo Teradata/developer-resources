@@ -18,9 +18,7 @@ Make sure you have the following:
 
 - GitHub or GitLab account: If you don't already have an account, you can create a free [GitHub](https://github.com) or [GitLab](https://gitlab.com) account.
 
-- Custom GitHub or GitLab App: Connect your GitHub or GitLab identity to AI Unlimited using OAuth 2.0 authentication. See [Create a GitHub or GitLab OAuth app](/docs/install-ai-unlimited/quickstart/create-github-oauth-app.md)
-
-***Seems that GitHub/GitLab apps and OAuth apps are not the same thing? (https://docs.github.com/en/apps/using-github-apps/about-using-github-apps). We could just say "GitHub or GitLab OAuth app: Create one." ("Create one" links to the topic.) I think it's ok to remove the sentence that begins with "Connect your..." and rely on the "Create a GitHub or GitLab account" topic to explain.***
+- GitHub or GitLab OAuth app: [Create one](/docs/install-ai-unlimited/quickstart/create-github-oauth-app.md).
 
 - [Cloud service provider (CSP)](/docs/glossary.md#glo-csp) account: AWS or Azure. 
 

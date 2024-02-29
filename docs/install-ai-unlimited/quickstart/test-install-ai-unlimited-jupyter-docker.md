@@ -3,7 +3,7 @@ id: test-install-ai-unlimited-jupyter-docker
 title: Teradata - AI Unlimited - test deploy AI Unlimited and JupyterLab using Docker
 description: Learn how to install AI Unlimited and JupyterLab using Docker.
 sidebar_label: Install AI Unlimited and JupyterLab using Docker 
-sidebar_position: 8
+sidebar_position: 4
 tags:
   - Install AI Unlimited
   - Install using Docker
@@ -32,16 +32,14 @@ Use [Docker Compose](https://docs.docker.com/compose/) to install AI Unlimited a
 ``` bash
 git clone https://github.com/Teradata/ai-unlimited
 ```
-2. Optionally, set the environment variable `AI_UNLIMITED_HOME` to the directory where the configuration and data files are located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
-
-***MEM: How about "the directory where you want the configuration and data files to be located"? Because those things are not there yet, and it helps reinforce that this is an alternative to the default.***
+2. Optionally, set the environment variable `AI_UNLIMITED_HOME` to the directory where you want the configuration and data files to be located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
     | $AI_UNLIMITED_HOME | /etc/td | Stores data and configuration |
     | $AI_UNLIMITED_HOME/tls | /etc/td/tls | Stores certificate files |
 
-3. Optionally, set the `JUPYTER_HOME` variable to the directory where the JupyterLab configuration files are located. The default location is **~/.jupyter**.
+3. Optionally, set the `JUPYTER_HOME` variable to the directory where you want the JupyterLab configuration files to be located. The default location is **~/.jupyter**.
 
 4. Copy these environment variables from your [CSP](/docs/glossary.md#glo-csp) console or use the CLI. 
 
@@ -69,7 +67,7 @@ git clone https://github.com/Teradata/ai-unlimited
 You can provide the environment variables to Docker Compose by either [mounting them as volumes](/docs/glossary.md#glo-mounting-volumes) or using an environment variable file. This quickstart uses a YAML file that contains the environment variables to store your CSP credentials. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
 :::
 
-5. In the cloned Teradata AI Unlimited GitHub repository, open the [CSP]-credentials-env-vars.yaml file and update the environment variable values.
+5. In the cloned Teradata AI Unlimited GitHub repository, open the **[CSP]-credentials-env-vars.yaml** file and update the environment variable values.
 
 6. Go to the directory where the **ai-unlimited.yaml** and **jupyter.yaml** files are located, and start AI Unlimited and JupyterLab.
 

@@ -2,7 +2,7 @@
 id: setup-ai-unlimited
 title: Set up AI Unlimited
 description: Steps to setup AI Unlimited.
-sidebar_position: 6
+sidebar_position: 5
 tags:
   - Install AI Unlimited
   - Install using Docker
