@@ -38,7 +38,9 @@ Complete the setup. For additional information, click a section below.
 
 <summary>Step 1: The basics</summary>
 
-**WIP: Field details to be added.**
+**Network type**
+
+**TLS**
 
 
 </details>

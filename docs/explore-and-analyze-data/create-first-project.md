@@ -24,8 +24,6 @@ This document walks you through a simple workflow where you can use AI Unlimited
 
 ## Before you begin
 
-- Deploy and configure [Teradata AI Unlimited](/docs/install-ai-unlimited/quickstart/install-ai-unlimited-using-docker.md) and [JupyterLab](/docs/install-ai-unlimited/quickstart/install-jupyter-docker.md).
-
 - Copy and retain the following:
 
   - CSP environment variables from your Console. See [Environment Variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
