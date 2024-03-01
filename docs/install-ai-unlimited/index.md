@@ -15,11 +15,11 @@ import TabItem from '@theme/TabItem';
 
 ***MEM: To keep in mind: Does this content pick up from the right context? What is the user thinking, feeling, and doing when they first arrive here? How did they get here?***
 
-***The first sentence should probably convey that this is for data engineers, data scientists, and developers--and what value it enables them to reap (the overall use case).***
-
-AI Unlimited is a self-service, on-demand platform for deploying Teradata's compute engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp) and connecting the engine to your data lake. You deploy the engine as needed for your analytics projects.
+AI Unlimited is a self-service, on-demand platform for deploying Teradata's compute engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp) and connecting the engine to your data lake. As a data scientist or data engineer, you deploy the engine as needed for your analytics projects.
 
 In a JupyterLab notebook, you use Teradata's [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) functions to explore your large-scale datasets and experiment with analytics. You can suspend and resume your project, and pay only for the compute resources you use.
+
+***MEM: Figure out how to address developer users.***
 
 The AI Unlimited elements:
 - The engine, on your [CSP](/docs/glossary.md#glo-csp)&mdash;AWS or Azure
