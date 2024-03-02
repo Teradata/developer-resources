@@ -25,11 +25,7 @@ For a demo or production installation, the url might or might not include a port
 
 Complete the setup. For additional information, click a section below. 
 
-***MEM: The content in the expandable text below will not say anything about "completing fields," "clicking next," etc. We don't need to tell users how to use the UI.***
-
 ***The content here is a reference--for when the information users need is too lengthly for the UI. So some (just some) fields will have a "Learn more" link that takes users here.***
-
-***I started to work on the field descriptions for the UI and got sidetracked. That's essential for figuring out which fields need to be in this topic and what to say about them. We'll request a review for this topic separately, understanding that some fields on the UI might still change.***
 
 ***This topic will be re-used across the 3 install types.***
 
@@ -42,14 +38,17 @@ Complete the setup. For additional information, click a section below.
 
 **TLS**
 
-
 </details>
 
 <details>
 
 <summary>Step 2: Git integration</summary>
 
-**WIP: Field details to be added.**
+**OAuth app**
+
+(Brief explanation of what it is, and link to the Git article and the our topic on creating the app. But make the UI more self-evident first.)
+
+(Then brief explanation of the authentication process--what's happening.)
 
 </details>
 
@@ -57,11 +56,12 @@ Complete the setup. For additional information, click a section below.
 
 <summary>Step 3: Cloud integration</summary>
 
-**WIP: Field details to be added.** 
+
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
-Add AWS fields
+
+**IAM role**
 
 </TabItem>
 <TabItem value="azure" label="Azure">
