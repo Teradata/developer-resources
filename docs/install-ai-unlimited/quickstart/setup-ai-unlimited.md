@@ -63,6 +63,9 @@ Complete the setup. For additional information, click a section below.
 
 **IAM role**
 
+**Resource tags**
+See [link text](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
+
 </TabItem>
 <TabItem value="azure" label="Azure">
 Add Azure fields

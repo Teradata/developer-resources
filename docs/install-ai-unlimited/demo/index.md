@@ -1,5 +1,7 @@
 ---
+id: demo
 sidebar_position: 2
+pagination_prev: install-ai-unlimited/get-started
 ---
 
 # Demo installation

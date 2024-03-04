@@ -1,5 +1,7 @@
 ---
+id: production
 sidebar_position: 3
+pagination_prev: install-ai-unlimited/get-started
 ---
 
 # Production installation

@@ -1,4 +1,5 @@
 ---
+id: add-collaborators
 sidebar_position: 3
 ---
 

@@ -1,4 +1,5 @@
 ---
+id: logging-levels
 sidebar_position: 4
 ---
 
