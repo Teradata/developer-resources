@@ -9,6 +9,8 @@ tags:
   - Install using Docker
   - Load Docker Image
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Create your first project
 
@@ -24,10 +26,26 @@ This document walks you through a simple workflow where you can use AI Unlimited
 
 ## Before you begin
 
-- Copy and retain the following:
+Copy and retain the following:
 
-  - CSP environment variables from your Console. See [Environment Variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
-  - API Key from the AI Unlimited.
+- CSP environment variables from your Console. See [Environment Variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
+
+  <Tabs>
+    <TabItem value="aws" label="AWS" default>
+    `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
+
+  Learn about AWS [environment variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
+  
+  </TabItem>
+    <TabItem value="azure" label="Azure">
+    `ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID`, and `ARM_CLIENT_SECRET`
+
+  Learn about Azure [environment variables](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication).
+  
+  </TabItem>
+    </Tabs> 
+
+- API Key from the AI Unlimited.
 
 ## Run your first workload
 
@@ -38,6 +56,12 @@ Run `%help` or `%help <command>` for details on any magic command. See [Magic co
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=F
     ```
+    :::note
+    Depending on the installation type, the host value may vary.
+    - For Docker Compose: http://ai-unlimited:3282
+    - For a single container with an external client: http://localhost:3000
+    - For cloud deployments: Content to be filled
+    :::
 3. Create a new project.
     :::note
     Currently, Teradata AI Unlimited supports AWS and Azure.
