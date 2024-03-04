@@ -117,5 +117,7 @@ docker-compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyte
  </TabItem>
     </Tabs>
 
-The command downloads and starts AI Unlimited and JupyterLab containers. When AI Unlimited is ready, you can access it at **http://localhost:3000**. When JupyterLab is ready, you can access it at **http://localhost:8888** and enter the token. 
+The command downloads and starts AI Unlimited and JupyterLab containers. 
+
+When AI Unlimited is ready, you can access it at **http://localhost:3000**. When JupyterLab is ready, you can access it at **http://localhost:8888** and enter the token. 
 

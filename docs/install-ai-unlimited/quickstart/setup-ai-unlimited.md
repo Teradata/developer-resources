@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-Access the AI Unlimited setup:
+Access AI Unlimited setup:
 
 - **http://localhost:3000** (if you are using the [QuickStart](/docs/install-ai-unlimited/quickstart/index.md))
 
