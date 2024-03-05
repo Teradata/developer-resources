@@ -3,7 +3,7 @@ id: quickstart_next_steps
 title: Teradata - AI Unlimited - Quickstart - What's next after setup
 description: What you can do after your Quickstart setup is complete.
 sidebar_position: 6
-sidebar_label: Next steps
+sidebar_label: Explore and analyze data
 tags:
   - Install AI Unlimited
   - Install AI Unlimited using Docker
@@ -11,7 +11,7 @@ tags:
   - Getting started
 ---
 
-# Next steps
+# Explore and analyze data
 
 ***MEM: This topic will be re-used across the 3 install types.***
 

@@ -13,7 +13,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Run AI Unlimited and JupyterLab using Docker.
+# Run AI Unlimited and JupyterLab using Docker
 
 Use [Docker Compose](https://docs.docker.com/compose/) to run AI Unlimited and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
