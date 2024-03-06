@@ -63,6 +63,8 @@ Complete the setup. For additional information, click a section below.
 
 **IAM role**
 
+[if we create it, it's only for the cluster but if they create it must be wide enough for all clusters - see 11:00 in 3/5 meeting]
+
 **Resource tags**
 See [link text](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
 
