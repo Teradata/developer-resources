@@ -61,8 +61,8 @@ Complete the setup. For additional information, click a section below.
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
-**Network type** [will be moved here on the UI]
-**Public** and **private** refer to the engine's IP address. Indicate whether AI Unlimited should communicate with the engine at a public or private IP address. [Is the type of network determined during the setting of the cloud parms? Tell them where/when they chose it and where to see it.]
+**Network type [name will change]** [will be moved here on the UI]
+**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address AI Unlimited should use to connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it?]
 
 **IAM role**
 If AI Unlimited creates this [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough for all the clusters that might deploy the engine.
@@ -71,7 +71,7 @@ If AI Unlimited creates this [IAM role](https://docs.aws.amazon.com/IAM/latest/U
 </TabItem>
 <TabItem value="azure" label="Azure">
 
-**Network type** [will be moved here on the UI]
+**Network type [name will change]** [will be moved here on the UI]
 
 **IAM role**
 

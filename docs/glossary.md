@@ -3,7 +3,7 @@ id: glossary
 title: Teradata - AI Unlimited - glossary
 description: Terminology regarding the installation and use of AI Unlimited.
 sidebar_label: Glossary
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # Glossary
@@ -45,6 +45,7 @@ Definition
 
 A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service.
 
+<a id="glo-cluster"></a>
 ### compute cluster
 
 A group of interconnected computers that work together as a single system for enhanced processing power, scalability, and reliability.
