@@ -1,5 +1,5 @@
 ---
-id: explore-analyze-landing
+id: explore-analyze
 title: Teradata - using AI Unlimited
 description: As a data scientist or data engineer, learn how you can use AI Unlimited.
 sidebar_label: Explore and analyze data
