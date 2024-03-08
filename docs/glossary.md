@@ -36,6 +36,12 @@ Definition
 
 <a id="glo-csp"></a>
 
+###Classless Inter-Domain Routing (CIDR)
+
+
+
+
+
 ### cloud service provider (CSP) 
 
 A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP.

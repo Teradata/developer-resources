@@ -23,7 +23,7 @@ Access AI Unlimited setup:
 For a demo or production installation, the url might or might not include a port.
 :::
 
-Complete the setup. For additional information about certain fields, click a section below. 
+Complete the setup. For additional information, click a section below. 
 
 ***The content here is for when the information users need is too lengthly for the UI.***
 
@@ -67,7 +67,7 @@ Use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connec
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
-**Network type [name will change]** [will be moved here on the UI]
+**Engine connectivity** [will be moved here on the UI]
 **Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address AI Unlimited should use to connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it?]
 
 **IAM role**
@@ -77,9 +77,8 @@ If AI Unlimited creates this [IAM role](https://docs.aws.amazon.com/IAM/latest/U
 </TabItem>
 <TabItem value="azure" label="Azure">
 
-**Network type [name will change]** [will be moved here on the UI]
+**Engine connectivity** [will be moved here on the UI]
 
-**IAM role**
 
 
 [add any Azure-specific fields that have "Learn more"]
