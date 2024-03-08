@@ -8,11 +8,6 @@ sidebar_position: 6
 
 # Glossary
 
-(Experimenting with design...)
-
-## [A](#a)  [B](#b)  [C](#c)  [D](#d)  [E](#e)  [F](#f)  [G](#g)  [H](#h)  [I](#i)  [J](#j)  [K](#k)  [L](#l)  [M](#m) [N](#n)  [O](#o)  [P](#p)  [Q](#q)  [R](#r)  [S](#s) [T](#t)  [U](#u)  [V](#v)  [W](#w)  [X](#x)  [Y](#y)  [Z](#z)
-
-
 ## A <a id="a"></a>
 
 ### term
@@ -43,12 +38,12 @@ Definition
 
 ### cloud service provider (CSP) 
 
-A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service.
+A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP.
 
 <a id="glo-cluster"></a>
-### compute cluster
+### cluster
 
-A group of interconnected computers that work together as a single system for enhanced processing power, scalability, and reliability.
+A group of interconnected computers that work together as a single system for enhanced processing power, scalability, and reliability. The AI Unlimited engine is deployed on a cluster on your CSP.
 
 
 ## D <a id="d"></a>
@@ -65,14 +60,14 @@ Definition
 
 ### IAM role
 
-short def, link to AWS doc
+An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an identity you can create in your AWS account. It has permissions policies that determine what it can and cannot do in AWS. An IAM user is unique to one user, but an IAM role can be shared by users.
 
 ### term
 
 Definition
 
-
-## IM<a id="m"></a>
+ 
+## M<a id="m"></a>
 
 ### mounting volumes <a id="glo-mounting-volumes"></a>
 
@@ -89,6 +84,17 @@ Definition
 ### term
 
 Definition
+
+### term
+
+Definition
+
+
+## T <a id="s"></a>
+
+### Transport Layer Security (TLS) <a id="glo-tls"></a>
+
+A protocol that creates a secure connection between two parties communiating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
 
 ### term
 

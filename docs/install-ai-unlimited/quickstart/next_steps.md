@@ -13,8 +13,6 @@ tags:
 
 # Explore and analyze data
 
-***MEM: This topic will be re-used across the 3 install types.***
-
 Now you're ready to [create your first project](/docs/explore-and-analyze-data/create-first-project.md)!
 
 Or, proceed with any of these steps:

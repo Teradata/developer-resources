@@ -28,7 +28,7 @@ The AI Unlimited elements:
 - Your GitHub or GitLab repository, for user authentication and storing project information
 - A web-based application for monitoring projects and providing each user with an API key to connect to the engine 
 
-***MEM: Embed or link to a video: An authentic, technical introduction, educational not marketing***
+***MEM: Video appears here. An authentic, technical introduction, educational not marketing***
 
 Choose an installation type:
 - [QuickStart](/docs/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try out AI Unlimited

@@ -23,13 +23,13 @@ Access AI Unlimited setup:
 For a demo or production installation, the url might or might not include a port.
 :::
 
-Complete the setup. For additional information, click a section below. 
+Complete the setup. For additional information about certain fields, click a section below. 
 
-***The content here is a reference--for when the information users need is too lengthly for the UI. So some (just some) fields will have a "Learn more" link that takes users here.***
-
-***This topic will be re-used across the 3 install types.***
+***The content here is for when the information users need is too lengthly for the UI.***
 
 ***Any field that appears on this page has a "Learn more" link on the Setup UI.***
+
+***This topic will be re-used across the 3 install types.***
 
 
 <details>
@@ -37,6 +37,12 @@ Complete the setup. For additional information, click a section below.
 <summary>Step 1: The basics</summary>
 
 **TLS**
+
+Use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connections to the AI Unlimited service and safeguard your data in transit. [better to end the sentence at "service."?]
+
+**Certificates**
+
+
 
 </details>
 
@@ -76,7 +82,7 @@ If AI Unlimited creates this [IAM role](https://docs.aws.amazon.com/IAM/latest/U
 **IAM role**
 
 
-[add any Azure-specific fields that have "Learn more"s]
+[add any Azure-specific fields that have "Learn more"]
   
 </TabItem>
 </Tabs>
