@@ -2,7 +2,7 @@
 id: docker-before-you-begin
 title: Before you begin
 description: Prerequisites for installing Teradata AI Unlimited using Docker.
-sidebar_position: 2
+sidebar_position: 1
 tags:
   - Install AI Unlimited
   - Install AI Unlimited using Docker
@@ -17,8 +17,6 @@ import TabItem from '@theme/TabItem';
 Make sure you have the following:
 
 - GitHub or GitLab account: If you don't already have an account, you can create a free [GitHub](https://github.com) or [GitLab](https://gitlab.com) account.
-
-- GitHub or GitLab OAuth app: [Create one](/docs/install-ai-unlimited/quickstart/create-github-oauth-app.md).
 
 - [Cloud service provider (CSP)](/docs/glossary.md#glo-csp) account: AWS or Azure. 
 
