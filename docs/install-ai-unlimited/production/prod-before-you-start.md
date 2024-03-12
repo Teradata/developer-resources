@@ -10,6 +10,7 @@ tags:
   - Prerequisites to install AI Unlimited
   - Getting started
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -35,4 +36,8 @@ Make sure you have the following:
    </TabItem>
     </Tabs>
 
+- AI Unlimited GitHub repository access: Open a terminal window, and clone the [Teradata AI Unlimited GitHub](https://github.com/Teradata/ai-unlimited) repository. It includes templates to deploy AI Unlimited and JupyterLab on your CSP.
 
+``` bash
+git clone https://github.com/Teradata/ai-unlimited
+```

@@ -2,7 +2,7 @@
 id: aws-permissions-policies
 title: Control AWS access and permissions using custom permissions and policies
 description: Learn how AWS IAM roles and policies impact the Teradata AI Unlimited Workspaces and JupyterLab deployment.
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - Install AI Unlimited
   - Install on AWS
