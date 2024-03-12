@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 Use [Docker Compose](https://docs.docker.com/compose/) to run AI Unlimited and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
-1. Open a terminal window and clone the Teradata AI Unlimited GitHub repository. It includes sample YAML files to run AI Unlimited and JupyterLab.
+1. Open a terminal window, and clone the Teradata AI Unlimited GitHub repository. It includes sample YAML files to run AI Unlimited and JupyterLab.
 
 ``` bash
 git clone https://github.com/Teradata/ai-unlimited
