@@ -1,7 +1,7 @@
 ---
-id: deploy-workspace-service-aws-console
-title: Deploy workspace service from the AWS Management Console 
-description: Learn how to deploy Teradata AI Unlimited workspace service using the CloudFormation Template from the AWS Management Console.
+id: aws-console-ai-unlimited
+title: Deploy AI Unlimited from the AWS Management Console 
+description: Learn how to deploy Teradata AI Unlimited sing the CloudFormation Template from the AWS Management Console.
 sidebar_position: 5
 tags:
   - Install AI Unlimited
@@ -10,7 +10,7 @@ tags:
   - Getting started
 ---
 
-# Deploy the workspace service CloudFormation Template from the AWS Console
+# Deploy the AI Unlimited CloudFormation Template from the AWS Console
 
 The workspace service AWS CloudFormation template launches, configures, and runs the AWS compute, network, storage, and other services required to deploy workspace service on AWS. You can deploy the CloudFormation template using one of the following ways:
 

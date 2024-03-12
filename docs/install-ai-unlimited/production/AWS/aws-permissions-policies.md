@@ -12,233 +12,21 @@ tags:
 
 # Control AWS access and permissions using custom permissions and policies
 
-Configure policies with the necessary permissions to provide access to the AWS resources. If the account deploying workspace service does not have sufficient IAM permissions to create IAM roles or IAM policies, your organization administrator can define the roles and policies and pass them to the workspace service template. 
+Configure policies with the necessary permissions to provide access to the AWS resources. If the account deploying workspace service does not have sufficient IAM permissions to create IAM roles or IAM policies, your organization administrator can define the roles and policies and pass them to the AI Unlimited template. 
 
 This article contains sample IAM policies required for a new IAM role.
 
 Configure these policies in the AWS console in **Security & Identity** > **Identity & Access Management** > **Create Policy**. For detailed instructions, see [Creating roles and attaching policies (console) - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html).
 
-## workspaces-with-iam-role-permissions.json
+- [ai-unlimited-with-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-with-iam-role-permissions.json): This JSON sample includes permissions needed to create AI Unlimited instances and grants workspace service the permissions to create cluster-specific IAM roles and policies for the engine.
 
-The following JSON sample includes permissions needed to create AI Unlimited instances and grants workspace service the permissions to create cluster-specific IAM roles and policies for the engine.
+- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): This JSON sample includes the permissions needed to create AI Unlimited instances. If your account restrictions do not allow workspace service to create IAM roles and policies, then you must provide an IAM role with a policy to pass to the engine. In this case, you can use the following modified workspace service policy, which does not include permissions to create IAM roles or IAM policies.
 
-``` bash
-{
-  "Version": "2012-10-17",
-  "Statement": [
-      {
-          "Action": [
-              "iam:PassRole",
-              "iam:AddRoleToInstanceProfile",
-              "iam:CreateInstanceProfile",
-              "iam:CreateRole",
-              "iam:DeleteInstanceProfile",
-              "iam:DeleteRole",
-              "iam:DeleteRolePolicy",
-              "iam:GetInstanceProfile",
-              "iam:GetRole",
-              "iam:GetRolePolicy",
-              "iam:ListAttachedRolePolicies",
-              "iam:ListInstanceProfilesForRole",
-              "iam:ListRolePolicies",
-              "iam:PutRolePolicy",
-              "iam:RemoveRoleFromInstanceProfile",
-              "iam:TagRole",
-              "iam:TagInstanceProfile",
-              "ec2:TerminateInstances",
-              "ec2:RunInstances",
-              "ec2:RevokeSecurityGroupEgress",
-              "ec2:ModifyInstanceAttribute",
-              "ec2:ImportKeyPair",
-              "ec2:DescribeVpcs",
-              "ec2:DescribeVolumes",
-              "ec2:DescribeTags",
-              "ec2:DescribeSubnets",
-              "ec2:DescribeSecurityGroups",
-              "ec2:DescribePlacementGroups",
-              "ec2:DescribeNetworkInterfaces",
-              "ec2:DescribeLaunchTemplates",
-              "ec2:DescribeLaunchTemplateVersions",
-              "ec2:DescribeKeyPairs",
-              "ec2:DescribeInstanceTypes",
-              "ec2:DescribeInstanceTypeOfferings",
-              "ec2:DescribeInstances",
-              "ec2:DescribeInstanceAttribute",
-              "ec2:DescribeImages",
-              "ec2:DescribeAccountAttributes",
-              "ec2:DeleteSecurityGroup",
-              "ec2:DeletePlacementGroup",
-              "ec2:DeleteLaunchTemplate",
-              "ec2:DeleteKeyPair",
-              "ec2:CreateTags",
-              "ec2:CreateSecurityGroup",
-              "ec2:CreatePlacementGroup",
-              "ec2:CreateLaunchTemplateVersion",
-              "ec2:CreateLaunchTemplate",
-              "ec2:AuthorizeSecurityGroupIngress",
-              "ec2:AuthorizeSecurityGroupEgress",
-              "secretsmanager:CreateSecret",
-              "secretsmanager:DeleteSecret",
-              "secretsmanager:DescribeSecret",
-              "secretsmanager:GetResourcePolicy",
-              "secretsmanager:GetSecretValue",
-              "secretsmanager:PutSecretValue",
-              "secretsmanager:TagResource"
-          ],
-          "Resource": "*",
-          "Effect": "Allow"
-      }
-  ]
-}
+- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): This JSON sample includes the permissions needed to interact with the AWS Session Manager. If you use AWS Session Manager to connect to the instance, you must attach this policy to the IAM role.
 
-```
+- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): If you pass the Teradata AI Unlimited IAM role to a new engine instead of allowing the workspace service to create the cluster-specific role, you can use the this JSON sample as a starting point to create your policy.
 
-## workspaces-without-iam-role-permissions.json
-
-The following JSON sample includes the permissions needed to create AI Unlimited instances. If your account restrictions do not allow workspace service to create IAM roles and policies, then you must provide an IAM role with a policy to pass to the engine. In this case, you can use the following modified workspace service policy, which does not include permissions to create IAM roles or IAM policies.
-
-``` bash
-{
-  "Version": "2012-10-17",
-  "Statement": [
-      {
-          "Action": [
-              "iam:PassRole",
-              "iam:AddRoleToInstanceProfile",
-              "iam:CreateInstanceProfile",
-              "iam:DeleteInstanceProfile",
-              "iam:GetInstanceProfile",
-              "iam:GetRole",
-              "iam:GetRolePolicy",
-              "iam:ListAttachedRolePolicies",
-              "iam:ListInstanceProfilesForRole",
-              "iam:ListRolePolicies",
-              "iam:PutRolePolicy",
-              "iam:RemoveRoleFromInstanceProfile",
-              "iam:TagRole",
-              "iam:TagInstanceProfile",
-              "ec2:TerminateInstances",
-              "ec2:RunInstances",
-              "ec2:RevokeSecurityGroupEgress",
-              "ec2:ModifyInstanceAttribute",
-              "ec2:ImportKeyPair",
-              "ec2:DescribeVpcs",
-              "ec2:DescribeVolumes",
-              "ec2:DescribeTags",
-              "ec2:DescribeSubnets",
-              "ec2:DescribeSecurityGroups",
-              "ec2:DescribePlacementGroups",
-              "ec2:DescribeNetworkInterfaces",
-              "ec2:DescribeLaunchTemplates",
-              "ec2:DescribeLaunchTemplateVersions",
-              "ec2:DescribeKeyPairs",
-              "ec2:DescribeInstanceTypes",
-              "ec2:DescribeInstanceTypeOfferings",
-              "ec2:DescribeInstances",
-              "ec2:DescribeInstanceAttribute",
-              "ec2:DescribeImages",
-              "ec2:DescribeAccountAttributes",
-              "ec2:DeleteSecurityGroup",
-              "ec2:DeletePlacementGroup",
-              "ec2:DeleteLaunchTemplate",
-              "ec2:DeleteKeyPair",
-              "ec2:CreateTags",
-              "ec2:CreateSecurityGroup",
-              "ec2:CreatePlacementGroup",
-              "ec2:CreateLaunchTemplateVersion",
-              "ec2:CreateLaunchTemplate",
-              "ec2:AuthorizeSecurityGroupIngress",
-              "ec2:AuthorizeSecurityGroupEgress",
-              "secretsmanager:CreateSecret",
-              "secretsmanager:DeleteSecret",
-              "secretsmanager:DescribeSecret",
-              "secretsmanager:GetResourcePolicy",
-              "secretsmanager:GetSecretValue",
-              "secretsmanager:PutSecretValue",
-              "secretsmanager:TagResource"
-          ],
-          "Resource": "*",
-          "Effect": "Allow"
-      }
-  ]
-}
-
-```
-
-## session-manager.json
-
-The following JSON sample includes the permissions needed to interact with the AWS Session Manager. If you use AWS Session Manager to connect to the instance, you must attach this policy to the IAM role.
-
-``` bash
-{
-  "Version": "2012-10-17",
-  "Statement": [
-      {
-          "Action": [
-              "ssm:DescribeAssociation",
-              "ssm:GetDeployablePatchSnapshotForInstance",
-              "ssm:GetDocument",
-              "ssm:DescribeDocument",
-              "ssm:GetManifest",
-              "ssm:ListAssociations",
-              "ssm:ListInstanceAssociations",
-              "ssm:PutInventory",
-              "ssm:PutComplianceItems",
-              "ssm:PutConfigurePackageResult",
-              "ssm:UpdateAssociationStatus",
-              "ssm:UpdateInstanceAssociationStatus",
-              "ssm:UpdateInstanceInformation"
-          ],
-          "Resource": "*",
-          "Effect": "Allow"
-      },
-      {
-          "Action": [
-              "ssmmessages:CreateControlChannel",
-              "ssmmessages:CreateDataChannel",
-              "ssmmessages:OpenControlChannel",
-              "ssmmessages:OpenDataChannel"
-          ],
-          "Resource": "*",
-          "Effect": "Allow"
-      },
-      {
-          "Action": [
-              "ec2messages:AcknowledgeMessage",
-              "ec2messages:DeleteMessage",
-              "ec2messages:FailMessage",
-              "ec2messages:GetEndpoint",
-              "ec2messages:GetMessages",
-              "ec2messages:SendReply"
-          ],
-          "Resource": "*",
-          "Effect": "Allow"
-      }
-  ]
-}
-
-```
-
-## unlimited-engine.json	
-If you pass the Teradata AI Unlimited IAM role to a new engine instead of allowing the workspace service to create the cluster-specific role, you can use the following JSON sample as a starting point to create your policy.
-
-``` bash
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "secretsmanager:GetSecretValue",
-      "Effect": "Allow",
-      "Resource": [
-        "arn:aws:secretsmanager:<REGION>:<ACCOUNT_ID>:secret:compute-engine/*"
-      ]
-    }
-  ]
-}
-
-```
-
-When workspace service creates policies for the engine, they are restricted as follows:
+When AI Unlimited creates policies for the engine, they are restricted as follows:
 
 ```bash
 "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
@@ -253,20 +41,4 @@ or
 or
 "arn:aws:secretsmanager:us-west-2:111111111111:secret:compute-engine/*"
 ```
-
-## Use persistent volumes on AWS
-
-With Teradata AI Unlimited, you can redeploy your engine for which the state needs to be persisted regardless of container, pod, or node crashes or terminations. This feature requires persistent storage, that is, storage that lives beyond the lifetime of the container, pod, or node. Teradata AI Unlimited uses the instance root volume of the instance to save data in the JupyterLab **/userdata** folder, workspace service database, and configuration files. The data persists if you shut down, restart, or snapshot and relaunch the instance. However, if the instance is terminated, your JupyterLab data and workspace service database are lost, and this could pose problems if running on-the-spot instances, which may be removed without warning. If you want a highly persistent instance, enable the `UsePersistentVolume` parameter to move the JupyterLab data and workspace service database to a separate volume.
-
-The following recommended persistent volume flow remounts the volume and retains the data:
-
-1. Create a new deployment with `UsePersistentVolume` set as **New** and `PersistentVolumeDeletionPolicy` set as **Retain**.
-2. In the stack outputs, note the volume-id for future use.
-3. Configure and use the instance until the instance is terminated.
-4. On the next deployment, use the following settings:
-    * `UsePersistentVolume` set as **New**
-    * `PersistentVolumeDeletionPolicy` set as **Retain** 
-    * `ExistingPersistentVolumeId` set to the volume-id from the previous deployment
-
-You can relaunch the template with the same configuration whenever you need to recreate the instance with the earlier data.
 

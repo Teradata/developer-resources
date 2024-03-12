@@ -1,5 +1,5 @@
 ---
-id: deploy-prod-cloudformation-awscli
+id: aws-cli-deployai-unlimited
 title: Deploy CloudFormation Template from the AWS CLI
 description: Learn how to deploy Teradata AI Unlimited CloudFormation Template from AWS CLI.
 sidebar_position: 4
