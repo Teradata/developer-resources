@@ -14,23 +14,37 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+***Just noting that I put comments in “Before you begin” that’s in Prod. That content should work for demo and prod.***
+
 :::note
 Contact your organization administrator if your account doesn’t have the required account or network permissions. 
 :::
+
+***Does this note refer to the same thing as the permissions bullet on each tab? If so, remove the note. Or add some of it to the bullet on the tab.***
+
+***The content on the tabs is currently a mix of named requirements and actions to take--at least on each tab, we should have parallel types of items, meaning, a list of things they need or a list of things to do.***
 
 <Tabs>
 <TabItem value="aws" label="AWS" default>
 
 - An [AWS account](https://aws.amazon.com). If you don't already have one, create one. at  by following the on-screen instructions.  
 
-- The account deploying workspace service must have sufficient IAM permissions to create IAM roles or IAM policies. See xref::ai-unlimited-aws-permissions-policies.adoc[to be updated].
+***If we keep the bullet about getting a CSP account in Before you begin, we can remove it from this topic.***
 
-- Use the region selector in the navigation bar to choose the AWS region where you want to deploy the Teradata AI Unlimited. 
+
+- The account deploying workspace service ***["Your AWS account..."]*** must have sufficient IAM permissions to create IAM roles or IAM policies. See xref::ai-unlimited-aws-permissions-policies.adoc[to be updated].
+
+- Use the region selector in the navigation bar to choose the AWS region where you want to deploy ***[in which to deploy]*** the Teradata ***[can remove "Teradata"]*** AI Unlimited. 
+
+***This assumes they are in AWS. They might be, or they might not be. Depending on when they created their account or got access to an existing account. And they might have left their account, talked with someone about permissions, and then come back to this content the next day--anything like that. So we should add something like "In your AWS account,"  I almost wonder if it's enough to say "In your AWS account, select the region."? I hate to use terms like "navigation bar" and "region selector"--sounds more internal, like a UI design discussion. But... is it hard to find this in the UI?***
 
 - Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to connect securely to your workspace service instance using SSH after it launches.
     :::note
     Alternatively, you can use AWS Session Manager to connect to the workspace service instances, in which case, you must attach the session-manager.json policy to the IAM role. See xref::ai-unlimited-aws-permissions-policies.adoc[to be updated]. If you don't require host OS access, you can choose not to use either of these connection methods.
     :::
+	
+***Sounds like they have 3 choices: key pair, session manager, or neither. We could say something like “If you (precisely who, their organization?) require host operating system (OS) access (Why would they or wouldn’t they need this? Something to do with using the CLI?), set up your connection one of these ways:” Then a bullet for key pair, and a bullet for session manager. (This way, they decide whether or not they need this at the beginning.)***
+
 
 </TabItem>
 <TabItem value="azure" label="Azure">
@@ -40,6 +54,8 @@ Contact your organization administrator if your account doesn’t have the requi
     - An Azure account with an active subscription (Subscription ID). If you don’t have an Azure subscription, create an [Azure free account](https://azure.microsoft.com/en-us/free).  
 
     - If you have a free account, go to your profile and change your subscription to pay-as-you-go. Then, remove the spending limit and request a quota increase in your region.  in your region.  
+	
+	***If we keep the bullet about getting a CSP account in Before you begin, we can remove it from this topic. Could put converting to pay-as-you-go, etc., there too. I'm seeing that as related to creating the account. Then this topic is about permsissions, access, and networking--more technical. So the first topic is more basic and easy. Then the second topic goes deeper.***
 
     - Rights to create Azure resources. Make sure the account deploying AI Unlimited has sufficient permissions to create the roles. 
 
