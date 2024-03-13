@@ -1,16 +1,16 @@
 ---
 id: deploy-ai-unlimited-jupyter-azure
-title: Teradata - AI Unlimited - deploy AI Unlimited and JupyterLab using Azure ARM
-description: Learn deploy AI Unlimited using Azure ARM from the Azure portal.
-sidebar_label: Step 5-Deploy AI Unlimited and JupyterLab using Azure ARM 
-sidebar_position: 5
+title: Teradata - AI Unlimited - deploy AI Unlimited and JupyterLab using ARM
+description: Learn deploy AI Unlimited using ARM from the Azure portal.
+sidebar_label: Deploy AI Unlimited and JupyterLab using Azure ARM 
+sidebar_position: 6
 tags:
   - Install AI Unlimited
   - Install on Azure
   - Production
 ---
 
-# Step 5: Deploy AI Unlimited and JupyterLab using Azure ARM
+# Step 5: Deploy AI Unlimited and JupyterLab using ARM from Azure portal
 
 1. Log into your [Azure portal](https://portal.azure.com). 
 
@@ -71,7 +71,7 @@ tags:
 
 <details>
 
-<summary>JupyterHub parameters</summary>
+<summary>JupyterLab parameters</summary>
 
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
