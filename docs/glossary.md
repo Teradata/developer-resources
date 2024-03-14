@@ -34,17 +34,15 @@ Definition
 
 ## C <a id="c"></a>
 
+<a id="glo-cidr"></a>
+### Classless Inter-Domain Routing (CIDR)
+
+An IP address allocation method that improves data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers find each other and communicate.
+
 <a id="glo-csp"></a>
-
-###Classless Inter-Domain Routing (CIDR)
-
-
-
-
-
 ### cloud service provider (CSP) 
 
-A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP.
+A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP. ***[true, but add that a CIDR block indicates a range]***
 
 <a id="glo-cluster"></a>
 ### cluster
@@ -64,6 +62,7 @@ Definition
 
 ## I <a id="i"></a>
 
+<a id="glo-iam-role"></a>
 ### IAM role
 
 An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an identity you can create in your AWS account. It has permissions policies that determine what it can and cannot do in AWS. An IAM user is unique to one user, but an IAM role can be shared by users.
@@ -98,7 +97,8 @@ Definition
 
 ## T <a id="s"></a>
 
-### Transport Layer Security (TLS) <a id="glo-tls"></a>
+<a id="glo-tls"></a>
+### Transport Layer Security (TLS) 
 
 A protocol that creates a secure connection between two parties communiating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
 
