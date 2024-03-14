@@ -18,3 +18,12 @@ import TabItem from '@theme/TabItem';
 ["Docker down" stops Docker, but leaves everything in place, so the user can run "Docker up" and continue working.]
 
 [If the user is really done with the QuickStart "forever," they can remove all the files.]
+
+**TA: Moving until we find a solution**
+
+  ```bash title="Stop the containers and remove networks, volumes, and images"
+docker-compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml down
+  ```
+ ```bash title="Stop the containers and remove networks, volumes, and images"
+docker-compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml down
+  ```

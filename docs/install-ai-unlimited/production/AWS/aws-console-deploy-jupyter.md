@@ -76,5 +76,5 @@ In the section, parameters are listed by category:
 9.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
 10. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
 
-Teradata AI Unlimited is ready!
+JupyterLab is ready!
 

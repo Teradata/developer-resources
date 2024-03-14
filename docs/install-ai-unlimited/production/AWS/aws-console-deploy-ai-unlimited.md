@@ -22,9 +22,9 @@ To deploy AI Unlimited from the AWS Management Console, do the following:
 2. Check the **AWS Region** displayed in the upper-right corner of the navigation bar and change it if necessary. Teradata recommends selecting a region closest to your primary work location.
 3.	Go to **CloudFormation** > **Create Stack**. Select **Create Stack** and select **With new resources (standard)**.
 4.	Select **Template is ready**, and then upload one of the downloaded AI Unlimited template files from the Teradata AI Unlimited GitHub repository. This template deploys a single instance with AI Unlimited running in a container controlled by systemd.
-    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml) cloudformation template for use cases where AI Unlimited is hosted behind the application load balancer.
-    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml) cloudformation template for use cases where AI Unlimited is hosted behind the network load balancer.
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml) cloudformation template template for use cases where load balancers are not used.
+    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml) CloudFormation template for use cases where AI Unlimited is hosted behind the application load balancer.
+    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml) loudFormation template for use cases where AI Unlimited is hosted behind the network load balancer.
+    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml) loudFormation template for use cases where load balancers are not used.
 
 5.	Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. When you finish reviewing and customizing the parameters, choose **Next**.  
 
