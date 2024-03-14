@@ -1,6 +1,6 @@
 ---
 id: aws-console-deploy-ai-unlimited-jupyter
-title: Deploy ClouFormation templates from the AWS Management Console 
+title: ClouFormation template from the AWS Console 
 description: Learn how to deploy Teradata AI Unlimited JupyterLab using the CloudFormation Template from the AWS Management Console.
 sidebar_position: 5
 tags:

@@ -1,6 +1,6 @@
 ---
 id: deploy-cli-ai-unlimited-jupyter
-title: Deploy CloudFormation Template from the AWS CLI
+title: CloudFormation template from the AWS CLI
 description: Learn how to deploy Teradata AI Unlimited CloudFormation Template from AWS CLI.
 sidebar_position: 4
 tags:

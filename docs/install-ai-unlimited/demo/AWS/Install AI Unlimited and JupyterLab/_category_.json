@@ -1,9 +1,15 @@
 {
-    "label": "Install AI Unlimited",
     "position": 4,
+    "label": "Deploy AI Unlimited",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "pagination_next": null,
     "link": {
       "type": "generated-index",
-      "pagination_next": null
+      "title": "Deploy AI Unlimited using CloudFormation template"
+    },
+    "customProps": {
+      "description": "You can deploy the CloudFormation template in one of the following ways:"
     }
-  }
-  
+}
