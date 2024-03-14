@@ -1,11 +1,10 @@
 ---
 id: demo-subscribe-image-csp
-title: Step 2-Subscribe to the engine image
+title: Subscribe to the engine image
 description: Learn how to subscribe to AI Unlimited image from CSP marketplace.
-sidebar_position: 2
+sidebar_position: 3
 tags:
   - Install AI Unlimited
-  - Install AI Unlimited using Docker
   - Prerequisites to install AI Unlimited
   - Getting started
 ---

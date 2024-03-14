@@ -1,20 +1,5 @@
----
-id: prod-before-you-start
-title: Before you begin
-description: Review the set of instructions and prerequisites before installing Teradata AI Unlimited in production environment.
-sidebar_position: 1
-tags:
-  - Install AI Unlimited
-  - Install on AWS
-  - Install on Azure
-  - Prerequisites to install AI Unlimited
-  - Getting started
----
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Before you begin
 
 ***MEM: Getting some content from the QS version of this topic will add editorial improvements—like the GH/GL links.***
 
@@ -27,7 +12,9 @@ Make sure you have the following:
 - Cloud Service Provider (CSP) account: You can host the AI Unlimited engine on AWS or Azure. 
     <Tabs>
     <TabItem value="aws" label="AWS" default>
-    Contact your organization administrator for AWS Enterprise access. 
+    - If you don't already have an [AWS account](https://aws.amazon.com), create one by following the on-screen instructions.
+    
+    - If you are an AWS Enterprise users, contact your organization administrator for access. 
     </TabItem>
 
   <TabItem value="azure" label="Azure">
@@ -41,7 +28,7 @@ Make sure you have the following:
 
 ***Pretty sure “for deploying” is more grammatically accurate in this case. At the least, it sounds better to my ear (will research someday).*** 
 
-- AI Unlimited GitHub repository access: Open a terminal window, and clone the [Teradata AI Unlimited GitHub](https://github.com/Teradata/ai-unlimited) repository. It includes templates to deploy AI Unlimited and JupyterLab on your CSP.
+- [Teradata AI Unlimited GitHub](https://github.com/Teradata/ai-unlimited) repository: The **Deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on your CSP. Open a terminal window, and clone the AI Unlimited GitHub repository. 
 
 ``` bash
 git clone https://github.com/Teradata/ai-unlimited
