@@ -3,7 +3,7 @@ id: demo-aws-before-you-begin
 title: Before you begin
 description: Learn about the prerequisites for deploying AI Unlimited on AWS.
 sidebar_label: Before you begin 
-sidebar_position: 2
+sidebar_position: 1
 tags:
   - Install AI Unlimited
   - Install on AWS
