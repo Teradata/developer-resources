@@ -62,23 +62,23 @@ Or use a Teradata system-generated certificate. It automatically renews before i
 <TabItem value="aws1" label="AWS">
 
 
-**Network type** [will be moved here on the UI]
+**Network type**
 
-**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it?]
+**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it? Potentially different for AWS vs. Azure.]
 
 
 **IAM role**
 
-If AI Unlimited creates this [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough for all the clusters that might deploy the engine.
+If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
 
 
 </TabItem>
 <TabItem value="azure" label="Azure">
 
 
-**Network type** [will be moved here on the UI]
+**Network type**
 
-[potentially different for AWS vs. Azure if this relates to a cloud parm?]
+**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it? Potentially different for AWS vs. Azure.]
 
 </TabItem>
 </Tabs>
