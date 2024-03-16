@@ -13,8 +13,6 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-***This topic will be re-used across the 3 install types.***
-
 Access AI Unlimited setup:
 
 - **http://localhost:3000** (if you are using the [QuickStart](/docs/install-ai-unlimited/quickstart/index.md))
@@ -47,9 +45,15 @@ Or use a Teradata system-generated certificate. It automatically renews before i
 
 **OAuth app**
 
-(Brief explanation of what it is, and link to the Git article and the our topic on creating the app. But make the UI more self-evident first.)
+An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password. 
 
-(Then brief explanation of the authentication process--what's happening.)
+AI Unlimited uses the OAuth app you, or someone at your organization, created to authorize access to your GitHub or GitLab account. This allows AI Unlimited to store user and project information there. 
+
+Selecting **Authenticate** establishes the access and returns you to AI Unlimited to complete the setup.
+
+[Create a Git OAuth app](/docs/install-ai-unlimited/quickstart/create-github-oauth-app) (QuickStart)\
+[Create a Git OAuth app](/docs/install-ai-unlimited/demo) (Demo installation)\
+[Create a Git OAuth app](/docs/install-ai-unlimited/production) (Production installation)
 
 </details>
 
@@ -64,7 +68,7 @@ Or use a Teradata system-generated certificate. It automatically renews before i
 
 **Network type**
 
-**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it? Potentially different for AWS vs. Azure.]
+Public or Private refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. ***Is it determined by a cloud parm? Tell them where/when they chose it and where to see it? Potentially different for AWS vs. Azure.***
 
 
 **IAM role**
@@ -78,7 +82,7 @@ If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/Us
 
 **Network type**
 
-**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. [Is it determined by a cloud parm? Tell them where/when they chose it and where to see it? Potentially different for AWS vs. Azure.]
+Public or Private refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect. ***Is it determined by a cloud parm? Tell them where/when they chose it and where to see it? Potentially different for AWS vs. Azure.***
 
 </TabItem>
 </Tabs>

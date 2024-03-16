@@ -8,7 +8,7 @@ sidebar_position: 6
 
 # Glossary
 
-## A <a id="a"></a>
+## A
 
 ### term
 
@@ -19,20 +19,18 @@ Definition
 Definition
 
 
-
-## B <a id="b"></a>
-
-### term
-
-Definition
+## B
 
 ### term
 
 Definition
 
+### term
+
+Definition
 
 
-## C <a id="c"></a>
+## C
 
 <a id="glo-cidr"></a>
 ### Classless Inter-Domain Routing (CIDR)
@@ -50,7 +48,7 @@ A company that delivers computing resources over the internet, on demand. These 
 A group of interconnected computers that work together as a single system for enhanced processing power, scalability, and reliability. The AI Unlimited engine is deployed on a cluster on your CSP.
 
 
-## D <a id="d"></a>
+## D
 
 ### term
 
@@ -60,7 +58,8 @@ Definition
 
 Definition
 
-## I <a id="i"></a>
+
+## I
 
 <a id="glo-iam-role"></a>
 ### IAM role
@@ -72,9 +71,10 @@ An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/l
 Definition
 
  
-## M<a id="m"></a>
+## M
 
-### mounting volumes <a id="glo-mounting-volumes"></a>
+<a id="glo-mounting-volumes"></a>
+### mounting volumes 
 
 A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers (the host) to a directory within a container to share data and files between the host and container.
 
@@ -83,8 +83,19 @@ A concept in containerized platforms such as Docker. You can map a directory on 
 Definition
 
 
+## O
 
-## S <a id="s"></a>
+<a id="glo-oauth-app"></a>
+### OAuth app
+
+An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. AI Unlimited uses an OAuth app, created by your organization, to authorize access to your GitHub or GitLab account for storing user and project information.
+
+### term
+
+Definition
+
+
+## S
 
 ### term
 
@@ -95,7 +106,7 @@ Definition
 Definition
 
 
-## T <a id="s"></a>
+## T
 
 <a id="glo-tls"></a>
 ### Transport Layer Security (TLS) 

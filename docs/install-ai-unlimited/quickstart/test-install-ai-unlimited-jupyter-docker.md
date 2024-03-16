@@ -56,17 +56,13 @@ You can provide the environment variables to Docker Compose by either [mounting 
 
 6. Go to the directory where the **ai-unlimited.yaml** and **jupyter.yaml** files are located, and start AI Unlimited and JupyterLab.
 
-:::note
-Teradata recommends running Docker Compose in detached mode (-d) so that the command doesn't block the terminal window.
-:::
-
   <Tabs>
     <TabItem value="aws" label="AWS" default>
 
 ```bash title="Run the Docker Compose file in the background "
 docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml -d up 
 ```
-In detached mode, the Jupyter token is not displayed on the terminal window. Retrieve the Jupyter token:
+Retrieve the Jupyter token:
 
 a. List the currently running containers, and identify the name of the JupyterLab container.
 
@@ -78,14 +74,6 @@ b. Search for occurrences of the string 'Token' in the container's logs.
 ```bash
 docker logs <container_name> | grep 'Token'
 ```
-
-```bash title="Run the Docker Compose file in the foreground "
-docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml up 
-```
-
- ```bash title="Stop the containers and remove networks, volumes, and images"
-docker-compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml down
-  ```
 
 </TabItem>
     <TabItem value="azure" label="Azure">
@@ -94,7 +82,7 @@ docker-compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.
 docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml -d up
 ```
 
-In detached mode, the Jupyter token is not displayed on the terminal window. Retrieve the Jupyter token:
+Retrieve the Jupyter token:
 
 a. List the currently running containers, and identify the name of the JupyterLab container.
 
@@ -107,13 +95,6 @@ b. Search for occurrences of the string 'Token' in the container's logs.
 docker logs <container_name> | grep 'Token'
 ```
 
-  ```bash title="Run the Docker Compose file in the foreground "
-docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml up 
-```
-
-  ```bash title="Stop the containers and remove networks, volumes, and images"
-docker-compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml down
-  ```
  </TabItem>
     </Tabs>
 

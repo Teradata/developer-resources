@@ -1,6 +1,6 @@
 ---
 id: docker-subscribe-image-csp
-title: Subscribe to the engine image
+title: Subscribe to AI Unlimited
 description: Learn how to subscribe to AI Unlimited image from CSP marketplace.
 sidebar_position: 3
 tags:
