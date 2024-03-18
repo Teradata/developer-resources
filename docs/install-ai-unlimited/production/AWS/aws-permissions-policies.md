@@ -1,8 +1,8 @@
 ---
 id: aws-permissions-policies
-title: Control AWS access and permissions using custom permissions and policies
+title: Create custom IAM roles and policies
 description: Learn how AWS IAM roles and policies impact the Teradata AI Unlimited deployment.
-sidebar_position: 6
+sidebar_position: 4
 tags:
   - Install AI Unlimited
   - Install on AWS
@@ -14,7 +14,7 @@ tags:
 
 Configure policies with the necessary permissions to provide access to the AWS resources. If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, your organization administrator can define the roles and policies and pass them to the AI Unlimited template. 
 
-The following sample IAM policies are required for a new IAM role:
+The following IAM policies are required for a new IAM role:
 
 Configure these policies in the AWS console in **Security & Identity** > **Identity & Access Management** > **Create Policy**. For detailed instructions, see [Creating roles and attaching policies (console) - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html).
 
@@ -24,7 +24,7 @@ Configure these policies in the AWS console in **Security & Identity** > **Ident
 
 - [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): This JSON sample includes the permissions needed to interact with the AWS Session Manager. If you use AWS Session Manager to connect to the instance, you must attach this policy to the IAM role.
 
-- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): If you pass the AI Unlimited IAM role to a new engine instead of allowing AI Unlimited to create the cluster-specific role, you can use the this JSON sample as a starting point to create your policy.
+- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): If you pass the AI Unlimited IAM role to a new engine instead of allowing AI Unlimited to create the cluster-specific role, you can use this JSON sample as a starting point to create your policy.
 
 When AI Unlimited creates policies for the engine, they are restricted as follows:
 
