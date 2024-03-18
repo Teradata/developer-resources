@@ -15,7 +15,7 @@ Make sure you have the following:
 
 - AWS account: If you don't already have an [AWS account](https://aws.amazon.com), create one by following the on-screen instructions.
     
-    - If you are an AWS Enterprise users, contact your organization administrator for access. 
+    - If you are an AWS Enterprise user, contact your organization administrator for access. 
 
 import MyPartial from '/docs/_partials/_csp-before-you-start.mdx';
 

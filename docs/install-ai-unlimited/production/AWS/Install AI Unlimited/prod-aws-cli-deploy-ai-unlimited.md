@@ -1,8 +1,8 @@
 ---
 id: prod-aws-cli-deploy-ai-unlimited
-title: Deploy CloudFormation Template from the AWS CLI
+title: Teradata - AI Unlimited - Deploy CloudFormation Template from the AWS CLI
 description: Learn how to deploy Teradata AI Unlimited CloudFormation Template from AWS CLI.
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - Install AI Unlimited
   - Install on AWS

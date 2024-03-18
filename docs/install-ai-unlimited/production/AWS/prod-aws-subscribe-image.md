@@ -1,6 +1,6 @@
 ---
 id: prod-aws-subscribe-image
-title: Subscribe to the engine image
+title: Teradata - AI Unlimited - Subscribe to the engine image
 description: Learn how to subscribe to AI Unlimited image from AWS marketplace.
 sidebar_position: 3
 tags:

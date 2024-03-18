@@ -1,6 +1,6 @@
 ---
 id: aws-permissions-policies
-title: Create custom IAM roles and policies
+title: Teradata - AI Unlimited - Create custom IAM roles and policies
 description: Learn how AWS IAM roles and policies impact the Teradata AI Unlimited deployment.
 sidebar_position: 4
 tags:

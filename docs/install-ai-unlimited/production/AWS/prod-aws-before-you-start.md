@@ -1,6 +1,6 @@
 ---
 id: prod-aws-before-you-begin
-title: Before you begin
+title: Teradata - AI Unlimited - Before you begin
 description: Learn about the prerequisites for deploying AI Unlimited on AWS in a production environment.
 sidebar_label: Before you begin 
 sidebar_position: 1

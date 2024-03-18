@@ -1,8 +1,8 @@
 ---
 id: prod-aws-console-deploy-ai-unlimited
-title: Deploy AI Unlimited from the AWS Management Console 
+title: Teradata - AI Unlimited - Deploy AI Unlimited from the AWS Management Console 
 description: Learn how to deploy Teradata AI Unlimited sing the CloudFormation Template from the AWS Management Console.
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - Install AI Unlimited
   - Install on AWS

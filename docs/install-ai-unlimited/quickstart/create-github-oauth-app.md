@@ -13,8 +13,6 @@ tags:
 
 # Create a GitHub or GitLab OAuth app
 
-***MEM: This topic will be re-used across the 3 install types.***
-
 AI Unlimited uses the OAuth app to authorize your GitHub or GitLab account to store user and project information.
 
 1. Log in to your Git repository.
