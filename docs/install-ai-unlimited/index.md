@@ -13,13 +13,9 @@ import TabItem from '@theme/TabItem';
 
 # Get started
 
-***MEM: To keep in mind: Does this content pick up from the right context? What is the user thinking, feeling, and doing when they first arrive here? How did they get here?***
+In a Jupyter notebook, use Teradata's [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) to explore and analyze large datasets&mdash;on a self-service, on-demand basis. 
 
-AI Unlimited is a self-service, on-demand platform for deploying Teradata's compute engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp) and connecting the engine to your data lake. As a data scientist or data engineer, you deploy the engine as needed for your analytics projects.
-
-In a JupyterLab notebook, you use Teradata's [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics?) functions to explore your large-scale datasets and experiment with analytics. You can suspend and resume your project, and pay only for the compute resources you use.
-
-***MEM: Figure out how to address developer users.***
+As a data scientist or data engineer, you connect your notebook to the AI Unlimited compute engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp), and connect the engine to your data lake. You can suspend and resume your project, and pay only for the compute resources you use.
 
 The AI Unlimited elements:
 - The engine, on your [CSP](/docs/glossary.md#glo-csp)&mdash;AWS or Azure
@@ -28,11 +24,17 @@ The AI Unlimited elements:
 - Your GitHub or GitLab repository, for user authentication and storing project information
 - A web-based application for monitoring projects and providing each user with an API key to connect to the engine 
 
-***MEM: Video appears here. An authentic, technical introduction, educational not marketing***
+***MEM: Video appears here. An authentic, technical introduction, educational not marketing.***
 
-Choose an installation type:
+Choose an installation type: ***MEM: How do we make clear that an admin-type does this?***
 - [QuickStart](/docs/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try out AI Unlimited
 - [Demo](/docs/install-ai-unlimited/demo/index.md)&mdash;show your team what AI Unlimited offers
 - [Production](docs/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 ***MEM: Include pricing info on this site? Only on the marketplace listing?***
+
+
+
+
+
+

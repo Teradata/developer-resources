@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 1. Sign in to your AWS account.
 
-2. Open the [AWS Marketplace](https://aws.amazon.com/marketplace) page for Teradata AI Unlimited and choose **Continue**.
+2. Open the [AWS Marketplace](https://aws.amazon.com/marketplace) page for Teradata AI Unlimited and choose **Continue**. [link to the listing itself]
 
 3. Review and accept the [terms and conditions](Insert a link to the image) for the engine's Amazon Machine Image (AMI). 
 

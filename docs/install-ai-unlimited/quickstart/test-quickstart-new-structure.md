@@ -35,7 +35,7 @@ git clone https://github.com/Teradata/ai-unlimited
 
 2. Optionally, set the `JUPYTER_HOME` variable to the directory where you want the JupyterLab configuration files to be located. The default location is **~/.jupyter**.
 
-## Provide AWS environment variables
+## Provide environment variables
 
 1. Copy these environment variables from your [CSP](/docs/glossary.md#glo-csp) console or use the CLI. 
 
@@ -108,7 +108,9 @@ docker logs <container_name> | grep 'Token'
 
 The command downloads and starts AI Unlimited and JupyterLab containers. 
 
-## Access AI Unlimited and JupyterLab
+## Verify access to AI Unlimited and JupyterLab
 
-When AI Unlimited is ready, you can access it at **http://localhost:3000**. When JupyterLab is ready, you can access it at **http://localhost:8888** and enter the token. After [AI Unlimited setup](/docs/install-ai-unlimited/quickstart/setup-ai-unlimited.md) is complete, you'll be able to access JupyterLab and create a project.
+When AI Unlimited is ready, you can access it at **http://localhost:3000**. When JupyterLab is ready, you can access it at **http://localhost:8888**, and enter the token. 
+
+After you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/setup-ai-unlimited.md), you'll be able to create a project in JupyterLab.
 

@@ -12,7 +12,7 @@ tags:
 
 1. Sign in to your Azure account.
 
-2. Open the [Azure Marketplace](https://azuremarketplace.microsoft.com) page for Teradata AI Unlimited and choose **Get It Now**.
+2. Open the [Azure Marketplace](https://azuremarketplace.microsoft.com) page for Teradata AI Unlimited and choose **Get It Now**. [link to the listing itself]
 
 3. Review and accept the [terms and conditions](Insert a link to the image) for the engine's Azure VM image.
 
