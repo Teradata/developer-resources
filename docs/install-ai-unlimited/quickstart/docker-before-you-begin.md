@@ -24,13 +24,13 @@ Make sure you have the following:
     <TabItem value="aws" label="AWS" default>
       - If you don’t already have an account, you can sign up for an [AWS Free Tier](https://aws.amazon.com/free) account.
     
-      - Optionally, install and set up the [AWS Command Line Interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
+      - Optionally, install and set up the [AWS Command-Line Interface (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
       </TabItem>
 
   <TabItem value="azure" label="Azure">
    - If you don’t already have an account, you can sign up for an [Azure free account](https://azure.microsoft.com/en-us/free). 
    
-   - Optionally, install and set up the [Azure Command Line Interface (CLI)](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli). 
+   - Optionally, install and set up the [Azure Command-Line Interface (Azure CLI)](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli). 
 
    
   </TabItem>
