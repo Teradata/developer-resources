@@ -7,11 +7,11 @@ pagination_next: null
 
 # Demo installation
 
-To share with your team what AI Unlimited can do, complete the demo installation.
+To share with your team what AI Unlimited can do, use the demo installation.
 
 This puts AI Unlimited and JupyterLab, with the AI Unlimited Jupyter Kernel, on your cloud service provider (CSP) on the same server instance. This is the best setup for showing how the overall system works, while also showing analytics workloads.
 
-The installation steps are suitable for cloud administrators. ***what do we really want to say about the user?***
+As a cloud administrator, you can complete the installation.
 
 Select your CSP:
 - [AWS](/docs/install-ai-unlimited/demo/AWS/demo-aws-before-you-start.md)

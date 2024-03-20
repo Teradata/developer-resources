@@ -18,7 +18,11 @@ This puts AI Unlimited on your cloud service provider (CSP) on a server instance
 
 ***Might they have it, without the kernel, on their computer in a container that's not a Docker container?***
 
-The installation steps are suitable for cloud administrators. ***what do we really want to say about the user?***
+As a cloud administrator, you can complete the installation.
+
+Select your CSP:
+- [AWS](/docs/install-ai-unlimited/production/AWS/prod-aws-before-you-start.md)
+- [Azure](/docs/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md) ***don't kow why this link is broken***
 
 
 
