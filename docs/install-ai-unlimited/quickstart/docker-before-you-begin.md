@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 Make sure you have the following:
 
-- GitHub or GitLab account: If you don't already have an account, you can create a free [GitHub](https://github.com) or [GitLab](https://gitlab.com) account.
+- GitHub or GitLab account: If you don't already have an account, create a free [GitHub](https://github.com) or [GitLab](https://gitlab.com) account.
 
 - [Cloud service provider (CSP)](/docs/glossary.md#glo-csp) account: AWS or Azure. 
 

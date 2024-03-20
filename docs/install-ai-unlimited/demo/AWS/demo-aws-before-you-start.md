@@ -13,9 +13,11 @@ tags:
 
 Make sure you have the following:
 
-- AWS account: If you don't already have an [AWS account](https://aws.amazon.com), create one by following the on-screen instructions.
-    
-    - If you are an AWS Enterprise user, contact your organization administrator for access. 
+- AWS account:
+	- If your organization doesn't already have an account, you can sign up for an [AWS Free Tier](https://aws.amazon.com/free) account.
+	- Optionally, install and set up the [AWS Command-Line Interface (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).  
+     
+    ***There’s content about the AWS account in Prepare your CSP account too.***
 
 import MyPartial from '/docs/_partials/_csp-before-you-start.mdx';
 

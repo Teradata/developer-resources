@@ -32,6 +32,7 @@ Choose a way to begin:
 - [Production](docs/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 ***MEM: Include pricing info on this site? Only on the marketplace listing?***
+***Add What's New and Community***
 
 
 
