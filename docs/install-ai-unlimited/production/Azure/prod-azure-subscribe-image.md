@@ -1,5 +1,5 @@
 ---
-id: demo-azure-subscribe-image
+id: prod-azure-subscribe-image
 title: Subscribe to the engine VM image
 description: Learn how to subscribe to AI Unlimited VM image from Azure marketplace.
 sidebar_position: 3
@@ -9,6 +9,7 @@ tags:
   - Getting started
 ---
 # Subscribe to the engine image on Azure Marketplace 
+
 
 import MyPartial from '/docs/_partials/_azure-subscribe-image.mdx';
 

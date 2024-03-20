@@ -1,6 +1,6 @@
 ---
 id: test-quickstart-new-structure
-title: Teradata - AI Unlimited - test deploy AI Unlimited and JupyterLab using Docker
+title: Teradata - AI Unlimited - Deploy AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Run AI Unlimited and JupyterLab using Docker 
 sidebar_position: 4

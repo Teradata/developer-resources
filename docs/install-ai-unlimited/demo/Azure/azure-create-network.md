@@ -10,7 +10,7 @@ tags:
   - Demo
 ---
 
-# Step 3: Create a Resource Group, Network, and Role using ARM Template 
+# Create a Resource Group, Network, and Role using ARM Template 
 
 Before you can deploy an AI Unlimited and JupyterLab instances on Azure, you must create an Azure resource group and virtual network (VNet) in which your AI Unlimited engine will run. If the required account and network prerequisites are not met, you can use the [resources.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/resources.json) template to deploy a simple resource group, role with permissions policy, and virtual network. 
 

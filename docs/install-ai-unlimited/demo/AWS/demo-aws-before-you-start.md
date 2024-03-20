@@ -20,3 +20,16 @@ Make sure you have the following:
 import MyPartial from '/docs/_partials/_csp-before-you-start.mdx';
 
 <MyPartial />
+
+- Collect AWS deployment information from your organization administrator: When deploying AI Unlimited in Azure, you need to specify details about the virtual network. Use the following template to collect the information from your organization administrator:
+
+    ```bash
+    Subscription ID: 
+    Resource Group:
+    AWS Region: 
+    Virtual Network (VNet): 
+    Subnet: 
+    Network Security Group:
+    Load Balancer (ALB/NLB/Not Applicable):
+    RoleDefinitionId: 
+    ```

@@ -24,4 +24,4 @@ import TabItem from '@theme/TabItem';
 
 4. Wait for AWS to process your subscription. It can take a few minutes for your subscription to become active.
   
-  The subscription status is displayed on the page. 
+    The subscription status is displayed on the page. 
