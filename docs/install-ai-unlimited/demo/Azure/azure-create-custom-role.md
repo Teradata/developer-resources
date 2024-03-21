@@ -9,7 +9,7 @@ tags:
   - Install on Azure
   - Demo
 ---
-# Step 4: Create a custom role with the required permissions	
+# Create a custom role with the required permissions	
 
 :::note
 Skip this step if you have already deployed a simple resource group, role with permissions policy, and virtual network using the [resources.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/resources.json) template.

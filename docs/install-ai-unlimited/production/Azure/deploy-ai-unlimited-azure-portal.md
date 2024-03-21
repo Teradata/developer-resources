@@ -18,7 +18,7 @@ tags:
 
 3. Select **Build your own template in the editor**. 
 
-4. In the bar above the editor, select **Load file** and then select the **[AI Unlimited Template](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/ai-unlimited.json)** template. 
+4. In the bar above the editor, select **Load file** and then select the **[AI Unlimited Template](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/ai-unlimited.json)**. 
 
     This template deploys a single instance with AI Unlimited running in a container controlled by systemd. 
 

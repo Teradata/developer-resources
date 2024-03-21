@@ -18,12 +18,13 @@ Make sure you have the following:
 	- Optionally, install and set up the [AWS Command-Line Interface (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).  
      
     ***There’s content about the AWS account in Prepare your CSP account too.***
+    ** TA: Removed it from Preparing your account***
 
 import MyPartial from '/docs/_partials/_csp-before-you-start.mdx';
 
 <MyPartial />
 
-- Collect AWS deployment information from your organization administrator: When deploying AI Unlimited in Azure, you need to specify details about the virtual network. Use the following template to collect the information from your organization administrator:
+- Get AWS deployment information from your organization administrator: When deploying AI Unlimited in Azure, you need to specify details about the virtual network. Use the following template to collect the information from your organization administrator:
 
     ```bash
     Subscription ID: 

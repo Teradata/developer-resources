@@ -25,7 +25,7 @@ import MyPartial from '/docs/_partials/_csp-before-you-start.mdx';
 
 <MyPartial />
 
-- Collect Azure deployment information from your organization administrator: When deploying AI Unlimited in Azure, you need to specify details about the virtual network. Use the following template to collect the information from your organization administrator:
+- Get Azure deployment information from your organization administrator: When deploying AI Unlimited in Azure, you need to specify details about the virtual network. Use the following template to collect the information from your organization administrator:
 
     ```bash
     Subscription ID: 

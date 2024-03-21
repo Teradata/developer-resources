@@ -10,7 +10,7 @@ tags:
   - Production
 ---
 
-# Step 5: Deploy AI Unlimited and JupyterLab using ARM from Azure portal
+# Deploy AI Unlimited and JupyterLab using ARM from Azure portal
 
 1. Log into your [Azure portal](https://portal.azure.com). 
 
