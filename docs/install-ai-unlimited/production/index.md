@@ -23,7 +23,7 @@ As a cloud administrator, you can complete the installation.
 Select your CSP:
 - [AWS](/docs/install-ai-unlimited/production/AWS/prod-aws-before-you-start.md)
 
-- [Azure](/docs/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md) ***don't kow why this link is broken***
+- [Azure](/docs/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md)
 
 
 
