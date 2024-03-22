@@ -4,6 +4,10 @@ title: Teradata - AI Unlimited - Deploy JupyterLab from AWS Management Console
 description: Learn deploy AI Unlimited using AWS Cloudformation template from AWS Management Console.
 sidebar_label: Deploy JupyterLab Cloudformation Template from AWS Management Console 
 sidebar_position: 7
+tags:
+  - Install AI Unlimited
+  - Install on Azure
+  - Production
 ---
 # Deploy the JupyterLab CloudFormation Template from the AWS Console
 

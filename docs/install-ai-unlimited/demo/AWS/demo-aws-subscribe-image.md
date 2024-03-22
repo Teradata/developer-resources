@@ -4,6 +4,10 @@ title: Teradata - AI Unlimited - Subscribe to the engine Amazon Machine Image
 description: Learn how to subscribe to AI Unlimited image from AWS marketplace.
 sidebar_label: Subscribe to the engine image	
 sidebar_position: 3
+tags:
+  - Install AI Unlimited
+  - Install on Azure
+  - Demo
 ---
 
 import Tabs from '@theme/Tabs';

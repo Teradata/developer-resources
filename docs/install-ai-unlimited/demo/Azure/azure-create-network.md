@@ -4,6 +4,10 @@ title: Teradata - AI Unlimited - Create an Azure Network using Azure ARM
 description: Steps to create a Resource Group, Network, and Role deploy AI Unlimited in a demo environment. 
 sidebar_label: Create a Resource Group, Network, and Role using ARM template
 sidebar_position: 4
+tags:
+  - Install AI Unlimited
+  - Install on Azure
+  - Demo
 ---
 
 # Create a Resource Group, Network, and Role using ARM Template 

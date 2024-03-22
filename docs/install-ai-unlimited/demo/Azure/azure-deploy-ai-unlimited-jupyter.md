@@ -4,6 +4,10 @@ title: Teradata - AI Unlimited - deploy AI Unlimited and JupyterLab using ARM
 description: Learn deploy AI Unlimited using ARM from the Azure portal.
 sidebar_label: Deploy AI Unlimited and JupyterLab using Azure ARM 
 sidebar_position: 6
+tags:
+  - Install AI Unlimited
+  - Install on Azure
+  - Production
 ---
 
 # Deploy AI Unlimited and JupyterLab using ARM from Azure portal
