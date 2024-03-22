@@ -3,11 +3,6 @@ id: demo-aws-permissions-policies
 title: Create custom IAM roles and policies
 description: Learn how AWS IAM roles and policies impact the Teradata AI Unlimited deployment.
 sidebar_position: 4
-tags:
-  - Install AI Unlimited
-  - Install on AWS
-  - Prerequisites to install AI Unlimited
-  - Getting started
 ---
 
 # Control AWS access and permissions using custom permissions and policies

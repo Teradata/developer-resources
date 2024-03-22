@@ -4,10 +4,6 @@ title: Teradata - AI Unlimited - Deploy AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Run AI Unlimited and JupyterLab using Docker 
 sidebar_position: 4
-tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Production
 ---
 
 import Tabs from '@theme/Tabs';
@@ -37,7 +33,7 @@ git clone https://github.com/Teradata/ai-unlimited
 
 ## Provide environment variables
 
-1. Copy these environment variables from your [CSP](/docs/glossary.md#glo-csp) console or use the CLI. 
+1. Copy these environment variables from your [CSP](/glossary.md#glo-csp) console or use the CLI. 
 
 <Tabs>
     <TabItem value="aws" label="AWS" default>
@@ -55,12 +51,12 @@ git clone https://github.com/Teradata/ai-unlimited
     </Tabs>
 
 :::note 
-You can provide the environment variables to Docker Compose by either [mounting them as volumes](/docs/glossary.md#glo-mounting-volumes) or using an environment variable file. This quickstart uses a YAML file that contains the environment variables to store your CSP credentials. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
+You can provide the environment variables to Docker Compose by either [mounting them as volumes](glossary.md#glo-mounting-volumes) or using an environment variable file. This quickstart uses a YAML file that contains the environment variables to store your CSP credentials. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
 :::
 
 2. In the cloned Teradata AI Unlimited GitHub repository, open the **[CSP]-credentials-env-vars.yaml** file and update the environment variable values.
 
-## Start AI Unlimited and JupyterLab
+## Start the AI Unlimited and JupyterLab containers
 
 Go to the directory where the **ai-unlimited.yaml** and **jupyter.yaml** files are located, and start AI Unlimited and JupyterLab.
 
@@ -112,5 +108,5 @@ The command downloads and starts AI Unlimited and JupyterLab containers.
 
 When AI Unlimited is ready, you can access it at **http://localhost:3000**. When JupyterLab is ready, you can access it at **http://localhost:8888**, and enter the token. 
 
-After you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/setup-ai-unlimited.md), you'll be able to create a project in JupyterLab.
+After you [set up AI Unlimited](/install-ai-unlimited/quickstart/setup-ai-unlimited.md), you'll be able to create a project in JupyterLab.
 

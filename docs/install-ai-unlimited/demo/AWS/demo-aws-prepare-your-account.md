@@ -4,10 +4,6 @@ title: Prepare your AWS account
 description: Learn about the account, networking, and DNS requirements before deploying AI Unlimited on Azure. 
 sidebar_label: Prepare your AWS account 
 sidebar_position: 2
-tags:
-  - Install AI Unlimited
-  - Install on AWS
-  - Demo
 ---
 
 # Prepare your AWS account
@@ -26,7 +22,7 @@ Contact your organization administrator if your account doesn’t have the requi
 
 - If you need access to your AI Unlimited instance host operating system (OS), you can connect in the following ways:
     - Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect to your AI Unlimited instance using Secure Shell (SSH) after it launches.
-    - Use AWS Session Manager to connect to the AI Unlimited instance. In this case, you must attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to the IAM role. See [Control AWS access and permissions using custom permissions and policies](/docs/install-ai-unlimited/production/AWS/aws-permissions-policies.md). 
+    - Use AWS Session Manager to connect to the AI Unlimited instance. In this case, you must attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to the IAM role. See [Control AWS access and permissions using custom permissions and policies](/install-ai-unlimited/production/AWS/aws-permissions-policies.md). 
 
 - If you’re using load balancers, make sure you have permission to manage the following AWS services:
     - [AWS Certificate Manager](https://docs.aws.amazon.com/acm/) to issue a new certificate for the hosted zone ID in Route 53.

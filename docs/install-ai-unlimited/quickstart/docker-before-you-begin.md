@@ -3,11 +3,6 @@ id: docker-before-you-begin
 title: Before you begin
 description: Prerequisites for installing Teradata AI Unlimited using Docker.
 sidebar_position: 1
-tags:
-  - Install AI Unlimited
-  - Install AI Unlimited using Docker
-  - Prerequisites to install AI Unlimited
-  - Getting started
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,7 +13,7 @@ Make sure you have the following:
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account.
 
-- [Cloud service provider (CSP)](/docs/glossary.md#glo-csp) account: [AWS](https://aws.amazon.com) or [Azure](https://azure.microsoft.com). 
+- [Cloud service provider (CSP)](/glossary.md#glo-csp) account: [AWS](https://aws.amazon.com) or [Azure](https://azure.microsoft.com). 
 
 - Optionally, your CSP's command-line interface (CLI): [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) or [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli).
 

@@ -4,13 +4,9 @@ title: Teradata - AI Unlimited - Before you begin
 description: Learn about the prerequisites for deploying AI Unlimited on AWS in a production environment.
 sidebar_label: Before you begin 
 sidebar_position: 1
-tags:
-  - Install AI Unlimited
-  - Install on AWS
-  - Demo
 ---
 # Before you begin
 
-import MyPartial from '/docs/_partials/_aws-before-you-start.mdx';
+import MyPartial from '/_partials/_aws-before-you-start.mdx';
 
 <MyPartial />

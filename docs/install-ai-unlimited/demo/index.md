@@ -3,6 +3,8 @@ id: demo
 sidebar_position: 2
 pagination_prev: install-ai-unlimited/get-started
 pagination_next: null
+tags:
+  - Install AI Unlimited
 ---
 
 # Demo installation
@@ -14,5 +16,5 @@ This puts AI Unlimited and JupyterLab, with the AI Unlimited Jupyter Kernel, on 
 As a cloud administrator, you can complete the installation.
 
 Select your CSP:
-- [AWS](/docs/install-ai-unlimited/demo/AWS/demo-aws-before-you-start.md)
-- [Azure](/docs/install-ai-unlimited/demo/Azure/demo-azure-before-you-start.md)
+- [AWS](/install-ai-unlimited/demo/AWS/demo-aws-before-you-start.md)
+- [Azure](/install-ai-unlimited/demo/Azure/demo-azure-before-you-start.md)

@@ -4,10 +4,6 @@ title: Teradata - AI Unlimited - installation - create a Git OAuth app
 description: Steps to create a GitHub or GitLab OAuth app to authorize users.
 sidebar_label: Create a Git OAuth app
 sidebar_position: 2
-tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Create GitHub OAuth App
 ---
 
 

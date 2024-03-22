@@ -3,10 +3,6 @@ id: setup-ai-unlimited
 title: Set up AI Unlimited
 description: Steps to setup AI Unlimited.
 sidebar_position: 5
-tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Load Docker Image
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 Access AI Unlimited setup:
 
-- **http://localhost:3000** (if you are using the [QuickStart](/docs/install-ai-unlimited/quickstart/index.md))
+- **http://localhost:3000** (if you are using the [QuickStart](/install-ai-unlimited/quickstart/index.md))
 
-- **http://[ip_or_hostname]:[port]** (for a [demo](/docs/install-ai-unlimited/demo/index.md) or [production](/docs/install-ai-unlimited/production/index.md) installation)
+- **http://[ip_or_hostname]:[port]** (for a [demo](/install-ai-unlimited/demo/index.md) or [production](/install-ai-unlimited/production/index.md) installation)
 
 Complete the setup in AI Unlimited. To learn more about certain fields, click a section below. 
 
@@ -27,7 +23,7 @@ Complete the setup in AI Unlimited. To learn more about certain fields, click a 
 
 **TLS**
 
-Use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connections to the AI Unlimited service and safeguard your data in transit.
+Use [Transport Layer Security (TLS)](/glossary.md#glo-tls) to secure connections to the AI Unlimited service and safeguard your data in transit.
 
 
 **Certificates**
@@ -51,9 +47,9 @@ AI Unlimited uses the OAuth app you, or someone at your organization, created to
 
 Selecting **Authenticate** establishes the access and returns you to AI Unlimited to complete the setup.
 
-[Create a Git OAuth app](/docs/install-ai-unlimited/quickstart/create-github-oauth-app) (QuickStart)\
-[Create a Git OAuth app](/docs/install-ai-unlimited/demo) (Demo installation)\
-[Create a Git OAuth app](/docs/install-ai-unlimited/production) (Production installation)
+[Create a Git OAuth app](/install-ai-unlimited/quickstart/create-github-oauth-app) (QuickStart)\
+[Create a Git OAuth app](/install-ai-unlimited/demo) (Demo installation)\
+[Create a Git OAuth app](/install-ai-unlimited/production) (Production installation)
 
 </details>
 
@@ -73,7 +69,7 @@ Public or Private refers to how AI Unlimited should communicate with the engine.
 
 **IAM role**
 
-If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
+If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
 
 
 </TabItem>

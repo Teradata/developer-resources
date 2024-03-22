@@ -12,7 +12,7 @@ tags:
 
 # Before you begin
 
-import MyPartial from '/docs/_partials/_azure-before-you-start.mdx';
+import MyPartial from '/_partials/_azure-before-you-start.mdx';
 
 <MyPartial />
 

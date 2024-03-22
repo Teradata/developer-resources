@@ -5,9 +5,6 @@ description: If you're looking to install AI Unlimited using Docker, start here.
 sidebar_position: 1
 tags:
   - Install AI Unlimited
-  - Install AI Unlimited using Docker
-  - Prerequisites to install AI Unlimited
-  - Getting started
 ---
 
 # QuickStart

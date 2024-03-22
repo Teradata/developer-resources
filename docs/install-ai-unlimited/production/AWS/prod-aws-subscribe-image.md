@@ -4,11 +4,6 @@ title: Teradata - AI Unlimited - Subscribe to the engine image
 description: Learn how to subscribe to AI Unlimited image from AWS marketplace.
 sidebar_label: Subscribe to the engine image	
 sidebar_position: 3
-tags:
-  - Install AI Unlimited
-  - Install AI Unlimited using Docker
-  - Prerequisites to install AI Unlimited
-  - Getting started
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

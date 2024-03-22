@@ -2,6 +2,8 @@
 id: production
 sidebar_position: 3
 pagination_prev: install-ai-unlimited/get-started
+tags:
+  - Install AI Unlimited
 ---
 
 # Production installation
@@ -23,4 +25,4 @@ As a cloud administrator, you can complete the installation.
 Select your CSP:
 
 - [AWS](/install-ai-unlimited/production/AWS/prod-aws-before-you-start.md)
-- [Azure](/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md)
+- [Azure](/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md) 
