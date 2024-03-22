@@ -21,10 +21,6 @@ This puts AI Unlimited on your cloud service provider (CSP) on a server instance
 As a cloud administrator, you can complete the installation.
 
 Select your CSP:
-- [AWS](/docs/install-ai-unlimited/production/AWS/prod-aws-before-you-start.md)
 
-- [Azure](/docs/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md)
-
-
-
-
+- [AWS](/install-ai-unlimited/production/AWS/prod-aws-before-you-start.md)
+- [Azure](/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md)
