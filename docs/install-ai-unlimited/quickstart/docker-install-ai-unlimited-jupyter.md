@@ -4,10 +4,6 @@ title: Teradata - AI Unlimited - Deploy AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Run AI Unlimited and JupyterLab using Docker 
 sidebar_position: 4
-tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Production
 ---
 
 import Tabs from '@theme/Tabs';
@@ -54,59 +50,47 @@ git clone https://github.com/Teradata/ai-unlimited
 		</TabItem>
 	</Tabs>
 
-:::note 
-You can provide the environment variables to Docker Compose by either [mounting them as volumes](/docs/glossary.md#glo-mounting-volumes) or using an environment variable file. This quickstart uses a YAML file that contains the environment variables to store your CSP credentials. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).
-:::
+	:::note 
+	You can provide your CSP credentials to Docker Compose two ways:
+	- You can use a YAML file that contains environment varibles for storing your CSP credentials. This QuickStart assumes you are using this method.
+	- You can use a local volume containing your CSP credentials. 
+	
+	See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository.
+	:::
 
 2. In the cloned Teradata AI Unlimited GitHub repository, open the **[CSP]-credentials-env-vars.yaml** file and update the environment variable values.
 
 ## Start AI Unlimited and JupyterLab
 
-Go to the directory where the **ai-unlimited.yaml** and **jupyter.yaml** files are located, and start AI Unlimited and JupyterLab.
+1. Go to the directory where the **ai-unlimited.yaml** and **jupyter.yaml** files are located, and start AI Unlimited and JupyterLab.
 
-  <Tabs>
-    <TabItem value="aws" label="AWS" default>
-
-```bash title="Run the Docker Compose file in the background "
-docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml -d up 
-```
-Retrieve the Jupyter token:
-
-1. List the currently running containers, and identify the name of the JupyterLab container.
-
-```bash
-docker ps 
-```
-2. Search for occurrences of the string 'Token' in the container's logs.
-
-```bash
-docker logs <container_name> | grep 'Token'
-```
-
-</TabItem>
-    <TabItem value="azure" label="Azure">
+	<Tabs>
+		<TabItem value="aws" label="AWS" default>
+		```bash title="Run the Docker Compose file in the background "
+		docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml -d up 
+		```
+		</TabItem>
+		<TabItem value="azure" label="Azure">
+		```bash title="Run the Docker Compose file in the background "
+		docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml -d up
+		```
+		</TabItem>
+	</Tabs>
 	
-  ```bash title="Run the Docker Compose file in the background "
-docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml -d up
-```
+	The command downloads and starts AI Unlimited and JupyterLab containers.
 
-Retrieve the Jupyter token:
+2. To retrieve the Jupyter token, list the currently running containers, and identify the name of the JupyterLab container.
 
-1. List the currently running containers, and identify the name of the JupyterLab container.
+	```bash
+	docker ps 
+	```
+	Then search for occurrences of the string 'Token' in the container's logs.
 
-```bash
-docker ps 
-```
-2. Search for occurrences of the string 'Token' in the container's logs.
+	```bash
+	docker logs <container_name> | grep 'Token'
+	```
 
-```bash
-docker logs <container_name> | grep 'Token'
-```
-
- </TabItem>
-    </Tabs>
-
-The command downloads and starts AI Unlimited and JupyterLab containers. 
+ 
 
 ## Verify access to AI Unlimited and JupyterLab
 
