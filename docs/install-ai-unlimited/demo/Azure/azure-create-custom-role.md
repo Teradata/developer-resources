@@ -4,10 +4,6 @@ title: Teradata - AI Unlimited - Create a custom role in Azure
 description: Learn deploy AI Unlimited using Azure ARM from the Azure portal.
 sidebar_label: Create a custom role with the required permissions	
 sidebar_position: 5
-tags:
-  - Install AI Unlimited
-  - Install on Azure
-  - Demo
 ---
 # Create a custom role with the required permissions	
 

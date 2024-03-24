@@ -3,11 +3,6 @@ id: docker-before-you-begin
 title: Before you begin
 description: Prerequisites for installing Teradata AI Unlimited using Docker.
 sidebar_position: 1
-tags:
-  - Install AI Unlimited
-  - Install AI Unlimited using Docker
-  - Prerequisites to install AI Unlimited
-  - Getting started
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

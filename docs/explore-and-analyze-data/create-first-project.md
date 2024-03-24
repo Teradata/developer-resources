@@ -4,10 +4,6 @@ title: Teradata - AI Unlimited - create your first project
 description: Learn how to use AI Unlimited by running a simple workflow in a Jupyter notebook.
 sidebar_label: Create your first project
 sidebar_position: 1
-tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Load Docker Image
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

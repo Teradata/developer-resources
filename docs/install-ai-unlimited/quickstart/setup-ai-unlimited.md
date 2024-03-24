@@ -3,10 +3,6 @@ id: setup-ai-unlimited
 title: Set up AI Unlimited
 description: Steps to setup AI Unlimited.
 sidebar_position: 5
-tags:
-  - Install AI Unlimited
-  - Install using Docker
-  - Load Docker Image
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

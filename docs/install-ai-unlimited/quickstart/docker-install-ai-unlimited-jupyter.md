@@ -39,20 +39,20 @@ git clone https://github.com/Teradata/ai-unlimited
 
 1. Copy these environment variables from your [CSP](/docs/glossary.md#glo-csp) console or use the CLI. 
 
-<Tabs>
-    <TabItem value="aws" label="AWS" default>
-    `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
+	<Tabs>
+		<TabItem value="aws" label="AWS" default>
+		`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
 
-    Learn about AWS [environment variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
+		Learn about AWS [environment variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
   
-</TabItem>
-    <TabItem value="azure" label="Azure">
-    `ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID`, and `ARM_CLIENT_SECRET`
+		</TabItem>
+		<TabItem value="azure" label="Azure">
+		`ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID`, and `ARM_CLIENT_SECRET`
 
-    Learn about Azure [environment variables](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication).
+		Learn about Azure [environment variables](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication).
   
-</TabItem>
-    </Tabs>
+		</TabItem>
+	</Tabs>
 
 :::note 
 You can provide the environment variables to Docker Compose by either [mounting them as volumes](/docs/glossary.md#glo-mounting-volumes) or using an environment variable file. This quickstart uses a YAML file that contains the environment variables to store your CSP credentials. For other options, see [AI Unlimited GitHub: Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md).

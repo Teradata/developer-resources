@@ -4,10 +4,6 @@ title: Prepare your Azure account
 description: Learn about the account, networking, and DNS requirements before deploying AI Unlimited on Azure. 
 sidebar_label: Prepare your AWS account 
 sidebar_position: 2
-tags:
-  - Install AI Unlimited
-  - Install on Azure
-  - Demo
 ---
 
 # Prepare your Azure account

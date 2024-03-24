@@ -4,9 +4,6 @@ title: Get started
 description: Learn about the AI Unlimited platform
 sidebar_position: 1
 pagination_next: null
-tags:
-  - Getting started
-  - Install AI Unlimited
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
