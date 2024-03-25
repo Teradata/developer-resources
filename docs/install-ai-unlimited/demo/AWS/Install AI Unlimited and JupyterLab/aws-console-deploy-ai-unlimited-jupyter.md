@@ -6,7 +6,7 @@ sidebar_label: Deploy CloudFormation Template from AWS Console
 sidebar_position: 5
 ---
 
-# Deploy the CloudFormation templates from the AWS Management Console
+# Deploy the CloudFormation template from the AWS Management Console
 
 :::note
 If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.

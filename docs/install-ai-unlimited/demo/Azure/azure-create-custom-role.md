@@ -11,9 +11,9 @@ sidebar_position: 5
 Skip this step if you have already deployed a simple resource group, role with permissions policy, and virtual network using the [resources.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/resources.json) template.
 :::
  
-If the roles defined by your organization cannot deploy AI Unlimited, you can use the [role-policy](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/role-policy.json) ARM template. This template contains permissions to create an AI Unlimited instance and grants AI Unlimited the permissions to create specific IAM roles and policies for the AI Unlimited engines it deploys. Optionally, you can share the [ai-unlimited](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/policies/ai-unlimited.json) file with your organization administrator to create the custom role on your behalf. 
+If the roles defined by your organization cannot deploy AI Unlimited, use the [role-policy](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/role-policy.json) ARM template. This template contains permissions to create an AI Unlimited instance and grants AI Unlimited permissions to create specific IAM ***[RBAC?]*** roles and policies for the AI Unlimited engines it deploys. Optionally, you can share the [ai-unlimited](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/policies/ai-unlimited.json) file with your organization administrator to create the custom role on your behalf. 
 
-You can configure the custom roles and policies on the **Access control (IAM)** page from the Azure portal. For detailed instructions, see [Create or update Azure custom roles using the Azure portal](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal).
+You can configure the custom roles and policies on the **Access control (IAM)** ***[that sounds like AWS]*** page from the Azure portal. For detailed instructions, see [Create or update Azure custom roles using the Azure portal](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal).
 
 To deploy the role-policy ARM template, do the following:
 

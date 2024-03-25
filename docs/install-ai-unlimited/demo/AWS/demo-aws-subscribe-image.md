@@ -1,15 +1,12 @@
 ---
 id: demo-aws-subscribe-image
-title: Teradata - AI Unlimited - Subscribe to the engine Amazon Machine Image
-description: Learn how to subscribe to AI Unlimited image from AWS marketplace.
-sidebar_label: Subscribe to the engine image	
+title: Teradata - AI Unlimited - Subscribe
+description: Learn how to subscribe to AI Unlimited from the AWS marketplace.
+sidebar_label: Subscribe to AI Unlimited	
 sidebar_position: 3
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-# Subscribe to the engine Amazon Machine Image
+# Subscribe to AI Unlimited
 
 import MyPartial from '/docs/_partials/_aws-subscribe-image.mdx';
 

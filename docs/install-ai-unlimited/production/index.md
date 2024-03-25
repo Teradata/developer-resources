@@ -18,7 +18,7 @@ This puts AI Unlimited on your cloud service provider (CSP) on a server instance
 
 ***Might they have it, without the kernel, on their computer in a container that's not a Docker container?***
 
-As a cloud administrator, you can complete the installation.
+As a cloud administrator, or with the help of one, you can complete the installation.  ***Discuss***
 
 Select your CSP:
 

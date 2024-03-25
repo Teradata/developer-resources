@@ -2,19 +2,15 @@
 id: demo-azure-prepare-your-account
 title: Prepare your Azure account
 description: Learn about the account, networking, and DNS requirements before deploying AI Unlimited on Azure. 
-sidebar_label: Prepare your AWS account 
+sidebar_label: Prepare your Azure account 
 sidebar_position: 2
 ---
 
 # Prepare your Azure account
 
-:::note
-Contact your organization administrator if your account doesn’t have the required account or network permissions. 
-:::
-
 -  Azure account requirements 
 
-    - Rights to create Azure resources. Make sure the account deploying AI Unlimited has sufficient permissions to create the roles. See [Roles and Permissions for AI Unlimited](/docs/install-ai-unlimited/demo/Azure/azure-create-custom-role.md).
+    - Rights to create Azure resources. Make sure your account has sufficient permissions to create the role. See [Roles and Permissions for AI Unlimited](/docs/install-ai-unlimited/demo/Azure/azure-create-custom-role.md).
 
     - Owner permissions on the Azure subscription that you would like to use. 
 

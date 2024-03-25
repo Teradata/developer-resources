@@ -1,5 +1,5 @@
 ---
-id: quickstart_next_steps
+id: quickstart_explore-and-analyze-data
 title: Teradata - AI Unlimited - Quickstart - What's next after setup
 description: What you can do after your Quickstart setup is complete.
 sidebar_position: 6
