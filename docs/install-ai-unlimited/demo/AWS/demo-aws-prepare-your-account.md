@@ -3,7 +3,7 @@ id: demo-aws-prepare-your-account
 title: Prepare your AWS account
 description: Learn about the account, networking, and DNS requirements before deploying AI Unlimited on Azure. 
 sidebar_label: Prepare your AWS account 
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Prepare your AWS account

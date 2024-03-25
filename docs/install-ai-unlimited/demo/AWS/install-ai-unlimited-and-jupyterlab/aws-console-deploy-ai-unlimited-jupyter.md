@@ -1,12 +1,12 @@
 ---
 id: aws-console-deploy-ai-unlimited-jupyter
-title: ClouFormation template from the AWS Console 
-description: Learn how to deploy Teradata AI Unlimited JupyterLab using the CloudFormation Template from the AWS Management Console.
-sidebar_label: Deploy CloudFormation Template from AWS Console
-sidebar_position: 5
+title: Teradata - AI Unlimited - Demo install using AWS console
+description: Learn how to deploy the demo AI Unlimited CloudFormation Template from the AWS Management Console.
+sidebar_label: AWS Management Console
+sidebar_position: 1
 ---
 
-# Deploy the CloudFormation template from the AWS Management Console
+# Deploy the all-in-one template from the AWS Management Console
 
 :::note
 If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.

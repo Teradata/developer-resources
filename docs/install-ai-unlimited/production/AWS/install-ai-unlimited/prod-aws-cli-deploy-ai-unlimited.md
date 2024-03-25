@@ -1,12 +1,12 @@
 ---
 id: prod-aws-cli-deploy-ai-unlimited
-title: Teradata - AI Unlimited - Deploy CloudFormation Template from the AWS CLI
-description: Learn how to deploy Teradata AI Unlimited CloudFormation Template from AWS CLI.
-sidebar_label: Deploy CloudFormation Template from AWS CLI
-sidebar_position: 5
+title: Teradata - AI Unlimited - Production - Install on AWS - CLI
+description: Learn how to deploy the AI Unlimited CloudFormation Template from the AWS CLI.
+sidebar_label: AWS CLI
+sidebar_position: 2
 ---
 
-# Deploy CloudFormation Template from the AWS CLI
+# Deploy the AI Unlimited template from the AWS CLI
 
 You can deploy a stack using the `aws cloudformation create-stack` or `aws cloudformation deploy` commands from the AWS CLI. The example in this section uses the create-stack command. See [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/#cli-aws-cloudformation) documentation for the syntax differences between the `create-stack` and `deploy` commands.
 

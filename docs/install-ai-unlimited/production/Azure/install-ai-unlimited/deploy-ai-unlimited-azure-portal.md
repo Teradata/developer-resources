@@ -1,12 +1,12 @@
 ---
-id: deploy-jupyter-azure-portal
-title: Teradata - AI Unlimited - deploy JupyterLab using Azure ARM
-description: Learn deploy JupyterLab using Azure ARM from the Azure portal.
-sidebar_label: Deploy Jupyter using Azure ARM 
-sidebar_position: 7
+id: deploy-ai-unlimited-azure-portal
+title: Teradata - AI Unlimited - deploy AI Unlimited using Azure ARM - Portal
+description: Learn how to deploy AI Unlimited ARM template from the Azure Portal.
+sidebar_label: Azure Portal
+sidebar_position: 1
 ---
 
-# Deploy AI Unlimited using Azure ARM
+# Deploy the AI Unlimited template from the Azure Portal
 
 1. Log into your [Azure portal](https://portal.azure.com). 
 
@@ -14,9 +14,9 @@ sidebar_position: 7
 
 3. Select **Build your own template in the editor**. 
 
-4. In the bar above the editor, select **Load file** and then select the **[Jupyter Template](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/jupyter.json)** template.
+4. In the bar above the editor, select **Load file** and then select the **[AI Unlimited Template](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/ai-unlimited.json)**. 
 
-    This template deploys a single instance with JupyterLab running in a container controlled by systemd. 
+    This template deploys a single instance with AI Unlimited running in a container controlled by systemd. 
 
 5. When the file contents appear in the editor, select **Save**. 
 
@@ -48,21 +48,21 @@ sidebar_position: 7
 
 </details>
 
-
 <details>
 
-<summary>JupyterHub parameters</summary>
+<summary>AI Unlimited parameters</summary>
 
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
-| JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
-| JupyterVersion | The version of JupyterLab you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
-| JupyterToken | The token or password used to access JupyterLab from the UI | Required |- | The token must begin with a letter and contain only alphanumeric characters. The allowed pattern is ^[a-zA-Z][a-zA-Z0-9-]*. |
+| AI Unlimited Name | Unique name given to AI Unlimited. | Required | - |- |
+| AI Unlimited HTTP Port | The port to access the AI Unlimited UI. | Required with default | 3000 | - |
+| AI Unlimited GRPC Port | The port to access the AI Unlimited API. | Required with default | 3282 | - | 
+| AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
 
 </details>
 
-7. When you finish reviewing and customizing the parameters, choose **Review + Create**, and then **Create**. The JupyterLab deployment takes a few minutes. During JupyterLab creation, you can view the deployment status in the **Notifications** page. 
+7. When you finish reviewing and customizing the parameters, choose **Review + Create**, and then **Create**. The AI Unlimited deployment takes a few minutes. During AI Unlimited creation, you can view the deployment status in the **Notifications** page. 
 
-    After the template is deployed, connection parameters to JupyterLab is available in the **Output** tab. 
+    After the template is deployed, connection parameters to AI Unlimited is available in the **Output** tab. 
 
 

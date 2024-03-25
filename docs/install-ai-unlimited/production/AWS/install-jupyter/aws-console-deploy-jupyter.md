@@ -1,26 +1,25 @@
 ---
-id: prod-aws-console-deploy-ai-unlimited
-title: Teradata - AI Unlimited - Deploy AI Unlimited from the AWS Management Console 
-description: Learn how to deploy Teradata AI Unlimited sing the CloudFormation Template from the AWS Management Console.
-sidebar_label: Deploy the AI Unlimited CloudFormation Template from AWS Console
-sidebar_position: 6
+id: aws-console-deploy-jupyter
+title: Teradata - AI Unlimited - Deploy JupyterLab from the AWS Management Console
+description: Learn how to deploy JupyterLab using the AWS Cloudformation Template from the AWS Management Console.
+sidebar_label: AWS Management Console 
+sidebar_position: 1
 ---
-
-# Deploy the AI Unlimited CloudFormation Template from the AWS Console
+# Deploy the JupyterLab template from the AWS Management Console
 
 :::note
-If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
+If the account deploying JupyterLab does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
 :::
 
-To deploy AI Unlimited from the AWS Management Console, do the following:
+To deploy JupyterLab from the AWS Management Console, do the following:
 
 1. Sign on to your AWS account on the AWS Management Console.
 2. Check the **AWS Region** displayed in the upper-right corner of the navigation bar and change it if necessary. Teradata recommends selecting a region closest to your primary work location.
 3.	Go to **CloudFormation** > **Create Stack**. Select **Create Stack** and select **With new resources (standard)**.
-4.	Select **Template is ready**, and then upload one of the downloaded AI Unlimited template files from the Teradata AI Unlimited GitHub repository. This template deploys a single instance with AI Unlimited running in a container controlled by systemd.
-    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml) CloudFormation template for use cases where AI Unlimited is hosted behind the application load balancer.
-    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml) loudFormation template for use cases where AI Unlimited is hosted behind the network load balancer.
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml) loudFormation template for use cases where load balancers are not used.
+4.	Select **Template is ready**, and then upload one of the following template files from the Teradata AI Unlimited GitHub repository. This template deploys a single instance with JupyterLab running in a container controlled by systemd.
+    - [jupyter-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/jupyter/jupyter-with-alb.yaml) cloudformation template for use cases where JupyterLab  is hosted behind the application load balancer.
+    - [jupyter-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/jupyter/jupyter-with-nlb.yaml) cloudformation template for use cases whereJupyterLab  is hosted behind the network load balancer.
+    - [jupyter-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/jupyter/jupyter-without-lb.yaml) cloudformation template template for use cases where load balancers are not used.
 
 5.	Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. When you finish reviewing and customizing the parameters, choose **Next**.  
 
@@ -58,15 +57,14 @@ In the section, parameters are listed by category:
 
 <details>
 
-<summary>**AI Unlimited parameters**</summary>
+<summary>**JupyterLab parameters**</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
-|AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default	|3000||
-|AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default|3282||
-|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default|latest|The value is a container version tag, for example, latest.|
+| JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
+| JupyterVersion | The version of JupyterLab you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
+| JupyterToken | The token or password used to access JupyterLab from the UI | Required |- | The token must begin with a letter and contain only alphanumeric characters. The allowed pattern is ^[a-zA-Z][a-zA-Z0-9-]*. |
 
 </details>
-
 
 6. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, set permissions, set stack failure options, and set advanced options. When you're done, choose **Next**. 
 7. On the **Review** page, review and confirm the template settings. Under Capabilities, select the check box to acknowledge that the template will create IAM resources. 
@@ -74,7 +72,5 @@ In the section, parameters are listed by category:
 9.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
 10. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
 
-If you have only deployed AI Unlimited, you must deploy an interface before running your workload. To deploy the interface locally on Docker, see xref::install-ai-unlimited-interface-docker.adoc[]. You can also use the [Jupyter Template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws#jupyter-template) to deploy a single instance with JupyterLab running in a container controlled by systemd.
-
-Teradata AI Unlimited is ready!
+JupyterLab is ready!
 

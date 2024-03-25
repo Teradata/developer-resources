@@ -2,7 +2,7 @@
 id: demo-aws-permissions-policies
 title: Create custom IAM roles and policies
 description: Learn how AWS IAM roles and policies impact the Teradata AI Unlimited deployment.
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Create custom IAM roles and policies
@@ -21,7 +21,7 @@ For detailed instructions, see [Creating roles and attaching policies (console) 
 
 These IAM policies are required for a new IAM role:
 
-- [ai-unlimited-with-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-with-iam-role-permissions.json): This JSON sample includes permissions needed to create AI Unlimited instances and grants AI Unlimited the permissions to create cluster-specific IAM roles and policies for the engine.
+- ***This one is not in the repo.*** [ai-unlimited-with-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-with-iam-role-permissions.json): This JSON sample includes permissions needed to create AI Unlimited instances and grants AI Unlimited the permissions to create cluster-specific IAM roles and policies for the engine.
 
 - [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-without-iam-role-permissions.json): This JSON sample includes the permissions needed to create AI Unlimited instances. If your account restrictions do not allow AI Unlimited to create IAM roles and policies, then you must provide an IAM role with a policy to pass to the engine. In this case, you can use this modified policy, which does not include permissions to create IAM roles or IAM policies.
 

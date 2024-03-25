@@ -1,12 +1,11 @@
 ---
-id: aws-console-deploy-jupyter
-title: Teradata - AI Unlimited - Deploy JupyterLab from AWS Management Console
-description: Learn deploy AI Unlimited using AWS Cloudformation template from AWS Management Console.
-sidebar_label: Deploy JupyterLab Cloudformation Template from AWS Management Console 
-sidebar_position: 7
+id: aws-cli-deploy-jupyter
+title: Teradata - AI Unlimited - Deploy JupyterLab from the AWS CLI
+description: Learn how to deploy JupyterLab using the AWS Cloudformation Template from the AWS CLI.
+sidebar_label: AWS CLI
+sidebar_position: 2
 ---
-# Deploy the JupyterLab CloudFormation Template from the AWS Console
-
+# Deploy the JupyterLab template from the AWS CLI
 :::note
 If the account deploying JupyterLab does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
 :::
