@@ -9,19 +9,20 @@ sidebar_position: 5
 
 ***Do they have to subscribe before they do this?***
 
-Configure policies with the necessary permissions to provide access ***[access is being granted to what?]*** to the AWS resources. ***Is this topic just about policies or roles as well?***
+Configure roles and policies with the necessary permissions to provide access ***[access is being granted to what?]*** to the AWS resources. ***Is this topic just about policies or roles as well?*** ***TA: Roles and policies***
 
 :::note 
 If your AWS account does not have sufficient IAM permissions to create IAM roles and policies, your cloud administrator can define the roles and policies and pass them to the CloudFormation template. 
 :::
 
-***Is this topic about defining the roles and policies in order to pass them to the CFT? Probably not. It's about how to create them in the console. The above para must be the workaround.*** 
+***Is this topic about defining the roles and policies in order to pass them to the CFT? Probably not. It's about how to create them in the console. The above para must be the workaround.*** ***TA: If users don't have access to create own roles, then they should go through IT. If they do have access, they can create new roles via the Console.***
 
 For detailed instructions, see [Creating roles and attaching policies (console) - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html).
 
 These IAM policies are required for a new IAM role:
 
-- ***This one is not in the repo.*** [ai-unlimited-with-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-with-iam-role-permissions.json): This JSON sample includes permissions needed to create AI Unlimited instances and grants AI Unlimited the permissions to create cluster-specific IAM roles and policies for the engine.
+- [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json): This JSON sample includes permissions needed to create AI Unlimited instances and grants AI Unlimited the permissions to create cluster-specific IAM roles and policies for the engine.
+**MEM: ***This one is not in the repo.***  ***TA: Updated, however, the new file has workspace reference***
 
 - [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-without-iam-role-permissions.json): This JSON sample includes the permissions needed to create AI Unlimited instances. If your account restrictions do not allow AI Unlimited to create IAM roles and policies, then you must provide an IAM role with a policy to pass to the engine. In this case, you can use this modified policy, which does not include permissions to create IAM roles or IAM policies.
 
