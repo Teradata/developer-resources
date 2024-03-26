@@ -9,13 +9,13 @@ sidebar_position: 5
 
 ***Do they have to subscribe before they do this?***
 
-Configure policies with the necessary permissions to provide access ***[access is being granted to what?]*** to the AWS resources. ***Is this topic just about policies or roles as well?***
+Configure roles and policies with the necessary permissions to provide access ***[access is being granted to what?]*** to the AWS resources. ***Is this topic just about policies or roles as well?*** ***TA: Roles and policies***
 
 :::note 
 If your AWS account does not have sufficient IAM permissions to create IAM roles and policies, your cloud administrator can define the roles and policies and pass them to the CloudFormation template. 
 :::
 
-***Is this topic about defining the roles and policies in order to pass them to the CFT? Probably not. It's about how to create them in the console. The above para must be the workaround.*** 
+***Is this topic about defining the roles and policies in order to pass them to the CFT? Probably not. It's about how to create them in the console. The above para must be the workaround.*** ***TA: If users don't have access to create own roles, then they should go through IT. If they do have access, they can create new roles via the Console.***
 
 For detailed instructions, see [Creating roles and attaching policies (console) - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html).
 
