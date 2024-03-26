@@ -76,7 +76,7 @@ Definition
 <a id="glo-mounting-volumes"></a>
 ### mounting volumes 
 
-A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers to a directory within a container to share data and files between the host and container.
+A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers (host) to a directory within a container to share data and files between the host and container.
 
 ### term
 
