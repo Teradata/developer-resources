@@ -26,7 +26,7 @@ The AI Unlimited elements:
 Choose a way to begin:
 - [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try out AI Unlimited
 - [Demo](/install-ai-unlimited/demo/index.md)&mdash;show your team what AI Unlimited offers
-- [Production](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
+- [Full](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 ***MEM: Include pricing info on this site? Only on the marketplace listing?***
 ***Add What's New and Community***

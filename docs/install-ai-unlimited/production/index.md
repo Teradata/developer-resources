@@ -4,7 +4,7 @@ sidebar_position: 3
 pagination_prev: install-ai-unlimited/get-started
 ---
 
-# Production installation
+# Full installation
 
 Are you ready to scale to your team? Complete the production installation.
 
