@@ -3,7 +3,7 @@ id: deploy-jupyter-azure-portal
 title: Teradata - AI Unlimited - deploy JupyterLab using Azure ARM
 description: Learn deploy JupyterLab using Azure ARM from the Azure portal.
 sidebar_label: Azure Portal
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Deploy the JupyterLab template from the Azure Portal
