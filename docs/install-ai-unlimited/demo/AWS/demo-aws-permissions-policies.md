@@ -28,7 +28,8 @@ Attach the required IAM policies to an IAM role:
 
 - [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): If you pass the AI Unlimited IAM role to a new engine instead of allowing AI Unlimited to create the cluster-specific role, you can use this JSON sample as a starting point to create your policy.
 
-When AI Unlimited creates policies for the engine ***[But the topic says the user creates the policies. And, if they are for the engine, does that mean they grant the engine access to the AWS resources (see first para).]***, they are restricted as follows:
+When AI Unlimited creates policies for the engine ***[But the topic says the user creates the policies. And, if they are for the engine, does that mean they grant the engine access to the AWS resources (see first para).]***, they are restricted as follows: 
+***TA: AI Unlimited can pass its own role and policies to the engine or can create new ones for the engine. The last policy is related to how AI Unlimited passes the policies to engine, and hence the statement when AI Unlimited creates policies for engine.... Other ones are about creating AI Unlimited instances.***
 
 ```bash
 "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
