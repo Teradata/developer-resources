@@ -6,7 +6,7 @@ pagination_prev: install-ai-unlimited/get-started
 
 # Full installation
 
-Are you ready to scale to your team? Complete the production installation.
+Are you ready to scale to your team? Complete the full installation.
 
 This puts AI Unlimited on your cloud service provider (CSP) on a server instance without JupyterLab, which simplifies security and sizing. For the JupyterLab location, you have these options:
 

@@ -9,7 +9,9 @@ import TabItem from '@theme/TabItem';
 
 # Before you begin
 
-Make sure you have the prerequisites&mdash;and take some first steps.
+Make sure you have the prerequisites, and take some first steps.
+
+***"first steps" not quite logical in a "Before" topic. Revisit.***
 
 ## Prerequisites
 
@@ -23,9 +25,14 @@ Make sure you have the prerequisites&mdash;and take some first steps.
 
 ## First steps
 
-- Subscribe to AI Unlimited on your CSP's marketplace:
+- Subscribe to AI Unlimited on your CSP's marketplace:  ***If we include this bullet here, we would remove the separate Subscribe topic. Might depend on what we really need to say about subscribing. The listing is going to change still. Hoping it is self-evident.***
   - AWS (link)
   - Azure (link)
   
   
-- Get some details that you'll need to deploy the compute engine. Copy this template to collect them from someone on your organization's cloud neworking and security team. ***What is the best way to describe this person to this audience?***  
+- When you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/setup-ai-unlimited.md), you'll provide details for deploying the engine on your CSP. Copy this template to get these details from someone on your organization's cloud neworking and security team. ***What is the best way to describe this team to this audience? "Cloud IT team?" "Cloud operations team"?*** 
+
+	```bash
+	[placeholder]
+	```
+ 
