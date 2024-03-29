@@ -5,6 +5,7 @@ description: Learn how to deploy JupyterLab using the AWS Cloudformation Templat
 sidebar_label: AWS Management Console 
 sidebar_position: 2
 ---
+
 # Deploy the JupyterLab template from the AWS Management Console
 
 :::note

@@ -12,6 +12,6 @@ You may already have JupyterLab&mdash;somewhere on the cloud or on your computer
 
 Or, get JupyterLab with the AI Unlimited kernel now:
 
-- [Run it locally in a Docker container](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-docker-install-jupyter.md)
+- [Run it locally in a Docker container](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-run-jupyter-docker)
 - [Install it on AWS&mdash;use the AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-console-deploy-jupyter.md) 
 - [Install it on AWS&mdash;use the AWS CLI](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-cli-deploy-jupyter.md) 

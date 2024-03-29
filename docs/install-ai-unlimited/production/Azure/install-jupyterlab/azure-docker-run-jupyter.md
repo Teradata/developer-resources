@@ -5,4 +5,9 @@ description: Learn how to run JupyterLab with the AI Unlimited Jupyter Kernel on
 sidebar_label: Docker
 sidebar_position: 1
 ---
-# Run JupyterLab locally in a Docker container
+
+# Run JupyterLab locally
+
+import MyPartial from '/docs/_partials/_run-jupyter-docker.mdx';
+
+<MyPartial />

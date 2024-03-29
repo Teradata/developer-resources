@@ -47,7 +47,7 @@ Copy and retain the following:
 
 Run `%help` or `%help <command>` for details on any magic command. See [Magic commands](/docs/explore-and-analyze-data/magic-commands.md) for more details.
 
-1. Connect to JupyterLab using the URL: http://localhost:8888 and enter the token when prompted.
+1. Connect to JupyterLab using `http://localhost:8888` and enter the token when prompted.
 2. Connect to AI Unlimited using the API Key.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=F

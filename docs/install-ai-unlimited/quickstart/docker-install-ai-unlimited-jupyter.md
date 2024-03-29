@@ -20,7 +20,7 @@ Open a terminal window, and clone the Teradata AI Unlimited GitHub repository. I
 ``` bash
 git clone https://github.com/Teradata/ai-unlimited
 ```
-## Set AI Unlimited environment variables
+## Set environment variables
 
 1. Optionally, set the environment variable `AI_UNLIMITED_HOME` to the directory where you want the configuration and data files to be located. Make sure the directory exists, and that appropriate permission is granted. The default location is **./volumes/ai-unlimited**.
 
@@ -92,7 +92,9 @@ git clone https://github.com/Teradata/ai-unlimited
 
 ## Verify access to AI Unlimited and JupyterLab
 
-When AI Unlimited is ready, you can access it at **http://localhost:3000**. When JupyterLab is ready, you can access it at **http://localhost:8888**, and enter the token. 
+When AI Unlimited is ready, you can access it at `http://localhost:3000`. 
+
+When JupyterLab is ready, you can access it at `http://localhost:8888`, and enter the token. 
 
 After you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/setup-ai-unlimited.md), you'll be able to create a project in JupyterLab. 
 
