@@ -6,6 +6,8 @@ sidebar_label: Manage AWS permissions
 sidebar_position: 5
 ---
 
+***Same for demo and prod, so I will create a partial.***
+
 # Manage AWS permissions
 
 Create a custom IAM role and policies. And, if applicable, prepare for the use of load balancers.
