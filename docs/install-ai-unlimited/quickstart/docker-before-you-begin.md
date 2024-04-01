@@ -35,4 +35,4 @@ Make sure you have the prerequisites, and take some first steps.
 	```bash
 	[placeholder]
 	```
- 
+ ***Somehow add "or get this from your CSP console"***
