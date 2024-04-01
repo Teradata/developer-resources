@@ -8,7 +8,9 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-***MEM: Align with marketplace listing***
+***MEM: Align with marketplace listing when that's stable.***
+
+***We might just end up making this a bullet in Before you begin.***
 
 Complete the steps for your [cloud service provider (CSP)](/docs/glossary.md#glo-csp).
 
