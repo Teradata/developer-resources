@@ -2,7 +2,7 @@
 id: example-projects
 title: Example projects
 description: Run a simple workflow and learn how to use Teradata AI Unlimited.
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Example projects

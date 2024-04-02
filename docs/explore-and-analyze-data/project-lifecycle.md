@@ -2,7 +2,7 @@
 id: project-lifecycle
 title: Project lifecycle
 description: See the whole project lifecycle at a glance.
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Project lifecycle

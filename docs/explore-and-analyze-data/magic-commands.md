@@ -2,7 +2,7 @@
 id: magic-commands
 title: Magic commands
 description: Learn about Teradata AI Unlimited JupyterLab magic commands.
-sidebar_position: 4
+sidebar_position: 5
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -5,7 +5,7 @@ pagination_prev: install-ai-unlimited/get-started
 pagination_next: null
 ---
 
-# Demo installation
+# Demo installation [will remove]
 
 To share with your team what AI Unlimited can do, use the demo installation.
 

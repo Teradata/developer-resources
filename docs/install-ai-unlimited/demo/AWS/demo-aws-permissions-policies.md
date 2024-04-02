@@ -1,35 +1,34 @@
 ---
 id: demo-aws-permissions
-title: Teradata - AI Unlimited - Demo - AWS permissions
-description: Learn what IAM roles and policies are needed to deploy the engine.
-sidebar_label: Manage AWS permissions
+title: Teradata - AI Unlimited - Demo - AWS - IAM roles and policies
+description: Learn what roles and policies are needed for accessing AWS resources.
+sidebar_label: Create an IAM role and policies
 sidebar_position: 5
 ---
 
-***Same for demo and prod, so I will create a partial.***
+# Create an IAM role and policies
 
-# Manage AWS permissions
+***Jack will write up how this all works--AI Unlim service vs. engine, etc. This topic needs work.***
 
-Create a custom IAM role and policies. And, if applicable, prepare for the use of load balancers.
-**TA: We can remove load balancers as they don't fit in here***
+Use IAM roles and policies to grant AI Unlimited permissions to deploy the AI Unlimited compute engine and access AWS resources such as S3 buckets. 
 
-## Custom IAM role and policies
+***Do/does the role(s)/policies we're going to describe have anything to do with access to S3?*** 
 
-Provide an IAM role and policies to allow AI Unlimited to deploy the AI Unlimited compute engine on AWS resources.
-** TA: We can modify as : Use IAM roles and policies to grant AI Unlimited permissions for deploying the AI Unlimited engine and accessing AWS resources. The policies allow access to AWS resources such as S3 buckets, and deploying engine is one way AI Unlimited uses AI Unlimited EC2 instance.***
+***Their object store might not be on AWS. How do they ensure AI Unlim can access their object store wherever it is? Not for this AWS topic, but somewhere else in the doc.***
 
-If you have the necessary permissions, create the role and policies yourself. If you don't, your cloud administrator can define the role and polices and pass them to the CloudFormation template you'll use to install AI Unlimited. ***(Does the latter option have anything to do with allowing AI Unlim to pass the role to the engine cluster? I'm assuming no.)***
+If you have the necessary permissions, create the role and policies yourself. If you don't, your cloud administrator can define the role and polices. You'll need the role name when you ***[for the cloud template, the setup ui... explain]***
 
+### How the engine cluster gets the role
 
-### Learn how the engine cluster gets the role
-
-**TA: User needs to provide IAM role and policies to deploy AI Unlimited. This value is what we provide in the CloudFormation Template***
+***TA: User needs to provide IAM role and policies to deploy AI Unlimited. This value is what we provide in the CloudFormation Template***
 
 ***TA: This is what we define in the AI Unlimited UI*** Each time a user deploys the engine from their Jupyter notebook, the engine's cluster needs the role and policies. It gets them one of two ways:
 
-**TA: We can avoid using cluster and just use engine***
+***TA: We can avoid using cluster and just use engine***
 
-- AI Unlimited can create a cluster-specific role with policies based on the role and policies you provide&mdash;if your AWS account allows this. ***(Is this allowed via ai-unlimited-workspaces.json, simple as that, or is this bullet referring to other restrictions they can't control?)***
+***But doesn't the role get assigned to the cluster? to allow it to deploy the engine?***
+
+- AI Unlimited can create a cluster-specific role with policies based on the role and policies you provide&mdash;if your AWS account allows this. ***(Is this allowed via ai-unlimited-workspaces.json, simple as that, or is "if your AWS account allows this" referring to something else?)***
 - AI Unlimited can pass the role and policies, that you provide, to the cluster.
 
 If AI Unlimited creates cluster-specific policies, they are restricted as follows:
@@ -38,7 +37,7 @@ If AI Unlimited creates cluster-specific policies, they are restricted as follow
 "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
 ```
 
-For the role you provide, you can't predict the cluster name, so use a wildcard in the policy ***("policies"?)***.
+For the role you provide, you can't predict the cluster name, so use a wildcard in the policy ***(which one?)***.
 
 ``` bash
 "arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/*"
@@ -69,11 +68,4 @@ Use these JSON samples to create the policies you need, and attach them to the r
     - Use AWS Session Manager to connect.
 	:::
 
-## Load balancers
-
-If you’re using load balancers, make sure you have permission to manage these AWS services:
-    - [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
-    - [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;to configure a custom domain name and route DNS queries to your load balancer.
-
-    For details on AWS load balancers, see [Getting started with Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html) and [Getting started with Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html).
 	

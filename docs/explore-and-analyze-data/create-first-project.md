@@ -3,7 +3,7 @@ id: create-first-project
 title: Teradata - AI Unlimited - create your first project
 description: Learn how to use AI Unlimited by running a simple workflow in a Jupyter notebook.
 sidebar_label: Create your first project
-sidebar_position: 1
+sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
