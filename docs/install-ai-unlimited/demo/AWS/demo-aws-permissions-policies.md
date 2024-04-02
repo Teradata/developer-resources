@@ -11,17 +11,23 @@ sidebar_position: 5
 # Manage AWS permissions
 
 Create a custom IAM role and policies. And, if applicable, prepare for the use of load balancers.
+**TA: We can remove load balancers as they don't fit in here***
 
 ## Custom IAM role and policies
 
-Provide an IAM role and policies to allow AI Unlimited to deploy the AI Unlimited compute engine on AWS resources. 
+Provide an IAM role and policies to allow AI Unlimited to deploy the AI Unlimited compute engine on AWS resources.
+** TA: We can modify as : Use IAM roles and policies to grant AI Unlimited permissions for deploying the AI Unlimited engine and accessing AWS resources. The policies allow access to AWS resources such as S3 buckets, and deploying engine is one way AI Unlimited uses AI Unlimited EC2 instance.***
 
 If you have the necessary permissions, create the role and policies yourself. If you don't, your cloud administrator can define the role and polices and pass them to the CloudFormation template you'll use to install AI Unlimited. ***(Does the latter option have anything to do with allowing AI Unlim to pass the role to the engine cluster? I'm assuming no.)***
 
 
 ### Learn how the engine cluster gets the role
 
-Each time a user deploys the engine from their Jupyter notebook, the engine's cluster needs the role and policies. It gets them one of two ways:
+**TA: User needs to provide IAM role and policies to deploy AI Unlimited. This value is what we provide in the CloudFormation Template***
+
+***TA: This is what we define in the AI Unlimited UI*** Each time a user deploys the engine from their Jupyter notebook, the engine's cluster needs the role and policies. It gets them one of two ways:
+
+**TA: We can avoid using cluster and just use engine***
 
 - AI Unlimited can create a cluster-specific role with policies based on the role and policies you provide&mdash;if your AWS account allows this. ***(Is this allowed via ai-unlimited-workspaces.json, simple as that, or is this bullet referring to other restrictions they can't control?)***
 - AI Unlimited can pass the role and policies, that you provide, to the cluster.
@@ -55,7 +61,7 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 - [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role to the cluster each time the engine is deployed. Use this if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
 
-- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions to interact with the AWS Session Manager. Use this if you will use Session Manager to connect to the engine.
+- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions to interact with the AWS Session Manager. Use this if you use Session Manager to connect to the engine.
 
 	:::note
 	If you need to closely manage the engine instance ***(why might they need to?)***, after it launches, you can connect to it in its host operating system (OS) two ways:
