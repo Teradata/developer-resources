@@ -19,7 +19,7 @@ Access AI Unlimited setup:
 
 - **http://localhost:3000** (if you are using the [QuickStart](/docs/install-ai-unlimited/quickstart/index.md))
 
-- **http://[ip_or_hostname]:[port]** (for a [demo](/docs/install-ai-unlimited/demo/index.md) or [full](/docs/install-ai-unlimited/production/index.md) installation)
+- **http://[ip_or_hostname]:[port]** (for a [full](/docs/install-ai-unlimited/production/index.md) installation)
 
 Are you an AI Unlimited user or administrator? Choose your path:
 
