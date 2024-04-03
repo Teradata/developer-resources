@@ -30,8 +30,7 @@ Not yet subscribed? Need to review the pricing?
 *** 
 
 Choose a way to begin:
-- [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try out AI Unlimited
-- [Demo](/install-ai-unlimited/demo/index.md)&mdash;show your team what AI Unlimited offers
+- [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try it (single user)
 - [Full](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 
