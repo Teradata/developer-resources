@@ -5,7 +5,7 @@ Access AI Unlimited setup:
 
 - `http://localhost:3000` (if you are using the [QuickStart](/docs/install-ai-unlimited/quickstart/index.md))
 
-- `http://[ip_or_hostname]:[port]` (for a [demo](/docs/install-ai-unlimited/demo/index.md) or [full](/docs/install-ai-unlimited/production/index.md) installation)
+- `http://[ip_or_hostname]:[port]` (if you are using the [full](/docs/install-ai-unlimited/production/index.md) installation)
 
 Complete the setup in AI Unlimited. To learn more about certain fields, click a section below. 
 
@@ -39,9 +39,8 @@ AI Unlimited uses the OAuth app you, or someone at your organization, created to
 
 Selecting **Authenticate** establishes the access and returns you to AI Unlimited to complete the setup.
 
-[Create a Git OAuth app](/docs/install-ai-unlimited/quickstart/create-github-oauth-app) (QuickStart)\
-[Create a Git OAuth app](/docs/install-ai-unlimited/demo) (Demo installation)\
-[Create a Git OAuth app](/docs/install-ai-unlimited/production) (Production installation)
+[Create an OAuth app](/docs/install-ai-unlimited/quickstart/before-you-begin/docker-create-oauth-app.md) (QuickStart)
+[Create an OAuth app] ***add link*** (Full)
 
 </details>
 
@@ -62,8 +61,6 @@ Public or Private refers to how AI Unlimited should communicate with the engine.
 **IAM role**
 
 If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
-
-See **Create an IAM role and policies** in your installation workflow: [QuickStart], [Demo](/docs/install-ai-unlimited/demo/AWS/demo-aws-permissions-policies.md), or [Full](/docs/install-ai-unlimited/production/AWS/full-aws-permissions-policies).
 
 ***(We don't have a role/policies topic for the QS. No cloud template is needed for this install type. But shouldn't the QS include creating the role so the user can put it in the setup UI? For demo and full, the user puts it in the cloud template and in the setup UI. For the QS, the user just puts it in the setup UI. Unless there are 2 different roles?)***
 

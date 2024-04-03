@@ -18,7 +18,7 @@ Contact your organization administrator if your account doesn’t have the requi
 
 ***The content on the tabs is currently a mix of named requirements and actions to take--at least on each tab, we should have parallel types of items, meaning, a list of things they need or a list of things to do.***
 
-- Your AWS account must have sufficient IAM permissions to create IAM roles or IAM policies. See [Control AWS access and permissions using custom permissions and policies](../../production/AWS/aws-permissions-policies.md).
+- Your AWS account must have sufficient IAM permissions to create IAM roles or IAM policies. See [Control AWS access and permissions using custom permissions and policies](../../production/AWS/prod-aws-permissions-policies.md).
 
 - In your AWS console, choose the AWS region where you want to deploy AI Unlimited. 
 
@@ -26,7 +26,7 @@ Contact your organization administrator if your account doesn’t have the requi
 
 - If you need access to your AI Unlimited instance host operating system (OS), you can connect in the following ways:
     - Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect to your AI Unlimited instance using Secure Shell (SSH) after it launches.
-    - Use AWS Session Manager to connect to the AI Unlimited instance. In this case, you must attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to the IAM role. See [Control AWS access and permissions using custom permissions and policies](/docs/install-ai-unlimited/production/AWS/aws-permissions-policies.md). 
+    - Use AWS Session Manager to connect to the AI Unlimited instance. In this case, you must attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to the IAM role. See [Control AWS access and permissions using custom permissions and policies](/docs/install-ai-unlimited/production/AWS/prod-aws-permissions-policies.md). 
 
 ***Sounds like they have 3 choices: key pair, session manager, or neither. We could say something like “If you (precisely who, their organization?) require host operating system (OS) access (Why would they or wouldn’t they need this? Something to do with using the CLI?) **TA: to manage the instance**, set up your connection one of these ways:” Then a bullet for key pair, and a bullet for session manager. (This way, they decide whether or not they need this at the beginning.)***
 
