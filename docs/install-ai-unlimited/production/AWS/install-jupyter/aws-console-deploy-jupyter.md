@@ -3,7 +3,7 @@ id: aws-console-deploy-jupyter
 title: Teradata - AI Unlimited - Deploy JupyterLab from the AWS Management Console
 description: Learn how to deploy JupyterLab using the AWS Cloudformation Template from the AWS Management Console.
 sidebar_label: AWS Management Console 
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Deploy the JupyterLab template from the AWS Management Console

@@ -6,17 +6,15 @@ pagination_prev: install-ai-unlimited/get-started
 
 # Full installation
 
-Are you ready to scale to your team? Complete the full installation.
+Are you ready to scale to your team? Complete the full installation. 
 
-This puts AI Unlimited on your cloud service provider (CSP) on a server instance without JupyterLab, which simplifies security and sizing. For the JupyterLab location, you have these options:
+This puts AI Unlimited on a server instance on your cloud service provider (CSP). 
 
-- On your CSP on a separate instance from AI Unlimited:
-  - Installed using the AI Unlimited cloud template for JupyterLab, which includes the AI Unlimited kernel 
-  - Installed previously, in which case you just need to add the AI Unlimited kernel
-- On your computer in a Docker container
-- On your computer, but not in a ***Docker?*** container, in which case you need to add the AI Unlimited kernel
+For your [JupyterLab installation](/docs/install-ai-unlimited/production/AWS/install-jupyter/index.md), you have these options:
 
-***Might they have it, without the kernel, on their computer in a container that's not a Docker container?***
+- Add the AI Unlimited Jupyter Kernel to a previous installation of JupyterLab.
+- Install it with the AI Unlimited Jupyter Kernel on the same CSP with AI Unlimited, on a separate instance.
+- Run it with the AI Unlimited Jupyter Kernel on your computer using Docker.
 
 As a cloud administrator, or with the help of one, you can complete the installation.  ***Discuss***
 
