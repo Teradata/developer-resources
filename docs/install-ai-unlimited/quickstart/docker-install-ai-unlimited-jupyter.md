@@ -1,9 +1,9 @@
 ---
-id: test-quickstart-new-structure
-title: Teradata - AI Unlimited - Deploy AI Unlimited and JupyterLab using Docker
+id: run-ai-unlimited-jupyterlab-docker
+title: Teradata - AI Unlimited - QuickStart - Run AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Run AI Unlimited and JupyterLab using Docker 
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
