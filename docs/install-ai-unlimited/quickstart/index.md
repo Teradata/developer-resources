@@ -1,7 +1,8 @@
 ---
 id: quickstart
-title: QuickStart
-description: If you're looking to install AI Unlimited using Docker, start here.
+title: Teradata - AI Unlimited - QuickStart
+description: Start here to install AI Unlimited for a single user quickly.
+sidebar_label: QuickStart
 sidebar_position: 1
 ---
 

@@ -6,7 +6,7 @@ sidebar_label: AWS Management Console
 sidebar_position: 1
 ---
 
-# Deploy the AI Unlimited template from the AWS Management Console
+# Deploy the AI Unlimited template from the console
 
 :::note
 If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.

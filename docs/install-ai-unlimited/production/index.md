@@ -1,6 +1,8 @@
 ---
 id: production
-sidebar_position: 3
+title: Teradata - AI Unlimited - Full installation
+description: Start here to install AI Unlimited for your team.
+sidebar_position: 2
 pagination_prev: install-ai-unlimited/get-started
 ---
 
@@ -20,5 +22,5 @@ As a cloud administrator, or with the help of one, you can complete the installa
 
 Select your CSP:
 
-- [AWS](/install-ai-unlimited/production/AWS/prod-aws-before-you-start.md)
-- [Azure](/install-ai-unlimited/production/Azure/prod-azure-before-you-start.md)
+- [AWS](/install-ai-unlimited/production/AWS/before-you-begin/index.md)
+- [Azure](/install-ai-unlimited/production/Azure/before-you-begin/index.md)
