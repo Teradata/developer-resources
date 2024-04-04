@@ -29,9 +29,9 @@ Not yet subscribed? Need to review the pricing?
 - Azure Marketplace (link)
 *** 
 
-Choose a way to begin:
+Choose a way to start using AI Unlimited:
 - [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try it (single user)
-- [Full](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
+- [Full installation](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 
 ***Links in the header: What's New, Blog, Community, (space in between?), Subscribe - AWS, Subscribe - Azure, (and what about T.com)?***
