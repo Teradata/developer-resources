@@ -41,7 +41,7 @@ Copy and retain the following:
   </TabItem>
     </Tabs> 
 
-- API Key from the AI Unlimited.
+- API Key from the AI Unlimited. ***link to the separate topic***
 
 ## Run your first workload
 

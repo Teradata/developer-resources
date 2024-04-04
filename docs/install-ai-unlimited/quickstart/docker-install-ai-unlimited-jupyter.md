@@ -3,7 +3,7 @@ id: run-ai-unlimited-jupyterlab-docker
 title: Teradata - AI Unlimited - QuickStart - Run AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Run AI Unlimited and JupyterLab using Docker 
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';

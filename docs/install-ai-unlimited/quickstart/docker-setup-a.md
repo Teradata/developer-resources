@@ -3,7 +3,7 @@ id: test-quickstart-setup
 title: Teradata - AI Unlimited - QuickStart - Setup 
 description: Get more information about certain fields in the setup.
 sidebar_label: Test-Set up AI Unlimited	
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 import Tabs from '@theme/Tabs';
