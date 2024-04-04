@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 # Before you begin
 
-Before you start installing and using AI Unlimited, review this topic.
+Prepare for installing and using the QuickStart.
 
 ## Prerequisites
 

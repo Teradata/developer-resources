@@ -8,7 +8,7 @@ sidebar_position: 5
 
 # Prepare your Azure account
 
-Work with your organization administrator to make sure your Azure account is ready to deploy AI Unlimited.
+Work with your organization administrator to make sure your Azure account is ready to install AI Unlimited.
 
 -  Azure account requirements 
 

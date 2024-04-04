@@ -11,6 +11,8 @@ sidebar_position: 2
 Subscribe to AI Unlimited on your CSP's marketplace:
 - AWS (link)
  
+***Maybe be specific about what they're subscribing to--it's the engine image but "feels like" more than that.***
+ 
 ***What do we really need to say about this task? We should not repeat what's on the Marketplace or provide self-evident steps--unless there's a good reason to.***
  
 ***If they have trouble subscribing, should they contact the CSP?***
