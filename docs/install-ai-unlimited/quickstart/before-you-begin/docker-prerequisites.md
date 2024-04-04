@@ -18,4 +18,4 @@ Make sure you have the following:
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account
 
-- Docker: Install [Docker](https://www.docker.com/get-started/) on your machine
+- Install [Docker](https://www.docker.com/get-started/) on your machine

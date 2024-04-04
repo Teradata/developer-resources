@@ -27,7 +27,7 @@ Are you an AI Unlimited user or administrator? Choose your path:
 
 - If you're an AI Unlimited administrator, complete the setup. To learn more about specific fields, click a section below. 
 
-- If you're a returning AI administrator looking to modify the setup information, authorize using your GitHub credentials and select **SETUP**.
+- If you're a returning AI Unlimited administrator looking to modify the setup information, authorize using your GitHub credentials and select **SETUP**.
 
 
 <details>
@@ -36,7 +36,7 @@ Are you an AI Unlimited user or administrator? Choose your path:
 
 * **Service base URL**: The root URL of the service. This value determines the URL you’ll be redirected to after successful Git authorization and varies depending on the type of installation. 
 
-    * Quickstart:
+    * QuickStart:
     * Demo or Full install: 
 
 * **Git provider**: The Git provider used to store project details. 

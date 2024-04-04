@@ -20,5 +20,10 @@ Work with your organization administrator to make sure your Azure account is rea
 
     - The resource group must have an Azure Virtual Network (VNet) configured with a subnet. You can use your existing VNet and subnets or create your own [Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal), [Vnet](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal), [Subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal), and [role](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles) depending on your account permissions.  
 
+- Secure shell (SSH) key pair
+
+    Generate a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect to AI Unlimited instance using SSH.
+
 ***Search result description mentions DNS requirements--will investigate what that means.***
+***TA: domain name. For AWS, Jack had mentioned Route53 for DNS, for Azure, not sure. ***
 

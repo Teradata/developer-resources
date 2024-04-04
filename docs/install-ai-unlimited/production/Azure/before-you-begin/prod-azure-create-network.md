@@ -6,6 +6,10 @@ sidebar_label: Create a resource group and network
 sidebar_position: 7
 ---
 
+[Remove this topic for production]
+
+***ta: We can remove this topic, resources template is not supported in production. We need to ask users to get their Resource group, Vnet and subnet from admin or create one of their own following the Azure documentation***
+
 # Create a resource group and network
 
 Create an Azure resource group and virtual network (VNet) in which the engine will run ***["in which to deploy the engine"?]***. If you have questions regarding your permissions or how to create a resource group or VNet, reach out to ***[best way to describe this person]***. 
@@ -18,6 +22,7 @@ Create an Azure resource group and virtual network (VNet) in which the engine wi
 
 
 ***Aha... grabbed what follows from Demo - Azure:
+***TA: This template will not work for production***
 
 # Create a Resource Group, Network, and Role using ARM Template 
 
