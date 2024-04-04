@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ***A version of this for the old UI and new UI?***
   
-When you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/setup-ai-unlimited.md), you'll provide details for deploying the engine on your CSP. 
+When you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/docker-setup-b.md), you'll provide details for deploying the engine on your CSP. 
 
 Copy this template to get these details from someone on your organization's cloud neworking and security team. ***What is the best way to describe this team to this audience? "Cloud IT team?" "Cloud operations team"?*** 
 <Tabs>
