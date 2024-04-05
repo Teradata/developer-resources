@@ -10,15 +10,23 @@ import TabItem from '@theme/TabItem';
 
 # When you're done
 
-["Docker down" stops Docker, but leaves everything in place, so the user can run "Docker up" and continue working.]
+Make sure you have suspended the AI Unlimited engine to avoid incurring charges to your CSP account for the resources used.
 
-[If the user is really done with the QuickStart "forever," they can remove all the files.]
+Once you’ve finished working on your project, Teradata recommends running the following command to stop and remove all of the containers, and networks that were created. This can be helpful if you want to free up resources on your computer. If you do not plan to restart the engine, you can also use the `-v` option to remove the Docker volume that contains the engine data.
 
-**TA: Moving until we find a solution**
-
-  ```bash title="Stop the containers and remove networks, volumes, and images"
+<Tabs>
+<TabItem value="aws" label="AWS">
+  ```bash 
 docker-compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml down
   ```
- ```bash title="Stop the containers and remove networks, volumes, and images"
+</TabItem>
+
+<TabItem value="azure" label="Azure">
+ ```bash
 docker-compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml down
   ```
+</TabItem>
+</Tabs> 
+
+
+

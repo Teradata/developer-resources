@@ -57,14 +57,17 @@ When you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/docker-setu
 Copy this template to get these details from someone on your organization's cloud neworking and security team. ***What is the best way to describe this team to this audience? "Cloud IT team?" "Cloud operations team"?*** 
 <Tabs>
 <TabItem value="aws" label="AWS">
-	```bash
-	[placeholder]
-	```
+```bash
+Default region:
+Default subnet:
+Default security groups: 
+```
 </TabItem>
 
 <TabItem value="azure" label="Azure">
 	```bash
-	[placeholder]
+	Default region:
+    Default security groups: 
 	```
 </TabItem>
 </Tabs> 
