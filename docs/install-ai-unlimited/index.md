@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 Explore and analyze large datasets in a Jupyter notebook using the Teradata Analytics Library&mdash;on a self-service, on-demand basis. 
 
-As a data scientist or data engineer, connect your notebook to the AI Unlimited compute engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp), and connect the engine to your data lake. Suspend and resume your analytics project anytime, and pay only for the hours you use.
+As a data scientist or data engineer, connect your notebook to the AI Unlimited AI/ML engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp), and connect the engine to your data lake. Suspend and resume your analytics project anytime, and pay only for the hours you use.
 
 The AI Unlimited elements:
 - The engine, on your [CSP](/docs/glossary.md#glo-csp)&mdash;AWS or Azure

@@ -19,7 +19,7 @@ For your [JupyterLab installation](/docs/install-ai-unlimited/production/AWS/ins
 - Install JupyterLab with the AI Unlimited Jupyter Kernel on the same CSP with AI Unlimited, on a separate instance.
 - Run JupyterLab with the AI Unlimited Jupyter Kernel on your computer using Docker.
 
-As a cloud administrator, or with the help of one, you can complete the installation.  ***Discuss***
+As an admin, or with the help of one, you can complete the installation.  ***Discuss***
 
 Select your CSP:
 

@@ -8,9 +8,7 @@ sidebar_position: 7
 
 # Clone the AI Unlimited repo
 
-Teradata provides the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). 
-
-The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on Azure. 
+Teradata provides the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on Azure. 
 
 Open a terminal window, and clone the repository. 
 

@@ -7,9 +7,9 @@ sidebar_position: 4
 ---
 # Get deployment details
 
-When you install AI Unlimited on AWS, you'll use a CloudFormation template (CFT), and you'll provide network and security details.
+When you install AI Unlimited on AWS, you'll use a CloudFormation template (CFT), and you'll provide network and security details. You can get them ahead of time from your admin or the AWS Management Console.
 
-Copy these parameter names to get their values from someone on your organization's cloud neworking and security team. ***What is the best way to describe this team to this audience? "Cloud IT team?" "Cloud operations team"?*** 
+***These are the parms required by AWS, but the customer's org may require more. Thinking about best way to help them get those ahead of time. Can't put a table (of the full set) in a code block.***
 
 	```bash
     Subscription ID: 
@@ -21,7 +21,5 @@ Copy these parameter names to get their values from someone on your organization
     Load Balancer (ALB/NLB/Not Applicable):
     RoleDefinition Id: 
 	```
-
-Or, get these details from the AWS Management Console.
 
 ***If they install JupyterLab on AWS using our template, will the values for these parms be the same?***
