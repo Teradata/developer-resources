@@ -7,65 +7,47 @@ sidebar_position: 3
 
 # Project lifecycle
 
-(Figuring out what this should be - maybe a high-level view - maybe as a graphic.)
+The AI Unlimited Jupyter Kernel provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) for creating, running, and managing projects in Jupyter notebooks. When you create a project, you are its owner and you can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md). 
 
-(The "Create your first project" topic and the notebooks in the "Example projects" topic involve a bit of scrolling and are specific to workloads, so thinking might be good to have a forest, no trees, view.)
+The most basic magic commands reveal the overall project lifecycle, for both points of view.
 
-(Use color to separate the lifecycle steps from the workload, and to indicate essential vs. optional lifecycle steps?)
+***A graphic with the content below, with arrows to show the flow and suspend-resume cycle. Show the commands, and include details that support what happens.***
 
-You create, run, and manage analytics projects in [Jupyter](https://docs.jupyter.org/en/latest/) notebooks that have the AI Unlimited Jupyter Kernel, which provides [AI Unlimited magic commands](/docs/explore-and-analyze-data/magic-commands.md).
+## Project owner
 
+Run AI Unlimited
 
-**Get your API key**
-Sign in to AI Unlimited, and copy your API key.
+Create project
 
-(image of the key in the UI--to show its location)
+Create user authorizations
 
+Deploy AI/ML engine
 
-**In JupyterLab, add/open/create (?) a notebook**
-(Details...)
+Connect to engine
 
+Create data objects and run queries (different color)
 
-**Do x, y, and z**
-(Details... ip/hostname, API key, tls)
+Suspend project (say what’s saved)
 
+Resume project (arrow back to Suspend & mention what project info is still there)
 
-**Create a project**
-(Details... name, CSP, team...)
+Delete project (say what this does [can only the owner do this?])
 
+## Collaborators
 
-**Deploy the project's engine**
-(Details... project name, size)
+Run AI Unlimited
 
+Resume project
 
-**Connect**
-(Details... project name)
+Deploy AI/ML engine
 
+Connect to engine
 
-**Run your workload (best way to say that?)** (Different color)
-(Details...)
+Create more data objects and run more queries (different color)
 
+Suspend project (say what’s saved)
 
-**How to address connecting to data in a generic way?** (Different color)
-(Details..)
-
-
-**Back up project information?**
-(Details... Always do before suspending?)
-
-
-**Suspend the project**
-You only pay for the compute resources used when the project is active. So when you're done for the time-being, you can suspend the project. A, B, and C gets retained, so you can resume the project and pick up right where you left off.
-
-
-**Resume the project**
-Whenever you like, resume the project. (What details to include about what this really means? Link to a separate topic? Currently it's under Manage AI Unlimited, but not sure it should stay there.)
-
-
-**What else is mainstream...**
-
-
-**Do they ever remove a project completely?**
+Resume project (arrow back to Suspend & mention what project info is still there)
 
 
 
