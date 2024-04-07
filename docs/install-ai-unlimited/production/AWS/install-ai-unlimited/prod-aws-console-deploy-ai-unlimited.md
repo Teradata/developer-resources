@@ -6,28 +6,28 @@ sidebar_label: AWS Management Console
 sidebar_position: 1
 ---
 
-# Deploy the AI Unlimited template from the console
+# Deploy the AI Unlimited template from the AWS Management Console
+
+[Add declarative sentence that sums this up. Are there logical sections (to get the right-side TOC)?]
 
 :::note
-If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
+References to AWS Management Console fields and buttons are accurate as of April 7, 2024.
 :::
 
-To deploy AI Unlimited from the AWS Management Console, do the following:
+1. From the AWS Management Console, sign in to your AWS account.
+2. Select the AWS region in which to deploy the engine. Teradata recommends selecting the region closest to your primary work location.
+3. In **CloudFormation**, select **Create Stack**, then **With new resources (standard)**.
+4. Select **Upload a template file**.
+5. Upload an AI Unlimited CloudFormation template that you download from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The template deploys a single instance with AI Unlimited running in a container controlled by systemd.
+    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml)&mdash;Use if AI Unlimited is hosted behind the ***("the" or "an"?)*** application load balancer.
+    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml)&mdash;Use if AI Unlimited is hosted behind the ***("the" or "a"?)*** network load balancer.
+    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml)&mdash;Use if load balancers are not used. ***("a load balancer is not...")***
 
-1. Sign on to your AWS account on the AWS Management Console.
-2. Check the **AWS Region** displayed in the upper-right corner of the navigation bar and change it if necessary. Teradata recommends selecting a region closest to your primary work location.
-3.	Go to **CloudFormation** > **Create Stack**. Select **Create Stack** and select **With new resources (standard)**.
-4.	Select **Template is ready**, and then upload one of the downloaded AI Unlimited template files from the Teradata AI Unlimited GitHub repository. This template deploys a single instance with AI Unlimited running in a container controlled by systemd.
-    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml) CloudFormation template for use cases where AI Unlimited is hosted behind the application load balancer.
-    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml) loudFormation template for use cases where AI Unlimited is hosted behind the network load balancer.
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml) loudFormation template for use cases where load balancers are not used.
+5.	Review the deployment parameters. Provide values for those that AWS and your organization require.
 
-5.	Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. When you finish reviewing and customizing the parameters, choose **Next**.  
-
-In the section, parameters are listed by category:
 <details>
 
-<summary>AWS instance and network parameters</summary>
+<summary>**AWS instance and network parameters**</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
 | InstanceType | The EC2 instance type that you want to use for the service. | Required with default | t3.small | Teradata recommends using the default instance type to save costs. |
@@ -67,12 +67,11 @@ In the section, parameters are listed by category:
 
 </details>
 
-
-6. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, set permissions, set stack failure options, and set advanced options. When you're done, choose **Next**. 
-7. On the **Review** page, review and confirm the template settings. Under Capabilities, select the check box to acknowledge that the template will create IAM resources. 
-8. Choose **Create** to deploy the stack.
-9.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
-10. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
+7. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, and set permissions, stack failure options, and advanced options. When you're done, choose **Next**. 
+8. On the **Review** page, review and confirm the template settings. Under Capabilities, select the check box to acknowledge that the template will create IAM resources. 
+9. Choose **Create** to deploy the stack.
+10.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
+11. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
 
 If you have only deployed AI Unlimited, you must deploy an interface before running your workload. To deploy the interface locally on Docker, see xref::install-ai-unlimited-interface-docker.adoc[]. You can also use the [Jupyter Template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws#jupyter-template) to deploy a single instance with JupyterLab running in a container controlled by systemd.
 
