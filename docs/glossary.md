@@ -10,9 +10,11 @@ sidebar_position: 6
 
 ## A
 
-### term
+<a id="glo-application-load-balancer"></a>
+### application load balancer
 
-Definition
+Load balancers distribute incoming traffic across servers. An application load balancer inspects incoming traffic content, such as HTTP headers and paths, to make routing decisions. You can use an application load balancer as a way to expose AI Unlimited and its engine to the public IP network, if your organization does not allow direct access.
+
 
 ### term
 
@@ -71,6 +73,14 @@ An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/l
 Definition
 
  
+## L
+
+<a id="glo-load-balancer"></a>
+### load balancer 
+
+Generally, a load balancer distributes incoming traffic evenly across servers, which improves performance, reliability, and scalability. But if your organzation does not allow its resources to use public IP addresses, you can use a load balancer to expose AI Unlimited and its engine to the public IP network. 
+
+
 ## M
 
 <a id="glo-mounting-volumes"></a>
@@ -81,6 +91,14 @@ A concept in containerized platforms such as Docker. You can map a directory on 
 ### term
 
 Definition
+
+
+## N
+
+<a id="glo-network-load-balancer"></a>
+### network load balancer
+
+Load balancers distribute incoming traffic across servers. A network load balancer does not inspect traffic content. It bases routing decisions on factors such as ports and IP addresses. You can use a network load balancer as a way to expose AI Unlimited and its engine to the public IP network, if your organization does not allow direct access.
 
 
 ## O
@@ -97,9 +115,11 @@ Definition
 
 ## S
 
-### term
+<a id="glo-systemd"></a>
+### systemd
 
-Definition
+Linux foundational software for system and service management. When you deploy the AI Unlimited or JupyterLab CloudFormation template on AWS, it runs in a container controlled by systemd.
+
 
 ### term
 
