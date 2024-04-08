@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -43,15 +43,13 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/owilliams320/td-ai-unlimited-docs/docs',
+          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/owilliams320/td-ai-unlimited-docs/blog',
+          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/blog',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -65,9 +63,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      metadata: [
-        {name: 'keywords', content: 'Teradata, AI Unlimited'},
-      ],
+      metadata: [{ name: 'keywords', content: 'Teradata, AI Unlimited' }],
       navbar: {
         title: 'AI Unlimited',
         logo: {
@@ -81,11 +77,81 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/Teradata/ai-unlimited',
             label: 'GitHub',
             position: 'right',
+          },
+        ],
+      },
+      navItems: {
+        title: 'Developers',
+        navItems: [
+          {
+            active: true,
+            href: 'https://quickstarts.teradata.com/',
+            label: 'Getting started',
+          },
+          {
+            label: 'Docs',
+            navItems: [
+              {
+                label: 'VantageCloud Lake Documentation',
+                href: 'https://docs.teradata.com/p/VantageCloud/Lake',
+              },
+              {
+                label: 'All Documentation',
+                href: 'https://docs.teradata.com/',
+              },
+              {
+                label: 'AI Unlimited',
+                href: 'https://owilliams320.github.io/td-ai-unlimited-docs/docs/install-ai-unlimited/',
+              },
+            ],
+          },
+          {
+            href: 'https://downloads.teradata.com/',
+            label: 'Downloads',
+          },
+          {
+            label: 'Community',
+            navItems: [
+              {
+                label: 'Teradata Community',
+                href: 'https://support.teradata.com/community',
+              },
+              {
+                label: 'Technical Medium Blogs',
+                href: 'https://medium.com/teradata',
+                external: true,
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/Teradata',
+                external: true,
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/teradata',
+                external: true,
+              },
+            ],
+          },
+        ],
+        languages: [
+          {
+            label: 'Global',
+            value: 'en-US',
+          },
+          {
+            label: 'France',
+            value: 'fr-FR',
+          },
+        ],
+        headerActions: [
+          {
+            label: 'Login',
           },
         ],
       },
