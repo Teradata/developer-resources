@@ -16,7 +16,7 @@ Use IAM roles and policies to grant AI Unlimited permissions to deploy the AI Un
 
 ***Their object store might not be on AWS. How do they ensure AI Unlim can access their object store wherever it is? Not for this AWS topic, but somewhere else in the doc.***
 
-If you have the necessary permissions, create the role and policies yourself. If you don't, your cloud administrator can define the role and polices. You'll need the role name when you ***[for the cloud template, the setup ui... explain]***
+If you have the necessary permissions, create the role and policies yourself. If you don't, your cloud administrator can define the role and polices. You'll need the role name when you ***(for the cloud template, the setup ui... explain)***
 
 ### How the engine cluster gets the role
 
@@ -29,7 +29,8 @@ If you have the necessary permissions, create the role and policies yourself. If
 ***But doesn't the role get assigned to the cluster? to allow it to deploy the engine?***
 
 - AI Unlimited can create a cluster-specific role with policies based on the role and policies you provide&mdash;if your AWS account allows this. ***(Is this allowed via ai-unlimited-workspaces.json, simple as that, or is "if your AWS account allows this" referring to something else?)***
-- AI Unlimited can pass the role and policies, that you provide, to the cluster.
+
+- AI Unlimited can pass the role and policies that you provide to the cluster.
 
 If AI Unlimited creates cluster-specific policies, they are restricted as follows:
 
@@ -51,23 +52,17 @@ or
 
 See [Creating roles and attaching policies (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html). 
 
-***Holding on to this for the time being, but we have to be careful about "documenting a third-pary UI": Configure these policies in the AWS console in **Security & Identity** > **Identity & Access Management** > **Create Policy**.***
+***Holding on to this next sentence as is for the time being, but we have to be careful about documenting a third-pary UI:*** 
+
+Configure these policies in the AWS Management Console in **Security & Identity** > **Identity & Access Management** > **Create Policy**.
 
 Use these JSON samples to create the policies you need, and attach them to the role: 
 
 - [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json): Includes permissions to create engine instances, and grants AI Unlimited permissions to create a cluster-specific role and policies.
 
-- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed to create cluster-specific roles and policies. Use this if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
+- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this, and **ai-unlimited-engine.jason**, if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
 
+- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role to the cluster each time the engine is deployed. Use this with **ai-unlimited-without-iam-role-permissions.json.**
 
-- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role to the cluster each time the engine is deployed. Use this if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
-
-- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions to interact with the AWS Session Manager. Use this if you use Session Manager to connect to the engine.
-
-	:::note
-	If you need to closely manage the engine instance ***(why might they need to?)***, after it launches, you can connect to it in its host operating system (OS) two ways:
-    - Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH).
-    - Use AWS Session Manager to connect.
-	:::
-
+- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions to interact with the AWS Session Manager. Use this if you plan to use Session Manager to connect to the engine to closely manage it.
 	

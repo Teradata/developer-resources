@@ -6,21 +6,35 @@ sidebar_label: Azure Portal
 sidebar_position: 1
 ---
 
-# Deploy the AI Unlimited template from the Azure Portal
+# Deploy the AI Unlimited template from the portal
 
-1. Log into your [Azure portal](https://portal.azure.com). 
+The Azure Resource Manager (ARM) template deploys a single instance with AI Unlimited running in a container controlled by systemd. 
 
-2. From the Azure portal search bar, search for **deploy a custom template** and select it from the available options. 
+:::note
+References to Azure Portal fields and buttons are accurate as of April 7, 2024.
+::: 
 
-3. Select **Build your own template in the editor**. 
+## Get the AI Unlimited template
 
-4. In the bar above the editor, select **Load file** and then select the **[AI Unlimited Template](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/ai-unlimited.json)**. 
+Download the [ai-unlimited.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/ai-unlimited.json) ARM template from the AI Unlimited GitHub repository. 
 
-    This template deploys a single instance with AI Unlimited running in a container controlled by systemd. 
+***No load balancer templates?***
 
-5. When the file contents appear in the editor, select **Save**. 
 
-6. On the **Custom deployment** page, review the parameters for the template. Provide values for the parameters that require input. Review the default settings and customize all other parameters as necessary.  
+## Load the template
+
+1. Sign in to the [Azure portal](https://portal.azure.com). 
+
+2. Search for and go to **custom deployment**.
+
+3. Select **Build your own template in the editor**. 
+
+4. Select **Load file**, and upload the ARM template file you downloaded, and select Save.
+
+
+## Review and update deployment parameters
+
+Review the deployment parameters. Provide values, as needed, for those that Azure requires, and any your organization requires.
 
 <details>
 
@@ -57,12 +71,16 @@ sidebar_position: 1
 | AI Unlimited Name | Unique name given to AI Unlimited. | Required | - |- |
 | AI Unlimited HTTP Port | The port to access the AI Unlimited UI. | Required with default | 3000 | - |
 | AI Unlimited GRPC Port | The port to access the AI Unlimited API. | Required with default | 3282 | - | 
-| AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
+| AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default | latest | The value is a container version tag. |
 
 </details>
 
-7. When you finish reviewing and customizing the parameters, choose **Review + Create**, and then **Create**. The AI Unlimited deployment takes a few minutes. During AI Unlimited creation, you can view the deployment status in the **Notifications** page. 
+## Create the instance
 
-    After the template is deployed, connection parameters to AI Unlimited is available in the **Output** tab. 
+Select **Review + Create**, then **Create**. Deployment takes a few minutes.  ***safe to say that?***
+
+You can monitor the deployment status on the **Notifications** page. 
+
+You'll use the connection parameters on the **Output** tab when you create a project in a Jupyter notebook. **verify wording**
 
 

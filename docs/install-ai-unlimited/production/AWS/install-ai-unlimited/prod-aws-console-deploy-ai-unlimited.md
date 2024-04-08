@@ -8,26 +8,43 @@ sidebar_position: 1
 
 # Deploy the AI Unlimited template from the console
 
+The CloudFormation template deploys a single instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+
 :::note
-If the account deploying AI Unlimited does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
+References to AWS Management Console fields and buttons are accurate as of April 7, 2024.
 :::
 
-To deploy AI Unlimited from the AWS Management Console, do the following:
+## Get the AI Unlimited template
 
-1. Sign on to your AWS account on the AWS Management Console.
-2. Check the **AWS Region** displayed in the upper-right corner of the navigation bar and change it if necessary. Teradata recommends selecting a region closest to your primary work location.
-3.	Go to **CloudFormation** > **Create Stack**. Select **Create Stack** and select **With new resources (standard)**.
-4.	Select **Template is ready**, and then upload one of the downloaded AI Unlimited template files from the Teradata AI Unlimited GitHub repository. This template deploys a single instance with AI Unlimited running in a container controlled by systemd.
-    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml) CloudFormation template for use cases where AI Unlimited is hosted behind the application load balancer.
-    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml) loudFormation template for use cases where AI Unlimited is hosted behind the network load balancer.
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml) loudFormation template for use cases where load balancers are not used.
+Download one of the AI Unlimited CloudFormation templates from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). Your choice of template depends on whether you use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
 
-5.	Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. When you finish reviewing and customizing the parameters, choose **Next**.  
+***They have already cloned the repo. Does that mean they don't have to download the template? They just copy it?***
 
-In the section, parameters are listed by category:
+***Is the load balancer a service supplied by AWS?***
+
+    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml)&mdash;Hosts AI Unlimited behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
+    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml)&mdash;Hosts AI Unlimited behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml)&mdash;No load balancer is used
+	
+## Upload the template	
+	
+	
+1. Sign in to the [AWS](https://aws.amazon.com) console.
+2. Select the AWS region in which to deploy the engine. Teradata recommends selecting the region closest to your primary work location.
+3. Search for and go to **CloudFormation**.
+4. Select **Create Stack**, then **With new resources (standard)**.
+5. Select **Upload a template file**.
+6. Upload the AI Unlimited CloudFormation template you downloaded.
+
+## Review and update deployment parameters
+
+Review the deployment parameters. Provide values, as needed, for those that AWS requires, and any your organization requires.
+
+***Figure out why the right-most column is cut off--AWS parms only***
+
 <details>
 
-<summary>AWS instance and network parameters</summary>
+<summary>**AWS instance and network parameters**</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
 | InstanceType | The EC2 instance type that you want to use for the service. | Required with default | t3.small | Teradata recommends using the default instance type to save costs. |
@@ -52,7 +69,7 @@ In the section, parameters are listed by category:
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
-|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
+|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.|
 
 </details>
 
@@ -63,18 +80,25 @@ In the section, parameters are listed by category:
 |---------|-------------|-----------|-----------|-----------|
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default	|3000||
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default|3282||
-|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default|latest|The value is a container version tag, for example, latest.|
+|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default|latest|The value is a container version tag.
 
 </details>
 
+## Create the stack
 
-6. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, set permissions, set stack failure options, and set advanced options. When you're done, choose **Next**. 
-7. On the **Review** page, review and confirm the template settings. Under Capabilities, select the check box to acknowledge that the template will create IAM resources. 
-8. Choose **Create** to deploy the stack.
-9.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
-10. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
+1. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, and set permissions, stack failure options, and advanced options per your requirements. 
 
-If you have only deployed AI Unlimited, you must deploy an interface before running your workload. To deploy the interface locally on Docker, see xref::install-ai-unlimited-interface-docker.adoc[]. You can also use the [Jupyter Template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws#jupyter-template) to deploy a single instance with JupyterLab running in a container controlled by systemd.
+***Are we OK to not explain the items in #1?***
 
-Teradata AI Unlimited is ready!
+2. On the **Review** page, review and confirm the template settings. 
+3. Under **Capabilities**, select the check box to acknowledge that the template will create IAM resources. 
+4. Select **Create** to deploy the stack.
+
+You can monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. ***Should we give them a sense of the time it takes?***
+
+You'll use the URLs on the stack's **Outputs** tab to view the created resources.  ***verify wording***
+
+
+
+
 

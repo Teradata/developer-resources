@@ -8,4 +8,4 @@ sidebar_position: 2
 
 # Deploy the AI Unlimited template from the Azure CLI
 
-[placeholder]
+[placeholder - was there anything for this in the demo content?]
