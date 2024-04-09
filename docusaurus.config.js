@@ -79,7 +79,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           routeBasePath: 'whatsnew',
           editUrl:
-            'https://github.com/owilliams320/td-ai-unlimited-docs/blog',
+            'https://github.com/owilliams320/td-ai-unlimited-docs/whatsnew',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -156,7 +156,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                to: '/whatsnew',
               },
               {
                 label: 'GitHub',
