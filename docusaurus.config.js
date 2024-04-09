@@ -31,8 +31,35 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'de', 'fr', 'es', 'zh', 'ja'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+    },
   },
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'releases',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'releases',
+        blogSidebarTitle: 'All Releases',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './releases',
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -50,6 +77,7 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          routeBasePath: 'whatsnew',
           editUrl:
             'https://github.com/owilliams320/td-ai-unlimited-docs/blog',
         },
@@ -81,7 +109,12 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/whatsnew', label: 'What\'s new', position: 'left'},
+          {to: '/releases', label: 'Releases', position: 'left'},
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             href: 'https://github.com/Teradata/ai-unlimited',
             label: 'GitHub',
