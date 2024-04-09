@@ -3,10 +3,13 @@ id: deploy-jupyter-azure-portal
 title: Teradata - AI Unlimited - deploy JupyterLab using Azure ARM
 description: Learn deploy JupyterLab using Azure ARM from the Azure portal.
 sidebar_label: Azure Portal
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Deploy the JupyterLab template from the Azure Portal
+
+***Add headings to get the upper-right TOC and edit.***
+
 1. Log into your [Azure portal](https://portal.azure.com). 
 
 2. From the Azure portal search bar, search for **deploy a custom template** and select it from the available options. 

@@ -1,7 +1,8 @@
 ---
 id: magic-commands
-title: Magic commands
-description: Learn about Teradata AI Unlimited JupyterLab magic commands.
+title: Teradata - AI Unlimited - Magic commands 
+description: Learn about the AI Unlimited magic commands you can use in your project in your Jupyter notebook.
+sidebar_label: Magic commands
 sidebar_position: 5
 ---
 import Tabs from '@theme/Tabs';
@@ -9,9 +10,9 @@ import TabItem from '@theme/TabItem';
 
 # Magic commands
 
-(Keep, per Jack, even though command descriptions are in the notebook. In the notebook, the general commands and AI Unlimited commands are all together. Will be good for users to see here a list of the AI Unlimited ones only. The kernel is in dev - updates to this topic needed.)
+***Keep, per Jack, even though command descriptions are in the notebook. In the notebook, the general commands and AI Unlimited commands are all together. So it's good for users to see a list of AI-Unlimited-specific ones. The kernel is in dev. Need to update this topic.***
 
-AI Unlimited JupyterLab supports the following magic commands in addition to the existing Teradata SQL Kernel magic commands. See [Teradata JupyterLab Getting Started Guide](https://github.com/Teradata/jupyterextensions/blob/master/notebooks/sql/GettingStarted.ipynb).
+AI Unlimited JupyterLab supports these magic commands in addition to the existing Teradata SQL Kernel magic commands. See [Teradata JupyterLab Getting Started Guide](https://github.com/Teradata/jupyterextensions/blob/master/notebooks/sql/GettingStarted.ipynb). ***Probably don't want to refer to that kernel, wrong product.***
 
 ## %workspaces_config
 

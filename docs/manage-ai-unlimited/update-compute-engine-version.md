@@ -1,18 +1,21 @@
 ---
 id: update-engine-version
+title: Teradata - AI Unlimited - How to update the AI/ML engine version
+description: Learn how to update the AI Unlimited compute engine.
+sidebar_label: Update the AI/ML engine version
 sidebar_position: 5
 ---
 
-# Update the compute engine version
+# Update the AI/ML engine version
 
-(how-to)
+***How to do this***
 
-(and what about updates to:
+***And what about updates to:***
 
-- what we used to call the "workspace service" - will we provide a new Docker image and new cloud templates?
+***- What we used to call the "workspace service" - will we provide a new Docker image and new cloud templates?***
 
-- the kernel - will we provide a new Docker image and new cloud templates if we add/change magic commands? I think it was mentioned that they will be pretty stable though.
+***- The kernel - will we provide a new Docker image and new cloud templates if we add/change magic commands? I think it was mentioned that they will be pretty stable though.***
 
-- JupyterLab itself, aside from the kernel... will we update the Docker image and cloud templates for the JL version once in a while?
+***- JupyterLab itself, aside from the kernel... will we update the Docker image and cloud templates for the JL version once in a while?***
 
-- how will we communicate the updates to users? A What's New link in the header on the doc site?
+***- How will we communicate the updates to users? A What's New link in the header on the doc site?***

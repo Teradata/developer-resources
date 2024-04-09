@@ -1,6 +1,6 @@
 ---
 id: create-first-project
-title: Teradata - AI Unlimited - create your first project
+title: Teradata - AI Unlimited - Create your first project
 description: Learn how to use AI Unlimited by running a simple workflow in a Jupyter notebook.
 sidebar_label: Create your first project
 sidebar_position: 2
@@ -10,8 +10,7 @@ import TabItem from '@theme/TabItem';
 
 # Create your first project
 
-(topic is not yet edited)
-
+***topic is not yet edited***
 
 This document walks you through a simple workflow where you can use AI Unlimited and JupyterLab to:
 
@@ -22,7 +21,9 @@ This document walks you through a simple workflow where you can use AI Unlimited
 
 ## Before you begin
 
-Copy and retain the following:
+Copy and retain these items:
+
+- The API key from the AI Unlimited. ***link to the separate topic***
 
 - CSP environment variables from your Console. See [Environment Variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
 
@@ -41,7 +42,6 @@ Copy and retain the following:
   </TabItem>
     </Tabs> 
 
-- API Key from the AI Unlimited. ***link to the separate topic***
 
 ## Run your first workload
 

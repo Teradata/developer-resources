@@ -9,7 +9,7 @@ sidebar_position: 3
 
 The AI Unlimited Jupyter Kernel provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) for creating, running, and managing projects in Jupyter notebooks. When you create a project, you are its owner and you can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md). 
 
-The most basic magic commands reveal the overall project lifecycle, for both points of view.
+The main magic commands you'll use show the overall project lifecycle, for both points of view.
 
 ***A graphic with the content below, with arrows to show the flow and suspend-resume cycle. Show the commands, and include details that support what happens.***
 

@@ -6,41 +6,38 @@ sidebar_label: AWS Management Console
 sidebar_position: 1
 ---
 
-# Deploy the AI Unlimited template from the console
+# Deploy the template from the console
 
-The CloudFormation template deploys a single instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+The CloudFormation template deploys a server instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::note
 References to AWS Management Console fields and buttons are accurate as of April 7, 2024.
 :::
 
-## Get the AI Unlimited template
+## Decide which AI Unlimited template to use
 
-Download one of the AI Unlimited CloudFormation templates from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). Your choice of template depends on whether you use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+The AI Unlimited CloudFormation template options are at this location in the AI Unlimited GitHub repository, which you cloned to your local machine: `ai-unlimited/deployments/aws/templates/ai-unlimited/`.
 
-***They have already cloned the repo. Does that mean they don't have to download the template? They just copy it?***
-
-***Is the load balancer a service supplied by AWS?***
+Your choice of template depends on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
 
     - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml)&mdash;Hosts AI Unlimited behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml)&mdash;Hosts AI Unlimited behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml)&mdash;No load balancer is used
+    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml)&mdash;No load balancer
 	
 ## Upload the template	
-	
-	
+		
 1. Sign in to the [AWS](https://aws.amazon.com) console.
-2. Select the AWS region in which to deploy the engine. Teradata recommends selecting the region closest to your primary work location.
+2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Select **Upload a template file**.
-6. Upload the AI Unlimited CloudFormation template you downloaded.
+6. Upload the AI Unlimited CloudFormation template you decided to use.
 
-## Review and update deployment parameters
+## Review and change deployment parameters
 
-Review the deployment parameters. Provide values, as needed, for those that AWS requires, and any your organization requires.
+Provide values, as needed, for those that AWS requires, and any your organization requires.
 
-***Figure out why the right-most column is cut off--AWS parms only***
+***Figure out why the AWS table doesn't fit - don't want the horizontal scroll bar. I still need to read through the parms.***
 
 <details>
 
@@ -62,9 +59,8 @@ Review the deployment parameters. Provide values, as needed, for those that AWS 
 |Subnet	|The subnetwork to which you want to deploy the instance.|Required||The subnet must reside in the selected availability zone.|
 |KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional||Leave this field blank if you do not want to include the SSH keys.|
 |AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional||Teradata recommends setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|PrefixList			|The prefix list that you can use to communicate with the instance.|Optional||Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance.	|Optional|
-|SecurityGroup is implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|PrefixList	|The prefix list that you can use to communicate with the instance. |Optional ||Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance. |Optional | |Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default|None|Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|
@@ -88,15 +84,17 @@ Review the deployment parameters. Provide values, as needed, for those that AWS 
 
 1. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, and set permissions, stack failure options, and advanced options per your requirements. 
 
-***Are we OK to not explain the items in #1?***
+***Can we link to AWS doc for #1?***
 
 2. On the **Review** page, review and confirm the template settings. 
 3. Under **Capabilities**, select the check box to acknowledge that the template will create IAM resources. 
 4. Select **Create** to deploy the stack.
 
-You can monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. ***Should we give them a sense of the time it takes?***
+You can monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
 
-You'll use the URLs on the stack's **Outputs** tab to view the created resources.  ***verify wording***
+***Should we give them a sense of the time it takes?***
+
+Use the URLs on the stack's **Outputs** tab to view the created resources.  You'll need the X ***(exactly what)*** when you create a project in a Jupyter notebook.
 
 
 

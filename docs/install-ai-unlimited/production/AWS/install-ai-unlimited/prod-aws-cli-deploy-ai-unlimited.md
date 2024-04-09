@@ -6,10 +6,15 @@ sidebar_label: AWS CLI
 sidebar_position: 2
 ---
 
-# Deploy the AI Unimited template from the CLI
+# Deploy the template from the CLI
+
+***AWS has a CFT user guide with info about using the CLI. Will read it and come back to editing this.***
+
+The CloudFormation template deploys a server instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 ## Create a stack
-Run the following command on the AWS CLI:
+
+Run this command: ***Do we need to keep saying "run this command"? Maybe there's a way to put that meaning in the intro.***
 
 ***TA: Jack to review***
 
@@ -28,16 +33,23 @@ aws cloudformation create-stack --stack-name jupyter-without-lb \
   --tags AnotherKey=AnotherValue \
   --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
 ```
+
+***The first one is for the demo (removed). Looks like we need to introduce the 3 templates and explain why they would use each one (like in the console topic). Then, show the code block for each?***
+
+***This topic is not about Jupyter. There's a separate CLI topic for that which needs to be fleshed out. Reason: There are 4 Jupyter options: 1. add the kernel to an existing Jupyter 2. Console 3. CLI 4. Docker.***
+
 :::note 
 - CAPABILITY_IAM is required if IamRole is set to New.
 - CAPABILITY_NAMED_IAM is required if IamRole is set to New and IamRoleName is given a value.
 :::
 
-To use an existing role, see Control AWS Access and Permissions using Permissions and Policies.
+To use an existing role, see Control AWS Access and Permissions using Permissions and Policies. ***Is this to be an external link?***
 
 ## Delete a stack
 
-Run the following command on the AWS CLI:
+***I need to learn about the CLI, but why would they delete the stack now? This topic is for installing. If they want to eventually remove it, and are CLI users, maybe they know how to run "delete-stack"?***
+
+Run this command:
 
 ```bash
 aws cloudformation delete-stack --stack-name <stackname> 
@@ -45,10 +57,12 @@ aws cloudformation delete-stack --stack-name <stackname>
 
 ## Get stack information
 
-Run the following command on the AWS CLI:
+***Why is delete-stack in the first line of code?***
+
+Run this command:
 
 ```bash
-aws cloudformation delete-stack --stack-name <stackname> 
+aws cloudformation delete-stack --stack-name <stackname>
 aws cloudformation describe-stacks --stack-name <stackname> 
 aws cloudformation describe-stack-events --stack-name <stackname> 
 aws cloudformation describe-stack-instance --stack-name <stackname> 
@@ -58,8 +72,10 @@ aws cloudformation describe-stack-resources --stack-name <stackname>
  
 ## Get stack outputs
 
-Run the following command on the AWS CLI:
+Run this command:
 
 ```bash
 aws cloudformation describe-stacks --stack-name <stackname>  --query 'Stacks[0].Outputs' --output table
 ```
+
+***Tell them what they need when they create a project. Needs a segway.***

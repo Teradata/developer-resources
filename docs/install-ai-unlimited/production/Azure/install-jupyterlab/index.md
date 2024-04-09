@@ -10,8 +10,8 @@ sidebar_position: 8
 
 You may already have JupyterLab&mdash;somewhere on the cloud or on your computer. If so, add the [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel).
 
-Or, get JupyterLab with the AI Unlimited kernel now:
+Or, get JupyterLab with the AI Unlimited kernel:
 
+- Install it on Azure [using the Azure Portal](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/deploy-jupyter-azure-portal.md) if you prefer a web interface 
+- Install it on Azure [using the Azure CLI](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/deploy-jupyter-azure-cli.md) for more scripting and automation possibilities 
 - [Run it locally in a Docker container](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/azure-docker-run-jupyter.md)
-- [Install it on Azure&mdash;use the Azure Portal](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/deploy-jupyter-azure-portal.md) 
-- [Install it on Azure&mdash;use the Azure CLI](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/deploy-jupyter-azure-cli.md) 

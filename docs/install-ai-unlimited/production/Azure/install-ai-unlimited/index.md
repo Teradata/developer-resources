@@ -8,7 +8,7 @@ sidebar_position: 7
 
 # Install AI Unlimited
 
-Select how to deploy the AI Unlimited ARM template:
+Choose how to deploy the AI Unlimited Azure Resource Manager (ARM) template:
 
-- [Azure Portal](/docs/install-ai-unlimited/production/Azure/install-ai-unlimited/deploy-ai-unlimited-azure-portal) 
-- [Azure CLI](/docs/install-ai-unlimited/production/Azure/install-ai-unlimited/deploy-ai-unlimited-azure-cli)  
+- [Azure Portal](/docs/install-ai-unlimited/production/Azure/install-ai-unlimited/deploy-ai-unlimited-azure-portal)&mdash;if you prefer a web interface 
+- [Azure CLI](/docs/install-ai-unlimited/production/Azure/install-ai-unlimited/deploy-ai-unlimited-azure-cli)&mdash;for more scripting and automation possibilities   
