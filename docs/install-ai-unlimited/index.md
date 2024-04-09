@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 # Get started
 
+***Will be working on the handshake between the marketplace and this page.***
+
 Explore and analyze large datasets in a Jupyter notebook using the Teradata Analytics Library&mdash;on a self-service, on-demand basis. 
 
 As a data scientist or data engineer, connect your notebook to the AI Unlimited AI/ML engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp), and connect the engine to your data lake. Suspend and resume your analytics project anytime, and pay only for the hours you use.
@@ -23,18 +25,12 @@ The AI Unlimited elements:
 
 ***MEM: Video appears here. An authentic, technical introduction, educational not marketing.***
 
-***
-Not yet subscribed? Need to review the pricing?
-- AWS Marketplace (link)
-- Azure Marketplace (link)
-*** 
-
 Choose a way to start using AI Unlimited:
 - [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try it (single user)
 - [Full installation](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 
-***Links in the header: What's New, Blog, Community, (space in between?), Subscribe - AWS, Subscribe - Azure, (and what about T.com)?***
+***Links in the top bar will likely match the developer's doc site. But we need to add What's New, Blog, Community. Possible to add them only on the AI Unlim "site"?***
 
 
 

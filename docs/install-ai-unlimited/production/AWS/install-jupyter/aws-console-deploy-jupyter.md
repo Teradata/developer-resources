@@ -8,6 +8,8 @@ sidebar_position: 1
 
 # Deploy the JupyterLab template from the AWS Management Console
 
+***Add headers to get the upper-right TOC and edit.***
+
 :::note
 If the account deploying JupyterLab does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
 :::

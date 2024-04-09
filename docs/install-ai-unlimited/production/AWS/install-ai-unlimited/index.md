@@ -8,7 +8,7 @@ sidebar_position: 6
 
 # Install AI Unlimited
 
-Select how to deploy the AI Unlimited CloudFormation Template:
+Choose how to deploy the AI Unlimited CloudFormation Template:
 
-- [AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited) 
-- [AWS CLI](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-cli-deploy-ai-unlimited)  
+- [AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited)&mdash;if you prefer a web interface
+- [AWS CLI](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-cli-deploy-ai-unlimited)&mdash;for more scripting and automation possibilities  

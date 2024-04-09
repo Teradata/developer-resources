@@ -12,5 +12,5 @@ Learn about AI Unlimited projects and how to use Teradata Analytics Library func
 
 - [Create your first project](/docs/explore-and-analyze-data/create-first-project.md)
 - See the [project lifecycle](/docs/explore-and-analyze-data/project-lifecycle.md), at a glance
-- Explore a collection of [example project notebooks](/docs/explore-and-analyze-data/example-projects.md)&mdash;by industry&mdash;and try them out  ***are they by industry?***
+- Explore a collection of [example project notebooks](/docs/explore-and-analyze-data/example-projects.md)&mdash;by industry&mdash;and try them out  ***(are they by industry)?***
 - See the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) the AI Unlimited Jupyter Kernel adds to your project notebooks
