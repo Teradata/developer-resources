@@ -4,7 +4,8 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import {themes as prismThemes} from 'prism-react-renderer';
+import tailwindPlugin from './plugins/tailwind-config.cjs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -26,13 +27,51 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  headTags: [
+  {
+    tagName: 'meta',
+    attributes: {
+      'http-equiv': 'Content-Security-Policy',
+      content: "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com",
+    }
+  }
+  ],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'de', 'fr', 'es', 'zh', 'ja'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+    },
   },
+
+  plugins: [
+    tailwindPlugin,
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'releases',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'releases',
+        blogSidebarTitle: 'All Releases',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './releases',
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -49,7 +88,9 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/blog',
+          routeBasePath: 'whatsnew',
+          editUrl:
+            'https://github.com/owilliams320/td-ai-unlimited-docs/whatsnew',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -77,7 +118,12 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {to: '/whatsnew', label: 'What\'s new', position: 'left'},
+          {to: '/releases', label: 'Releases', position: 'left'},
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             href: 'https://github.com/Teradata/ai-unlimited',
             label: 'GitHub',
@@ -189,7 +235,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                to: '/whatsnew',
               },
               {
                 label: 'GitHub',
