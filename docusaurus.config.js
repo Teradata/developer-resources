@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -28,13 +28,14 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
 
   headTags: [
-  {
-    tagName: 'meta',
-    attributes: {
-      'http-equiv': 'Content-Security-Policy',
-      content: "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com",
-    }
-  }
+    {
+      tagName: 'meta',
+      attributes: {
+        'http-equiv': 'Content-Security-Policy',
+        content:
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com",
+      },
+    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set
@@ -82,8 +83,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/owilliams320/td-ai-unlimited-docs/docs',
+          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/docs',
         },
         blog: {
           showReadingTime: true,
@@ -105,9 +105,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      metadata: [
-        {name: 'keywords', content: 'Teradata, AI Unlimited'},
-      ],
+      metadata: [{ name: 'keywords', content: 'Teradata, AI Unlimited' }],
       navbar: {
         title: 'AI Unlimited',
         logo: {
@@ -121,8 +119,8 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/whatsnew', label: 'What\'s new', position: 'left'},
-          {to: '/releases', label: 'Releases', position: 'left'},
+          { to: '/whatsnew', label: "What's new", position: 'left' },
+          { to: '/releases', label: 'Releases', position: 'left' },
           {
             type: 'localeDropdown',
             position: 'right',
@@ -131,6 +129,71 @@ const config = {
             href: 'https://github.com/Teradata/ai-unlimited',
             label: 'GitHub',
             position: 'right',
+          },
+        ],
+      },
+      navItems: {
+        title: 'AI Unlimited',
+        navItems: [
+          {
+            active: true,
+            href: 'https://quickstarts.teradata.com/',
+            label: 'Getting started',
+          },
+          {
+            label: 'Docs',
+            navItems: [
+              {
+                label: 'VantageCloud Lake Documentation',
+                href: 'https://docs.teradata.com/p/VantageCloud/Lake',
+              },
+              {
+                label: 'AI Unlimited',
+                href: 'https://owilliams320.github.io/td-ai-unlimited-docs/docs/install-ai-unlimited/',
+              },
+              {
+                label: 'All Documentation',
+                href: 'https://docs.teradata.com/',
+              },
+            ],
+          },
+          {
+            href: 'https://downloads.teradata.com/',
+            label: 'Downloads',
+          },
+          {
+            label: 'Community',
+            navItems: [
+              {
+                label: 'Teradata Community',
+                href: 'https://support.teradata.com/community',
+              },
+              {
+                label: 'Technical Medium Blogs',
+                href: 'https://medium.com/teradata',
+                external: true,
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/Teradata',
+                external: true,
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/teradata',
+                external: true,
+              },
+            ],
+          },
+        ],
+        languages: [
+          {
+            label: 'Global',
+            value: 'en-US',
+          },
+          {
+            label: 'France',
+            value: 'fr-FR',
           },
         ],
       },
