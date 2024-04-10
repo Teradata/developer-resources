@@ -37,10 +37,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           cache: npm
-      - name: Authenticate with GitHub Packages registry
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
-          echo "@bsahitya:registry=https://npm.pkg.github.com/" >> ~/.npmrc
       - name: Install dependencies
         run: npx ci
       - name: Build docusaurus artifacts

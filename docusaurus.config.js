@@ -149,7 +149,7 @@ const config = {
               },
               {
                 label: 'AI Unlimited',
-                href: 'https://owilliams320.github.io/td-ai-unlimited-docs/docs/install-ai-unlimited/',
+                href: '/td-ai-unlimited-docs/docs/install-ai-unlimited/',
               },
               {
                 label: 'All Documentation',
