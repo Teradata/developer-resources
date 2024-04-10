@@ -8,6 +8,8 @@ sidebar_position: 1
 
 # Deploy the template from the console
 
+***Re-watch recording to verify whole topic.***
+
 The CloudFormation template deploys a server instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::note
@@ -30,14 +32,21 @@ Your choice of template depends on whether you intend to use a [load balancer](/
 2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
-5. Select **Upload a template file**.
-6. Upload the AI Unlimited CloudFormation template you decided to use.
+5. Select **Choose an existing template** and **Upload a template file**. 
 
-## Review and change deployment parameters
+***(re-watch recording to verify step 5)***
 
-Provide values, as needed, for those that AWS requires, and any your organization requires.
+6. Choose the template file you decided to use, and click **Next**.
 
-***Figure out why the AWS table doesn't fit - don't want the horizontal scroll bar. I still need to read through the parms.***
+## Specify stack details and options
+
+1. Provide values, as needed, for those that AWS requires, and any your organization requires.
+
+***Figure out why the AWS table doesn't fit - don't want the horizontal scroll bar.***
+
+***I used the no-load-balancer template. I see differences between the parms in the console and what's in this doc. Maybe the parms in this doc are for the all-in-one? Maybe we need an expandable text section for each of the 3 templates?***
+
+***The parms on the UI have sections. Let's add the section names to the table.***
 
 <details>
 
@@ -65,9 +74,11 @@ Provide values, as needed, for those that AWS requires, and any your organizatio
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
-|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.|
+|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
 
 </details>
+
+***Why are these separate? Maybe the template changed?***
 
 <details>
 
@@ -80,21 +91,24 @@ Provide values, as needed, for those that AWS requires, and any your organizatio
 
 </details>
 
-## Create the stack
+2. Select **Next**.
+3. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
-1. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, and set permissions, stack failure options, and advanced options per your requirements. 
 
-***Can we link to AWS doc for #1?***
 
-2. On the **Review** page, review and confirm the template settings. 
-3. Under **Capabilities**, select the check box to acknowledge that the template will create IAM resources. 
-4. Select **Create** to deploy the stack.
+## Review and create the stack
+
+1. Review the template settings. 
+2. Select the check box to acknowledge that the template will create IAM resources. 
+3. Select **Create** to deploy the stack. ***(I see "Submit" not "Create")***
 
 You can monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
 
 ***Should we give them a sense of the time it takes?***
 
-Use the URLs on the stack's **Outputs** tab to view the created resources.  You'll need the X ***(exactly what)*** when you create a project in a Jupyter notebook.
+Use the URLs on the stack's **Outputs** tab to view the created resources.  
+
+You'll need the IP address or hostname ***(verify wording)*** when you create a project in a Jupyter notebook. ***Is that on the Outputs tab?***
 
 
 

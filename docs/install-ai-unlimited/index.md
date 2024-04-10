@@ -21,7 +21,7 @@ The AI Unlimited elements:
 - Jupyter notebooks, with the AI Unlimited Jupyter Kernel, for running your workloads
 - Your object storage, on your [CSP](/docs/glossary.md#glo-csp)
 - Your GitHub or GitLab repository, for user authentication and storing project information
-- A web-based application for monitoring projects and providing each user with an API key to connect to the engine 
+- The manager, a web-based user interface for monitoring projects and providing each user's API key to connect to the engine ***(Normally we avoid "UI" or "user interface" because that's more a dev perspective than a customer perspective. To the customer, it's just [product name]. But here it seems to add the clarity we need.***
 
 ***MEM: Video appears here. An authentic, technical introduction, educational not marketing.***
 
