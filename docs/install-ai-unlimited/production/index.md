@@ -11,7 +11,7 @@ pagination_prev: install-ai-unlimited/get-started
 
 Are you ready to scale to your team? Complete the full installation. 
 
-This puts AI Unlimited on a server instance on your cloud service provider (CSP). 
+This puts the AI Unlimited manager on a server instance on your cloud service provider (CSP). 
 
 For your [JupyterLab installation](/docs/install-ai-unlimited/production/AWS/install-jupyter/index.md), you have these options:
 

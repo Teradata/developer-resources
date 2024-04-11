@@ -5,8 +5,6 @@ description: Learn about the AI Unlimited platform
 sidebar_position: 1
 pagination_next: null
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Get started
 
@@ -23,18 +21,14 @@ The AI Unlimited elements:
 - Your GitHub or GitLab repository, for user authentication and storing project information
 - The manager, a web-based user interface for monitoring projects and providing each user's API key to connect to the engine ***(Normally we avoid "UI" or "user interface" because that's more a dev perspective than a customer perspective. To the customer, it's just [product name]. But here it seems to add the clarity we need.***
 
-***MEM: Video appears here. An authentic, technical introduction, educational not marketing.***
-
 Choose a way to start using AI Unlimited:
+
 - [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try it (single user)
+
 - [Full installation](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 
 ***Links in the top bar will likely match the developer's doc site. But we need to add What's New, Blog, Community. Possible to add them only on the AI Unlim "site"?***
-
-
-
-
 
 
 

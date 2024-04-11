@@ -1,14 +1,14 @@
 ---
-id: prod-aws-install-ai-unlimited
-title: Teradata - AI Unlimited - Production - Install on AWS
-description: Learn how to deploy the AI Unlimited CloudFormation Template.
-sidebar_label: Install AI Unlimited
+id: prod-aws-install-manager
+title: Teradata - AI Unlimited - Full - AWS - Install the manager
+description: Learn how to deploy the CloudFormation Template for the AI Unlimited manager.
+sidebar_label: Install the manager
 sidebar_position: 6
 ---
 
-# Install AI Unlimited
+# Install the manager
 
-Choose how to deploy the AI Unlimited CloudFormation Template:
+Choose how to deploy the AI Unlimited CloudFormation template:
 
 - [AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited)&mdash;if you prefer a web interface
 - [AWS CLI](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-cli-deploy-ai-unlimited)&mdash;for more scripting and automation possibilities  
