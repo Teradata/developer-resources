@@ -24,7 +24,6 @@ The AI Unlimited elements:
 Choose a way to start using AI Unlimited:
 
 - [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try it (single user)
-
 - [Full installation](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
 
 

@@ -14,17 +14,13 @@ The CloudFormation template deploys a server instance with the AI Unlimited mana
 References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
-## Decide which AI Unlimited template to use
 
-AI Unlimited CloudFormation templates are here in the AI Unlimited GitHub repository:
+## Decide which template to use
 
-`ai-unlimited/deployments/aws/templates/ai-unlimited/`
+import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+<MyPartial />
 
-    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml)&mdash;Hosts AI Unlimited behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
-    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml)&mdash;Hosts AI Unlimited behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml)&mdash;No load balancer
 	
 ## Upload the template	
 		

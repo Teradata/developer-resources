@@ -8,13 +8,19 @@ sidebar_position: 2
 
 # Deploy the template from the CLI
 
-***AWS has a CFT user guide with info about using the CLI. Will read it and come back to editing this.***
+The CloudFormation template deploys a server instance with the AI Unlimited manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
-The CloudFormation template deploys a server instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+
+## Decide which template to use
+
+import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
+
+<MyPartial />
+
 
 ## Create a stack
 
-Run this command: ***Do we need to keep saying "run this command"? Maybe there's a way to put that meaning in the intro.***
+Run this command:
 
 ***TA: Jack to review***
 
@@ -34,9 +40,9 @@ aws cloudformation create-stack --stack-name jupyter-without-lb \
   --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
 ```
 
-***The first one is for the demo (removed). Looks like we need to introduce the 3 templates and explain why they would use each one (like in the console topic). Then, show the code block for each?***
+***The first block looks like a mix of the all-in-one and the no load balancer. I guess we need a block for each of the 3 full install templates?***
 
-***This topic is not about Jupyter. There's a separate CLI topic for that which needs to be fleshed out. Reason: There are 4 Jupyter options: 1. add the kernel to an existing Jupyter 2. Console 3. CLI 4. Docker.***
+***This topic is not about Jupyter. There's a separate CLI topic for that which needs to be fleshed out.***
 
 :::note 
 - CAPABILITY_IAM is required if IamRole is set to New.
@@ -45,9 +51,10 @@ aws cloudformation create-stack --stack-name jupyter-without-lb \
 
 To use an existing role, see Control AWS Access and Permissions using Permissions and Policies. ***Is this to be an external link?***
 
+
 ## Delete a stack
 
-***I need to learn about the CLI, but why would they delete the stack now? This topic is for installing. If they want to eventually remove it, and are CLI users, maybe they know how to run "delete-stack"?***
+***I need to learn about the CLI, but why would they delete the stack now? This topic is for installing. If they want to eventually remove it, and are CLI users, maybe they know how to run "delete-stack"? I think originally this topic as a reference, not an installation task topic.***
 
 Run this command:
 
@@ -69,6 +76,8 @@ aws cloudformation describe-stack-instance --stack-name <stackname>
 aws cloudformation describe-stack-resource --stack-name <stackname> 
 aws cloudformation describe-stack-resources --stack-name <stackname>
 ```
+
+***How do they provide/update the parameters? Are there options to consider, like what's in the console topic? This topic needs to get them through those steps.***
  
 ## Get stack outputs
 
@@ -78,4 +87,4 @@ Run this command:
 aws cloudformation describe-stacks --stack-name <stackname>  --query 'Stacks[0].Outputs' --output table
 ```
 
-***Tell them what they need when they create a project. Needs a segway.***
+***Tell them what they'll need when they connect to the manager from a notebook. Like what's now at the end of the console topic. Do they get that from "describe-stacks"?***
