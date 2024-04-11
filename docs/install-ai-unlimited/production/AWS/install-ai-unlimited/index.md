@@ -10,5 +10,5 @@ sidebar_position: 6
 
 Choose how to deploy the AI Unlimited CloudFormation template:
 
-- [AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited)&mdash;if you prefer a web interface
-- [AWS CLI](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-cli-deploy-ai-unlimited)&mdash;for more scripting and automation possibilities  
+- [AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md)&mdash;if you prefer a web interface
+- [AWS CLI](/docs/install-ai-unlimited/production/AWS/install-ai-unlimited/prod-aws-cli-deploy-ai-unlimited.md)&mdash;for more scripting and automation possibilities  
