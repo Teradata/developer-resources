@@ -21,6 +21,8 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 
 <MyPartial />
 
+2. Download the template and, from '/deployments/aws/templates/', its parameter file. 
+
 	
 ## Upload the template	
 		
@@ -30,7 +32,8 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
 6. Under **Specify template**,  select **Upload a template file**.
-6. Choose the template file you decided to use, and click **Next**.
+6. Choose the template file you decided to use, and click **Next**.  
+
 
 ## Specify stack details and options
 
@@ -39,7 +42,7 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 
 ***Guessing... Is this the idea behind having "AI Unlimited" parms separate: To make them stand out from the others the user might be used to seeing in a CFT? If so, are we sure that no others are unique to AI Unlimited--regardless of their naming?*** 
 
-***I would think the user would go from top to bottom on the UI though. And they might think the 3 "AI Unlim" parms are missing from the doc if they are looking at the big table.***
+***Wouldn't the user go from top to bottom on the UI? Might they think the 3 manager parms are missing from the doc--if they are looking at the big table? If the idea is to draw attention to them, instead of having a separate table for the manager parms, maybe add a note that calls them out? And put them in the long table?***
 
 <details>
 
@@ -56,9 +59,7 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
 :::
 
-***These are all the parms for the 3 templates this topic uses,correct?. Just to make sure, do they exlude any that are for the all-in-one?***
-
-***How did you get the Descriptions and other info for them?***
+***These are all the parms for the 3 templates this topic uses, correct?. Just to make sure, do they exlude any that are for the all-in-one?***
 
 ***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried quickly and couldn't do it.***
 

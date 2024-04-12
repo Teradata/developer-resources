@@ -7,6 +7,8 @@ sidebar_position: 1
 pagination_next: null
 ---
 
+import DocCardList from '@theme/DocCardList';
+
 # Get started
 
 ***Will be working on the handshake between the marketplace and this page.***
@@ -22,19 +24,17 @@ The AI Unlimited elements:
 - Your GitHub or GitLab repository, for user authentication and storing project information
 - The manager, a web-based user interface for monitoring projects and providing each user's API key to connect to the engine ***(Normally we avoid "UI" or "user interface" because that's more a dev perspective than a customer perspective. To the customer, it's just [product name]. But here it seems to add the clarity we need.***
 
-import DocCardList from '@theme/DocCardList';
-
 <DocCardList items={[
   {
     type: 'link',
     label: 'QuickStart',
-    href: '/install-ai-unlimited/quickstart/index.md',
+    href: './quickstart',
     description: 'The fastest way to try it (single user)',
   },
   {
     type: 'link',
     label: 'Full installation',
-    href: '/install-ai-unlimited/production/index.md',
+    href: './production',
     description: 'When your team is ready to begin',
     items: [],
   },
