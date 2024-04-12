@@ -1,7 +1,8 @@
 ---
 id: get-started
-title: Get started
-description: Learn about the AI Unlimited platform
+title: Teradata - AI Unlimited - Get started
+description: Learn how to get started with self-service, on-demand AI/ML engine.
+sidebar_label: Get started
 sidebar_position: 1
 pagination_next: null
 ---
@@ -21,13 +22,29 @@ The AI Unlimited elements:
 - Your GitHub or GitLab repository, for user authentication and storing project information
 - The manager, a web-based user interface for monitoring projects and providing each user's API key to connect to the engine ***(Normally we avoid "UI" or "user interface" because that's more a dev perspective than a customer perspective. To the customer, it's just [product name]. But here it seems to add the clarity we need.***
 
-Choose a way to start using AI Unlimited:
+import DocCardList from '@theme/DocCardList';
 
-- [QuickStart](/install-ai-unlimited/quickstart/index.md)&mdash;the fastest way to try it (single user)
-- [Full installation](/install-ai-unlimited/production/index.md)&mdash;when your team is ready to begin
+<DocCardList items={[
+  {
+    type: 'link',
+    label: 'QuickStart',
+    href: '/install-ai-unlimited/quickstart/index.md',
+    description: 'The fastest way to try it (single user)',
+  },
+  {
+    type: 'link',
+    label: 'Full installation',
+    href: '/install-ai-unlimited/production/index.md',
+    description: 'When your team is ready to begin',
+    items: [],
+  },
+]} />
 
 
 ***Links in the top bar will likely match the developer's doc site. But we need to add What's New, Blog, Community. Possible to add them only on the AI Unlim "site"?***
+
+
+
 
 
 

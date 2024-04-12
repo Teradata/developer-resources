@@ -10,6 +10,11 @@ sidebar_position: 2
 
 The CloudFormation template deploys a server instance with the AI Unlimited manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
+:::note
+
+You can deploy the stack using the `aws cloudformation create-stack` or `aws cloudformation deploy` commands. This example uses `aws cloudformation create-stack`. See [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/#cli-aws-cloudformation) for the syntax differences.
+:::
+
 
 ## Decide which template to use
 
@@ -40,21 +45,27 @@ aws cloudformation create-stack --stack-name jupyter-without-lb \
   --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
 ```
 
-***The first block looks like a mix of the all-in-one and the no load balancer. I guess we need a block for each of the 3 full install templates?***
-
-***This topic is not about Jupyter. There's a separate CLI topic for that which needs to be fleshed out.***
-
 :::note 
 - CAPABILITY_IAM is required if IamRole is set to New.
 - CAPABILITY_NAMED_IAM is required if IamRole is set to New and IamRoleName is given a value.
 :::
+
+***Do they add/change values to the parm JSON file before they create the stack? Seems like we need a section for the parms, like what's in the console topic - we could use a partial. So that would go before the Create the stack section.***
+
+***The console topic tells them they can "Configure stack options." How do they set those options if they use the CLI?***
+
+***Seems we need a block for each of the 3 full install templates.***
+
+***This topic is not about Jupyter. There's a separate CLI topic for that.***
+
+***Looking in the repo, looks like you can remove "test_" from the parm file path?***
 
 To use an existing role, see Control AWS Access and Permissions using Permissions and Policies. ***Is this to be an external link?***
 
 
 ## Delete a stack
 
-***I need to learn about the CLI, but why would they delete the stack now? This topic is for installing. If they want to eventually remove it, and are CLI users, maybe they know how to run "delete-stack"? I think originally this topic as a reference, not an installation task topic.***
+***Why would they delete the stack now? This topic is for installing. If they want to eventually remove it, as CLI users maybe they know how to run "delete-stack"? Maybe originally this topic was a reference, not an installation task topic.***
 
 Run this command:
 
@@ -64,7 +75,11 @@ aws cloudformation delete-stack --stack-name <stackname>
 
 ## Get stack information
 
-***Why is delete-stack in the first line of code?***
+***Can we tell them what sort of information or why they do this? Is this something they normally do after creating a stack?***
+
+***Delete-stack is in the first line of code--probably there by mistake.***
+
+***The second one is also in the last section.***
 
 Run this command:
 
@@ -77,8 +92,6 @@ aws cloudformation describe-stack-resource --stack-name <stackname>
 aws cloudformation describe-stack-resources --stack-name <stackname>
 ```
 
-***How do they provide/update the parameters? Are there options to consider, like what's in the console topic? This topic needs to get them through those steps.***
- 
 ## Get stack outputs
 
 Run this command:
@@ -87,4 +100,8 @@ Run this command:
 aws cloudformation describe-stacks --stack-name <stackname>  --query 'Stacks[0].Outputs' --output table
 ```
 
-***Tell them what they'll need when they connect to the manager from a notebook. Like what's now at the end of the console topic. Do they get that from "describe-stacks"?***
+***Tell them what they'll need when they connect to the manager from a notebook. 
+
+***Like what's at the end of the console topic: You'll need the host (the IP address or hostname) (verify wording) when you connect to the manager from a Jupyter notebook.*** 
+
+***Do they get that from "describe-stacks"?***

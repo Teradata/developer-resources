@@ -35,11 +35,11 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 ## Specify stack details and options
 
 1. Provide a stack name.
-2. Review and update required parameters and any optional ones your organization requires.
+2. Review the parameters. Provide values for the required ones. Your organization might require others.
 
 ***Guessing... Is this the idea behind having "AI Unlimited" parms separate: To make them stand out from the others the user might be used to seeing in a CFT? If so, are we sure that no others are unique to AI Unlimited--regardless of their naming?*** 
 
-***I would think the user would go from top to bottom on the UI.***
+***I would think the user would go from top to bottom on the UI though. And they might think the 3 "AI Unlim" parms are missing from the doc if they are looking at the big table.***
 
 <details>
 
@@ -52,10 +52,15 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 
 </details>
 
-***There are differences between the parms in the doc and the parms on the UI--either b/c of the template uploaded or template updates or both. If we just have 1 table for all 3 templates, and if a parm is only for 1 or 2 of the templates, we'd need to say that in the content.***
+:::note
+The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
+:::
 
-***Can we include the section names in the table: AI Unlimited, AI Unlimited connection, and Persistent volume. I tried quickly and couldn't do it.***
+***These are all the parms for the 3 templates this topic uses,correct?. Just to make sure, do they exlude any that are for the all-in-one?***
 
+***How did you get the Descriptions and other info for them?***
+
+***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried quickly and couldn't do it.***
 
 ***Still trying to figure out how to make the table fit - don't want the horizontal scroll bar. Got worse after the new styles were applied.***
 
