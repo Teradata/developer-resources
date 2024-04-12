@@ -33,7 +33,15 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/;",
+      },
+    },
+    {
+      // Load font awesome icons
+      tagName: 'script',
+      attributes: {
+        src: 'https://kit.fontawesome.com/17a35e44e3.js',
+        crossorigin: 'anonymous',
       },
     },
   ],
@@ -189,11 +197,11 @@ const config = {
         languages: [
           {
             label: 'Global',
-            value: 'en-US',
+            value: '',
           },
           {
             label: 'France',
-            value: 'fr-FR',
+            value: 'fr',
           },
         ],
       },
@@ -349,27 +357,27 @@ const config = {
           title: 'Social media',
           items: [
             {
-              type: 'linkedin',
+              icon: 'fa-brands fa-linkedin-in',
               href: 'https://www.linkedin.com/company/teradata',
             },
             {
-              type: 'twitter',
+              icon: 'fa-brands fa-x-twitter',
               href: 'https://twitter.com/teradata',
             },
             {
-              type: 'facebook',
+              icon: 'fa-brands fa-facebook-f',
               href: 'https://www.facebook.com/Teradata',
             },
             {
-              type: 'instagram',
+              icon: 'fa-brands fa-instagram',
               href: 'https://www.instagram.com/teradata/',
             },
             {
-              type: 'youtube',
+              icon: 'fa-brands fa-youtube',
               href: 'https://www.youtube.com/user/teradata',
             },
             {
-              type: 'rss',
+              icon: 'fa fa-rss',
               href: 'https://www.teradata.com/rss',
             },
           ],

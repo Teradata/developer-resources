@@ -55,3 +55,91 @@ html[data-theme='dark'] {
 .footer--dark {
   --ifm-footer-background-color: #28353b;
 }
+
+.main-wrapper {
+  padding: 4rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
+  max-width: 1440px;
+  box-sizing: border-box;
+}
+
+.menu__link {
+  border-radius: var(----mdc-list-side-padding, 16px);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.25px;
+
+  --ifm-menu-link-padding-vertical: 4px;
+  --ifm-menu-link-padding-horizontal: 12px;
+  --ifm-menu-color: #5c5b5fff;
+  --ifm-menu-color-active: #171a2c;
+  --ifm-menu-color-background-active: #dfe1f9;
+  --ifm-menu-color-background-hover: #1e1d1e14;
+}
+
+.menu__caret,
+.menu__link--sublist-caret {
+  --ifm-menu-link-sublist-icon: url('/img/arrow-icon.svg');
+  --ifm-menu-color-background-hover: none;
+}
+
+.menu__list-item--collapsed {
+  .menu__caret:before {
+    transform: rotateZ(0);
+    margin-left: calc(var(--ifm-menu-link-padding-horizontal) / 2);
+  }
+
+  .menu__link--sublist-caret:before {
+    transform: rotateZ(0);
+  }
+}
+
+.menu__link--sublist-caret:after {
+  display: none;
+}
+
+.menu__link--sublist-caret:before {
+  content: '';
+  background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  height: 1.25rem;
+  transform: rotate(90deg);
+  width: 1.25rem;
+  transition: transform var(--ifm-transition-fast) linear;
+}
+
+.menu__caret:before {
+  transform: rotateZ(90deg);
+  margin-left: calc(var(--ifm-menu-link-padding-horizontal) / 2);
+}
+
+.menu__caret {
+  padding: 0;
+}
+
+.menu__link--sublist-caret:before {
+  margin-right: var(--ifm-menu-link-padding-horizontal);
+  margin-left: calc(var(--ifm-menu-link-padding-horizontal) / -2);
+}
+
+.menu__list-item-collapsible {
+  border-radius: var(----mdc-list-side-padding, 16px);
+  flex-direction: row-reverse;
+}
+
+.menu__list-item-collapsible--active {
+  background-color: #dfe1f9;
+}
+
+.menu__list .menu__list {
+  padding-left: 24px;
+}
+
+@media screen and (min-width: 1025px) {
+  .main-wrapper {
+    padding: 0 6.625rem 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

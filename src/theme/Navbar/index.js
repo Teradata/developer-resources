@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '@bsahitya/td-doc-design';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
+import { useHistory } from '@docusaurus/router';
 
 export default function Navbar() {
   const { navItems } = useThemeConfig();
@@ -11,18 +11,24 @@ export default function Navbar() {
     headerActions,
     languages,
   } = navItems;
-  const secondaryNavbar = useNavbarSecondaryMenu();
-  console.log(secondaryNavbar);
+
+  const history = useHistory();
+
+  const handleLanguageChange = (language) => {
+    history.push(
+      `/td-ai-unlimited-docs/${
+        language ? `${language}/` : ''
+      }docs/install-ai-unlimited/`
+    );
+  };
 
   return (
-    <>
-      <Header
-        navItems={nestedNavItems}
-        title={title}
-        headerActions={headerActions}
-        languages={languages}
-      ></Header>
-      {secondaryNavbar.content}
-    </>
+    <Header
+      navItems={nestedNavItems}
+      title={title}
+      headerActions={headerActions}
+      languages={languages}
+      onLanguageChange={handleLanguageChange}
+    ></Header>
   );
 }
