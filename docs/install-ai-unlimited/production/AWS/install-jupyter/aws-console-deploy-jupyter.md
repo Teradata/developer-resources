@@ -1,32 +1,58 @@
 ---
 id: aws-console-deploy-jupyter
 title: Teradata - AI Unlimited - Deploy JupyterLab from the AWS Management Console
-description: Learn how to deploy JupyterLab using the AWS Cloudformation Template from the AWS Management Console.
+description: Learn how to deploy JupyterLab using the AWS Cloudformation template from the AWS console.
 sidebar_label: AWS Management Console 
 sidebar_position: 1
 ---
 
-# Deploy the JupyterLab template from the AWS Management Console
 
-***Add headers to get the upper-right TOC and edit.***
+# Deploy the template from the console
+
+The CloudFormation template deploys a server instance with JupyterLab, and the AI Unlimited kernel, running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::note
-If the account deploying JupyterLab does not have sufficient IAM permissions to create IAM roles or IAM policies, contact your cloud administrator.
+References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
-To deploy JupyterLab from the AWS Management Console, do the following:
 
-1. Sign on to your AWS account on the AWS Management Console.
-2. Check the **AWS Region** displayed in the upper-right corner of the navigation bar and change it if necessary. Teradata recommends selecting a region closest to your primary work location.
-3.	Go to **CloudFormation** > **Create Stack**. Select **Create Stack** and select **With new resources (standard)**.
-4.	Select **Template is ready**, and then upload one of the following template files from the Teradata AI Unlimited GitHub repository. This template deploys a single instance with JupyterLab running in a container controlled by systemd.
-    - [jupyter-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/jupyter/jupyter-with-alb.yaml) cloudformation template for use cases where JupyterLab  is hosted behind the application load balancer.
-    - [jupyter-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/jupyter/jupyter-with-nlb.yaml) cloudformation template for use cases whereJupyterLab  is hosted behind the network load balancer.
-    - [jupyter-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/jupyter/jupyter-without-lb.yaml) cloudformation template template for use cases where load balancers are not used.
+## Decide which template to use
 
-5.	Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. When you finish reviewing and customizing the parameters, choose **Next**.  
+import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
 
-In the section, parameters are listed by category:
+<MyPartial />
+
+2. Download the template and, from '/deployments/aws/templates/', its parameter file. 
+
+
+## Upload the template	
+		
+1. Sign in to the [AWS](https://aws.amazon.com) console.
+2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
+3. Search for and go to **CloudFormation**.
+4. Select **Create Stack**, then **With new resources (standard)**.
+5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
+6. Under **Specify template**,  select **Upload a template file**.
+6. Choose the template file you decided to use, and click **Next**.
+
+
+## Specify stack details and options
+
+1. Provide a stack name.
+2. Review the parameters. Provide values for the required ones. Your organization might require others.
+
+***Same comments as what's in the manager console topic. Would a partial work for the long table? That might be a reason to keep 2 tables (Jupyter parms separate from  manager parms)--if the long one can be a partial for the manager and the Jupyter topics?***
+
+<details>
+
+<summary>**JupyterLab parameters**</summary>
+| Parameter | Description | Required? | Default | Notes
+|---------|-------------|-----------|-----------|-----------|
+| JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
+| JupyterVersion | The version of JupyterLab you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
+| JupyterToken | The token or password used to access JupyterLab from the UI | Required |- | The token must begin with a letter and contain only alphanumeric characters. The allowed pattern is ^[a-zA-Z][a-zA-Z0-9-]*. |
+</details>
+
 <details>
 
 <summary>AWS instance and network parameters</summary>
@@ -55,25 +81,20 @@ In the section, parameters are listed by category:
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
 |LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
-
 </details>
 
-<details>
+4. Select **Next**.
+5. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
-<summary>**JupyterLab parameters**</summary>
-| Parameter | Description | Required? | Default | Notes
-|---------|-------------|-----------|-----------|-----------|
-| JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
-| JupyterVersion | The version of JupyterLab you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
-| JupyterToken | The token or password used to access JupyterLab from the UI | Required |- | The token must begin with a letter and contain only alphanumeric characters. The allowed pattern is ^[a-zA-Z][a-zA-Z0-9-]*. |
 
-</details>
+## Review and create the stack
 
-6. On the **Options** page, you can specify tags (key-value pairs) for resources in your stack, set permissions, set stack failure options, and set advanced options. When you're done, choose **Next**. 
-7. On the **Review** page, review and confirm the template settings. Under Capabilities, select the check box to acknowledge that the template will create IAM resources. 
-8. Choose **Create** to deploy the stack.
-9.  Monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
-10. Use the URLs displayed in the **Outputs** tab for the stack to view the created resources.
+1. Review the template settings. 
+2. Select the check box to acknowledge that the template will create IAM resources. 
+3. Select **Submit** to deploy the stack.
+4. Monitor the stack's status. When you see `CREATE_COMPLETE`, JupyterLab is ready. 
+5. Use the URLs on the stack's **Outputs** tab to view the created resources.  
 
-JupyterLab is ready!
+***Is one of those URLs what they use to access JupyterLab?***
+
 

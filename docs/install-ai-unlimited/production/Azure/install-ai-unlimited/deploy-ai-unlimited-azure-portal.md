@@ -1,17 +1,17 @@
 ---
-id: deploy-ai-unlimited-azure-portal
-title: Teradata - AI Unlimited - deploy AI Unlimited using Azure ARM - Portal
-description: Learn how to deploy AI Unlimited ARM template from the Azure Portal.
+id: deploy-manager-azure-portal
+title: Teradata - AI Unlimited - Deploy the manager using the Azure Portal
+description: Learn how to deploy the ARM template for the AI Unlimited manager.
 sidebar_label: Azure Portal
 sidebar_position: 1
 ---
 
 # Deploy the AI Unlimited template from the portal
 
-The Azure Resource Manager (ARM) template deploys a single instance with AI Unlimited running in a container controlled by systemd. 
+The Azure Resource Manager (ARM) template deploys a single instance with the AI Unlimited manager running in a container controlled by systemd. 
 
 :::note
-References to Azure Portal fields and buttons are accurate as of April 7, 2024.
+References to the Azure Portal are accurate as of April 7, 2024.
 ::: 
 
 ## Get the AI Unlimited template

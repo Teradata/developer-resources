@@ -1,30 +1,28 @@
 ---
-id: prod-aws-console-deploy-ai-unlimited
-title: Teradata - AI Unlimited - Production - Install on AWS - Console 
-description: Learn how to deploy the AI Unlimited CloudFormation Template from the AWS Management Console.
+id: deploy-manager-aws-console
+title: Teradata - AI Unlimited - Deploy the manager using the AWS console
+description: Learn how to deploy the CloudFormation template for the AI Unlimited manager.
 sidebar_label: AWS Management Console
 sidebar_position: 1
 ---
 
 # Deploy the template from the console
 
-***Re-watch recording to verify whole topic.***
-
-The CloudFormation template deploys a server instance with AI Unlimited running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+The CloudFormation template deploys a server instance with the AI Unlimited manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::note
-References to AWS Management Console fields and buttons are accurate as of April 7, 2024.
+References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
-## Decide which AI Unlimited template to use
 
-The AI Unlimited CloudFormation template options are at this location in the AI Unlimited GitHub repository, which you cloned to your local machine: `ai-unlimited/deployments/aws/templates/ai-unlimited/`.
+## Decide which template to use
 
-Your choice of template depends on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 
-    - [ai-unlimited-with-alb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-alb.yaml)&mdash;Hosts AI Unlimited behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
-    - [ai-unlimited-with-nlb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-with-nlb.yaml)&mdash;Hosts AI Unlimited behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
-    - [ai-unlimited-without-lb.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/templates/ai-unlimited/ai-unlimited-without-lb.yaml)&mdash;No load balancer
+<MyPartial />
+
+2. Download the template and, from '/deployments/aws/templates/', its parameter file. 
+
 	
 ## Upload the template	
 		
@@ -32,21 +30,40 @@ Your choice of template depends on whether you intend to use a [load balancer](/
 2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
-5. Select **Choose an existing template** and **Upload a template file**. 
+5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
+6. Under **Specify template**,  select **Upload a template file**.
+6. Choose the template file you decided to use, and click **Next**.  
 
-***(re-watch recording to verify step 5)***
-
-6. Choose the template file you decided to use, and click **Next**.
 
 ## Specify stack details and options
 
-1. Provide values, as needed, for those that AWS requires, and any your organization requires.
+1. Provide a stack name.
+2. Review the parameters. Provide values for the required ones. Your organization might require others.
 
-***Figure out why the AWS table doesn't fit - don't want the horizontal scroll bar.***
+***Guessing... Is this the idea behind having "AI Unlimited" parms separate: To make them stand out from the others the user might be used to seeing in a CFT? If so, are we sure that no others are unique to AI Unlimited--regardless of their naming?*** 
 
-***I used the no-load-balancer template. I see differences between the parms in the console and what's in this doc. Maybe the parms in this doc are for the all-in-one? Maybe we need an expandable text section for each of the 3 templates?***
+***Wouldn't the user go from top to bottom on the UI? Might they think the 3 manager parms are missing from the doc--if they are looking at the big table? If the idea is to draw attention to them, instead of having a separate table for the manager parms, maybe add a note that calls them out? And put them in the long table?***
 
-***The parms on the UI have sections. Let's add the section names to the table.***
+<details>
+
+<summary>**AI Unlimited parameters**</summary>
+| Parameter | Description | Required? | Default | Notes
+|---------|-------------|-----------|-----------|-----------|
+|AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default	|3000||
+|AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default|3282||
+|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default|latest|The value is a container version tag.
+
+</details>
+
+:::note
+The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
+:::
+
+***These are all the parms for the 3 templates this topic uses, correct?. Just to make sure, do they exlude any that are for the all-in-one?***
+
+***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried quickly and couldn't do it.***
+
+***Still trying to figure out how to make the table fit - don't want the horizontal scroll bar. Got worse after the new styles were applied.***
 
 <details>
 
@@ -78,21 +95,8 @@ Your choice of template depends on whether you intend to use a [load balancer](/
 
 </details>
 
-***Why are these separate? Maybe the template changed?***
-
-<details>
-
-<summary>**AI Unlimited parameters**</summary>
-| Parameter | Description | Required? | Default | Notes
-|---------|-------------|-----------|-----------|-----------|
-|AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default	|3000||
-|AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default|3282||
-|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default|latest|The value is a container version tag.
-
-</details>
-
-2. Select **Next**.
-3. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
+4. Select **Next**.
+5. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
 
 
@@ -100,15 +104,14 @@ Your choice of template depends on whether you intend to use a [load balancer](/
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
-3. Select **Create** to deploy the stack. ***(I see "Submit" not "Create")***
+3. Select **Submit** to deploy the stack.
 
-You can monitor the status of the stack. When the status is `CREATE_COMPLETE`, Teradata AI Unlimited is ready. 
+***I'm getting an error: "Template format error: Unresolved resource dependencies [AiUnlimitedSecurityGroup] in the Resources block of the template." Need to understand that better. Do you get the same error? Need to see what happens when the stack is created to verify the rest of this topic.***
 
-***Should we give them a sense of the time it takes?***
+4. Monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
+5. Use the URLs on the stack's **Outputs** tab to view the created resources.  
 
-Use the URLs on the stack's **Outputs** tab to view the created resources.  
-
-You'll need the IP address or hostname ***(verify wording)*** when you create a project in a Jupyter notebook. ***Is that on the Outputs tab?***
+You'll need the host (the IP address or hostname) ***(verify wording)*** when you connect to the manager from a Jupyter notebook. ***Is that on the Outputs tab?***
 
 
 
