@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Get started": {
+    "message": "始める",
+    "description": "The label for category Get started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.QuickStart": {
+    "message": "クイックスタート",
+    "description": "The label for category QuickStart in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Before you begin": {
+    "message": "あなたが始める前に",
+    "description": "The label for category Before you begin in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Full installation": {
+    "message": "フルインストール",
+    "description": "The label for category Full installation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.AWS": {
+    "message": "AWS",
+    "description": "The label for category AWS in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install the AI Unlimited manager": {
+    "message": "AI Unlimited マネージャーをインストールする",
+    "description": "The label for category Install the AI Unlimited manager in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install JupyterLab": {
+    "message": "JupyterLab をインストールする",
+    "description": "The label for category Install JupyterLab in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Azure": {
+    "message": "Azure",
+    "description": "The label for category Azure in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Explore and analyze data": {
+    "message": "データの探索と分析",
+    "description": "The label for category Explore and analyze data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Manage AI Unlimited": {
+    "message": "AI Unlimited を管理する",
+    "description": "The label for category Manage AI Unlimited in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.For administrators": {
+    "message": "管理者向け",
+    "description": "The label for category For administrators in sidebar tutorialSidebar"
+  }
+}
