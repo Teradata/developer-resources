@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@bsahitya/td-doc-design": "^0.2.4",
+    "@covalent/tokens": "^8.10.1",
     "@docusaurus/core": "3.2.0",
     "@docusaurus/preset-classic": "3.2.0",
     "@mdx-js/react": "^3.0.0",

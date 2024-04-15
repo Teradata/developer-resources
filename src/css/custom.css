@@ -5,8 +5,9 @@
  */
 
 /* You can override the default Infima variables here. */
+
 :root {
-  --ifm-color-primary: #007373;
+  --ifm-color-primary: var(--cv-theme-light-colors-primary);
   --ifm-color-primary-dark: #016b6b;
   --ifm-color-primary-darker: #036464;
   --ifm-color-primary-darkest: #045c5c;
@@ -16,17 +17,17 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  --ifm-color-secondary: #b0bec5;
-  --ifm-color-success: #0a7e07;
-  --ifm-color-info: #546e7a;
-  --ifm-color-warning: #ff8f00;
-  --ifm-color-danger: #b11d00;
+  --ifm-color-secondary: var(--cv-theme-light-colors-secondary);
+  --ifm-color-success: var(--cv-theme-light-colors-positive);
+  --ifm-color-info: var(--cv-theme-light-colors-neutral);
+  --ifm-color-warning: var(--cv-theme-light-colors-caution);
+  --ifm-color-danger: var(--cv-theme-light-colors-negatvive);
 
-  --ifm-background-surface-color: #ffffff;
+  --ifm-background-surface-color: #var(--cv-theme-light-colors-surface);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme='dark'] {
+/* html[data-theme='dark'] {
   --ifm-color-primary: #59cecd;
   --ifm-color-primary-dark: #2cc0bf;
   --ifm-color-primary-darker: #00b2b1;
@@ -38,7 +39,7 @@ html[data-theme='dark'] {
   --ifm-navbar-background-color: #28353b;
   --ifm-background-color: #161c1f;
   --ifm-footer-background-color: var(--ifm-navbar-background-color);
-}
+} */
 
 .navbar {
   background-color: unset;

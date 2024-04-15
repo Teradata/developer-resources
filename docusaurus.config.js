@@ -102,7 +102,7 @@ const config = {
             'https://github.com/owilliams320/td-ai-unlimited-docs/whatsnew',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
         },
       }),
     ],
@@ -197,7 +197,7 @@ const config = {
         languages: [
           {
             label: 'Global',
-            value: 'en',
+            value: '',
           },
           {
             label: 'Duestshcland',
@@ -209,7 +209,7 @@ const config = {
           },
           {
             label: '日本',
-            value: 'jp',
+            value: 'ja',
           },
           {
             label: '대한민국',
