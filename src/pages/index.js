@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
@@ -15,12 +15,15 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        
+        <p className="hero__subtitle">
+          <Translate id="theme.tagline">{siteConfig.tagline}</Translate>
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/install-ai-unlimited">
-            Get Started - 5min ⏱️
+              <Translate id="theme.button">Get Started - 5min ⏱️</Translate>
           </Link>
         </div>
       </div>
