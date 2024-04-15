@@ -16,13 +16,13 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
 
-## Decide which template to use
+## Download the Jupyter template
 
 import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
 
 <MyPartial />
 
-2. Download the template and, from '/deployments/aws/templates/', its parameter file. 
+Download the template.
 
 
 ## Upload the template	
@@ -45,7 +45,7 @@ import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
 
 <details>
 
-<summary>**JupyterLab parameters**</summary>
+<summary>JupyterLab parameters</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
 | JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
@@ -74,8 +74,7 @@ import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
 |KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional||Leave this field blank if you do not want to include the SSH keys.|
 |AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional||Teradata recommends setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |PrefixList			|The prefix list that you can use to communicate with the instance.|Optional||Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance.	|Optional|
-|SecurityGroup is implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance.	|Optional | |Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default|None|Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|

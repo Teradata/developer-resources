@@ -19,14 +19,14 @@ import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
 
 <MyPartial />
 
-2. Locate the template's parameter file in '/deployments/aws/templates/'. ***Not loving this step, but needed a step 2 to work with the partial that has step 1. Might re-work.***
-
 
 ## New section?
 
+The Jupyter template's parameter file is here: '/deployments/aws/parameters/'.
+
 ***Do they add/change values to the parm JSON file? Seems like we need a section for the parms, like what's in the console topic - we could use a partial that works for the console Jupyter topic and this CLI Jupyter topic.***
 
-***Related... the console topic tells them they can configure stack options. How do they set those options if they use the CLI?***
+***Related... the console topic tells them they can configure stack options. How do they set those options if they use the CLI? Looks like that's "tags" and "capabilities" in the code below. Maybe link to AWS doc about that? Compare that part of the AWS console to what's in the code here. For the console do we need to point out anything in particular on the UI page that follows the parms?***
 
 
 ## Create a stack

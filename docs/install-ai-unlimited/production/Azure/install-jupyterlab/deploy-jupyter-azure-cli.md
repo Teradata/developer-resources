@@ -6,7 +6,7 @@ sidebar_label: Azure CLI
 sidebar_position: 2
 ---
 
-# Deploy the JupyterLab template from the Azure CLI
+# Deploy the template from the Azure CLI
 
 [placeholder]
 

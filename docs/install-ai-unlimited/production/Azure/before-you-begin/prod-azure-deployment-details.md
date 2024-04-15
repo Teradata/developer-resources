@@ -18,9 +18,10 @@ Subscription:
 Region: 
 Network:
 Subnet: 
-Security group:
+Security Group:
 	```
-***I will verify that these are the required parms. Have a feeling I did something during cut-n-paste.***
+
+***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). "Security Group" is not marked as required on the UI, but maybe we require it.***
 
 ***If they install JupyterLab on Azure using our template, will the values for these parms be the same?***
 

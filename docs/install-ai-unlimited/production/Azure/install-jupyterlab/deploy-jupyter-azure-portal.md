@@ -6,7 +6,7 @@ sidebar_label: Azure Portal
 sidebar_position: 1
 ---
 
-# Deploy the JupyterLab template from the Azure Portal
+# Deploy the template from the portal
 
 ***Add headings to get the upper-right TOC and edit.***
 

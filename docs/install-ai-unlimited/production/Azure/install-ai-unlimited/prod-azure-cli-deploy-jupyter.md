@@ -6,6 +6,6 @@ sidebar_label: Azure CLI
 sidebar_position: 2
 ---
 
-# Deploy the AI Unlimited template from the Azure CLI
+# Deploy the template from the Azure CLI
 
-[placeholder--was there anything in the demo content?]
+[placeholder--let's research the commands and try to cobble this together based on the AWS CLI topic]

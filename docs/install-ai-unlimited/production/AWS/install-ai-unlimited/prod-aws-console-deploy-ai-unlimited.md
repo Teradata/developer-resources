@@ -1,7 +1,7 @@
 ---
 id: deploy-manager-aws-console
 title: Teradata - AI Unlimited - Deploy the manager using the AWS console
-description: Learn how to deploy the CloudFormation template for the AI Unlimited manager.
+description: Learn how to deploy the AI Unlimited manager using the CloudFormation template.
 sidebar_label: AWS Management Console
 sidebar_position: 1
 ---
@@ -15,16 +15,18 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
 
-## Decide which template to use
+## Download the manager template
 
-import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
+import MyPartial from '/docs/_partials/_choose-aws-manager-template.mdx';
 
 <MyPartial />
 
-2. Download the template and, from '/deployments/aws/templates/', its parameter file. 
+Download the template.
+
+***If using the console, they need to download the template. If using the CLI, they don't need to download it--they just reference it.***
 
 	
-## Upload the template	
+## Load the template	
 		
 1. Sign in to the [AWS](https://aws.amazon.com) console.
 2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
@@ -32,7 +34,7 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
 6. Under **Specify template**,  select **Upload a template file**.
-6. Choose the template file you decided to use, and click **Next**.  
+6. Choose the template file you downloaded, and click **Next**.  
 
 
 ## Specify stack details and options
@@ -42,11 +44,11 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 
 ***Guessing... Is this the idea behind having "AI Unlimited" parms separate: To make them stand out from the others the user might be used to seeing in a CFT? If so, are we sure that no others are unique to AI Unlimited--regardless of their naming?*** 
 
-***Wouldn't the user go from top to bottom on the UI? Might they think the 3 manager parms are missing from the doc--if they are looking at the big table? If the idea is to draw attention to them, instead of having a separate table for the manager parms, maybe add a note that calls them out? And put them in the long table?***
+***Wouldn't the user go from top to bottom on the UI? Might they think the 3 manager parms are missing from the doc--if they are looking at the big table? (I moved the AI Unlim table to before the big table, for that reason.) If the idea is to draw attention to them, instead of having a separate table for the manager parms, maybe add a note that calls them out--but I'm not sure that's even necessary. And put them in the long table--so they can work from top to bottom in one pass?***
 
 <details>
 
-<summary>**AI Unlimited parameters**</summary>
+<summary>AI Unlimited parameters</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default	|3000||
@@ -59,15 +61,17 @@ import MyPartial from '/docs/_partials/_choose-aws-template.mdx';
 The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
 :::
 
-***These are all the parms for the 3 templates this topic uses, correct?. Just to make sure, do they exlude any that are for the all-in-one?***
+***These are all the parms for the 3 templates this topic uses, correct? Just to make sure, do they exlude any that are for the all-in-one?***
 
-***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried quickly and couldn't do it.***
+***If/when we know there will be no more changes, we should verify all of them.***
+
+***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried and couldn't do it.***
 
 ***Still trying to figure out how to make the table fit - don't want the horizontal scroll bar. Got worse after the new styles were applied.***
 
 <details>
 
-<summary>**AWS instance and network parameters**</summary>
+<summary>AWS instance and network parameters</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
 | InstanceType | The EC2 instance type that you want to use for the service. | Required with default | t3.small | Teradata recommends using the default instance type to save costs. |
@@ -95,6 +99,9 @@ The parameters for each template vary. You might see some in the table that you 
 
 </details>
 
+***Persistent volume parms are in the table. Do we need a section in this topic for more info about persistent volumes (from the readme - and like what's in the tech review content)? If we can slim that down and put it in the Notes column of the table, that would be best.***
+
+
 4. Select **Next**.
 5. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
@@ -104,14 +111,15 @@ The parameters for each template vary. You might see some in the table that you 
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
-3. Select **Submit** to deploy the stack.
+3. Select **Submit** to deploy the stack. 
 
-***I'm getting an error: "Template format error: Unresolved resource dependencies [AiUnlimitedSecurityGroup] in the Resources block of the template." Need to understand that better. Do you get the same error? Need to see what happens when the stack is created to verify the rest of this topic.***
+***Do we want to say something, that's not a false promise, about how long it will take?*** 
 
-4. Monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
-5. Use the URLs on the stack's **Outputs** tab to view the created resources.  
+***This is as far as I could get. Need someone who can actually create resources to test what happens next.***
 
-You'll need the host (the IP address or hostname) ***(verify wording)*** when you connect to the manager from a Jupyter notebook. ***Is that on the Outputs tab?***
+You can monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
+
+Use the URLs on the stack's **Outputs** tab to view the created resources. You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook. ***Is that on the Outputs tab?***  ***Verify wording.*** 
 
 
 

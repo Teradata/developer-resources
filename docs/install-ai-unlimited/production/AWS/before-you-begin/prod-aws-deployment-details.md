@@ -23,5 +23,7 @@ If you want to, you can copy this template and send it to an admin who knows the
     Load Balancer (ALB/NLB/Not Applicable):
     RoleDefinition Id: 
 	```
+	
+***I need to go back and compare these to the UI.***
 
 ***If they install JupyterLab on AWS using our template, will the values for these parms be the same?***
