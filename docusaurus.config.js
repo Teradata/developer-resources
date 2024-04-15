@@ -23,7 +23,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'teradata', // Usually your GitHub org/user name.
   projectName: 'td-ai-unlimited-docs', // Usually your repo name.
-
+  trailingSlash: true, 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
