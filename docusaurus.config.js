@@ -115,9 +115,9 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       metadata: [{ name: 'keywords', content: 'Teradata, AI Unlimited' }],
       navbar: {
-        title: 'AI Unlimited',
+        title: 'Developers',
         logo: {
-          alt: 'Teradata AI Unlimited logo',
+          alt: 'Teradata logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -141,7 +141,7 @@ const config = {
         ],
       },
       navItems: {
-        title: 'AI Unlimited',
+        title: 'Developers',
         navItems: [
           {
             active: true,
