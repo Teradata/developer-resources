@@ -17,7 +17,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  --ifm-color-secondary: var(--cv-theme-light-colors-secondary);
+  --ifm-color-secondary: #00233C;
   --ifm-color-success: var(--cv-theme-light-colors-positive);
   --ifm-color-info: var(--cv-theme-light-colors-neutral);
   --ifm-color-warning: var(--cv-theme-light-colors-caution);
@@ -25,6 +25,59 @@
 
   --ifm-background-surface-color: #var(--cv-theme-light-colors-surface);
 }
+
+.plugin-pages body {
+  background: url(/img/dots_pattern_hero.png) no-repeat right 0;
+  background-size: contain;
+}
+
+.button.button--secondary {
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+aside.theme-doc-sidebar-container {
+  border-right: none;
+}
+
+.markdown h1:first-child {
+  color: #00233C;
+
+  /* Desktop/H1 */
+  font-family: Inter;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 64px; /* 118.519% */
+  letter-spacing: -1.62px;
+  margin-bottom:  64px;
+}
+
+.markdown h2 {
+  color: #00233C;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 150% */
+}
+
+.markdown p {
+  color: var(--Gray-700, #333A3E);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* html[data-theme='dark'] {
@@ -57,7 +110,7 @@
   --ifm-footer-background-color: #28353b;
 }
 
-.main-wrapper {
+html:not(.plugin-pages) .main-wrapper {
   padding: 4rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
   max-width: 1440px;
   box-sizing: border-box;
@@ -138,7 +191,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .main-wrapper {
+  html:not(.plugin-pages) .main-wrapper {
     padding: 0 6.625rem 0;
     margin: 0 auto;
     width: 100%;

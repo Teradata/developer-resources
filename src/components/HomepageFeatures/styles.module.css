@@ -2,7 +2,36 @@
   display: flex;
   align-items: center;
   padding: 2rem 0;
-  width: 100%;
+  background: #F6F7FB;
+}
+
+.features .container {
+  max-width: 1400px;
+}
+
+.features h2 {
+  color: hsl(205, 100%, 12%);
+  margin-bottom: 40px;
+
+  /* Desktop/H2 */
+  font-family: Inter;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 52px; /* 123.81% */
+  letter-spacing: -1.26px;
+}
+
+.col {
+  padding-bottom: 1rem;
+}
+
+.card {
+  border-radius: 12px;
+  border: 1px solid #CED3DA;
+  background: #FFF;
+  height: 100%;
+  margin-bottom: 1rem;
 }
 
 .featureSvg {

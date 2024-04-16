@@ -4,10 +4,47 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 4rem 0 120px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: none;
+  color: #333A3E;
+}
+
+.heroBanner h1 {
+  color: var(--Primary-Navy, #00233C);
+
+  /* Desktop/H1 */
+  font-family: Inter;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 64px; /* 118.519% */
+  letter-spacing: -1.62px;
+}
+
+.heroBanner p {
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: 0.25px;
+}
+
+.heroBlur {
+  width: 360px;
+  overflow: visible;
+  position: relative;
+  z-index: -1;
+  margin: auto;
+  height: 260px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  margin-top: -260px;
+  background: rgba(255, 85, 2, 0.60);
+  filter: blur(50px);
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +57,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
