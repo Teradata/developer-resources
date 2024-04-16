@@ -31,6 +31,8 @@ Make sure you have the following:
 Subscribe to AI Unlimited on your CSP's marketplace:
 - AWS (link)
 - Azure (link)
+
+Then return to this documentation site to continue.
  
 ***What do we really need to say about this task? We should not repeat what's on the Marketplace or provide self-evident steps--unless there's a good reason to.***
  

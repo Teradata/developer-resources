@@ -6,7 +6,7 @@ sidebar_label: AWS Management Console
 sidebar_position: 1
 ---
 
-# Deploy the template from the console
+# Deploy the template from the AWS console
 
 The CloudFormation template deploys a server instance with the AI Unlimited manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 

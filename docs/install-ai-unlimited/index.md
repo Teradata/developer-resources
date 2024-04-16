@@ -11,18 +11,18 @@ import DocCardList from '@theme/DocCardList';
 
 # Get started
 
-***Will be working on the handshake between the marketplace and this page.***
+Learn how to install, set up, and use AI Unlimited. 
 
-Explore and analyze large datasets in a Jupyter notebook using the Teradata Analytics Library&mdash;on a self-service, on-demand basis. 
+With AI Unlimited, you can explore and analyze large datasets in a Jupyter notebook using the Teradata Analytics Library&mdash;on a self-service, on-demand basis. 
 
-As a data scientist or data engineer, connect your notebook to the AI Unlimited AI/ML engine on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp), and connect the engine to your data lake. Suspend and resume your analytics project anytime, and pay only for the hours you use.
+As a data scientist or data engineer, you'll connect your notebook to the AI Unlimited AI/ML engine on AWS or Azure, and connect the engine to your data lake. You can suspend and resume your analytics project anytime, and pay only for the hours you use.
 
 The AI Unlimited elements:
-- The engine, on your [CSP](/docs/glossary.md#glo-csp)&mdash;AWS or Azure
+- The AI/ML engine, on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp)
 - Jupyter notebooks, with the AI Unlimited Jupyter Kernel, for running your workloads
 - Your object storage, on your [CSP](/docs/glossary.md#glo-csp)
 - Your GitHub or GitLab repository, for user authentication and storing project information
-- The manager, a web-based user interface for monitoring projects and providing each user's API key to connect to the engine ***(Normally we avoid "UI" or "user interface" because that's more a dev perspective than a customer perspective. To the customer, it's just [product name]. But here it seems to add the clarity we need.***
+- The manager, which orchestrates the AI Unlimited elements&mdash;and includes a web-based user interface for monitoring projects and retrieving each user's API key to connect to the engine
 
 <DocCardList items={[
   {
@@ -35,7 +35,7 @@ The AI Unlimited elements:
     type: 'link',
     label: 'Full installation',
     href: './production',
-    description: 'When your team is ready to begin',
+    description: 'For team use (all in the cloud)',
     items: [],
   },
 ]} />

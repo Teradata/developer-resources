@@ -6,7 +6,7 @@ sidebar_label: Azure Portal
 sidebar_position: 1
 ---
 
-# Deploy the template from the portal
+# Deploy the template from the Azure portal
 
 The Azure Resource Manager (ARM) template deploys a single instance with the AI Unlimited manager running in a container controlled by systemd. 
 
