@@ -3,7 +3,7 @@ id: deploy-manager-azure-portal
 title: Teradata - AI Unlimited - Deploy the manager using the Azure Portal
 description: Learn how to deploy the AI Unlimited manager using the ARM template.
 sidebar_label: Azure Portal
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Deploy the template from the Azure portal

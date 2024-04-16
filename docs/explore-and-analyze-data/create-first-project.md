@@ -21,6 +21,29 @@ This document walks you through a simple workflow where you can use AI Unlimited
 
 ## Before you begin
 
+You may already have JupyterLab&mdash;somewhere on the cloud or on your computer. If so, add the [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel).
+
+Or, get JupyterLab with the AI Unlimited kernel:
+
+<Tabs>
+<TabItem value="aws1" label="AWS">
+
+- Install it on AWS [using the AWS Management Console](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-console-deploy-jupyter.md) if you prefer a web interface
+- Install it on AWS [using the AWS CLI](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-cli-deploy-jupyter.md) for more scripting and automation possibilities 
+- [Run it locally in a Docker container](/docs/install-ai-unlimited/production/AWS/install-jupyter/aws-run-jupyter-docker)
+
+</TabItem>
+<TabItem value="azure" label="Azure">
+
+- Install it on Azure [using the Azure Portal](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/prod-azure-portal-deploy-jupyter.md) if you prefer a web interface 
+- Install it on Azure [using the Azure CLI](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/prod-azure-cli-deploy-jupyter.md) for more scripting and automation possibilities 
+- [Run it locally in a Docker container](/docs/install-ai-unlimited/production/Azure/install-jupyterlab/azure-docker-run-jupyter.md)
+
+
+</TabItem>
+</Tabs>
+
+
 Copy and retain these items:
 
 - The API key from the AI Unlimited. ***link to the separate topic***

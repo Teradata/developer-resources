@@ -3,7 +3,7 @@ id: deploy-manager-aws-console
 title: Teradata - AI Unlimited - Deploy the manager using the AWS console
 description: Learn how to deploy the AI Unlimited manager using the CloudFormation template.
 sidebar_label: AWS Management Console
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Deploy the template from the AWS console
