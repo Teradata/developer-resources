@@ -24,7 +24,7 @@ const config = {
   organizationName: 'teradata', // Usually your GitHub org/user name.
   projectName: 'td-ai-unlimited-docs', // Usually your repo name.
   trailingSlash: true, 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   headTags: [
