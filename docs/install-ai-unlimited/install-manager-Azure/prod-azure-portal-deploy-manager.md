@@ -14,15 +14,13 @@ The Azure Resource Manager (ARM) template deploys a single instance with the AI 
 References to the Azure Portal are accurate as of April 14, 2024.
 ::: 
 
-
 ## Download the manager template
 
 Download the template (`/deployments/azure/ai-unlimited.json`) from the AI Unlimited GitHub repository you cloned.
 
-***No load balancer templates for Azure? The terms seem to be "Application Gateway" (like ALB) and "Azure Load Balancer (like NLB)."***
+***No load balancer templates for Azure? The terms seem to be "Application Gateway" (like ALB) and "Azure Load Balancer (like NLB)."*** ***TA: No***
 
 ***In the repo, what are the templates that end in ".cloudinit" and ".service"?***
-
 
 ## Load the template
 
@@ -35,7 +33,6 @@ Download the template (`/deployments/azure/ai-unlimited.json`) from the AI Unlim
 4. Select **Load file**.
 
 5. Choose the template file you downloaded, and click **Save**.  
-
 
 ## Specify instance details
 

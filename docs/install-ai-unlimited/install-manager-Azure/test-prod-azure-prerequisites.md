@@ -14,11 +14,11 @@ Make sure you have the following:
 
 Make sure you have the following: 
 
-- [Azure account](https://azure.microsoft.com) 
+- [Azure account](https://azure.microsoft.com) with an active subscription (Subscription ID). If you don't have an Azure subscription, create a free account. You cannot deploy AI Unlimited using an Azure Free Trial Subscription. If you have a free account, go to your profile and change your subscription to pay-as-you-go. Then, remove the spending limit, and request a quota increase for vCPUs in your region. 
 
-- Optionally, the [Azure command-line interface (CLI)](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli)
+- Optionally, the [Azure command-line interface (CLI)](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli) if you prefer working with Azure CLI.
 
-- [GitHub](https://github.com) or [GitLab](https://gitlab.com) account
+- [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
 - Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on AWS. 
 
@@ -48,13 +48,11 @@ Work with your admin to prepare your Azure account.
 
     Generate a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect to the AI Unlimited instance ***("engine"?)*** using SSH.
 
-***For Azure, do we need equivalent content that's in AWS for 1. how to be able to more closely manage the engine and 2. load balancers?***
+***For Azure, do we need equivalent content that's in AWS for 1. how to be able to more closely manage the engine and 2. load balancers?*** ***TA: Load balancer template options are not available for Azure, so Will wait for input from Jack***
 
 ***TA: For AWS, Jack had mentioned Route53 for DNS, for Azure, not sure.***
 
 ### Create a role with the required permissions	
-
-***Grabbed this from the Azure Demo installation before we removed it. True for the full installation too?***
 
 If the roles defined by your organization cannot deploy AI Unlimited ***(needs better wording--roles don't deploy)***, use the [role-policy](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/role-policy.json) ARM template. This template contains permissions to create an AI Unlimited instance and grants AI Unlimited permissions to create specific IAM ***[RBAC?]*** roles and policies for the AI Unlimited engines it deploys. Optionally, you can share the [ai-unlimited](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/policies/ai-unlimited.json) file with your organization administrator to create the custom role on your behalf. This file contains the subscription-level permissions required for AI Unlimited to deploy AI Unlimited engine instances within your resource groups.
 
@@ -101,7 +99,7 @@ Subnet:
 Security Group:
 	```
 
-***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). "Security Group" is not marked as required on the UI, but maybe we require it.***
+***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). "Security Group" is not marked as required on the UI, but maybe we require it.*** ***TA: security group is important ***
 
 ***If they install JupyterLab on Azure using our template, will the values for these parms be the same?***
 

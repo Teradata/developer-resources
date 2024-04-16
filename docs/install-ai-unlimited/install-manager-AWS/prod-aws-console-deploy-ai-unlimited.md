@@ -2,18 +2,17 @@
 id: deploy-manager-aws-console
 title: Teradata - AI Unlimited - Deploy the manager using the AWS console
 description: Learn how to deploy the AI Unlimited manager using the CloudFormation template.
-sidebar_label: AWS Management Console
+sidebar_label: Deploy template from AWS Management Console
 sidebar_position: 3
 ---
 
-# Deploy the template from the AWS console
+# Deploy the CloudFormation template from the AWS console
 
 The CloudFormation template deploys a server instance with the AI Unlimited manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::note
 References to the AWS Management Console are accurate as of April 11, 2024.
 :::
-
 
 ## Download the manager template
 
@@ -23,19 +22,15 @@ import MyPartial from '/docs/_partials/_choose-aws-manager-template.mdx';
 
 Download the template.
 
-***If using the console, they need to download the template. If using the CLI, they don't need to download it--they just reference it.***
-
-	
 ## Load the template	
-		
+
 1. Sign in to the [AWS](https://aws.amazon.com) console.
 2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
 6. Under **Specify template**,  select **Upload a template file**.
-6. Choose the template file you downloaded, and click **Next**.  
-
+7. Choose the template file you downloaded, and click **Next**.  
 
 ## Specify stack details and options
 
@@ -61,11 +56,12 @@ Download the template.
 The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
 :::
 
-***These are all the parms for the 3 templates this topic uses, correct? Just to make sure, do they exlude any that are for the all-in-one?***
+***These are all the parms for the 3 templates this topic uses, correct? Just to make sure, do they exlude any that are for the all-in-one?*** 
+**TA: Yes, I verified the fields***
 
 ***If/when we know there will be no more changes, we should verify all of them.***
 
-***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried and couldn't do it.***
+***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried and couldn't do it.*** **TA: Table design restriction for Markdown*** Can provide an row with the headers but columns can't be merged***
 
 ***Still trying to figure out how to make the table fit - don't want the horizontal scroll bar. Got worse after the new styles were applied.***
 
@@ -83,6 +79,10 @@ The parameters for each template vary. You might see some in the table that you 
 |AvailabilityZone | The availability zone to which you want to deploy the instance. |Required | |The value must match the subnet, the zone of any pre-existing volumes, and the instance type must be available in the selected zone. |
 |LoadBalancing		|Specifies whether the instance is accessed via an NLB. |Required with default |NetworkLoadBalancer |Supported options are: NetworkLoadBalancer or None |
 |LoadBalancerScheme	| If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC.	|Optional with default	|Internet-facing	|The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet. The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.|
+|LoadBalancerSubnetOne | The subnet where the load balancer is hosted. The subnet determines load balancer availability zones, IP addresses, and endpoints. |Optional with default	|	| You must define a minimum of one available subnet to create a Network Load Balancer (NLB) and two subnets for an Application Load Balancer (ALB).|
+| LoadBalancerSubnetTwo| The subnet where the load balancer is hosted. |Optional. This option is only available in the template with ALB.||This subnet must be in a different availability zone than the first subnet you chose.|
+|HostedZoneID |	The ID that Amazon Route 53 assigned to the hosted zone when you created it.|||	Each hosted zone corresponds to a domain name, or possibly a subdomain. The hosted zone is the container for DNS records, where you configure how the world interacts with your domain, such as pointing it to an IP address with a record. On the AWS console, go to **Route 53** > **Hosted zones**. Find your registered domain name and the corresponding Hosted zone ID.|
+|DnsName|	The name of the domain. For public hosted zones, this is the name you registered with your DNS registrar. | | |For information about how to specify characters other than a-z, 0-9, and - (hyphen) and how to specify internationalized domain names, see [Create Hosted Zone](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html).|
 |Private	|Specifies whether the service is deployed in a private network without public IPs.|Required|false| |
 |Session	|Specifies whether you can use the AWS Session Manager to access the instance.|Required|false| |
 |Vpc		|The network to which you want to deploy the instance.|Required|||
@@ -99,7 +99,7 @@ The parameters for each template vary. You might see some in the table that you 
 
 </details>
 
-***Persistent volume parms are in the table. Do we need a section in this topic for more info about persistent volumes (from the readme - and like what's in the tech review content)? If we can slim that down and put it in the Notes column of the table, that would be best.***
+***Persistent volume parms are in the table. Do we need a section in this topic for more info about persistent volumes (from the readme - and like what's in the tech review content)? If we can slim that down and put it in the Notes column of the table, that would be best.*** ***TA: I think, the important bits can be in the table, as it would help users make the right selection at that point in time, or provide a link to a topic in the advanced section***
 
 
 4. Select **Next**.

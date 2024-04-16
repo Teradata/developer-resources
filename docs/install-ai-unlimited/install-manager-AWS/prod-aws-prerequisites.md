@@ -1,7 +1,7 @@
 ---
-id: test-prod-aws-prerequisites
-title: Teradata - AI Unlimited - Full installation - AWS - Prerequisites
-description: Learn the prerequisites for installing AI Unlimited on AWS.
+id: prod-aws-prerequisites
+title: Teradata - AI Unlimited - Installation - AWS - Prerequisites
+description: Learn the prerequisites for installing AI Unlimited Manager on AWS.
 sidebar_label: Before you begin
 sidebar_position: 2
 ---
@@ -12,11 +12,11 @@ sidebar_position: 2
 
 Make sure you have the following: 
 
-- [AWS account](https://aws.amazon.com)
+- [AWS account](https://aws.amazon.com). You cannot deploy AI Unlimited using an AWS Free Tier subscription. If you have a free account, go to your profile and change your subscription to pay-as-you-go. 
 
-- Optionally, the [AWS command-line interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
+- Optionally, the [AWS command-line interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) if you prefer working with AWS CLI.
 
-- [GitHub](https://github.com) or [GitLab](https://gitlab.com) account
+- [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
 - Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on AWS. 
 
@@ -28,7 +28,7 @@ Open a terminal window, and clone the repository.
 
 ## Prepare your AWS account
 
-- Your AWS account must have the required permissions needed to deploy the resources in the CloudFormation template. Work with your cloud administrator to set up the account with the required permissions.
+- Your AWS account must have the required permissions needed to deploy the resources in the CloudFormation template. Work with your cloud administrator to set up the account with the required permissions. See [Create an IAM role and attach policies](link).
 
 - If you need to access or manage the AI Unlimited instance to run commands or debug, you can connect to it using one of the following methods:
 	- Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH).
@@ -38,9 +38,7 @@ Open a terminal window, and clone the repository.
 	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
 	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;to configure a custom domain name and route DNS queries to your load balancer.
 
-### Create an IAM role and policies
-
-***Jack will write up how this all works--AI Unlim service vs. engine, etc. This topic needs work.***
+### Create an IAM role and attach policies
 
 Use IAM roles and policies to grant AI Unlimited permissions to deploy and access AWS resources. 
 
@@ -82,7 +80,7 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 ## Get deployment details
 
-When you install AI Unlimited using a CloudFormation template (CFT), you'll provide account and network details. 
+When you install AI Unlimited using a CloudFormation template, you'll provide account and network details. 
 
 If you want to, you can copy this template and send it to an admin who knows these details&mdash;to get them ahead of time. Or, get them from the AWS Management Console. ***(is the console sentence correct?)***
 
