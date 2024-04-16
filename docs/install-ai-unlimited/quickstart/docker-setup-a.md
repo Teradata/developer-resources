@@ -67,7 +67,7 @@ You can modify these parameters directly from the Jupyter notebook while connect
 - **Default IAM role**: The default IAM identity that provides the required permissions to deploy the engine instance. When a default IAM role is assigned to a user or resource, the user or resource automatically assumes the role and gains the permissions granted to the role. If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html), it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
 - **Resource tags**: The key-value pair applied to a resource to hold metadata about that resource. With a resource tag, you can quickly identify, organize, and manage the AI Unlimited resources you use in your environment.
 - **Default CIDRs**: The list of Classless Inter-Domain Routing (CIDR) network addresses that can be allocated to the engine. Use CIDR to allocate IP addresses flexibly and efficiently in your network. If you don't specify a CIDR, the engine is automatically associated with the default CIDR.
-- **Default security groups**: The list of security groups for the VPC in each region. Security group is a virtual firewall that contains rules to monitor and filter the incoming and outgoing traffic for the VPC in each region. If you don't specify a security group, the engine is automatically associated with the default security group for the VPC. If you're deploying AI Unlimited using the CloudFormation template or ARM template, make sure the default security group is the same as the one in the template to ensures AI Unlimited can communicate with the AI Unlimited engine.
+- **Default security groups**: The list of security groups for the VPC in each region. Security group is a virtual firewall that contains rules to monitor and filter the incoming and outgoing traffic for the VPC in each region. If you don't specify a security group, the engine is automatically associated with the default security group for the VPC. If you're deploying AI Unlimited using the CloudFormation template or ARM template, make sure the default security group is the same as the one in the template to ensure AI Unlimited can communicate with the AI Unlimited engine.
 - **Role Prefix**: The string of characters prepended to the name of a role. You can use a role prefix to organize and manage roles and to enforce naming conventions.
 - **Permission Boundary**: The maximum permissions an IAM entity can have regardless of the permissions defined in the identity-based policy. You can define and manage the user permissions and roles and enforce compliance requirements.
 
@@ -77,7 +77,7 @@ After you've filled-in all the details, select **Update**.
 <TabItem value="azure" label="Azure">
 
 - **Default region**: A single Azure environment corresponds to a single VNet located in a specific region, and all the resources deployed by AI Unlimited on Azure are deployed into that VNet. Teradata recommends selecting a region closest to your primary work location or the region where your data is located.
-- **Default CIDRs**: The address range to define the range of private IPs for VM instances provisioned into the subnets. The CIDR range must be between /16 and /24. The default is 10.0.0.0/16.
+- **Default CIDRs**: The address range to define the range of private IPs for VM instances provisioned into the subnets. The CIDR range must be between /16 and /24. The default is 10.0.0.0/16, however you can modify the value based on your organizational policy.
 - **Default security group**: Controls inbound and outbound traffic to and from Azure resources within a specified network. Use this field to allow users from your organization access to the resources.
 - **Resource tags**: The key-value pair that helps you identify resources based on settings that are relevant to your organization. Use the ai-unlimited tag to quickly identify, organize, and manage the resources you use in your environment.
 
@@ -126,9 +126,3 @@ Select **Update** and then **Login**.
 </details>
 
 If you're an AI Unlimited administrator, go to the **Profile** page to copy your API Key. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
-
-
-
-
-
-
