@@ -112,7 +112,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/teradata-logo-social.png',
       metadata: [{ name: 'keywords', content: 'Teradata, AI Unlimited' }],
       navbar: {
         title: 'Developers',
