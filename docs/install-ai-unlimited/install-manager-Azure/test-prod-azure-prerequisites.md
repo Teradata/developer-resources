@@ -14,11 +14,7 @@ Prepare for installing AI Unlimited on Azure.
 
 Make sure you have the following: 
 
-Make sure you have the following: 
-
 - [Azure account](https://azure.microsoft.com) with an active subscription (Subscription ID). If you don't have an Azure subscription, create a free account. You cannot deploy AI Unlimited using an Azure Free Trial Subscription. If you have a free account, go to your profile and change your subscription to pay-as-you-go. Then, remove the spending limit, and request a quota increase for vCPUs in your region. 
-
-- Optionally, the [Azure command-line interface (CLI)](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli) if you prefer working with Azure CLI.
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 

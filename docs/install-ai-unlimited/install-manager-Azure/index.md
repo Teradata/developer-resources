@@ -11,7 +11,7 @@ sidebar_position: 1
 The AI Unlimited manager provides configuration settings. After installing the manager, you'll use it to set up AI Unlimited and configure the engine's deployment on Azure.
 
 :::tip
-For installation support, ask the community.
+For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 ***not yet liking this topic - will come back to it***
