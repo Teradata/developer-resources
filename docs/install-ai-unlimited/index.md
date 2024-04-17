@@ -2,7 +2,7 @@
 id: get-started
 title: Teradata - AI Unlimited - Get started
 description: Learn how to get started with self-service, on-demand AI/ML engine.
-sidebar_label: Get started with AI Unlimited
+sidebar_label: Get started
 sidebar_position: 1
 pagination_next: null
 ---
