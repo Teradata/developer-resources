@@ -91,7 +91,8 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/docs',
+          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/tree/main',
+          editLocalizedFiles: true
         },
         blog: {
           showReadingTime: true,
@@ -99,7 +100,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           routeBasePath: 'whatsnew',
           editUrl:
-            'https://github.com/owilliams320/td-ai-unlimited-docs/whatsnew',
+            'https://github.com/owilliams320/td-ai-unlimited-docs/tree/main',
         },
         theme: {
           customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
@@ -111,7 +112,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/teradata-logo-social.png',
       metadata: [{ name: 'keywords', content: 'Teradata, AI Unlimited' }],
       navbar: {
@@ -144,12 +144,12 @@ const config = {
         title: 'Developers',
         navItems: [
           {
-            active: true,
             href: 'https://quickstarts.teradata.com/',
             label: 'Getting started',
           },
           {
             label: 'Docs',
+            active: true,
             navItems: [
               {
                 label: 'VantageCloud Lake Documentation',

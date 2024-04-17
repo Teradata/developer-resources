@@ -12,20 +12,34 @@ export default function Navbar() {
   } = navItems;
 
   const [defaultLang, setDefaulLang] = useState('');
+  const basePath = '/td-ai-unlimited-docs';
 
   const handleLanguageChange = (language) => {
-    window.location = `/td-ai-unlimited-docs/${
-      language ? `${language}/` : ''
-    }docs/install-ai-unlimited/`;
+    // Replace current language with another language
+    if (getCurrentLanguage() !== '') {
+      window.location = window.location.pathname.replace(`/${getCurrentLanguage()}/`, `/${language}/`);
+    }
+    // Insert new language into path
+    if (getCurrentLanguage() === '' && language !== '') {
+      window.location = window.location.pathname.replace(`${basePath}/`,`${basePath}/${language}/`);
+    }
+    // Remove language from path
+    if (getCurrentLanguage() !== '' && language === '') {
+      window.location = window.location.pathname.replace(`/${getCurrentLanguage()}/`, '/');
+    }
   };
 
-  useEffect(() => {
-    const langRegEx = /\/td-ai-unlimited-docs\/(\w{2})\/docs/;
+  const getCurrentLanguage = () => {
+    const langRegEx = /\/td-ai-unlimited-docs\/(\w{2})\//;
     const currentLocation = window.location.pathname;
     const match = currentLocation.match(langRegEx);
-    if (match && languages) {
-      const language = match[1];
-      const selectedLang = languages.find((lang) => lang.value === language);
+    return match ? match[1] : '';
+  }
+
+  useEffect(() => {
+    const currentLanguage = getCurrentLanguage();
+    if (currentLanguage && languages) {
+      const selectedLang = languages.find((lang) => lang.value === currentLanguage);
       if (selectedLang) {
         selectedLang.active = true;
         setDefaulLang(selectedLang.value);
