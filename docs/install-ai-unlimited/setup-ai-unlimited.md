@@ -2,14 +2,13 @@
 id: test-quickstart-setup
 title: Teradata - AI Unlimited - QuickStart - Setup 
 description: Get more information about certain fields in the setup.
-sidebar_label: Set up Manager
-sidebar_position: 3
+sidebar_label: Set up AI Unlimited
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Set up AI Unlimited Manager
+# Set up AI Unlimited
 
 :::note
 Before you start, make sure you have all the necessary details to update the cloud integration section. You must have the minimum configuration values, including **Default region**, **Default subnet**, and **Default security groups**. If you are unsure, Teradata recommends reaching out to your cloud administrator for guidance.
@@ -126,3 +125,5 @@ Select **Update** and then **Login**.
 </details>
 
 If you're an AI Unlimited administrator, go to the **Profile** page to copy your API Key. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
+
+Now you can start using AI Unlimited to [explore and analyze data](/docs/explore-and-analyze-data).

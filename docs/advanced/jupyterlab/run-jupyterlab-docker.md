@@ -1,7 +1,15 @@
-
+---
+id: run-jupyter-docker
+title: Teradata - AI Unlimited - Run JupyterLab locally using Docker
+description: Learn how to run JupyterLab with the AI Unlimited Jupyter Kernel on your computer.
+sidebar_label: Docker
+sidebar_position: 3
+---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+# Run JupyterLab locally
 
 Use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with the AI Unlimited Jupyter Kernel, locally in a container. 
 
@@ -79,5 +87,7 @@ Use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with t
 When JupyterLab is ready, you can access it at `http://localhost:8888`, and enter the token. 
 
 After you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/docker-setup-b.md), you'll be able to create a project in JupyterLab. 
+
+
 
 

@@ -14,7 +14,7 @@ If you create a project, you are its owner. Once a project is created, your Git 
 
 You might be the owner of one or more projects and a collaborator on others. While owners and collaborators can use the same magic commands, their points of view are somewhat different. 
 
-The most fundamental magic commands reveal the overall project lifecycle, for both points of view. 
+The most basic magic commands reveal the overall project lifecycle, for both points of view. 
 
 ***A graphic with "steps," with arrows to show the flow and suspend-resume cycle. Will include the magic commands, and include details that support what's happening.***
 

@@ -37,12 +37,12 @@ Definition
 <a id="glo-cidr"></a>
 ### Classless Inter-Domain Routing (CIDR)
 
-An IP address allocation method that improves data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers find each other and communicate.
+An IP address allocation method for data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers find each other and communicate. A CIDR block is a range of IP addresses.
 
 <a id="glo-csp"></a>
 ### cloud service provider (CSP) 
 
-A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP. ***[true, but add that a CIDR block indicates a range]***
+A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP.
 
 <a id="glo-cluster"></a>
 ### cluster
@@ -86,7 +86,7 @@ A load balancer distributes incoming traffic evenly across servers, which improv
 <a id="glo-mounting-volumes"></a>
 ### mounting volumes 
 
-A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers (host) to a directory within a container to share data and files between the host and container.
+A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers (the host) to a directory in a container to share data and files between the host and container.
 
 ### term
 

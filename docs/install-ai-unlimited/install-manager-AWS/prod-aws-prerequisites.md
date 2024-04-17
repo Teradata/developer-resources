@@ -3,10 +3,12 @@ id: prod-aws-prerequisites
 title: Teradata - AI Unlimited - Installation - AWS - Prerequisites
 description: Learn the prerequisites for installing AI Unlimited Manager on AWS.
 sidebar_label: Before you begin
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Before you begin
+
+Prepare for installing AI Unlimited on AWS.
 
 ## Prerequisites
 
@@ -16,11 +18,13 @@ Make sure you have the following:
 
 - Optionally, the [AWS command-line interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) if you prefer working with AWS CLI.
 
+***We can remove the CLI bullet for now, b/c we won't include CLI installation content yet. When we add the CLI content to Advanced topics, sometime after May 31, we might bring the bullet back.***
+
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
 - Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on AWS. 
 
-Open a terminal window, and clone the repository. 
+	Open a terminal window, and clone the repository.
 
     ``` bash
     git clone https://github.com/Teradata/ai-unlimited

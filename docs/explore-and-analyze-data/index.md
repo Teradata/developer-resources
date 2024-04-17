@@ -8,7 +8,12 @@ sidebar_position: 2
 
 # Explore and analyze data
 
-Learn about AI Unlimited projects and how to use Teradata Analytics Library functions with your large-scale datasets.
+Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
+
+:::note
+If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installaton options](/docs/advanced/jupyterlab).
+:::
+
 
 - [Create your first project](/docs/explore-and-analyze-data/create-first-project.md)
 - See the [project lifecycle](/docs/explore-and-analyze-data/project-lifecycle.md), at a glance
