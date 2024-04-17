@@ -13,9 +13,7 @@ import DocCardList from '@theme/DocCardList';
 
 Learn how to install, set up, and use AI Unlimited. 
 
-With AI Unlimited, you can explore and analyze large datasets in a Jupyter notebook using the Teradata Analytics Library&mdash;on a self-service, on-demand basis. 
-
-***need to see final marketplace listing content - does it say "Teradata Anaytics Library" or "ClearScape Analytics"?***
+With AI Unlimited, you can explore and analyze large datasets in a Jupyter notebook using the [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics)&mdash;on a self-service, on-demand basis. 
 
 As a data scientist or data engineer, you'll connect your notebook to the AI Unlimited AI/ML engine on AWS or Azure, and connect the engine to your data lake. You can suspend and resume your analytics project anytime, and pay only for the hours you use.
 
@@ -31,21 +29,18 @@ The AI Unlimited elements:
     type: 'link',
     label: 'AWS',
     href: './install-manager-AWS',
-    description: 'Install and set up on AWS',
+    description: 'Install AI Unlimited on AWS',
   },
   {
     type: 'link',
     label: 'Azure',
     href: './install-manager-Azure',
-    description: 'Install and set up on Azure',
+    description: 'Install AI Unlimited on Azure',
     items: [],
   },
 ]} />
 
 If you prefer a simpler, single-user approach, a [QuickStart](/docs/advanced/quickstart) is available.
-
-***Links in the top bar will likely match the developer's doc site. But we need to add What's New, Blog, Community. Possible to add them only on the AI Unlim "site"?***
-
 
 
 

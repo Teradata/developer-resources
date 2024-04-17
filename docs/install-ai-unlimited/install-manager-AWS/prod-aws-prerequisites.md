@@ -16,10 +16,6 @@ Make sure you have the following:
 
 - [AWS account](https://aws.amazon.com). You cannot deploy AI Unlimited using an AWS Free Tier subscription. If you have a free account, go to your profile and change your subscription to pay-as-you-go. 
 
-- Optionally, download and set up the [AWS command-line interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) if you prefer working with AWS CLI.
-
-***We can remove the CLI bullet for now, b/c we won't include CLI installation content yet. When we add the CLI content to Advanced topics, sometime after May 31, we might bring the bullet back.***
-
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
 - Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on AWS. 
