@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '@bsahitya/td-doc-design';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import { useHistory } from '@docusaurus/router';
 
 export default function Navbar() {
   const { navItems } = useThemeConfig();
@@ -12,15 +11,27 @@ export default function Navbar() {
     languages,
   } = navItems;
 
-  const history = useHistory();
+  const [defaultLang, setDefaulLang] = useState('');
 
   const handleLanguageChange = (language) => {
-    history.push(
-      `/td-ai-unlimited-docs/${
-        language ? `${language}/` : ''
-      }docs/install-ai-unlimited/`
-    );
+    window.location = `/td-ai-unlimited-docs/${
+      language ? `${language}/` : ''
+    }docs/install-ai-unlimited/`;
   };
+
+  useEffect(() => {
+    const langRegEx = /\/td-ai-unlimited-docs\/(\w{2})\/docs/;
+    const currentLocation = window.location.pathname;
+    const match = currentLocation.match(langRegEx);
+    if (match && languages) {
+      const language = match[1];
+      const selectedLang = languages.find((lang) => lang.value === language);
+      if (selectedLang) {
+        selectedLang.active = true;
+        setDefaulLang(selectedLang.value);
+      }
+    }
+  }, []);
 
   return (
     <Header
@@ -29,6 +40,7 @@ export default function Navbar() {
       headerActions={headerActions}
       languages={languages}
       onLanguageChange={handleLanguageChange}
+      selectedLanguage={defaultLang}
     ></Header>
   );
 }
