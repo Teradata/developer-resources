@@ -1,6 +1,6 @@
 ---
 id: prod-aws-prepare-your-account
-title: Teradata - AI Unlimited - Full installation - Prepare your AWS account
+title: Full installation - Prepare your AWS account
 description: Learn about permissions, optional host operating system (OS) access, and load balancer options before installing AI Unlimited on AWS.
 sidebar_label: Prepare your AWS account 
 sidebar_position: 5

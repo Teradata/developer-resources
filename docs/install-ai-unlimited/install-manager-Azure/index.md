@@ -1,6 +1,6 @@
 ---
 id: install-AI-Unlimited-manager-azure
-title: Teradata - AI Unlimited - Install on Azure
+title: Install on Azure
 description: Learn the prerequisites and how to deploy the ARM template for the manager.
 sidebar_label: Install on Azure
 sidebar_position: 1

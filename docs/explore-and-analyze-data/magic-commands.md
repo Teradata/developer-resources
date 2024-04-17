@@ -1,6 +1,6 @@
 ---
 id: magic-commands
-title: Teradata - AI Unlimited - Magic commands 
+title: Magic commands 
 description: Learn about the AI Unlimited magic commands you can use in your project in your Jupyter notebook.
 sidebar_label: Magic commands
 sidebar_position: 5

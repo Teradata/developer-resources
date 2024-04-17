@@ -1,6 +1,6 @@
 ---
 id: prod-azure-clone-repo
-title: Teradata - AI Unlimited - Full installation - Azure - Clone repo
+title: Full installation - Azure - Clone repo
 description: The repo contains files you need to install AI Unlimited.
 sidebar_label: Clone the AI Unlimited repo
 sidebar_position: 7

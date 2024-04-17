@@ -1,6 +1,6 @@
 ---
 id: update-engine-version
-title: Teradata - AI Unlimited - How to update the AI/ML engine version
+title: How to update the AI/ML engine version
 description: Learn how to update the AI Unlimited compute engine.
 sidebar_label: AI/ML エンジンのバージョンを更新する
 sidebar_position: 2

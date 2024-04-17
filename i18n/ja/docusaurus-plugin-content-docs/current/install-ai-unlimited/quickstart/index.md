@@ -1,6 +1,6 @@
 ---
 id: quickstart
-title: Teradata - AI Unlimited - QuickStart
+title: QuickStart
 description: Start here to install AI Unlimited for a single user quickly.
 sidebar_label: クイックスタート
 sidebar_position: 1

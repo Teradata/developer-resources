@@ -1,6 +1,6 @@
 ---
 id: production
-title: Teradata - AI Unlimited - Full installation
+title: Full installation
 description: Start here to install AI Unlimited for your team.
 sidebar_label: Full installation
 sidebar_position: 2

@@ -1,6 +1,6 @@
 ---
 id: test-prod-azure-prerequisites
-title: Teradata - AI Unlimited - Full installation - Azure - Prerequisites
+title: Full installation - Azure - Prerequisites
 description: Learn the prerequisites for installing AI Unlimited on AWS.
 sidebar_label: Before you begin
 sidebar_position: 1

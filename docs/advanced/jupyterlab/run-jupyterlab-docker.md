@@ -1,6 +1,6 @@
 ---
 id: run-jupyter-docker
-title: Teradata - AI Unlimited - Run JupyterLab locally using Docker
+title: Run JupyterLab locally using Docker
 description: Learn how to run JupyterLab with the AI Unlimited Jupyter Kernel on your computer.
 sidebar_label: Docker
 sidebar_position: 3

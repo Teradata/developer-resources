@@ -1,6 +1,6 @@
 ---
 id: aws-cli-deploy-jupyter
-title: Teradata - AI Unlimited - Deploy JupyterLab from the AWS CLI
+title: Deploy JupyterLab from the AWS CLI
 description: Learn how to deploy JupyterLab using the AWS Cloudformation template from the AWS CLI.
 sidebar_label: AWS CLI
 sidebar_position: 2

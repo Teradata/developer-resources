@@ -1,6 +1,6 @@
 ---
 id: prod-aws-subscribe
-title: Teradata - AI Unlimited - Full installation - AWS - Subscribe
+title: Full installation - AWS - Subscribe
 description: Learn about subscribing to AI Unlimited on the marketplace.
 sidebar_label: Subscribe to AI Unlimited
 sidebar_position: 2

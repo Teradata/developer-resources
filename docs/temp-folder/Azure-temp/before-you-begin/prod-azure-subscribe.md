@@ -1,6 +1,6 @@
 ---
 id: prod-azure-subscribe
-title: Teradata - AI Unlimited - Full installation - Azure - Subscribe
+title: Full installation - Azure - Subscribe
 description: Learn about subscribing to AI Unlimited on the marketplace.
 sidebar_label: Subscribe to AI Unlimited
 sidebar_position: 2

@@ -1,6 +1,6 @@
 ---
 id: prod-aws-clone-repo
-title: Teradata - AI Unlimited - Full installation - AWS - Clone repo
+title: Full installation - AWS - Clone repo
 description: The repo contains files you need to install AI Unlimited.
 sidebar_label: Clone the AI Unlimited repository
 sidebar_position: 8

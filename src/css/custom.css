@@ -24,7 +24,26 @@
   --ifm-color-warning: var(--cv-theme-light-colors-caution);
   --ifm-color-danger: var(--cv-theme-light-colors-negatvive);
 
-  --ifm-background-surface-color: #var(--cv-theme-light-colors-surface);
+  --ifm-background-surface-color: var(--cv-theme-light-colors-surface);
+  --ifm-color-secondary-contrast-background: var(--cv-theme-light-colors-surface-variant);
+  --ifm-color-secondary-contrast-foreground: var(--cv-theme-light-colors-on-surface-container);
+
+
+  --ifm-color-success-dark: var(--cv-theme-light-colors-positive);
+  --ifm-color-success-contrast-background: var(--cv-theme-light-colors-positive-container);
+  --ifm-color-success-contrast-foreground: var(--cv-theme-light-colors-on-positive-container);
+
+  --ifm-color-danger-dark: var(--cv-theme-light-colors-negative);
+  --ifm-color-danger-contrast-background: var(--cv-theme-light-colors-negative-container);
+  --ifm-color-danger-contrast-foreground: var(--cv-theme-light-colors-on-negative-container);
+
+  --ifm-color-warning-dark: var(--cv-theme-light-colors-caution);
+  --ifm-color-warning-contrast-background: var(--cv-theme-light-colors-caution-container);
+  --ifm-color-warning-contrast-foreground: var(--cv-theme-light-colors-on-caution-container);
+
+  --ifm-color-info-contrast-background: var(--cv-theme-light-colors-primary-container);
+  --ifm-color-info-contrast-foreground: var(--cv-theme-light-colors-on-primary-container);
+  --ifm-color-info-dark: var(--cv-theme-light-colors-primary);
 }
 
 .plugin-pages body {

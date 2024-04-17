@@ -1,6 +1,6 @@
 ---
 id: run-ai-unlimited-jupyterlab-docker
-title: Teradata - AI Unlimited - QuickStart - Run AI Unlimited and JupyterLab using Docker
+title: QuickStart - Run AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Docker を使用して AI Unlimited と JupyterLab を実行する
 sidebar_position: 3

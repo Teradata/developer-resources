@@ -1,6 +1,6 @@
 ---
 id: prod-aws-install-manager
-title: Teradata - AI Unlimited - Full - AWS - Install the manager
+title: Full - AWS - Install the manager
 description: Learn how to deploy the CloudFormation Template for the AI Unlimited manager.
 sidebar_label: Install the AI Unlimited manager
 sidebar_position: 6

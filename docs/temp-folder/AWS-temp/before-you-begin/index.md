@@ -1,6 +1,6 @@
 ---
 id: prod-aws-before-you-begin
-title: Teradata - AI Unlimited - Full installation - AWS - Before you begin
+title: Full installation - AWS - Before you begin
 description: Learn what to do before you install AI Unlimited on AWS.
 sidebar_label: Before you begin
 sidebar_position: 1

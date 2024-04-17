@@ -1,6 +1,6 @@
 ---
 id: test-docker-before-you-begin
-title: Teradata - AI Unlimited - QuickStart - Create a GitHub or GitLab OAuth app
+title: QuickStart - Create a GitHub or GitLab OAuth app
 description: Learn how to create a GitHub or GitLab OAuth app to authorize your Git repository to store user and project information.
 sidebar_label: Test-Before you begin
 sidebar_position: 2

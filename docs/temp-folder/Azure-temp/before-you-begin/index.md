@@ -1,6 +1,6 @@
 ---
 id: prod-azure-before-you-begin
-title: Teradata - AI Unlimited - Full installation - Azure - Before you begin
+title: Full installation - Azure - Before you begin
 description: Learn what to do before you install AI Unlimited on Azure.
 sidebar_label: Before you begin
 sidebar_position: 1

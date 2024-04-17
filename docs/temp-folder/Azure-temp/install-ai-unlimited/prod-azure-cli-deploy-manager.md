@@ -1,6 +1,6 @@
 ---
 id: deploy-manager-azure-cli
-title: Teradata - AI Unlimited - Azure - Deploy the AI Unlimited manager - CLI
+title: Azure - Deploy the AI Unlimited manager - CLI
 description: Learn how to deploy the ARM template for the manager from the Azure CLI.
 sidebar_label: Azure CLI
 sidebar_position: 2
