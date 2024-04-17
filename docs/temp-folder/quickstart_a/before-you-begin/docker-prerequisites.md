@@ -1,6 +1,6 @@
 ---
 id: docker-prerequisites
-title: Teradata - AI Unlimited - QuickStart - Prerequisites
+title: QuickStart - Prerequisites
 description: Learn the prerequisites for installing the QuickStart.
 sidebar_label: Prerequisites
 sidebar_position: 1

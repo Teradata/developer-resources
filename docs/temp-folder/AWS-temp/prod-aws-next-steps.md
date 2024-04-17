@@ -1,6 +1,6 @@
 ---
 id: prod-aws-next-steps
-title: Teradata - AI Unlimited - Production - AWS - Next steps
+title: Production - AWS - Next steps
 description: See what's next after installation and setup are complete.
 sidebar_label: Next steps	
 sidebar_position: 9

@@ -1,6 +1,6 @@
 ---
 id: prod-azure-create-custom-role
-title: Teradata - AI Unlimited - Full installation - Azure - Create a custom role
+title: Full installation - Azure - Create a custom role
 description: Learn how to create the role AI Unlimited needs to deploy the engine.
 sidebar_label: Create a custom role with the required permissions	
 sidebar_position: 6

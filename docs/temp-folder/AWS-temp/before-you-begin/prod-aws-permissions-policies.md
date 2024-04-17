@@ -1,6 +1,6 @@
 ---
 id: prod-aws-permissions
-title: Teradata - AI Unlimited - Full Installation - AWS - IAM roles and policies
+title: Full Installation - AWS - IAM roles and policies
 description: Learn what roles and policies are needed for accessing AWS resources.
 sidebar_label: Create an IAM role and policies
 sidebar_position: 6

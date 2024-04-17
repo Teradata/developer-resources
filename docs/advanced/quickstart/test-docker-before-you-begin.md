@@ -1,6 +1,6 @@
 ---
 id: docker-before-you-begin
-title: Teradata - AI Unlimited - QuickStart - Before you begin
+title: QuickStart - Before you begin
 description: Learn what to do before you run the AI Unlimited manager and JupyterLab using Docker.
 sidebar_label: Before you begin
 sidebar_position: 1

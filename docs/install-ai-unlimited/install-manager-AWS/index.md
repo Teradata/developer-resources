@@ -1,6 +1,6 @@
 ---
 id: install-AI-Unlimited-manager-aws
-title: Teradata - AI Unlimited - Install on AWS
+title: Install on AWS
 description: Learn the prerequisites and how to deploy the CloudFormation template for the manager.
 sidebar_label: Install on AWS
 sidebar_position: 1

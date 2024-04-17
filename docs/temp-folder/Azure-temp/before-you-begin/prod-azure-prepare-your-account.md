@@ -1,6 +1,6 @@
 ---
 id: prod-azure-prepare-your-account
-title: Teradata - AI Unlimited - Full installation - Prepare your Azure account
+title: Full installation - Prepare your Azure account
 description: Learn about the account, networking, and DNS requirements before deploying AI Unlimited on Azure. 
 sidebar_label: Prepare your Azure account 
 sidebar_position: 5

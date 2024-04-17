@@ -1,6 +1,6 @@
 ---
 id: prod-azure-deployment-details
-title: Teradata - AI Unlimited - Full installation - Azure - Get deployment details
+title: Full installation - Azure - Get deployment details
 description: Get some details now for quicker setup later.
 sidebar_label: Get deployment details 
 sidebar_position: 4

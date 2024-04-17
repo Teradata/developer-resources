@@ -1,6 +1,6 @@
 ---
 id: project-lifecycle
-title: Teradata - AI Unlimited - Project lifecycle
+title: Project lifecycle
 description: See the overall project lifecycle for project owners and collaborators.
 sidebar_label: Project lifecycle
 sidebar_position: 3

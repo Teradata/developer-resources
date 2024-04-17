@@ -1,6 +1,6 @@
 ---
 id: docker-subscribe
-title: Teradata - AI Unlimited - クイックスタート - 前提条件
+title: クイックスタート - 前提条件
 description: マーケットプレイスでの AI Unlimited のサブスクリプションについて説明します。
 sidebar_label: AI Unlimited に登録する
 sidebar_position: 2

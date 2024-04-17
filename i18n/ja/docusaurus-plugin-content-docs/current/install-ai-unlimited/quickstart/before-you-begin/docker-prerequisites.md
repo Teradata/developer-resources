@@ -1,6 +1,6 @@
 ---
 id: docker-prerequisites
-title: Teradata - AI Unlimited - クイックスタート - 前提条件
+title: クイックスタート - 前提条件
 description: クイックスタートをインストールするための前提条件を学びます。
 sidebar_label: 前提条件
 sidebar_position: 1

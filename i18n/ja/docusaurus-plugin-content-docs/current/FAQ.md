@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Teradata - AI Unlimited - FAQ
+title: FAQ
 description: Frequently asked questions regarding the installation and use of AI Unlimited.
 sidebar_label: FAQ
 sidebar_position: 5

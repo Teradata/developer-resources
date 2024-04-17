@@ -1,6 +1,6 @@
 ---
 id: docker-engine-details
-title: Teradata - AI Unlimited - QuickStart - Get engine deployment details
+title: QuickStart - Get engine deployment details
 description: Get some details now for quicker setup later.
 sidebar_label: エンジン導入の詳細を取得する
 sidebar_position: 4

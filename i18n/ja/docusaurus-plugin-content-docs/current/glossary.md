@@ -1,6 +1,6 @@
 ---
 id: glossary
-title: Teradata - AI Unlimited - Glossary
+title: Glossary
 description: Terminology for the installation and use of AI Unlimited.
 sidebar_label: 用語集
 sidebar_position: 6

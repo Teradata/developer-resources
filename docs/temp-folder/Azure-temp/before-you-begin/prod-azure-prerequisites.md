@@ -1,6 +1,6 @@
 ---
 id: prod-azure-prerequisites
-title: Teradata - AI Unlimited - Full installation - Azure - Prerequisites
+title: Full installation - Azure - Prerequisites
 description: Learn the prerequisites for installing AI Unlimited on Azure.
 sidebar_label: Prerequisites
 sidebar_position: 1

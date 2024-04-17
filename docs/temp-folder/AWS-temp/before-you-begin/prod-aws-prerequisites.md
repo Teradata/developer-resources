@@ -1,6 +1,6 @@
 ---
 id: prod-aws-prerequisites
-title: Teradata - AI Unlimited - Full installation - AWS - Prerequisites
+title: Full installation - AWS - Prerequisites
 description: Learn the prerequisites for installing AI Unlimited on AWS.
 sidebar_label: Prerequisites
 sidebar_position: 1

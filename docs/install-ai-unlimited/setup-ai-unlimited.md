@@ -1,6 +1,6 @@
 ---
 id: test-quickstart-setup
-title: Teradata - AI Unlimited - QuickStart - Setup 
+title: QuickStart - Setup 
 description: Get more information about certain fields in the setup.
 sidebar_label: Set up AI Unlimited
 ---

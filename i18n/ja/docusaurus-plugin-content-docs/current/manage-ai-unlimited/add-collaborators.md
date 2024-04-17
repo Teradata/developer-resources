@@ -1,6 +1,6 @@
 ---
 id: add-collaborators
-title: Teradata - AI Unlimited - Add collaborators to a project
+title: Add collaborators to a project
 description: As a project owner, learn how to add collaborators
 sidebar_label: プロジェクトの協力者を追加する
 sidebar_position: 1

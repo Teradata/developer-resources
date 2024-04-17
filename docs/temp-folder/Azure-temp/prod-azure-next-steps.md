@@ -1,6 +1,6 @@
 ---
 id: prod-azure-next-steps
-title: Teradata - AI Unlimited - Production - Azure - Next steps
+title: Production - Azure - Next steps
 description: See what's next after installation and setup are complete.
 sidebar_label: Next steps	
 sidebar_position: 10

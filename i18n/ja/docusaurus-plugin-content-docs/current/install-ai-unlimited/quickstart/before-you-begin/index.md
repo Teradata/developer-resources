@@ -1,6 +1,6 @@
 ---
 id: docker-before-you-begin
-title: Teradata - AI Unlimited - QuickStart - Before you begin
+title: QuickStart - Before you begin
 description: Learn what to do before you install the QuickStart using Docker.
 sidebar_label: あなたが始める前に
 sidebar_position: 1

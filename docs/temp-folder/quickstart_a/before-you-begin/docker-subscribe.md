@@ -1,6 +1,6 @@
 ---
 id: docker-subscribe
-title: Teradata - AI Unlimited - QuickStart - Subscribe
+title: QuickStart - Subscribe
 description: Learn about subscribing to AI Unlimited on the marketplace.
 sidebar_label: Subscribe to AI Unlimited
 sidebar_position: 2
