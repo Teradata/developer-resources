@@ -9,7 +9,7 @@ pagination_next: null
 
 import DocCardList from '@theme/DocCardList';
 
-# Get started with AI Unlimited
+# Get started
 
 Learn how to install, set up, and use AI Unlimited. 
 
