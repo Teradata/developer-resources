@@ -35,6 +35,7 @@ export default function Navbar() {
 
   return (
     <Header
+      key={defaultLang}
       navItems={nestedNavItems}
       title={title}
       headerActions={headerActions}
