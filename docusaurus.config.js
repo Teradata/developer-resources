@@ -7,6 +7,10 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
+
+const baseUrl = '/td-ai-unlimited-docs';
+const projectName = 'td-ai-unlimited-docs';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Teradata AI Unlimited',
@@ -17,12 +21,12 @@ const config = {
   url: 'https://owilliams320.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/td-ai-unlimited-docs',
+  baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'teradata', // Usually your GitHub org/user name.
-  projectName: 'td-ai-unlimited-docs', // Usually your repo name.
+  projectName, // Usually your repo name.
   trailingSlash: true,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -91,7 +95,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/owilliams320/td-ai-unlimited-docs/tree/main',
+          editUrl: `https://github.com/owilliams320/${projectName}/tree/main`,
           editLocalizedFiles: true
         },
         blog: {
@@ -99,8 +103,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           routeBasePath: 'whatsnew',
-          editUrl:
-            'https://github.com/owilliams320/td-ai-unlimited-docs/tree/main',
+          editUrl: `https://github.com/owilliams320/${projectName}/tree/main`,
         },
         theme: {
           customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
@@ -157,7 +160,7 @@ const config = {
               },
               {
                 label: 'AI Unlimited',
-                href: '/td-ai-unlimited-docs/docs/install-ai-unlimited/',
+                href: baseUrl,
                 active: true,
               },
               {

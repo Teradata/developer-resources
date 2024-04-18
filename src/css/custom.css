@@ -234,6 +234,12 @@ html:not(.plugin-pages) .main-wrapper {
   font-size: 0.75rem;
 }
 
+:where(.button--secondary):not(.button--outline):hover {
+  --ifm-button-background-color: var(--cv-theme-light-colors-tertiary);
+  --ifm-button-border-color: var(--cv-theme-light-colors-tertiary);
+  color: var(--cv-theme-light-colors-on-tertiary);
+}
+
 @media screen and (min-width: 1025px) {
   html:not(.plugin-pages) .main-wrapper {
     padding: 0 6.625rem 0;
