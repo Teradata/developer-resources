@@ -44,6 +44,8 @@
   --ifm-color-info-contrast-background: var(--cv-theme-light-colors-primary-container);
   --ifm-color-info-contrast-foreground: var(--cv-theme-light-colors-on-primary-container);
   --ifm-color-info-dark: var(--cv-theme-light-colors-primary);
+  --ifm-breadcrumb-item-background-active: none;
+  --ifm-breadcrumb-color-active: none;
 }
 
 .plugin-pages body {
@@ -98,7 +100,6 @@ aside.theme-doc-sidebar-container {
   line-height: 20px; /* 125% */
 }
 
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* html[data-theme='dark'] {
   --ifm-color-primary: #59cecd;
@@ -131,7 +132,7 @@ aside.theme-doc-sidebar-container {
 }
 
 html:not(.plugin-pages) .main-wrapper {
-  padding: 4rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
+  padding: 6.75rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
   max-width: 1440px;
   box-sizing: border-box;
 }
@@ -208,6 +209,11 @@ html:not(.plugin-pages) .main-wrapper {
 
 .menu__list .menu__list {
   padding-left: 24px;
+}
+
+.breadcrumbs__link {
+  color: var(--ifm-color-secondary);
+  font-size: 0.75rem;
 }
 
 @media screen and (min-width: 1025px) {

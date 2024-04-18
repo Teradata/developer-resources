@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '@bsahitya/td-doc-design';
 import { useThemeConfig } from '@docusaurus/theme-common';
+import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
 
 export default function Navbar() {
   const { navItems } = useThemeConfig();
@@ -10,6 +12,15 @@ export default function Navbar() {
     headerActions,
     languages,
   } = navItems;
+
+  const secondaryMenuDetails = {
+    menuElement: useNavbarSecondaryMenu().content,
+    title: translate({
+      id: 'theme.docs.sidebar.title',
+      message: 'Docs',
+      description: 'The title for the sidebar in mobile view',
+    }),
+  };
 
   const [defaultLang, setDefaulLang] = useState('');
   const basePath = '/td-ai-unlimited-docs';
@@ -34,12 +45,14 @@ export default function Navbar() {
     const currentLocation = window.location.pathname;
     const match = currentLocation.match(langRegEx);
     return match ? match[1] : '';
-  }
+  };
 
   useEffect(() => {
     const currentLanguage = getCurrentLanguage();
     if (currentLanguage && languages) {
-      const selectedLang = languages.find((lang) => lang.value === currentLanguage);
+      const selectedLang = languages.find(
+        (lang) => lang.value === currentLanguage
+      );
       if (selectedLang) {
         selectedLang.active = true;
         setDefaulLang(selectedLang.value);
@@ -56,6 +69,7 @@ export default function Navbar() {
       languages={languages}
       onLanguageChange={handleLanguageChange}
       selectedLanguage={defaultLang}
+      secondaryMenu={secondaryMenuDetails}
     ></Header>
   );
 }

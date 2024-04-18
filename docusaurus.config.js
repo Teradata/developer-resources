@@ -23,7 +23,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'teradata', // Usually your GitHub org/user name.
   projectName: 'td-ai-unlimited-docs', // Usually your repo name.
-  trailingSlash: true, 
+  trailingSlash: true,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
@@ -371,26 +371,32 @@ const config = {
             {
               icon: 'fa-brands fa-linkedin-in',
               href: 'https://www.linkedin.com/company/teradata',
+              label: 'LinkedIn',
             },
             {
               icon: 'fa-brands fa-x-twitter',
               href: 'https://twitter.com/teradata',
+              label: 'Twitter',
             },
             {
               icon: 'fa-brands fa-facebook-f',
               href: 'https://www.facebook.com/Teradata',
+              label: 'Facebook',
             },
             {
               icon: 'fa-brands fa-instagram',
               href: 'https://www.instagram.com/teradata/',
+              label: 'Instagram',
             },
             {
               icon: 'fa-brands fa-youtube',
               href: 'https://www.youtube.com/user/teradata',
+              label: 'Youtube',
             },
             {
               icon: 'fa fa-rss',
               href: 'https://www.teradata.com/rss',
+              label: 'RSS',
             },
           ],
         },
