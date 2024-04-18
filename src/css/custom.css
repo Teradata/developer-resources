@@ -6,6 +6,9 @@
 
 /* You can override the default Infima variables here. */
 
+/* Import "Inter" font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 :root {
   --ifm-color-primary: var(--cv-theme-light-colors-primary);
   --ifm-color-primary-dark: #016b6b;
@@ -48,6 +51,11 @@
   --ifm-breadcrumb-color-active: none;
 }
 
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
 .plugin-pages body {
   background: url(/img/dots_pattern_hero.png) no-repeat right 0;
   background-size: contain;
@@ -71,7 +79,7 @@ aside.theme-doc-sidebar-container {
   color: #00233C;
 
   /* Desktop/H1 */
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 54px;
   font-style: normal;
   font-weight: 300;
@@ -83,7 +91,7 @@ aside.theme-doc-sidebar-container {
 .markdown h2 {
   color: #00233C;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -93,7 +101,7 @@ aside.theme-doc-sidebar-container {
 .markdown p {
   color: var(--Gray-700, #333A3E);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -135,6 +143,10 @@ html:not(.plugin-pages) .main-wrapper {
   padding: 6.75rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
   max-width: 1440px;
   box-sizing: border-box;
+}
+
+.theme-doc-sidebar-container .menu {
+  padding-top: 1rem;
 }
 
 .menu__link {
@@ -209,6 +221,10 @@ html:not(.plugin-pages) .main-wrapper {
 
 .menu__list .menu__list {
   padding-left: 24px;
+}
+
+.breadcrumbs__item:first-child .breadcrumbs__link {
+  padding-left: 0;
 }
 
 .breadcrumbs__link {
