@@ -21,6 +21,7 @@ Access AI Unlimited setup:
 - **http://[ip_or_hostname]:[port]** (for a [full](/docs/install-ai-unlimited/production/index.md) installation)
 
 Are you an AI Unlimited user or administrator? Choose your path: ***This topic (which will be for both the QS and the full install) is meant only for the user doing the installation. For the QuickStart, that user is also a general user. For the full installation, that is less likely to be the case. But either way, it's in the installation flow--so should not descibe the other uses. There will be other topics for an admin to change settings under "manage" in the TOC, and for a general user to get their API key (under "explore and analyze data" in the TOC.***
+**TA: If it is general user, then this topic is not valid, as they will never see the setup, they can grab their key from the profile page and then work on their task**
 
 - If you're an AI Unlimited user, AI Unlimited is set up and ready to use. Authorize using your Git provider credentials. This authorizes the AI Unlimited to authenticate the user and access your Git repo. Copy the API Key [Glossary] from your **Profile** page and then proceed to [running your first workload](/docs/explore-and-analyze-data/example-projects.md) on AI Unlimited.
 

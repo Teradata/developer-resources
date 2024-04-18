@@ -42,7 +42,7 @@ Work with your admin to prepare your Azure account.
 
     - The resource group must have an Azure Virtual Network (VNet) configured with a subnet. You can use your existing VNet and subnets or create your own [Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal), [Vnet](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal), [Subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal), and [role](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles) depending on your account permissions.  
 
-- Secure shell (SSH) key pair ***Need to explain why***
+- Secure shell (SSH) key pair to access or manage the AI Unlimited instance for running commands or debugging.
 
     Generate a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect to the AI Unlimited instance ***("engine"?)*** using SSH.
 
@@ -99,7 +99,7 @@ Security Group:
 
 ***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). "Security Group" is not marked as required on the UI, but maybe we require it.*** ***TA: security group is important ***
 
-***If they install JupyterLab on Azure using our template, will the values for these parms be the same?***
+***If they install JupyterLab on Azure using our template, will the values for these parms be the same?*** **TA: Yes**
 
 ## Subscribe to AI Unlimited
 

@@ -24,13 +24,13 @@ Download the template.
 
 ## Load the template	
 
-1. Sign in to the [AWS](https://aws.amazon.com) console.
-2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
-3. Search for and go to **CloudFormation**.
-4. Select **Create Stack**, then **With new resources (standard)**.
-5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
-6. Under **Specify template**,  select **Upload a template file**.
-7. Choose the template file you downloaded, and click **Next**.  
+1. Sign in to the [AWS](https://aws.amazon.com) console and select the AWS region in which to deploy AI Unlimited. 
+    
+    Teradata recommends selecting the region closest to your primary work location.
+2. Search for and go to **CloudFormation**.
+3. Select **Create Stack**, then **With new resources (standard)**.
+4. Select **Choose an existing template**, then **Upload a template file**.
+5. Choose the template file you downloaded, and click **Next**.  
 
 ## Specify stack details and options
 

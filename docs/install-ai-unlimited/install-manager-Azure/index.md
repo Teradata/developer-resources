@@ -8,7 +8,7 @@ sidebar_position: 1
 
 # Install on Azure
 
-You'll use an ARM template to install the AI Unlimited manager on AWS. After you install the manager, you'll use it to set up AI Unlimited and configure the engine's deployment on Azure.
+You'll use an ARM template to install the AI Unlimited manager on Azure. After you install the manager, you'll use it to set up AI Unlimited and configure the engine's deployment on Azure.
 
 
 :::tip
