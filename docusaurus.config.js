@@ -158,6 +158,7 @@ const config = {
               {
                 label: 'AI Unlimited',
                 href: '/td-ai-unlimited-docs/docs/install-ai-unlimited/',
+                active: true,
               },
               {
                 label: 'All Documentation',
