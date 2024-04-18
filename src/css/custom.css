@@ -147,6 +147,8 @@ html:not(.plugin-pages) .main-wrapper {
 
 .theme-doc-sidebar-container .menu {
   padding-top: 1rem;
+  padding-left: 0;
+  padding-right: 16px;
 }
 
 .menu__link {
