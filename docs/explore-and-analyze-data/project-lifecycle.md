@@ -16,7 +16,9 @@ You might be the owner of one or more projects and a collaborator on others. Whi
 
 ## Project owners
 
-***A graphic with "steps," with arrows to show the flow and suspend-resume cycle. Will include the magic commands, and include details that support what's happening.***
+import AI-Unlimited-project-flow_Project owner from './AI-Unlimited-project-flow_Project owner.svg';
+
+<DocusaurusSvg />;
 
 
 ## Project collaborators

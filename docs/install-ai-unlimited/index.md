@@ -17,12 +17,12 @@ With AI Unlimited, you can explore and analyze large datasets in a Jupyter noteb
 
 As a data scientist or data engineer, you'll connect your notebook to the AI Unlimited AI/ML engine on AWS or Azure, and connect the engine to your data lake. You can suspend and resume your analytics project anytime, and pay only for the hours you use.
 
-The AI Unlimited elements:
+AI Unlimited comprises these elements:
 - The AI/ML engine, on your [cloud service provider (CSP)](/docs/glossary.md#glo-csp)
 - Jupyter notebooks, with the AI Unlimited Jupyter Kernel, for running your workloads
-- Your object storage, on your [CSP](/docs/glossary.md#glo-csp)
+- Your object storage, on your CSP
 - Your GitHub or GitLab repository, for user authentication and storing project information
-- The manager, which orchestrates the AI Unlimited elements&mdash;and includes a web-based user interface for monitoring projects (for admins) and retrieving your API key to connect to the engine
+- The manager, which orchestrates the deployment of the engine&mdash;and includes a web-based user interface for monitoring projects
 
 <DocCardList items={[
   {
