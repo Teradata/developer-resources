@@ -11,7 +11,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Get started
 
-Learn how to install, set up, and use AI Unlimited. 
+Learn how to install, set up, and use [AI Unlimited](https://www.teradata.com/platform/ai-unlimited). 
 
 With AI Unlimited, you can explore and analyze large datasets in a Jupyter notebook using the [ClearScape Analytics](https://www.teradata.com/platform/clearscape-analytics)&mdash;on a self-service, on-demand basis. 
 
