@@ -47,12 +47,6 @@
   filter: blur(50px);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
 .buttons {
   display: flex;
   align-items: center;
@@ -65,3 +59,14 @@
   align-items: center;
   flex-direction: row;
 }
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: calc(57px + 2rem) 2rem 2rem;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+  }
+}
+

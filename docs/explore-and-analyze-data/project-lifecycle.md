@@ -16,9 +16,9 @@ You might be the owner of one or more projects and a collaborator on others. Whi
 
 ## Project owners
 
-import AI-Unlimited-project-flow_Project owner from './AI-Unlimited-project-flow_Project owner.svg';
+import ProjectFlowImg from './project-flow_project-owner.svg';
 
-<DocusaurusSvg />;
+<ProjectFlowImg />
 
 
 ## Project collaborators

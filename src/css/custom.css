@@ -17,6 +17,7 @@
   --ifm-color-primary-light: #008383;
   --ifm-color-primary-lighter: #009392;
   --ifm-color-primary-lightest: #00a2a2;
+  --ifm-container-width-xl: 1258px;
   --ifm-navbar-height: 116px;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -246,4 +247,8 @@ html:not(.plugin-pages) .main-wrapper {
     margin: 0 auto;
     width: 100%;
   }
+}
+
+html[data-navbar='false'] .navbar {
+  display: none;
 }

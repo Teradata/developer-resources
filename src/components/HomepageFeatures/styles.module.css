@@ -6,7 +6,7 @@
 }
 
 .features .container {
-  max-width: 1400px;
+  max-width: 1228px;
 }
 
 .features h2 {
@@ -14,7 +14,7 @@
   margin-bottom: 40px;
 
   /* Desktop/H2 */
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 42px;
   font-style: normal;
   font-weight: 300;
