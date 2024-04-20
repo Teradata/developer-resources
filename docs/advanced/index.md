@@ -1,13 +1,13 @@
 ---
-id: advanced-ai-unlimited
-title: Advanced topics
+id: other-resources-ai-unlimited
+title: Other resources
 description: Find additional installation information here.
-sidebar_label: Advanced topics
+sidebar_label: Other resources
 sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
 
-# Advanced topics
+# Other resources
 
 Here you'll find additional topics related to installation.

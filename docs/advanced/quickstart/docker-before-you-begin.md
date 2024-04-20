@@ -23,15 +23,6 @@ Make sure you have the following:
 - [Docker](https://www.docker.com/get-started/) installed on your machine
 
 
-## Subscribe to AI Unlimited
-
-Subscribe on your cloud service provider's marketplace:
-- AWS ***(link)***
-- Azure ***(link)***
-
-Then return to this documentation and continue.
- 
- 
 ## Create a GitHub or GitLab OAuth app
 
 import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
@@ -66,3 +57,14 @@ Default security group
 </TabItem>
 </Tabs> 
 
+
+## Subscribe to AI Unlimited
+
+Subscribe on your cloud service provider's marketplace:
+- AWS ***(link)***
+- Azure ***(link)***
+
+
+## Next step
+
+[Install the manager and JupyterLab](/docs/advanced/quickstart/docker-install-ai-unlimited-jupyter.md).

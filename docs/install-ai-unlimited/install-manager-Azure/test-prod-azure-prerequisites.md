@@ -16,7 +16,7 @@ Make sure you have the following:
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
-- Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying the AI Unlimited manager on AWS. 
+- Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
 
 	Open a terminal window, and clone the repository. 
 
@@ -79,6 +79,13 @@ You can view the deployment status in **Notifications**.
 The **Output** tab shows the network names and `RoleDefinitionId`. You'll need these when you install AI Unlimited. 
 
 
+## Create a GitHub or GitLab OAuth app
+
+import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
+
+<MyPartial />
+
+
 ## Get deployment details
 
 When you install the manager using an Azure Resource Manager (ARM) template, and you'll provide network and security details. 
@@ -97,15 +104,12 @@ Security Group:
 
 ***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last).
 
+
 ## Subscribe to AI Unlimited
 
 Subscribe on the Azure marketplace. ***link***
 
-Then return to this documentation and continue.
- 
 
-## Create a GitHub or GitLab OAuth app
+## Next step
 
-import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
-
-<MyPartial />
+[Install the manager](/docs/install-ai-unlimited/install-manager-Azure/prod-azure-portal-deploy-manager.md).

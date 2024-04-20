@@ -4,6 +4,8 @@ title: Deploy JupyterLab from the AWS Management Console
 description: Learn how to deploy JupyterLab using a Cloudformation template.
 sidebar_label: AWS
 sidebar_position: 1
+pagination_prev: null
+pagination_next: null
 ---
 
 
@@ -14,6 +16,12 @@ The CloudFormation template deploys a server instance with JupyterLab, and the A
 :::note
 References to the AWS Management Console are accurate as of April 11, 2024.
 :::
+
+## Clone the AI Unlimited GitHub repository
+
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
+
+<MyPartial />
 
 
 ## Download the Jupyter template
@@ -27,8 +35,8 @@ Download the template.
 
 ## Upload the template	
 		
-1. Sign in to the [AWS](https://aws.amazon.com) console, and select the region in which to deploy AI Unlimited. 
-Teradata recommends selecting the region closest to your primary work location.
+1. Sign in to the [AWS console](https://aws.amazon.com), and select the region in which to deploy AI Unlimited. 
+   Teradata recommends selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Select **Choose an existing template** and **Upload a template file**.
@@ -41,6 +49,8 @@ Teradata recommends selecting the region closest to your primary work location.
 2. Review the parameters. Provide values for the required ones. Your organization might require others.
 
 ***Thripti to combine the parm tables into 1 table***
+
+***We are working on the table/scrollbar issues.***
 
 <details>
 
@@ -93,3 +103,5 @@ Teradata recommends selecting the region closest to your primary work location.
 4. Monitor the stack's status. When you see `CREATE_COMPLETE`, JupyterLab is ready. 
 
 You'll find the JupyterLab connection parameters in **Outputs**. 
+
+***Haven't actually seen what happens after clicking Submit.***

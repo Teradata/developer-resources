@@ -27,4 +27,6 @@ import ProjectFlowImg from './project-flow_project-owner.svg';
 
 ***placeholder graphic - to be replaced***
 
-[add it]
+import ProjectFlowCollabImg from './project-flow_collabs.svg';
+
+<ProjectFlowCollabImg />

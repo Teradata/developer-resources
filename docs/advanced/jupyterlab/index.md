@@ -4,6 +4,8 @@ title: Install JupyterLab
 description: See the options for installing JupyterLab with the AI Unlimited Jupyter Kernel.
 sidebar_label: Install JupyterLab
 sidebar_position: 2
+pagination_prev: null
+pagination_next: null
 ---
 
 # Install JupyterLab

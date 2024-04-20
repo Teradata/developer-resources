@@ -23,16 +23,15 @@ Download the template (`/deployments/azure/ai-unlimited.json`) from the AI Unlim
 ## Load the template
 
 1. Sign in to the [Azure portal](https://portal.azure.com). 
-
 2. Search for **custom deployment**, then select **Deploy a custom template**.
-
 3. Select **Build your own template in the editor** and then **Load file**.
-
 4. Choose the template file you downloaded, and click **Save**.  
 
 ## Specify instance details
 
 Review the parameters. Provide values for the required ones. Your organization might require others.
+
+***We are working on the table/scrollbar issues.***
 
 <details>
 
@@ -73,12 +72,13 @@ Review the parameters. Provide values for the required ones. Your organization m
 
 ## Create the instance
 
-Select **Review + create**, then **Create**. 
+1. Select **Review + create**, then **Create**. 
+2. Monitor the deployment status on the **Notifications** page. 
 
-***This is as far as I could get. Need someone who can actually create resources to test what happens next.***
+You'll see connection parameters for the manager in **Outputs.** You'll use when you connect to the manager from a Jupyter notebook.
 
-You can monitor the deployment status on the **Notifications** page. 
+***Haven't actually seen what happens after clicking Create.***
 
-You'll use the connection parameters on the **Output** tab when you connect to the manager from a Jupyter notebook. **verify wording**
+##Next step
 
-
+In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).

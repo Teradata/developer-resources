@@ -24,9 +24,8 @@ Download the template.
 
 ## Load the template	
 
-1. Sign in to the [AWS](https://aws.amazon.com) console and select the AWS region in which to deploy AI Unlimited. 
-    
-    Teradata recommends selecting the region closest to your primary work location.
+1. Sign in to the [AWS console](https://aws.amazon.com), and select the AWS region in which to deploy AI Unlimited.  
+   Teradata recommends selecting the region closest to your primary work location.
 2. Search for and go to **CloudFormation**.
 3. Select **Create Stack**, then **With new resources (standard)**.
 4. Select **Choose an existing template**, then **Upload a template file**.
@@ -40,6 +39,8 @@ Download the template.
 :::note
 The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
 :::
+
+***We are working on the table/scrollbar issues.***
 
 <details>
 
@@ -98,13 +99,15 @@ The parameters for each template vary. You might see some in the table that you 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack. 
+4. Monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
 
-***This is as far as I could get. Need someone who can actually create resources to test what happens next.***
+Use the URLs in **Outputs** to view the created resources. You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
 
-You can monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
+***Haven't actually seen what happens after clicking Submit.***
 
-Use the URLs on the stack's **Outputs** tab to view the created resources. You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook. ***Is that on the Outputs tab?***  ***Verify wording.*** 
+##Next step
 
+In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
 
 

@@ -17,7 +17,7 @@ Make sure you have the following:
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
-- Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying the AI Unlimited manager on AWS. 
+- Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The `deployments` folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
 
 	Open a terminal window, and clone the repository.
 
@@ -77,6 +77,14 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 - [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions to interact with the AWS Session Manager. Use this if you plan to use Session Manager to connect to the engine to closely manage it.
 
+
+## Create a GitHub or GitLab OAuth app
+
+import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
+
+<MyPartial />
+
+
 ## Get deployment details
 
 When you install the manager using a CloudFormation template, you'll provide account and network details. 
@@ -101,12 +109,11 @@ You can copy this template to get these details from an admin. Or, get them from
 
 Subscribe on the AWS marketplace. ***link***
 
-Then return to this documentation and continue.
- 
- 
-## Create a GitHub or GitLab OAuth app
+Then start [exploring and analyzing data](\docs\explore-and-analyze-data).
 
-import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
 
-<MyPartial />
+## Next step
+
+[Install the manager](/docs/install-ai-unlimited/install-manager-AWS/prod-aws-console-deploy-ai-unlimited.md).
+
 

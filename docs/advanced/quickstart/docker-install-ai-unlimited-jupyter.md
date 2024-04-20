@@ -13,32 +13,43 @@ import TabItem from '@theme/TabItem';
 
 Use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
+
 ## Clone the AI Unlimited GitHub repository
 
-Open a terminal window, and clone the Teradata AI Unlimited GitHub repository. It includes sample YAML files to run the manager and JupyterLab.
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
 
-``` bash
-git clone https://github.com/Teradata/ai-unlimited
-```
-## Set environment variables
+<MyPartial />
 
-1. Optionally, set the environment variable `AI_UNLIMITED_HOME` to the directory where you want the configuration and data files to be located. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
+
+## Set locations for manager and JupyterLab configuration files
+
+:::tip
+Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
+:::
+
+1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which to store the manager's configuration and data files. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
 
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
     | $AI_UNLIMITED_HOME | /etc/td | Stores data and configuration |
-    | $AI_UNLIMITED_HOME/tls | /etc/td/tls | Stores certificate files |
+	
+2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store JupyterLab's configuration files. The default location is `~/.jupyter`.
 
-2. Optionally, set the `JUPYTER_HOME` variable to the directory where you want the JupyterLab configuration files to be located. The default location is `~/.jupyter`.
 
-## Provide environment variables
+## Provide your cloud service provider credentials to Docker
+
+You can use environment variables to pass your AWS or Azure credentials to Docker Compose.
+
+***What does doing this enable?***
 
 :::note 
-You can provide your cloud service provider credentials to Docker Compose two ways:
-- You can use a YAML file that contains environment varibles for storing your credentials. This QuickStart assumes you are using this method.
-- You can use a local volume containing your credentials. 
+You can provide the credentials two ways:
+- Use a YAML file that contains environment varibles for storing your credentials.
+- Use a local volume containing your credentials. 
 	
 See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository.
+
+This QuickStart assumes you are using the first method.
 :::
 
 1. Copy these environment variables from your cloud service provider's console.
@@ -46,23 +57,19 @@ See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Doc
 	<Tabs>
 		<TabItem value="aws" label="AWS" default>
 		`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
-
-		Learn about AWS [environment variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html).
-  
 		</TabItem>
+		
 		<TabItem value="azure" label="Azure">
 		`ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID`, and `ARM_CLIENT_SECRET`
-
-		Learn about Azure [environment variables](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication).
-  
 		</TabItem>
 	</Tabs>
 
-2. In the Teradata AI Unlimited GitHub repository, open the `[CSP]-credentials-env-vars.yaml` file and update the environment variable values.
+2. In the Teradata AI Unlimited GitHub repository, open the `[AWS or Azure]-credentials-env-vars.yaml` file and update the environment variable values.
+
 
 ## Start the manager and JupyterLab
 
-1. Go to the directory where the **ai-unlimited.yaml** and **jupyter.yaml** files are located, and start the manager and JupyterLab.
+1. Go to the directory where `ai-unlimited.yaml` and `jupyter.yaml` are located, and start the manager and JupyterLab.
 
 	<Tabs>
 		<TabItem value="aws" label="AWS" default>

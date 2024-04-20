@@ -4,6 +4,8 @@ title: Deploy JupyterLab from the Azure Portal
 description: Learn how to deploy JupyterLab using an ARM template.
 sidebar_label: Azure 
 sidebar_position: 2
+pagination_prev: null
+pagination_next: null
 ---
 
 # Deploy the template from the Azure Portal
@@ -13,6 +15,12 @@ The Azure Resource Manager (ARM) template deploys a server instance with Jupyter
 :::note
 References to the Azure Portal are accurate as of April 14, 2024.
 ::: 
+
+## Clone the AI Unlimited GitHub repository
+
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
+
+<MyPartial />
 
 
 ## Download the Jupyter template
@@ -30,6 +38,8 @@ Download the template (`/deployments/azure/jupyter.json`) from the AI Unlimited 
 ## Specify instance details
 
 Review the parameters. Provide values for the required ones. Your organization might require others.
+
+***We are working on the table/scrollbar issues.***
 
 <details>
 
@@ -67,4 +77,4 @@ Review the parameters. Provide values for the required ones. Your organization m
 
 After the template is deployed, you'll find the JupyterLab connection parameters in **Outputs**. 
 
-
+***Haven't actually seen what happens after clicking Create.***
