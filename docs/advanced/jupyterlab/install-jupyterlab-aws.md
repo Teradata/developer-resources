@@ -1,13 +1,13 @@
 ---
-id: aws-console-deploy-jupyter
+id: deploy-jupyter-aws-console
 title: Deploy JupyterLab from the AWS Management Console
-description: Learn how to deploy JupyterLab using the AWS Cloudformation template from the AWS console.
+description: Learn how to deploy JupyterLab using a Cloudformation template.
 sidebar_label: AWS
 sidebar_position: 1
 ---
 
 
-# Deploy the template from the AWS console
+# Deploy the template from the AWS Management Console
 
 The CloudFormation template deploys a server instance with JupyterLab, and the AI Unlimited kernel, running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
@@ -27,12 +27,11 @@ Download the template.
 
 ## Upload the template	
 		
-1. Sign in to the [AWS](https://aws.amazon.com) console.
-2. Select the AWS region in which to deploy AI Unlimited. Teradata recommends selecting the region closest to your primary work location.
+1. Sign in to the [AWS](https://aws.amazon.com) console, and select the region in which to deploy AI Unlimited. 
+Teradata recommends selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
-5. Under **Prerequisite - Prepare template**, select **Choose an existing template**.
-6. Under **Specify template**,  select **Upload a template file**.
+5. Select **Choose an existing template** and **Upload a template file**.
 6. Choose the template file you decided to use, and click **Next**.
 
 
@@ -41,7 +40,7 @@ Download the template.
 1. Provide a stack name.
 2. Review the parameters. Provide values for the required ones. Your organization might require others.
 
-***Same comments as what's in the manager console topic. Would a partial work for the long table? That might be a reason to keep 2 tables (Jupyter parms separate from  manager parms)--if the long one can be a partial for the manager and the Jupyter topics?***
+***Thripti to combine the parm tables into 1 table***
 
 <details>
 
@@ -92,8 +91,5 @@ Download the template.
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.
 4. Monitor the stack's status. When you see `CREATE_COMPLETE`, JupyterLab is ready. 
-5. Use the URLs on the stack's **Outputs** tab to view the created resources.  
 
-***Is one of those URLs what they use to access JupyterLab?***
-
-
+You'll find the JupyterLab connection parameters in **Outputs**. 

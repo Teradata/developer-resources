@@ -8,19 +8,17 @@ sidebar_position: 1
 
 # Before you begin
 
-Prepare for installing AI Unlimited on Azure.
-
 ## Prerequisites
 
 Make sure you have the following: 
 
-- [Azure account](https://azure.microsoft.com) with an active subscription (Subscription ID). If you don't have an Azure subscription, create a free account. You cannot deploy AI Unlimited using an Azure Free Trial Subscription. If you have a free account, go to your profile and change your subscription to pay-as-you-go. Then, remove the spending limit, and request a quota increase for vCPUs in your region. 
+- A pay-as-you-go [Azure account](https://azure.microsoft.com).
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
-- Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on AWS. 
+- Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying the AI Unlimited manager on AWS. 
 
-Open a terminal window, and clone the repository. 
+	Open a terminal window, and clone the repository. 
 
     ``` bash
     git clone https://github.com/Teradata/ai-unlimited
@@ -83,12 +81,10 @@ The **Output** tab shows the network names and `RoleDefinitionId`. You'll need t
 
 ## Get deployment details
 
-When you install AI Unlimited on Azure, you'll use an Azure Resource Manager (ARM) template, and you'll provide network and security details. 
+When you install the manager using an Azure Resource Manager (ARM) template, and you'll provide network and security details. 
 
-If you want to, you can copy this template and send it to an admin who knows these details&mdash;to get them ahead of time. Or, get them from the Azure Portal. ***(is the portal sentence correct?)***
+You can copy this template to get these details from an admin. Or, get them from the Azure Portal.
 
-***These are the parms required by Azure, but the customer's org may require more. Thinking about best way to help them get those ahead of time. Can't put a table (of the full set) in a code block.***
-  
 	```bash
 Subscription: 
 Region: 
@@ -97,28 +93,19 @@ Subnet:
 Security Group:
 	```
 
-***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). "Security Group" is not marked as required on the UI, but maybe we require it.*** ***TA: security group is important ***
+***These are the required parms, but the customer's org may require more. Can't put a table (of the full set) in a code block.***
 
-***If they install JupyterLab on Azure using our template, will the values for these parms be the same?*** **TA: Yes**
+***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last).
 
 ## Subscribe to AI Unlimited
 
-Subscribe to AI Unlimited on your CSP's marketplace:
-- Azure (link)
+Subscribe on the Azure marketplace. ***link***
+
+Then return to this documentation and continue.
  
-***Maybe be specific about what they're subscribing to--it's the engine image but "feels like" more than that.***
- 
-***What do we really need to say about this task? We should not repeat what's on the Marketplace or provide self-evident steps--unless there's a good reason to.***
- 
-***If they have trouble subscribing, should they contact the CSP?***
-  
-***Where can they see their hours consumed or upcoming bills? Anything like that to point out?***
- 
-***Might they want to talk with us for help selecting an instance size? Can we point them to a blog entry or the Community--for any topics related to subscribing?***
- 
+
 ## Create a GitHub or GitLab OAuth app
 
 import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
 
 <MyPartial />
-

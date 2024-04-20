@@ -1,6 +1,6 @@
 ---
 id: manage-AI-Unlimited
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Manage AI Unlimited

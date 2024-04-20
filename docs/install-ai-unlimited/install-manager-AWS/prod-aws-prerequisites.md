@@ -8,17 +8,16 @@ sidebar_position: 1
 
 # Before you begin
 
-Prepare for installing AI Unlimited on AWS.
 
 ## Prerequisites
 
 Make sure you have the following: 
 
-- [AWS account](https://aws.amazon.com). You cannot deploy AI Unlimited using an AWS Free Tier subscription. If you have a free account, go to your profile and change your subscription to pay-as-you-go. 
+- A pay-as-you-go [AWS account](https://aws.amazon.com) account.
 
 - [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
-- Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying AI Unlimited and JupyterLab on AWS. 
+- Clone [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for deploying the AI Unlimited manager on AWS. 
 
 	Open a terminal window, and clone the repository.
 
@@ -80,9 +79,9 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 ## Get deployment details
 
-When you install AI Unlimited using a CloudFormation template, you'll provide account and network details. 
+When you install the manager using a CloudFormation template, you'll provide account and network details. 
 
-If you want to, you can copy this template and send it to an admin who knows these details&mdash;to get them ahead of time. Or, get them from the AWS Management Console. ***(is the console sentence correct?)***
+You can copy this template to get these details from an admin. Or, get them from the AWS Management Console.
 
 	```bash
     Subscription ID: 
@@ -95,20 +94,15 @@ If you want to, you can copy this template and send it to an admin who knows the
     RoleDefinition Id: 
 	```
 
+***These are the required parms, but the customer's org may require more. Can't put a table (of the full set) in a code block.***
+
+
 ## Subscribe to AI Unlimited
 
-Subscribe to AI Unlimited on your CSP's marketplace:
-- AWS (link)
+Subscribe on the AWS marketplace. ***link***
+
+Then return to this documentation and continue.
  
-***Maybe be specific about what they're subscribing to--it's the engine image but "feels like" more than that.***
- 
-***What do we really need to say about this task? We should not repeat what's on the Marketplace or provide self-evident steps--unless there's a good reason to.***
- 
-***If they have trouble subscribing, should they contact the CSP?***
-  
-***Where can they see their hours consumed or upcoming bills? Anything like that to point out?***
- 
-***Might they want to talk with us for help selecting an instance size? Can we point them to a blog entry or the Community--for any topics related to subscribing?***
  
 ## Create a GitHub or GitLab OAuth app
 

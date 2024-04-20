@@ -4,6 +4,7 @@ title: QuickStart
 description: Start here to install AI Unlimited for a single user quickly.
 sidebar_label: QuickStart
 sidebar_position: 1
+pagination_prev: null
 ---
 
 # QuickStart

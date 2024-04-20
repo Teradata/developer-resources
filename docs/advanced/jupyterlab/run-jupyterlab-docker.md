@@ -15,13 +15,19 @@ Use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with t
 
 ## Set environment variables
 
-1. Optionally, in a terminal window, set the `JUPYTER_HOME` variable to the directory where you want the JupyterLab configuration files to be located. The default location is **~/.jupyter**.
+Optionally, in a terminal window, set the `JUPYTER_HOME` variable to the directory where you want the JupyterLab configuration files to be located. The default location is **~/.jupyter**.
 
 ## Provide environment variables
 
 ***For Jupyter alone (not with AI Unlimited), I see only this option in the readme: `docker compose -f jupyter.yaml up`. Does that mean they don't need to provide environment variables for Jupyter?***
 
-***I need to better understand what "environment variables" means in the 2 steps, "set" and "provide."***
+:::note 
+You can provide your CSP credentials to Docker Compose two ways:
+- You can use a YAML file that contains environment varibles for storing your CSP credentials. This QuickStart assumes you are using this method.
+- You can use a local volume containing your CSP credentials. 
+	
+See both methods in the **Jupyter** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository. ***Neither method is there for Jupyter (without AI Unlim).***
+:::
 
 1. Copy these environment variables from your [CSP](/docs/glossary.md#glo-csp) console or use the CLI. **Do these enable Jupyter to talk to the engine?**
 
@@ -39,14 +45,6 @@ Use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with t
   
 		</TabItem>
 	</Tabs>
-
-	:::note 
-	You can provide your CSP credentials to Docker Compose two ways:
-	- You can use a YAML file that contains environment varibles for storing your CSP credentials. This QuickStart assumes you are using this method.
-	- You can use a local volume containing your CSP credentials. 
-	
-	See both methods in the **Jupyter** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository. ***Neither method is there for Jupyter (without AI Unlim).***
-	:::
 
 2. In the cloned Teradata AI Unlimited GitHub repository, open the **[CSP]-credentials-env-vars.yaml** file and update the environment variable values. **Applicable?**
 
@@ -85,8 +83,6 @@ Use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with t
 ## Verify access to JupyterLab
 
 When JupyterLab is ready, you can access it at `http://localhost:8888`, and enter the token. 
-
-After you [set up AI Unlimited](/docs/install-ai-unlimited/quickstart/docker-setup-b.md), you'll be able to create a project in JupyterLab. 
 
 
 

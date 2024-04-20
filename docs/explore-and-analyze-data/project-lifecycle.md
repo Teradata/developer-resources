@@ -10,11 +10,13 @@ sidebar_position: 3
 
 AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) for creating and managing projects in Jupyter notebooks. 
 
-If you create a project, you are its owner. Once a project is created, your Git repository owner can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project in the repository. Back in the notebook, you'll need to update the engine for those new users. 
+If you create a project, you are its owner. Once a project is created, your Git repository owner can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project in the repository. In the notebook, you'll need to update the engine for those new users. 
 
-You might be the owner of one or more projects and a collaborator on others. While owners and collaborators can use the same magic commands, their points of view are somewhat different. 
+You might be the owner of one or more projects and a collaborator on others. While owners and collaborators can use the same magic commands, their project involvement is typically different. 
 
 ## Project owners
+
+***placeholder graphic - to be replaced***
 
 import ProjectFlowImg from './project-flow_project-owner.svg';
 
@@ -23,5 +25,6 @@ import ProjectFlowImg from './project-flow_project-owner.svg';
 
 ## Project collaborators
 
-***A graphic with "steps," with arrows to show the flow and suspend-resume cycle. Will include the magic commands, and include details that support what's happening.***
+***placeholder graphic - to be replaced***
 
+[add it]
