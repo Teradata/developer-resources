@@ -4,6 +4,7 @@ title: Deploy the manager using the Azure Portal
 description: Learn how to deploy the AI Unlimited manager using the ARM template.
 sidebar_label: Deploy the ARM template
 sidebar_position: 2
+pagination_prev: null
 pagination_next: null
 ---
 

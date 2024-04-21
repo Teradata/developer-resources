@@ -1,25 +1,19 @@
 ---
-id: test-prod-azure-prerequisites
-title: Full installation - Azure - Prerequisites
-description: Learn the prerequisites for installing AI Unlimited on AWS.
+id: prod-azure-prerequisites
+title: Azure installation - Prerequisites
+description: Learn what to do before installing AI Unlimited on Azure.
 sidebar_label: Before you begin
 sidebar_position: 1
+pagination_prev: null
+pagination_next: null
 ---
 
 # Before you begin
 
-## Prerequisites
-
-Make sure you have the following: 
-
-- A pay-as-you-go [Azure account](https://azure.microsoft.com).
-
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
+Once you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites), prepare for the installation.
 
 
 ## Clone the repo
-
-
 
 Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
 
@@ -112,5 +106,7 @@ Security Group:
 
 ## Subscribe to AI Unlimited
 
-Subscribe on the Azure marketplace. ***link***
+Subscribe on the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/). ***replace w/link to listing***. 
+
+Then return to this documentation site to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 

@@ -1,21 +1,16 @@
 ---
 id: prod-aws-prerequisites
-title: Installation - AWS - Prerequisites
-description: Learn the prerequisites for installing AI Unlimited Manager on AWS.
+title: AWS installation - Prerequisites
+description: Learn the prerequisites for installing AI Unlimited Manager on Azure.
 sidebar_label: Before you begin
 sidebar_position: 1
+pagination_prev: null
+pagination_next: null
 ---
 
 # Before you begin
 
-
-## Prerequisites
-
-Make sure you have the following: 
-
-- A pay-as-you-go [AWS account](https://aws.amazon.com) account.
-
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
+Once you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites), prepare for the installation.
 
 
 ## Clone the repo
@@ -110,10 +105,9 @@ You can copy this template to get these details from an admin. Or, get them from
 
 ## Subscribe to AI Unlimited
 
-Subscribe on the AWS marketplace. ***link***
+Subscribe on the [AWS Marketplace](https://aws.amazon.com/marketplace) ***replace w/link to listing***
 
-
-
+Then return to this documentation site to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
 
 

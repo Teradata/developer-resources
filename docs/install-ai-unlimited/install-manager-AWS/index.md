@@ -3,8 +3,9 @@ id: install-AI-Unlimited-manager-aws
 title: Install on AWS
 description: Learn the prerequisites and how to deploy the CloudFormation template for the manager.
 sidebar_label: Install on AWS
-sidebar_position: 1
+sidebar_position: 2
 pagination_prev: null
+pagination_next: null
 ---
 
 # Install on AWS

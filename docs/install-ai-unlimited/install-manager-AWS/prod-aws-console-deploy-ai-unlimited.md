@@ -4,6 +4,7 @@ title: Deploy the manager using the AWS console
 description: Learn how to deploy the AI Unlimited manager using the CloudFormation template.
 sidebar_label: Deploy the CloudFormation template
 sidebar_position: 2
+pagination_prev: null
 pagination_next: null
 ---
 
