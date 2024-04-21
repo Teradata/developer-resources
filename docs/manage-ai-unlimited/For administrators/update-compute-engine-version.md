@@ -4,6 +4,8 @@ title: How to update the AI/ML engine version
 description: Learn how to update the AI Unlimited compute engine.
 sidebar_label: Update the AI/ML engine version
 sidebar_position: 2
+pagination_prev: null
+pagination_next: null
 ---
 
 # Update the AI/ML engine version

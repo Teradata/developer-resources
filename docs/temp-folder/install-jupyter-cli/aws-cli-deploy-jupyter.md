@@ -15,10 +15,6 @@ The CloudFormation template deploys a server instance with JupyterLab running in
 
 ## Decide which template to use
 
-import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
-
-<MyPartial />
-
 
 ## New section?
 

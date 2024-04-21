@@ -14,9 +14,14 @@ Make sure you have the following:
 
 - A pay-as-you-go [Azure account](https://azure.microsoft.com).
 
-- [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
-- Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
+
+## Clone the repo
+
+
+
+Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The **deployments** folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
 
 	Open a terminal window, and clone the repository. 
 
@@ -102,14 +107,10 @@ Security Group:
 
 ***These are the required parms, but the customer's org may require more. Can't put a table (of the full set) in a code block.***
 
-***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last).
+***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). There's a slack comment.***
 
 
 ## Subscribe to AI Unlimited
 
 Subscribe on the Azure marketplace. ***link***
 
-
-## Next step
-
-[Install the manager](/docs/install-ai-unlimited/install-manager-Azure/prod-azure-portal-deploy-manager.md).

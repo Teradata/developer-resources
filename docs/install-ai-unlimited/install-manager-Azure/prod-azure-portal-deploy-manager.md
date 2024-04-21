@@ -4,6 +4,7 @@ title: Deploy the manager using the Azure Portal
 description: Learn how to deploy the AI Unlimited manager using the ARM template.
 sidebar_label: Deploy the ARM template
 sidebar_position: 2
+pagination_next: null
 ---
 
 # Deploy the ARM template
@@ -18,18 +19,17 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 Download the template (`/deployments/azure/ai-unlimited.json`) from the AI Unlimited GitHub repository you cloned.
 
-***In the repo, what are the templates that end in ".cloudinit" and ".service"?***
 
 ## Load the template
 
-1. Sign in to the [Azure portal](https://portal.azure.com). 
+1. Sign in to the [Azure Portal](https://portal.azure.com). 
 2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor** and then **Load file**.
 4. Choose the template file you downloaded, and click **Save**.  
 
 ## Specify instance details
 
-Review the parameters. Provide values for the required ones. Your organization might require others.
+Review the parameters. Provide values for the required parameters. Your organization might require others.
 
 ***We are working on the table/scrollbar issues.***
 
@@ -63,22 +63,20 @@ Review the parameters. Provide values for the required ones. Your organization m
 |Use NLB| Specifies whether the instance is accessed using a Network Load Balancer.|Required with default |false||
 | Tags | The key-value pairs that are assigned to the resources for quick identification.| Optional| |   
 
-
 </details>
 
-***My comments in the AWS manager (console) topic about the tables apply to this topic too.***
-
-***Persistent volume parms are in the table. Do we need a section in this topic for more info about persistent volumes (from the readme - and like what's in the tech review content)? If we can slim that down and put it in the Notes column of the table, that would be best.***
 
 ## Create the instance
 
 1. Select **Review + create**, then **Create**. 
 2. Monitor the deployment status on the **Notifications** page. 
 
-You'll see connection parameters for the manager in **Outputs.** You'll use when you connect to the manager from a Jupyter notebook.
+You'll see connection parameters for the manager in **Outputs.** 
 
-***Haven't actually seen what happens after clicking Create.***
+You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
 
-##Next step
+***Haven't actually seen what happens after clicking Create. Is there really a "Notifications" page? Is Outputs just another section that appears?***
+
+## Next step
 
 In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).

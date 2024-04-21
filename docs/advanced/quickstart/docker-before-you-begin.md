@@ -63,8 +63,3 @@ Default security group
 Subscribe on your cloud service provider's marketplace:
 - AWS ***(link)***
 - Azure ***(link)***
-
-
-## Next step
-
-[Install the manager and JupyterLab](/docs/advanced/quickstart/docker-install-ai-unlimited-jupyter.md).

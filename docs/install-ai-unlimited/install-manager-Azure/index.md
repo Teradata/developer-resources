@@ -4,11 +4,12 @@ title: Install on Azure
 description: Learn the prerequisites and how to deploy the ARM template for the manager.
 sidebar_label: Install on Azure
 sidebar_position: 1
+pagination_prev: null
 ---
 
 # Install on Azure
 
-You'll use an ARM template to install the AI Unlimited manager on Azure. After you install the manager, you'll use it to set up AI Unlimited and configure the engine's deployment on Azure.
+You'll use an ARM template to install the AI Unlimited manager on Azure. After you install the manager, you'll use it to set up AI Unlimited and configure the engine's deployment.
 
 
 :::tip

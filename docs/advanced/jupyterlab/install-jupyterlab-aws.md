@@ -26,11 +26,17 @@ import MyPartial from '/docs/_partials/_clone-repo.mdx';
 
 ## Download the Jupyter template
 
-import MyPartial from '/docs/_partials/_choose-aws-jupyter-template.mdx';
+CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository you cloned:
 
-<MyPartial />
+`/deployments/aws/templates/jupyter/`
 
-Download the template.
+1. Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+
+    - `jupyter-alb.yaml`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
+    - `jupyter-with-nlb.yaml`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `jupyter-without-lb.yaml`&mdash;No load balancer
+
+2. Download the template.
 
 
 ## Upload the template	
@@ -40,7 +46,7 @@ Download the template.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Select **Choose an existing template** and **Upload a template file**.
-6. Choose the template file you decided to use, and click **Next**.
+6. Choose the template file you downloaded, and click **Next**.
 
 
 ## Specify stack details and options

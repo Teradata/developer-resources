@@ -1,8 +1,10 @@
 ---
-id: test-quickstart-setup
-title: QuickStart - Setup 
-description: Get more information about certain fields in the setup.
+id: setup-ai-unlimited
+title: Setup 
+description: Get more information about certain fields in the AI Unlimited setup.
 sidebar_label: Set up AI Unlimited
+sidebar_position: 3
+pagination_prev: null
 ---
 
 import Tabs from '@theme/Tabs';

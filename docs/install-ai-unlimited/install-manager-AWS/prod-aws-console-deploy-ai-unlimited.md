@@ -4,6 +4,7 @@ title: Deploy the manager using the AWS console
 description: Learn how to deploy the AI Unlimited manager using the CloudFormation template.
 sidebar_label: Deploy the CloudFormation template
 sidebar_position: 2
+pagination_next: null
 ---
 
 # Deploy the CloudFormation template
@@ -16,11 +17,17 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 
 ## Download the manager template
 
-import MyPartial from '/docs/_partials/_choose-aws-manager-template.mdx';
+CloudFormation templates for the manager are here in the AI Unlimited GitHub repository you cloned:
 
-<MyPartial />
+`/deployments/aws/templates/ai-unlimited/`
 
-Download the template.
+1. Choose a template based on whether your AWS infrastructure uses a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+
+    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `ai-unlimited-without-lb.yaml`&mdash;No load balancer
+	
+2. Download the template.
 
 ## Load the template	
 
@@ -34,10 +41,10 @@ Download the template.
 ## Specify stack details and options
 
 1. Provide a stack name.
-2. Review the parameters. Provide values for the required ones. Your organization might require others.
+2. Review the parameters. Provide values for the required parameters. Your organization might require others.
 
 :::note
-The parameters for each template vary. You might see some in the table that you don't see in the AWS console.
+The parameters for each template vary. You might see some parameters here that you don't see in the console.
 :::
 
 ***We are working on the table/scrollbar issues.***
@@ -80,19 +87,8 @@ The parameters for each template vary. You might see some in the table that you 
 
 </details>
 
-***These are all the parms for the 3 templates this topic uses, correct? Just to make sure, do they exlude any that are for the all-in-one?*** 
-**TA: Yes, I verified the fields***
-
-***If/when we know there will be no more changes, we should verify all of them.***
-
-***Possible to include the section names in the table? AI Unlimited, AI Unlimited connection, and Persistent volume. I tried and couldn't do it.*** **TA: Table design restriction for Markdown*** Can provide an row with the headers but columns can't be merged***
-
-***Persistent volume parms are in the table. Do we need a section in this topic for more info about persistent volumes (from the readme - and like what's in the tech review content)? If we can slim that down and put it in the Notes column of the table, that would be best.*** 
-
-***TA: I think, the important bits can be in the table, as it would help users make the right selection at that point in time, or provide a link to a topic in the advanced section***
-
-4. Select **Next**.
-5. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
+3. Select **Next**.
+4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
 ## Review and create the stack
 
@@ -101,11 +97,13 @@ The parameters for each template vary. You might see some in the table that you 
 3. Select **Submit** to deploy the stack. 
 4. Monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
 
-Use the URLs in **Outputs** to view the created resources. You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
+Use the URLs in **Outputs** to view the created resources. 
 
-***Haven't actually seen what happens after clicking Submit.***
+You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
 
-##Next step
+***Haven't actually seen what happens after clicking Submit. Where does the status appear? Is Outputs just another section that appears?***
+
+## Next step
 
 In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 

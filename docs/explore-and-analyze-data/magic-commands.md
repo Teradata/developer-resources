@@ -1,9 +1,11 @@
 ---
 id: magic-commands
 title: Magic commands 
-description: Learn about the AI Unlimited magic commands you can use in your project in your Jupyter notebook.
+description: Learn about the AI Unlimited magic commands (**%magic_command**) asdf you can use in your project in your Jupyter notebook.
 sidebar_label: Magic commands
 sidebar_position: 5
+pagination_prev: null
+pagination_next: null
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

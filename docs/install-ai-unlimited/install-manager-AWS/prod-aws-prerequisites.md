@@ -15,9 +15,12 @@ Make sure you have the following:
 
 - A pay-as-you-go [AWS account](https://aws.amazon.com) account.
 
-- [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for user authentication and storing project information.
 
-- Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The `deployments` folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
+
+## Clone the repo
+
+Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The `deployments` folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
 
 	Open a terminal window, and clone the repository.
 
@@ -55,9 +58,9 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 - [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json): Includes permissions to create engine instances, and grants AI Unlimited permissions to create a cluster-specific role and policies.
 
-- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this, and **ai-unlimited-engine.json**, if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
+- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this, and `ai-unlimited-engine.json`, if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
 
-- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role to the cluster each time the engine is deployed. Use this with **ai-unlimited-without-iam-role-permissions.json**. Modify the policy with your your account details.
+- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role to the cluster each time the engine is deployed. Use this with `ai-unlimited-without-iam-role-permissions.json`. Modify the policy with your your account details.
 
     If AI Unlimited creates cluster-specific policies, they are restricted as follows:
 
@@ -109,11 +112,8 @@ You can copy this template to get these details from an admin. Or, get them from
 
 Subscribe on the AWS marketplace. ***link***
 
-Then start [exploring and analyzing data](\docs\explore-and-analyze-data).
 
 
-## Next step
 
-[Install the manager](/docs/install-ai-unlimited/install-manager-AWS/prod-aws-console-deploy-ai-unlimited.md).
 
 

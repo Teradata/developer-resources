@@ -15,10 +15,6 @@ The CloudFormation template deploys a server instance with the AI Unlimited mana
 
 ## Decide which template to use
 
-import MyPartial from '/docs/_partials/_choose-aws-manager-template.mdx';
-
-<MyPartial />
-
 ***If using the console, they need to download the template. If using the CLI, they don't need to download it--they just reference it.***
 
 

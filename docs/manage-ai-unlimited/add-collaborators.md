@@ -4,6 +4,8 @@ title: Add collaborators to a project
 description: As a project owner, learn how to add collaborators
 sidebar_label: Add project collaborators
 sidebar_position: 1
+pagination_prev: null
+pagination_next: null
 ---
 
 # Add project collaborators

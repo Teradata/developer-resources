@@ -4,6 +4,8 @@ title: Glossary
 description: Terminology for the installation and use of AI Unlimited.
 sidebar_label: Glossary
 sidebar_position: 7
+pagination_prev: null
+pagination_next: null
 ---
 
 # Glossary

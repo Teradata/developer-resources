@@ -4,6 +4,8 @@ title: Example projects
 description: Try out example projects to see what you can do with AI Unlimited.
 sidebar_label: Example projects
 sidebar_position: 4
+pagination_prev: null
+pagination_next: null
 ---
 
 # Example projects

@@ -4,6 +4,9 @@ title: Create your first project
 description: Learn how to use AI Unlimited by running a simple workflow in a Jupyter notebook.
 sidebar_label: Create your first project
 sidebar_position: 2
+pagination_prev: null
+pagination_next: null
+
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
