@@ -37,7 +37,7 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com;",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/;",
       },
     },
     {
@@ -106,11 +106,7 @@ const config = {
           editUrl: `https://github.com/owilliams320/${projectName}/tree/main`,
         },
         theme: {
-          customCss: [
-            './node_modules/@covalent/tokens/index.css',
-            './src/css/custom.css',
-            './node_modules/@bsahitya/td-doc-design/dist/assets/main.css',
-          ],
+          customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
         },
       }),
     ],
