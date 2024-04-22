@@ -50,6 +50,7 @@
   --ifm-color-info-dark: var(--cv-theme-light-colors-primary);
   --ifm-breadcrumb-item-background-active: none;
   --ifm-breadcrumb-color-active: none;
+  --mdc-theme-surface-canvas: var(--cv-theme-surface-container);
 }
 
 body {
