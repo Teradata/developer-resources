@@ -166,6 +166,7 @@ Run `%help` or `%help <command>` for details on any magic command. See [Magic co
     SELECT * FROM SalesDemo ORDER BY sales
     ```
     Open the Navigator for your connection and verify that the tables were created. Run a row count on the tables to verify that the data was loaded.
+    
     e. Use charting magic to visualize the result.
     Provide X and Y axes for your chart.
     ```bash
