@@ -10,4 +10,14 @@ pagination_next: null
 
 # Change settings
 
-[placeholder]
+To modify the setup information, do the following: 
+
+1. Go to [AI Unlimited setup](/docs/install-ai-unlimited/setup-ai-unlimited.md) page.
+
+2. Authorize using your GitHub credentials and select **SETUP**. 
+
+3. Modify the required fields and update the section.
+
+4. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
+
+You can then go to the **Profile** page to copy the new API Key.
