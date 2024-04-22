@@ -8,7 +8,6 @@ pagination_prev: null
 pagination_next: null
 ---
 
-
 # Deploy the template from the AWS Management Console
 
 The CloudFormation template deploys a server instance with JupyterLab, and the AI Unlimited kernel, running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
@@ -54,23 +53,11 @@ CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repo
 1. Provide a stack name.
 2. Review the parameters. Provide values for the required ones. Your organization might require others.
 
-***Thripti to combine the parm tables into 1 table***
-
 ***We are working on the table/scrollbar issues.***
 
 <details>
 
-<summary>JupyterLab parameters</summary>
-| Parameter | Description | Required? | Default | Notes
-|---------|-------------|-----------|-----------|-----------|
-| JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
-| JupyterVersion | The version of JupyterLab you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
-| JupyterToken | The token or password used to access JupyterLab from the UI | Required |- | The token must begin with a letter and contain only alphanumeric characters. The allowed pattern is ^[a-zA-Z][a-zA-Z0-9-]*. |
-</details>
-
-<details>
-
-<summary>AWS instance and network parameters</summary>
+<summary>AWS and JupyterLab parameters</summary>
 | Parameter | Description | Required? | Default | Notes
 |---------|-------------|-----------|-----------|-----------|
 | InstanceType | The EC2 instance type that you want to use for the service. | Required with default | t3.small | Teradata recommends using the default instance type to save costs. |
@@ -94,7 +81,10 @@ CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repo
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
-|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
+|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.|
+| JupyterHttpPort | The port to access the JupyterLab service UI | Required with default | 8888 | - |
+| JupyterVersion | The version of JupyterLab you want to deploy. | Required with default | latest | The value is a container version tag, for example, latest. |
+| JupyterToken | The token or password used to access JupyterLab from the UI | Required |- | The token must begin with a letter and contain only alphanumeric characters. The allowed pattern is ^[a-zA-Z][a-zA-Z0-9-]*. |
 </details>
 
 4. Select **Next**.
