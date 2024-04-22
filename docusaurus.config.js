@@ -63,6 +63,11 @@ const config = {
     },
   },
 
+  // Markdown features configuration
+  markdown: {
+    mermaid: true,
+  },
+
   plugins: [
     tailwindPlugin,
     [
@@ -93,10 +98,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: `https://github.com/owilliams320/${projectName}/tree/main`,
-          editLocalizedFiles: true
         },
         blog: {
           showReadingTime: true,
@@ -111,6 +112,8 @@ const config = {
       }),
     ],
   ],
+
+  themes: ['@docusaurus/theme-mermaid'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
