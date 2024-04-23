@@ -10,6 +10,8 @@ pagination_next: null
 
 # Change settings
 
+***Might need 2 separate topics - old UI vs. new UI. Will figure that out when I work on Setup.***
+
 To modify the setup information, do the following: 
 
 1. Go to [AI Unlimited setup](/docs/install-ai-unlimited/setup-ai-unlimited.md) page.

@@ -9,6 +9,46 @@ pagination_next: null
 
 # Get started
 
+***testing ideas from 4/22 JR & Rob meeting***
+
+***BEFORE***
+
+Learn how to deploy and use the [AI Unlimited](https://www.teradata.com/platform/ai-unlimited) AI/ML engine in the cloud.
+
+With AI Unlimited, data scientists and data engineers can explore and analyze large datasets in a [Jupyter](https://jupyter.org/) notebook using ClearScape Analytics<sup>TM</sup> ***(possible to make TM smaller?)*** functions&mdash;on a self-service, on-demand basis. See the ***x-many*** functions. ***(link to doc, but challenges with that)***
+
+
+## How it works
+
+You connect your notebook to the AI/ML engine on AWS or Azure, and connect the engine to your [Amazon S3](https://aws.amazon.com/pm/serv-s3/?gclid=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB&trk=fecf68c9-3874-4ae2-a7ed-72b6d19c8034&sc_channel=ps&ef_id=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB:G:s&s_kwcid=AL!4422!3!536452728638!e!!g!!amazon%20s3!11204620052!112938567994) or [ADLS Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) data lake. You can suspend and resume your analytics project anytime, and pay only for the hours you use.
+
+In all, AI Unlimited comprises these elements:
+- The AI/ML engine, that you deploy on your AWS or Azure account
+- Jupyter notebooks, with the [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel), for running your workloads
+- Your [object storage](/docs/install-ai-unlimited/glossary.md#glo-object-storage), where your data lake data resides
+- Your Git repository, for authenticating users and storing project information
+- A manager, which orchestrates the AI/ML engine's deployment&mdash;and includes a web-based user interface for monitoring projects ***(Challenge: admins do setup and monitor projects there, all users grab their API key there. Original intent was for this page to speak more to general users than admins--probably not possible. It at least should make sense to both perspectives. But then this bullet gets long.)***
+:::note
+With AI Unlimited you can collaborate on projects with other users. 
+
+If you prefer a simpler, single-user approach, try the [QuickStart](/docs/advanced/quickstart) which runs the manager and JupyterLab in Docker containers on your computer.
+:::
+
+
+<a id="prerequisites"></a>
+## Prerequisites
+
+- A pay-as-you-go [AWS](https://aws.amazon.com) or [Azure](https://azure.microsoft.com) account on which to provision compute resources
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account for hosting your AI Unlimited project repository
+
+
+## What's next
+
+[Prepare](/docs/install-ai-unlimited/before-you-begin.md) to install and set up AI Unlimited.
+
+
+***TEST***
+
 Learn how to deploy and use the [AI Unlimited](https://www.teradata.com/platform/ai-unlimited) AI/ML engine in the cloud.
 
 With AI Unlimited, data scientists and data engineers can explore and analyze large datasets in a [Jupyter](https://jupyter.org/) notebook using ClearScape Analytics<sup>TM</sup> ***(possible to make TM smaller?)*** functions&mdash;on a self-service, on-demand basis. See the ***x-many*** functions. ***(link to doc, but challenges with that)***
@@ -26,14 +66,14 @@ AI Unlimited comprises these elements:
 
 ***TEST of splitting up the elements list. NOT YET DONE--JUST PLAYING.***
 
-AI Unlimited comprises several elements.
+AI Unlimited has several elements, some that we provide and some that you provide.
 
-Teradata makes available: ***would say "provides" but that sounds free***
+Teradata:
 - The AI/ML engine that you deploy on AWS or Azure
 - A manager, which orchestrates the AI/ML engine's deployment&mdash;and includes a web-based user interface from which AI Unlimited admins can monitor projects
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel)
 
-You organization provides:
+Your organization:
 - A pay-as-you-go AWS or Azure account with [required permissions] ***link to "prep your account"***.
 - A GitHub or GitLab account
 - JupyterLab
