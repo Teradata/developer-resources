@@ -174,11 +174,8 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     ```
     Open the Navigator for your connection and verify that the tables were created. Run a row count on the tables to verify that the data was loaded.
     
-<<<<<<< Updated upstream
     e. Use charting magic to visualize the result.
-=======
-	e. Use charting magic to visualize the result.
->>>>>>> Stashed changes
+
     Provide X and Y axes for your chart.
 	
     ```bash
