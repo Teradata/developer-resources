@@ -50,6 +50,7 @@
   --ifm-color-info-dark: var(--cv-theme-light-colors-primary);
   --ifm-breadcrumb-item-background-active: none;
   --ifm-breadcrumb-color-active: none;
+  --mdc-theme-surface-canvas: var(--cv-theme-surface-container);
 }
 
 body {
@@ -239,6 +240,12 @@ html:not(.plugin-pages) .main-wrapper {
   --ifm-button-background-color: var(--cv-theme-light-colors-tertiary);
   --ifm-button-border-color: var(--cv-theme-light-colors-tertiary);
   color: var(--cv-theme-light-colors-on-tertiary);
+}
+
+cv-code-snippet {
+  background-color: var(--cv-theme-surface-container);
+  --mdc-theme-surface-canvas: var(--cv-theme-surface-container);
+  margin-bottom: var(--ifm-leading);
 }
 
 @media screen and (min-width: 1025px) {
