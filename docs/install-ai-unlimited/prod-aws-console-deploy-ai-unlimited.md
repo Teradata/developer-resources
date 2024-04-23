@@ -29,11 +29,13 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `/deployments/aws/templates/ai-unlimited/`
 
-1. Choose a template based on whether your AWS infrastructure uses a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use. 
+
+**TA: Need the reasoning on which LB to use**
 
     - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
-    - `ai-unlimited-without-lb.yaml`&mdash;No load balancer
+    - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure on which template to use, Teradata recommends starting with this template.
 	
 2. Download the template.
 

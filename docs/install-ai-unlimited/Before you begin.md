@@ -91,7 +91,6 @@ You can copy this template to get these details from an admin. Or, get them from
     Virtual Network (VNet): 
     Subnet: 
     Network Security Group:
-    Load Balancer (ALB/NLB/Not Applicable):
     RoleDefinition Id: 
 	```
 
