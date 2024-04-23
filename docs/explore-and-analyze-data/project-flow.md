@@ -35,3 +35,20 @@ import ProjectFlowCollabImg from './project-flow_collabs.svg';
 <ProjectFlowCollabImg />
 
 
+## Project owners
+
+***test***
+
+import ABC from './owner.svg';
+
+<ABC />
+
+
+## Project collaborators
+
+***test***
+
+import DEF from './collabs.svg';
+
+<DEF />
+

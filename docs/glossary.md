@@ -12,6 +12,11 @@ pagination_next: null
 
 ## A
 
+<a id="glo-manager"></a>
+### AI Unlimited manager
+
+The manager orchestrates the deployment of the AI/ML engine on AWS or Azure. It also provides a web-based user interface from which (1) the AI Unlimited admin sets up AI Unlimited after installing it, monitors projects, and changes settings as needed and (2) a general user gets their API key, needed to connect their Jupyter notebook to the manager. ***needs more work***
+
 <a id="glo-application-load-balancer"></a>
 ### application load balancer
 
@@ -54,9 +59,12 @@ A group of interconnected computers that work together as a single system for en
 
 ## D
 
-### term
 
-Definition
+<a id="glo-data-lake"></a>
+### Data lake
+
+A central repository of data for data analytics, machine learning, and data exploration. A data lake is typically built on [object storage](#glo-object-storage) and is designed for data accessibility for future data analysis.  
+
 
 ### term
 
@@ -80,7 +88,7 @@ Definition
 <a id="glo-load-balancer"></a>
 ### load balancer 
 
-A load balancer distributes incoming traffic evenly across servers, which improves performance, reliability, and scalability. If your organzation does not allow its resources to use public IP addresses, you can use a load balancer to expose AI Unlimited and its engine to the public IP network. 
+A load balancer distributes incoming traffic evenly across servers, which improves performance, reliability, and scalability. If your organzation does not allow its resources to use public IP addresses, you can use a load balancer to expose the AI Unlimited manager and engine to the public IP network. 
 
 
 ## M
@@ -109,6 +117,11 @@ Load balancers distribute incoming traffic across servers. A network load balanc
 ### OAuth app
 
 An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. AI Unlimited uses an OAuth app, created by your organization, to authorize access to your GitHub or GitLab account for storing user and project information.
+
+<a id="glo-object-storage"></a>
+### Object storage
+A scalable, highly effective way to store large amounts of structured, semi-structured, or unstructured data in the cloud. Amazon S3 is object storage on AWS. Azure Blob Storage is object storage on Azure. Object storage is the basis for a [data lake](#glo-data-lake).
+
 
 ### term
 

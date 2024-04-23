@@ -1,27 +1,25 @@
 ---
 id: before-you-begin
 title: Before you begin installation
-description: After you get your cloud service provider and GitHub or GitLab accounts, here's what to do next.
-sidebar_label: Before you begin (test)
+description: After you have the prerequisites, here's what to do next.
+sidebar_label: Title TBD
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Before you begin (test/combined)
+# Title TBD
 
 Once you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites), prepare for the installation.
 
-## Clone the repo
 
-Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The `deployments` folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
+## Subscribe to AI Unlimited
 
-	Open a terminal window, and clone the repository.
+Subscribe on the [AWS Marketplace](https://aws.amazon.com/marketplace) ***replace w/link to listing***
 
-    ``` bash
-    git clone https://github.com/Teradata/ai-unlimited
-    ```
+Then return to this documentation site and continue.
+
 
 ## Prepare your CSP account
 
@@ -59,17 +57,30 @@ Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimi
 </TabItem>
 </Tabs>
 
+
+## Clone the provided repository
+
+Clone the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited). The `deployments` folder in the repository contains template, parameter, and policy files for installing AI Unlimited. 
+
+	Open a terminal window, and clone the repository.
+
+    ``` bash
+    git clone https://github.com/Teradata/ai-unlimited
+    ```
+
+
 ## Create a GitHub or GitLab OAuth app
 
 import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
 
 <MyPartial />
 
+
 ## Get deployment details
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
-When you install the manager using a CloudFormation template, you'll provide account and network details. 
+When you install the manager using the CloudFormation template, you provide account and network details. 
 
 You can copy this template to get these details from an admin. Or, get them from the AWS Management Console.
 
@@ -84,12 +95,10 @@ You can copy this template to get these details from an admin. Or, get them from
     RoleDefinition Id: 
 	```
 
-***These are the required parms, but the customer's org may require more. Can't put a table (of the full set) in a code block.***
-
 </TabItem>
 <TabItem value="azure" label="Azure">
 
-When you install the manager using an Azure Resource Manager (ARM) template, and you'll provide network and security details. 
+When you install the manager using the Azure Resource Manager (ARM) template, and you provide network and security details. 
 
 You can copy this template to get these details from an admin. Or, get them from the Azure Portal.
 
@@ -101,18 +110,11 @@ Subnet:
 Security Group:
 	```
 
-***These are the required parms, but the customer's org may require more. Can't put a table (of the full set) in a code block.***
-
 ***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). There's a slack comment.***
 
 </TabItem>
 </Tabs>
 
-## Subscribe to AI Unlimited
-
-Subscribe on the [AWS Marketplace](https://aws.amazon.com/marketplace) ***replace w/link to listing***
-
-Then return to this documentation site to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
 
 

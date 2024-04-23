@@ -1,20 +1,27 @@
 ---
 id: deploy-manager-azure-portal
 title: Deploy the manager using the Azure Portal
-description: Learn how to deploy the AI Unlimited manager using the ARM template.
-sidebar_label: Deploy the ARM template
+description: Learn how to deploy the manager using an Azure Resource Manager (ARM) template.
+sidebar_label: Install on Azure
 sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 ---
 
-# Deploy the ARM template
+# Install the manager on Azure
+
+You'll use an ARM template to install the AI Unlimited manager on Azure. After you install the manager, you'll use it to set up AI Unlimited and configure the engine's deployment.
+
+:::tip
+For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
 
 The Azure Resource Manager (ARM) template deploys a server instance with the AI Unlimited manager running in a container controlled by systemd. 
 
 :::note
 References to the Azure Portal are accurate as of April 14, 2024.
 ::: 
+
 
 ## Download the manager template
 

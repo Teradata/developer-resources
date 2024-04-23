@@ -1,20 +1,27 @@
 ---
 id: deploy-manager-aws-console
-title: Deploy the manager using the AWS console
-description: Learn how to deploy the AI Unlimited manager using the CloudFormation template.
-sidebar_label: Deploy the CloudFormation template
+title: Deploy the manager using the AWS Management Console
+description: Learn how to deploy the manager using a CloudFormation template.
+sidebar_label: Install on AWS
 sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 ---
 
-# Deploy the CloudFormation template
+# Install the manager on AWS
+
+You'll use a CloudFormation template to install the AI Unlimited manager on AWS. After you install the manager, you'll use it to set up AI Unlimited and configure the engine's deployment.
+
+:::tip
+For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
 
 The CloudFormation template deploys a server instance with the AI Unlimited manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::note
 References to the AWS Management Console are accurate as of April 11, 2024.
 :::
+
 
 ## Download the manager template
 
