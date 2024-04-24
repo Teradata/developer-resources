@@ -51,8 +51,6 @@ You'll complete this simple workflow:
 If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installaton options](/docs/advanced/jupyterlab).
 :::
 
-
-
 ## Connect, and run your first workload
 
 :::tip
@@ -65,7 +63,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     ```
 	***we are aware of the horizonal scroll bar vs. copy icon issue - styles are being tweaked***
 	
-	***Assume no TLS for the sake of this sample workflow? But tell them what it means (very briefly).***
+	***Assume no TLS for the sake of this sample workflow? But tell them what it means (very briefly).*** **TA: the workflow section need not provide details of the variables as they are explained in detail in the magic commands**
 	
 2. Create a new project.
     ```bash
@@ -81,6 +79,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 3. Optionally, create an authorization object to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
 
 	***Normally they create a shared authorization or one for a single user. In this sample workflow, maybe this is not optional? Otherwise, they'd have to use SQL to create an authoriation for themselves?***
+    **TA: Auth is required only for external connectivity, in this example as there is no external connection, this step is optional**
 
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
@@ -92,7 +91,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	
 4. Deploy the engine.
 
-    Replace the `Project_Name` to a name of your choice. ***(didn't they already name it?)*** The size can be small, medium, large, or extralarge. The default is small.
+    Replace the `Project_Name`. ***(didn't they already name it?)*** The size can be small, medium, large, or extralarge. The default is small.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
@@ -103,20 +102,20 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     ```
     When the connection is made, provide the generated password. ***how?***
 
-7. Run the sample workload. 
+7. Run the sample workload.
 
+    **TA: this example will change**
 	***I don't yet understand all this, where the data comes from, etc.***
+    **TA: Idea is to create a table and then load data from an Excel file or from the sample repo within Jupyter (FILEPATH=notebooks/sql/data/salescenter.csv)**
+    ***when did they select a DB in their data lake? something to do with the object authorization magic command?***
+	**TA: No, this is data load from an Excel***
+	***is the idea that they might coincidentally happen to have tables with those names in their DB - or maybe someone in their org ran this sample workload prior?***
+    ***TA: idea is to create new tables, users can create by themselves**
     :::note
     Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. 
-	
-	***when did they select a DB in their data lake? something to do with the object authorization magic command?***
-	
-	***is the idea that they might coincidentally happen to have tables with those names in their DB - or maybe someone in their org ran this sample workload prior?***
     ::::
     a. Create a table to store the sales center data.
       
-	First, drop the table if it already exists. The command fails if the table does not exist. ***redundant with the note?***
-	
     ```sql
     DROP TABLE SalesCenter;
     CREATE MULTISET TABLE SalesCenter ,NO FALLBACK ,
@@ -133,10 +132,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     ```bash
     %dataload DATABASE=<Project_Name>, TABLE=SalesCenter, FILEPATH=notebooks/sql/data/salescenter.csv
     ```
-	
-	***so they are creating a new table and loading it?***
-	
-    :::note
+	:::note
     Unable to locate the salescenter.csv file? Download the file from [GitHub Demo: Charting and Visualization Data](https://github.com/Teradata/jupyter-demos/tree/main/Getting_Started/Charting_and_Visualization/data).
     :::
     Verify that the data was inserted.
