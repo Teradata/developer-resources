@@ -41,7 +41,7 @@ You'll complete this simple workflow:
   </TabItem>
     </Tabs> 
 
-- From the manager, get your API key. 
+- Access the AI Unlimited manager and get your API key. 
 
 	***link to API key topic - not all users will go through this workflow, so we need a separate topic - it should be easy to find - first one under Explore and Analzye data***
 
@@ -53,7 +53,7 @@ If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installato
 
 
 
-## Connect, then run your first workload
+## Connect, and run your first workload
 
 :::tip
 Run `%help` or `%help <command>` for details on all magic commands or any one of them. Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) provided by the AI Unlimited kernel specifically. 
@@ -63,11 +63,11 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=F 	
     ```
-	***we are aware of the horizonal scroll bar vs. copy icon issue***
+	***we are aware of the horizonal scroll bar vs. copy icon issue - styles are being tweaked***
 	
-	***assume no TLS for the sake of this sample workflow? But tell them what it means (very briefly)***
+	***Assume no TLS for the sake of this sample workflow? But tell them what it means (very briefly).***
 	
-3. Create a new project.
+2. Create a new project.
     ```bash
     %project_create project=<Project_Name>, env=<CSP>, team=<Project_Team>
     ```
@@ -78,7 +78,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	
 	***But what about the project team in this simple workflow? Do we expect a team to use it? But... I still need to learn about the "team" concept.***
 	
-4. Optionally, create an authorization object to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
+3. Optionally, create an authorization object to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
 
 	***Normally they create a shared authorization or one for a single user. In this sample workflow, maybe this is not optional? Otherwise, they'd have to use SQL to create an authoriation for themselves?***
 
@@ -90,13 +90,13 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	
 	***These look like AWS. Do AWS-Azure tabs?***
 	
-5. Deploy the engine.
+4. Deploy the engine.
 
     Replace the `Project_Name` to a name of your choice. ***(didn't they already name it?)*** The size can be small, medium, large, or extralarge. The default is small.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
-    The deployment process takes a few minutes. When finished, it generates a password.
+    The deployment process takes a few minutes. It generates a password.
 6. Connect to the project.
     ```bash
     %connect <Project_Name>
@@ -173,9 +173,13 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     SELECT * FROM SalesDemo ORDER BY sales
     ```
     Open the Navigator for your connection and verify that the tables were created. Run a row count on the tables to verify that the data was loaded.
+	
+	***safe to assume they know how? probably not our job to teach them***
     
     e. Use charting magic to visualize the result.
-
+	
+	***safe to assume they know how? probably not our job to teach them***
+	
     Provide X and Y axes for your chart.
 	
     ```bash
@@ -202,4 +206,4 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     %project_engine_suspend project=<Project_Name>
     ```
 
-You are done! You've run your first workload.
+You're done! You've run your first workload.
