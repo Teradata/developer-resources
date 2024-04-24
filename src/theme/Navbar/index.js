@@ -23,7 +23,7 @@ export default function Navbar() {
   };
 
   const [defaultLang, setDefaulLang] = useState('');
-  const basePath = '/td-ai-unlimited-docs';
+  const basePath = '/ai-unlimited-docs';
 
   const handleLanguageChange = (language) => {
     // Replace current language with another language
@@ -41,7 +41,7 @@ export default function Navbar() {
   };
 
   const getCurrentLanguage = () => {
-    const langRegEx = /\/td-ai-unlimited-docs\/(\w{2})\//;
+    const langRegEx = /\/ai-unlimited-docs\/(\w{2})\//;
     const currentLocation = window.location.pathname;
     const match = currentLocation.match(langRegEx);
     return match ? match[1] : '';

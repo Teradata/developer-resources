@@ -7,9 +7,8 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
-
-const baseUrl = '/td-ai-unlimited-docs';
-const projectName = 'td-ai-unlimited-docs';
+const baseUrl = '/ai-unlimited-docs';
+const projectName = 'ai-unlimited-docs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,7 +17,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://owilliams320.github.io',
+  url: 'https://teradata.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl,
@@ -55,7 +54,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja',],
+    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
