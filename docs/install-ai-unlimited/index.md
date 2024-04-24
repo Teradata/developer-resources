@@ -71,16 +71,22 @@ You connect your notebook to the AI/ML engine on AWS or Azure, and connect the e
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) for managing projects in notebooks
 
 
-## Subscribe
-
-Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [Azure Marketplace] ***(link to listing)***.
-
-
 ## Prerequisites
 - A pay-as-you-go [AWS](https://aws.amazon.com/) or [Azure](https://azure.microsoft.com/en-us) account (see requirements) ***(link to content in "Other resources")*** on which to provision compute resources
 - A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account (see requirements) ***(link to content in "Other resources")*** to host your repository for authenticating users and storing project information 
 - Your object storage, where your Amazon or ADLS Gen2 data lake resides
 - JupyterLab
+
+:::tip
+You might like to [get deployment details]***(link to them in "Other resources")***, that you'll need when you deploy the cloud template, ahead of time.
+:::
+
+
+## Subscribe
+
+Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [Azure Marketplace] ***(link to listing)***. 
+
+Then return to this documentation site to deploy the AI Unlimited manager.
 
 :::note
 With AI Unlimited you can collaborate on projects with other users. 
@@ -88,10 +94,6 @@ With AI Unlimited you can collaborate on projects with other users.
 If you prefer a simpler, single-user approach, try the [QuickStart](/docs/advanced/quickstart) which runs the manager and JupyterLab in Docker containers on your computer.
 :::
 
-
-### Get some depoyment details
-
-***Will add the content curently at the end of "Title TBD"***
 
 
 
