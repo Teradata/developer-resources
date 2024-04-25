@@ -3,7 +3,7 @@ import { Header } from '@bsahitya/td-doc-design';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
-
+import SearchBar from '@theme/SearchBar';
 export default function Navbar() {
   const { navItems } = useThemeConfig();
   const {
@@ -23,7 +23,7 @@ export default function Navbar() {
   };
 
   const [defaultLang, setDefaulLang] = useState('');
-  const basePath = '/ai-unlimited-docs';
+  const basePath = '/td-ai-unlimited-docs';
 
   const handleLanguageChange = (language) => {
     // Replace current language with another language
@@ -41,7 +41,7 @@ export default function Navbar() {
   };
 
   const getCurrentLanguage = () => {
-    const langRegEx = /\/ai-unlimited-docs\/(\w{2})\//;
+    const langRegEx = /\/td-ai-unlimited-docs\/(\w{2})\//;
     const currentLocation = window.location.pathname;
     const match = currentLocation.match(langRegEx);
     return match ? match[1] : '';
@@ -61,15 +61,18 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Header
-      key={defaultLang}
-      navItems={nestedNavItems}
-      title={title}
-      headerActions={headerActions}
-      languages={languages}
-      onLanguageChange={handleLanguageChange}
-      selectedLanguage={defaultLang}
-      secondaryMenu={secondaryMenuDetails}
-    ></Header>
+    <>
+      <Header
+        key={defaultLang}
+        navItems={nestedNavItems}
+        title={title}
+        headerActions={headerActions}
+        languages={languages}
+        onLanguageChange={handleLanguageChange}
+        selectedLanguage={defaultLang}
+        secondaryMenu={secondaryMenuDetails}
+      ></Header>
+      <SearchBar></SearchBar>
+    </>
   );
 }

@@ -7,8 +7,9 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
-const baseUrl = '/ai-unlimited-docs';
-const projectName = 'ai-unlimited-docs';
+
+const baseUrl = '/td-ai-unlimited-docs';
+const projectName = 'td-ai-unlimited-docs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -17,7 +18,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://teradata.github.io',
+  url: 'https://owilliams320.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl,
@@ -36,7 +37,7 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com;",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://*.algolia.net/;",
       },
     },
     {
@@ -54,7 +55,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja'],
+    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja',],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
@@ -106,11 +107,7 @@ const config = {
           editUrl: `https://github.com/owilliams320/${projectName}/tree/main`,
         },
         theme: {
-          customCss: [
-            './node_modules/@covalent/tokens/index.css',
-            './src/css/custom.css',
-            './node_modules/@bsahitya/td-doc-design/dist/assets/main.css',
-          ],
+          customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
         },
       }),
     ],
@@ -123,6 +120,11 @@ const config = {
     ({
       image: 'img/teradata-logo-social.png',
       metadata: [{ name: 'keywords', content: 'Teradata, AI Unlimited' }],
+      algolia: {
+        appId: 'FKCGWXPUTX',
+        apiKey: '72dfc486e67f40cf44879ef55fcdd88d',
+        indexName: 'teradataio',
+      },
       navbar: {
         title: 'Developers',
         logo: {
