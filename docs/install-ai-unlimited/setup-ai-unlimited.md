@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
+***WIP - will be for the admin/install user only***
+
 :::note
 Before you start, make sure you have all the necessary details to update the cloud integration section. You must have the minimum configuration values, including **Default region**, **Default subnet**, and **Default security groups**. If you are unsure, Teradata recommends reaching out to your cloud administrator for guidance.
 :::
@@ -25,8 +27,7 @@ Access AI Unlimited setup:
 
 Are you an AI Unlimited user or administrator? Choose your path: 
 
-***This topic (which will be for both the QS and the full install) is meant only for the user doing the installation. For the QuickStart, that user is also a general user. For the full installation, that is less likely to be the case. But either way, it's in the installation flow--so should not descibe the other uses. There will be other topics for an admin to change settings under "manage" in the TOC, and for a general user to get their API key (under "explore and analyze data" in the TOC.***
-**TA: If it is general user, then this topic is not valid, as they will never see the setup, they can grab their key from the profile page and then work on their task**
+***This topic should be for 1 task only--initial setup. There will be other topics--for an admin to change settings (under "manage" in the TOC), and for any user to get their API key (under "explore and analyze data in the TOC). 4/25: let's add a topic under "manage" for any user - monitor projects (status and logs).***
 
 - If you're an AI Unlimited user, AI Unlimited is set up and ready to use. Authorize using your Git provider credentials. This authorizes the AI Unlimited to authenticate the user and access your Git repo. Copy the API Key [Glossary] from your **Profile** page and then proceed to [running your first workload](/docs/explore-and-analyze-data/example-projects.md) on AI Unlimited.
 
