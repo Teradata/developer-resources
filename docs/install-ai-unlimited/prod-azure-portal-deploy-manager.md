@@ -65,6 +65,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 | Role Definition ID | The ID of the role to use with AI Unlimited. | Required | - | Use Azure CLI command- Get-AzRoleDefinition command to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure. | Optional | - |  - |
 | Use Key Vault | Specifies whether to use Key Vault to retrieve the secured password during a deployment.  |Optional |New | |
+| Use Persistent Volume  | Specifies whether you want to use persistent volume to store data.  | Optional with default  | None | Supported options are: new persistent volume, an existing one, or none, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional | 8 | Supports values between 8  and 1000. |
 | Existing Persistent Volume | The ID of the existing persistent volume that you can attach to the instance. | Required if UsePersistentVolume is set to Existing. | - | The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default | latest | The value is a container version tag. |

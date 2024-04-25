@@ -12,8 +12,6 @@ import TabItem from '@theme/TabItem';
 
 # Magic commands
 
-***Keep, per Jack, even though command descriptions are in the notebook. In the notebook, the general commands and AI Unlimited commands are all together. So it's good for users to see a list of AI-Unlimited-specific ones. The kernel is in dev. Need to update this topic.***
-
 JupyterLab with the AI Unlimited kernel supports these magic commands in addition to the existing Teradata SQL kernel magic commands. 
 
 ## %workspaces_config
@@ -63,7 +61,7 @@ Project `Project_Name` created
 **Description**: Delete a project.
 
 :::warning
-Running this command removes the GitHub repository containing the objects created using Teradata AI Unlimited.
+Running this command removes the Git repository containing the objects created using AI Unlimited.
 :::
 
 **Usage**:
@@ -101,15 +99,13 @@ Insert Code
 
 ## %project_auth_create
 
-**TA: Que in SLACK: The syntax doesn't list token, role, or External ID; however they are listed in the description. Are the parameters still required with the latest updates?**
-
 **Description**: Create an authorization object to store object store credentials.
 
 You must create the authorization object before deploying the engine. The authorization details are retained and are included while redeploying the project. Optionally, you can create authorizations manually using the `CREATE AUTHORIZATION` SQL command after deploying the engine. In this case, the authorization details are not retained.
 
 **Usage**:
 ```bash 
-%project_auth_create project=<Project_Name>, name=<Authorization_Name>, key=<Authorization_Key>, secret=<Authorization_Secret>, region=<ObjectStore_Region>, token=<Session_Token>, role=<Role>, ExternalID=<External_ID>
+%project_auth_create project=<Project_Name>, name=<Authorization_Name>, key=<Authorization_Key>, secret=<Authorization_Secret>, region=<ObjectStore_Region>, token=<Session_Token>
 ```
 Where:
 
@@ -119,15 +115,15 @@ Where:
 
 - key: Authorization key of the object store.
 
-- secret: Authorization secret access ID of the object store.
+- **`[Optional]`** secret: Authorization secret access ID of the object store.
 
-- region: Region of the object store; local for the local object store.
+- **`[Optional]`** region: Region of the object store; local for the local object store.
 
 - **`[Optional]`** token: Session token for the object store access.
 
-- **`[Optional]`** role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
+- **`[Optional-AWS Only]`** role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
 
-- ExternalID: External ID used to access object store.
+- **`[Optional-AWS Only]`** ExternalID: External ID used to access object store. This parameter is required when using the `role` parameter.
 
 **Output**:
 ```
@@ -141,19 +137,26 @@ Authorization 'name' created
 **Usage**:
 
 ```bash 
-%project_auth_update project=<Project_Name>, name=<Authorization_Name>, key=<Authorization_Key>, secret=<Authorization_Secret>, region=<ObjectStore_Region>, token=<Session_Token>, role=<Role>, ExternalID=<External_ID>
+%project_auth_update project=<Project_Name>, name=<Authorization_Name>, key=<Authorization_Key>, secret=<Authorization_Secret>, region=<ObjectStore_Region>, token=<Session_Token>
 
 ```
 Where:
 
 - project: Name of the project.
+
 - name: Authorization name for the object store.
+
 - key: Authorization key of the object store.
+
 - **`[Optional]`** secret: Authorization secret access ID of the object store.
-- **`[Optional]`**region: Region of the object store; local for the local object store.
+
+- **`[Optional]`** region: Region of the object store; local for the local object store.
+
 - **`[Optional]`** token: Session token for the object store access.
-- **`[Optional]`** role: IAM users or service account to access AWS or Azure resources from a CSP account by assuming a role and its entitlements. The owner of the AWS or Azure resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
-- ExternalID: External ID used to access object store.
+
+- **`[Optional-AWS Only]`** role: IAM users or service account to access AWS or Azure resources from a CSP account by assuming a role and its entitlements. The owner of the AWS or Azure resource defines the role. For example: arn:aws:iam::00000:role/STSAssumeRole.
+
+- **`[Optional-AWS Only]`** ExternalID: External ID used to access object store. This parameter is required when using the `role` parameter.
 
 **Output**:
 ```
@@ -171,6 +174,7 @@ Authorization 'name' updated
 Where:
 
 - project: Name of the project.
+
 - name:	Authorization name for the object store.
 
 **Output**:
@@ -192,7 +196,11 @@ Where:
 - project: Name of the project.
 
 **Output**:
-```Insert Code Snippet```
+```bash
+| AUTH NAME           | ACCESS KEY  | SECRET  | 
+|---------------------|-------------|---------|
+| <Authorization_Name>| <ACCESS_KEY>| <SECRET>| 
+```
 
 ## %project_engine_deploy
 
@@ -201,26 +209,26 @@ Where:
 **Description**: Deploy an engine for the project. The deployment process takes a few minutes to complete. On successful deployment, a password is generated.
 
 **Usage**:
+
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
 ```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore-<>, prefixlist=<>, securitygroups=<Security_Group>, cidrs=<CIDR>. tags=<>, iamrole=<>, roleprefix=<>, permissionboundary=<>
+%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore-<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
 ```
-
 </TabItem>
 <TabItem value="azure" label="Azure">
 
 ```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<>, network=<>, keyvault=<>, keyvaultresourcegroup=<>, networkresourcegroup=<>
+%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<>, networkresourcegroup=<>
 ```
-
 </TabItem>
 </Tabs>
 
 Where:
 
 - project:	Name of the project.
+
 - size: Size of the engine. The value can be:
 
   - small
@@ -229,26 +237,37 @@ Where:
   - extralarge
 
 - **`[Optional]`** node: Number of engine nodes to be deployed. The default value is 1.
+
 - **`[Optional]`** subnet: Subnet used for the engine if there are no default values from the service.
+
 - **`[Optional]`** region: Region used for the engine if there are no default values from service.
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
 - **`[Optional]`** prefixlist: The collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement. It is used to specify which IP addresses can communicate with an engine.
+
 - **`[Optional]`** securitygroups: List of security groups for the VPC in each region. If you don't specify a security group, the engine is automatically associated with the default security group for the VPC.
+
 - **`[Optional]`** cidrs: List of CIDR addresses used for the engine.
+
 - **`[Optional]`** tags: The key-value pairs that are assigned to the engine for quick identification.
+
 - **`[Optional]`** iamrole: The IAM Role used for the engine.
+
 - **`[Optional]`** roleprefix: The string appended to the beginning of the IAM role assigned to the engine.
+
 - **`[Optional]`** permissionboundary: The ARN of the IAM permissions boundary to associate with the IAM role assigned to the engine. The permissions boundary defines the maximum permissions that the role can have.
 
 </TabItem>
 <TabItem value="azure" label="Azure">
 
 - **`[Optional]`** network: The network to which you want to deploy the engine.
+
 - **`[Optional]`** keyvault: The Key Vault used by the engine where sensitive information such as passwords can be securely stored.
+
 - **`[Optional]`** keyvaultresourcegroup: 
+
 - **`[Optional]`** networkresourcegroup: 
 
 </TabItem>
@@ -291,7 +310,11 @@ Where:
 - project: Name of the project.
 
 **Output**:
-```Insert Code Snippet```
+```bash
+| IP   | STATE   | REGION  | SIZE             | NODE             |
+|------|---------|---------|------------------|------------------|
+| <IP> | Deployed| <Region>| <Size_of_Engine> | <Number_of_Nodes>|
+```
 
 ## %project_user_list
 
@@ -307,7 +330,11 @@ Where:
 - `*[Optional]*` project: Name of the project.
 
 **Output**:
-```Insert Code Snippet```
+```bash
+| PROJECT ID   | USER  | PASSWORD  |
+|--------------|-------|-----------|
+| <Project_ID> | <User>| <Password>| 
+```
 
 ## %project_backup
 
@@ -345,7 +372,7 @@ Restore of the object definitions done
 ```
 ## %project_engine_update_users
 
-**Description**: Update users on the deployed engine.
+**Description**: Update users on the deployed engine. If users are added as collaborators to the Git repository after the engine is deployed, you can use this command to update and create new users for the deployed engine.
 
 **Usage**:
 ```bash 
@@ -361,7 +388,7 @@ Need input
 ```
 ## %project_engine_update_auth
 
-**Description**: Update authorizations on the deployed engine.
+**Description**: Update or add new authorizations on the deployed engine without having to suspend and redeploy the engine.
 
 **Usage**:
 ```bash 
@@ -378,7 +405,7 @@ Require input
 ```
 ## %project_connection_add
 
-**Description**: Refresh connection for the deployed engine.
+**Description**: Refresh the connection for the deployed engine. Use this command to connect to the engine from another notebook without having to create a new connection manually.
 
 **Usage**:
 ```bash 
@@ -387,7 +414,7 @@ Require input
 Where:
 
 - project:	Name of the project.
-- `*[Optional]*` gitref: Git reference. **TA: what is the value I should provide here**
+
 
 **Output**:
 ```
