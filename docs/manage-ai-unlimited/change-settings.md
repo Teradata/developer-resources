@@ -1,14 +1,14 @@
 ---
 id: change-settings
 title: Change settings (for administrators)
-description: Learn how to change settings configured during installation.
-sidebar_label: Change settings
-sidebar_position: 1
+description: Learn how to change AI Unlimited settings.
+sidebar_label: Change settings (for administrators)
+sidebar_position: 3
 pagination_prev: null
 pagination_next: null
 ---
 
-# Change settings
+# Change settings (for administrators)
 
 ***Might need 2 separate topics - old UI vs. new UI. Will figure that out when I work on Setup.***
 

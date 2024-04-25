@@ -1,7 +1,7 @@
 ---
 id: explore-analyze
-title: Teradata - using AI Unlimited
-description: As a data scientist or data engineer, learn how you can use AI Unlimited.
+title: Explore and analyze data
+description: Learn how to use AI Unlimited projects to run analytics workloads.
 sidebar_label: Explore and analyze data
 sidebar_position: 2
 pagination_prev: null

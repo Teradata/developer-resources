@@ -1,12 +1,33 @@
 ---
-id: prod-azure-create-custom-role
-title: Full installation - Azure - Create a custom role
-description: Learn how to create the role AI Unlimited needs to deploy the engine in Azure.
-sidebar_label: Azure-Create a custom role with the required permissions	
-sidebar_position: 2
+id: azure-account-requirements
+title: Azure account requirements
+description: How to prepare your Azure account for AI Unlimited installation
+sidebar_label: Azure account requirements
+sidebar_position: 3
+pagination_prev: null
+pagination_next: null
 ---
 
-# Create a role with the required permissions	
+# Azure account requirements
+
+***WIP***
+
+-  Azure account requirements 
+
+    - Rights ***(Permissions?)*** to create Azure resources. Make sure the account deploying AI Unlimited has sufficient permissions to [create the roles](/docs/advanced/roles-and-policies/prod-azure-create-custom-role.md).
+	
+    - Owner permissions on the Azure subscription that you would like to use. 
+
+- Networking requirements 
+
+    - The resource group must have an Azure Virtual Network (VNet) configured with a subnet. You can use your existing VNet and subnets or create your own [Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal), [Vnet](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal), [Subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal), and [role](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles) depending on your account permissions.  
+
+- Secure shell (SSH) key pair to access or manage the AI Unlimited instance for running commands or debugging.
+
+    Generate a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect to the AI Unlimited instance ***("engine"?)*** using SSH.
+
+
+## Create a role with the required permissions	
 
 ***Grabbed this from the Azure Demo installation before we removed it. True for the full installation too?***
 
@@ -37,5 +58,7 @@ To deploy the role-policy ARM template, do the following: ***This is "documentin
 You can view the deployment status in **Notifications**.
 
 The **Output** tab shows the network names and `RoleDefinitionId`. You'll need these when you install AI Unlimited. 
+
+
 
 

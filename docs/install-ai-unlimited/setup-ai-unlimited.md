@@ -5,6 +5,7 @@ description: Get more information about certain fields in the AI Unlimited setup
 sidebar_label: Set up AI Unlimited
 sidebar_position: 3
 pagination_prev: null
+pagination_next: null
 ---
 
 import Tabs from '@theme/Tabs';
@@ -132,3 +133,8 @@ Select **Update** and then **Login**.
 If you're an AI Unlimited administrator, go to the **Profile** page to copy your API Key. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
 
 Now you can start using AI Unlimited to [explore and analyze data](/docs/explore-and-analyze-data).
+
+
+## What's next
+
+In a Jupyter notebook, start [exploring and analyzing data](/docs/explore-and-analyze-data/).

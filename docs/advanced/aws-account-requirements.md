@@ -1,12 +1,29 @@
 ---
-id: prod-aws-permissions
-title: Full Installation - AWS - IAM roles and policies
-description: Learn the roles and policies are needed for accessing AWS resources.
-sidebar_label: AWS-Create an IAM role and policies
+id: aws-account-requirements
+title: AWS account requirements
+description: How to prepare your AWS account for AI Unlimited installation
+sidebar_label: AWS account requirements
 sidebar_position: 1
+pagination_prev: null
+pagination_next: null
 ---
 
-# Create an IAM role and policies
+# AWS account requirements
+
+***WIP***
+
+- Your AWS account must have the required permissions needed to deploy the resources in the CloudFormation template. Work with your cloud administrator to set up the account with the required permissions. See [Create an IAM role and attach policies](/docs/advanced/roles-and-policies/prod-aws-permissions-policies.md).
+
+- If you need to access or manage the AI Unlimited instance to run commands or debug, you can connect to it using one of the following methods:
+	- Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH).
+	- Use AWS Session Manager to connect. To enable this, when you [create the IAM role and policies](/docs/install-ai-unlimited/production/AWS/before-you-begin/prod-aws-permissions-policies.md), attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to the IAM role.
+
+- If you’re using an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
+	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
+	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;to configure a custom domain name and route DNS queries to your load balancer.
+
+
+## Create an IAM role and policies
 
 ***Jack will write up how this all works--AI Unlim service vs. engine, etc. This topic needs work.***
 
@@ -62,6 +79,3 @@ How the engine cluster gets the role
 ***But doesn't the role get assigned to the cluster? to allow it to deploy the engine?***
 
 - AI Unlimited can create a cluster-specific role with policies based on the role and policies you provide&mdash;if your AWS account allows this. ***(Is this allowed via ai-unlimited-workspaces.json, simple as that, or is "if your AWS account allows this" referring to something else?)***
-
-
-
