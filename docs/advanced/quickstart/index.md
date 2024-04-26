@@ -13,6 +13,4 @@ For a simpler, faster way to try AI Unlimited, use the QuickStart.
  
 This runs the AI Unlimited manager and JupyterLab, with the AI Unlimited kernel, on your computer using [Docker](https://www.docker.com/). 
 
-:::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::
+The QuickStart is for a single user.

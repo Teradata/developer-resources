@@ -18,5 +18,5 @@ Or, get JupyterLab with the AI Unlimited kernel now:
 - [Run it locally](/docs/advanced/jupyterlab/run-jupyterlab-docker.md) in a Docker container
 
 :::note
-The [QuickStart](/docs/advanced/quickstart) includes JupterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
+The [QuickStart](/docs/advanced/quickstart) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
 :::

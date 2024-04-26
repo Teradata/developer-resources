@@ -11,14 +11,27 @@ import TabItem from '@theme/TabItem';
 
 # Run the manager and JupyterLab using Docker
 
-Before starting, make sure you have [what you need](/docs/advanced/quickstart/docker-before-you-begin.md). 
-
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
 
-Use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
+***How can we make clear that their user and project info repo gets created as part of this process?***
+
+You'll use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
+
+:::tip
+For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
 
 
-## Set locations for the manager and JupyterLab configuration files
+## Prerequisites
+
+In addition to the standard [AI Unlimited prerequisites](/docs/install-ai-unlimited/#gs-prerequisties), make sure you have [Docker](https://www.docker.com/get-started/) installed on your machine.
+
+## Subscribe
+
+If you haven't already, subscribe to AI Unlimited on the [AWS Marketplace] ***need link*** or [Azure Marketplace] ***need link***.
+
+
+## Set configuration file locations
 
 1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which to store the manager's configuration and data files. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
 
@@ -33,10 +46,10 @@ Use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited m
 2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store JupyterLab's configuration files. The default location is `~/.jupyter`.
 
 
-## Provide your cloud service provider credentials to Docker
+## Pass your cloud service provider credentials to Docker
 
 :::note 
-You can provide the credentials two ways:
+You can pass the credentials two ways:
 - Use a YAML file that contains environment varibles for storing your credentials.
 - Use a local volume containing your credentials. 
 	
@@ -98,7 +111,36 @@ When the manager is ready, you can access it at `http://localhost:3000`.
 
 When JupyterLab is ready, you can access it at `http://localhost:8888`, and enter the token. 
 
-## Next step
+
+## Get engine deployment details
+
+***Any changes to make for the old UI? Keep both files - old (PPP, initially) and new (longer-term)***
+
+***Come back to this after finishing setup.***
+
+When you set up AI Unlimited in the manager (that's next), you'll provide details about deploying the engine. 
+
+You can get the values for those fields from your cloud service provider's console. Or, copy the fields shown here, and ask an admin for their values ahead of time. 
+
+<Tabs>
+<TabItem value="aws" label="AWS">
+```bash
+Default region
+Default subnet
+Default security group
+```
+</TabItem>
+
+<TabItem value="azure" label="Azure">
+	```bash
+	Default region
+    Default security group
+	```
+</TabItem>
+</Tabs> 
+
+
+## What's next
 
 In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 

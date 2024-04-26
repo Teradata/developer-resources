@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 # Get deployment details
 
 :::note
-These details do not apply to the QuickStart.
+These details do not apply to the [QuickStart](/docs/advanced/quickstart).
 :::
 
 When you install the AI Unlimited manager from your cloud service provider's console, you'll provide values for required parameters. 

@@ -101,3 +101,4 @@ CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repo
 You'll find the JupyterLab connection parameters in **Outputs**. 
 
 ***Haven't actually seen what happens after clicking Submit.***
+

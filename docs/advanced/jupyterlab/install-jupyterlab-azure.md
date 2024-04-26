@@ -77,3 +77,4 @@ Review the parameters. Provide values for the required ones. Your organization m
 After the template is deployed, you'll find the JupyterLab connection parameters in **Outputs**. 
 
 ***Haven't actually seen what happens after clicking Create.***
+
