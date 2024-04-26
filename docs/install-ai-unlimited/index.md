@@ -31,6 +31,11 @@ You connect your notebook to the AI/ML engine on [AWS](https://aws.amazon.com/) 
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) for managing projects in notebooks
 
 
+## Subscribe
+
+Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [Azure Marketplace] ***(link to listing)***.
+
+
 <a id="gs-prerequisites"></a>
 ## Prerequisites
 
@@ -42,7 +47,7 @@ You connect your notebook to the AI/ML engine on [AWS](https://aws.amazon.com/) 
 - JupyterLab
 
 :::tip
-You might like to [get required deployment details](/docs/advanced/deployment-details.md) ahead of time. You'll need them when you install the manager.
+You might like to get [required deployment details](/docs/advanced/deployment-details.md) ahead of time. You'll need them when you install the manager.
 :::
 
 ***maybe we no longer want the note that follows - too confusing with the new option to deploy from the marketplace - might depend on the name of the new deployment method***
@@ -54,14 +59,9 @@ If you prefer a simpler, single-user approach, try the [QuickStart](/docs/advanc
 :::
 
 
-## Subscribe
-
-Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [Azure Marketplace] ***(link to listing)***.
- 
-
 ## What's next
 
-Return to this documentation site to install the manager on [AWS](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md) or [Azure](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md).
+Return to this documentation site, and install the manager on [AWS](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md) or [Azure](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md).
 
 
 

@@ -10,16 +10,19 @@ pagination_next: null
 
 # Change settings (for administrators)
 
-***Might need 2 separate topics - old UI vs. new UI. Will figure that out when I work on Setup.***
+***WIP***
 
-To modify the setup information, do the following: 
+***Probably needs 2 separate topics - old UI vs. new UI. Will figure that out when I work on Setup.***
 
-1. Go to [AI Unlimited setup](/docs/install-ai-unlimited/setup-ai-unlimited.md) page.
+In the manager, your administrator can change AI Unlimited settings.
+:::note
+The administrator is the user who [set up AI Unlimited](/docs/install-ai-unlimted/setup-ai-unlimited.md).
+:::
 
-2. Authorize using your GitHub credentials and select **SETUP**. 
+1. Access the manager. ***(more details?)***
+2. Authorize ***(will work on wording, b/c "authorize" is a transitive verb - it takes an object - they have to authorize something***) using your GitHub credentials.
+3. Select **Setup**. 
+3. Change values as needed, and update the section. 
+4. If you've enabled TLS, select **Restart** to restart the service ***(what service? we haven't mentioned it before)*** and apply the changes.
 
-3. Modify the required fields and update the section.
-
-4. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
-
-You can then go to the **Profile** page to copy the new API Key.
+Go to the **Profile** page to copy your new API Key.

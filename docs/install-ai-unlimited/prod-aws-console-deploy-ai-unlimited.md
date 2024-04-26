@@ -14,16 +14,12 @@ Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimi
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
 
-***How can we make clear that their user and project info repo gets created as part of this process?***
+Installing the manager also creates a Git repository for user and project information.
 
-You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. This deploys a server instance, with the manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::
-
-:::note
-References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
 
@@ -33,33 +29,35 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `/deployments/aws/templates/ai-unlimited/`
 
-1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use. 
-
-**TA: Need the reasoning on which LB to use**
-
+1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
+   :::note
+   You might want to ask an admin at your organization for guidance.
+   :::
     - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
-	
 2. Download the template.
 
 ## Load the template	
 
-1. Sign in to the [AWS console](https://aws.amazon.com), and select the AWS region in which to deploy AI Unlimited.  
-   We recommend selecting the region closest to your primary work location.
-2. Search for and go to **CloudFormation**.
-3. Select **Create Stack**, then **With new resources (standard)**.
-4. Select **Choose an existing template**, then **Upload a template file**.
-5. Choose the template file you downloaded, and click **Next**.  
+1. Sign in to the [AWS console](https://aws.amazon.com).<br />
+   :::note
+   References to the AWS Console are accurate as of April 11, 2024.
+   ::: 
+2. Select the AWS region in which to deploy AI Unlimited.<br />
+We recommend selecting the region closest to your primary work location.
+3. Search for and go to **CloudFormation**.
+4. Select **Create Stack**, then **With new resources (standard)**.
+5. Select **Choose an existing template**, then **Upload a template file**.
+6. Choose the template file you downloaded, and click **Next**.  
 
 ## Specify stack details and options
 
 1. Provide a stack name.
-2. Review the parameters. Provide values for the required parameters. Your organization might require others.
-
-:::note
-The parameters for each template vary. You might see some parameters here that you don't see in the console.
-:::
+2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br />
+   :::note
+   The parameters for each template vary. You might see some parameters here that you don't see in the console.
+   :::
 
 ***We are working on the table/scrollbar issues.***
 

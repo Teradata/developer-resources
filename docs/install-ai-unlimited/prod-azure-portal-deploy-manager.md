@@ -14,27 +14,26 @@ Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimi
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
 
-***How can we make clear that their user and project info repo gets created as part of this process?***
- 
-You'll use an Azure Resource Manager (ARM) template provided by Teradata to install the manager from the Azure Portal. This deploys a server instance, with the manager running in a container controlled by systemd. 
+Installing the manager also creates a Git repository for user and project information.
 
+You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
+ 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
-:::note
-References to the Azure Portal are accurate as of April 14, 2024.
-::: 
-
 
 ## Download the manager template
 
-Download the template (`/deployments/azure/ai-unlimited.json`) from the AI Unlimited GitHub repository you cloned.
+Download the Azure Resource Manager (ARM) template (`/deployments/azure/ai-unlimited.json`) from the AI Unlimited GitHub repository you cloned.
 
 
 ## Load the template
 
 1. Sign in to the [Azure Portal](https://portal.azure.com). 
+   :::note
+   References to the Azure Portal are accurate as of April 14, 2024.
+   ::: 
 2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor** and then **Load file**.
 4. Choose the template file you downloaded, and click **Save**.  

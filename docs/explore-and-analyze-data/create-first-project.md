@@ -43,7 +43,7 @@ You'll complete this simple workflow:
 
 - Access the AI Unlimited manager and get your API key. 
 
-	***link to API key topic - not all users will go through this workflow, so we need a separate topic - it should be easy to find - first one under Explore and Analzye data***
+	***we can include the how-to here for getting the api key - will probably also have a separate topic or put instrucs on the parent page***
 
 - Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 

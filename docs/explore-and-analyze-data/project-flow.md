@@ -12,7 +12,7 @@ pagination_next: null
 
 You might be the owner of one or more projects and a collaborator on others.
 
-If you create a project, you are its owner. In your company's Git repository that stores project information, the owner of the repository can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project. Then in the project notebook, you update the engine for those new users. 
+If you create a project, you are its owner. The owner of your Git repository that stores user and project information can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project. Then in the project notebook, you update the engine for those new users. 
 
 AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in your Jupyter notebooks. While project owners and collaborators can use the same magic commands, their project involvement is typically different. 
 
@@ -34,21 +34,4 @@ import ProjectFlowCollabImg from './project-flow_collabs.svg';
 
 <ProjectFlowCollabImg />
 
-
-## Project owners
-
-***test***
-
-import ABC from './owner.svg';
-
-<ABC />
-
-
-## Project collaborators
-
-***test***
-
-import DEF from './collabs.svg';
-
-<DEF />
 
