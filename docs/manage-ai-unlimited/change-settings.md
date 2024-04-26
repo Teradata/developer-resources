@@ -3,7 +3,7 @@ id: change-settings
 title: Change settings (for administrators)
 description: Learn how to change AI Unlimited settings.
 sidebar_label: Change settings (for administrators)
-sidebar_position: 3
+sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---

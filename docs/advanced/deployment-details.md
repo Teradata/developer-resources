@@ -2,7 +2,7 @@
 id: deployment-details
 title: Cloud deployment details
 description: Deployment details to get ahead of time
-sidebar_label: Get cloud deployment details
+sidebar_label: Get deployment details
 sidebar_position: 5
 pagination_prev: null
 pagination_next: null
@@ -12,20 +12,21 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Get cloud deployment details
+# Get deployment details
 
-***WIP***
+:::note
+These details do not apply to the QuickStart.
+:::
 
-## Get deployment details
+When you install the AI Unlimited manager from your cloud service provider's console, you'll provide values for required parameters. 
+
+You can get the values from your cloud service provider's console. Or, copy the parameter names shown here, and ask an admin for their values.
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
-When you install the manager using the CloudFormation template, you provide account and network details. 
-
-You can copy this template to get these details from an admin. Or, get them from the AWS Management Console.
 
 	```bash
-    Subscription ID: 
+	Subscription ID: 
     Resource Group:
     AWS Region: 
     Virtual Network (VNet): 
@@ -36,10 +37,6 @@ You can copy this template to get these details from an admin. Or, get them from
 
 </TabItem>
 <TabItem value="azure" label="Azure">
-
-When you install the manager using the Azure Resource Manager (ARM) template, and you provide network and security details. 
-
-You can copy this template to get these details from an admin. Or, get them from the Azure Portal.
 
 	```bash
 Subscription: 

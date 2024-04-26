@@ -2,26 +2,25 @@
 id: deploy-jupyter-azure-portal
 title: Deploy JupyterLab from the Azure Portal
 description: Learn how to deploy JupyterLab using an ARM template.
-sidebar_label: Azure 
+sidebar_label: Install on Azure 
 sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 ---
 
-# Deploy the template from the Azure Portal
+# Install JupyterLab on Azure
 
-The Azure Resource Manager (ARM) template deploys a server instance with JupyterLab, and the AI Unlimited kernel, running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+You'll use an  Azure Resource Manager (ARM) template provided by Teradata to install JupyterLab, and the AI Unlimited kernel, from the Azure Portal. 
+
+This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+
+:::tip
+For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
 
 :::note
 References to the Azure Portal are accurate as of April 14, 2024.
 ::: 
-
-## Clone the AI Unlimited GitHub repository
-
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
-
-<MyPartial />
-
 
 ## Download the Jupyter template
 

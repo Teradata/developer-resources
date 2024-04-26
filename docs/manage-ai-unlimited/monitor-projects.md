@@ -1,7 +1,7 @@
 ---
 id: monitor-projects
-title:
-description:
+title: Monitor your projects
+description: Learn how to check the status of your projects.
 sidebar_position: 3
 sidebar_label: Monitor projects
 pagination_prev: null

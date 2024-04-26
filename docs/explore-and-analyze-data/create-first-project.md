@@ -197,7 +197,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	%project_backup project=<Project_Name>
 	```
 
-9. Suspend the engine.
+9. Suspend the engine to avoid incurring charges for unneeded engine resources.
     ```bash
     %project_engine_suspend project=<Project_Name>
     ```

@@ -11,21 +11,14 @@ import TabItem from '@theme/TabItem';
 
 # Run the manager and JupyterLab using Docker
 
+Before starting, make sure you have [what you need](/docs/advanced/quickstart/docker-before-you-begin.md). 
+
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
+
 Use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
 
-## Clone the AI Unlimited GitHub repository
-
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
-
-<MyPartial />
-
-
-## Set locations for manager and JupyterLab configuration files
-
-:::tip
-Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
-:::
+## Set locations for the manager and JupyterLab configuration files
 
 1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which to store the manager's configuration and data files. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
 
@@ -33,14 +26,14 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
     |----------------|--------------------|-------|
     | $AI_UNLIMITED_HOME | /etc/td | Stores data and configuration |
 	
+	:::tip
+	Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
+	:::
+	
 2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store JupyterLab's configuration files. The default location is `~/.jupyter`.
 
 
 ## Provide your cloud service provider credentials to Docker
-
-You can use environment variables to pass your AWS or Azure credentials to Docker Compose.
-
-***What does doing this enable?***
 
 :::note 
 You can provide the credentials two ways:
@@ -49,7 +42,7 @@ You can provide the credentials two ways:
 	
 See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository.
 
-This QuickStart assumes you are using the first method.
+This QuickStart uses the first method.
 :::
 
 1. Copy these environment variables from your cloud service provider's console.
@@ -86,11 +79,13 @@ This QuickStart assumes you are using the first method.
 	
 	The command downloads and starts the manager and JupyterLab containers.
 
-2. To retrieve the Jupyter token, list the currently running containers, and identify the name of the JupyterLab container.
+2. To retrieve the Jupyter token, list the currently running containers.
 
 	```bash
 	docker ps 
 	```
+	And identify the name of the JupyterLab container.
+	
 	Then search for occurrences of the string 'Token' in the container's logs.
 
 	```bash
