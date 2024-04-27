@@ -80,10 +80,7 @@ The **Output** tab shows the network names and `RoleDefinitionId`. You'll need t
 
 ## Create a GitHub or GitLab OAuth app
 
-import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
-
-<MyPartial />
-
+[removed the partial]
 
 ## Get deployment details
 

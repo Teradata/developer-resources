@@ -26,7 +26,13 @@ The `deployments` folder in the [AI Unlimited GitHub repository](https://github.
 
 ## Create a GitHub or GitLab OAuth app
 
-Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize your GitHub or GitLab account to store user and project information.
+An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password.
+
+Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize your GitHub or GitLab account to store user and project information. 
+
+:::note
+AI Unlimited creates this repository when you install the AI Unlimited manager. ***READ Jack's slack response to my Q***
+:::
 
 1. Sign in to your GitHub or GitLab account. 
 

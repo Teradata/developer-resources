@@ -13,7 +13,7 @@ tags:
 
 # Persistent volumes on AWS
 
-***WIP***
+***WIP - and will probably move this***
 
 With AI Unlimited, you can redeploy your engine for which the state needs to be persisted regardless of container, pod, or node crashes or terminations. This feature requires persistent storage, that is, storage that lives beyond the lifetime of the container, pod, or node. AI Unlimited uses the instance root volume of the instance to save data in the JupyterLab **/userdata** folder, AI Unlimited database, and configuration files. The data persists if you shut down, restart, or snapshot and relaunch the instance. However, if the instance is terminated, your JupyterLab data and AI Unlimited database are lost, and this could pose problems if running on-the-spot instances, which may be removed without warning. If you want a highly persistent instance, enable the `UsePersistentVolume` parameter to move the JupyterLab data and AI Unlimited database to a separate volume.
 

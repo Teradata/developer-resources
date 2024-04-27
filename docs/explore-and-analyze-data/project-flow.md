@@ -19,9 +19,9 @@ AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-comm
 
 ## Project owners
 
-***placeholder graphic - to be replaced***
+***temporary graphic - being worked***
 
-import ProjectFlowImg from './project-flow_project-owner.svg';
+import ProjectFlowImg from './v-2_project-flow_project-owner.svg';
 
 <ProjectFlowImg />
 

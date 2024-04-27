@@ -78,9 +78,7 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 ## Create a GitHub or GitLab OAuth app
 
-import MyPartial from '/docs/_partials/_create-oauth-app.mdx';
-
-<MyPartial />
+[removed the partial]
 
 
 ## Get deployment details
