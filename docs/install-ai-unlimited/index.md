@@ -39,6 +39,8 @@ Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [A
 <a id="gs-prerequisites"></a>
 ## Prerequisites
 
+***consider making this its own page - first one after the Get Started parent***
+
 - A pay-as-you-go AWS or Azure account on which to provision compute resources
 	- Account requirements&mdash;[AWS](/docs/advanced/aws-requirements.md) or [Azure](/docs/advanced/azure-requirements.md)
 - A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host your repository for authenticating users and storing project information

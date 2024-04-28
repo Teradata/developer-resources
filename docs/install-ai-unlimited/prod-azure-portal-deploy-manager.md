@@ -12,12 +12,16 @@ pagination_next: null
 
 Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
 
 Installing the manager also creates a Git repository for user and project information.
 
 You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
  
+:::note
+By installing the manager, you become the AI Unlimited administrator.
+:::
+
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
@@ -34,9 +38,9 @@ Download the Azure Resource Manager (ARM) template (`/deployments/azure/ai-unlim
    :::note
    References to the Azure Portal are accurate as of April 14, 2024.
    ::: 
-2. Search for **custom deployment**, then select **Deploy a custom template**.
-3. Select **Build your own template in the editor** and then **Load file**.
-4. Choose the template file you downloaded, and click **Save**.  
+2. Select **Deploy a custom template**.
+3. Select **Build your own template in the editor**, then **Load file**.
+4. Choose the template file you downloaded, then select **Save**.
 
 ## Specify instance details
 
@@ -63,11 +67,12 @@ Review the parameters. Provide values for the required parameters. Your organiza
 | Access CIDR | The CIDR IP address range that is permitted to access the instance. | Optional | - | We recommend setting this value to a trusted IP range. Define at least one of Access CIDR, or Security Group to allow inbound traffic unless you create custom security group ingress rules. |
 | AI Unlimited HTTP Port | The port to access the AI Unlimited UI. | Required with default | 3000 | - |
 | AI Unlimited GRPC Port | The port to access the AI Unlimited API. | Required with default | 3282 | - | 
-| Source App Sec Groups (ASG) | The source application security groups that have permission to connect to the AI Unlimited instance. ASGs let you organize your virtual machines (VMs) based on their specific network security policies. These security policies determine what traffic is or is not permissible on your virtual machine. | Optional | - | Select an application security group in the same region as the network interface. |
+| Source App Sec Groups | The source application security groups (ASG) that have permission to connect to the AI Unlimited instance. ASGs let you organize your virtual machines (VMs) based on their specific network security policies. These security policies determine what traffic is or is not permissible on your virtual machine. | Optional | - | Select an application security group in the same region as the network interface. |
 | Destination App Sec Groups | The destination application security groups that have permission to connect to the AI Unlimited instance. | Optional | - | Select an application security group in the same region as the network interface.  |
 | Role Definition ID | The ID of the role to use with AI Unlimited. | Required | - | Use Azure CLI command- Get-AzRoleDefinition command to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure. | Optional | - |  - |
 | Use Key Vault | Specifies whether to use Key Vault to retrieve the secured password during a deployment.  |Optional |New | |
+| Use Persistent Volume | Specifies whether you want to use a persistent volume to store data. | Optional with default |  None | Supported options: new persistent volume, an existing one, or none, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional | 8 | Supports values between 8  and 1000. |
 | Existing Persistent Volume | The ID of the existing persistent volume that you can attach to the instance. | Required if UsePersistentVolume is set to Existing. | - | The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default | latest | The value is a container version tag. |
@@ -79,15 +84,19 @@ Review the parameters. Provide values for the required parameters. Your organiza
 
 ## Create the instance
 
-1. Select **Review + create**, then **Create**. 
-2. Monitor the deployment status on the **Notifications** page. 
+***Can a tester please provide a screen recording so we can verify these steps?***
 
-You'll see connection parameters for the manager in **Outputs.** 
+1. Select **Review + create**.
+2. Select **Create**.<br />
+On the **Notifications** page, you can monitor progress. ***(true?)***
 
-You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
+When deployment is complete, the **Outputs** page shows values generated for the created resources.
 
-***Haven't actually seen what happens after clicking Create. Is there really a "Notifications" page? Is Outputs just another section that appears?***
+***Does it show the actual url or just the public and private IP addresses?***
+
+You'll need the URL and other values to access the manager and set up AI Unlimited.
+
 
 ## What's next
 
-In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+Access the manager, and [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).

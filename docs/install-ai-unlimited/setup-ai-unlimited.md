@@ -13,46 +13,32 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-***WIP - will be for the admin/install user only***
+After you install the manager, access it using the URL you received by deploying its cloud resources: `http://[ip_or_hostname]:[port]`.
 
+Then, in the manager, complete the three setup steps ***(different for old ui)*** to set up AI Unlimited. 
+
+You'll find additional information about some of the fields here. 
+
+:::note
+If you installed the manager yourself, some setup details will be familiar from the cloud template. If you did not install the manager yourself, or you need guideance, you might reach out to an admin.
+:::
+
+***Reason why the focus is on the min required for only this step?***
 :::note
 Before you start, make sure you have all the necessary details to update the cloud integration section. You must have the minimum configuration values, including **Default region**, **Default subnet**, and **Default security groups**. If you are unsure, Teradata recommends reaching out to your cloud administrator for guidance.
 :::
 
-Access AI Unlimited setup:
 
-- **http://localhost:3000** (if you are using the [QuickStart](/docs/install-ai-unlimited/quickstart/index.md))
 
-- **http://[ip_or_hostname]:[port]** (for a [full](/docs/install-ai-unlimited/production/index.md) installation)
-
-Are you an AI Unlimited user or administrator? Choose your path: 
-
-***This topic should be for 1 task only--initial setup. There will be other topics--for an admin to change settings (under "manage" in the TOC), and for any user to get their API key (under "explore and analyze data in the TOC). 4/25: let's add a topic under "manage" for any user - monitor projects (status and logs).***
-
-- If you're an AI Unlimited user, AI Unlimited is set up and ready to use. Authorize using your Git provider credentials. This authorizes the AI Unlimited to authenticate the user and access your Git repo. Copy the API Key [Glossary] from your **Profile** page and then proceed to [running your first workload](/docs/explore-and-analyze-data/example-projects.md) on AI Unlimited.
-
-- If you're an AI Unlimited administrator, complete the setup. To learn more about specific fields, click a section below. 
-
-- If you're a returning AI Unlimited administrator looking to modify the setup information, authorize using your GitHub credentials and select **SETUP**.
 
 
 <details>
 
 <summary>Step 1: The basics</summary>
 
-* **Service base URL**: The root URL of the service. This value determines the URL you’ll be redirected to after successful Git authorization and varies depending on the type of installation. 
-
-    * QuickStart: **http://localhost:3000** 
-    * Full install: **http://[ip_or_hostname]:[port]**
-
-* **Git provider**: The Git provider used to store project details. 
-* **Service log levels**: Defines the level of detail recorded in the log files. The default is **Info**; however, Teradata recommends selecting **Debug**. This option captures fine-grained informational events that could help you debug errors.
-
-* **Engine IP network type**: The type of network assigned to an engine instance that would allow AI Unlimited to communicate with the engine. Select **Private** if you're deploying the engine in the same VPC as AI Unlimited. Select **Public** if AI Unlimited is running on a local container.
-
 * **Use TLS**: Indicates if [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) support is enabled to secure communication to AI Unlimited. If you use a self-hosted AI Unlimited instance without a load balancer, Teradata recommends setting this option to **True** and uploading or generating TLS certificates. For enterprise users employing a load balancer, set this option to **False**, as the load balancer manages TLS certificates.
     
-    If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option. You can also select **GENERATE TLS** to use a Teradata system-generated certificate. It automatically renews before it expires.
+If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option. You can also select **GENERATE TLS** to use a Teradata system-generated certificate. It automatically renews before it expires.
 
 After you've filled in all the details, select **Update**.
 
@@ -133,7 +119,6 @@ Select **Update** and then **Login**.
 
 If you're an AI Unlimited administrator, go to the **Profile** page to copy your API Key. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
 
-Now you can start using AI Unlimited to [explore and analyze data](/docs/explore-and-analyze-data).
 
 
 ## What's next

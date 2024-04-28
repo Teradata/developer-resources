@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 # Run the manager and JupyterLab using Docker
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited.
 
-***How can we make clear that their user and project info repo gets created as part of this process?***
+Installing the manager also creates a Git repository for user and project information.
 
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
@@ -25,10 +25,6 @@ For installation support, ask the [community](https://support.teradata.com/commu
 ## Prerequisites
 
 In addition to the standard [AI Unlimited prerequisites](/docs/install-ai-unlimited/#gs-prerequisties), make sure you have [Docker](https://www.docker.com/get-started/) installed on your machine.
-
-## Subscribe
-
-If you haven't already, subscribe to AI Unlimited on the [AWS Marketplace] ***need link*** or [Azure Marketplace] ***need link***.
 
 
 ## Set configuration file locations
@@ -114,13 +110,19 @@ When JupyterLab is ready, you can access it at `http://localhost:8888`, and ente
 
 ## Get engine deployment details
 
-***Any changes to make for the old UI? Keep both files - old (PPP, initially) and new (longer-term)***
+***Any changes to make for the old UI? Come back to this after finishing setup.***
 
-***Come back to this after finishing setup.***
-
-When you set up AI Unlimited in the manager (that's next), you'll provide details about deploying the engine. 
+When you set up AI Unlimited (that's next), you'll provide details about deploying the engine. 
 
 You can get the values for those fields from your cloud service provider's console. Or, copy the fields shown here, and ask an admin for their values ahead of time. 
+
+***Setup includes many more details than these. Are these the only ones in the the CSP console (I didn't check)? The idea being, that the QS user might not have access to the console?***
+
+***Wouldn't they also need help with the TLS certificate & key (we want them to use TLS), GitLab group access ID or GutHub organization ID, IAM role, inbound security items other than security group names.***
+
+***Will they know to select Private or Public for accessing the engine? The setup shows they can enter multiple security groups, but the cloud parm is the default group--would the user know the other security group names?***
+
+***I'd like to better understand the rationale for this content. Might it lead them to think the setup is this simple?***
 
 <Tabs>
 <TabItem value="aws" label="AWS">

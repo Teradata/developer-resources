@@ -22,6 +22,8 @@ When you install the AI Unlimited manager from your cloud service provider's con
 
 You can get the values from your cloud service provider's console. Or, copy the parameter names shown here, and ask an admin for their values.
 
+***Discuss***
+
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
@@ -46,7 +48,7 @@ Subnet:
 Security Group:
 	```
 
-***I also see "Public Key" (would go after Region) and "Role Definition Id" (would be last). There's a slack comment.***
+***"Public Key" (would go after Region) and "Role Definition Id" (would be last) are also required. There's a slack comment. Will revisit after working through Azure account reqs.***
 
 </TabItem>
 </Tabs>

@@ -12,11 +12,15 @@ pagination_next: null
 
 Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
 
 Installing the manager also creates a Git repository for user and project information.
 
 You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+
+:::note
+By installing the manager, you become the AI Unlimited administrator.
+:::
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -102,20 +106,26 @@ We recommend selecting the region closest to your primary work location.
 3. Select **Next**.
 4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
+
 ## Review and create the stack
+
+***Can a tester please provide a screen recording so we can verify these steps?***
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
-3. Select **Submit** to deploy the stack. 
-4. Monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
+3. Select **Submit** to deploy the stack.<br />
+On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the manager is ready. 
 
-Use the URLs in **Outputs** to view the created resources. You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
+The **Outputs** tab shows the values generated for the created resources.
 
-***Haven't actually seen what happens after clicking Submit. Where does the status appear? Is Outputs just another section that appears?***
+***Does it show the actual url or just the public and private IP addresses?***
+
+You'll need the URL and other values to access the manager and set up AI Unlimited.
+
 
 ## What's next
 
-In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+Access the manager, and [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
 
 

@@ -1,13 +1,13 @@
 ---
-id: other-resources-ai-unlimited
-title: Other resources
+id: resources-ai-unlimited
+title: Resources
 description: Find additional installation information here.
-sidebar_label: Other resources
+sidebar_label: Resources
 sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
 
-# Other resources
+# Resources
 
-Here you'll find additional topics related to installation.
+Here you'll find installation-related resources.
