@@ -153,7 +153,7 @@ The credentials received from GitLab when your [OAuth app was created](/docs/ins
 
 Two groups in your GitLab account can help with user and repository management and access control.
 
-Members of the **authorizing group** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GutLab account user can sign in and authenticate.
+Members of the **authorizing group** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GitLab account user can sign in and authenticate.
 
 All project repositories will be created in the **repository group**. If you don't specify a group, the projects will all be in your personal GitLab space.
 
