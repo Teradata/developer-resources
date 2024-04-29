@@ -110,19 +110,19 @@ When JupyterLab is ready, you can access it at `http://localhost:8888`, and ente
 
 ## Get engine deployment details
 
-***Any changes to make for the old UI? Come back to this after finishing setup.***
+***MEM: Come back to this after finishing setup.***
 
-When you set up AI Unlimited (that's next), you'll provide details about deploying the engine. 
+In the AI Unlimited setup (that's next), step 3 specifically, you'll provide details for deploying the engine.
 
-You can get the values for those fields from your cloud service provider's console. Or, copy the fields shown here, and ask an admin for their values ahead of time. 
+You can get the values for those fields from your cloud service provider's console. Or, copy the fields, shown here, and ask an admin for their values ahead of time. 
 
-***Setup includes many more details than these. Are these the only ones in the the CSP console (I didn't check)? The idea being, that the QS user might not have access to the console?***
+***The idea here is they might not have access to the CSP console to get these details themselves, correct?***
 
-***Wouldn't they also need help with the TLS certificate & key (we want them to use TLS), GitLab group access ID or GutHub organization ID, IAM role, inbound security items other than security group names.***
+***Many fields in setup setp 3 have similar-sounding fields in CloudFormation (didn't look at  ARM template). In those cases, are the CloudFormation parms for the manager but the setup fields are for the engine?***
 
-***Will they know to select Private or Public for accessing the engine? The setup shows they can enter multiple security groups, but the cloud parm is the default group--would the user know the other security group names?***
+***So the values of region, subnet, and security group (or just region and security group, for Azure) should be the same for the manager and the engine?***
 
-***I'd like to better understand the rationale for this content. Might it lead them to think the setup is this simple?***
+***Need to explain a little more... are these the minimum configuration? And not sure "required" describes these fields. For example, security group is not required (no asterisk on the UI).***
 
 <Tabs>
 <TabItem value="aws" label="AWS">
@@ -134,10 +134,10 @@ Default security group
 </TabItem>
 
 <TabItem value="azure" label="Azure">
-	```bash
-	Default region
-    Default security group
-	```
+```bash
+Default region
+Default security group
+```
 </TabItem>
 </Tabs> 
 

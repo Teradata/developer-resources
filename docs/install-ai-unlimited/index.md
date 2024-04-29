@@ -27,7 +27,7 @@ You connect your notebook to the AI/ML engine on [AWS](https://aws.amazon.com/) 
 ## Included in AI Unlimited
 
 - An AI/ML engine that you deploy on AWS or Azure
-- A manager, which orchestrates the engine's deployment&mdash;and includes a web-based user interface for monitoring projects
+- The AI Unlimited manager, which orchestrates the engine's deployment&mdash;and includes a web-based user interface for monitoring projects
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) for managing projects in notebooks
 
 
@@ -49,7 +49,7 @@ Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [A
 - JupyterLab
 
 :::tip
-You might like to get [required deployment details](/docs/advanced/deployment-details.md) ahead of time. You'll need them when you install the manager.
+You might like to get certain [deployment details](/docs/advanced/deployment-details.md) ahead of time. You'll need them when you install the AI Unlimited manager on AWS or Azure.
 :::
 
 ***maybe we no longer want the note that follows - too confusing with the new option to deploy from the marketplace - might depend on the name of the new deployment method***

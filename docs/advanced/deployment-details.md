@@ -18,11 +18,11 @@ import TabItem from '@theme/TabItem';
 These details do not apply to the [QuickStart](/docs/advanced/quickstart).
 :::
 
-When you install the AI Unlimited manager from your cloud service provider's console, you'll provide values for required parameters. 
+When you install the AI Unlimited manager on [AWS](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md) or [Azure](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md), you'll provide values for cloud parameters. 
 
-You can get the values from your cloud service provider's console. Or, copy the parameter names shown here, and ask an admin for their values.
+You can get these values from the AWS or Azure console. Or, copy the parameter names shown here, and ask an admin for their values.
 
-***Discuss***
+***Need to make clear the relationship between the parms here and all the parms. Are these the "minimum required configuration"?***
 
 <Tabs>
 <TabItem value="aws1" label="AWS">

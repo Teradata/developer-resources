@@ -18,10 +18,6 @@ Installing the manager also creates a Git repository for user and project inform
 
 You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
-:::note
-By installing the manager, you become the AI Unlimited administrator.
-:::
-
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
