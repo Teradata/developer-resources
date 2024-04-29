@@ -28,27 +28,25 @@ You can get these values from the AWS or Azure console. Or, copy the parameter n
 <TabItem value="aws1" label="AWS">
 
 	```bash
-	Subscription ID: 
-    Resource Group:
-    AWS Region: 
-    Virtual Network (VNet): 
+	Account ID: 
+    Region: 
+    Virtual Private Cloud (VPC): 
     Subnet: 
-    Network Security Group:
-    RoleDefinition Id: 
+    Security Group:
 	```
 
 </TabItem>
 <TabItem value="azure" label="Azure">
 
 	```bash
-Subscription: 
-Region: 
-Network:
-Subnet: 
-Security Group:
+    Subscription: 
+    Region: 
+    Public Key:
+    If your organization administrator created the custom role on your behalf, get the following parameters as well:
+    Network:
+    Subnet: 
+    Role Definition Id:
 	```
-
-***"Public Key" (would go after Region) and "Role Definition Id" (would be last) are also required. There's a slack comment. Will revisit after working through Azure account reqs.***
 
 </TabItem>
 </Tabs>
