@@ -27,19 +27,19 @@ Or for the QuickStart, use `http://localhost:3000`.
 
 <summary>Initial setup</summary>
 
-**Base URL**
+**AI Unlimited base URL**
 
-The URL you used to access this setup. This is the AI Unlimited URL you received when you installed the manager.
+The URL you used to access the setup. You received it when you installed the manager.
 
 
-**Engine IP Network Type**
+**Engine IP network type**
 
 Select **Private** if you're deploying the engine in the same Virtual Private Cloud as AI Unlimited.
 
 Public or Private refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
 
 
-**Service TLS Certificate** and **Service TLS Certificate Key**
+**Service TLS certificate** and **Service TLS certificate key**
 
 We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connections to the AI Unlimited service and safeguard your data in transit.
 
@@ -137,13 +137,14 @@ Two organizations in your GitHub account can help with user and repository manag
 
 Members of the **authorizing organization** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GutHub account user can sign in and authenticate.
 
-All project repositories will be created in the **repository organization**. If you don't specify an organization, the projects will all be in your personal GitHub space.
+All project repositories will be created in the **repository organization**. ***(it's not on the old UI - asking the team)*** If you don't specify an organization, the projects will all be in your personal GitHub space.
+
+
+Select **Authenticate**, then sign in using your GitHub credentials.
 
 </TabItem>
 
 <TabItem value="gitlab" label="GitLab">
-
-***need to see GitLab UI**
 
 **GitLab client ID** and **GitLab client secret**
 
@@ -153,14 +154,9 @@ The credentials received from GitLab when your [OAuth app was created](/docs/ins
 
 Two groups in your GitLab account can help with user and repository management and access control.
 
-Members of the **authorizing group** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GitLab account user can sign in and authenticate.
+Members of the **authorizing group** ***(it's not on the old UI - asking the team)*** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GitLab account user can sign in and authenticate.
 
-All project repositories will be created in the **repository group**. If you don't specify a group, the projects will all be in your personal GitLab space.
-
-
-**GitLab base URL**
-
-The URL for your GitLaB account.
+All project repositories will be created in the **repository group**. ***(it's not on the old UI - asking the team)*** If you don't specify a group, the projects will all be in your personal GitLab space.
 
 Select **Authenticate**, then sign in using your GitHub credentials.
 

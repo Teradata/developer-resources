@@ -14,8 +14,6 @@ Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimi
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
 
-Installing the manager also creates a Git repository for user and project information.
-
 You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::tip
@@ -101,9 +99,9 @@ We recommend selecting the region closest to your primary work location.
 <details>
 
 <summary>Test-AWS and AI Unlimited parameters</summary>
-| Parameter | Description | Required? | 
+| Parameter | Description | Notes | 
 |---------|-------------|-----------|
-| Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks.	|Required<br/>Default: NA<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
+| Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks.<br />**Required**<br/>**Default: NA**<br/> |The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
 |AiUnlimitedName| The name of the AI Unlimited instance. |Required with default<br/>Default: ai-unlimited<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
 | InstanceType | The EC2 instance type that you want to use for the service. |Required with default<br/>Default: t3.small<br/> We recommend using the default instance type to save costs. |
 | RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default<br/>Default: 8<br/>Supports values between 8 and 1000. |

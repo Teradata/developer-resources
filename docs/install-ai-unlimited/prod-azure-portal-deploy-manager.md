@@ -14,8 +14,6 @@ Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimi
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
 
-Installing the manager also creates a Git repository for user and project information.
-
 You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
  
 :::tip

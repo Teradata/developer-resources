@@ -76,7 +76,9 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	
 	***But what about the project team in this simple workflow? Do we expect a team to use it? But... I still need to learn about the "team" concept.***
 	
-3. Optionally, create an authorization object to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
+	***Maybe we can say this creates a repository in their Git provider account.***
+	
+3. Optionally, create an object store authorization to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
 
 	***Normally they create a shared authorization or one for a single user. In this sample workflow, maybe this is not optional? Otherwise, they'd have to use SQL to create an authoriation for themselves?***
     **TA: Auth is required only for external connectivity, in this example as there is no external connection, this step is optional**
