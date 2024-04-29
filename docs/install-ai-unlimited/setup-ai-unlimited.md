@@ -70,7 +70,7 @@ The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subn
 
 **Default IAM role**
 
-The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM using this policy **(add link)**.
+The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy **(add link)**.
 
 If AI Unlimited creates the IAM role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
 
@@ -104,9 +104,11 @@ The Azure region in which to deploy the engine. We recommend choosing the region
 
 You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
+**Inbound security**
+
 Use these fields to allow source traffic to reach the engine:
 - [CIDRs](/docs/glossary.md#glo-cidr)
-- [Network security groups](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) ***once I see the Azure UI, make sure the name is correct there.***
+- [Application security groups](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) ***check the Azure UI***
 
 Select **Save Changes**.
 
@@ -169,7 +171,7 @@ Select **Authenticate**, then sign in using your GitHub credentials.
 
 Go to your **Profile**, and copy your API key. You'll use it when you connect to the engine from a Jupyter notebook.
 
-If you enabled TLS, select **Restart** to restart the AI Unlimited service and apply the change. ***Only if returning to change the TLS setting?***
+If you enabled TLS, select **Restart** to restart the AI Unlimited service and apply the change. ***Only if returning to change the TLS setting? or initial setup too?***
 
 
 
