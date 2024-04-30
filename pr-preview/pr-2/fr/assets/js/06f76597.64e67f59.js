@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_unlimited_docs=self.webpackChunkai_unlimited_docs||[]).push([[7419],{9924:e=>{e.exports=JSON.parse('{"permalink":"/ai-unlimited-docs/fr/releases/tags/hola","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

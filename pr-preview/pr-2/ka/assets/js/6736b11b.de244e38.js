@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_unlimited_docs=self.webpackChunkai_unlimited_docs||[]).push([[2395],{6443:e=>{e.exports=JSON.parse('{"permalink":"/ai-unlimited-docs/ka/whatsnew","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_unlimited_docs=self.webpackChunkai_unlimited_docs||[]).push([[1309],{4507:e=>{e.exports=JSON.parse('{"permalink":"/ai-unlimited-docs/ja/whatsnew/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

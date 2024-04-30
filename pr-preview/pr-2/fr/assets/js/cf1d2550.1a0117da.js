@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_unlimited_docs=self.webpackChunkai_unlimited_docs||[]).push([[2499],{872:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/ai-unlimited-docs/fr/whatsnew/tags/docusaurus","allTagsPath":"/ai-unlimited-docs/fr/whatsnew/tags","count":4,"unlisted":false}')}}]);

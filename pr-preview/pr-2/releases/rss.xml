@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Teradata AI Unlimited Blog</title>
+        <link>https://teradata.github.io/ai-unlimited-docs/releases/</link>
+        <description>Teradata AI Unlimited Blog</description>
+        <lastBuildDate>Fri, 28 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[General availibility !! 🎉]]></title>
+            <link>https://teradata.github.io/ai-unlimited-docs/releases/finally-ga/</link>
+            <guid>https://teradata.github.io/ai-unlimited-docs/releases/finally-ga/</guid>
+            <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is a page describing our paid public preview release]]></description>
+            <content:encoded><![CDATA[<p>This is a page describing our paid public preview release</p>]]></content:encoded>
+            <category>hola</category>
+            <category>docusaurus</category>
+        </item>
+        <item>
+            <title><![CDATA[Paid public preview]]></title>
+            <link>https://teradata.github.io/ai-unlimited-docs/releases/paid-public-preview/</link>
+            <guid>https://teradata.github.io/ai-unlimited-docs/releases/paid-public-preview/</guid>
+            <pubDate>Tue, 28 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is a page describing our paid public preview release]]></description>
+            <content:encoded><![CDATA[<p>This is a page describing our paid public preview release</p>]]></content:encoded>
+            <category>hola</category>
+            <category>docusaurus</category>
+        </item>
+    </channel>
+</rss>
