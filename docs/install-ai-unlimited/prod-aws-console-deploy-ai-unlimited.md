@@ -149,14 +149,12 @@ On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_
 
 The **Outputs** tab shows the values generated for the created resources.
 
-***Does it show the actual url or just the public and private IP addresses?***
-
-You'll need the URL and other values to access the manager and set up AI Unlimited.
+You'll need the URL to access the manager to set up AI Unlimited.
 
 
 ## What's next
 
-Access the manager, and [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+Now you're ready to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
 
 

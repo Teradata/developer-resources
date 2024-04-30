@@ -40,8 +40,6 @@ Download the Azure Resource Manager (ARM) template (`/deployments/azure/ai-unlim
 
 Review the parameters. Provide values for the required parameters. Your organization might require others.
 
-***We are working on the table/scrollbar issues.***
-
 <details>
 
 <summary>Azure and AI Unlimited parameters</summary>
@@ -82,15 +80,13 @@ Review the parameters. Provide values for the required parameters. Your organiza
 
 1. Select **Review + create**.
 2. Select **Create**.<br />
-On the **Notifications** page, you can monitor progress. ***(true?)***
+On the **Notifications** page, you can monitor progress. ***(accurate?)***
 
 When deployment is complete, the **Outputs** page shows values generated for the created resources.
 
-***Does it show the actual url or just the public and private IP addresses?***
-
-You'll need the URL and other values to access the manager and set up AI Unlimited.
+You'll need the URL to access the manager and set up AI Unlimited.
 
 
 ## What's next
 
-Access the manager, and [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+Now you're ready to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).

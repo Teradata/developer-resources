@@ -17,9 +17,10 @@ After you install the manager, access it using the URL you received at the end o
 
 Or for the QuickStart, use `http://localhost:3000`.
 
+***(remove reference to QuickStart?)***
 
 :::note
-***(verifying)*** Make sure you have values for the minimum configuration for the cloud integration: **Default region**, **Default subnet**, and **Default security group**. If you are unsure of them, or any other setup details, we recommend that you reach out to your admin.
+***(verifying)*** Make sure you have values for the minimum configuration of the the cloud integration: **Default region**, **Default subnet**, and **Default security group**. If you are unsure of them, or any other setup details, we recommend that you reach out to your admin.
 :::
 
 
@@ -27,16 +28,22 @@ Or for the QuickStart, use `http://localhost:3000`.
 
 <summary>Initial setup</summary>
 
+
 **AI Unlimited base URL**
 
 The URL you used to access the setup. You received it when you installed the manager.
+
+
+**Service log level**
+
+The level of detail to see in AI Unlimited service logs.
 
 
 **Engine IP network type**
 
 Select **Private** if you're deploying the engine in the same Virtual Private Cloud as AI Unlimited.
 
-Public or Private refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
+**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
 
 
 **Service TLS certificate** and **Service TLS certificate key**
@@ -44,6 +51,8 @@ Public or Private refers to how AI Unlimited should communicate with the engine.
 We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connections to the AI Unlimited service and safeguard your data in transit.
 
 If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
+
+***(make sure ok not to talk about load balancers - pretty sure that was a previous way to look at it)***
 
 Or select **Generate Certs** to use a Teradata system-generated certificate. It automatically renews before it expires.
 
@@ -55,7 +64,7 @@ Select **Save Changes**.
 
 <summary>Cloud integration</summary>
 
-You can modify these parameters **(all of them?)** from a Jupyter notebook when you connect to the AI Unlimited engine.
+You can modify these parameters ***(all of them--ask about each one?)*** in a Jupyter notebook when you connect to the AI Unlimited engine.
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
@@ -64,9 +73,15 @@ You can modify these parameters **(all of them?)** from a Jupyter notebook when 
 
 The AWS region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
 
+***(they can specify a different region in their notebook)***
+
+
 **Default subnet ID**
 
 The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) in which to deploy the engine. The AWS Management Console shows the subnets in the region.
+
+***(they can specify a different subnet in their notebook)***
+
 
 **Default IAM role**
 
@@ -74,19 +89,45 @@ The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.
 
 If AI Unlimited creates the IAM role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
 
+***(can they really specify a different role from their notebook?)***
+
+***(no functional difference between old and new UI here?)***
+
+
 **Resource tags**
 
 You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.
+
+***(can they specify different ones in their notebook? probably not)***
+
 
 **Inbound security**
 
 Use these fields to allow source traffic to reach the engine:
 
+
 - [CIDRs](/docs/glossary.md#glo-cidr)
+
+***(can they specify different ones in their notebook?)***
+
+
 - [Security groups](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html)
-***asking about: "make sure the default security group is the same as the one in the template to ensure AI Unlimited can communicate with the engine"***
-- Role prefix ***(link)(change to "prefix list name"?)***
+
+***(asking about: "make sure the default security group is the same as the one in the template to ensure AI Unlimited can communicate with the engine")***
+
+***(can they specify a/some different security groups in their notebook?)***
+
+
+- Role prefix ***(link? https://docs.aws.amazon.com/vpc/latest/userguide/working-with-aws-managed-prefix-lists.html)(change to "prefix list name"?)***
+
+***(just 1, or many separated by commas?)***
+
+***(can they specify one/some in their notebook?)***
+
+
 - [Permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html)
+
+***(just 1 or some? Can also specify in their notebook?)***
 
 Select **Save Changes**.
 
@@ -94,21 +135,37 @@ Select **Save Changes**.
 
 <TabItem value="azure" label="Azure"> 
 
-***Smit to add Azure to the figma***
-
 **Default region**
 
 The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
+
+***(they can specify a different region in their notebook)***
+
+
+***(Do we need a field for the Azure service principal?  there's text about it on the old UI's figma - nothing about it on the new UI though)***
+
+
+**Inbound security**
+
+Use these fields to allow source traffic to reach the engine:
+
+- [CIDRs](/docs/glossary.md#glo-cidr)
+
+***(can they specify different ones in their notebook?)***
+
+
+- [Application security groups](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups)
+
+***(this is what we call them on the new UI)***
+
+***(they can specify different ones in their notebook? probably not)***
+
 
 **Resource tags**
 
 You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
-**Inbound security**
-
-Use these fields to allow source traffic to reach the engine:
-- [CIDRs](/docs/glossary.md#glo-cidr)
-- [Application security groups](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) ***check the Azure UI***
+***(can they specify different ones in their notebook? probably not)***
 
 Select **Save Changes**.
 
@@ -127,43 +184,58 @@ Select **Save Changes**.
 
 <TabItem value="github" label="GitHub">
 
+**GitHub base URL**
+
+The URL for your GitHub account.
+
+
 **GitHub client ID** and **GitHub client secret**
 
 The credentials received from GitHub when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
 
+
 **Organization access**
 
-Two organizations in your GitHub account can help with user and repository management and access control.
+Two organizations in your GitHub account can help with access control and repository management.
 
-Members of the **authorizing organization** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GutHub account user can sign in and authenticate.
+Members of the **authorizing organization** are able to sign in and authenticate themselves in AI Unlimited. If you don't specify an organization, any GutHub account user can sign in and authenticate.
 
-All project repositories will be created in the **repository organization**. ***(it's not on the old UI - asking the team)*** If you don't specify an organization, the projects will all be in your personal GitHub space.
+All project repositories are created in the **repository organization**. ***(it's not on the old UI*** If you don't specify an organization, the projects will all be in your personal GitHub space.
 
 
 Select **Authenticate**, then sign in using your GitHub credentials.
 
 </TabItem>
 
+
 <TabItem value="gitlab" label="GitLab">
+
+**GitLab base URL**
+
+The URL for your GitLab account.
+
 
 **GitLab client ID** and **GitLab client secret**
 
 The credentials received from GitLab when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
 
+
 **Group access**
 
-Two groups in your GitLab account can help with user and repository management and access control.
+Two groups in your GitLab account can help with access control and repository management.
 
-Members of the **authorizing group** ***(it's not on the old UI - asking the team)*** will be able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GitLab account user can sign in and authenticate.
+Members of the **authorizing group** ***(it's not on the old UI)*** are able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GitLab account user can sign in and authenticate.
 
-All project repositories will be created in the **repository group**. ***(it's not on the old UI - asking the team)*** If you don't specify a group, the projects will all be in your personal GitLab space.
+All project repositories are created in the **repository group**. ***(it's not on the old UI)*** If you don't specify a group, the projects will all be in your personal GitLab space.
 
-Select **Authenticate**, then sign in using your GitHub credentials.
+Select **Authenticate**, then sign in using your GitLab credentials.
 
 </TabItem>
 </Tabs>
 
+
 </details>
+
 
 Go to your **Profile**, and copy your API key. You'll use it when you connect to the engine from a Jupyter notebook.
 

@@ -19,6 +19,8 @@ After you install the manager, access it using the URL you received at the end o
 
 Or for the QuickStart, use `http://localhost:3000`.
 
+***(remove reference to QuickStart?)***
+
 In the manager, complete the three steps to set up AI Unlimited. You'll find additional information about some of the fields here. 
 
 :::note
