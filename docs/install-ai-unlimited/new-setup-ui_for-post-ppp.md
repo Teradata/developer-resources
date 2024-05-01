@@ -13,19 +13,16 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Set up AI Unlimited (new UI - post ppp)
+# Set up AI Unlimited (new UI - post PPP)
 
-After you install the manager, access it using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`.
+***this is WIP***
 
-Or for the QuickStart, use `http://localhost:3000`.
+After you install the manager, access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
-***(remove reference to QuickStart?)***
 
-In the manager, complete the three steps to set up AI Unlimited. You'll find additional information about some of the fields here. 
+## Complete the fields
 
-:::note
-Make sure you have values for the minimum configuration of the cloud integration: **Region**, **Subnet**, and **("Security group names" is not required & there are other fields for limiting inbound traffic - none look to be required)**. If you are unsure of them, or any other setup details, we recommend that you reach out to your admin.
-:::
+You'll find information about each setup section here.
 
 <details>
 
@@ -113,6 +110,16 @@ If AI Unlimited creates the [IAM role](https://docs.aws.amazon.com/IAM/latest/Us
 Public or Private refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
 
 </details>
+
+
+## Before you leave (temp section name)
+
+1. Go to your **Profile**, and copy your API key.<br />
+You'll use it when you connect to the engine from a Jupyter notebook.
+
+2. If you enabled TLS, select **Restart**. This restarts the AI Unlimited service with TLS in place.
+
+***(ok to get their API key before restarting, if they enabled TLS, that is)***
 
 
 ## What's next

@@ -108,40 +108,6 @@ When the manager is ready, you can access it at `http://localhost:3000`.
 When JupyterLab is ready, you can access it at `http://localhost:8888`, and enter the token. 
 
 
-## Get engine deployment details
-
-***MEM: Come back to this after finishing setup.***
-
-In the AI Unlimited setup (that's next), step 3 specifically, you'll provide details for deploying the engine.
-
-You can get the values for those fields from your cloud service provider's console. Or, copy the fields, shown here, and ask an admin for their values ahead of time. 
-
-***The idea here is they might not have access to the CSP console to get these details themselves, correct?***
-
-***Many fields in setup setp 3 have similar-sounding fields in CloudFormation (didn't look at  ARM template). In those cases, are the CloudFormation parms for the manager but the setup fields are for the engine?***
-
-***So the values of region, subnet, and security group (or just region and security group, for Azure) should be the same for the manager and the engine?***
-
-***Need to explain a little more... are these the minimum configuration? And not sure "required" describes these fields. For example, security group is not required (no asterisk on the UI).***
-
-<Tabs>
-<TabItem value="aws" label="AWS">
-```bash
-Default region
-Default subnet
-Default security group
-```
-</TabItem>
-
-<TabItem value="azure" label="Azure">
-```bash
-Default region
-Default security group
-```
-</TabItem>
-</Tabs> 
-
-
 ## What's next
 
 In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).

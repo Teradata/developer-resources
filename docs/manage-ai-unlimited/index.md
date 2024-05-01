@@ -15,11 +15,11 @@ Here's what different users can do.
 
 - [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-resume-project.md) to *pay as you go*
 
-- [Monitor the status](/docs/manage-ai-unlimited/monitor-projects.md) of projects they use
+- [Monitor the status](/docs/manage-ai-unlimited/monitor-projects.md) of projects
 
 ## Project owners
 
-A user who creates a project is that project's owner.
+A user who creates a project is the project's owner.
 
 - [Add collaborators](/docs/manage-ai-unlimited/add-collaborators.md)
 
@@ -28,4 +28,4 @@ A user who creates a project is that project's owner.
 
 The user who [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md) is the administrator.
 
-- [Change overall settings](/docs/manage-ai-unlimited/change-settings.md)
+- [Change overall settings](/docs/manage-ai-unlimited/change-settings.md) ***(will explain this better - what does this really mean)***

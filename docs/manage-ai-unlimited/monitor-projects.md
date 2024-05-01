@@ -10,4 +10,6 @@ pagination_next: null
 
 # Monitor projects
 
-***admin sees them all, general user sees only those they use***
+***old ui - no diff beween what admin and general user sees - they just see a table with all the projects and their statuses***
+
+***new ui - admin sees all projects, with statuses, and logs - general user sees that for just their own projects***
