@@ -16,3 +16,7 @@ Or, get JupyterLab with the AI Unlimited kernel now:
 
 - Install it on [AWS](/docs/advanced/jupyterlab/install-jupyterlab-aws.md) or on [Azure](/docs/advanced/jupyterlab/install-jupyterlab-azure.md)
 - [Run it locally](/docs/advanced/jupyterlab/run-jupyterlab-docker.md) in a Docker container
+
+:::note
+The [QuickStart](/docs/advanced/quickstart) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
+:::

@@ -43,7 +43,7 @@ You'll complete this simple workflow:
 
 - Access the AI Unlimited manager and get your API key. 
 
-	***link to API key topic - not all users will go through this workflow, so we need a separate topic - it should be easy to find - first one under Explore and Analzye data***
+	***we can include the how-to here for getting the api key - will probably also have a separate topic or put instrucs on the parent page***
 
 - Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
@@ -76,7 +76,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	
 	***But what about the project team in this simple workflow? Do we expect a team to use it? But... I still need to learn about the "team" concept.***
 	
-3. Optionally, create an authorization object to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
+3. Optionally, create an object store authorization to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
 
 	***Normally they create a shared authorization or one for a single user. In this sample workflow, maybe this is not optional? Otherwise, they'd have to use SQL to create an authoriation for themselves?***
     **TA: Auth is required only for external connectivity, in this example as there is no external connection, this step is optional**
@@ -197,7 +197,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 	%project_backup project=<Project_Name>
 	```
 
-9. Suspend the engine.
+9. Suspend the engine to avoid incurring charges for unneeded engine resources.
     ```bash
     %project_engine_suspend project=<Project_Name>
     ```

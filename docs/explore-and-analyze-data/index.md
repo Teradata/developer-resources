@@ -21,3 +21,7 @@ If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installato
 - See the overall [project flow](/docs/explore-and-analyze-data/project-flow.md)
 - Explore a collection of [example project notebooks](/docs/explore-and-analyze-data/example-projects.md)&mdash;and try them out
 - See the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) the AI Unlimited Jupyter Kernel adds to your notebooks
+
+:::tip
+To avoid incurring charges for unneeded engine resources, remember to [suspend](/docs/manage-ai-unlimited/suspend-resume-project.md) projects you're not working on.
+:::

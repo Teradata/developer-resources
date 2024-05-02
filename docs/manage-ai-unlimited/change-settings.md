@@ -1,25 +1,32 @@
 ---
 id: change-settings
-title: Change settings (for administrators)
+title: Change settings (administrator only)
 description: Learn how to change AI Unlimited settings.
-sidebar_label: Change settings (for administrators)
-sidebar_position: 3
+sidebar_label: Change settings (administrator only)
+sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
 
-# Change settings (for administrators)
+# Change settings (administrator only)
 
-***Might need 2 separate topics - old UI vs. new UI. Will figure that out when I work on Setup.***
+***WIP***
 
-To modify the setup information, do the following: 
+***Needs 2 separate topics - old UI vs. new UI.***
 
-1. Go to [AI Unlimited setup](/docs/install-ai-unlimited/setup-ai-unlimited.md) page.
+If you are the AI Unlimited administrator, you can change AI Unlimited settings. 
 
-2. Authorize using your GitHub credentials and select **SETUP**. 
+***(make clear what they can/would change and why)***
 
-3. Modify the required fields and update the section.
+:::note
+The user who [set up AI Unlimited](/docs/install-ai-unlimted/setup-ai-unlimited.md) is the administrator.
+:::
 
-4. If you've enabled TLS, select **Restart** to restart the service and apply the changes.
+1. Access the manager ***(more details)***, sign in to your GitHub or GitLab account... how to say that... ***(will watch recording)***
+3. Select **Setup**. 
+3. In any section, change any values, then select **Save Changes**. ***(can they change anything at all?)***<br />
+[Learn about the fields](/docs/install-ai-inlimited/setup-ai-unlimited).
+4. If you've enabled TLS, select **Restart**.<br />
+ AI Unlimited restarts with TLS in place.
 
-You can then go to the **Profile** page to copy the new API Key.
+Go to the **Profile** page to copy your new API Key. ***(explain why they have a new one & to start using the new one)***

@@ -11,21 +11,23 @@ import TabItem from '@theme/TabItem';
 
 # Run the manager and JupyterLab using Docker
 
-Use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited.
 
+Installing the manager also creates a Git repository for user and project information.
 
-## Clone the AI Unlimited GitHub repository
-
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
-
-<MyPartial />
-
-
-## Set locations for manager and JupyterLab configuration files
+You'll use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
 :::tip
-Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
+For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
+
+
+## Prerequisites
+
+In addition to the standard [AI Unlimited prerequisites](/docs/install-ai-unlimited/#gs-prerequisties), make sure you have [Docker](https://www.docker.com/get-started/) installed on your machine.
+
+
+## Set configuration file locations
 
 1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which to store the manager's configuration and data files. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
 
@@ -33,23 +35,23 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
     |----------------|--------------------|-------|
     | $AI_UNLIMITED_HOME | /etc/td | Stores data and configuration |
 	
+	:::tip
+	Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
+	:::
+	
 2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store JupyterLab's configuration files. The default location is `~/.jupyter`.
 
 
-## Provide your cloud service provider credentials to Docker
-
-You can use environment variables to pass your AWS or Azure credentials to Docker Compose.
-
-***What does doing this enable?***
+## Pass your cloud service provider credentials to Docker
 
 :::note 
-You can provide the credentials two ways:
+You can pass the credentials two ways:
 - Use a YAML file that contains environment varibles for storing your credentials.
 - Use a local volume containing your credentials. 
 	
 See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository.
 
-This QuickStart assumes you are using the first method.
+This QuickStart uses the first method.
 :::
 
 1. Copy these environment variables from your cloud service provider's console.
@@ -86,11 +88,13 @@ This QuickStart assumes you are using the first method.
 	
 	The command downloads and starts the manager and JupyterLab containers.
 
-2. To retrieve the Jupyter token, list the currently running containers, and identify the name of the JupyterLab container.
+2. To retrieve the Jupyter token, list the currently running containers.
 
 	```bash
 	docker ps 
 	```
+	And identify the name of the JupyterLab container.
+	
 	Then search for occurrences of the string 'Token' in the container's logs.
 
 	```bash
@@ -103,7 +107,8 @@ When the manager is ready, you can access it at `http://localhost:3000`.
 
 When JupyterLab is ready, you can access it at `http://localhost:8888`, and enter the token. 
 
-## Next step
+
+## What's next
 
 In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 

@@ -1,16 +1,16 @@
 ---
-id: example-projects
-title: Example projects
-description: Try out example projects to see what you can do with AI Unlimited.
-sidebar_label: Example projects
+id: use-cases
+title: Sample use cases
+description: Here are just some of the workloads you can run using AI Unlimited
 sidebar_position: 4
+sidebar_label: Sample use cases
 pagination_prev: null
 pagination_next: null
 ---
 
-# Example projects
+# Sample use cases
 
-Try out these example projects.
+Here are just some of the types of workloads you can run using AI Unlimited.
 
 ***The example notebooks and data files will be in the "examples" folder in the TD AI Unlim repo. Here we just need to add links.***
 

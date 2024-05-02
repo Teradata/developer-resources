@@ -12,43 +12,25 @@ pagination_next: null
 
 You might be the owner of one or more projects and a collaborator on others.
 
-If you create a project, you are its owner. In your company's Git repository that stores project information, the owner of the repository can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project. Then in the project notebook, you update the engine for those new users. 
+If you create a project, you are its owner. The owner of your Git repository that stores user and project information can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project. Then in the project notebook, you update the engine for those new users. 
 
-AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in your Jupyter notebooks. While project owners and collaborators can use the same magic commands, their project involvement is typically different. 
+AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in your Jupyter notebooks. While project owners and collaborators can use the same magic commands, their involvement is typically different. 
 
-
-## Project owners
-
-***placeholder graphic - to be replaced***
-
-import ProjectFlowImg from './project-flow_project-owner.svg';
-
-<ProjectFlowImg />
-
-
-## Project collaborators
-
-***placeholder graphic - to be replaced***
-
-import ProjectFlowCollabImg from './project-flow_collabs.svg';
-
-<ProjectFlowCollabImg />
+Here is the overall project lifecycle from both points of view.
 
 
 ## Project owners
 
-***test***
+import ProjectFlowOwnerImg from './v-3_project-flow_owner.svg';
 
-import ABC from './owner.svg';
+<ProjectFlowOwnerImg />
 
-<ABC />
+<br />
 
 
 ## Project collaborators
+<br />
 
-***test***
+import ProjectFlowCollabsImg from './v-3_project-flow_collabs.svg';
 
-import DEF from './collabs.svg';
-
-<DEF />
-
+<ProjectFlowCollabsImg />

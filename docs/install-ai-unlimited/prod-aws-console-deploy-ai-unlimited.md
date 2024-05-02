@@ -10,16 +10,14 @@ pagination_next: null
 
 # Install the manager on AWS
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. You'll also use it to set up AI Unlimited.
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
 
-You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. This deploys a server instance, with the manager running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
+
+You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::
-
-:::note
-References to the AWS Management Console are accurate as of April 11, 2024.
 :::
 
 
@@ -29,91 +27,98 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `/deployments/aws/templates/ai-unlimited/`
 
-1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use. 
-
-**TA: Need the reasoning on which LB to use**
-
+1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
+   :::note
+   You might want to ask an admin at your organization for guidance.
+   :::
     - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
-	
 2. Download the template.
 
 ## Load the template	
 
-1. Sign in to the [AWS console](https://aws.amazon.com), and select the AWS region in which to deploy AI Unlimited.  
-   We recommend selecting the region closest to your primary work location.
-2. Search for and go to **CloudFormation**.
-3. Select **Create Stack**, then **With new resources (standard)**.
-4. Select **Choose an existing template**, then **Upload a template file**.
-5. Choose the template file you downloaded, and click **Next**.  
+1. Sign in to the [AWS console](https://aws.amazon.com).<br />
+   :::note
+   References to the AWS Console are accurate as of April 11, 2024.
+   ::: 
+2. Select the AWS region in which to deploy AI Unlimited.<br />
+We recommend selecting the region closest to your primary work location.
+3. Search for and go to **CloudFormation**.
+4. Select **Create Stack**, then **With new resources (standard)**.
+5. Select **Choose an existing template**, then **Upload a template file**.
+6. Choose the template file you downloaded, and click **Next**.  
 
 ## Specify stack details and options
 
 1. Provide a stack name.
-2. Review the parameters. Provide values for the required parameters. Your organization might require others.
-
-:::note
-The parameters for each template vary. You might see some parameters here that you don't see in the console.
-:::
+2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br />
+   :::note
+   The parameters for each template vary. You might see some parameters here that you don't see in the console.
+   :::
 
 ***We are working on the table/scrollbar issues.***
+
 
 <details>
 
 <summary>AWS and AI Unlimited parameters</summary>
-| Parameter | Description | Required? | Default | Notes
-|---------|-------------|-----------|-----------|-----------|
-| Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks.	|Required| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
-|AiUnlimitedName| The name of the AI Unlimited instance. |Required with default|ai-unlimited| The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
-| InstanceType | The EC2 instance type that you want to use for the service. | Required with default | t3.small | We recommend using the default instance type to save costs. |
-| RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default | 8 | Supports values between 8 and 1000. |
-| TerminationProtection | Enables instance termination protection. | Required with default | false | |
-|IamRole | Specifies whether CloudFormation should create a new IAM role or use an existing one. | Required with default | New | Supported options are: New or Existing |
-|IamRoleName | The name of the IAM role to assign to the instance, either an existing IAM role or a  newly created one. | Optional with default | ai-unlimited-iam-role | If naming a new IAM role, CloudFormation requires the CAPABILITY_NAMED_IAM capability. Leave this blank to use an autogenerated name. |
-|IamPermissionsBoundary	| The ARN of the IAM permissions boundary to associate with the IAM role assigned to the instance. | Optional | | |
-|AvailabilityZone | The availability zone to which you want to deploy the instance. |Required | |The value must match the subnet, the zone of any pre-existing volumes, and the instance type must be available in the selected zone. |
-|LoadBalancerScheme	| If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC.	|Optional with default	|Internet-facing	|The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet. The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.|
-|LoadBalancerSubnetOne | The subnet where the load balancer is hosted. The subnet determines load balancer availability zones, IP addresses, and endpoints. |Optional with default	|	| You must define a minimum of one available subnet to create a Network Load Balancer (NLB) and two subnets for an Application Load Balancer (ALB).|
-| LoadBalancerSubnetTwo| The subnet where the load balancer is hosted. |Optional. This option is only available in the template with ALB.||This subnet must be in a different availability zone than the first subnet you chose.|
-|HostedZoneID |	The ID that Amazon Route 53 assigned to the hosted zone when you created it.|||	Each hosted zone corresponds to a domain name, or possibly a subdomain. The hosted zone is the container for DNS records, where you configure how the world interacts with your domain, such as pointing it to an IP address with a record. On the AWS console, go to **Route 53** > **Hosted zones**. Find your registered domain name and the corresponding Hosted zone ID.|
-|DnsName|	The name of the domain. For public hosted zones, this is the name you registered with your DNS registrar. | | |For information about how to specify characters other than a-z, 0-9, and - (hyphen) and how to specify internationalized domain names, see [Create Hosted Zone](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html).|
-|Private	|Specifies whether the service is deployed in a private network without public IPs.|Required|false| |
-|Session	|Specifies whether you can use the AWS Session Manager to access the instance.|Required|false| |
-|Vpc		|The network to which you want to deploy the instance.|Required|||
-|Subnet	|The subnetwork to which you want to deploy the instance.|Required||The subnet must reside in the selected availability zone.|
-|KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional||Leave this field blank if you do not want to include the SSH keys.|
-|AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional||We recommend setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|PrefixList	|The prefix list you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement.|Optional ||Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance. |Optional | |Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default	|3000||
-|AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default|3282||
-|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default|latest|The value is a container version tag.|
-|UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default|None|Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
-|PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default|8|Supports values between 8 and 1000|
-|ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing	||The persistent volume must be in the same availability zone as the AI Unlimited instance.|
-|PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete|Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
-|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults||This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
+| Parameter | Description | Notes | 
+|---------|-------------|-----------|
+| Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks.<br />**Required**<br/>**Default: NA**<br/> |The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
+|AiUnlimitedName| The name of the AI Unlimited instance. |Required with default<br/>Default: ai-unlimited<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
+| InstanceType | The EC2 instance type that you want to use for the service. |Required with default<br/>Default: t3.small<br/> We recommend using the default instance type to save costs. |
+| RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default<br/>Default: 8<br/>Supports values between 8 and 1000. |
+| TerminationProtection | Enables instance termination protection. |Required with default<br/>Default: false |
+|IamRole | Specifies whether CloudFormation should create a new IAM role or use an existing one. |Required with default<br/>Default: New<br/>Supported options are: New or Existing |
+|IamRoleName | The name of the IAM role to assign to the instance, either an existing IAM role or a  newly created one. |Optional with default<br/>Default: ai-unlimited-iam-role<br/>If naming a new IAM role, CloudFormation requires the CAPABILITY_NAMED_IAM capability. Leave this blank to use an autogenerated name. |
+|IamPermissionsBoundary	| The ARN of the IAM permissions boundary to associate with the IAM role assigned to the instance. |Optional |
+|AvailabilityZone | The availability zone to which you want to deploy the instance. |Required<br/>Default: NA<br/>The value must match the subnet, the zone of any pre-existing volumes, and the instance type must be available in the selected zone. |
+|LoadBalancerScheme	|If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC.	|Optional with default<br/>Default: Internet-facing<br/>The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet. The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.|
+|LoadBalancerSubnetOne | The subnet where the load balancer is hosted. The subnet determines load balancer availability zones, IP addresses, and endpoints. |Optional with default<br/>Default: NA<br/>You must define a minimum of one available subnet to create a Network Load Balancer (NLB) and two subnets for an Application Load Balancer (ALB).|
+| LoadBalancerSubnetTwo| The subnet where the load balancer is hosted. |Optional. This option is only available in the template with ALB.<br/>Default: NA<br/>|This subnet must be in a different availability zone than the first subnet you chose.|
+|HostedZoneID | The ID that Amazon Route 53 assigned to the hosted zone when you created it.|Optional<br/>Default: NA<br/>Each hosted zone corresponds to a domain name, or possibly a subdomain. The hosted zone is the container for DNS records, where you configure how the world interacts with your domain, such as pointing it to an IP address with a record. On the AWS console, go to **Route 53** > **Hosted zones**. Find your registered domain name and the corresponding Hosted zone ID.|
+|DnsName| The name of the domain. For public hosted zones, this is the name you registered with your DNS registrar. |Optional<br/>Default:NA<br/>For information about how to specify characters other than a-z, 0-9, and - (hyphen) and how to specify internationalized domain names, see [Create Hosted Zone](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html).|
+|Private	|Specifies whether the service is deployed in a private network without public IPs.|Required<br/>Default: false |
+|Session	|Specifies whether you can use the AWS Session Manager to access the instance.|Required<br/>Default: false |
+|Vpc		|The network to which you want to deploy the instance.|Required<br/>Default: NA|
+|Subnet	|The subnetwork to which you want to deploy the instance.|Required<br/>Default:NA<br/>The subnet must reside in the selected availability zone.|
+|KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional<br/>Default:NA<br/>Leave this field blank if you do not want to include the SSH keys.|
+|AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional<br/>Default:NA<br/>We recommend setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|PrefixList	|The prefix list you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement.|Optional<br/>Default:NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance. |Optional<br/>Default: NA<br/>Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
+|AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
+|AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default<br/>Default: latest<br/>The value is a container version tag.|
+|UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default<br/>Default: 8<br/>Supports values between 8 and 1000|
+|ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
+|PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete<br/>Default:NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
+|LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults<br/>Default: NA<br/>This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
 
 </details>
 
 3. Select **Next**.
 4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
+
 ## Review and create the stack
+
+***Can a tester please provide a screen recording so we can verify these steps?***
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
-3. Select **Submit** to deploy the stack. 
-4. Monitor the stack's status. When you see `CREATE_COMPLETE`, the AI Unlimited manager is ready. 
+3. Select **Submit** to deploy the stack.<br />
+On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the manager is ready. 
 
-Use the URLs in **Outputs** to view the created resources. You'll need the host (the IP address or hostname) when you connect to the manager from a Jupyter notebook.
+The **Outputs** tab shows the values generated for the created resources.
 
-***Haven't actually seen what happens after clicking Submit. Where does the status appear? Is Outputs just another section that appears?***
+You'll need the URL to access the manager to set up AI Unlimited.
+
 
 ## What's next
 
-In the manager, [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+Now you're ready to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
 
 
