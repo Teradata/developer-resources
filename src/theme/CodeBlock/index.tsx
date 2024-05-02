@@ -52,7 +52,7 @@ export default function CodeBlock({ children: rawChildren, ...props }) {
     <BrowserOnly>
       {() => {
         // Need to dynamically import the component to render it after the react app has hydrated
-        const CodeSnippet = require('@bsahitya/td-doc-design').CodeSnippet;
+        const CodeSnippet = require('@bsahitya/react-components').CodeSnippet;
         return (
           <CodeSnippet
             key={isBrowser}

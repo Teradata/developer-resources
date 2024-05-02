@@ -1,0 +1,181 @@
+.searchBarWrapper {
+  background-color: var(--cv-theme-surface-canvas);
+}
+
+.searchQueryInput,
+.searchVersionInput {
+  border: none;
+  border-bottom: 1px solid #9ca4a8;
+  font: var(--ifm-font-size-base) var(--ifm-font-family-base);
+  padding: 0.8rem 0.8rem 0.8rem 2rem;
+  width: 100%;
+  background: var(--docsearch-searchbox-focus-background);
+  color: var(--docsearch-text-color);
+  margin-bottom: 0.5rem;
+  transition: border var(--ifm-transition-fast) ease;
+  font-size: 1.15rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.searchQueryInput:focus,
+.searchVersionInput:focus {
+  outline: none;
+}
+
+.searchQueryInput::placeholder {
+  color: var(--docsearch-muted-color);
+}
+
+.searchResultsColumn {
+  color: var(--ifm-color-secondary);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 1rem 0;
+  margin: 1.25rem 0 1rem;
+}
+
+.searchQueryColumn {
+  padding: 0;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.searchQueryColumn i {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+  position: absolute;
+  top: 0.875rem;
+}
+
+.algoliaLogo {
+  max-width: 150px;
+}
+
+.algoliaLogoPathFill {
+  fill: var(--ifm-font-color-base);
+}
+
+.searchResultItem {
+  background: var(--cv-theme-surface-canvas);
+  color: #333a3e;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  text-align: left;
+  text-decoration: none;
+  transition: 0.25s;
+  width: 100%;
+  padding: 1.25rem;
+  position: relative;
+  border: 1px solid #ced3da;
+  border-radius: 12px;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+  }
+
+  &:after {
+    border-bottom: 2px solid var(--cv-theme-text-logo-on-background);
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.25s ease-in-out;
+    width: 100%;
+  }
+}
+
+.searchResultItemHeading {
+  --ifm-link-color: var(--ifm-color-secondary);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.searchResultItemPath {
+  font-size: 0.8rem;
+  color: var(--ifm-color-content-secondary);
+  --ifm-breadcrumb-separator-size-multiplier: 1;
+}
+
+.searchResultItemSummary {
+  margin: 1rem 0 0;
+  font-weight: 400;
+  font-size: 1.065rem;
+}
+
+.card {
+  --ifm-link-hover-color: unset;
+  --ifm-link-hover-decoration: none;
+
+  margin: 0;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media only screen and (max-width: 996px) {
+  .searchQueryColumn {
+    max-width: 100% !important;
+  }
+
+  .searchVersionColumn {
+    max-width: 40% !important;
+  }
+
+  .searchResultsColumn {
+    max-width: 60% !important;
+  }
+
+  .searchLogoColumn {
+    max-width: 40% !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .searchQueryColumn {
+    max-width: 100% !important;
+  }
+
+  .searchVersionColumn {
+    max-width: 100% !important;
+    padding-left: var(--ifm-spacing-horizontal) !important;
+  }
+}
+
+.loadingSpinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.4em solid var(--cv-material-grey-200);
+  border-top-color: var(--ifm-color-primary);
+  border-radius: 50%;
+  animation: loading-spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  margin-top: 2rem;
+}
+
+:global(.search-result-match) {
+  color: var(--docsearch-hit-color);
+  background: rgb(255 215 142 / 25%);
+  padding: 0.09em 0;
+}

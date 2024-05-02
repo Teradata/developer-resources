@@ -49,7 +49,7 @@
   --ifm-color-info-contrast-foreground: var(--cv-theme-light-colors-on-primary-container);
   --ifm-color-info-dark: var(--cv-theme-light-colors-primary);
   --ifm-breadcrumb-item-background-active: none;
-  --ifm-breadcrumb-color-active: none;
+  --ifm-breadcrumb-color-active: #5e7484;
   --mdc-theme-surface-canvas: var(--cv-theme-surface-container);
 }
 
@@ -87,7 +87,7 @@ aside.theme-doc-sidebar-container {
   font-weight: 300;
   line-height: 64px; /* 118.519% */
   letter-spacing: -1.62px;
-  margin-bottom:  64px;
+  margin-bottom: 64px;
 }
 
 .markdown h2 {
@@ -145,6 +145,10 @@ html:not(.plugin-pages) .main-wrapper {
   padding: 6.75rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
   max-width: 1440px;
   box-sizing: border-box;
+}
+
+html:not(.plugin-pages).plugin-search-algolia .main-wrapper {
+  padding: 3.75rem 0;
 }
 
 .theme-doc-sidebar-container .menu {
@@ -248,11 +252,30 @@ cv-code-snippet {
   margin-bottom: var(--ifm-leading);
 }
 
+html.plugin-search-algolia .main-wrapper {
+  --ifm-container-width-xl: 1440px;
+  background-color: #f6f7fb;
+}
+
+html.plugin-search-algolia .main-wrapper .container {
+  padding: 0 2rem;
+}
+
 @media screen and (min-width: 1025px) {
   html:not(.plugin-pages) .main-wrapper {
     padding: 0 6.625rem 0;
     margin: 0 auto;
     width: 100%;
+  }
+  html:not(.plugin-pages).plugin-search-algolia .main-wrapper {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  html:not(.plugin-pages).plugin-search-algolia .main-wrapper .container {
+    padding: 0 6.625rem;
   }
 }
 

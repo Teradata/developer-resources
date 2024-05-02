@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from '@bsahitya/td-doc-design';
+import { Header, Language, NavListItem } from '@bsahitya/react-components';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import SearchBar from '@theme/SearchBar';
+import { ThemeConfig } from '@docusaurus/types';
 export default function Navbar() {
-  const { navItems } = useThemeConfig();
+  const { navItems }: ThemeConfig = useThemeConfig();
   const {
     navItems: nestedNavItems,
     title,
-    headerActions,
     languages,
-  } = navItems;
+  } = navItems as {
+    navItems: NavListItem[];
+    title: string;
+    languages: Language[];
+  };
 
   const secondaryMenuDetails = {
-    menuElement: useNavbarSecondaryMenu().content,
+    menuElement: useNavbarSecondaryMenu().content as JSX.Element,
     title: translate({
       id: 'theme.docs.sidebar.title',
       message: 'Docs',
@@ -28,15 +32,24 @@ export default function Navbar() {
   const handleLanguageChange = (language) => {
     // Replace current language with another language
     if (getCurrentLanguage() !== '') {
-      window.location = window.location.pathname.replace(`/${getCurrentLanguage()}/`, `/${language}/`);
+      window.location = window.location.pathname.replace(
+        `/${getCurrentLanguage()}/`,
+        `/${language}/`
+      ) as Location & string;
     }
     // Insert new language into path
     if (getCurrentLanguage() === '' && language !== '') {
-      window.location = window.location.pathname.replace(`${basePath}/`,`${basePath}/${language}/`);
+      window.location = window.location.pathname.replace(
+        `${basePath}/`,
+        `${basePath}/${language}/`
+      ) as Location & string;
     }
     // Remove language from path
     if (getCurrentLanguage() !== '' && language === '') {
-      window.location = window.location.pathname.replace(`/${getCurrentLanguage()}/`, '/');
+      window.location = window.location.pathname.replace(
+        `/${getCurrentLanguage()}/`,
+        '/'
+      ) as Location & string;
     }
   };
 
@@ -54,7 +67,6 @@ export default function Navbar() {
         (lang) => lang.value === currentLanguage
       );
       if (selectedLang) {
-        selectedLang.active = true;
         setDefaulLang(selectedLang.value);
       }
     }
@@ -66,13 +78,12 @@ export default function Navbar() {
         key={defaultLang}
         navItems={nestedNavItems}
         title={title}
-        headerActions={headerActions}
+        headerActions={[{ actionElement: <SearchBar />, type: 'search' }]}
         languages={languages}
         onLanguageChange={handleLanguageChange}
         selectedLanguage={defaultLang}
         secondaryMenu={secondaryMenuDetails}
       ></Header>
-      <SearchBar></SearchBar>
     </>
   );
 }
