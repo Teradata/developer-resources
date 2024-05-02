@@ -22,7 +22,7 @@ After you install the manager, access the AI Unlimited setup using the URL you r
 
 ## Complete the fields
 
-You'll find information about each setup section here.
+You'll find information about each group of fields here.
 
 <details>
 
@@ -112,7 +112,7 @@ Public or Private refers to how AI Unlimited should communicate with the engine.
 </details>
 
 
-## Before you leave (temp section name)
+## Before you leave
 
 1. Go to your **Profile**, and copy your API key.<br />
 You'll use it when you connect to the engine from a Jupyter notebook.

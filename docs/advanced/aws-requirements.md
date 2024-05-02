@@ -8,38 +8,46 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# AWS account requirements
+# Prepare your AWS account
 
-***WIP***
-
-- Your AWS account must have the required permissions needed to deploy the resources in the CloudFormation template. Work with your cloud administrator to set up the account with the required permissions. See [Create an IAM role and attach policies](/docs/advanced/roles-and-policies/prod-aws-permissions-policies.md).
-
-- If you need to access or manage the AI Unlimited instance to run commands or debug, you can connect to it using one of the following methods:
-	- Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH).
-	- Use AWS Session Manager to connect. To enable this, when you [create the IAM role and policies](/docs/install-ai-unlimited/production/AWS/before-you-begin/prod-aws-permissions-policies.md), attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to the IAM role.
-
-- If you’re using an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
-	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
-	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;to configure a custom domain name and route DNS queries to your load balancer.
+Before you [install the manager](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md), make sure your account is ready.
 
 
-## Create an IAM role and policies
+## Permissions for installing the manager
 
-***Jack will write up how this all works--AI Unlim service vs. engine, etc. This topic needs work.***
+To deploy the manager's cloud resources, you'll need appropriate IAM permissions. 
 
-Use IAM roles and policies to grant AI Unlimited permissions to deploy and access AWS resources. 
+Work with your admin to get them one of two ways:
 
-You have the option to either let the CloudFormation template create a new role along with the necessary policies, or you can use an existing role and attach the required policy to it. If you have the permission to create IAM resources, the CloudFormation template can create the roles and policies for AI Unlimited. Otherwise, you can utilize an existing role and attach required policies based on your permissions and specific needs.
+- The identity you use to sign in to the AWS Management console can have the permissions.
+- A role you provide to the CloudFormation template can have the permissions. ***(This is a different role from the role the manager will use to deploy the engine, correct?)***
 
-AI Unlimited can pass the role and policies that you provide to the cluster.
+***Are IamRole and IamRoleName on the CFT how the user implements the second option?***
+
+***In the doc: Specifies whether CloudFormation should create a new IAM role or use an existing one."***
+
+***So for using an existing one, are stacks, in effect, recycled? The stack for the manager might have been used prior, and it kept its role?)***
+
+***And if they use a new one, that can be ai-unlimited-iam-role or a role they provide?***
+
+
+## Role for deploying the engine
+
+The manager needs a role that allows it to deploy or remove the engine. The manager can get this role two ways:
+
+- You can allow AI Unlimited to create a new role each time the engine is deployed ***(or removed?)***. ***(will look at the setup content--maybe can remove 
+"cluster")***
+- If your organization's policies don't allow that, you can use an existing role, or create a new role, with the necesssary policy attached. 
+	If you have the permissions to create IAM resources, when you install the manager, the CloudFormation template can create the role and policy. Otherwise, use an existing role and attach required policies based on your permissions and needs. ***(revisit)***
+
+
+## Optionally, create the engine deployment role
 
 See [Creating roles and attaching policies (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html). 
 
-***Holding on to this next sentence as is for the time being, but we have to be careful about documenting a third-pary UI:*** 
-
-Configure these policies in the AWS Management Console in **Security & Identity** > **Identity & Access Management** > **Create Policy**.
-
 Use these JSON samples to create the policies you need, and attach them to the role: 
+
+***pick up from here***
 
 - [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json): Includes permissions to create engine instances, and grants AI Unlimited permissions to create a cluster-specific role and policies.
 

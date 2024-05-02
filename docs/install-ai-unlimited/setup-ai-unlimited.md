@@ -18,7 +18,7 @@ After you install the manager, access the AI Unlimited setup using the URL you r
 
 ## Complete the fields
 
-You'll find information about each section here.
+You'll find information about each group of fields here.
 
 
 <details>
@@ -28,7 +28,7 @@ You'll find information about each section here.
 <br />
 **AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
 
-- **Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying service are simply "AI Unlimited."  
+**Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying functionality are simply "AI Unlimited."  
 
 <br />
 **Git provider**&mdash;GitHub or GitLab.
@@ -65,28 +65,24 @@ Select **Save Changes**.
 <details>
 
 <summary>Cloud integration</summary>
+<br />
+When you deploy the engine from a Jupyter notebook, you can specify different values for the setup fields labelled **Default**.
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
 <br />
-**Default region**
-
-- The AWS region in which to deploy the engine. We recommend choosing the region closest to your primary work location. 
-- When you connect to the engine from a Jupyter notebook, you can specify a different region.
+**Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
 
 <br />
-**Default subnet ID**
-
-- The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) in which to deploy the engine. The AWS console shows the subnets in the region.
-- When you connect to the engine from a Jupyter notebook, you can specify a different region.
+**Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) in which to deploy the engine. The AWS console shows the subnets in the region.
 
 <br />
 **Default IAM role**
 
-	The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy **(add link after working through the role content)**.
-
-	If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
-
+- The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy **(add link after working through the role content)**.
+- If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
+- When you connect to the engine from a Jupyter notebook, you can specify a different role.
+		
 <br />
 **Resource tags**&mdash;You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.
 
@@ -95,8 +91,8 @@ Select **Save Changes**.
 
 Use these fields to allow source traffic to reach the engine:
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
-- **[Security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's security group in this field to ensure that AI Unlimited can communicate with the engine.
-- **[Prefx list names](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html)**
+- **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
 
 <br />
 **Role prefix**&mdash;If AI Unlimited creates the role, this prefix is added to the role name.
@@ -112,9 +108,7 @@ Select **Save Changes**.
 <TabItem value="azure" label="Azure"> 
 
 <br />
-**Default region**
-- The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
-- When you connect to the engine from a Jupyter notebook, you can specify a different region.
+**Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
 
 <br />
 **Inbound security**
@@ -122,8 +116,8 @@ Select **Save Changes**.
 Use these fields to allow source traffic to reach the engine:
 
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
-
-- **[Application security groups](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups)**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's application security group in this field to ensure that AI Unlimited can communicate with the engine.
+ 
+- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 <br />
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.

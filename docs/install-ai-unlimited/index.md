@@ -21,7 +21,7 @@ With AI Unlimited, data scientists and data engineers can explore and analyze la
 You connect your notebook to the AI/ML engine on [AWS](https://aws.amazon.com/) or [Azure](https://azure.microsoft.com/en-us), and connect the engine to your [Amazon S3](https://aws.amazon.com/pm/serv-s3/?gclid=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB&trk=fecf68c9-3874-4ae2-a7ed-72b6d19c8034&sc_channel=ps&ef_id=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB:G:s&s_kwcid=AL!4422!3!536452728638!e!!g!!amazon%20s3!11204620052!112938567994) or [ADLS Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) data lake. You can suspend and resume your analytics project anytime, and pay only for the hours you use.
 
 :::note
-If AI Unlimited has already been installed and set up by someone at your organization, you can go to [Explore and Analyze Data](/docs/explore-and-analyze-data) to get started.
+If AI Unlimited has already been installed and set up by someone at your organization, you can go straight to [Explore and Analyze Data](/docs/explore-and-analyze-data) to get started.
 :::
 
 
@@ -32,7 +32,6 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) for managing projects in notebooks
 
 
-<a id="gs-prerequisites"></a>
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to provision compute resources
