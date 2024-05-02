@@ -9,8 +9,6 @@ pagination_next: null
 
 # Get started
 
-***For everyone's clarity, this doc site is for the "full product," not the option to deploy from the marketplace. Jack has plans to create content for the marketplace deploy - to be on the marketplace.***
-
 Learn how to deploy and use the [AI Unlimited](https://www.teradata.com/platform/ai-unlimited) AI/ML engine in the cloud.
 
 With AI Unlimited, data scientists and data engineers can explore and analyze large datasets in a [Jupyter](https://jupyter.org/) notebook using [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions&mdash;on a self-service, on-demand basis. 

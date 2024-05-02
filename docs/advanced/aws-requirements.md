@@ -10,35 +10,30 @@ pagination_next: null
 
 # Prepare your AWS account
 
-Before you [install the manager](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md), make sure your account is ready.
+***WIP***
+
+Make sure your account is ready.***find better words***
 
 
 ## Permissions for installing the manager
 
-To deploy the manager's cloud resources, you'll need appropriate IAM permissions. 
-
-Work with your admin to get them one of two ways:
+To deploy the manager's cloud resources, you'll need appropriate IAM permissions. Work with your admin to get them one of two ways:
 
 - The identity you use to sign in to the AWS Management console can have the permissions.
-- A role you provide to the CloudFormation template can have the permissions. ***(This is a different role from the role the manager will use to deploy the engine, correct?)***
-
-***Are IamRole and IamRoleName on the CFT how the user implements the second option?***
-
-***In the doc: Specifies whether CloudFormation should create a new IAM role or use an existing one."***
-
-***So for using an existing one, are stacks, in effect, recycled? The stack for the manager might have been used prior, and it kept its role?)***
-
-***And if they use a new one, that can be ai-unlimited-iam-role or a role they provide?***
+- A role you provide to the CloudFormation template can have the permissions. 
 
 
 ## Role for deploying the engine
 
+***associate this with the setup UI***
+
 The manager needs a role that allows it to deploy or remove the engine. The manager can get this role two ways:
 
-- You can allow AI Unlimited to create a new role each time the engine is deployed ***(or removed?)***. ***(will look at the setup content--maybe can remove 
+- You can allow AI Unlimited to create a new role each time the engine is deployed. ***(or removed?)***. ***(will look at the setup content--maybe can remove 
 "cluster")***
-- If your organization's policies don't allow that, you can use an existing role, or create a new role, with the necesssary policy attached. 
-	If you have the permissions to create IAM resources, when you install the manager, the CloudFormation template can create the role and policy. Otherwise, use an existing role and attach required policies based on your permissions and needs. ***(revisit)***
+- If your organization's policies don't allow that, you can use an existing role, or create a new role, with the necesssary policy attached. ***maybe add sentence about it needing to be broad enough***
+
+	If you have the permissions to create IAM resources, when you install the manager, the CloudFormation template can create the role and policy. ***must be the default value in the role's name field***Otherwise, use an existing role and attach required policies based on your permissions and needs. ***(revisit)***
 
 
 ## Optionally, create the engine deployment role
@@ -78,12 +73,3 @@ Use these JSON samples to create the policies you need, and attach them to the r
 
 How the engine cluster gets the role
 
-***TA: User needs to provide IAM role and policies to deploy AI Unlimited. This value is what we provide in the CloudFormation Template***
-
-***TA: This is what we define in the AI Unlimited UI*** Each time a user deploys the engine from their Jupyter notebook, the engine's cluster needs the role and policies. It gets them one of two ways:
-
-***TA: We can avoid using cluster and just use engine***
-
-***But doesn't the role get assigned to the cluster? to allow it to deploy the engine?***
-
-- AI Unlimited can create a cluster-specific role with policies based on the role and policies you provide&mdash;if your AWS account allows this. ***(Is this allowed via ai-unlimited-workspaces.json, simple as that, or is "if your AWS account allows this" referring to something else?)***
