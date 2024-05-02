@@ -73,17 +73,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
-      <Header
-        key={defaultLang}
-        navItems={nestedNavItems}
-        title={title}
-        headerActions={[{ actionElement: <SearchBar />, type: 'search' }]}
-        languages={languages}
-        onLanguageChange={handleLanguageChange}
-        selectedLanguage={defaultLang}
-        secondaryMenu={secondaryMenuDetails}
-      ></Header>
-    </>
+    <Header
+      key={defaultLang}
+      navItems={nestedNavItems}
+      title={title}
+      headerActions={[{ actionElement: <SearchBar />, type: 'search' }]}
+      languages={languages}
+      onLanguageChange={handleLanguageChange}
+      selectedLanguage={defaultLang}
+      secondaryMenu={secondaryMenuDetails}
+    ></Header>
   );
 }
