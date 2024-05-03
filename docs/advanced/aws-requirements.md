@@ -17,8 +17,8 @@ As needed, work with your cloud admin ***(final term TBD)*** to ensure that you 
 
 You can get the permissions needed to deploy the cloud resources for the manager two ways:
 
-- (1) The IAM identity you use to sign in to the AWS Management Console can have the permissions.
-- (2) Or when you install the manager, you can provide the name of a role, that has the permissions, to the CloudFormation template. You do this when you configure stack options before deploying the template.
+- The IAM identity you use to sign in to the AWS Management Console can have the permissions.
+- Or when you install the manager, you can provide the name of a role, that has the permissions, to the CloudFormation template. You do this when you configure stack options before deploying the template.
 
 
 ## Role for deploying the engine
@@ -54,7 +54,7 @@ Use these JSON samples to create the policies you need. Then attach them to a ne
     "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
     ```
 
-- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this with **ai-unlimited-engine.jason**.
+- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this with **ai-unlimited-engine.json**.
 
 - [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role you're providing to the cluster each time the engine is deployed. Use this with **ai-unlimited-without-iam-role-permissions.json**.<br/>
 

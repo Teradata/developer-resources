@@ -15,11 +15,9 @@ import TabItem from '@theme/TabItem';
 
 After you install the manager, access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
-
 ## Complete the fields
 
 You'll find information about each group of fields here.
-
 
 <details>
 
@@ -30,20 +28,16 @@ You'll find information about each group of fields here.
 
 **Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying functionality are simply "AI Unlimited."  
 
-<br />
 **Git provider**&mdash;GitHub or GitLab.
 
-<br />
 **Service log level**&mdash;The level of detail to see in AI Unlimited logs.
 
-<br />
 **Engine IP network type**
 
 Select **Private** if you deploy the engine in the same Virtual Private Cloud as AI Unlimited.
 
 **Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
 
-<br />
 **Use TLS**
 
 We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connections to AI Unlimited and safeguard your data in transit.
@@ -73,19 +67,15 @@ When you deploy the engine from a Jupyter notebook, you can specify different va
 <br />
 **Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
 
-<br />
 **Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) in which to deploy the engine. The AWS console shows the subnets in the region.
 
-<br />
 **Default IAM role**
 
 - The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy: [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json).
 - If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must accommodate any cluster that might deploy the engine.
 		
-<br />
 **Resource tags**&mdash;You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.
 
-<br />
 **Inbound security**
 
 Use these fields to allow source traffic to reach the engine:
@@ -93,10 +83,8 @@ Use these fields to allow source traffic to reach the engine:
 - **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's security group in this field to ensure that AI Unlimited can communicate with the engine.
 - **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
 
-<br />
 **Role prefix**&mdash;If AI Unlimited creates the role, this prefix is added to the role name.
 
-<br />
 **[Permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) ARN**&mdash;If your IAM entities require a boundary, you can provide one here.   
 
 <br />
@@ -109,7 +97,6 @@ Select **Save Changes**.
 <br />
 **Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
 
-<br />
 **Inbound security**
 
 Use these fields to allow source traffic to reach the engine:
@@ -118,7 +105,6 @@ Use these fields to allow source traffic to reach the engine:
  
 - **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
-<br />
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
 <br />
@@ -141,19 +127,17 @@ Select **Save Changes**.
 <br />
 **GitHub base URL**&mdash;The URL for your GitHub account.
 
-<br />
 **GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
 
-<br />
 **Organization access**
 
 Two organizations in your GitHub account can help with access control and repository management:
 
-- Members of the **Authorizing organization** are able to sign in and authenticate themselves in AI Unlimited. If you don't specify an organization, any GutHub account user can sign in and authenticate.
+- Members of the **Authorizing organization** are able to sign in and authenticate themselves in AI Unlimited. If you don't specify an organization, any GitHub account user can sign in and authenticate.
 
 - Project repositories are created in the **Repository organization**. If you don't specify an organization, projects will be in your personal GitHub space.
 
-<br />
+<br/>
 Select **Authenticate**. Then, if prompted, sign in.
 
 </TabItem>
@@ -163,10 +147,8 @@ Select **Authenticate**. Then, if prompted, sign in.
 <br />
 **GitLab base URL**&mdash;The URL for your GitLab account.
 
-<br />
 **GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
 
-<br />
 **Group access**
 
 Two groups in your GitLab account can help with access control and repository management:
@@ -186,8 +168,8 @@ Select **Authenticate**. Then, if prompted, sign in.
 
 ## Before you leave
 
-1. Go to your **Profile**, and copy your API key.<br />
-You'll use it when you connect to the engine from a Jupyter notebook.
+1. Go to your **Profile**, and copy your API key.
+    You'll use it when you connect to the engine from a Jupyter notebook.
 
 2. If you enabled TLS, select **Restart**. This restarts the AI Unlimited service with TLS in place.
 
