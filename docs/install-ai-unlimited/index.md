@@ -9,7 +9,7 @@ pagination_next: null
 
 # Get started
 
-Learn how to deploy and use the [AI Unlimited](https://www.teradata.com/platform/ai-unlimited) AI/ML engine in the cloud.
+Learn how to install and use the [AI Unlimited](https://www.teradata.com/platform/ai-unlimited) AI/ML engine in the cloud.
 
 With AI Unlimited, data scientists and data engineers can explore and analyze large datasets in a [Jupyter](https://jupyter.org/) notebook using [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions&mdash;on a self-service, on-demand basis. 
 
@@ -40,7 +40,7 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 - JupyterLab
 
 :::tip
-You might like to get certain [deployment details](/docs/advanced/deployment-details.md) ahead of time. You'll need them when you install the AI Unlimited manager on AWS or Azure.
+When you install the manager, you'll provide values for some cloud deployment details. See the [AWS details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms) or [Azure details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms)&mdash;if you want to work with a cloud admin ***(final term TBD)*** to get the values ahead of time.
 :::
 
 ***maybe we no longer want the note that follows - too confusing with the new option to deploy from the marketplace - might depend on the name of the new deployment method***

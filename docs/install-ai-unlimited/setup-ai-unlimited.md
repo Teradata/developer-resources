@@ -26,7 +26,7 @@ You'll find information about each group of fields here.
 <summary>Initial setup</summary>
 
 <br />
-**AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
+**AI Unlimited base URL**&mdash;***(label will change)***The URL you used to access the setup. You received it when you installed the manager.
 
 **Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying functionality are simply "AI Unlimited."  
 
@@ -79,9 +79,8 @@ When you deploy the engine from a Jupyter notebook, you can specify different va
 <br />
 **Default IAM role**
 
-- The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy **(add link after working through the role content)**.
-- If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must be broad enough to include all the clusters that might deploy the engine.
-- When you connect to the engine from a Jupyter notebook, you can specify a different role.
+- The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy: [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json).
+- If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must accommodate any cluster that might deploy the engine.
 		
 <br />
 **Resource tags**&mdash;You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.

@@ -49,23 +49,21 @@ We recommend selecting the region closest to your primary work location.
 5. Select **Choose an existing template**, then **Upload a template file**.
 6. Choose the template file you downloaded, and click **Next**.  
 
+<a id="aws-parms"></a>
 ## Specify stack details and options
 
 1. Provide a stack name.
 2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br />
-   :::note
-   The parameters for each template vary. You might see some parameters here that you don't see in the console.
-   :::
-
-***We are working on the table/scrollbar issues.***
-
 
 <details>
 
 <summary>AWS and AI Unlimited parameters</summary>
+
+ The parameters for each template vary. You might see some parameters here that you don't see in the console.
+ 
 | Parameter | Description | Notes | 
 |---------|-------------|-----------|
-| Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks.<br />**Required**<br/>**Default: NA**<br/> |The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
+| Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks. |Required<br/>Default: NA<br/> The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
 |AiUnlimitedName| The name of the AI Unlimited instance. |Required with default<br/>Default: ai-unlimited<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
 | InstanceType | The EC2 instance type that you want to use for the service. |Required with default<br/>Default: t3.small<br/> We recommend using the default instance type to save costs. |
 | RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default<br/>Default: 8<br/>Supports values between 8 and 1000. |
@@ -93,7 +91,7 @@ We recommend selecting the region closest to your primary work location.
 |UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default<br/>Default: 8<br/>Supports values between 8 and 1000|
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
-|PersistentVolumeDeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete<br/>Default:NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
+|PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete<br/>Default:NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
 |LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with defaults<br/>Default: NA<br/>This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available. IMPORTANT: Changing this value may break the stack.
 
 </details>

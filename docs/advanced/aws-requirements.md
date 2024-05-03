@@ -10,54 +10,56 @@ pagination_next: null
 
 # Prepare your AWS account
 
-***WIP***
-
-Make sure your account is ready.***find better words***
+As needed, work with your cloud admin ***(final term TBD)*** to ensure that you have the necessary IAM permissions.
 
 
 ## Permissions for installing the manager
 
-To deploy the manager's cloud resources, you'll need appropriate IAM permissions. Work with your admin to get them one of two ways:
+You can get the permissions needed to deploy the cloud resources for the manager two ways:
 
-- The identity you use to sign in to the AWS Management console can have the permissions.
-- A role you provide to the CloudFormation template can have the permissions. 
+- (1) The IAM identity you use to sign in to the AWS Management Console can have the permissions.
+- (2) Or when you install the manager, you can provide the name of a role, that has the permissions, to the CloudFormation template. You do this when you configure stack options before deploying the template.
 
 
 ## Role for deploying the engine
 
-***associate this with the setup UI***
+(3 - WRONG  b/c creating/destroying cloud resources for the engine is not the same as deploying/suspending/restoring the engine)
 
-The manager needs a role that allows it to deploy or remove the engine. The manager can get this role two ways:
+The manager needs a role that allows it to deploy and remove the engine. The manager can get this role one of two ways:
 
-- You can allow AI Unlimited to create a new role each time the engine is deployed. ***(or removed?)***. ***(will look at the setup content--maybe can remove 
-"cluster")***
-- If your organization's policies don't allow that, you can use an existing role, or create a new role, with the necesssary policy attached. ***maybe add sentence about it needing to be broad enough***
+- If you don't have permissions to create IAM resources, allow AI Unlimited to create a new role each time it deploys the engine.
+	:::note
+	Leave the **Default IAM role** field blank when you set up AI Unlimited.
+	:::
 
-	If you have the permissions to create IAM resources, when you install the manager, the CloudFormation template can create the role and policy. ***must be the default value in the role's name field***Otherwise, use an existing role and attach required policies based on your permissions and needs. ***(revisit)***
+- Or create a new role, or use an existing one in your AWS account, and attach the necessary policies. When you install the manager, and provide values for template parameters, you'll use the `IamRole` and `IamRoleName` parameters to indicate this role. 
+	:::note
+	Add the role to the **Default IAM role** field when you [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+	:::
 
 
-## Optionally, create the engine deployment role
+### Provide an engine deployment role
 
-See [Creating roles and attaching policies (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html). 
+See [Creating roles and attaching policies (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions_create-policies.html) for details. 
 
-Use these JSON samples to create the policies you need, and attach them to the role: 
+Use these JSON samples to create the policies you need. Then attach them to a new or existing role. 
 
-***pick up from here***
+- [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json): Includes permissions to create engine instances, and grants AI Unlimited permissions to create cluster-specific roles and policies.<br/>
 
-- [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json): Includes permissions to create engine instances, and grants AI Unlimited permissions to create a cluster-specific role and policies.
-
-- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this, and **ai-unlimited-engine.jason**, if your AWS account has restrictions that won't allow AI Unlimited to create roles and policies.
-
-- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role to the cluster each time the engine is deployed. Use this with **ai-unlimited-without-iam-role-permissions.json**. Modify the policy with your your account details.
-
-    If AI Unlimited creates cluster-specific policies, they are restricted as follows:
+	If AI Unlimited creates cluster-specific policies, they are restricted as follows:
+	
+	***(we are working on the type size issue in code blocks)***
 
     ```bash
     "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
     ```
 
-    For the role you provide, you can't predict the cluster name, so use a wildcard in the policy ***(which one?)***.
+- [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json): Includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. Use this with **ai-unlimited-engine.jason**.
 
+- [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json): Allows AI Unlimited to pass the role you're providing to the cluster each time the engine is deployed. Use this with **ai-unlimited-without-iam-role-permissions.json**.<br/>
+
+	Modify the policy with your your account details. You can't predict the cluster name, so use a wildcard.
+	
     ``` bash
     "arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/*"
     or
@@ -66,10 +68,9 @@ Use these JSON samples to create the policies you need, and attach them to the r
     "arn:aws:secretsmanager:us-west-2:111111111111:secret:compute-engine/*"
     ```
 
-- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions to interact with the AWS Session Manager. Use this if you plan to use Session Manager to connect to the engine to closely manage it.
-	
+- [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): Includes permissions for the engine to interact with the [AWS Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html). Use this if you plan to use Session Manager to connect to the engine to closely manage it.
 
-**TA: I think we can remove the below section***
 
-How the engine cluster gets the role
+
+
 

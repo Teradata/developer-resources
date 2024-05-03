@@ -10,6 +10,8 @@ pagination_next: null
 
 # Install the manager on Azure
 
+(cloud admin - **final term TBD**)
+
 Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
@@ -36,12 +38,12 @@ Download the Azure Resource Manager (ARM) template (`/deployments/azure/ai-unlim
 3. Select **Build your own template in the editor**, then **Load file**.
 4. Choose the template file you downloaded, then select **Save**.
 
+<a id="azure-parms"></a>
 ## Specify instance details
 
 Review the parameters. Provide values for the required parameters. Your organization might require others.
 
 <details>
-
 <summary>Azure and AI Unlimited parameters</summary>
 
 | Parameter | Description | Notes |
