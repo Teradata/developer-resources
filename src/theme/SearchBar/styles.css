@@ -1,0 +1,202 @@
+:root {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-text-color: var(--ifm-font-color-base);
+}
+
+.DocSearch-Button {
+  margin: 0;
+  transition: all var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+  height: 30px;
+  padding: 0;
+}
+
+.DocSearch-Container {
+  --ifm-z-index-fixed: 20;
+  --docsearch-container-background: #333a3e26;
+  --docsearch-modal-background: var(--cv-theme-surface-canvas);
+  --docsearch-modal-shadow: 0 12px 24px -6px rgba(16, 24, 40, 0.18);
+  --docsearch-searchbox-shadow: none;
+  --docsearch-searchbox-height: 48px;
+  --docsearch-spacing: 2rem;
+
+  z-index: calc(var(--ifm-z-index-fixed) + 1);
+}
+
+.DocSearch-Hit-source {
+  --docsearch-highlight-color: var(--ifm-color-secondary);
+
+  padding: 2rem 0 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.DocSearch-Footer {
+  display: none;
+}
+
+.DocSearch-Input {
+  font-size: 1rem;
+  color: #333a3e;
+}
+
+.DocSearch-Form {
+  --docsearch-spacing: 1rem;
+  --docsearch-highlight-color: var(--cv-theme-tertiary);
+  border-radius: 0;
+  border-bottom: 1px solid #ebedee;
+}
+
+.DocSearch-Hit a {
+  --docsearch-highlight-color: var(--cv-theme-tertiary);
+  box-shadow: none;
+  padding-left: 0;
+}
+
+.DocSearch-Hit-title {
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.DocSearch-Hit-icon,
+.DocSearch-Hit-action,
+.DocSearch-Hit-path,
+.DocSearch-Button-Placeholder,
+.DocSearch-Button-Keys {
+  display: none;
+}
+
+.DocSearch-Hit[aria-selected='true'] a {
+  background-color: var(--cv-theme-surface-canvas);
+  --docsearch-hit-active-color: var(--ifm-color-secondary);
+}
+
+.DocSearch-Hit a:hover {
+  background-color: var(--cv-theme-surface-canvas);
+  --docsearch-hit-active-color: var(--cv-theme-tertiary);
+}
+
+.DocSearch-Hit-Container {
+  --docsearch-hit-color: var(--ifm-color-secondary);
+  height: unset;
+  padding: 0.75rem 0;
+}
+
+.DocSearch-Hit-content-wrapper {
+  margin: 0;
+}
+
+.DocSearch-Input {
+  padding: 0.6875rem 0.8125rem 0.6875rem 0.75rem;
+  height: 40px;
+}
+
+.DocSearch-Modal {
+  --docsearch-modal-width: 720px;
+  margin-top: 3.5rem;
+  max-width: 700px;
+}
+
+.DocSearch-HitsFooter {
+  padding: 1.5rem 0 0;
+  justify-content: left;
+}
+
+.DocSearch-HitsFooter a {
+  background: var(--ifm-color-secondary);
+  border: 1px solid var(--ifm-color-secondary);
+  border-radius: 12px;
+  color: var(--cv-theme-surface-canvas);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.25s ease-in-out 0s;
+
+  &:hover {
+    background: var(--cv-theme-text-logo-on-background);
+    border-color: var(--cv-theme-text-logo-on-background);
+    color: var(--cv-theme-surface-canvas);
+    text-decoration: none;
+  }
+
+  &::after {
+    content: 'east';
+    font-family: Material Symbols Outlined;
+    margin-left: 0.5rem;
+    pointer-events: none;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.DocSearch-Button {
+  --docsearch-searchbox-shadow: none;
+  --docsearch-searchbox-background: transparent;
+  --docsearch-text-color: #333a3e;
+}
+
+.sideNavPresent .DocSearch-Modal {
+  margin-top: 4.75rem;
+}
+
+.DocSearch-MagnifierLabel svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .DocSearch-Modal {
+    position: absolute;
+    right: 0;
+  }
+
+  .DocSearch-MagnifierLabel {
+    --docsearch-highlight-color: var(--ifm-color-secondary);
+  }
+
+  .DocSearch-SearchBar {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .sideNavPresent .DocSearch-Modal {
+    padding-top: var(--docsearch-spacing);
+  }
+
+  .DocSearch-Cancel {
+    color: var(--ifm-color-secondary);
+    margin: 0;
+    border-bottom: 1px solid #ebedee;
+    padding-right: 0.75rem;
+  }
+
+  .DocSearch-Cancel {
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .DocSearch-Modal {
+    margin-top: 5rem;
+  }
+  .sideNavPresent .DocSearch-Modal {
+    margin-top: 9rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .DocSearch-Modal {
+    margin-top: 9rem;
+    border-radius: 12px;
+  }
+
+  .DocSearch-Button {
+    align-items: end;
+  }
+}
