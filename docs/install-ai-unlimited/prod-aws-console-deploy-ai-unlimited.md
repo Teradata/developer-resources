@@ -57,7 +57,7 @@ We recommend selecting the region closest to your primary work location.
 
 <details>
 
-<summary>AWS and AI Unlimited parameters</summary>
+<summary>AWS and manager parameters</summary>
 
  The parameters for each template vary. You might see some parameters here that you don't see in the console.
  
@@ -83,18 +83,51 @@ We recommend selecting the region closest to your primary work location.
 |Subnet	|The subnetwork to which you want to deploy the instance.|Required<br/>Default: NA<br/>The subnet must reside in the selected availability zone.|
 |KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional<br/>Default: NA<br/>Leave this field blank if you do not want to include the SSH keys.|
 |AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional<br/>Default: NA<br/>We recommend setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|PrefixList	|The prefix list you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement.|Optional<br/>Default:NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|PrefixList	|The prefix list you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement.|Optional<br/>Default: NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance. |Optional<br/>Default: NA<br/>Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
 |AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default<br/>Default: latest<br/>The value is a container version tag.|
-|UsePersistentVolume|Specifies whether you want to use persistent volume to store data.|Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
-|PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default<br/>Default: 8<br/>Supports values between 8 and 1000|
-|ExistingPersistentVolumeId		|The ID of the existing persistent volume that you can attach to the instance. |Required if UsePersistentVolume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
-|PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormations deployment.|Required with default|Delete<br/>Default:NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
+|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn about persistent volumes* below the parameters table. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|PersistentVolumeSize	|The size of the persistent volume that you attach to the instance, in GB.|Required with default<br/>Default: 8<br/>Supports values between 8 and 1000. |
+|ExistingPersistentVolumeId		|The ID of the existing persistent volume that you attach to the instance. |Required if UsePersistentVolume is set to Existing.<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
+|PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.|Required with default|Delete <br/>Default: NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
 |LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with default<br/>Default: NA<br/>This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available.<br/>**IMPORTANT**: Changing this value may break the stack.
 
 </details>
+
+<details>
+
+<summary>Learn about persistent volumes</summary>
+
+***(WIP - experimenting)***
+
+#### Where the manager saves its data
+
+The manager saves data ***(how best to describe it?)*** in a database in the root volume of its server instance. This data persists if you shut down, restart, or snapshot and relaunch the manager instance. 
+
+If the manager's container, pod, or node ***(server?)*** crashes or terminiates, you lose the data. You can redeploy a new manager instance, but...
+
+#### How a persistant volume can help
+
+A persistent volume stores data for a containerized application, like the manager, beyond the lifetime of the container, pod, or node in which it runs. If the manager's container, pod, or node crashes or terminates, you can redeploy the manager and restore it to its previous state.
+
+#### Example
+
+***(Can you create a persistent volume after you initially deploy the manager?)***
+  
+1. When installing the manager, you select... `UsePersistentVolume` set as **New** and `PersistentVolumeDeletionPolicy` set as **Retain** in the CloudFormation template.
+2. After creating the stack, on the.... In the stack outputs, note the volume-id for future use.
+3. You use the manager instance, but then it terminates.
+4. You deploy the manage again, including these paramter settings:
+    * `UsePersistentVolume` set as **New**
+    * `PersistentVolumeDeletionPolicy` set as **Retain** 
+    * `ExistingPersistentVolumeId` set to the volume-id from the previous deployment
+
+You can relaunch the template with the same configuration whenever you need to recreate the instance with the earlier data.
+
+</details>
+
 
 3. Select **Next**.
 4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 

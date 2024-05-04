@@ -31,6 +31,6 @@ import ProjectFlowOwnerImg from './v-3_project-flow_owner.svg';
 ## Project collaborators
 <br />
 
-import ProjectFlowCollabsImg from './v-3_project-flow_collabs.svg';
+import ProjectFlowCollabsImg from './collab-b.svg';
 
 <ProjectFlowCollabsImg />
