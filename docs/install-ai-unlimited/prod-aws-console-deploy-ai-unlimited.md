@@ -88,7 +88,7 @@ We recommend selecting the region closest to your primary work location.
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
 |AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default<br/>Default: latest<br/>The value is a container version tag.|
-|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn about persistent volumes* below the parameters table. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters table. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you attach to the instance, in GB.|Required with default<br/>Default: 8<br/>Supports values between 8 and 1000. |
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you attach to the instance. |Required if UsePersistentVolume is set to Existing.<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.|Required with default|Delete <br/>Default: NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
@@ -98,33 +98,33 @@ We recommend selecting the region closest to your primary work location.
 
 <details>
 
-<summary>Learn about persistent volumes</summary>
+<summary>Learn more: Why use a persistent volume?</summary>
 
-***(WIP - experimenting)***
+The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-#### Where the manager saves its data
+But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
-The manager saves data ***(how best to describe it?)*** in a database in the root volume of its server instance. This data persists if you shut down, restart, or snapshot and relaunch the manager instance. 
+#### Without a persistent volume
 
-If the manager's container, pod, or node ***(server?)*** crashes or terminiates, you lose the data. You can redeploy a new manager instance, but...
+If the container, pod, or node crashes or terminiates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
 
-#### How a persistant volume can help
+#### With a persistent volume
 
-A persistent volume stores data for a containerized application, like the manager, beyond the lifetime of the container, pod, or node in which it runs. If the manager's container, pod, or node crashes or terminates, you can redeploy the manager and restore it to its previous state.
+If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persisent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
 
 #### Example
 
-***(Can you create a persistent volume after you initially deploy the manager?)***
-  
-1. When installing the manager, you select... `UsePersistentVolume` set as **New** and `PersistentVolumeDeletionPolicy` set as **Retain** in the CloudFormation template.
-2. After creating the stack, on the.... In the stack outputs, note the volume-id for future use.
-3. You use the manager instance, but then it terminates.
-4. You deploy the manage again, including these paramter settings:
-    * `UsePersistentVolume` set as **New**
-    * `PersistentVolumeDeletionPolicy` set as **Retain** 
-    * `ExistingPersistentVolumeId` set to the volume-id from the previous deployment
-
-You can relaunch the template with the same configuration whenever you need to recreate the instance with the earlier data.
+1. Deploy the manager, and include these parameters:
+   - `UsePersistentVolume`: **New**
+   - `PersistentVolumeDeletionPolicy`: **Retain**
+3. After you create the stack, on the **Outputs** tab, note the `volume-id`.
+4. Use AI Unlimited.
+5. If the manager instance is lost, deploy the manager again, and include these parameters:
+   - `UsePersistentVolume`: **New**
+   - `PersistentVolumeDeletionPolicy`: **Retain** 
+   - `ExistingPersistentVolumeId`: the value you noted in step 2
+   
+ The new manager instance has the same configuration as the one that was lost.
 
 </details>
 
