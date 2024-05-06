@@ -15,8 +15,6 @@ pagination_next: null
 -  Azure account requirements 
 
     - Rights ***(Permissions?)*** to create Azure resources. Make sure the account deploying AI Unlimited has sufficient permissions to [create the roles](/docs/advanced/roles-and-policies/prod-azure-create-custom-role.md).
-	
-    - Owner permissions on the Azure subscription that you would like to use. 
 
 - Networking requirements 
 
