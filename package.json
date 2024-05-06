@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@bsahitya/react-components": "^0.0.9",
+    "@bsahitya/react-components": "^0.1.0",
     "@covalent/tokens": "^8.10.1",
     "@docusaurus/core": "3.2.0",
     "@docusaurus/preset-classic": "3.2.0",
