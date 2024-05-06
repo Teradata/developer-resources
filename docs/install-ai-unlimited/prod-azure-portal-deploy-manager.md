@@ -64,12 +64,41 @@ Review the parameters. Provide values for the required parameters. Your organiza
 | Role Definition ID | The ID of the role to use with AI Unlimited.| Required<br/>Default: NA<br/>Use Azure CLI command- Get-AzRoleDefinition command to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure.|  Optional<br/>Default: true |
 | Use Key Vault | Specifies whether to use Key Vault to retrieve the secured password during a deployment. | Optional<br/>Default: New |
-| Use Persistent Volume | Specifies whether you want to use a persistent volume to store data.| Optional with default<br/>Default: New <br/>Supported options: New, None, Existing, depending on your use case. |
+| Use Persistent Volume | Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. | Optional with default<br/>Default: New <br/>Supported options: New, None, Existing, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional<br/>Default: 100 |
 | Existing Persistent Volume | <br/>The ID of the existing persistent volume that you can attach to the instance.| Required if UsePersistentVolume is set to Existing.<br/>Default: None<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default<br/>Default: latest<br/>The value is a container version tag. |
 |Use NLB| Specifies whether the instance is accessed using a Network Load Balancer.|Required with default<br/>Default: false|
 | Tags | The key-value pairs that are assigned to the resources for quick identification.| Optional<br/>Default:NA |   
+
+</details>
+
+<details>
+
+<summary>Learn more: Why use a persistent volume?</summary>
+
+The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
+
+But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+
+#### Without a persistent volume
+
+If the container, pod, or node crashes or terminiates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
+
+#### With a persistent volume
+
+If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persistent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
+
+#### Example
+
+1. Deploy the manager, and set the `Use Persistent Volume` parameter to **New**.
+2. After you create the stack, on the **Outputs** page, note the `volume-id`.
+3. Use AI Unlimited.
+4. If the manager instance is lost, deploy the manager again, and include these parameters:
+   - `Use Persistent Volume`: **New**
+   - `Existing Persistent Volume`: the value you noted in step 2
+   
+The new manager instance has the same configuration as the one that was lost.
 
 </details>
 

@@ -10,12 +10,12 @@ pagination_next: null
 
 # AWS account requirements
 
-***()***
+***(This topic is still being discussed.)***
 
-- Work with your cloud admin to ensure you have the [Identity and Access Management (IAM)](https://aws.amazon.com/iam/) permissions to deploy cloud resources.
+- Work with your cloud admin to ensure you have the [Identity and Access Management (IAM)](https://aws.amazon.com/iam/) permissions to create cloud resources.
 
-- If you will need to access the manager instance, after it is installed, to run commands or debug, you can connect to it one of these ways:
-	- Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) now to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the manager's stack details](/docs/install-ai-unlimited/prod-aws-console-ai-unlimited.md#aws-parms).
+- If you'll need to access the manager instance, after it is installed, to run commands or debug, you can connect to it one of these ways:
+	- Generate a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the manager's stack details](/docs/install-ai-unlimited/prod-aws-console-ai-unlimited.md#aws-parms).
 	- Use AWS Session Manager to connect. To enable this, attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to a [role you provide](#provide-roles) to the manager.
   
 - If you’re using an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
