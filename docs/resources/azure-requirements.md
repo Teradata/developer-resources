@@ -10,19 +10,18 @@ pagination_next: null
 
 # Azure account requirements
 
-***WIP***
+- Work with your cloud admin to ensure you have [Azure role-based access control (RBAC)](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview) permissions to deploy cloud resources.
 
--  Azure account requirements 
+- Networking requirements: Your resource group must have an Azure Virtual Network (VNet) configured with a subnet. 
+- [Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
+- [Vnet](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal)
+- [Subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal)
+- [role](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles) 
 
-    - Rights ***(Permissions?)*** to create Azure resources. Make sure the account deploying AI Unlimited has sufficient permissions to [create the roles](/docs/advanced/roles-and-policies/prod-azure-create-custom-role.md).
+You can use your existing VNet and subnets or create your own, depending on your account permissions. 
 
-- Networking requirements 
-
-    - The resource group must have an Azure Virtual Network (VNet) configured with a subnet. You can use your existing VNet and subnets or create your own [Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal), [Vnet](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal), [Subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal), and [role](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles) depending on your account permissions.  
-
-- Secure shell (SSH) key pair to access or manage the AI Unlimited instance for running commands or debugging.
-
-    Generate a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect to the AI Unlimited instance ***("engine"?)*** using SSH.
+- If you will need to access the manager instance, after it is installed, to run commands or debug, you can connect to it one of these ways:
+	- Generate a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) now to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the manager's stack details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms).
 
 
 ## Create a role with the required permissions	
