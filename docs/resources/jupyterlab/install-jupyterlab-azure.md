@@ -22,6 +22,12 @@ For installation support, ask the [community](https://support.teradata.com/commu
 References to the Azure Portal are accurate as of April 14, 2024.
 ::: 
 
+
+## Prepare your Azure account
+
+***(to be adapted from the manager's prep account topic - probably make it a separate topic as it was originally)***
+
+
 ## Download the Jupyter template
 
 Download the template (`/deployments/azure/jupyter.json`) from the AI Unlimited GitHub repository you cloned.

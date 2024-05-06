@@ -10,8 +10,6 @@ pagination_next: null
 
 # Install the manager on Azure
 
-(cloud admin - **final term TBD**)
-
 Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 

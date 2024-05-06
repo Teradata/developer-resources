@@ -15,6 +15,11 @@ import TabItem from '@theme/TabItem';
 
 After you install the manager, access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
+:::note
+By setting up AI Unlimited, you become the AI Unlimited admin at your organization.
+:::
+
+
 ## Complete the fields
 
 You'll find information about each group of fields here.
@@ -24,7 +29,7 @@ You'll find information about each group of fields here.
 <summary>Initial setup</summary>
 
 <br />
-**AI Unlimited base URL**&mdash;***(label will change)***The URL you used to access the setup. You received it when you installed the manager.
+**AI Unlimited base URL**&mdash;***(label will change)*** The URL you used to access the setup. You received it when you installed the manager.
 
 **Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying functionality are simply "AI Unlimited."  
 
@@ -173,9 +178,11 @@ Select **Authenticate**. Then, if prompted, sign in.
 
 2. If you enabled TLS, select **Restart**. This restarts the AI Unlimited service with TLS in place.
 
-***(ok to get their API key before restarting, if they enabled TLS, that is)***
-
 AI Unlimited setup is now complete.
+
+:::note
+Because you are now the AI Unlimited admin, you can return to the setup anytime, as needed, to changes settings. Use the same URL, and sign in.
+:::
 
 
 ## What's next

@@ -13,7 +13,7 @@ pagination_next: null
 Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 :::note
-If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installaton options](/docs/advanced/jupyterlab).
+If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installation options](/docs/advanced/jupyterlab).
 :::
 
 

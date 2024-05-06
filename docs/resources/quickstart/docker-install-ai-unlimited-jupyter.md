@@ -39,14 +39,14 @@ In addition to the standard [AI Unlimited prerequisites](/docs/install-ai-unlimi
 	Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
 	:::
 	
-2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store JupyterLab's configuration files. The default location is `~/.jupyter`.
+2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store the JupyterLab configuration files. The default location is `~/.jupyter`.
 
 
 ## Pass your cloud service provider credentials to Docker
 
 :::note 
 You can pass the credentials two ways:
-- Use a YAML file that contains environment varibles for storing your credentials.
+- Use a YAML file that contains environment variables for storing your credentials.
 - Use a local volume containing your credentials. 
 	
 See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository.

@@ -24,8 +24,8 @@ A user who creates a project is the project's owner.
 - [Add collaborators](/docs/manage-ai-unlimited/add-collaborators.md)
 
 
-## Administrator
+## Admin
 
-The user who [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md) is the administrator.
+The user who [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md) is the admin.
 
 - [Change overall settings](/docs/manage-ai-unlimited/change-settings.md) ***(will explain this better - what does this really mean)***

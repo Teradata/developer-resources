@@ -24,7 +24,7 @@ You'll complete this simple workflow:
 
 ## Before you begin
 
-- From your AI Unlimited admin, get these items:
+- From your AI Unlimited admin (the person at your organization who installed and set up AI Unlimited), get these items:
 
 	- The ip or host name for the AI Unlimited manager
 
@@ -48,7 +48,7 @@ You'll complete this simple workflow:
 - Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 :::note
-If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installaton options](/docs/advanced/jupyterlab).
+If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installation options](/docs/advanced/jupyterlab).
 :::
 
 ## Connect, and run your first workload
@@ -84,7 +84,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
     ```bash
-    %project_auth_create name=<Auth_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEy>, region=<REGION>
+    %project_auth_create name=<Auth_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
 	
 	***These look like AWS. Do AWS-Azure tabs?***

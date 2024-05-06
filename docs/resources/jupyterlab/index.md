@@ -10,7 +10,7 @@ pagination_next: null
 
 # Install JupyterLab
 
-You may already have JupyterLab&mdash;somewhere on the cloud or on your computer, but without the AI Unlimited Jupyter Kernel. If so, [add the kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel).
+You may already have [JupyterLab](https://jupyter.org/)&mdash;somewhere on the cloud or on your computer, but without the AI Unlimited Jupyter Kernel. If so, [add the kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel).
 
 Or, get JupyterLab with the AI Unlimited kernel now:
 

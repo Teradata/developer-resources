@@ -12,6 +12,8 @@ import TabItem from '@theme/TabItem';
 
 # Magic commands
 
+In Jupyter notebooks, magic commands are special shortcuts that starts with %. They let you do more than just run programming language.
+
 JupyterLab with the AI Unlimited kernel supports these magic commands in addition to the existing Teradata SQL kernel magic commands. 
 
 ## %workspaces_config

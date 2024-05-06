@@ -29,7 +29,7 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
    :::note
-   You might want to ask an admin at your organization for guidance.
+   You might want to ask a cloud admin at your organization for guidance.
    :::
     - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
@@ -88,7 +88,7 @@ We recommend selecting the region closest to your primary work location.
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
 |AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default<br/>Default: latest<br/>The value is a container version tag.|
-|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters table. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you attach to the instance, in GB.|Required with default<br/>Default: 8<br/>Supports values between 8 and 1000. |
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you attach to the instance. |Required if UsePersistentVolume is set to Existing.<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.|Required with default|Delete <br/>Default: NA <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
@@ -110,7 +110,7 @@ If the container, pod, or node crashes or terminiates, you lose the manager's co
 
 #### With a persistent volume
 
-If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persisent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
+If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persistent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
 
 #### Example
 
