@@ -85,7 +85,7 @@ When you deploy the engine from a Jupyter notebook, you can specify different va
 
 Use these fields to allow source traffic to reach the engine:
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
-- **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group in this field to ensure that AI Unlimited can communicate with the engine.
 - **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
 
 **Role prefix**&mdash;If AI Unlimited creates the role, this prefix is added to the role name.
@@ -108,7 +108,7 @@ Use these fields to allow source traffic to reach the engine:
 
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
  
-- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include AI Unlimited's application security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
