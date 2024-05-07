@@ -10,7 +10,7 @@ pagination_next: null
 
 # Git requirements
 
-Make sure you have a GitHub or GitLab account, and complete these tasks.
+Make sure you have a GitHub or GitLab account. And complete these two tasks.
 
 
 ## Clone the provided repository
@@ -30,23 +30,16 @@ An OAuth app allows a user to grant access to their account on one website or se
 
 Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize your GitHub or GitLab account to store user and project information. 
 
-:::note
-AI Unlimited creates this repository when you install the AI Unlimited manager. ***READ Jack's slack response to my Q***
-:::
-
 1. Sign in to your GitHub or GitLab account. 
 
 2. Create an OAuth app. See [GitHub: Create an OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) or [GitLab: Create an OAuth app](https://docs.gitlab.com/ee/integration/oauth_provider.html).
   
     While registering the OAuth app, use these URLs.
  
-    - Homepage URL: 
-	  - If you are using the QuickStart, `http://localhost:3000`
-      - For a demo or full installation, `http://[ip_or_hostname]:[port]`
-	  
-	  
+    - Homepage URL: `http://[ip_or_hostname]:[port]`
+ 
     - Authorization callback URL: `[Homepage URL]/auth/github/callback`
     
     For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).
 
-3.	Copy and retain the **Client ID** and **Client secret**. You'll use them to authorize AI Unlimited to save user and project information.
+3.	Copy and keep the **Client ID** and **Client secret**. You'll use them when you [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).

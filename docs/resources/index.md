@@ -10,4 +10,4 @@ pagination_next: null
 
 # Other resources
 
-Here you'll find more installation-related resources.
+Here you'll find more installation-related, and other, resources.

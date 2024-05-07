@@ -3,6 +3,7 @@ id: docker-when-you're-done
 title: When you're done
 description: Prerequisites for installing Teradata AI Unlimited using Docker.
 sidebar_position: 7
+pagination_prev: null
 pagination_next: null
 ---
 import Tabs from '@theme/Tabs';

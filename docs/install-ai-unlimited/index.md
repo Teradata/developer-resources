@@ -43,12 +43,10 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 When you install the manager, you'll provide values for some cloud deployment details. See the [AWS details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms) or [Azure details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms)&mdash;if you want to work with a cloud admin to get the values ahead of time.
 :::
 
-***maybe we no longer want the note that follows - too confusing with the new option to deploy from the marketplace - might depend on the name of the new deployment method***
-
 :::note
 With AI Unlimited you can collaborate on projects with other users. 
 
-If you prefer a simpler, single-user approach, try the [QuickStart](/docs/advanced/quickstart) which runs the manager and JupyterLab in Docker containers on your computer.
+If you prefer a simpler, single-user approach, try the [QuickStart](/docs/resources/quickstart) which runs the manager and JupyterLab in Docker containers on your computer.
 :::
 
 

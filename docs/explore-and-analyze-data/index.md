@@ -13,7 +13,7 @@ pagination_next: null
 Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 :::note
-If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installation options](/docs/advanced/jupyterlab).
+If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installation options](/docs/resources/jupyterlab).
 :::
 
 
@@ -24,4 +24,8 @@ If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installati
 
 :::tip
 To avoid incurring charges for unneeded engine resources, remember to [suspend](/docs/manage-ai-unlimited/suspend-resume-project.md) projects you're not working on.
+:::
+
+:::tip
+For help with AI Unlimited projects, magic commands, and analytic functions, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::

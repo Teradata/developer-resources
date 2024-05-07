@@ -10,7 +10,7 @@ pagination_next: null
 
 # Install JupyterLab on AWS
 
-You'll use a CloudFormation template provided by Teradata to install JupyterLab, and the AI Unlimited kernel, from the AWS Management Console. 
+You'll use a CloudFormation template provided by Teradata to install JupyterLab and the AI Unlimited kernel from the AWS Management Console. 
 
 This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
@@ -24,7 +24,14 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 
 ## Prepare your AWS account
 
-***(to be adapted from the manager's prep account topic - probably make it a separate topic as it was originally)***
+- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in your choice of [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/jupyter).
+
+- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#jup-aws-parms).
+  
+- If you’re using an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
+	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
+	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;to configure a custom domain name and route DNS queries to your load balancer.
+
 
 
 ## Download the Jupyter template
@@ -44,20 +51,19 @@ CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repo
 
 ## Upload the template	
 		
-1. Sign in to the [AWS console](https://aws.amazon.com), and select the region in which to deploy AI Unlimited. 
-   Teradata recommends selecting the region closest to your primary work location.
+1. Sign in to the [AWS console](https://aws.amazon.com), and select the region in which to deploy JupyterLab. 
+   We recommend selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Select **Choose an existing template** and **Upload a template file**.
 6. Choose the template file you downloaded, and click **Next**.
 
 
+<a id="jup-aws-parms"></a>
 ## Specify stack details and options
 
 1. Provide a stack name.
 2. Review the parameters. Provide values for the required ones. Your organization might require others.
-
-***We are working on the table/scrollbar issues.***
 
 <details>
 
@@ -129,12 +135,14 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 
 ## Review and create the stack
 
+***Can a tester please provide a screen recording so we can verify these steps?***
+
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
-3. Select **Submit** to deploy the stack.
-4. Monitor the stack's status. When you see `CREATE_COMPLETE`, JupyterLab is ready. 
+3. Select **Submit** to deploy the stack.<br />
+On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the JupyterLab is ready. 
 
-You'll find the JupyterLab connection parameters in **Outputs**. 
+The **Outputs** tab shows the URL for accessing JupyterLab.
 
-***Haven't actually seen what happens after clicking Submit.***
+
 

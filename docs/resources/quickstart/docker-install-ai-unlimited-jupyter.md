@@ -4,6 +4,8 @@ title: QuickStart - Run AI Unlimited and JupyterLab using Docker
 description: Learn how to run AI Unlimited and JupyterLab using Docker.
 sidebar_label: Run the manager and JupyterLab using Docker 
 sidebar_position: 3
+pagination_prev: null
+pagination_next: null
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 # Run the manager and JupyterLab using Docker
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited.
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
 
-Installing the manager also creates a Git repository for user and project information.
+You'll use JupyterLab to explore and analyze data.
 
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
@@ -66,7 +68,7 @@ This QuickStart uses the first method.
 		</TabItem>
 	</Tabs>
 
-2. In the Teradata AI Unlimited GitHub repository, open the `[AWS or Azure]-credentials-env-vars.yaml` file and update the environment variable values.
+2. In the [Teradata AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited), open the `[AWS or Azure]-credentials-env-vars.yaml` file and update the environment variable values.
 
 
 ## Start the manager and JupyterLab
