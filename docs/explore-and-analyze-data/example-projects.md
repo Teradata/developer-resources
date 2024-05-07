@@ -10,12 +10,12 @@ pagination_next: null
 
 # Sample use cases
 
-Here are just some of the types of workloads you can run using AI Unlimited:
+[Explore examples](https://github.com/Teradata/ai-unlimited/tree/develop/examples) of just some of the workloads you can run using AI Unlimited.
 
-- a
-- b
-- c
+:::tip
+Discuss these and share ideas for others in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
 
-(The notebooks and data files will be in the "examples" folder in the AI Unlim repo. Here we just need to add links.)
+
 
 

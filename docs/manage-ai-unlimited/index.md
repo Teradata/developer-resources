@@ -1,6 +1,6 @@
 ---
 id: manage-projects
-sidebar_position: 3
+sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---

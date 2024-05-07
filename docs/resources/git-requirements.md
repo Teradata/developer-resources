@@ -3,7 +3,7 @@ id: git-requirements
 title: Git requirements
 description: Get the Teradata-provided repository and create an OAuth app.
 sidebar_label: Git requirements
-sidebar_position: 4
+sidebar_position: 3
 pagination_prev: null
 pagination_next: null
 ---

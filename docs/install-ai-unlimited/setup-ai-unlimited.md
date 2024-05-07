@@ -19,10 +19,14 @@ After you install the manager, access the AI Unlimited setup using the URL you r
 By setting up AI Unlimited, you become the AI Unlimited admin at your organization.
 :::
 
+:::tip
+For setup support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
+
 
 ## Complete the fields
 
-You'll find information about each group of fields here.
+Find information about each group of fields here.
 
 <details>
 

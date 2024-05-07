@@ -20,3 +20,5 @@ Or, get JupyterLab with the AI Unlimited kernel now:
 :::note
 The [QuickStart](/docs/resources/quickstart) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
 :::
+
+Once you have JupyterLab, you can start [exploring and analyzing data](/docs/explore-and-analyze-data/index.md).

@@ -3,7 +3,7 @@ id: explore-analyze
 title: Explore and analyze data
 description: Learn how to use AI Unlimited projects to run analytics workloads.
 sidebar_label: Explore and analyze data
-sidebar_position: 2
+sidebar_position: 3
 pagination_prev: null
 pagination_next: null
 ---
@@ -17,13 +17,14 @@ If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installati
 :::
 
 
-- [Create your first project](/docs/explore-and-analyze-data/create-first-project.md)
+- Create your [first project](/docs/explore-and-analyze-data/create-first-project.md)
 - See the overall [project flow](/docs/explore-and-analyze-data/project-flow.md)
-- Explore a collection of [example project notebooks](/docs/explore-and-analyze-data/example-projects.md)&mdash;and try them out
+- Explore [sample use cases](/docs/explore-and-analyze-data/example-projects.md)&mdash;and try them out
 - See the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) the AI Unlimited Jupyter Kernel adds to your notebooks
+- Learn about [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions
 
 :::tip
-To avoid incurring charges for unneeded engine resources, remember to [suspend](/docs/manage-ai-unlimited/suspend-resume-project.md) projects you're not working on.
+To avoid paying for unneeded engine resources, remember to [suspend](/docs/manage-ai-unlimited/suspend-resume-project.md) projects you're not working on.
 :::
 
 :::tip

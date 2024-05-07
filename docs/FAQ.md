@@ -4,6 +4,8 @@ title: FAQ
 description: Find answers to your AI Unlimited questions here.
 sidebar_label: FAQ
 sidebar_position: 6
+pagination_prev: null
+pagination_next: null
 ---
 
 # FAQ

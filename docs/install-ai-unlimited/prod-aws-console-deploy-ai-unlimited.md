@@ -130,7 +130,7 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 
 
 3. Select **Next**.
-4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
+4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) based on your needs, then select **Next**. 
 
 
 ## Review and create the stack

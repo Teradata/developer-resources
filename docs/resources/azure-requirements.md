@@ -3,7 +3,7 @@ id: azure-account-requirements
 title: Azure account requirements
 description: How to prepare your Azure account for AI Unlimited installation
 sidebar_label: Azure account requirements
-sidebar_position: 3
+sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 ---
