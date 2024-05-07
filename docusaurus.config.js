@@ -13,7 +13,7 @@ const projectName = 'ai-unlimited-docs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Teradata AI Unlimited',
+  title: 'Teradata AI Unlimited Documentation',
   tagline: 'A scalable, serverless compute engine in any cloud.',
   favicon: 'img/favicon.ico',
 
