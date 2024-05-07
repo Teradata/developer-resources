@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0 120px;
+  padding: 6rem 0 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -22,6 +22,7 @@
   font-weight: 300;
   line-height: 64px; /* 118.519% */
   letter-spacing: -1.62px;
+  text-align: left;
 }
 
 .heroBanner p {
@@ -31,6 +32,7 @@
   font-weight: 400;
   line-height: 30px; /* 150% */
   letter-spacing: 0.25px;
+  text-align: left;
 }
 
 .heroBlur {
@@ -47,10 +49,16 @@
   filter: blur(50px);
 }
 
+.hero__title,
+.hero__subtitle {
+  text-align: left;
+}
+
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin-top: 2rem;
+  justify-content: start;
 }
 
 .container {
@@ -58,15 +66,80 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  max-width: 1440px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 0 1.5rem;
 }
 
-@media screen and (max-width: 996px) {
+.buttons .getStartedButton {
+  flex-direction: row;
+  font-size: 1.125rem;
+
+  &:after {
+    content: 'east';
+    font-family: Material Symbols Outlined;
+    margin-left: 0.5rem;
+    pointer-events: none;
+    position: relative;
+    top: 1px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .heroBanner {
-    padding: calc(57px + 2rem) 2rem 2rem;
+    padding: calc(57px + 2rem) 2.5rem 2rem;
   }
 
   .container {
-    flex-direction: column-reverse;
+    padding: 0;
   }
 }
 
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .container > div:last-child {
+    align-self: center;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heroBanner h1 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 42px; /* 131.25% */
+    letter-spacing: -0.96px;
+  }
+
+  .heroBanner p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buttons .getStartedButton {
+    font-size: 0.875rem;
+    line-height: 22px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .container {
+    padding: 0 6.625rem 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .heroBanner {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .buttons {
+    margin-top: 2.5rem;
+  }
+}
