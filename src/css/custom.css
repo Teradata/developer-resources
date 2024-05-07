@@ -150,7 +150,7 @@ aside.theme-doc-sidebar-container {
 }
 
 html:not(.plugin-pages) .main-wrapper {
-  padding: 6.75rem calc(1.5rem - var(--ifm-spacing-horizontal)) 0;
+  padding: 6.75rem 1.5rem 0;
   max-width: 1440px;
   box-sizing: border-box;
 }
@@ -302,6 +302,12 @@ html.plugin-search-algolia .main-wrapper {
 
 html.plugin-search-algolia .main-wrapper .container {
   padding: 0 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  html:not(.plugin-pages) .main-wrapper {
+    padding: 6.75rem 0.5rem 0;
+  }
 }
 
 @media screen and (min-width: 1025px) {
