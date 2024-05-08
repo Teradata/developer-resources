@@ -59,27 +59,15 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 
 1. Connect to the [AI Unlimited manager](/docs/glossary.md#glo-manager).
     ```bash
-    %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=F 	
+    %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
     ```
 
-	***Assume no TLS for the sake of this sample workflow? But tell them what it means (very briefly).*** **TA: the workflow section need not provide details of the variables as they are explained in detail in the magic commands**
-	
 2. Create a new project.
     ```bash
-    %project_create project=<Project_Name>, env=<CSP>, team=<Project_Team>
+    %project_create project=<Project_Name>, env=<Cloud_Service_Provider>, team=<Project_Team>
     ```
-	
-	***They can name it what they want.***
-	
-	***Would be good to have text that spells out CSP.***
-	
-	***But what about the project team in this simple workflow? Do we expect a team to use it? But... I still need to learn about the "team" concept.***
-	
-3. Optionally, create an object store authorization to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
-
-	***Normally they create a shared authorization or one for a single user. In this sample workflow, maybe this is not optional? Otherwise, they'd have to use SQL to create an authoriation for themselves?***
-    **TA: Auth is required only for external connectivity, in this example as there is no external connection, this step is optional**
-
+		
+3. Create an object store authorization to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
     ```bash
@@ -103,77 +91,69 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
 
 7. Run the sample workload.
 
-    **TA: this example will change**
-	***I don't yet understand all this, where the data comes from, etc.***
-    **TA: Idea is to create a table and then load data from an Excel file or from the sample repo within Jupyter (FILEPATH=notebooks/sql/data/salescenter.csv)**
-    ***when did they select a DB in their data lake? something to do with the object authorization magic command?***
-	**TA: No, this is data load from an Excel***
-	***is the idea that they might coincidentally happen to have tables with those names in their DB - or maybe someone in their org ran this sample workload prior?***
-    ***TA: idea is to create new tables, users can create by themselves**
     :::note
-    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. 
+    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace auth1 and location values in the following example with your own.
     ::::
     a. Create a table to store the sales center data.
       
     ```sql
-    DROP TABLE SalesCenter;
-    CREATE MULTISET TABLE SalesCenter ,NO FALLBACK ,
-         NO BEFORE JOURNAL,
-         NO AFTER JOURNAL,
-         CHECKSUM = DEFAULT,
-         DEFAULT MERGEBLOCKRATIO
-         (
-          Sales_Center_id INTEGER NOT NULL,
-          Sales_Center_Name VARCHAR(255) CHARACTER SET LATIN NOT CASESPECIFIC)
-    NO PRIMARY INDEX ;
+    DROP FOREIGN TABLE SalesCenter;
+
+    CREATE MULTISET FOREIGN TABLE SalesCenter ,
+    EXTERNAL SECURITY DEFINER TRUSTED auth1
+    (
+        Sales_Center_id INTEGER NOT NULL,
+        Sales_Center_Name VARCHAR(255) CHARACTER SET LATIN NOT CASESPECIFIC
+    )
+    USING
+    (
+        LOCATION ('/s3/s3.amazonaws.com/tioce/data/salescenter.csv')
+        MANIFEST ('FALSE')
+        ROWFORMAT  ('{"field_delimiter":",","record_delimiter":"\n","character_set":"LATIN"}')
+        STOREDAS ('TEXTFILE')
+        HEADER ('TRUE')
+        STRIP_EXTERIOR_SPACES ('FALSE')
+        STRIP_ENCLOSING_CHAR ('NONE')
+    )
+    NO PRIMARY INDEX;
+
     ```
-    b. Load data into the SalesCenter table using the `%dataload` magic command.
-    ```bash
-    %dataload DATABASE=<Project_Name>, TABLE=SalesCenter, FILEPATH=notebooks/sql/data/salescenter.csv
-    ```
-	:::note
-    Unable to locate the salescenter.csv file? Download the file from [GitHub Demo: Charting and Visualization Data](https://github.com/Teradata/jupyter-demos/tree/main/Getting_Started/Charting_and_Visualization/data).
-    :::
-    Verify that the data was inserted.
+ 
+    b. Verify that the data was inserted.
     ```sql
     SELECT * FROM SalesCenter ORDER BY 1
     ```
     c. Create a table with the sales demo data.
     ```sql
-    DROP TABLE SalesDemo;
-    CREATE MULTISET TABLE SalesDemo ,NO FALLBACK ,
-         NO BEFORE JOURNAL,
-         NO AFTER JOURNAL,
-         CHECKSUM = DEFAULT,
-         DEFAULT MERGEBLOCKRATIO
-         (
-          Sales_Center_ID INTEGER NOT NULL,
-          UNITS DECIMAL(15,4),
-          SALES DECIMAL(15,2),
-          COST DECIMAL(15,2))
-    NO PRIMARY INDEX ;
+    DROP FOREIGN TABLE SalesDemo;
+    CREATE MULTISET FOREIGN TABLE SalesDemo ,
+    EXTERNAL SECURITY DEFINER TRUSTED auth1
+    (
+        Sales_Center_ID INTEGER NOT NULL,
+        UNITS DECIMAL(15,4),
+        SALES DECIMAL(15,2),
+        "COST" DECIMAL(15,2)
+    )
+   USING
+   (
+       LOCATION ('/s3/s3.amazonaws.com/tioce/data/salesdemo.csv')
+       MANIFEST ('FALSE')
+       ROWFORMAT  ('{"field_delimiter":",","record_delimiter":"\n","character_set":"LATIN"}')
+       STOREDAS ('TEXTFILE')
+       HEADER ('FALSE')
+       STRIP_EXTERIOR_SPACES ('FALSE')
+       STRIP_ENCLOSING_CHAR ('"')
+   )
+   NO PRIMARY INDEX;
     ```
-    d. Load data into the SalesDemo table using the `%dataload` magic command. 
-	
-    ```bash
-    %dataload DATABASE=`Project_Name`, TABLE=SalesDemo, FILEPATH=notebooks/sql/data/salesdemo.csv
-    ```
-    :::note
-    Unable to locate the salesdemo.csv file? Download the file from [GitHub Demo: Charting and Visualization Data](https://github.com/Teradata/jupyter-demos/tree/main/Getting_Started/Charting_and_Visualization/data).
-    :::
-	
-	Verify that the sales demo data was inserted successfully.
+	d. Verify that the sales demo data was inserted successfully.
 	
     ```sql
     SELECT * FROM SalesDemo ORDER BY sales
     ```
     Open the Navigator for your connection and verify that the tables were created. Run a row count on the tables to verify that the data was loaded.
 	
-	***safe to assume they know how? probably not our job to teach them***
-    
-    e. Use charting magic to visualize the result.
-	
-	***safe to assume they know how? probably not our job to teach them***
+	e. Use charting magic to visualize the result.
 	
     Provide X and Y axes for your chart.
 	
