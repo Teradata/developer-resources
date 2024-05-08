@@ -24,7 +24,7 @@ You'll complete this simple workflow:
 
 ## Before you begin
 
-- From your AI Unlimited admin (the person at your organization who installed and set up AI Unlimited), get these items:
+- From your AI Unlimited admin (the person at your organization who set up AI Unlimited), get these items:
 
 	- The ip or host name for the AI Unlimited manager
 
@@ -61,8 +61,7 @@ Run `%help` or `%help <command>` for details on all magic commands or any one of
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=F 	
     ```
-	***we are aware of the horizonal scroll bar vs. copy icon issue - styles are being tweaked***
-	
+
 	***Assume no TLS for the sake of this sample workflow? But tell them what it means (very briefly).*** **TA: the workflow section need not provide details of the variables as they are explained in detail in the magic commands**
 	
 2. Create a new project.

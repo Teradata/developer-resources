@@ -7,7 +7,12 @@ pagination_next: null
 
 # Manage projects
 
-Here's what different users can do.
+What you can do depends on your user type.
+
+:::tip
+For help with managing projects, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+:::
+
 
 ## All users
 
@@ -30,6 +35,3 @@ The user who [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited
 
 - [Change overall settings](/docs/manage-ai-unlimited/change-settings.md) ***(will explain this better - what does this really mean)***
 
-:::tip
-For help with managing projects, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::

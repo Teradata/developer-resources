@@ -4,6 +4,7 @@ title: Get started
 description: Learn how to get started with a self-service, on-demand AI/ML engine.
 sidebar_label: Get started
 sidebar_position: 2
+pagination_prev: null
 pagination_next: null
 ---
 
