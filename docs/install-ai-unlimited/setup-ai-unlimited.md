@@ -30,16 +30,16 @@ Find information about each group of fields here.
 
 <details>
 
-<summary>Initial setup</summary>
+<summary>Basic setup</summary>
 
 <br />
-**AI Unlimited base URL**&mdash;***(label will change)*** The URL you used to access the setup. You received it when you installed the manager.
+**AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
 
 **Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying functionality are simply "AI Unlimited."  
 
 **Git provider**&mdash;GitHub or GitLab.
 
-**Service log level**&mdash;The level of detail to see in AI Unlimited logs.
+**AI Unlimited log level**&mdash;The level of detail to see in AI Unlimited logs.
 
 **Engine IP network type**
 
@@ -55,12 +55,12 @@ We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#glo
 
 - If you are using a [network load balancer (NLB)](/docs/glossary.md#glo-nlb) or no load balancer, select **True.**
 
-	- **Service TLS certificate** and **Service TLS certificate key**&mdash;If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
+	- **AI Unlimited TLS certificate** and **AI Unlimited TLS certificate key**&mdash;If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
 
 	- Or select **Generate Certs** to use a Teradata system-generated certificate. It automatically renews before it expires.
 
 <br />
-Select **Save Changes**.
+Select **Update**.
 
 </details>
 
@@ -69,7 +69,7 @@ Select **Save Changes**.
 
 <summary>Cloud integration</summary>
 <br />
-When you deploy the engine from a Jupyter notebook, you can specify different values for the setup fields labelled **Default**.
+Some of these fields are for default values. Later, when you deploy the engine from a Jupyter notebook, you can specify values, different from the defaults, for that deployment.
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
@@ -97,7 +97,7 @@ Use these fields to allow source traffic to reach the engine:
 **[Permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) ARN**&mdash;If your IAM entities require a boundary, you can provide one here.   
 
 <br />
-Select **Save Changes**.
+Select **Update**.
 
 </TabItem>
 
@@ -117,7 +117,7 @@ Use these fields to allow source traffic to reach the engine:
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
 <br />
-Select **Save Changes**.
+Select **Update**.
 
 </TabItem>
 </Tabs>
@@ -134,9 +134,14 @@ Select **Save Changes**.
 <TabItem value="github" label="GitHub">
 
 <br />
+
+***(might add GitHub application URL & GitHub callback URL pending discussion)***
+
 **GitHub base URL**&mdash;The URL for your GitHub account.
 
 **GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
+
+- **GitHub username**&mdash;Your GitHub username.
 
 **Organization access**
 
@@ -147,7 +152,7 @@ Two organizations in your GitHub account can help with access control and reposi
 - Project repositories are created in the **Repository organization**. If you don't specify an organization, projects will be in your personal GitHub space.
 
 <br/>
-Select **Authenticate**. Then, if prompted, sign in.
+Select **Login**. Then, if prompted, sign in.
 
 </TabItem>
 

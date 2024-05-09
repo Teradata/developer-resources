@@ -33,12 +33,10 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 
 ## Prerequisites
 
-- A pay-as-you-go AWS or Azure account on which to provision compute resources
-	- Account requirements&mdash;[AWS](/docs/resources/aws-requirements.md) or [Azure](/docs/resources/azure-requirements.md)
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
-	- Other [Git requirements](/docs/resources/git-requirements.md)
-- Your object storage, where your Amazon or ADLS Gen2 data lake resides
-- JupyterLab
+- A pay-as-you-go AWS or Azure account on which to provision compute resources. See the requirements for your [AWS](/docs/resources/aws-requirements.md) or [Azure](/docs/resources/azure-requirements.md) account.
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information. See related [Git requirements](/docs/resources/git-requirements.md).
+- Your object storage, where your Amazon or ADLS Gen2 data lake resides.
+- JupyterLab.
 
 :::tip
 When you install the manager, you'll provide values for some cloud deployment details. See the [AWS details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms) or [Azure details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms)&mdash;if you want to work with a cloud admin to get the values ahead of time.

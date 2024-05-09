@@ -13,17 +13,6 @@ pagination_next: null
 Make sure you have a GitHub or GitLab account. And complete these two tasks.
 
 
-## Clone the provided repository
-
-The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) contains template, parameter, and policy files for installing AI Unlimited.
-
-	Open a terminal window, and clone the repository.
-
-    ``` bash
-    git clone https://github.com/Teradata/ai-unlimited
-    ```
-
-
 ## Create a GitHub or GitLab OAuth app
 
 An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password.
@@ -43,3 +32,15 @@ Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize y
     For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).
 
 3.	Copy and keep the **Client ID** and **Client secret**. You'll use them when you [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+
+
+## Clone the provided repository
+
+The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) that Teradata provides contains template, parameter, and policy files for installing AI Unlimited.
+
+	Open a terminal window, and clone the repository.
+
+    ``` bash
+    git clone https://github.com/Teradata/ai-unlimited
+    ```
+

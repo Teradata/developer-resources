@@ -25,16 +25,16 @@ Prepare your AWS account:
 
 ## Allow AI Unlimited to create roles
 
-The manager requires a role that allows it to deploy the engine. The engine requires a role that allows the engine's nodes to communicate.
+The manager needs a role that allows it to deploy the engine. The engine needs a role that allows the engine nodes to communicate.
 
-**Role required by the manager**
+**Role for the manager**
 
 To let Unlimited create this role for you, when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms), provide these values for these parameters:
     - `IamRole`: **New**
     - `IamRoleName`: leave blank
 	
 	
-**Role required by the engine**
+**Role for the engine**
 	
 Let AI Unlimited create a new role for the engine each time the engine is deployed. 
 
