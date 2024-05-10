@@ -13,7 +13,7 @@ pagination_next: null
 Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 :::note
-If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installation options](/docs/resources/jupyterlab).
+If you don't have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/resources/jupyterlab).
 :::
 
 
@@ -24,7 +24,7 @@ If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installati
 - Discover [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions
 
 :::tip
-To avoid paying for unneeded engine resources, remember to [suspend](/docs/manage-ai-unlimited/suspend-resume-project.md) projects you're not working on.
+To avoid paying for unneeded engine resources, remember to [suspend](/docs/manage-ai-unlimited/suspend-and-resume-project.md) projects you're not working on.
 :::
 
 :::tip

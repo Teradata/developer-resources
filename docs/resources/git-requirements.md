@@ -15,6 +15,8 @@ Make sure you have a GitHub or GitLab account. And complete these two tasks.
 
 ## Create a GitHub or GitLab OAuth app
 
+***(we might move this so that it follows installing the manager)***
+
 An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password.
 
 Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize your GitHub or GitLab account to store user and project information. 

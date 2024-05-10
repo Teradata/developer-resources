@@ -24,31 +24,33 @@ You'll complete this simple workflow:
 
 ## Before you begin
 
-- From your AI Unlimited admin (the person at your organization who set up AI Unlimited), get these items:
+Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
 
-	- The ip or host name for the AI Unlimited manager
+- From your admin, get these items:
 
-	- These [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables 
+  - The URL for the AI Unlimited manager.
 
-  <Tabs>
+  - These environment variables:   
+    <Tabs>
     <TabItem value="aws" label="AWS" default>
     `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`
 
-  </TabItem>
+    </TabItem>
     <TabItem value="azure" label="Azure">
     `ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID`, and `ARM_CLIENT_SECRET`
 
-  </TabItem>
+    </TabItem>
     </Tabs> 
 
-- Access the AI Unlimited manager and get your API key. 
-
-	***we can include the how-to here for getting the api key - will probably also have a separate topic or put instrucs on the parent page***
+- From your AI Unlimited user profile, get your API key:
+  - Access the manager using the URL your admin provided.
+  - Sign in, as you normally do, to GitHub or GitLab.
+  - On your user profile, copy your API key.
 
 - Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 :::note
-If you don't have JupyterLab or the AI Unlimited kernel, see [Jupyter installation options](/docs/advanced/jupyterlab).
+If you don't have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
 :::
 
 ## Connect, and run your first workload

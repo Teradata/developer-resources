@@ -26,6 +26,8 @@ For setup support, ask the [community](https://support.teradata.com/community?id
 
 ## Complete the fields
 
+***(changes being made to the UI - info in these sections could change)***
+
 Find information about each group of fields here.
 
 <details>
@@ -104,6 +106,9 @@ Select **Update**.
 <TabItem value="azure" label="Azure"> 
 
 <br />
+
+***(new fields to be added)***
+
 **Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
 
 **Inbound security**
@@ -141,7 +146,7 @@ Select **Update**.
 
 **GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
 
-- **GitHub username**&mdash;Your GitHub username.
+**GitHub username**&mdash;Your GitHub username.
 
 **Organization access**
 
@@ -182,7 +187,7 @@ Select **Authenticate**. Then, if prompted, sign in.
 
 ## Before you leave
 
-1. Go to your **Profile**, and copy your API key.
+1. On your **Profile**, copy your API key.
     You'll use it when you connect to the engine from a Jupyter notebook.
 
 2. If you enabled TLS, select **Restart**. This restarts the AI Unlimited service with TLS in place.
@@ -190,7 +195,7 @@ Select **Authenticate**. Then, if prompted, sign in.
 AI Unlimited setup is now complete.
 
 :::note
-Because you are now the AI Unlimited admin, you can return to the setup anytime, as needed, to changes settings. Use the same URL, and sign in.
+Because you are the AI Unlimited admin, you can return to the setup anytime to [change any settings](/docs/manage-ai-unlimited/change-settings.md).
 :::
 
 

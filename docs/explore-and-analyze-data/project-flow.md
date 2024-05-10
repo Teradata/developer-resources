@@ -10,27 +10,24 @@ pagination_next: null
 
 # Project flow
 
-You might be the owner of one or more projects and a collaborator on others.
+You might be the owner of one or more projects and a collaborator on others. 
 
-If you create a project, you are its owner. The owner of your Git repository that stores user and project information can [add collaborators](/docs/manage-ai-unlimited/add-collaborators.md) to the project. Then in the project notebook, you update the engine for those new users. 
+AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in your JupyterLab notebooks. While project owners and collaborators can use the same magic commands, their involvement is typically different. 
 
-AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in your Jupyter notebooks. While project owners and collaborators can use the same magic commands, their involvement is typically different. 
-
-Here is the overall project lifecycle from both points of view.
+Here is the project lifecycle from both points of view.
 
 
 ## Project owners
 
-import ProjectFlowOwnerImg from './v-3_project-flow_owner.svg';
+import ProjectFlowOwnerImg from './owner.svg';
 
 <ProjectFlowOwnerImg />
-
 <br />
-
+<br />
 
 ## Project collaborators
 <br />
 
-import ProjectFlowCollabsImg from './collab-b.svg';
+import ProjectFlowCollabImg from './collab.svg';
 
-<ProjectFlowCollabsImg />
+<ProjectFlowCollabImg />

@@ -34,7 +34,7 @@ Admin, project owner, collaborator--will expound.
 (Not specifically addressing devs for *initial* PPP. But surely folks will ask?)
 
 **I'm an admin. After the initial setup, can I go back and change settings?**
-Yes. (any of them?)
+Yes, you can change any of them.
 
 **Can I add other administrator users?**
 You can have only one AI Unlimited admin.
@@ -43,7 +43,8 @@ You can have only one AI Unlimited admin.
 Of course. Explain.
 
 **What's my API key for?**
-Answer.
+
+You use your API key to connect from a Jupyter notebook to the engine. 
 
 **How can I access another user's project?**
 Ask the owner to add you as a collaborator. Link to the steps.

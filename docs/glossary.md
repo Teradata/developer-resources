@@ -15,7 +15,7 @@ pagination_next: null
 <a id="glo-manager"></a>
 ### AI Unlimited manager
 
-The manager orchestrates the deployment of the AI/ML engine on AWS or Azure. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. There all users get their API key, for connecting to the engine from a Jupyter notebook. And there all users can monitor projects.
+The manager orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. There all users get their API key, for connecting to the engine from a Jupyter notebook. And there all users can monitor projects.
 
 <a id="glo-application-load-balancer"></a>
 ### application load balancer

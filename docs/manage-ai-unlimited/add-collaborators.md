@@ -1,7 +1,7 @@
 ---
 id: add-collaborators
-title: Add collaborators to a project
-description: As a project owner, learn how to add collaborators
+title: Add collaborators
+description: Learn how to add collaborators to a project.
 sidebar_label: Add project collaborators
 sidebar_position: 1
 pagination_prev: null
@@ -10,6 +10,16 @@ pagination_next: null
 
 # Add project collaborators
 
-[placeholder]
+If you are the project owner, you can add collaborators to your project. The steps depend on whether or not the engine is deployed.
 
-"Users are added to the project by github/gitlab, if users are added before deploy then they are all created automatically as part of the deployment. If users are added there after deploy then %project_engine_update_users need to be used to update and create new users in the deployed engine."
+
+## Before the engine is deployed
+
+In GitHub or GitLab, add users to the project repository. ***(might add more info about this)*** When you deploy the engine from your JupyterLab notebook, the users are added to the engine automatically.
+
+
+## After the engine is deployed
+
+1. In GitHub or GitLab, add users to the project repository.<br/>
+2. In your JupyterLab notebook, run the magic command `%project_engine_update_users` to add the users to the engine.
+

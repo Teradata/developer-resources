@@ -23,7 +23,7 @@ This initial release of the AI Unlimited paid public preview includes everything
 - d
 - e
 
-See the [release notes](/docs/resources/release-notes/index.md) for more details.
+See the [release notes](/docs/release-notes.md) for more details.
 
 
 ## On its way

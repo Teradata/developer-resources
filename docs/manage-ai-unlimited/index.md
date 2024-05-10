@@ -18,9 +18,8 @@ For help with managing projects, ask the [community](https://support.teradata.co
 
 - Use [magic commands](/docs/explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
 
-- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-resume-project.md) (*pay as you go*)
+- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-restore-project.md) to pay as you go
 
-- [Monitor the status](/docs/manage-ai-unlimited/monitor-projects.md) of projects
 
 ## Project owners
 
@@ -33,5 +32,6 @@ A user who creates a project is the project's owner.
 
 The user who [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md) is the admin.
 
-- [Change overall settings](/docs/manage-ai-unlimited/change-settings.md) ***(will explain this better - what does this really mean)***
+- [Change settings](/docs/manage-ai-unlimited/change-settings.md)
+
 
