@@ -161,7 +161,7 @@ Select **Login**. Then, if prompted, sign in.
 <br />
 **GitLab base URL**&mdash;The URL for your GitLab account.
 
-**GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
+**GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/resources/git-requirements.md).
 
 **Group access**
 

@@ -25,7 +25,7 @@ For installation support, ask the [community](https://support.teradata.com/commu
 
 CloudFormation templates for the manager are here in the AI Unlimited GitHub repository you cloned:
 
-`/deployments/aws/templates/ai-unlimited/`
+`deployments/aws/templates/ai-unlimited/`
 
 1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
    :::note

@@ -38,7 +38,7 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 ## Download the Jupyter template
 
-Download the template (`/deployments/azure/jupyter.json`) from the AI Unlimited GitHub repository you cloned.
+Download the template (`deployments/azure/jupyter.json`) from the AI Unlimited GitHub repository you cloned.
 
 ## Load the template
 

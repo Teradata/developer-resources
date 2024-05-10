@@ -10,11 +10,9 @@ pagination_next: null
 
 # AWS account requirements
 
-Prepare your AWS account:
-
 - Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in your choice of [AI Unlimited template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited).
 
-- If you'll need to access the manager instance, after it is installed, to run commands or debug, you can connect to it one of these ways:
+- If you'll need to access the manager instance to run commands or debug, you can connect to it one of these ways:
 	- Use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) that you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms).
 	- Use AWS Session Manager to connect. To enable this, attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to a [role you provide](#provide-roles) to the manager.
   
@@ -29,7 +27,7 @@ The manager needs a role that allows it to deploy the engine. The engine needs a
 
 **Role for the manager**
 
-To let Unlimited create this role for you, when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms), provide these values for these parameters:
+To let AI Unlimited create this role for you, when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms), provide these values for these parameters:
     - `IamRole`: **New**
     - `IamRoleName`: leave blank
 	

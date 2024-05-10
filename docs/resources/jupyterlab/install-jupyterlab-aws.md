@@ -38,7 +38,7 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 
 CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository you cloned:
 
-`/deployments/aws/templates/jupyter/`
+`deployments/aws/templates/jupyter/`
 
 1. Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
 

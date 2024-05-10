@@ -14,7 +14,7 @@ Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimi
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
 
-You'll use an Azure Resource Manager (ARN) template provided by Teradata to install the manager from the Azure Portal. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
+You'll use an Azure Resource Manager (ARM) template provided by Teradata to install the manager from the Azure Portal. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
  
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -23,7 +23,17 @@ For installation support, ask the [community](https://support.teradata.com/commu
 
 ## Download the manager template
 
-Download the Azure Resource Manager (ARM) template (`/deployments/azure/ai-unlimited.json`) from the AI Unlimited GitHub repository you cloned.
+Azure Resource Manager (ARM) templates for the manager are here in the AI Unlimited GitHub repository you cloned:
+
+`develop/deployments/azure/templates/arm/ai-unlimited`
+
+Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
+   :::note
+   You might want to ask a cloud admin at your organization for guidance.
+   :::
+    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
 
 ## Load the template
@@ -61,7 +71,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 | AI Unlimited GRPC Port | The port to access the AI Unlimited API. | Required with default<br/>Default: 3282 | 
 | Source App Sec Groups | The source application security groups (ASG) that have permission to connect to the AI Unlimited instance. ASGs let you organize your virtual machines (VMs) based on their specific network security policies. These security policies determine what traffic is or is not permissible on your virtual machine. |Optional<br/>Default: NA<br/> Select an application security group in the same region as the network interface. |
 | Destination App Sec Groups | The destination application security groups that have permission to connect to the AI Unlimited instance. | Optional<br/>Default: NA<br/>Select an application security group in the same region as the network interface.  |
-| Role Definition ID | The ID of the role to use with AI Unlimited.| Required<br/>Default: NA<br/>Use Azure CLI command- Get-AzRoleDefinition command to get your Role Definition ID. |
+| Role Definition ID | The ID of the role to use with AI Unlimited.| Required<br/>Default: NA<br/>Use Azure CLI command- Get-AzRoleDefinition to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure.|  Optional<br/>Default: true |
 | Use Key Vault | Specifies whether to use Key Vault to retrieve the secured password during a deployment. | Optional<br/>Default: New |
 | Use Persistent Volume | Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. | Optional with default<br/>Default: New <br/>Supported options: New, None, Existing, depending on your use case. |
