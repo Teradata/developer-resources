@@ -26,7 +26,7 @@ For setup support, ask the [community](https://support.teradata.com/community?id
 
 ## Complete the fields
 
-***(changes being made to the UI - info in these sections could change)***
+***(changes to the UI - info in these sections is back to WIP)***
 
 Find information about each group of fields here.
 
@@ -107,9 +107,17 @@ Select **Update**.
 
 <br />
 
-***(new fields to be added)***
-
 **Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
+
+**Default network resource group** **(verifying)**
+
+**Default network** **(verifying)**
+
+**Default subnet** **(verifying)**
+
+**Default key vault** **(verifying)**
+
+**Default key vault resource group** **(verifying)**
 
 **Inbound security**
 
@@ -117,7 +125,7 @@ Use these fields to allow source traffic to reach the engine:
 
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
  
-- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; **(verifying field label)** If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
@@ -140,13 +148,15 @@ Select **Update**.
 
 <br />
 
-***(might add GitHub application URL & GitHub callback URL pending discussion)***
+**GitHub application URL**&mdash;The manager uses this URL to connect to the GitHub account to authenticate a user.
+
+**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager.
 
 **GitHub base URL**&mdash;The URL for your GitHub account.
 
 **GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
 
-**GitHub username**&mdash;Your GitHub username.
+**GitHub login**&mdash;**(this field might be removed)**
 
 **Organization access**
 
@@ -157,6 +167,8 @@ Two organizations in your GitHub account can help with access control and reposi
 - Project repositories are created in the **Repository organization**. If you don't specify an organization, projects will be in your personal GitHub space.
 
 <br/>
+Select **Update**.
+
 Select **Login**. Then, if prompted, sign in.
 
 </TabItem>
@@ -164,9 +176,16 @@ Select **Login**. Then, if prompted, sign in.
 <TabItem value="gitlab" label="GitLab">
 
 <br />
+
+**GitLab application URL**&mdash;The manager uses this URL to connect to the GitLab account to authenticate a user. **(verifying)**
+
+**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. **(verifying)**
+
 **GitLab base URL**&mdash;The URL for your GitLab account.
 
 **GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/resources/git-requirements.md).
+
+**GitLab login** **(verifying)**
 
 **Group access**
 
@@ -177,7 +196,9 @@ Two groups in your GitLab account can help with access control and repository ma
 - All project repositories are created in the **Repository group**. If you don't specify a group, projects will be in your personal GitLab space.
 
 <br/>
-Select **Authenticate**. Then, if prompted, sign in.
+Select **Update**.
+
+Select **Login**. Then, if prompted, sign in.
 
 </TabItem>
 </Tabs>
