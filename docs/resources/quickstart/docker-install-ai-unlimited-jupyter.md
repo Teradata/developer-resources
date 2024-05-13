@@ -26,7 +26,10 @@ For installation support, ask the [community](https://support.teradata.com/commu
 
 ## Prerequisites
 
-In addition to the standard [AI Unlimited prerequisites](/docs/install-ai-unlimited/#gs-prerequisties), make sure you have [Docker](https://www.docker.com/get-started/) installed on your machine.
+- A pay-as-you-go AWS or Azure account on which to deploy the engine, later, from a Jupyter notebook
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
+- Your object storage, where your Amazon or ADLS Gen2 data lake resides.
+- [Docker](https://www.docker.com/get-started/) installed on your computer
 
 
 ## Set configuration file locations

@@ -21,19 +21,19 @@ For installation support, ask the [community](https://support.teradata.com/commu
 :::
 
 
-## Download the manager template
+## Choose a manager template
 
-Azure Resource Manager (ARM) templates for the manager are here in the AI Unlimited GitHub repository you cloned:
+ARM templates for the manager are here in the AI Unlimited GitHub repository you cloned:
 
-`develop/deployments/azure/templates/arm/ai-unlimited`
+`deployments/azure/templates/arm/ai-unlimited`
 
 Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
-   :::note
-   You might want to ask a cloud admin at your organization for guidance.
-   :::
-    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
-    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
-    - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
+:::note
+You might want to ask a cloud admin at your organization for guidance.
+:::
+    - `ai-unlimited-with-alb.json`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
+    - `ai-unlimited-with-nlb.json`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `ai-unlimited-without-lb.json`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
 
 ## Load the template
@@ -44,7 +44,7 @@ Choose a template based on the type of [load balancer](/docs/glossary.md#glo-loa
    ::: 
 2. Select **Deploy a custom template**.
 3. Select **Build your own template in the editor**, then **Load file**.
-4. Choose the template file you downloaded, then select **Save**.
+4. Select the template file you chose to use, then select **Save**.
 
 <a id="azure-parms"></a>
 ## Specify instance details

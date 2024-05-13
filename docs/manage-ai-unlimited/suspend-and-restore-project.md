@@ -16,7 +16,7 @@ All project information, including user and object store authorizations and data
 
 ## Suspend
 
-In the project, run this:
+In your notebook, run this:
 
 ```bash 
 %project_engine_suspend <Project_Name>
@@ -24,7 +24,7 @@ In the project, run this:
 
 ## Restore
 
-In the project, run this: 
+In your notebook, run this: 
 
 ```bash 
 %project_restore project=<Project_Name>, gitref=<Git_Reference>

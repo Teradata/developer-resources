@@ -18,12 +18,12 @@ If you are the project owner, you can add collaborators to your project. The ste
 1. In GitHub or GitLab, add users to the project repository.<br/>
 See details about adding repo users for [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository) or [GitLab](https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project).
 
-2. When you deploy the engine from your JupyterLab notebook, the users are added to the engine automatically.
+2. When you deploy the engine from your Jupyter notebook, the users are added to the engine automatically.
 
 
 ## After the engine is deployed
 
 1. In GitHub or GitLab, add users to the project repository.<br/>
 See details about adding repo users for [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository) or [GitLab](https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project).
-2. In your JupyterLab notebook, run the magic command `%project_engine_update_users` to add the users to the engine.
+2. In your Jupyter notebook, run the magic command `%project_engine_update_users` to add the users to the engine.
 

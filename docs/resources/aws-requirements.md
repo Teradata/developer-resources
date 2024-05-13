@@ -23,7 +23,11 @@ pagination_next: null
 
 ## Allow AI Unlimited to create roles
 
-The manager needs a role that allows it to deploy the engine. The engine needs a role that allows the engine nodes to communicate.
+The manager needs a role that allows it to deploy the engine. The engine needs a role that allows the engine nodes to communicate. You can let AI Unlimited create both of these roles.
+
+:::note
+If your security does not allow AI Unlimited to create roles, [create the roles](#provide-roles) yourself or with the help of your cloud admin.
+::: 
 
 **Role for the manager**
 
@@ -31,10 +35,9 @@ To let AI Unlimited create this role for you, when you [specify the stack detail
     - `IamRole`: **New**
     - `IamRoleName`: leave blank
 	
-	
 **Role for the engine**
 	
-Let AI Unlimited create a new role for the engine each time the engine is deployed. 
+AI Unlimited can create a new role for the engine each time the engine is deployed. 
 
 The engine-specific policies AI Unlimited creates are restricted this way:	
   
@@ -42,11 +45,7 @@ The engine-specific policies AI Unlimited creates are restricted this way:
   "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
   ```
 
-To allow this, when you [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited), leave the **Default IAM role** field blank.
-
-:::note
-If your security does not allow AI Unlimited to create roles, create the roles yourself or with the help of your cloud admin.
-::: 
+To allow AI Unlimited to create a new role for each engine deployment, when you configure the [cloud integration](/docs/install-ai-unlimited/setup-ai-unlimited#setup-fields) as part of [AI Unlimited setup](/docs/install-ai-unlimited/setup-ai-unlimited), leave the **Default IAM role** field blank.
 
 
 <a id="provide-roles"></a>	
@@ -102,7 +101,7 @@ If you are providing the manager's role, use the samples you need in an attached
 If you use [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) for the engine's role, use  [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) for the manager's role.
 :::
 
-- When you [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md), put the role name in the **Default IAM role** field.
+- When you configure the [cloud integration](/docs/install-ai-unlimited/setup-ai-unlimited#setup-fields) as part of [AI Unlimited setup](/docs/install-ai-unlimited/setup-ai-unlimited), put the role name in the **Default IAM role** field.
 
 
 

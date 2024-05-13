@@ -26,9 +26,9 @@ JupyterLab with the AI Unlimited kernel supports these magic commands in additio
 ```
 Where:
 
-- host:  Name or IP address of the engine service.
+- host:  Name or IP address of the AI Unlimited manager.
 
-- apikey: API Key value from the AI Unlimited setup **Profile** page.
+- apikey: API key value from the AI Unlimited setup **Profile** page.
 
 - **`[Optional]`** withTLS: If False (F), the default client-server communication does not use TLS.
 
@@ -49,7 +49,7 @@ Where:
 
 - project: Name of the project to be created.
 
-- env: Cloud environment where the project is hosted. The value can be aws, azure, gcp, or vsphere. For the current release, AWS and Azure are supported.
+- env: Cloud environment where the project is hosted. For the current release, AWS and Azure are supported.
 
 - **`[Optional]`** team: Name of the team collaborating on the project.
 
@@ -78,7 +78,9 @@ Where:
 - **`[Optional]`** team: Name of the team collaborating on the project.
 
 **Output**:
-```Project `Project_Name` deleted```
+```bash
+Project `Project_Name` deleted
+```
 
 ## %project_list
 
@@ -255,7 +257,7 @@ Where:
 
 - **`[Optional]`** tags: The key-value pairs that are assigned to the engine for quick identification.
 
-- **`[Optional]`** iamrole: The IAM Role used for the engine.
+- **`[Optional]`** iamrole: The IAM role used for the engine.
 
 - **`[Optional]`** roleprefix: The string appended to the beginning of the IAM role assigned to the engine.
 
@@ -266,7 +268,7 @@ Where:
 
 - **`[Optional]`** network: The network to which you want to deploy the engine.
 
-- **`[Optional]`** keyvault: The Key Vault used by the engine where sensitive information such as passwords can be securely stored.
+- **`[Optional]`** keyvault: The key vault used by the engine where sensitive information such as passwords can be securely stored.
 
 - **`[Optional]`** keyvaultresourcegroup: 
 
@@ -425,7 +427,7 @@ Require input
 
 ## %help
 
-**Description**: View the list of magics provided with AI-Unlimited-Teradata SQL CE Kernel.
+**Description**: View the list of magic commands provided by the AI Unlimited kernel.
 
 **Usage**:
 ```bash

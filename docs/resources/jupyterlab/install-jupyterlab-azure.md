@@ -27,7 +27,7 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 ***(update after Azure requirements topic is done)***
 
-- Work with your cloud admin to ensure your Azure account has the permissions needed to create the cloud resources definined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/jupyter.json).
+- Work with your cloud admin to ensure your Azure account has the permissions needed to create the cloud resources in your choice of [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/azure/templates/arm/jupyter).
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
@@ -36,16 +36,26 @@ References to the Azure Portal are accurate as of April 14, 2024.
 - If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#jup-azure-parms).
 
 
-## Download the Jupyter template
+## Choose a Jupyter template
 
-Download the template (`deployments/azure/jupyter.json`) from the AI Unlimited GitHub repository you cloned.
+ARM templates for JupyterLab are here in the AI Unlimited GitHub repository you cloned:
+
+`deployments/azure/templates/arm/jupyter/`
+
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+:::note
+You might want to ask a cloud admin at your organization for guidance.
+:::
+    - `jupyter-with-alb.json`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
+    - `jupyter-with-nlb.json`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `jupyter-without-lb.json`&mdash;No load balancer
 
 ## Load the template
 
 1. Sign in to the [Azure Portal](https://portal.azure.com).
 2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor**, then **Load file**.
-4. Choose the template file you downloaded, and select **Save**.  
+4. Select the template file you chose to use, and select **Save**.  
 
 
 <a id="jup-azure-parms"></a>

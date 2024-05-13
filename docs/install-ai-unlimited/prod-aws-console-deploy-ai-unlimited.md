@@ -21,20 +21,20 @@ For installation support, ask the [community](https://support.teradata.com/commu
 :::
 
 
-## Download the manager template
+## Choose a manager template
 
 CloudFormation templates for the manager are here in the AI Unlimited GitHub repository you cloned:
 
 `deployments/aws/templates/ai-unlimited/`
 
-1. Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
-   :::note
-   You might want to ask a cloud admin at your organization for guidance.
-   :::
+Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
+:::note
+You might want to ask a cloud admin at your organization for guidance.
+:::
     - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
-2. Download the template.
+
 
 ## Load the template	
 
@@ -47,7 +47,7 @@ We recommend selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Select **Choose an existing template**, then **Upload a template file**.
-6. Choose the template file you downloaded, and click **Next**.  
+6. Select the template file you chose to use, and click **Next**.  
 
 <a id="aws-parms"></a>
 ## Specify stack details and options

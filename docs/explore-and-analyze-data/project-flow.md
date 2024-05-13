@@ -12,7 +12,7 @@ pagination_next: null
 
 You might be the owner of one or more projects and a collaborator on others. 
 
-AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in your JupyterLab notebooks. While project owners and collaborators can use the same magic commands, their involvement is typically different. 
+AI Unlimited provides [magic commands](/docs/explore-and-analyze-data/magic-commands.md) (`%magic_command`) for creating and managing projects in Jupyter notebooks. While project owners and collaborators can use the same magic commands, their involvement is typically different. 
 
 Here is the project lifecycle from both points of view.
 

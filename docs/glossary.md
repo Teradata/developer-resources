@@ -23,22 +23,6 @@ The manager orchestrates the deployment of the AI/ML engine on your cloud servic
 Load balancers distribute incoming traffic across servers. An application load balancer inspects incoming traffic content, such as HTTP headers and paths, to make routing decisions. You can use an application load balancer as a way to expose AI Unlimited and its engine to the public IP network.
 
 
-### term
-
-Definition
-
-
-## B
-
-### term
-
-Definition
-
-### term
-
-Definition
-
-
 ## C
 
 <a id="glo-cidr"></a>
@@ -66,21 +50,12 @@ A group of interconnected computers that work together as a single system for en
 A central repository of data for data analytics, machine learning, and data exploration. A data lake is typically built on [object storage](#glo-object-storage) and is designed for data accessibility for future data analysis.  
 
 
-### term
-
-Definition
-
-
 ## I
 
 <a id="glo-iam-role"></a>
 ### IAM role
 
 An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an identity you can create in your AWS account. It has permissions policies that determine what it can and cannot do in AWS. An IAM user is unique to one user, but an IAM role can be shared by users.
-
-### term
-
-Definition
 
  
 ## L
@@ -97,10 +72,6 @@ A load balancer distributes incoming traffic evenly across servers, which improv
 ### mounting volumes 
 
 A concept in containerized platforms such as Docker. You can map a directory on the machine running the containers (the host) to a directory in a container to share data and files between the host and container.
-
-### term
-
-Definition
 
 
 ## N
@@ -123,22 +94,12 @@ An OAuth app allows a user to grant access to their account on one website or se
 A scalable, highly effective way to store large amounts of structured, semi-structured, or unstructured data in the cloud. Amazon S3 is object storage on AWS. Azure Blob Storage is object storage on Azure. Object storage is the basis for a [data lake](#glo-data-lake).
 
 
-### term
-
-Definition
-
-
 ## S
 
 <a id="glo-systemd"></a>
 ### systemd
 
 Linux foundational software for system and service management. When you deploy the AI Unlimited or JupyterLab CloudFormation template on AWS, it runs on a server instance in a container controlled by systemd.
-
-
-### term
-
-Definition
 
 
 ## T
@@ -148,6 +109,4 @@ Definition
 
 A protocol that creates a secure connection between two parties communiating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
 
-### term
 
-Definition

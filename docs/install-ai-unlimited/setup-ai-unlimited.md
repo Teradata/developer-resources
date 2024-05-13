@@ -23,7 +23,7 @@ By setting up AI Unlimited, you become the AI Unlimited admin at your organizati
 For setup support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
-
+<a id="setup-fields"></a>	
 ## Complete the fields
 
 ***(changes to the UI - info in these sections is back to WIP)***

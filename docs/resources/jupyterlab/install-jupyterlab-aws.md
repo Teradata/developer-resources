@@ -34,19 +34,19 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 
 
 
-## Download the Jupyter template
+## Choose a Jupyter template
 
 CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository you cloned:
 
 `deployments/aws/templates/jupyter/`
 
-1. Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
-
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+:::note
+You might want to ask a cloud admin at your organization for guidance.
+:::
     - `jupyter-alb.yaml`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
     - `jupyter-with-nlb.yaml`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
     - `jupyter-without-lb.yaml`&mdash;No load balancer
-
-2. Download the template.
 
 
 ## Upload the template	
@@ -56,7 +56,7 @@ CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repo
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
 5. Select **Choose an existing template** and **Upload a template file**.
-6. Choose the template file you downloaded, and click **Next**.
+6. Select the template file you chose to use, and click **Next**.
 
 
 <a id="jup-aws-parms"></a>

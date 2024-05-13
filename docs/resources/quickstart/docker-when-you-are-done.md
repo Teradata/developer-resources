@@ -29,7 +29,5 @@ docker-compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyte
 </TabItem>
 </Tabs> 
 
-***This next sentence needs verification and more context--so it jibes with the previous page. Is it about using a local volume to pass CSP credentials to Docker?***
-
 You can also remove any local directory or files, containing engine data, that you mounted to the Docker containers. 
 
