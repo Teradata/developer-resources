@@ -10,7 +10,7 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero--primary', styles.heroBanner)}>
       <div className={clsx('container', styles.container)}>
         <div className="">
           <Heading as="h1" className="hero__title">
