@@ -75,15 +75,15 @@
 .buttons .getStartedButton {
   flex-direction: row;
   font-size: 1.125rem;
+}
 
-  &:after {
-    content: 'east';
-    font-family: Material Symbols Outlined;
-    margin-left: 0.5rem;
-    pointer-events: none;
-    position: relative;
-    top: 1px;
-  }
+.buttons .getStartedButton:after {
+  content: 'east';
+  font-family: Material Symbols Outlined;
+  margin-left: 0.5rem;
+  pointer-events: none;
+  position: relative;
+  top: 1px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -141,5 +141,11 @@
 
   .buttons {
     margin-top: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
   }
 }
