@@ -215,11 +215,17 @@ Select **Login**. Then, if prompted, sign in.
 
 AI Unlimited setup is now complete.
 
+:::caution
+(might not need this - keeping for now to test styling)<br/>
+Do not sign out. Being signed in keeps your Git session running. To use AI Unlimited you need an active Git session. [Link color test](/docs/glossary.md).
+:::
+
 :::note
-Because you are the AI Unlimited admin, you can return to the setup anytime to [change any settings](/docs/manage-ai-unlimited/change-settings.md).
+Because you are the AI Unlimited admin, you can return to the setup anytime to [change any settings](/docs/manage-ai-unlimited/change-settings.md). 
 :::
 
 
 ## What's next
 
 In a Jupyter notebook, start [exploring and analyzing data](/docs/explore-and-analyze-data/).
+

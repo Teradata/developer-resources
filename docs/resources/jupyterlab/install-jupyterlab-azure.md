@@ -25,15 +25,11 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 ## Prepare your Azure account
 
-***(update after Azure requirements topic is done)***
-
-- Work with your cloud admin to ensure your Azure account has the permissions needed to create the cloud resources in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/azure/templates/arm/jupyter).
+- Work with your cloud admin to ensure your Azure account has the permissions needed to create the cloud resources defined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/azure/templates/arm/jupyter).
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-***(This roll link was included, how does it fit with the context? [role](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles))***
-
-- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#jup-azure-parms).
+- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#jup-azure-parms).
 
 
 ## Choose a Jupyter template

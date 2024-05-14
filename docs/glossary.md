@@ -10,12 +10,17 @@ pagination_next: null
 
 # Glossary
 
+
 ## A
+
+### AI Unlimited Jupyter Kernel
+
+Definition.
 
 <a id="glo-manager"></a>
 ### AI Unlimited manager
 
-The manager orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. There all users get their API key, for connecting to the engine from a Jupyter notebook. And there all users can monitor projects.
+The manager orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. There all users get their API key, for connecting to the engine from a Jupyter notebook.
 
 
 ### API key

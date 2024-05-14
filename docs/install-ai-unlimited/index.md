@@ -17,7 +17,7 @@ With AI Unlimited, data scientists and data engineers can explore and analyze la
 
 ## How it works
 
-You connect your notebook to the AI/ML engine on [AWS](https://aws.amazon.com/) or [Azure](https://azure.microsoft.com/en-us), and connect the engine to your [Amazon S3](https://aws.amazon.com/pm/serv-s3/?gclid=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB&trk=fecf68c9-3874-4ae2-a7ed-72b6d19c8034&sc_channel=ps&ef_id=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB:G:s&s_kwcid=AL!4422!3!536452728638!e!!g!!amazon%20s3!11204620052!112938567994) or [ADLS Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) data lake. You can suspend and resume your analytics project anytime, and pay only for the hours you use.
+You connect your notebook to the AI/ML engine on [AWS](https://aws.amazon.com/) or [Azure](https://azure.microsoft.com/en-us), and connect the engine to your [Amazon S3](https://aws.amazon.com/pm/serv-s3/?gclid=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB&trk=fecf68c9-3874-4ae2-a7ed-72b6d19c8034&sc_channel=ps&ef_id=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB:G:s&s_kwcid=AL!4422!3!536452728638!e!!g!!amazon%20s3!11204620052!112938567994) or [ADLS Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) data lake. You can suspend and restore your analytics project anytime, and pay only for the hours you use.
 
 :::note
 If AI Unlimited has already been installed and set up by someone at your organization, you can go straight to [Explore and Analyze Data](/docs/explore-and-analyze-data) to get started.
@@ -27,16 +27,16 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 ## Included in AI Unlimited
 
 - An AI/ML engine that you deploy on AWS or Azure
-- The AI Unlimited manager, which orchestrates the engine's deployment&mdash;and includes a web-based user interface for monitoring projects
+- The AI Unlimited manager, which orchestrates the engine's deployment and includes a web-based user interface for setup
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) for managing projects in notebooks
 
 
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to provision compute resources. See the requirements for your [AWS](/docs/resources/aws-requirements.md) or [Azure](/docs/resources/azure-requirements.md) account.
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information. Also, clone the [AI Unlimited GitHub repository](/docs/resources/clone-repo) provided by Teradata, which contains installation files.
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information. Also, clone the [AI Unlimited GitHub repository](/docs/resources/clone-repo) provided by Teradata, which contains installation files. **(might remove the last sentence - working with location of clone task)**
 - Your object storage, where your Amazon or ADLS Gen2 data lake resides.
-- JupyterLab with the AI Unlimited kernel. See [installation options](/docs/resources/jupyterlab).
+- JupyterLab. See [installation options](/docs/resources/jupyterlab).
 
 :::tip
 When you install the manager, you'll provide details needed for its cloud deployment. See [AWS details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms) or [Azure details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms)&mdash;if you want to work with a cloud admin to get them ahead of time.
