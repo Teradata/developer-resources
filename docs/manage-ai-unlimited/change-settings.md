@@ -18,11 +18,11 @@ If you are the AI Unlimited admin, you can return to the AI Unlimited setup in t
 You received the URL when you installed the manager.
 :::
 
-2. Sign in to GitHub or GitLab, then in the manager select **Setup**.<br/>
+2. Sign in to GitHub or GitLab.
+3. After being routed back to the manager, select **Setup**.
+3. In any section, make changes, then select **Update**.<br/>
 [Learn about the fields](/docs/install-ai-unlimited/setup-ai-unlimited.md).
-3. Change anything in **Basic setup** and select **Update**.
-4. Change anything in **Cloud integration** and select **Update**.
-5. Change anything in **Git integration**, and log in to authenticate yourself.
+4. Sign in to authenticate yourself.
 6. If you enabled TLS, on your **Profile**, select **Restart**.<br/>
   AI Unlimited restarts with TLS in place.
  

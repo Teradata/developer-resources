@@ -154,7 +154,7 @@ Select **Update**.
 
 **GitHub base URL**&mdash;The URL for your GitHub account.
 
-**GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/install-ai-unlimited/git-requirements.md).
+**GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/resources/create-oauth-app.md).
 
 **GitHub login**&mdash;**(this field might be removed)**
 
@@ -183,7 +183,7 @@ Select **Login**. Then, if prompted, sign in.
 
 **GitLab base URL**&mdash;The URL for your GitLab account.
 
-**GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/resources/git-requirements.md).
+**GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/resources/create-oauth-app.md).
 
 **GitLab login** **(verifying)**
 

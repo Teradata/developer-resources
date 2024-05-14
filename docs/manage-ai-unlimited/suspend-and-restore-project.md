@@ -12,21 +12,26 @@ pagination_next: null
 
 To avoid incurring charges for unneeded engine resources, suspend projects you're not working on. 
 
-All project information, including user and object store authorizations and data objects, are saved. When you restore the project, you can pick up where you left off.
+All project information, including user authorizations, object store authorizations, and data objects, are saved. When you restore the project, you can pick up where you left off.
 
 ## Suspend
 
-In your notebook, run this:
+In your notebook, run this magic command:
 
 ```bash 
 %project_engine_suspend <Project_Name>
 ```
 
+
 ## Restore
 
-In your notebook, run this: 
+In your notebook, run this magic command: 
 
 ```bash 
 %project_restore project=<Project_Name>, gitref=<Git_Reference>
 ```
+<br/>
+:::note
+Learn more about [magic commands](/docs/explore-and-analyze-data/magic-commands.md).
+:::
 

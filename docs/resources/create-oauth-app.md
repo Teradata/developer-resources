@@ -1,21 +1,14 @@
 ---
-id: git-requirements
-title: Git requirements
-description: Get the Teradata-provided repository and create an OAuth app.
-sidebar_label: Git requirements
-sidebar_position: 3
+id: create-oauth-app
+title: Create a GitHub or GitLab OAuth app
+description: It will allow AI Unlimited to authorize your Git provider account to store user and project information.
+sidebar_label: Create an OAuth app
+sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
 
-# Git requirements
-
-Make sure you have a GitHub or GitLab account. And complete these two tasks.
-
-
-## Create a GitHub or GitLab OAuth app
-
-***(we might move this so that it follows installing the manager)***
+# Create a GitHub or GitLab OAuth app
 
 An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password.
 
@@ -27,22 +20,17 @@ Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize y
   
     While registering the OAuth app, use these URLs.
  
-    - Homepage URL: `http://[ip_or_hostname]:[port]`
+    - Homepage URL: `http://[ip_or_hostname]:[port]`<br/>
+      :::note
+      This is the manager URL that you received at the end of the installation process.
+      :::
  
     - Authorization callback URL: `[Homepage URL]/auth/github/callback`
     
     For GitLab, select the appropriate OAuth **Scopes** as defined in [Authorized Applications](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications).
 
-3.	Copy and keep the **Client ID** and **Client secret**. You'll use them when you [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+3.	Copy and keep the **Client ID** and **Client secret**, which you'll need to set up AI Unlimited. 
 
+Now you're ready to [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md).
 
-## Clone the provided repository
-
-The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) that Teradata provides contains template, parameter, and policy files for installing AI Unlimited.
-
-	Open a terminal window, and clone the repository.
-
-    ``` bash
-    git clone https://github.com/Teradata/ai-unlimited
-    ```
 

@@ -1,7 +1,7 @@
 ---
 id: magic-commands
 title: Magic commands 
-description: Learn about the AI Unlimited magic commands (**%magic_command**) asdf you can use in your project in your Jupyter notebook.
+description: Learn about the AI Unlimited magic commands you can use in a Jupyter notebook to manage projects.
 sidebar_label: Magic commands
 sidebar_position: 5
 pagination_prev: null
@@ -12,9 +12,9 @@ import TabItem from '@theme/TabItem';
 
 # Magic commands
 
-In Jupyter notebooks, magic commands are special shortcuts that starts with %. They let you do more than just run programming language.
+In Jupyter notebooks, magic commands are shortcuts for common tasks. The AI Unlimited magic commands enable you to connect to the engine and manage projects.
 
-JupyterLab with the AI Unlimited kernel supports these magic commands in addition to the standard Teradata SQL kernel magic commands. 
+The AI Unlimited Jupyter Kernel supports these magic commands in addition to the standard Teradata SQL kernel magic commands. 
 
 ## %workspaces_config
 
@@ -32,7 +32,7 @@ Where:
 
 - **`[Optional]`** withTLS: If False (F), the default client-server communication does not use TLS.
 
-Output:
+**Output**:
 ```
 Workspace configured for host=<ip_or_hostname>
 ```
@@ -94,11 +94,11 @@ Use the project parameter to get the details of a specific project. All the proj
 ```
 Where:
 
-- project: Name of the project to be listed.
+- project: The project name and URL for its repository.
 
 **Output**:
 ```
-Insert Code
+Name of the project and its Git repository URL
 ```
 
 ## %project_auth_create
@@ -208,7 +208,7 @@ Where:
 
 ## %project_engine_deploy
 
-**TA:The syntax doesn't list Subnet, region, and restore. What are the possible values for the restore param? Also, could you help with the Azure-Param: keyvaultresourcegroup and networkresourcegroup? Couldn't find much info in the Azure doc set.**
+**(For Azure, we're still working on the parameters keyvaultresourcegroup and networkresourcegroup.**
 
 **Description**: Deploy an engine for the project. The deployment process takes a few minutes to complete. On successful deployment, a password is generated.
 
@@ -231,7 +231,7 @@ Where:
 
 Where:
 
-- project:	Name of the project.
+- project: Name of the project.
 
 - size: Size of the engine. The value can be:
 
@@ -242,14 +242,16 @@ Where:
 
 - **`[Optional]`** node: Number of engine nodes to be deployed. The default value is 1.
 
-- **`[Optional]`** subnet: Subnet used for the engine if there are no default values from the service.
+- **`[Optional]`** subnet: Subnet used for the engine if there are no default values from the AI Unlimited setup.
 
-- **`[Optional]`** region: Region used for the engine if there are no default values from service.
+- **`[Optional]`** region: Region used for the engine if there are no default values from the AI Unlimited setup.
+
+- **`[Optional]`** restore: If False (F), the engine is deployed but the project's objects are not restored, which reduces deployment time. You can manually restore them using %project_restore. The default value is True (T). 
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
-- **`[Optional]`** prefixlist: The collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement. It is used to specify which IP addresses can communicate with an engine.
+- **`[Optional]`** prefixlist: The collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement. It is used to specify which IP addresses can communicate with the engine.
 
 - **`[Optional]`** securitygroups: List of security groups for the VPC in each region. If you don't specify a security group, the engine is automatically associated with the default security group for the VPC.
 
@@ -270,9 +272,9 @@ Where:
 
 - **`[Optional]`** keyvault: The key vault used by the engine where sensitive information such as passwords can be securely stored.
 
-- **`[Optional]`** keyvaultresourcegroup: 
+- **`[Optional]`** keyvaultresourcegroup: The resource group that contains the key vault.
 
-- **`[Optional]`** networkresourcegroup: 
+- **`[Optional]`** networkresourcegroup: The resource group that contains the network.
 
 </TabItem>
 </Tabs>
@@ -282,6 +284,7 @@ Where:
 Started deploying.
 Success: Compute Engine setup, look at the connection manager
 ```
+
 
 ## %project_engine_suspend
 
@@ -297,7 +300,7 @@ Where:
 
 **Output**:
 ```
-Started suspend. Success: connection removed
+Started suspend
 Success: Suspending Compute Engine
 ```
 
@@ -331,7 +334,7 @@ Where:
 
 Where:
 
-- `*[Optional]*` project: Name of the project.
+- **`[Optional]`** project: Name of the project.
 
 **Output**:
 ```bash
@@ -368,12 +371,13 @@ Backup of the object definitions created
 Where:
 
 - project:	Name of the project.
-- `*[Optional]*` gitref: Git reference. **TA: what is the value I should provide here**
+- **`[Optional]`** gitref: The Git reference for the commit from which to restore the project, if you don't want to restore from the latest.
 
 **Output**:
 ```
 Restore of the object definitions done
 ```
+
 ## %project_engine_update_users
 
 **Description**: Update users on the deployed engine. If users are added as collaborators to the Git repository after the engine is deployed, you can use this command to update and create new users for the deployed engine.
@@ -388,7 +392,7 @@ Where:
 
 **Output**:
 ```
-Need input
+Username and password of each user on the engine
 ```
 ## %project_engine_update_auth
 
@@ -405,7 +409,7 @@ Where:
 
 **Output**:
 ```
-Require input
+Authorizations updated
 ```
 ## %project_connection_add
 
@@ -422,7 +426,7 @@ Where:
 
 **Output**:
 ```
-Require input
+The connection manager shows the refreshed connection
 ```
 
 ## %help

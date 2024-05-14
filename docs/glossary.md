@@ -17,7 +17,13 @@ pagination_next: null
 
 The manager orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. There all users get their API key, for connecting to the engine from a Jupyter notebook. And there all users can monitor projects.
 
-<a id="glo-application-load-balancer"></a>
+
+### API key
+
+Definition.
+
+
+<a id="glo-alb"></a>
 ### application load balancer
 
 Load balancers distribute incoming traffic across servers. An application load balancer inspects incoming traffic content, such as HTTP headers and paths, to make routing decisions. You can use an application load balancer as a way to expose AI Unlimited and its engine to the public IP network.
@@ -76,7 +82,7 @@ A concept in containerized platforms such as Docker. You can map a directory on 
 
 ## N
 
-<a id="glo-network-load-balancer"></a>
+<a id="glo-nlb"></a>
 ### network load balancer
 
 Load balancers distribute incoming traffic across servers. A network load balancer does not inspect traffic content. It bases routing decisions on factors such as ports and IP addresses. You can use a network load balancer as a way to expose AI Unlimited and its engine to the public IP network.

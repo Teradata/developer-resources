@@ -34,7 +34,7 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to provision compute resources. See the requirements for your [AWS](/docs/resources/aws-requirements.md) or [Azure](/docs/resources/azure-requirements.md) account.
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information. See related [Git requirements](/docs/resources/git-requirements.md).
+- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information. Also, clone the [AI Unlimited GitHub repository](/docs/resources/clone-repo) provided by Teradata, which contains installation files.
 - Your object storage, where your Amazon or ADLS Gen2 data lake resides.
 - JupyterLab with the AI Unlimited kernel. See [installation options](/docs/resources/jupyterlab).
 

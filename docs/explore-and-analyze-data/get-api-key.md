@@ -10,18 +10,17 @@ pagination_next: null
 
 # Get your API key
 
-You'll need your API key to connect your Jupyter notebook to the engine. 
+To work on any project, you'll first need to have your API key. It connects your Jupyter notebook to the engine. 
 
-After you open a notebook and select the AI Unlimited kernel, you'll provide your API key to a [magic command](/docs/explore-and-analyze-data/magic-commands.md) that configures the connection.
-
-1. Use the URL provided by your AI Unlimited admin to access your user profile.
+1. Use the URL provided by your AI Unlimited admin to access the manager.
 :::note
 Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
 :::
-2. Sign in, as you normally do, to GitHub or GitLab.
-3. On your user profile, copy your API key.
+2. Sign in to GitHub or GitLab.
+3. After being routed back to the manager, on your **Profile**, copy your API key.
 
+Keep your API key. Or go back to your **Profile** anytime to get it.
 
-
+Your API key stays the same for the lifetime of the AI Unlimited installation.
 
 

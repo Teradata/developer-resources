@@ -43,7 +43,6 @@ You can have only one AI Unlimited admin.
 Of course. Explain.
 
 **What's my API key for?**
-
 You use your API key to connect from a Jupyter notebook to the engine. 
 
 **How can I access another user's project?**
@@ -54,4 +53,7 @@ Answer.
 
 **And when I restore it?**
 Answer.
+
+**If I get errors or have any issues, what should I do?**
+The [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) is ready to help you. Go there to ask questions, get troubleshooting help, and share ideas.
 

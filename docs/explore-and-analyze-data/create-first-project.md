@@ -13,9 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Create your first project
 
-***this page is WIP***
-
-You'll complete this simple workflow:
+You'll complete this simple workflow from a Jupyter notebook:
 
 - Deploy the engine
 - Connect to your data
@@ -42,21 +40,20 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
     </TabItem>
     </Tabs> 
 
-- From your AI Unlimited user profile, get your API key:
-  - Access the manager using the URL your admin provided.
-  - Sign in, as you normally do, to GitHub or GitLab.
-  - On your user profile, copy your API key.
+- From your AI Unlimited profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
 
 - Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 :::note
-If you don't have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
+If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
 :::
 
 ## Connect, and run your first workload
 
 :::tip
-Run `%help` or `%help <command>` for details on all magic commands or any one of them. Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) provided by the AI Unlimited kernel specifically. 
+Run `%help` for details on all magic commands. Run `%help <command>` for details on any one of them. 
+
+Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
 :::
 
 1. Connect to the [AI Unlimited manager](/docs/glossary.md#glo-manager).
