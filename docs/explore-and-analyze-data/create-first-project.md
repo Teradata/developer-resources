@@ -70,9 +70,8 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
     ```bash
-    %project_auth_create name=<Auth_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
+    %project_auth_create name=<Authorization_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
-	
 
 4. Deploy the engine.
 
@@ -81,17 +80,19 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
     The deployment process takes a few minutes. It generates a password.
-6. Connect to the project.
+
+5. Connect to the project.
     ```bash
     %connect <Project_Name>
     ```
     When the connection is made, provide the generated password.
 
-7. Run the sample workload.
+6. Run the sample workload.
 
     :::note
     Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace auth1 and the location values in the following example with your own values.
     ::::
+
     a. Create a table to store the sales center data.
       
     ```sql
@@ -166,13 +167,13 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     DROP TABLE SalesDemo;
     ```
 	
-8. Back up your project metadata and object definitions in your Git repository.
+7. Back up your project metadata and object definitions in your Git repository.
 
 	```bash
 	%project_backup project=<Project_Name>
 	```
 
-9. Suspend the engine to avoid paying for unneeded engine resources.
+8. Suspend the engine to avoid paying for unneeded engine resources.
     ```bash
     %project_engine_suspend project=<Project_Name>
     ```
