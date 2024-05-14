@@ -148,9 +148,9 @@ Select **Update**.
 
 <br />
 
-**GitHub application URL**&mdash;The manager uses this URL to connect to the GitHub account to authenticate a user.
+**GitHub application URL**&mdash;The manager uses this URL to connect to your GitHub account to authenticate a user.
 
-**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager.
+**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This is the same callback URL that was provided for the [creation of the OAuth app](docs/resources/create-oauth-app.md).
 
 **GitHub base URL**&mdash;The URL for your GitHub account.
 
@@ -177,9 +177,9 @@ Select **Login**. Then, if prompted, sign in.
 
 <br />
 
-**GitLab application URL**&mdash;The manager uses this URL to connect to the GitLab account to authenticate a user. **(verifying)**
+**GitLab application URL**&mdash;The manager uses this URL to connect to your GitLab account to authenticate a user.
 
-**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. **(verifying)**
+**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. This is the same callback URL that was provided for the [creation of the OAuth app](docs/resources/create-oauth-app.md).
 
 **GitLab base URL**&mdash;The URL for your GitLab account.
 

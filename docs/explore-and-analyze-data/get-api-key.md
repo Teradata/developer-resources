@@ -10,9 +10,9 @@ pagination_next: null
 
 # Get your API key
 
-To work on any project, you'll first need to have your API key. It connects your Jupyter notebook to the engine. 
+To work on any project, you'll first need to have your [API key.](/docs/glossary#glo-api-key) It connects your Jupyter notebook to the engine. 
 
-1. Use the URL provided by your AI Unlimited admin to access the manager.
+1. Use the URL provided by your AI Unlimited admin to access [the manager](/docs/glossary#glo-manager).
 :::note
 Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
 :::

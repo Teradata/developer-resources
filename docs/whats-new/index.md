@@ -31,7 +31,6 @@ See the [release notes](/docs/release-notes.md) for more details.
 ## What's coming
 (Data Bricks does it like this: https://docs.databricks.com/en/whats-coming.html. Need consensus on what's ok to include.)
 
-- (What is coming for developers?)
 - (New UI? Will it include project monitoring?)
 - (Avoid listing GCP for now?)
 - (What else?)
