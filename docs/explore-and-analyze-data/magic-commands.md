@@ -212,8 +212,6 @@ Where:
 
 ## %project_engine_deploy
 
-**For Azure, we're still working on the parameters keyvaultresourcegroup and networkresourcegroup.**
-
 **Description**: Deploy an engine for the project. The deployment process takes a few minutes to complete. On successful deployment, a password is generated.
 
 **Usage**:
