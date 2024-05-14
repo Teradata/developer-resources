@@ -26,7 +26,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 
 - From your admin, get these items:
 
-  - The URL for the AI Unlimited manager.
+  - The IP address or  host name of the [AI Unlimited manager](/docs/glossary.md#glo-manager).
 
   - These environment variables:   
     <Tabs>
@@ -51,12 +51,12 @@ If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab ins
 ## Connect, and run your first workload
 
 :::tip
-Run `%help` for details on all magic commands. Run `%help <command>` for details on any one of them. 
+Run `%help` for details on all magic commands. Run `%help <command>` for details on one of them. 
 
 Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
 :::
 
-1. Connect to the [AI Unlimited manager](/docs/glossary.md#glo-manager).
+1. Configure the connection to the engine.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
     ```
@@ -66,18 +66,17 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     %project_create project=<Project_Name>, env=<Cloud_Service_Provider>, team=<Project_Team>
     ```
 		
-3. Create an object store authorization to store the [CSP](/docs/glossary.md#glo-cloud-service-provider) credentials. 
+3. Create an object store authorization to store the cloud service provider credentials. 
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
     ```bash
     %project_auth_create name=<Auth_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
 	
-	***These look like AWS. Do AWS-Azure tabs?***
-	
+
 4. Deploy the engine.
 
-    Replace the `Project_Name`. ***(didn't they already name it?)*** The size can be small, medium, large, or extralarge. The default is small.
+    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
@@ -86,12 +85,12 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```bash
     %connect <Project_Name>
     ```
-    When the connection is made, provide the generated password. ***how?***
+    When the connection is made, provide the generated password.
 
 7. Run the sample workload.
 
     :::note
-    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace auth1 and location values in the following example with your own.
+    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace auth1 and the location values in the following example with your own values.
     ::::
     a. Create a table to store the sales center data.
       
@@ -168,8 +167,6 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```
 	
 8. Back up your project metadata and object definitions in your Git repository.
-
-	***Is "metadata" too ENG-ish for a new data scientist? Should we say "data object definitions"?***
 
 	```bash
 	%project_backup project=<Project_Name>

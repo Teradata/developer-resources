@@ -29,13 +29,13 @@ The manager needs a role that allows it to deploy the engine. The engine needs a
 If your security does not allow AI Unlimited to create roles, [create the roles](#provide-roles) yourself or with the help of your cloud admin.
 ::: 
 
-**Role for the manager**
+### Role for the manager
 
 To let AI Unlimited create this role for you, when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#aws-parms), provide these values for these parameters:
     - `IamRole`: **New**
     - `IamRoleName`: leave blank
 	
-**Role for the engine**
+### Role for the engine
 	
 AI Unlimited can create a new role for the engine each time the engine is deployed. 
 
@@ -54,7 +54,7 @@ To allow AI Unlimited to create a new role for each engine deployment, when you 
 If your security does not allow AI Unlimited to create roles, provide them.
 
 
-**Provide the manager's role**
+### Role for the manager
 
 - If you have permissions to create IAM resources, create the role:
   - Attach a policy that includes the JSON that meets your needs. See the JSON samples that follow.
@@ -67,9 +67,9 @@ If your security does not allow AI Unlimited to create roles, provide them.
   - `IamRole`: **Existing**
   - `IamRoleName`: the existing role's name
   
-**JSON samples**
+#### JSON samples
 
-If you are providing the manager's role, use the samples you need in an attached policy.
+Use these samples, as needed, in a policy attached to the manager's role:
 
 - Allow AI Unlimited to create the engine role. Include [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json). It includes permissions to create engine instances, and grants AI Unlimited permissions to create cluster-specific roles and policies.
 
@@ -82,7 +82,7 @@ If you are providing the manager's role, use the samples you need in an attached
 - Optionally, include [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): It includes permissions for the engine to interact with the [AWS Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html). Use this if you plan to use Session Manager to connect to the engine to closely manage it.
 
 
-**Provide the engine's role**
+### Role for the engine
 
 - To the role you provide for the engine, attach a policy that includes [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json). This allows AI Unlimited to pass the role to the cluster each time the engine is deployed. 
 
