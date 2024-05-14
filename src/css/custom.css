@@ -304,6 +304,31 @@ html.plugin-search-algolia .main-wrapper .container {
   padding: 0 2rem;
 }
 
+.doc-card {
+  position: relative;
+}
+
+.doc-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.doc-card:hover::after {
+  transform: scaleX(1);
+}
+
+.doc-card:after {
+  border-bottom: 2px solid var(--cv-theme-text-logo-on-background);
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.25s ease-in-out;
+  width: 100%;
+}
+
 @media screen and (max-width: 767px) {
   html:not(.plugin-pages) .main-wrapper {
     padding: 6.75rem 0.5rem 0;

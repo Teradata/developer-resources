@@ -116,22 +116,22 @@
   line-height: 1.5rem;
   padding: 0.75rem 1rem;
   transition: all 0.25s ease-in-out 0s;
+}
 
-  &:hover {
-    background: var(--cv-theme-text-logo-on-background);
-    border-color: var(--cv-theme-text-logo-on-background);
-    color: var(--cv-theme-surface-canvas);
-    text-decoration: none;
-  }
+.DocSearch-HitsFooter a:hover {
+  background: var(--cv-theme-text-logo-on-background);
+  border-color: var(--cv-theme-text-logo-on-background);
+  color: var(--cv-theme-surface-canvas);
+  text-decoration: none;
+}
 
-  &::after {
-    content: 'east';
-    font-family: Material Symbols Outlined;
-    margin-left: 0.5rem;
-    pointer-events: none;
-    position: relative;
-    top: 1px;
-  }
+.DocSearch-HitsFooter a::after {
+  content: 'east';
+  font-family: Material Symbols Outlined;
+  margin-left: 0.5rem;
+  pointer-events: none;
+  position: relative;
+  top: 1px;
 }
 
 .DocSearch-Button {

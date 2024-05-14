@@ -19,6 +19,10 @@
   letter-spacing: -1.26px;
 }
 
+a.col {
+  text-decoration: none;
+}
+
 .col {
   padding: 0 0.75rem 1.5rem;
 }
@@ -29,7 +33,6 @@
   border-radius: 12px;
   border: 1px solid #CED3DA;
   background: #FFF;
-  height: 100%;
   margin-bottom: 1rem;
   padding: 1.5rem;
 }
@@ -43,7 +46,7 @@
   font-weight: 600;
   line-height: 34px; /* 141.667% */
   letter-spacing: -0.24px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .featureSvg {

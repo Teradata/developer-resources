@@ -428,7 +428,12 @@ function SearchPageContent(): JSX.Element {
                   <div className="col col--2"></div>
                   <Link className={styles.card} to={url}>
                     <article
-                      className={clsx('col', 'col--8', styles.searchResultItem)}
+                      className={clsx(
+                        'col',
+                        'col--8',
+                        'doc-card',
+                        styles.searchResultItem
+                      )}
                     >
                       <Heading
                         as="h2"

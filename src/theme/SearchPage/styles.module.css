@@ -73,27 +73,6 @@
   position: relative;
   border: 1px solid #ced3da;
   border-radius: 12px;
-
-  &:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  }
-
-  &:hover:after {
-    transform: scaleX(1);
-  }
-
-  &:after {
-    border-bottom: 2px solid var(--cv-theme-text-logo-on-background);
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition: transform 0.25s ease-in-out;
-    width: 100%;
-  }
 }
 
 .searchResultItemHeading {

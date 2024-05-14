@@ -1,49 +1,52 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureTitle = 'Categories';
 const FeatureList = [
   {
-    title: 'The freedom to innovate is now as limitless as your imagination',
-    description: (
-      <>
-        Discover faster, easier, and more cost-effective AI innovation with
-        Teradata AI Unlimited, our serverless AI/ML engine in the cloud, now
-        available in private preview through Azure Marketplace.
-      </>
-    ),
+    title: `What's new`,
+    href: '/docs/whats-new/',
   },
   {
-    title: 'Focus on What Matters',
-    description: (
-      <>
-        Bring the power of Teradata's industry-leading ClearScape Analytics
-        capabilities to a low-cost environment that maximizes exploration and
-        discovery.
-      </>
-    ),
+    title: 'Get started',
+    href: '/docs/install-ai-unlimited/',
   },
   {
-    title: 'AI Unlimited on Microsoft Azure and Fabric Marketplace',
-    description: (
-      <>
-        With high-performance compute and in-engine analytics, Teradata AI
-        Unlimited offers incredible new use cases, all securely and natively
-        integrated into the Microsoft ecosystem.
-      </>
-    ),
+    title: 'Explore and analyze data',
+    href: '/docs/explore-and-analyze-data/',
+  },
+  {
+    title: 'Manage projects',
+    href: '/docs/manage-ai-unlimited/',
+  },
+  {
+    title: 'Other resources',
+    href: '/docs/resources/',
+  },
+  {
+    title: 'FAQ',
+    href: '/docs/faq/',
+  },
+  {
+    title: 'Glossary',
+    href: '/docs/glossary/',
+  },
+  {
+    title: 'Release notes',
+    href: '/docs/release-notes/',
   },
 ];
 
-function Feature({ title, description }) {
+function Feature({ title, description, href }) {
   return (
-    <div className={clsx('col col--4', styles.col)}>
-      <div className={styles.card}>
+    <Link to={href} className={clsx('col col--4', styles.col)}>
+      <div className={clsx('doc-card', styles.card)}>
         <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
       </div>
-    </div>
+    </Link>
   );
 }
 
