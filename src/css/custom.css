@@ -22,39 +22,54 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  --ifm-color-secondary: #00233C;
+  --ifm-color-secondary: #00233c;
   --ifm-color-success: var(--cv-theme-light-colors-positive);
   --ifm-color-info: var(--cv-theme-light-colors-neutral);
   --ifm-color-warning: var(--cv-theme-light-colors-caution);
   --ifm-color-danger: var(--cv-theme-light-colors-negatvive);
 
   --ifm-background-surface-color: var(--cv-theme-light-colors-surface);
-  --ifm-color-secondary-contrast-background: var(--cv-theme-light-colors-surface-variant);
-  --ifm-color-secondary-contrast-foreground: var(--cv-theme-light-colors-on-surface-container);
+  --ifm-color-secondary-contrast-background: var(
+    --cv-theme-light-colors-surface-variant
+  );
+  --ifm-color-secondary-contrast-foreground: var(
+    --cv-theme-light-colors-on-surface-container
+  );
 
   --ifm-color-success-dark: var(--cv-theme-light-colors-positive);
-  --ifm-color-success-contrast-background: var(--cv-theme-light-colors-positive-container);
-  --ifm-color-success-contrast-foreground: var(--cv-theme-light-colors-on-positive-container);
+  --ifm-color-success-contrast-background: var(--cv-theme-secondary);
+  --ifm-color-success-contrast-foreground: var(--cv-theme-on-surface);
 
   --ifm-color-danger-dark: var(--cv-theme-light-colors-negative);
-  --ifm-color-danger-contrast-background: var(--cv-theme-light-colors-negative-container);
-  --ifm-color-danger-contrast-foreground: var(--cv-theme-light-colors-on-negative-container);
+  --ifm-color-danger-contrast-background: var(
+    --cv-theme-light-colors-negative-container
+  );
+  --ifm-color-danger-contrast-foreground: var(
+    --cv-theme-light-colors-on-negative-container
+  );
 
   --ifm-color-warning-dark: var(--cv-theme-light-colors-caution);
-  --ifm-color-warning-contrast-background: var(--cv-theme-light-colors-caution-container);
-  --ifm-color-warning-contrast-foreground: var(--cv-theme-light-colors-on-caution-container);
+  --ifm-color-warning-contrast-background: var(--cv-theme-caution);
+  --ifm-color-warning-contrast-foreground: var(--cv-theme-on-surface);
 
-  --ifm-color-info-contrast-background: var(--cv-theme-light-colors-primary-container);
-  --ifm-color-info-contrast-foreground: var(--cv-theme-light-colors-on-primary-container);
+  --ifm-color-info-contrast-background: var(
+    --cv-theme-light-colors-primary-container
+  );
+  --ifm-color-info-contrast-foreground: var(
+    --cv-theme-light-colors-on-primary-container
+  );
   --ifm-color-info-dark: var(--cv-theme-light-colors-primary);
   --ifm-breadcrumb-item-background-active: none;
   --ifm-breadcrumb-color-active: #5e7484;
   --mdc-theme-surface-canvas: var(--cv-theme-surface-container);
   --ifm-toc-link-color: var(--Gray-700, #333a3e);
+  --ifm-heading-font-family: 'Inter', sans-serif;
+  --ifm-heading-color: #00233c;
+  --ifm-heading-font-weight: 600;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
 }
 
@@ -86,10 +101,10 @@ aside.theme-doc-sidebar-container {
 }
 
 .markdown h1:first-child {
-  color: #00233C;
+  color: #00233c;
 
   /* Desktop/H1 */
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 54px;
   font-style: normal;
   font-weight: 300;
@@ -99,19 +114,25 @@ aside.theme-doc-sidebar-container {
 }
 
 .markdown h2 {
-  color: #00233C;
+  color: #00233c;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: 36px; /* 150% */
+  line-height: 36px;
+}
+
+.markdown h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 28px;
 }
 
 .markdown p {
-  color: var(--Gray-700, #333A3E);
+  color: var(--Gray-700, #333a3e);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -327,6 +348,17 @@ html.plugin-search-algolia .main-wrapper .container {
   transform-origin: 0 50%;
   transition: transform 0.25s ease-in-out;
   width: 100%;
+}
+
+.theme-admonition.alert--secondary,
+.theme-admonition.alert--secondary p {
+  color: var(--cv-theme-on-surface);
+}
+
+.theme-admonition.alert--warning,
+.theme-admonition.alert--success {
+  --ifm-alert-foreground-color: var(--cv-theme-on-secondary);
+  --ifm-alert-border-color: var(--cv-theme-on-secondary);
 }
 
 @media screen and (max-width: 767px) {
