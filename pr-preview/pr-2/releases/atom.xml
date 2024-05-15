@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://teradata.github.io/ai-unlimited-docs/releases/</id>
-    <title>Teradata AI Unlimited Blog</title>
+    <title>Teradata AI Unlimited Documentation Blog</title>
     <updated>2024-06-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://teradata.github.io/ai-unlimited-docs/releases/"/>
-    <subtitle>Teradata AI Unlimited Blog</subtitle>
+    <subtitle>Teradata AI Unlimited Documentation Blog</subtitle>
     <icon>https://teradata.github.io/ai-unlimited-docs/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[General availibility !! 🎉]]></title>

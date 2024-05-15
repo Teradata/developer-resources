@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkai_unlimited_docs=self.webpackChunkai_unlimited_docs||[]).push([[2119],{8580:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/ai-unlimited-docs/ka/whatsnew/tags/hola","allTagsPath":"/ai-unlimited-docs/ka/whatsnew/tags","count":1,"unlisted":false}')}}]);
