@@ -32,7 +32,7 @@ function HomepageHeader() {
           </div>
         </div>
         <div className={styles.heroImage}>
-          <img src={HeroImageUrl} />
+          <img src={HeroImageUrl} alt="Two individuals collaborate at a desk with a computer, against an abstract orange and blue backdrop." />
           <div className={styles.heroBlur}></div>
         </div>
       </div>
