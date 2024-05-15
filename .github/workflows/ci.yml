@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, edited, reopened, closed, synchronize]
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+      - name: Install dependencies
+        run: npx ci
+      - name: Build docusaurus artifacts
+        env:
+          GH_PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: npm run build -- --locale en --config ./docusaurus.config.ci.js 
+      - name: PR Number
+        run: echo "PR-${{ github.event.pull_request.number }}"
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          preview-branch: gh-pages
+          source-dir: ./build/
+          umbrella-dir: pr-preview
