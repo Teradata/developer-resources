@@ -4,6 +4,7 @@ import config from './docusaurus.config';
 const prConfig = {
   ...config,
   noIndex: true,
+  baseUrl: `${config.baseUrl}/pr-previews/pr-${process.env.GH_PR_NUMBER}`
 };
 
 export default prConfig;
