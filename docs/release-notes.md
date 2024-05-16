@@ -8,8 +8,23 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# Release notes
+# Release notes (WIP)
 
-placeholder for information about CS functions limitations
+As we continue to enhance AI Unlimited and ensure you are successful in getting started with AI Unlimited, it’s important to understand the limitations. The following features are not supported for this release. Keep an eye on the What's New page for feature enhancements.
 
-anything else?
+- AI Unlimited Manager
+
+- OTF
+
+- UDF
+
+- UAF
+
+- BYOM
+
+- VAL
+
+- teradatamlwidgets (Python client libraries as Jupyter add-on)
+
+- tdapiclient (Python client libraries as Jupyter add-on)
+
