@@ -82,7 +82,7 @@ Some of these fields are for default values. Later, when you deploy the engine f
 
 **Default IAM role**
 
-- The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the AWS resources that deploy the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create an IAM role using this policy: [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json).
+- The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create a role using this policy: [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json).
 - If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must accommodate any cluster that might deploy the engine.
 		
 **Resource tags**&mdash;You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.
@@ -91,7 +91,7 @@ Some of these fields are for default values. Later, when you deploy the engine f
 
 Use these fields to allow source traffic to reach the engine:
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
-- **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) names**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) IDs**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group in this field to ensure that AI Unlimited can communicate with the engine.
 - **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
 
 **Role prefix**&mdash;If AI Unlimited creates the role, this prefix is added to the role name.
@@ -148,15 +148,13 @@ Select **Update**.
 
 <br />
 
-**GitHub application URL**&mdash;The manager uses this URL to connect to your GitHub account to authenticate a user.
+**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
-**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This is the same callback URL that was provided for the [creation of the OAuth app](docs/resources/create-oauth-app.md).
-
-**GitHub base URL**&mdash;The URL for your GitHub account.
+**GitHub base URL**&mdash;The URL for your GitHub instance. **(this field might be removed)**
 
 **GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/resources/create-oauth-app.md).
 
-**GitHub login**&mdash;**(this field might be removed)**
+**GitHub login**&mdash;**(this field will probably be removed)**
 
 **Organization access**
 
@@ -177,15 +175,13 @@ Select **Login**. Then, if prompted, sign in.
 
 <br />
 
-**GitLab application URL**&mdash;The manager uses this URL to connect to your GitLab account to authenticate a user.
+**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
-**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. This is the same callback URL that was provided for the [creation of the OAuth app](docs/resources/create-oauth-app.md).
-
-**GitLab base URL**&mdash;The URL for your GitLab account.
+**GitLab base URL**&mdash;The URL for your GitLab instance. **(this field might be removed)**
 
 **GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/resources/create-oauth-app.md).
 
-**GitLab login** **(verifying)**
+**GitLab login** **(this field will probably be removed)**
 
 **Group access**
 

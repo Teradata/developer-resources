@@ -59,11 +59,12 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 1. Configure the connection to the engine.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
+	
     ```
 
 2. Create a new project.
     ```bash
-    %project_create project=<Project_Name>, env=<Cloud_Service_Provider>, team=<Project_Team>
+    %project_create project=<Project_Name>, env=<Cloud_Service_Provider>
     ```
 		
 3. Create an object store authorization to store the cloud service provider credentials. 

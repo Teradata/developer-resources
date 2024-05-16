@@ -105,6 +105,14 @@ An OAuth app allows a user to grant access to their account on one website or se
 A scalable, highly effective way to store large amounts of structured, semi-structured, or unstructured data in the cloud. Amazon S3 is object storage on AWS. Azure Blob Storage is object storage on Azure. Object storage is the basis for a [data lake](#glo-data-lake).
 
 
+## P
+
+<a id="glo-project"></a>
+### project
+
+Definition.
+
+
 ## S
 
 <a id="glo-systemd"></a>
