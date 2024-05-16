@@ -45,11 +45,7 @@ export default function AdmonitionLayout(props: Props): JSX.Element {
   return (
     <AdmonitionContainer
       type={type}
-      className={clsx(
-        className,
-        styles.admonitionWrapper,
-        type === 'tip' ? styles.admonitionTip : ''
-      )}
+      className={clsx(className, styles.admonitionWrapper)}
     >
       <span className={styles.admonitionIcon}>{icon}</span>
       <span className={styles.admonitionContentWrapper}>

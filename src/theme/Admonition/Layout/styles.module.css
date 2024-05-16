@@ -28,10 +28,6 @@
   fill: var(--ifm-alert-foreground-color);
 }
 
-.admonitionIcon:not(.admonitionTip .admonitionIcon) {
-  --ifm-alert-foreground-color: #00000099;
-}
-
 .admonitionContentWrapper {
   padding: 0.625rem;
 }
@@ -42,12 +38,8 @@
 
 .admonitionContent,
 .admonitionContent p {
-  color: var(--cv-theme-on-surface);
   font-size: 0.875rem;
-}
-
-.admonitionTip p {
-  color: var(--cv-theme-on-secondary);
+  color: var(--ifm-alert-foreground-color);
 }
 
 .admonitionWrapper {
@@ -60,11 +52,4 @@
 
 .admonitionWrapper {
   text-underline-offset: 2px;
-}
-
-.admonitionTip {
-  --ifm-alert-background-color: var(--cv-theme-secondary);
-  --ifm-alert-foreground-color: var(--cv-theme-on-secondary);
-  --ifm-alert-border-color: var(--cv-theme-on-secondary);
-  --ifm-code-background: var(--cv-theme-on-secondary-container-8);
 }
