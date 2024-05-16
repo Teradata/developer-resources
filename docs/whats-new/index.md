@@ -12,10 +12,14 @@ pagination_next: null
 
 See what's in this release and what's coming.
 
-(Purpose of this page is to highlight what's new/better, then to link to release notes for more nitty-gritty/problematic information.)
+(Over time, this page will have links to child pages, one for each release.)
+
+(Purpose is to highlight what's new/better, then to link to release notes for more nitty-gritty/problematic information.)
 
 
 ## Paid public preview - initial release - June 2024
+
+(Not sure we want to handle this section this way - maybe just name/date the initial PPP launch and not repeat "what it is" from the get started page.)
 
 The AI Unlimited paid public preview includes everything you need to start exploring, analyzing, and experimenting:
 
