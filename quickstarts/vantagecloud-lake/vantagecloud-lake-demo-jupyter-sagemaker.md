@@ -31,7 +31,7 @@ In this section we will cover in detail each of the steps below:
 * Default options are appropiate for this bucket
 * In the created bucket upload the Teradata modules for Jupyter 
 
-![Load modules in S3 bucket](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-bucket-upload.PNG)
+![Load modules in S3 bucket](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-bucket-upload.png)
 
 ### Create an IAM role for your Jupyter Notebooks instance
 * On SageMaker navigate to the role manager 
