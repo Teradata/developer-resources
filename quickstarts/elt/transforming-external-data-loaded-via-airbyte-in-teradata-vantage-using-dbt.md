@@ -2,7 +2,7 @@
 draft: true
 author: Krutik Pathak
 email: krutik.pathak@teradata.com
-last_update: July 27, 2023
+page_last_update: July 27, 2023
 description: This tutorial describes the type of transformations that are needed to transform external data loaded through Airbyte with dbt.
 keywords: [dbt, airbyte, data transformation, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, data transfer, data extraction, enterprise analytics, elt.]
 ---

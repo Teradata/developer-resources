@@ -2,7 +2,7 @@
 draft: true
 author: Igor Machin, Ambrose Inman
 email: igor.machin@teradata.com
-last_update: November 18th, 2022
+page_last_update: November 18th, 2022
 description: Execute Airflow workflows that use dbt with Teradata Vantage
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, queries, dbt]
 ---

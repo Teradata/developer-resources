@@ -2,7 +2,7 @@
 draft: true
 author: Mohammmad Taha Wahab, Mohammad Harris Mansur and Will Fleury
 email: mohammadtaha.wahab@teradata.com , mohammadharris.mansur@teradata.com and will.fleury@teradata.com
-last_update: January 5th, 2023
+page_last_update: January 5th, 2023
 description: Feast Enterprise Feature Store Connector with Teradata
 keywords: [data warehouses, analytics, teradata, vantage, time series, business intelligence, enterprise analytics, feature store, Feast, connector]
 ---

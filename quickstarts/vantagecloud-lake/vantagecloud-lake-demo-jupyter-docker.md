@@ -2,7 +2,7 @@
 draft: true
 author: Vidhan Bhonsle
 email: vidhan.bhonsle@teradata.com
-last_update: January 10th, 2024
+page_last_update: January 10th, 2024
 description: Run Teradata Jupyter Notebook Demos for VantageCloud Lake in Docker
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, docker, container, vantagecloud, vantagecloud lake, lake]
 ---

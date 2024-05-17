@@ -2,7 +2,7 @@
 draft: true
 author: Rupal Shah
 email: rupal.shah@teradata.com
-last_update: February 14th, 2022
+page_last_update: February 14th, 2022
 description: Use Teradata Vantage with Azure Machine Learning Studio.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, data cloud, machine learning, azure, azure machine learning studio]
 ---

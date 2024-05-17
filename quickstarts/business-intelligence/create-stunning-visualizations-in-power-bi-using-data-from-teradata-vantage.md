@@ -2,7 +2,7 @@
 draft: true
 author: Kevin Bogusch, Paul Ibberson
 email: paul.ibberson2@teradata.com
-last_update: January 14th, 2022
+page_last_update: January 14th, 2022
 description: Connect Teradata Vantage to Power BI Desktop.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, microsoft power bi, power bi]
 ---

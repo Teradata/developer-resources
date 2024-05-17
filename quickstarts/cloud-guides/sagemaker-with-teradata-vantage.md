@@ -2,7 +2,7 @@
 draft: true
 author: Wenjie Tehan
 email: wenjie.tehan@teradata.com
-last_update: February 8th, 2022
+page_last_update: February 8th, 2022
 description: Use AWS SageMaker with Teradata Vantage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, ai, artificial intelligence, aws sagemaker.]
 ---
