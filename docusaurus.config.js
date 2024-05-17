@@ -41,6 +41,7 @@ const config = {
       // Load font awesome icons
       tagName: 'script',
       attributes: {
+        defer: 'true',
         src: 'https://kit.fontawesome.com/17a35e44e3.js',
         crossorigin: 'anonymous',
       },
@@ -84,6 +85,15 @@ const config = {
          * Path to data on filesystem relative to site dir.
          */
         path: './releases',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'quickstarts',
+        path: 'quickstarts',
+        routeBasePath: 'quickstarts',
+        sidebarPath: './sidebars.js',
       },
     ],
   ],
