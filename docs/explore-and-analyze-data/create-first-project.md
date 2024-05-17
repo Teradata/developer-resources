@@ -48,6 +48,8 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
 :::
 
+- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from [GitHub Demo: Charting and Visualization Data](https://github.com/Teradata/jupyter-demos/tree/main/Getting_Started/Charting_and_Visualization/data) and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
+
 ## Connect, and run your first workload
 
 :::tip
@@ -70,6 +72,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 3. Create an object store authorization to store the cloud service provider credentials. 
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
+
     ```bash
     %project_auth_create name=<Authorization_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
@@ -91,7 +94,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 6. Run the sample workload.
 
     :::note
-    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace auth1 and the location values in the following example with your own values.
+    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace <Authorization_Name> and the <salescenter.csv_file_location> values in the following example with your own values.
     ::::
 
     a. Create a table to store the sales center data.
@@ -100,14 +103,14 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     DROP FOREIGN TABLE SalesCenter;
 
     CREATE MULTISET FOREIGN TABLE SalesCenter ,
-    EXTERNAL SECURITY DEFINER TRUSTED auth1
+    EXTERNAL SECURITY DEFINER TRUSTED <Authorization_Name>
     (
         Sales_Center_id INTEGER NOT NULL,
         Sales_Center_Name VARCHAR(255) CHARACTER SET LATIN NOT CASESPECIFIC
     )
     USING
     (
-        LOCATION ('/s3/s3.amazonaws.com/tioce/data/salescenter.csv')
+        LOCATION ('<salescenter.csv_file_location>')
         MANIFEST ('FALSE')
         ROWFORMAT  ('{"field_delimiter":",","record_delimiter":"\n","character_set":"LATIN"}')
         STOREDAS ('TEXTFILE')
@@ -127,7 +130,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```sql
     DROP FOREIGN TABLE SalesDemo;
     CREATE MULTISET FOREIGN TABLE SalesDemo ,
-    EXTERNAL SECURITY DEFINER TRUSTED auth1
+    EXTERNAL SECURITY DEFINER TRUSTED <Authorization_Name>
     (
         Sales_Center_ID INTEGER NOT NULL,
         UNITS DECIMAL(15,4),
@@ -136,7 +139,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     )
    USING
    (
-       LOCATION ('/s3/s3.amazonaws.com/tioce/data/salesdemo.csv')
+       LOCATION ('<salescenter.csv_file_location>')
        MANIFEST ('FALSE')
        ROWFORMAT  ('{"field_delimiter":",","record_delimiter":"\n","character_set":"LATIN"}')
        STOREDAS ('TEXTFILE')
