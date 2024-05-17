@@ -1,8 +1,8 @@
 ---
 :page-aliases: connectors::database/reference.adoc, connectors::db/reference.adoc
-page-author: Tan Nguyen
-page-email: tan.nguyen@teradata.com
-page-revdate: February 10th, 2023
+author: Tan Nguyen
+email: tan.nguyen@teradata.com
+last_update: February 10th, 2023
 description: Technical Reference for Teradata Connector for MuleSoft's Anypoint Studio.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
 ---

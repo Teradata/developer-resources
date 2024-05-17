@@ -1,8 +1,8 @@
 ---
-experimental:
-page-author: Paul Ibberson
-page-email: paul.ibberson2@teradata.com
-page-revdate: Deccember 19th, 2023
+draft: true
+author: Paul Ibberson
+email: paul.ibberson2@teradata.com
+last_update: Deccember 19th, 2023
 description: Configure a Teradata Vantage connection in DataHub.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, datahub, data catalog, data lineage]
 ---
