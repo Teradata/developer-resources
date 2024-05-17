@@ -36,7 +36,7 @@ As we continue to enhance AI Unlimited and ensure you are successful in getting 
 
     - The following function are not supported:
       
-        - Automl 
+        - automl 
 
         - openml  
 
