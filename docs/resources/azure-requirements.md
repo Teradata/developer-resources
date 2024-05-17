@@ -28,7 +28,7 @@ The manager needs a role that allows it to do the following:
 - Deploy the engine.
 - Create a new role for the engine (each time it deploys the engine) that allows the engine's nodes to communicate.
 
-The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) that Teradata provides includes a manager role ARM template and a policy sample.
+The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes a manager role ARM template and a policy sample.
 
 	Open a terminal window, and clone the repository.
 

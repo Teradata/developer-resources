@@ -29,18 +29,27 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
 :::
 
 
+## Clone the respository
+
+The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file you need to run JupyterLab. 
+
+Clone the repository.
+
+    ``` bash
+    git clone https://github.com/Teradata/ai-unlimited
+	```
+
+
 ## Start JupyterLab
 
-1. Download the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file.
-
-2. Go to the directory where `jupyter.yaml` is located, and start JupyterLab.
+1. Go to the directory where `jupyter.yaml` is located, and start JupyterLab.
 
 	```bash title="Run the Docker Compose file in the background "
 	docker compose -f jupyter.yaml -d up 
 	```
 	The command downloads and starts the JupyterLab container.
 
-3. To retrieve the Jupyter token, list the currently running containers.
+2. To retrieve the Jupyter token, list the currently running containers.
 
 	```bash
 	docker ps 

@@ -58,7 +58,7 @@ To allow AI Unlimited to create a new role for each engine deployment, when you 
 
 If your security does not allow AI Unlimited to create roles, provide them.
 
-The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) that Teradata provides includes policy samples for the manager and engine roles.
+The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes policy samples for the manager and engine roles.
 
 	Open a terminal window, and clone the repository.
 
