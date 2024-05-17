@@ -1,0 +1,3 @@
+:::note
+If you have any questions or need further assistance, please visit our [community forum](https://support.teradata.com/community) where you can get support and interact with other community members.
+:::
