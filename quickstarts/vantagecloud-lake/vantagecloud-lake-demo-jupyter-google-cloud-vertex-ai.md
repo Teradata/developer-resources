@@ -30,7 +30,7 @@ When you create a new notebook instance, you can specify a startup script. This 
      - Create a bucket with a name relevant to the project (e.g., teradata_jupyter). 
      - Ensure that the bucket name is globally unique. For instance, if the name teradata_jupyter has already been used, it will not be available for subsequent users. 
 
-![New bucket](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/bucket.PNG)
+![New bucket](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/bucket.png)
 
 * Upload the unizzped Jupyter extension package to your Google Cloud Storage bucket as a file.
 
@@ -74,7 +74,7 @@ su - jupyter -c "git clone https://github.com/Teradata/lake-demos.git"
 ```
 * Upload this script to your Google Cloud storage bucket as a file
 
-![files uploaded to bucket](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/upload.PNG)
+![files uploaded to bucket](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/upload.png)
 
 ### Initiating a user managed notebook instance
 
@@ -85,15 +85,15 @@ su - jupyter -c "git clone https://github.com/Teradata/lake-demos.git"
 
 * Under Details, name your notebook, select your region and select continue.
 
-![notebook env details](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/detailsenv.PNG)
+![notebook env details](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/detailsenv.png)
 
 * Under Environment select **Browse** to select your startup.sh script from your Google Cloud Bucket.
 
-![select startup script](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/startupscript.PNG)
+![select startup script](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/startupscript.png)
 
 * Select Create to initiate the notebook. It may take a few minutes for the notebook creation process to complete. When it is done, click on OPEN JUPYTERLAB. 
 
-![active notebook](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/activenotebook.PNG)
+![active notebook](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/activenotebook.png)
 
 :::info
 You will have to whitelist this IP in your VantageCloud Lake environment to allow the connection. This solution is appropriate in a trial environment. For production environments, a configuration of VPCs, Subnets, and Security Groups might need to be configured and whitelisted.
@@ -101,7 +101,7 @@ You will have to whitelist this IP in your VantageCloud Lake environment to allo
 
 * On JupyterLab open a notebook with a Python kernel and run the following command for finding your notebook instance IP address.
 
-![python3 kernel](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/python3.PNG)
+![python3 kernel](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/python3.png)
 
 ``` python , role="content-editable"
 import requests
@@ -123,11 +123,11 @@ print("My Public IP is:", my_public_ip)
 ## Edit vars.json
 Navigate into the `lake-demos` directory in your notebook. 
 
-![notebook launcher](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/notebooklauncher.PNG)
+![notebook launcher](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/notebooklauncher.png)
 
 Right click on vars.json to open the file with editor. 
 
-![vars.json](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/openvars.PNG)
+![vars.json](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/openvars.png)
 
 Edit the *[vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars.json)* file to include the required credentials to run the demos +
 
