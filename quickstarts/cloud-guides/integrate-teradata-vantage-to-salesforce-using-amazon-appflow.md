@@ -2,7 +2,7 @@
 draft: true
 author: Wenjie Tehan
 email: wenjie.tehan@teradata.com
-last_update: February 14th, 2022
+page_last_update: February 14th, 2022
 description: Connect Teradata Vantage to Salesforce using Amazon Appflow.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, salesforce integration.]
 ---

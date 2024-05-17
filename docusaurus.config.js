@@ -168,7 +168,7 @@ const config = {
         title: 'header.title',
         navItems: [
           {
-            href: 'https://quickstarts.teradata.com/',
+            href: `${baseUrl}/quickstarts/business-intelligence/create-stunning-visualizations-in-power-bi-using-data-from-teradata-vantage/`,
             label: 'header.getting_started',
           },
           {

@@ -2,7 +2,7 @@
 :page-aliases: connectors::database/example-configuration.adoc, connectors::db/example-configuration.adoc
 author: Tan Nguyen
 email: tan.nguyen@teradata.com
-last_update: February 13th, 2023
+page_last_update: February 13th, 2023
 description: Use Teradata Connector for MuleSoft's Anypoint Studio.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
 ---

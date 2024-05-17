@@ -2,7 +2,7 @@
 draft: true
 author: Janeth Graziani
 email: Janeth.graziani@teradata.com
-last_update: January 11, 2024
+page_last_update: January 11, 2024
 description: Learn how to run VantageCloud Lake Demos using Jupyter notebooks in Visual Studio Code. 
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy, vantagecloud, vantagecloud lake, public internet, visual studio code, IDE, data analytics, data science]
 ---

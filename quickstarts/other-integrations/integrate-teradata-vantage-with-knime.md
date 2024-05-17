@@ -2,7 +2,7 @@
 draft: true
 author: Jeremy Yu
 email: Jeremy.yu@teradata.com
-last_update: May 18th, 2022
+page_last_update: May 18th, 2022
 description: Integrate Teradata Vantage with KNIME.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---

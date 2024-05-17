@@ -2,7 +2,7 @@
 draft: true
 author: Pablo Escobar de la Oliva
 email: pablo.escobardelaoliva@teradata.com
-last_update: May 29th, 2022
+page_last_update: May 29th, 2022
 description: Tutorial for deploying and monitoring a Python model into Vantage using ModelOps and Git repository
 keywords: [modelops, python, git, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---

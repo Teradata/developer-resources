@@ -2,7 +2,7 @@
 draft: true
 author: Krutik Pathak
 email: krutik.pathak@teradata.com
-last_update: June 9th, 2023
+page_last_update: June 9th, 2023
 description: Use Airbyte with Teradata Vantage.
 keywords: [airbyte, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, data transfer, data extraction, enterprise analytics, elt.]
 
