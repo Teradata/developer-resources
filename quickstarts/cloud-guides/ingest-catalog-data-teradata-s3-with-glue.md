@@ -61,32 +61,32 @@ In this section, we will cover in detail each of the steps below:
 
 ### Create an Amazon S3 Bucket to Ingest Data
 * In Amazon S3, select `Create bucket`.
-![create bucket](./images/ingest-catalog-data-teradata-s3-with-glue/Buckets-1.png)
+![create bucket](./images/ingest-catalog-data-teradata-s3-with-glue/Buckets-1.PNG)
 * Assign a name to your bucket and take note of it.
-![name bucket](./images/ingest-catalog-data-teradata-s3-with-glue/Buckets-2.png)
+![name bucket](./images/ingest-catalog-data-teradata-s3-with-glue/Buckets-2.PNG)
 * Leave all settings at their default values.
 * Click on `Create bucket`.
-![save bucket](./images/ingest-catalog-data-teradata-s3-with-glue/Buckets-3.png)
+![save bucket](./images/ingest-catalog-data-teradata-s3-with-glue/Buckets-3.PNG)
 
 ### Create an AWS Glue Catalog Database for Storing Metadata
 
 * In AWS Glue, select Data catalog, Databases.
 * Click on `Add database`.
-![add database](./images/ingest-catalog-data-teradata-s3-with-glue/Cat-1.png)
+![add database](./images/ingest-catalog-data-teradata-s3-with-glue/Cat-1.PNG)
 * Define a database name and click on `Create database`.
-![add database name](./images/ingest-catalog-data-teradata-s3-with-glue/Cat-2.png)
+![add database name](./images/ingest-catalog-data-teradata-s3-with-glue/Cat-2.PNG)
 
 ### Store Teradata Vantage credentials in AWS Secrets Manager
 
 * In AWS Secrets Manager, select `Create new secret`.
-![create secret](./images/ingest-catalog-data-teradata-s3-with-glue/secret-1.png)
+![create secret](./images/ingest-catalog-data-teradata-s3-with-glue/secret-1.PNG)
 * The secret should be an `Other type of secret` with the following keys and values according to your Teradata Vantage Instance:
 ** USER
 ** PASSWORD
 :::tip
 In the case of ClearScape Analytics Experience, the user is always "demo_user," and the password is the one you defined when creating your ClearScape Analytics Experience environment.
 :::
-![secret values](./images/ingest-catalog-data-teradata-s3-with-glue/secret-2.png)
+![secret values](./images/ingest-catalog-data-teradata-s3-with-glue/secret-2.PNG)
 * Assign a name to the secret.
 * The rest of the steps can be left with the default values.
 * Create the secret.
@@ -97,9 +97,9 @@ The role you create should have access to the typical permissions of a Glue Serv
 * In AWS, go to the IAM service.
 * Under Access Management, select `Roles`.
 * In roles, click on `Create role`.
-![create role](./images/ingest-catalog-data-teradata-s3-with-glue/Role-1.png)
+![create role](./images/ingest-catalog-data-teradata-s3-with-glue/Role-1.PNG)
 * In select trusted entity, select `AWS service` and pick `Glue` from the dropdown.
-![role type](./images/ingest-catalog-data-teradata-s3-with-glue/Role-2.png)
+![role type](./images/ingest-catalog-data-teradata-s3-with-glue/Role-2.PNG)
 * In add permissions:
 ** Search for `AWSGlueServiceRole`.
 ** Click the related checkbox.
@@ -107,7 +107,7 @@ The role you create should have access to the typical permissions of a Glue Serv
 ** Click the related checkbox.
 * In Name, review, and create:
 ** Define a name for your role.
-![name role](./images/ingest-catalog-data-teradata-s3-with-glue/Role-3.png)
+![name role](./images/ingest-catalog-data-teradata-s3-with-glue/Role-3.PNG)
 * Click on `Create role`.
 * Return to Access Management, Roles, and search for the role you've just created.
 * Select your role.
@@ -131,17 +131,17 @@ The role you create should have access to the typical permissions of a Glue Serv
 }
 ```
 * Click `Next`.
-![inline policy](./images/ingest-catalog-data-teradata-s3-with-glue/Role-4.png)
+![inline policy](./images/ingest-catalog-data-teradata-s3-with-glue/Role-4.PNG)
 * Assign a name to your policy.
 * Click on `Create policy`.
 
 ### Create a connection to a Teradata Vantage Instance in AWS Glue
 
 * In AWS Glue, select `Data connections`.
-![connection](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-1.png)
+![connection](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-1.PNG)
 * Under Connectors, select `Create connection`.
 * Search for and select the Teradata Vantage data source.
-![teradata type](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-2.png)
+![teradata type](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-2.PNG)
 * In the dialog box, enter the URL of your Teradata Vantage instance in JDBC format.
 :::tip
 In the case of ClearScape Analytics Experience, the URL follows the following structure: 
@@ -149,13 +149,13 @@ In the case of ClearScape Analytics Experience, the URL follows the following st
 :::
 * Select the AWS Secret created in the previous step.
 * Name your connection and finish the creation process.
-![connection configuration](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-3.png)
+![connection configuration](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-3.PNG)
 
 ### Create an AWS Glue Job
 * In AWS Glue, select `ETL Jobs` and click on `Script editor`.
-![script editor creation](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-1.png)
+![script editor creation](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-1.PNG)
 * Select `Spark` as the engine and choose to start fresh.
-![script editor type](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-2.png)
+![script editor type](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-2.PNG)
 
 ### Draft a script for automated ingestion and cataloging of Teradata Vantage data into Amazon S3
 
@@ -239,17 +239,17 @@ job.commit()
 ```
 
 * Assign a name to your script
-![script in editor](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.png)
+![script in editor](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.PNG)
 
 * In Job details, Basic properties:
 ** Select the IAM role you created for the ETL job.
 ** For testing, select "2" as the Requested number of workers, this is the minimum allowed.
-![script configurations](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.png)
+![script configurations](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.PNG)
 ** In `Advanced properties`, `Connections` select your connection to Teradata Vantage. 
 :::tip
 The connection created must be referenced twice, once in the job configuration, once in the script itself.
 :::
-![script configuration connection](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-5.png)
+![script configuration connection](./images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-5.PNG)
 * Click on `Save`.
 * Click on `Run`.
 ** The ETL job takes a couple of minutes to complete, most of this time is related to starting the Spark cluster.
@@ -260,7 +260,7 @@ The connection created must be referenced twice, once in the job configuration, 
 ** Go to Data Catalog, Databases.
 ** Click on the catalog database you created.
 ** In this location, you will see the tables extracted and cataloged through your Glue ETL job.
-![result tables](./images/ingest-catalog-data-teradata-s3-with-glue/Results.png)
+![result tables](./images/ingest-catalog-data-teradata-s3-with-glue/Results.PNG)
 
 * All tables ingested are also present as compressed files in S3. Rarely, these files would be queried directly. Services such as AWS Athena can be used to query the files relying on the catalog metadata.
 
