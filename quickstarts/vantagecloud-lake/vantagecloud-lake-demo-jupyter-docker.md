@@ -28,11 +28,11 @@ Once created, go to *SETTINGS* tab and provide your public IP address to [access
 You can find your IP address from [WhatIsMyIp.com](https://www.whatismyip.com) website. Take note of the IPv4 address.
 :::
 
-![IP whitelisting](./images/vantagecloud-lake-demo-jupyter-docker/lake_ip_addresses.png)
+![IP whitelisting](./images/vantagecloud-lake-demo-jupyter-docker/lake_ip_addresses.PNG)
 
 Your environment card should show *Public internet* access now.
 
-![Public internet card view](./images/vantagecloud-lake-demo-jupyter-docker/lake_public_internet_cv.png)
+![Public internet card view](./images/vantagecloud-lake-demo-jupyter-docker/lake_public_internet_cv.PNG)
 
 From *OVERVIEW* tab, copy:
 
@@ -41,7 +41,7 @@ From *OVERVIEW* tab, copy:
 
 These values are required to access VantageCloud Lake from the Docker.
 
-![Environment Overview page](./images/vantagecloud-lake-demo-jupyter-docker/lake_overview_page.png)
+![Environment Overview page](./images/vantagecloud-lake-demo-jupyter-docker/lake_overview_page.PNG)
 
 ## Clone VantageCloud Lake Demo repository
 Clone VantageCloud Lake Demo repository in your local machine:
@@ -117,16 +117,16 @@ docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/Jup
 ```
 ====
 
-![docker logs](./images/vantagecloud-lake-demo-jupyter-docker/lake_docker_url.png)
+![docker logs](./images/vantagecloud-lake-demo-jupyter-docker/lake_docker_url.PNG)
 
 Click on the URL in docker logs to open Jupyter notebook in your browser.
 
-![Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_jupyter_notebook.png)
+![Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_jupyter_notebook.PNG)
 
 ## Run demos
 Open and execute all the cells in *0_Demo_Environment_Setup.ipynb* to setup your environment, followed by *1_Demo_Setup_Base_Data.ipynb* to load the base data required for the demos. +
 
-![Environment setup Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_0_setup.png)
+![Environment setup Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_0_setup.PNG)
 
 To learn more about the demo notebooks, go to [Teradata Lake demos](https://github.com/Teradata/lake-demos) page on GitHub.
 
