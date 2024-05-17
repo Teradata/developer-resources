@@ -21,13 +21,20 @@ For installation support, ask the [community](https://support.teradata.com/commu
 :::
 
 
-## Choose a manager template
+## Clone the repository
 
-ARM templates for the manager are here in the AI Unlimited GitHub repository you cloned:
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
+
+<MyPartial />
+
+
+## Locate the manager template
+
+ARM templates for the manager are here in the AI Unlimited GitHub repository:
 
 `deployments/azure/templates/arm/ai-unlimited`
 
-Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
@@ -47,6 +54,8 @@ You might want to ask a cloud admin at your organization for guidance.
 4. Select the template file you chose to use, then select **Save**.
 
 <a id="azure-parms"></a>
+
+
 ## Specify instance details
 
 Review the parameters. Provide values for the required parameters. Your organization might require others.

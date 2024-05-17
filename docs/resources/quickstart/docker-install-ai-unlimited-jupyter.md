@@ -71,14 +71,14 @@ This QuickStart uses the first method.
 		</TabItem>
 	</Tabs>
 
-2. In the [Teradata AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/docker), open the `[AWS or Azure]-credentials-env-vars.yaml` file and update the environment variable values.
+2. Download the `[AWS or Azure]-credentials-env-vars.yaml` file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/docker), and update the environment variable values.
 
 
 ## Start the manager and JupyterLab
 
 1. Download the [ai-unlimited.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/ai-unlimited.yaml) and [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) files.
 
-2. Go to the directory where `ai-unlimited.yaml` and `jupyter.yaml` are located, and start the manager and JupyterLab.
+2. Go to the directory where `[AWS or Azure]-credentials-env-vars.yaml`, `ai-unlimited.yaml`, and `jupyter.yaml` are located, and start the manager and JupyterLab.
 
 	<Tabs>
 		<TabItem value="aws" label="AWS" default>

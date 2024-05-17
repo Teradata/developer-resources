@@ -10,6 +10,11 @@ pagination_next: null
 
 # AWS account requirements
 
+Before you install AI Unlimited, address these items.
+
+
+## Prepare your AWS account
+
 - Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in the [AI Unlimited template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited).
 
 - If you'll need to access the manager instance to run commands or debug, you can connect to it one of these ways:
@@ -52,6 +57,16 @@ To allow AI Unlimited to create a new role for each engine deployment, when you 
 ## Provide roles created by your organization
 
 If your security does not allow AI Unlimited to create roles, provide them.
+
+The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) that Teradata provides includes policy samples for the manager and engine roles.
+
+	Open a terminal window, and clone the repository.
+
+    ``` bash
+    git clone https://github.com/Teradata/ai-unlimited
+	```
+
+Or use the links that follow to download what you need.
 
 
 ### Role for the manager

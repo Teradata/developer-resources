@@ -26,7 +26,7 @@ For setup support, ask the [community](https://support.teradata.com/community?id
 <a id="setup-fields"></a>	
 ## Complete the fields
 
-***(changes to the UI - info in these sections is back to WIP)***
+**(will do a final check after we're sure all changes have stopped - GitHub (and Lab) base URL might get removed, for instance)**
 
 Find information about each group of fields here.
 
@@ -37,7 +37,6 @@ Find information about each group of fields here.
 <br />
 **AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
 
-**Note:** We've used the term "manager" to refer to the AI Unlimited component you installed. Now that it's installed, its user interface and underlying functionality are simply "AI Unlimited."  
 
 **Git provider**&mdash;GitHub or GitLab.
 
@@ -76,9 +75,9 @@ Some of these fields are for default values. Later, when you deploy the engine f
 <Tabs>
 <TabItem value="aws1" label="AWS">
 <br />
-**Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
+**Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your data lake.
 
-**Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) in which to deploy the engine. The AWS console shows the subnets in the region.
+**Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
 
 **Default IAM role**
 
@@ -107,17 +106,20 @@ Select **Update**.
 
 <br />
 
-**Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your primary work location.
+**Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your data lake.
 
-**Default network resource group** **(verifying)**
+Learn more about [Azure virtual networks](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices).
 
-**Default network** **(verifying)**
 
-**Default subnet** **(verifying)**
+**Default network resource group**&mdash;The resource group that contains the network.
 
-**Default key vault** **(verifying)**
+**Default network**&mdash;The network to which to deploy the engine.
 
-**Default key vault resource group** **(verifying)**
+**Default subnet**&mdash;The subnet to which to deploy the engine.
+
+**Default key vault**&mdash;The key vault, used by the engine, in which sensitive information such as passwords can be securely stored.
+
+**Default key vault resource group**&mdash;The resource group that contains the key vault.
 
 **Inbound security**
 
@@ -125,7 +127,7 @@ Use these fields to allow source traffic to reach the engine:
 
 - **Default [CIDRs](/docs/glossary.md#glo-cidr)**
  
-- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; **(verifying field label)** If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
@@ -150,11 +152,9 @@ Select **Update**.
 
 **GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
-**GitHub base URL**&mdash;The URL for your GitHub instance. **(this field might be removed)**
+**GitHub base URL**&mdash;The URL for your GitHub instance.
 
 **GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](/docs/resources/create-oauth-app.md).
-
-**GitHub login**&mdash;**(this field will probably be removed)**
 
 **Organization access**
 
@@ -167,7 +167,7 @@ Two organizations in your GitHub account can help with access control and reposi
 <br/>
 Select **Update**.
 
-Select **Login**. Then, if prompted, sign in.
+Select **Sign In**. Then, if prompted, sign in.
 
 </TabItem>
 
@@ -177,11 +177,9 @@ Select **Login**. Then, if prompted, sign in.
 
 **GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
-**GitLab base URL**&mdash;The URL for your GitLab instance. **(this field might be removed)**
+**GitLab base URL**&mdash;The URL for your GitLab instance.
 
 **GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](/docs/resources/create-oauth-app.md).
-
-**GitLab login** **(this field will probably be removed)**
 
 **Group access**
 
@@ -194,7 +192,7 @@ Two groups in your GitLab account can help with access control and repository ma
 <br/>
 Select **Update**.
 
-Select **Login**. Then, if prompted, sign in.
+Select **Sign In**. Then, if prompted, sign in.
 
 </TabItem>
 </Tabs>
@@ -209,12 +207,8 @@ Select **Login**. Then, if prompted, sign in.
 
 2. If you enabled TLS, select **Restart**. This restarts the AI Unlimited service with TLS in place.
 
-AI Unlimited setup is now complete.
+Congratulations! AI Unlimited setup is now complete.
 
-:::caution
-(might not need this - keeping for now to test styling)<br/>
-Do not sign out. Being signed in keeps your Git session running. To use AI Unlimited you need an active Git session. [Link color test](/docs/glossary.md).
-:::
 
 :::note
 Because you are the AI Unlimited admin, you can return to the setup anytime to [change any settings](/docs/manage-ai-unlimited/change-settings.md). 

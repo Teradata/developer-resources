@@ -179,4 +179,4 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     %project_engine_suspend project=<Project_Name>
     ```
 
-You're done! You've run your first workload.
+Congratulations! You've run your first workload.

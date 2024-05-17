@@ -21,13 +21,20 @@ For installation support, ask the [community](https://support.teradata.com/commu
 :::
 
 
-## Choose a manager template
+## Clone the repository
 
-CloudFormation templates for the manager are here in the AI Unlimited GitHub repository you cloned:
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
+
+<MyPartial />
+
+
+## Locate the manager template
+
+CloudFormation templates for the manager are here in the AI Unlimited GitHub repository:
 
 `deployments/aws/templates/ai-unlimited/`
 
-Choose a template based on the type of [load balancer](/docs/glossary.md#glo-load-balancer) you want to use.<br /> 
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
@@ -50,6 +57,8 @@ We recommend selecting the region closest to your primary work location.
 6. Select the template file you chose to use, and click **Next**.  
 
 <a id="aws-parms"></a>
+
+
 ## Specify stack details and options
 
 1. Provide a stack name.

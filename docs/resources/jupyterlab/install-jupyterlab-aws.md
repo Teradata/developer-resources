@@ -33,10 +33,16 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;to configure a custom domain name and route DNS queries to your load balancer.
 
 
+## Clone the repository
 
-## Choose a Jupyter template
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
 
-CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository you cloned:
+<MyPartial />
+
+
+## Locate the Jupyter template
+
+CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
 `deployments/aws/templates/jupyter/`
 
@@ -49,7 +55,7 @@ You might want to ask a cloud admin at your organization for guidance.
     - `jupyter-without-lb.yaml`&mdash;No load balancer
 
 
-## Upload the template	
+## Load the template	
 		
 1. Sign in to the [AWS console](https://aws.amazon.com), and select the region in which to deploy JupyterLab. 
    We recommend selecting the region closest to your primary work location.

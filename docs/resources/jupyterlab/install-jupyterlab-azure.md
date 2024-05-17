@@ -32,9 +32,16 @@ References to the Azure Portal are accurate as of April 14, 2024.
 - If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#jup-azure-parms).
 
 
-## Choose a Jupyter template
+## Clone the repository
 
-ARM templates for JupyterLab are here in the AI Unlimited GitHub repository you cloned:
+import MyPartial from '/docs/_partials/_clone-repo.mdx';
+
+<MyPartial />
+
+
+## Locate the Jupyter template
+
+ARM templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
 `deployments/azure/templates/arm/jupyter/`
 
