@@ -2,7 +2,7 @@
 draft: true
 author: Janeth Graziani
 email: Janeth.graziani@teradata.com
-last_update: February 28, 2024
+page_last_update: February 28, 2024
 description: Use Terraform to manage Teradata data pipelines in Airbyte using Terraform.
 keywords: [Terraform, Airbyte, Teradata Vantage, data engineering, ELT, automation, data integration, CI/CD, version control]  
 ---
