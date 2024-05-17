@@ -31,32 +31,32 @@ In this section we will cover in detail each of the steps below:
 * Default options are appropiate for this bucket
 * In the created bucket upload the Teradata modules for Jupyter 
 
-![Load modules in S3 bucket](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-bucket-upload.png)
+![Load modules in S3 bucket](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-bucket-upload.PNG)
 
 ### Create an IAM role for your Jupyter Notebooks instance
 * On SageMaker navigate to the role manager 
 
-![New role creation](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-0.png)
+![New role creation](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-0.PNG)
 * Create a new role (if not already defined)
 * For purposes of this guide the role created is assigned the data scientist persona 
 
-![Role name and persona](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-1.png)
+![Role name and persona](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-1.PNG)
 * On the settings, it is appropiate to keep the defaults
 * In the corresponding screen define the bucket where you uploaded the Teradata Jupyter modules
 
-![S3 bucket](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-2.png)
+![S3 bucket](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-2.PNG)
 * In the next configuration we add the corresponding policies for access to the S3 bucket  
 
-![S3 bucket permissions](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-3.png)
+![S3 bucket permissions](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-iam-role-3.PNG)
 
 ### Create lifecycle configuration for your Jupyter Notebooks instance
 * On SageMaker navigate to lifecycle configurations and click on create 
 
-![Create lifecycle configuration](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-config-1.png)
+![Create lifecycle configuration](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-config-1.PNG)
 * Define a lifecycle configuration with the following scripts
 ** When working from a Windows environment, we recommend copying the scripts into the lifecycle configuration editor line by line. Press 'Enter' after each line directly in the editor to avoid copying issues. This approach helps prevent carriage return errors that can occur due to encoding differences between Windows and Linux. Such errors often manifest as "/bin/bash^M: bad interpreter" and can disrupt script execution.
 
-![Create lifecycle configuration](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-config-2.png)
+![Create lifecycle configuration](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-config-2.PNG)
 
 ** On create script: 
 +
@@ -135,22 +135,22 @@ EOF
 * Choose a name for your notebook instance, define size (for demos the smaller available instance is enough)
 * Click in additional configurations and assign the recently created lifecycle configuration 
 
-![Create notebook instance](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-1.png)
+![Create notebook instance](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-1.PNG)
 * Click in additional configurations and assign the recently created lifecycle configuration
 * Assign the recently created IAM role to the notebook instance 
 
-![Assign IAM role to notebook instance](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-2.png)
+![Assign IAM role to notebook instance](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-2.PNG)
 
 * Paste the following link https://github.com/Teradata/lake-demos as the default github repository for the notebook instance
 
-![Assign default repository for the notebook instance](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-3.png)
+![Assign default repository for the notebook instance](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-3.PNG)
 
 ## Find the IP CIDR of your Jupyter Notebooks instance
 * Once the instance is running click on open JupyterLab 
 
-![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-4.png)
+![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-notebook-4.PNG)
 
-![Loaded JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-loaded-env.png)
+![Loaded JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-create-loaded-env.PNG)
 
 * On JupyterLab open a notebook with Teradata Python kernel and run the following command for finding your notebook instance IP address.
 ** We will whitelist this IP in your VantageCloud Lake environment in order to allow the connection.
@@ -171,14 +171,14 @@ print("My Public IP is:", my_public_ip)
 ## VantageCloud Lake Configuration
 * In the VantageCloud Lake environment, under settings, add the IP of your notebook instance
 
-![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-lake.png)
+![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-lake.PNG)
 
 ## Jupyter Notebook Demos for VantageCloud Lake
 
 ### Configurations
 * The file [vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars.json) should be edited to match the configuration of your VantageCloud Lake environment +
 
-![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-vars.png)
+![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-vars.PNG)
 
 * Especifically the following values should be added 
 

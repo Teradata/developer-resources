@@ -12,7 +12,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ## Overview
 Visual Studio Code is a popular open-source code editor compatible with Windows, MacOs, and Linux. Developers use this Integrated Development Environment [IDE) for coding, debugging, building, and deploying applications. In this quickstart guide, we launch VantageCloud Lake Jupyter notebook demos within Visual Studio Code. 
 
-![vscode.png)(./images/vantagecloud-lake-demos-visual-studio-code/vscode.png)
+![vscode.PNG)(./images/vantagecloud-lake-demos-visual-studio-code/vscode.PNG)
 
 ## Prerequisites
 Before you begin, ensure you have the following prerequisites in place:
@@ -61,7 +61,7 @@ docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/Jup
 ====
 Take note of the resulting URL and token; you’ll need them to establish the connection from Visual Studio Code.
 
-![terminal.png)(./images/vantagecloud-lake-demos-visual-studio-code/terminal.png)
+![terminal.PNG)(./images/vantagecloud-lake-demos-visual-studio-code/terminal.PNG)
 
 ## Visual Studio Code Configuration
 Open `lake-demos` project directory in Visual Studio Code. The repository contains the following project tree: 
@@ -112,44 +112,44 @@ and replace with:
 'vars.json'
 ```
 
-![search](./images/vantagecloud-lake-demos-visual-studio-code/search.png)
+![search](./images/vantagecloud-lake-demos-visual-studio-code/search.PNG)
 
-![replace](./images/vantagecloud-lake-demos-visual-studio-code/replace.png)
+![replace](./images/vantagecloud-lake-demos-visual-studio-code/replace.PNG)
 
 ### Configuring Jupyter Kernels
 Open *0_Demo_Environment_Setup.ipynb* and click on Select Kernel at the top right corner of Visual Studio Code. 
 
 If you have not installed Jupyter and Python extensions, Visual Studio Code will prompt you to install them. These extensions are necessary for Visual Studio Code to detect Kernels. To install them, select 'Install/Enable suggested extensions for Python and Jupyter.'
 
-![select.kernel.png](./images/vantagecloud-lake-demos-visual-studio-code/select.kernel.png)
+![select.kernel.PNG](./images/vantagecloud-lake-demos-visual-studio-code/select.kernel.PNG)
 
 Once you've installed the necessary extensions, you'll find options in the drop-down menu. Choose **Existing Jupyter Kernel**.
 
-![existing.kernel.png](./images/vantagecloud-lake-demos-visual-studio-code/existing.kernel.png)
+![existing.kernel.PNG](./images/vantagecloud-lake-demos-visual-studio-code/existing.kernel.PNG)
 
 Enter the URL of the running Jupyter Server and press enter.
 ```
 http://localhost:8888
 ```
-![server.url.png](./images/vantagecloud-lake-demos-visual-studio-code/server.url.png)
+![server.url.PNG](./images/vantagecloud-lake-demos-visual-studio-code/server.url.PNG)
 
 Enter the token found in your terminal when mounting files to the Docker container and press Enter.
 
-![server.password.png](./images/vantagecloud-lake-demos-visual-studio-code/server.password.png)
+![server.password.PNG](./images/vantagecloud-lake-demos-visual-studio-code/server.password.PNG)
 
 Change Server Display Name (Leave Blank To Use URL)
 
-![server.display.name.png](./images/vantagecloud-lake-demos-visual-studio-code/server.display.name.png)
+![server.display.name.PNG](./images/vantagecloud-lake-demos-visual-studio-code/server.display.name.PNG)
 
 You now have access to all the Teradata Vantage extension kernels. Select Python 3 (ipykernel) from the running Jupyter server.
 
-![python.kernel.png](./images/vantagecloud-lake-demos-visual-studio-code/python.kernel.png)
+![python.kernel.PNG](./images/vantagecloud-lake-demos-visual-studio-code/python.kernel.PNG)
 
 ### Run demos
 Execute all the cells in *0_Demo_Environment_Setup.ipynb* to setup your environment. Followed by *1_Demo_Setup_Base_Data.ipynb* to load the base data required for demo.
 To learn more about the demo notebooks, go to [Teradata Lake demos](https://github.com/Teradata/lake-demos) page on GitHub.
 
-![demoenvsetup.png](./images/vantagecloud-lake-demos-visual-studio-code/demoenvsetup.png)
+![demoenvsetup.PNG](./images/vantagecloud-lake-demos-visual-studio-code/demoenvsetup.PNG)
 
 ## Summary 
 In this quickstart guide, we configured Visual Studio Code to access VantageCloud Lake demos using Jupyter notebooks. 
