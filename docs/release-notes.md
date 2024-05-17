@@ -12,19 +12,44 @@ pagination_next: null
 
 As we continue to enhance AI Unlimited and ensure you are successful in getting started with AI Unlimited, it’s important to understand the limitations. The following features are not supported for this release. Keep an eye on the What's New page for feature enhancements.
 
-- AI Unlimited Manager
+- **AI Unlimited Manager**
 
-- OTF
+  ***Insert Content***
 
-- UDF
+- **Open Table Format (OTF)**
 
-- UAF
+  Update and Delete with predicates are not supported for OTF queries.
 
-- BYOM
+- **User Defined Functions (UDF)**
 
-- VAL
+  The first invocation of Java UDFs fails with the error `Failure 7583 The secure mode processes had a set up error`.
 
-- teradatamlwidgets (Python client libraries as Jupyter add-on)
+- **Unbounded Array Framework (UAF)**
 
-- tdapiclient (Python client libraries as Jupyter add-on)
+  UAF functions are not supported in SQL and teradataml.
+
+- **teradataml**
+
+    - UAF functions fail to run if the database name has special characters, such as hypen (-). 
+
+    - Some SQLE and UAF functions fail to run due to issues with volatile table creation. The framework creates a volatile table if the keyword argument `Volatile` is set to **True**. However, volatile tables can not be created on other schemas.
+
+    - The following function are not supported:
+      
+        - Automl 
+
+        - openml  
+
+	    - map_row 
+
+       -  map_parition
+
+       - H2OPredict 
+
+       - ONNXPredict 
+
+- **API_Request UDF**
+
+- **Vantage Analytic Library (VAL)**
+
 
