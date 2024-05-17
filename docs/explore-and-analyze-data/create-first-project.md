@@ -94,7 +94,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 6. Run the sample workload.
 
     :::note
-    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace <Authorization_Name> and the <salescenter.csv_file_location> values in the following example with your own values.
+    Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace `Authorization_Name` and the `salescenter.csv_file_location` values in the following example with your own values.
     ::::
 
     a. Create a table to store the sales center data.
