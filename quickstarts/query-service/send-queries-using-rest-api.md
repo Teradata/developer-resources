@@ -1,8 +1,8 @@
 ---
-experimental:
-page-author: Sudha Vedula
-page-email: sudha.vedula@teradata.com
-page-revdate: May 29th, 2023
+draft: true
+author: Sudha Vedula
+email: sudha.vedula@teradata.com
+last_update: May 29th, 2023
 description: Send queries using REST API. Teradata® Query Service is a middleware that provides REST APIs for Vantage.
 keywords: [query service, teradata, vantage, query, REST API]
 ---

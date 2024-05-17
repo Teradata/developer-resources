@@ -1,8 +1,8 @@
 ---
-experimental:
+draft: true
 author: Rupal Shah
 email: rupal.shah@teradata.com
-page-revdate: February 14th, 2022
+last_update: February 14th, 2022
 description: Connect Azure Data Share to Teradata Vantage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, data cloud, data sharing]
 ---

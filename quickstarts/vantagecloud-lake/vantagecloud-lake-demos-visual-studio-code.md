@@ -1,8 +1,8 @@
 ---
-experimental:
-page-author: Janeth Graziani
-page-email: Janeth.graziani@teradata.com
-page-revdate: January 11, 2024
+draft: true
+author: Janeth Graziani
+email: Janeth.graziani@teradata.com
+last_update: January 11, 2024
 description: Learn how to run VantageCloud Lake Demos using Jupyter notebooks in Visual Studio Code. 
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy, vantagecloud, vantagecloud lake, public internet, visual studio code, IDE, data analytics, data science]
 ---
@@ -12,7 +12,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ## Overview
 Visual Studio Code is a popular open-source code editor compatible with Windows, MacOs, and Linux. Developers use this Integrated Development Environment [IDE) for coding, debugging, building, and deploying applications. In this quickstart guide, we launch VantageCloud Lake Jupyter notebook demos within Visual Studio Code. 
 
-![vscode.png)(./images/vantagecloud-lake-demos-visual-studio-code/vscode.png)
+![vscode.png](./images/vantagecloud-lake-demos-visual-studio-code/vscode.png)
 
 ## Prerequisites
 Before you begin, ensure you have the following prerequisites in place:
@@ -31,7 +31,7 @@ git clone https://github.com/Teradata/lake-demos.git
 cd lake-demos
 ```
 ## Start a Jupyterlab docker container with Teradata Jupyter Exensions
-To launch Teradata VantageCloud Lake demos, we need the [Teradata Jupyter Extensions for Docker](https://hub.docker.com/r/teradata/jupyterlab-extensions]. These extensions provide the SQL ipython kernel, utilities to manage connections to Teradata, and the database object explorer to make you productive while interacting with the Teradata database.   
+To launch Teradata VantageCloud Lake demos, we need the [Teradata Jupyter Extensions for Docker](https://hub.docker.com/r/teradata/jupyterlab-extensions). These extensions provide the SQL ipython kernel, utilities to manage connections to Teradata, and the database object explorer to make you productive while interacting with the Teradata database.   
 
 Next, start a container and bind it to the existing lake-demos directory. Choose the appropriate command based on your operating system: 
 

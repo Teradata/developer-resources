@@ -1,8 +1,8 @@
 ---
-experimental:
-page-author: Janeth Graziani
-page-email: Janeth.graziani@teradata.com
-page-revdate: January 24, 2024
+draft: true
+author: Janeth Graziani
+email: Janeth.graziani@teradata.com
+last_update: January 24, 2024
 description: Run VantageCloud Lake Demos using Jupyter notebooks in Google Vertex AI Workbench. 
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy, vantagecloud, vantagecloud lake, data analytics, data science, vertex ai, google cloud]
 ---
