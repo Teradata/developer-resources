@@ -12,6 +12,10 @@ pagination_next: null
 
 (Just brainstorming ideas, for now. Will categorize to make them more skimmable.)
 
+:::tip
+Not seeing your question? Ask it in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)
+:::
+
 **What's the difference between AI Unlimited and Teradata Vantage?**
 Answer.
 
