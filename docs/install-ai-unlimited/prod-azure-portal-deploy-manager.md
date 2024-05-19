@@ -98,7 +98,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
 #### Without a persistent volume
 

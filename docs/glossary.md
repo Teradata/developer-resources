@@ -20,12 +20,12 @@ Definition.
 <a id="glo-manager"></a>
 ### AI Unlimited manager
 
-The manager orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. There all users get their API key, for connecting to the engine from a Jupyter notebook.
+The manager is the component that orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key for connecting to the engine from a Jupyter notebook.
 
 
 ### API key
 
-Definition.
+Your Application Progamming Interface (API) key enables you to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
 
 
 <a id="glo-alb"></a>
@@ -110,7 +110,7 @@ A scalable, highly effective way to store large amounts of structured, semi-stru
 <a id="glo-project"></a>
 ### project
 
-Definition.
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information, including user information and object store authorizations. 
 
 
 ## S

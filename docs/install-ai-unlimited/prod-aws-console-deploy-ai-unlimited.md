@@ -111,7 +111,7 @@ We recommend selecting the region closest to your primary work location.
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
 #### Without a persistent volume
 
