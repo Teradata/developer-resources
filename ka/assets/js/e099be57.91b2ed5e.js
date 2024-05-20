@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_unlimited_docs=self.webpackChunkai_unlimited_docs||[]).push([[8949],{9874:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/ai-unlimited-docs/ka/whatsnew/tags/facebook","allTagsPath":"/ai-unlimited-docs/ka/whatsnew/tags","count":1,"unlisted":false}')}}]);
