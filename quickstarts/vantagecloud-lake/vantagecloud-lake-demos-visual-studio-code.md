@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Janeth Graziani
 email: Janeth.graziani@teradata.com
 page_last_update: January 11, 2024

@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Ravi Chillanki
 email: ravi.chillanki@teradata.com
 page_last_update: August 4th, 2023

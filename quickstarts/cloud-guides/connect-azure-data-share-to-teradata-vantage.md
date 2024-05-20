@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Rupal Shah
 email: rupal.shah@teradata.com
 page_last_update: February 14th, 2022

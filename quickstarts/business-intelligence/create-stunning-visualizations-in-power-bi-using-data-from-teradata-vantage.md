@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Kevin Bogusch, Paul Ibberson
 email: paul.ibberson2@teradata.com
 page_last_update: January 14th, 2022

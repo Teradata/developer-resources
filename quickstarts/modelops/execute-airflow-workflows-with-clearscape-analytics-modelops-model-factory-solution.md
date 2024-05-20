@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Tayyaba Batool
 email: tayyaba.batool@teradata.com
 page_last_update: Mar 19th, 2024
