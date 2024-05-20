@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Jeremy Yu
 email: Jeremy.yu@teradata.com
 page_last_update: May 18th, 2022

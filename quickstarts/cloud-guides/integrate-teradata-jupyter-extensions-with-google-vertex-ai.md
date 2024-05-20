@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Hailing Jiang
 email: Hailing.Jiang@teradata.com
 page_last_update: June 28th, 2022

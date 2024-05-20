@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Krutik Pathak
 email: krutik.pathak@teradata.com
 page_last_update: July 27, 2023

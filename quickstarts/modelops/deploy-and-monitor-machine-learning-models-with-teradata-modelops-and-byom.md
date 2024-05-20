@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Pablo Escobar de la Oliva
 email: pablo.escobardelaoliva@teradata.com
 page_last_update: May 1st, 2024

@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Igor Machin, Ambrose Inman
 email: igor.machin@teradata.com
 page_last_update: November 18th, 2022

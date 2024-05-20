@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Daniel Herrera
 email: daniel.herrera2@teradata.com
 page_last_update: March 18, 2024

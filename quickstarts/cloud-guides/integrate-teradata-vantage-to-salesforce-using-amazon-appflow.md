@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Wenjie Tehan
 email: wenjie.tehan@teradata.com
 page_last_update: February 14th, 2022
