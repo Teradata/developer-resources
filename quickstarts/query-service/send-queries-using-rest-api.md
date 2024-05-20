@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Sudha Vedula
 email: sudha.vedula@teradata.com
 page_last_update: May 29th, 2023

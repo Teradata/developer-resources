@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 page_last_update: April 6th, 2022

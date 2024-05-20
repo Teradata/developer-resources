@@ -1,5 +1,4 @@
 ---
-draft: true
 author: Mohammmad Taha Wahab, Mohammad Harris Mansur and Will Fleury
 email: mohammadtaha.wahab@teradata.com , mohammadharris.mansur@teradata.com and will.fleury@teradata.com
 page_last_update: January 5th, 2023
