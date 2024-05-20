@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies
         run: npx ci
       - name: Build docusaurus artifacts
+        if: github.event.action != 'closed'
         env:
           GH_PR_NUMBER: ${{ github.event.pull_request.number }}
         run: npm run build -- --locale en --config ./docusaurus.config.ci.js 
