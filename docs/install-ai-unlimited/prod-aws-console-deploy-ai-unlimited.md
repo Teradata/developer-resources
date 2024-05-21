@@ -12,7 +12,7 @@ pagination_next: null
 
 Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#gs-prerequisites).
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
 You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
 
@@ -143,8 +143,6 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 
 
 ## Review and create the stack
-
-***Can a tester please provide a screen recording so we can verify these steps?***
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 

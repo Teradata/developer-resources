@@ -26,8 +26,6 @@ For setup support, ask the [community](https://support.teradata.com/community?id
 <a id="setup-fields"></a>	
 ## Complete the fields
 
-**(will do a final check after we're sure all changes have stopped - GitHub (and Lab) base URL might get removed, for instance)**
-
 Find information about each group of fields here.
 
 <details>

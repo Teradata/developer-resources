@@ -12,7 +12,7 @@ pagination_next: null
 
 Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.
 
 You'll use an Azure Resource Manager (ARM) template provided by Teradata to install the manager from the Azure Portal. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
  
@@ -123,8 +123,6 @@ The new manager instance has the same configuration as the one that was lost.
 
 
 ## Create the instance
-
-***Can a tester please provide a screen recording so we can verify these steps?***
 
 1. Select **Review + create**.
 2. Select **Create**.<br />

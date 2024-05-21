@@ -17,7 +17,7 @@ pagination_next: null
 Currently, AWS and Azure.
 
 ### What analytics functions can I use?
-[ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions. See the [release notes](/docs/release-notes) for current limitations.
+[ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions. See the [release notes](/docs/release-notes) for any functions not currently supported.
 
 ### How do I pay for AI Unlimited?
 You pay your cloud service provider for the hours that AI/ML engine resources are running. The charges depend on instance size and number of instances.
@@ -31,14 +31,23 @@ The [community](https://support.teradata.com/community?id=community_forum&sys_id
 
 ### What is a project?
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information, including user information and object store authorizations. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information. 
 
 ### How do I use a project?
 
 In a Jupyter notebook, you  create a project, which automatically creates its repository. Then you authorize access to your data store, deploy the project's AI/ML engine, and run analytic workloads. You can suspend the project (and engine) anytime, then restore it, to pay only for the hours you need.
 
 ### What's my API key for?
-You use your API key to connect from your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
+You use your API key to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
+
+### What's in a project repository?
+
+The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. If the engine is already deployed, the project owner updates the engine to add those users. 
+
+A password for connecting to the engine is generated for each user for each engine deployment.
+
+All commits to the project's schema are stored in the repository. When you suspend a project, then restore it, AI Unlimited uses the stored schema to bring the project back.
+
 
 ## Users
 

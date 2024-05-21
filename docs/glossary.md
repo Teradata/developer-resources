@@ -13,25 +13,20 @@ pagination_next: null
 
 ## A
 
-### AI Unlimited Jupyter Kernel
-
-Definition.
-
 <a id="glo-manager"></a>
 ### AI Unlimited manager
 
-The manager is the component that orchestrates the deployment of the AI/ML engine on your cloud service provider. It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key for connecting to the engine from a Jupyter notebook.
+The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#glo-engine) on your [cloud service provider](#glo-csp). It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key for connecting to the engine from a Jupyter notebook.
 
-
+<a id="glo-api-key"></a>
 ### API key
 
 Your Application Progamming Interface (API) key enables you to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
 
-
 <a id="glo-alb"></a>
 ### application load balancer
 
-Load balancers distribute incoming traffic across servers. An application load balancer inspects incoming traffic content, such as HTTP headers and paths, to make routing decisions. You can use an application load balancer as a way to expose AI Unlimited and its engine to the public IP network.
+Load balancers distribute incoming traffic across servers. An application load balancer inspects incoming traffic content, such as HTTP headers and paths, to make routing decisions. You can use an application load balancer as a way to expose AI Unlimited manager and the engine to the public IP network.
 
 
 ## C
@@ -44,21 +39,28 @@ An IP address allocation method for data routing efficiency on the internet. Eve
 <a id="glo-csp"></a>
 ### cloud service provider (CSP) 
 
-A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service, Platform as a Service, or Software as a Service. The AI Unlimited engine is deployed on your CSP.
+A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service (IaaS), Platform as a Service (PaaS), or Software as a Service (SaaS). The [AI Unlimited manager](#glo-manager) and [engine](#glo-engine) run on your CSP.
 
 <a id="glo-cluster"></a>
 ### cluster
 
-A group of interconnected computers that work together as a single system for enhanced processing power, scalability, and reliability. The AI Unlimited engine is deployed on a cluster on your CSP.
+A group of interconnected computers (also called nodes) that work together as a single system for enhanced processing power, scalability, and reliability. The AI Unlimited engine is deployed on a cluster on your CSP. Each node is a [virtual machine (VM)](#glo-vm).
 
 
 ## D
-
 
 <a id="glo-data-lake"></a>
 ### data lake
 
 A central repository of data for data analytics, machine learning, and data exploration. A data lake is typically built on [object storage](#glo-object-storage) and is designed for data accessibility for future data analysis.  
+
+
+## E
+
+<a id="glo-engine"></a>
+### engine
+
+In cloud computing, a compute engine is an example of Infrastructure as a Service (IaaS). It enables you to create and run [virtual machines (VMs)](#glo-vm) on your cloud service provider's infrastructure. When you deploy the AI Unlimited AI/ML compute engine from a Jupyter notebook, the [AI Unlimited manager](#glo-manager) provisions VMs.
 
 
 ## I
@@ -69,6 +71,14 @@ A central repository of data for data analytics, machine learning, and data expl
 An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an identity you can create in your AWS account. It has permissions policies that determine what it can and cannot do in AWS. An IAM user is unique to one user, but an IAM role can be shared by users.
 
  
+## K
+
+<a id="glo-kernel"></a>
+### kernel
+
+A Jupyter kernel is a language-specific program that processes the code you write in a Jupyter notebook and communicates the results back to your notebook for you to see. 
+
+
 ## L
 
 <a id="glo-load-balancer"></a>
@@ -110,7 +120,16 @@ A scalable, highly effective way to store large amounts of structured, semi-stru
 <a id="glo-project"></a>
 ### project
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information, including user information and object store authorizations. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information. 
+
+<a id="glo-project-repo"></a>
+### project repository
+
+The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. If the engine is already deployed, the project owner updates the engine to add those users. 
+
+A password for connecting to the engine is generated for each user for each engine deployment.
+
+All commits to the project's schema are stored in the repository. When you suspend a project, then restore it, AI Unlimited uses the stored schema to bring the project back.
 
 
 ## S
@@ -118,7 +137,7 @@ A project is a means to explore and analyze data from a Jupyter notebook. Each p
 <a id="glo-systemd"></a>
 ### systemd
 
-Linux foundational software for system and service management. When you deploy the AI Unlimited or JupyterLab CloudFormation template on AWS, it runs on a server instance in a container controlled by systemd.
+Linux foundational software for system and service management. The AI Unlimited manager runs on a server instance in a container controlled by systemd.
 
 
 ## T
@@ -127,5 +146,12 @@ Linux foundational software for system and service management. When you deploy t
 ### Transport Layer Security (TLS) 
 
 A protocol that creates a secure connection between two parties communiating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
+
+
+## V
+
+<a id="glo-vm"></a>
+## virtual machine (VM)
+A software emulation of a physical computer. Each VM operates as its own computer within a CSP's infrastructure. VMs enable scalabiity, flexibility, easier management, and a pay-as-you-go model.
 
 
