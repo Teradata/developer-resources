@@ -21,7 +21,7 @@ The manager is the AI Unlimited component that orchestrates the deployment of th
 <a id="glo-api-key"></a>
 ### API key
 
-Your Application Progamming Interface (API) key enables you to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
+Your Application Programming Interface (API) key enables you to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
 
 <a id="glo-alb"></a>
 ### application load balancer
@@ -84,7 +84,7 @@ A Jupyter kernel is a language-specific program that processes the code you writ
 <a id="glo-load-balancer"></a>
 ### load balancer 
 
-A load balancer distributes incoming traffic evenly across servers, which improves performance, reliability, and scalability. If your organzation does not allow its resources to use public IP addresses, you can use a load balancer to expose the AI Unlimited manager and engine to the public IP network. 
+A load balancer distributes incoming traffic evenly across servers, which improves performance, reliability, and scalability. If your organization does not allow its resources to use public IP addresses, you can use a load balancer to expose the AI Unlimited manager and engine to the public IP network. 
 
 
 ## M
@@ -145,13 +145,11 @@ Linux foundational software for system and service management. The AI Unlimited 
 <a id="glo-tls"></a>
 ### Transport Layer Security (TLS) 
 
-A protocol that creates a secure connection between two parties communiating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
+A protocol that creates a secure connection between two parties communicating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
 
 
 ## V
 
 <a id="glo-vm"></a>
 ## virtual machine (VM)
-A software emulation of a physical computer. Each VM operates as its own computer within a CSP's infrastructure. VMs enable scalabiity, flexibility, easier management, and a pay-as-you-go model.
-
-
+A software emulation of a physical computer. Each VM operates as its own computer within a CSP's infrastructure. VMs enable scalability, flexibility, easier management, and a pay-as-you-go model.
