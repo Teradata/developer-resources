@@ -113,7 +113,7 @@ But a persistent volume stores data for a containerized application beyond the l
 
 #### Without a persistent volume
 
-If the container, pod, or node crashes or terminiates, you lose the JupyterLab configuration data. You can deploy a new JupyterLab instance, but not to the same state as the one that was lost.
+If the container, pod, or node crashes or terminates, you lose the JupyterLab configuration data. You can deploy a new JupyterLab instance, but not to the same state as the one that was lost.
 
 #### With a persistent volume
 

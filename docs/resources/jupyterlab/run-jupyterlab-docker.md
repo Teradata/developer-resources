@@ -29,7 +29,7 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
 :::
 
 
-## Clone the respository
+## Clone the repository
 
 The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file you need to run JupyterLab. 
 
