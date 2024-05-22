@@ -31,22 +31,26 @@ The [community](https://support.teradata.com/community?id=community_forum&sys_id
 
 ### What is a project?
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for user authorization and storing project information. 
 
 ### How do I use a project?
 
 In a Jupyter notebook, you  create a project, which automatically creates its repository. Then you authorize access to your data store, deploy the project's AI/ML engine, and run analytic workloads. You can suspend the project (and engine) anytime, then restore it, to pay only for the hours you need.
 
 ### What's my API key for?
-You use your API key to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
+You use your API key to connect your Jupyter notebook to the AI Unlimited manager. This is the first thing you do when you open a new notebook to create or access a project.
 
 ### What's in a project repository?
 
-The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. If the engine is already deployed, the project owner updates the engine to add those users. 
+The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. 
 
-A password for connecting to the engine is generated for each user for each engine deployment.
+But if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.
 
-All commits to the project's schema are stored in the repository. When you suspend a project, then restore it, AI Unlimited uses the stored schema to bring the project back.
+:::note
+Each time the engine is deployed, a new password is generated for each project user.
+:::
+
+Each time you, or another user, suspends a project, its schema is backed up in the repository. AI Unlimited uses the stored schema to bring the project back when it's restored.
 
 
 ## Users
@@ -75,7 +79,7 @@ If you add the collaborators to the repository after the engine is deployed, you
 ## Suspending and restoring 
 
 ### What happens when I suspend a project?
-All project information, including user authorizations, object store authorizations, and data objects, are saved.
+All project information, including user and object store authorizations and data objects, is saved.
 
 ### What happens when I restore a project?
 The saved project information is there. You can pick up right where you left off.
@@ -86,11 +90,13 @@ The saved project information is there. You can pick up right where you left off
 ### What is the manager?
 The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML engine on your cloud service provider. 
 
-It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key for connecting to the engine from a Jupyter notebook.
+It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. 
+
+From their user profile in the manager, all users get their API key for connecting a Jupyter notebook to the manager.
 
 
 :::tip
-Didn't see your question? Ask it in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)
+Don't see your question? Ask it in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)
 :::
 
 

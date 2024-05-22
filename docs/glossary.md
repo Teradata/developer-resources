@@ -13,15 +13,15 @@ pagination_next: null
 
 ## A
 
-<a id="glo-manager"></a>
+<a id="glo-aiu-manager"></a>
 ### AI Unlimited manager
 
-The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#glo-engine) on your [cloud service provider](#glo-csp). It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key for connecting to the engine from a Jupyter notebook.
+The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#glo-engine) on your [cloud service provider](#glo-csp). It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key.
 
 <a id="glo-api-key"></a>
 ### API key
 
-Your Application Programming Interface (API) key enables you to connect your Jupyter notebook to the engine. The first thing you do in a Jupyter notebook, before you create or access a project, is configure a connection to the engine using your API key.
+Your Application Programming Interface (API) key enables you to connect your Jupyter notebook to the manager. This is the first thing you do in a new Jupyter notebook before you create or access a project.
 
 <a id="glo-alb"></a>
 ### application load balancer
@@ -68,7 +68,7 @@ In cloud computing, a compute engine is an example of Infrastructure as a Servic
 <a id="glo-iam-role"></a>
 ### IAM role
 
-An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an identity you can create in your AWS account. It has permissions policies that determine what it can and cannot do in AWS. An IAM user is unique to one user, but an IAM role can be shared by users.
+An [Identity and Access Management (IAM) role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is a role that you or a cloud admin at your organization can create in your organization's AWS account. It has one or more attached permissions policies that determine what an entity with that role can and cannot do in AWS.
 
  
 ## K
@@ -89,6 +89,11 @@ A load balancer distributes incoming traffic evenly across servers, which improv
 
 ## M
 
+<a id="glo-manager"></a>
+### manager 
+
+See [AI Unlimited manager](#glo-aiu-manager).
+
 <a id="glo-mounting-volumes"></a>
 ### mounting volumes 
 
@@ -108,7 +113,7 @@ Load balancers distribute incoming traffic across servers. A network load balanc
 <a id="glo-oauth-app"></a>
 ### OAuth app
 
-An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. AI Unlimited uses an OAuth app, created by your organization, to authorize access to your GitHub or GitLab account for storing user and project information.
+An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. An OAuth app, that you or someone at your organization creates, allows AI Unlimited to use your GitHub or GitLab account to authorize users and store project information.
 
 <a id="glo-object-storage"></a>
 ### object storage
@@ -120,16 +125,20 @@ A scalable, highly effective way to store large amounts of structured, semi-stru
 <a id="glo-project"></a>
 ### project
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for storing project information. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for user authorization and storing project information. 
 
 <a id="glo-project-repo"></a>
 ### project repository
 
-The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. If the engine is already deployed, the project owner updates the engine to add those users. 
+The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. 
 
-A password for connecting to the engine is generated for each user for each engine deployment.
+But if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.
 
-All commits to the project's schema are stored in the repository. When you suspend a project, then restore it, AI Unlimited uses the stored schema to bring the project back.
+:::note
+Each time the engine is deployed, a new password is generated for each project user.
+:::
+
+Each time you, or another user, suspends a project, its schema is backed up in the repository. AI Unlimited uses the stored schema to bring the project back when it's restored.
 
 
 ## S
@@ -152,4 +161,4 @@ A protocol that creates a secure connection between two parties communicating ov
 
 <a id="glo-vm"></a>
 ## virtual machine (VM)
-A software emulation of a physical computer. Each VM operates as its own computer within a CSP's infrastructure. VMs enable scalability, flexibility, easier management, and a pay-as-you-go model.
+A software emulation of a physical computer. Each VM operates as its own computer within a [CSP](#glo-csp)'s infrastructure. VMs enable scalability, flexibility, easier management, and a pay-as-you-go model.

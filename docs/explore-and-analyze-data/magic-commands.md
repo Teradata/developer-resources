@@ -14,7 +14,8 @@ import TabItem from '@theme/TabItem';
 
 In Jupyter notebooks, magic commands are shortcuts for common tasks. The AI Unlimited magic commands enable you to connect to the engine and manage projects.
 
-The AI Unlimited Jupyter Kernel supports these magic commands in addition to the standard Teradata SQL kernel magic commands. 
+The AI Unlimited Jupyter Kernel supports the magic commands described here&mdash;in addition to the standard Teradata SQL kernel magic commands. 
+
 
 ## %workspaces_config
 

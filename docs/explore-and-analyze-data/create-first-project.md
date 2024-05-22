@@ -26,7 +26,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 
 - From your admin, get these items:
 
-  - The IP address or  host name of the [AI Unlimited manager](/docs/glossary.md#glo-manager).
+  - The IP address or  host name of the [AI Unlimited manager](/docs/glossary.md#glo-aiu-manager).
 
   - These environment variables:   
     <Tabs>
@@ -40,7 +40,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
     </TabItem>
     </Tabs> 
 
-- From your AI Unlimited profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
+- From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
 
 - Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
@@ -53,12 +53,12 @@ If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab ins
 ## Connect, and run your first workload
 
 :::tip
-Run `%help` for details on all magic commands. Run `%help <command>` for details on one of them. 
+Run `%help` for details on all the magic commands available in your notebook. Run `%help <command>` for details on one of them. 
 
 Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
 :::
 
-1. Configure the connection to the engine.
+1. Connect to the manager.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
 	
@@ -79,7 +79,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
 4. Deploy the engine.
 
-    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small. **(add link to marketplace listing for pricing info)**
+    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small. See pricing information. **(add links to marketplaces)**
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```

@@ -12,7 +12,7 @@ pagination_next: null
 
 An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password.
 
-Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can authorize your GitHub or GitLab account to store user and project information. 
+Create an [OAuth](https://oauth.net/2/) app so that AI Unlimited can use your GitHub or GitLab account to authorize users and store project information. 
 
 1. Sign in to your GitHub or GitLab account. 
 

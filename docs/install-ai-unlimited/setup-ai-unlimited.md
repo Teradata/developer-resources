@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-After you install the manager, access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
+After you install the [manager](/docs/glossary.md#glo-manager), access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
 :::note
 By setting up AI Unlimited, you become the AI Unlimited admin at your organization.

@@ -10,9 +10,9 @@ pagination_next: null
 
 # Suspend and restore a project
 
-To avoid incurring charges for unneeded engine resources, suspend projects you're not working on. 
+To avoid incurring charges for unneeded engine resources, suspend projects you're not working on.
 
-All project information, including user authorizations, object store authorizations, and data objects, are saved. When you restore the project, you can pick up where you left off.
+The project information, including user and object store authorizations and data objects, is saved. When you restore the project, you can pick up where you left off.
 
 ## Suspend
 
@@ -30,7 +30,9 @@ In your notebook, run this magic command:
 ```bash 
 %project_restore project=<Project_Name>, gitref=<Git_Reference>
 ```
-<br/>
+
+Each time a project is restored, a new password for connecting to the engine is generated for each user.
+
 :::note
 Learn more about [magic commands](/docs/explore-and-analyze-data/magic-commands.md).
 :::
