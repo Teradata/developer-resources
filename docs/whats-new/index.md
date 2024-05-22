@@ -20,6 +20,12 @@ Includes everything you need to start exploring, analyzing, and experimenting:
 - AI/ML engine v0.14.3 with [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions
 - Support for AWS and Azure
 - [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel)
+    - Python Client Libraries
+      - teradataml 20.0.0.0
+      - teradatamlwidgets 20.0.0.2
+	  - teradatasql 20.0.0.12
+	  - teradatasqlalchemy 20.0.0.2
+	  - tdapiclient 1.4.0.1
 - [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited), with template, parameter, and policy files for installing AI Unlimited
 - AI Unlimited [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) for getting support from Teradata and sharing ideas
 - Support for these **(ok to say Vantage?)** features:
@@ -30,12 +36,6 @@ Includes everything you need to start exploring, analyzing, and experimenting:
   - Bring Your Own Model 05.00.00.01
     - PMMLPredict
 	- H20Predict
-  - Python Client Libraries in Jupyter **(make this a sub-bullet of the kernel bullet?)**
-    - teradataml 20.0.0.0
-    - teradatamlwidgets 20.0.0.2
-	- teradatasql 20.0.0.12
-	- teradatasqlalchemy 20.0.0.2
-	- tdapiclient 1.4.0.1
   - **(Long list of teradataml functions? Could do expandable section. Necessary? Aren't they covered by link to ClearScape functions doc?)**
 
 See the [release notes](/docs/release-notes.md) for details, including features not supported.
