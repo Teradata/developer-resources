@@ -31,7 +31,7 @@ The [community](https://support.teradata.com/community?id=community_forum&sys_id
 
 ### What is a project?
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for user authorization and storing project information. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository. 
 
 ### How do I use a project?
 
@@ -73,7 +73,7 @@ First, add them to the project's Git repository.
 
 If you do this before the engine is deployed, when you deploy the engine, the new collaborators are added to it automatically. 
 
-If you add the collaborators to the repository after the engine is deployed, you'll need to add them to the engine manually.
+If you add collaborators to the repository after the engine is deployed, you'll need to add them to the engine manually so they can connect to and use the engine during that deployment.
 
 
 ## Suspending and restoring 

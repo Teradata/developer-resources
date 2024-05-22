@@ -48,7 +48,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
 :::
 
-- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data) and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
+- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data), and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
 
 ## Connect, and run your first workload
 
@@ -64,7 +64,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 	
     ```
 
-2. Create a new project.
+2. Create the project.
     ```bash
     %project_create project=<Project_Name>, env=<Cloud_Service_Provider>
     ```

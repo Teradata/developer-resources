@@ -12,33 +12,62 @@ pagination_next: null
 
 See what's in this release and what's coming.
 
-(Over time, this page will have links to child pages, one for each release.)
 
-(Purpose is to highlight what's new/better, then to link to release notes for more nitty-gritty/problematic information.)
+## Paid public preview (launch) - May 2024
 
+Includes everything you need to start exploring, analyzing, and experimenting:
 
-## Paid public preview - initial release - June 2024
+- AI/ML engine v0.14.3 with [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions
+- Support for AWS and Azure
+- [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel)
+- [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited), with template, parameter, and policy files for installing AI Unlimited
+- AI Unlimited [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) for getting support from Teradata and sharing ideas
+- Support for these **(ok to say Vantage?)** features:
+  - Native Object Store (NOS) 20.00.17.08
+  - Open Table Format (OTF) 20.00.17.07
+    - Iceberg with AWS Glue, Hive, and Databricks Unity Catalog
+    - Delta Lake with Databricks Unity Catalog
+  - Bring Your Own Model 05.00.00.01
+    - PMMLPredict
+	- H20Predict
+  - Python Client Libraries in Jupyter **(make this a sub-bullet of the kernel bullet?)**
+    - teradataml 20.0.0.0
+    - teradatamlwidgets 20.0.0.2
+	- teradatasql 20.0.0.12
+	- teradatasqlalchemy 20.0.0.2
+	- tdapiclient 1.4.0.1
+  - **(Long list of teradataml functions? Could do expandable section. Necessary? Aren't they covered by link to ClearScape functions doc?)**
 
-(Not sure we want to handle this section this way - maybe just name/date the initial PPP launch and not repeat "what it is" from the get started page.)
-
-The AI Unlimited paid public preview includes everything you need to start exploring, analyzing, and experimenting:
-
-- The AI/ML engine with [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions
-- Support for AWS and Azure for hosting the AI/ML engine and the [AI Unlimited manager](/docs/glossary#glo-manager)
-- The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) with magic commands for project management
-- The [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited), which contains template, parameter, and policy files for installing AI Unlimited.
-- The AI Unlimited [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) for getting support from Teradata and sharing ideas with other users
-
-See the [release notes](/docs/release-notes.md) for more details.
+See the [release notes](/docs/release-notes.md) for details, including features not supported.
 
 
 ## What's coming
-(Data Bricks does it like this: https://docs.databricks.com/en/whats-coming.html. Need consensus on what's ok to include.)
 
-- (New UI? Will it include project monitoring?)
-- (Avoid listing GCP for now?)
-- (What else?)
+- **Open Table Format**
+  - Update and Delete with predicates for Open Table Format (OTF) queries - June
 
+- **User Defined Functions (UDF)**
+  - Fix for first invocation of Java UDFs failing
+  - API_Request UDF
+  
+- **Unbounded Array Framework (UAF)**
+  - SQL supporting UAF - June 
+  - Teradataml supporting UAF
+
+- **teradataml**
+  - Fix for UAF functions failing if database name has special characters - June
+  - Fix for SQLE and UAF functions failing to run due to issues with volatile table creation - June
+  - automl and openml functions - June
+  - map_row and map_partition functions
+  
+- **Vantage Analytics Library (VAL)**
+
+<br/>
+<br/>
+**Exclude these - not on wiki?**
+- ("New manager user interface for improved usability"?)
+- ("Project monitoring in the manager"?)
+- ("Support for Google Cloud Platform (GCP)"?)
 
 
 

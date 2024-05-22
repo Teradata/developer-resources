@@ -113,7 +113,10 @@ Load balancers distribute incoming traffic across servers. A network load balanc
 <a id="glo-oauth-app"></a>
 ### OAuth app
 
-An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. An OAuth app, that you or someone at your organization creates, allows AI Unlimited to use your GitHub or GitLab account to authorize users and store project information.
+An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. 
+
+An OAuth app, that you or someone at your organization creates, allows AI Unlimited to use GitHub or GitLab authentication to manage each [project repository](#glo-project-repo) and, each time the engine is deployed, derive the engine users from the collaborators that have been added to the repository.
+
 
 <a id="glo-object-storage"></a>
 ### object storage
@@ -125,12 +128,12 @@ A scalable, highly effective way to store large amounts of structured, semi-stru
 <a id="glo-project"></a>
 ### project
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository for user authorization and storing project information. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository.
 
 <a id="glo-project-repo"></a>
 ### project repository
 
-The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. 
+The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, AI Unlimited derives the users authorized to connect to and use the engine. 
 
 But if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.
 
