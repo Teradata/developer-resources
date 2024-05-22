@@ -19,7 +19,7 @@ The AI Unlimited Jupyter Kernel supports the magic commands described here&mdash
 
 ## %workspaces_config
 
-**Description**: Create configuration for the AI Unlimited engine connectivity.
+**Description**: Establish communication between your notebook and the AI Unlimited manager.
 
 **Usage**:
 ```bash 

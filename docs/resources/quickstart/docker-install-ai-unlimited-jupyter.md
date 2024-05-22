@@ -91,6 +91,10 @@ This QuickStart uses the first method.
 ## Start the manager and JupyterLab
 
 1. From the directory where `[AWS or Azure]-credentials-env-vars.yaml`, `ai-unlimited.yaml`, and `jupyter.yaml` are located, and start the manager and JupyterLab.
+	
+	:::note
+	The `-d` flag in the command is optional.
+	:::
 
 	<Tabs>
 		<TabItem value="aws" label="AWS" default>

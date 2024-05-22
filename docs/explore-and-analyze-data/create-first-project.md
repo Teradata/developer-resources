@@ -15,10 +15,10 @@ import TabItem from '@theme/TabItem';
 
 You'll complete this simple workflow from a Jupyter notebook:
 
+- Create a project
 - Deploy the engine
-- Connect to your data
-- Run an analytics workload
-- Suspend the project
+- Connect to your data and run an analytics workload
+- Suspend the engine
 
 ## Before you begin
 
@@ -48,7 +48,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
 :::
 
-- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from [GitHub Demo: Charting and Visualization Data](https://github.com/Teradata/jupyter-demos/tree/main/Getting_Started/Charting_and_Visualization/data) and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
+- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data) and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
 
 ## Connect, and run your first workload
 
@@ -156,7 +156,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```
     Open the Navigator for your connection and verify that the tables were created. Run a row count on the tables to verify that the data was loaded.
 	
-	e. Use charting magic to visualize the result.
+	e. Chart the data to visualize the result.
 	
     Provide X and Y axes for your chart.
 	

@@ -44,7 +44,11 @@ Clone the repository.
 
 1. Go to the directory where `jupyter.yaml` is located, and start JupyterLab.
 
-	```bash title="Run the Docker Compose file in the background "
+    :::note
+	The `-d` flag in the command is optional.
+	:::
+
+  	```bash title="Run the Docker Compose file in the background "
 	docker compose -f jupyter.yaml -d up 
 	```
 	The command downloads and starts the JupyterLab container.
