@@ -81,7 +81,7 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 <GettingStartedSummary />
 
 ## Next steps
-* [Query data stored in object storage](./nos.md)
+* [Query data stored in object storage](../.././nos.md)
 
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)
