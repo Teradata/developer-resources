@@ -65,6 +65,6 @@ If your database cannot be accessed directly, you can use an SSH tunnel. All set
 
 This how-to demonstrated how to create a connection to Teradata Vantage with DBeaver.
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

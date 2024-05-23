@@ -198,6 +198,6 @@ In this quick start we have learned how to follow a full lifecycle of GIT models
 ## Further reading
 * [+++ModelOps documentation+++](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

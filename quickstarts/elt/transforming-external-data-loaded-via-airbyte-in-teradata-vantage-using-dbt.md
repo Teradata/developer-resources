@@ -293,6 +293,6 @@ This tutorial demonstrated how to use dbt to transform raw JSON data loaded thro
 * [dbt documentation](https://docs.getdbt.com/docs)
 * [dbt-teradata plugin documentation](https://github.com/Teradata/dbt-teradata
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

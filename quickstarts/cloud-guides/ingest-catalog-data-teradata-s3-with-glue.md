@@ -270,6 +270,6 @@ In this quick start, we learned how to ingest and catalog data in Teradata Vanta
 ### Further reading
 * [Integrate Teradata Vantage with Google Cloud Data Catalog](https://quickstarts.teradata.com/cloud-guides/integrate-teradata-vantage-with-google-cloud-data-catalog.html)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

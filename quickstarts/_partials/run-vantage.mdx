@@ -1,0 +1,80 @@
+- Press <kbd>[ENTER]</kbd> to select the highlighted `LINUX` boot partition.
+
+![Teradata Data Distribution](../images/run-vantage/boot-manager-menu.png)
+
+- On the next screen, press <kbd>ENTER</kbd> again to select the default SUSE Linux kernel.
+
+![Teradata Data Distribution](../images/run-vantage/grub-menu.png)
+
+- After completing the bootup sequence a terminal login prompt as shown in the screenshot below will appear. Don't enter anything in the terminal. Wait till the system starts the GUI.
+
+![Wait for GUI](../images/run-vantage/wait-for-gui.png)
+
+- After a while the following prompt will appear - assuming that you did not enter anything after the command login prompt above. Press `okay` button in the screen below.
+
+![OK Security Popup](../images/run-vantage/okay-the-security-popup.png)
+
+- Once the VM is up, you will see its desktop environment. When prompted for username/password enter `root` for both.
+
+![VM Login](../images/run-vantage/vm.login.png)
+
+- The database is configured to autostart with the VM. To confirm that the database has started go to the virtual desktop and start `Gnome Terminal`.
+
+![Start Gnome Terminal](../images/run-vantage/start-gnome-terminal.png)
+
+- In the terminal execute `pdestate` command that will inform you if Vantage has already started:
+
+:::note
+To paste into Gnome Terminal press <kbd>SHIFT+CTRL+V</kbd>.
+:::
+
+```
+watch pdestate -a
+```
+
+You want to wait till you see the following message:
+
+```
+PDE state is RUN/STARTED.
+DBS state is 5: Logons are enabled - The system is quiescent
+```
+
+<details>
+
+<summary>See examples of messages that <code>pdestate</code> returns when the database is still initializing.</summary>
+
+<pre>
+PDE state is DOWN/HARDSTOP.
+
+PDE state is START/NETCONFIG.
+
+PDE state is START/GDOSYNC.
+
+PDE state is START/TVSASTART.
+
+PDE state is START/READY.
+PDE state is RUN/STARTED.
+
+DBS state is 1/1: DBS Startup - Initializing DBS Vprocs
+PDE state is RUN/STARTED.
+
+DBS state is 1/5: DBS Startup - Voting for Transaction Recovery
+PDE state is RUN/STARTED.
+
+DBS state is 1/4: DBS Startup - Starting PE Partitions
+PDE state is RUN/STARTED.
+</pre>
+
+</details>
+
+- Now that the database is up, go back to the virtual desktop and launch `Teradata Studio Express`
+
+![Start Teradata Studio Express](../images/run-vantage/start-teradata-studio-express.png)
+
+- When you first start it you will be offered a tour. Once you close the tour, you will see a wizard window to add a new connection. Select `Teradata`:
+
+![New Connection Profile](../images/run-vantage/new.connection.profile.png)
+
+- On the next screen, connect to the database on your localhost using `dbc` for the username and password:
+
+![New Connection](../images/run-vantage/new.connection.png)

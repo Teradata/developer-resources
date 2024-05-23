@@ -1,0 +1,1 @@
+# Perform time series analysis using Teradata Vantage

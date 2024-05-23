@@ -203,6 +203,6 @@ Comparing the column BikeBuyer (actual) with the Scored Labels (prediction), you
 * To learn more about building predictive machine learning models, refer to [+++Introduction to Machine Learning on Azure+++](https://azure.microsoft.com/documentation/articles/machine-learning-what-is-machine-learning).
 * For large data set copies, consider using the [Teradata Access Module for Azure](https://docs.teradata.com/reader/p~0sSD4zl4K8YPbEGnM3Rg/TTu_WJMMIpo2TEaxFMFopQ) that interfaces between the Teradata Parallel Transporter load/unload operators and Azure Blob Storage.
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />
