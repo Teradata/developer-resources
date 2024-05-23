@@ -33,7 +33,7 @@ For the latest features and updates, keep an eye on [What's new](/docs/whats-new
 
 - **teradataml**
 
-    - UAF functions fail to run if the database name has special characters, such as hypen (-). 
+    - UAF functions fail to run if the database name has special characters, such as hyphen (-). 
 
     - Some SQLE and UAF functions fail to run due to issues with volatile table creation. The framework creates a volatile table if the keyword argument `Volatile` is set to **True**. However, volatile tables can not be created on other schemas.
 
@@ -43,13 +43,13 @@ For the latest features and updates, keep an eye on [What's new](/docs/whats-new
 
         - openml  
 
-	    - map_row 
+	      - map_row 
 
-       -  map_parition
+        - map_partition
 
-       - H2OPredict 
+        - H2OPredict 
 
-       - ONNXPredict 
+        - ONNXPredict 
 
 - **API_Request UDF**
 
