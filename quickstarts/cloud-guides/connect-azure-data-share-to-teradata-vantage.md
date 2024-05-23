@@ -603,6 +603,6 @@ CREATE MULTISET TABLE WeatherData_temp AS (
 WITH DATA
 ```
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

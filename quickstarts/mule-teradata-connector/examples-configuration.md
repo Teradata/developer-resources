@@ -121,6 +121,6 @@ Unless the log file path is customized in the app’s log file (`log4j2.xml`), y
 * [Teradata Connector Reference](./reference.md)
 * [MuleSoft Help Center](https://help.mulesoft.com)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

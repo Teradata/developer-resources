@@ -58,6 +58,6 @@ This how-to demonstrats how to connect from KNIME Analytics Platform to Teradata
 ## Further reading
 * xref:ROOT:ml.adoc[Train ML models in Vantage using only SQL]
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

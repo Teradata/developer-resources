@@ -137,6 +137,6 @@ You can combine data from many sources with Power BI Desktop. Look at the follow
 * [Connect to Excel workbooks in Power BI Desktop](https://docs.microsoft.com/en-us/power-bi/desktop-connect-excel)
 * [Enter data directly into Power BI Desktop](https://docs.microsoft.com/en-us/power-bi/desktop-enter-data-directly-into-desktop)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

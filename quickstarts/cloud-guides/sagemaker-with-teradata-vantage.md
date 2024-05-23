@@ -168,9 +168,8 @@ This how-to demonstrated how to extract training data from Vantage and use it to
 ### Further reading
 * [API integration guide for AWS SageMaker](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-VantageTM-API-Integration-Guide-for-Cloud-Machine-Learning/Amazon-Web-Services)
 * [Integrate Teradata Jupyter extensions with SageMaker notebook instance](https://quickstarts.teradata.com/cloud-guides/integrate-teradata-jupyter-extensions-with-sagemaker.html)
-* xref:ROOT:ml.adoc[Train ML models in Vantage using only SQL]
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />
 

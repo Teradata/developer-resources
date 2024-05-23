@@ -604,6 +604,6 @@ Response
 * Features, examples, and references: [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022)
 * [Query Service API OpenAPI Specification](https://downloads.teradata.com/api/teradata_query_service)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />
