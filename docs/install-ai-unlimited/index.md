@@ -52,7 +52,7 @@ If you prefer a simpler, single-user approach, try the [QuickStart](/docs/resour
 
 ## Subscribe
 
-Subscribe to AI Unlimited on the [AWS Marketplace] ***(link to listing)*** or [Azure Marketplace] ***(link to listing)***.
+Subscribe to AI Unlimited on the AWS Marketplace or Azure Marketplace.
 
 After subscribing, return to this documentation site and continue with **What's next**.
 

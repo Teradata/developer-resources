@@ -127,11 +127,9 @@ The new JupyterLab instance has the same configuration as the one that was lost.
 
 ## Create the instance
 
-***Can a tester please provide a screen recording so we can verify these steps?***
-
 1. Select **Review + create**.
 2. Select **Create**.<br />
-On the **Notifications** page, you can monitor progress. ***(accurate?)***
+On the **Notifications** page, you can monitor progress.
 
 When deployment is complete, the **Outputs** page shows the URL for accessing JupyterLab.
  

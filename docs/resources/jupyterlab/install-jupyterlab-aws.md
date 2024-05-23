@@ -141,8 +141,6 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 
 ## Review and create the stack
 
-***Can a tester please provide a screen recording so we can verify these steps?***
-
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />

@@ -126,7 +126,7 @@ The new manager instance has the same configuration as the one that was lost.
 
 1. Select **Review + create**.
 2. Select **Create**.<br />
-On the **Notifications** page, you can monitor progress. ***(accurate?)***
+On the **Notifications** page, you can monitor progress.
 
 When deployment is complete, the **Outputs** page shows values generated for the created resources.
 
