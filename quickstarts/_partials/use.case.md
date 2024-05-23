@@ -1,3 +1,0 @@
-:::note
-You can now get a hosted instance of Vantage for free at https://clearscape.teradata.com/.
-:::

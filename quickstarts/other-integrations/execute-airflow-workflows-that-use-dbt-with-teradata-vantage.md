@@ -281,6 +281,6 @@ This tutorial aimed at providing a hands on exercise on how to install an Airflo
 ## Further reading
 * [Use dbt (data build tool) with Teradata Vantage](https://quickstarts.teradata.com/dbt.html#_install_dbt)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

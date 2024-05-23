@@ -118,6 +118,6 @@ This how-to demonstrated how to create a connection to Teradata Vantage with Dat
 * [Integrate DataHub with Teradata Vantage](https://datahubproject.io/docs/generated/ingestion/sources/teradata)
 * [DataHub Integration Options for Recipes](https://datahubproject.io/docs/metadata-ingestion/#recipes)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

@@ -173,6 +173,6 @@ In `Environment` section, set `custom container` field to the location of your n
 * [Vertex AI documentation: Create a user-managed notebooks instance by using a custom container](https://cloud.google.com/vertex-ai/docs/workbench/user-managed/custom-container)
 * [Vertex AI documentation: Create a user-managed notebooks instance](https://cloud.google.com/vertex-ai/docs/workbench/user-managed/create-new)
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

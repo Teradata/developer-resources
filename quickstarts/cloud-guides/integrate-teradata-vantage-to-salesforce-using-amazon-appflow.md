@@ -691,6 +691,6 @@ Once you are done with the Salesforce data, to avoid incurring charges to your A
 +
 * Stop/Terminate the instance if no longer needed
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />

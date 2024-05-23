@@ -265,8 +265,8 @@ This how-to demonstrated how to ingest large amounts of data into Vantage. We lo
 ## Further reading
 * [Teradata® TPT User Guide](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/February-2022)
 * [Teradata® TPT Reference](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Reference/February-2022)
-* [NOS](/nos.md)
+ 
 
-import CommunityLinkPartial from '../_partials/community_link.md';
+import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 <CommunityLinkPartial />
