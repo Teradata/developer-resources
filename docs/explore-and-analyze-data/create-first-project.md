@@ -19,12 +19,13 @@ A project is a means to explore and analyze data from a Jupyter notebook.
 Each project has a Git repository. [Learn why](/docs/glossary.md#project-repository).
 :::
 
-Using data we provide, you'll complete this simple workflow:
+For your first project, using data we provide, you'll complete this simple workflow:
 
 - Create a project
 - Deploy the engine
 - Connect to the data and run a workload
 - Suspend the engine
+
 
 ## Before you begin
 
@@ -48,13 +49,8 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 
 - From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
 
-- Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
-
-:::note
-If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
-:::
-
 - To run the sample workload, you'll need the `salescenter.csv` file. Download the file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data), and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
+
 
 ## Connect, and run your first workload
 

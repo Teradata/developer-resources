@@ -13,7 +13,13 @@ import TabItem from '@theme/TabItem';
 
 # Collaborate on a project
 
-A project owner might add you to a project as a collaborator. You'll need to access the project from a Jupyter notebook.
+A project is a means to explore and analyze data from a Jupyter notebook. 
+
+:::note
+Each project has a Git repository. [Learn why](/docs/glossary.md#project-repository).
+:::
+
+A project owner might [add you to a project](../manage-ai-unlimited/add-collaborators.md) as a collaborator. To contribute, you'll need to access the project from a Jupyter notebook.
 
 
 ## Before you begin
