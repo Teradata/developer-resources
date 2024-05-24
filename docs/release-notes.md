@@ -8,16 +8,13 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# Release notes (WIP)
+# Release notes
 
-As we continue to enhance AI Unlimited, please be aware of features, listed here, that this release does not support. 
+As we continue to enhance AI Unlimited, please be aware of known issues and features not currently supported. 
 
 For the latest features and updates, keep an eye on [What's new](/docs/whats-new.md).
 
-- **AI Unlimited manager**
-
-  ***Insert Content***<br/>
-  (Even if the manager does have limitations, because it's new, customers might not have expectations for us to manage. But, that might depend on the limitation.)
+**(Separate into "Known issues" and "Not curently supported"?)**
 
 - **Open Table Format (OTF)**
 
@@ -43,7 +40,7 @@ For the latest features and updates, keep an eye on [What's new](/docs/whats-new
 
         - openml  
 
-	      - map_row 
+	    - map_row 
 
         - map_partition
 

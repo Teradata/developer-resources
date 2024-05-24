@@ -28,7 +28,7 @@ Includes everything you need to start exploring, analyzing, and experimenting:
 	  - tdapiclient 1.4.0.1
 - [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited), with template, parameter, and policy files for installing AI Unlimited
 - AI Unlimited [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) for getting support from Teradata and sharing ideas
-- Support for these **(ok to say Vantage?)** features:
+- Support for these Teradata Vantage™ **(1. Ok to say Vantage? It's the first/only mention on the doc site. But it might come up in the use case descriptions, on this site, which are TBD.)** features:
   - Native Object Store (NOS) 20.00.17.08
   - Open Table Format (OTF) 20.00.17.07
     - Iceberg with AWS Glue, Hive, and Databricks Unity Catalog
@@ -36,12 +36,15 @@ Includes everything you need to start exploring, analyzing, and experimenting:
   - Bring Your Own Model 05.00.00.01
     - PMMLPredict
 	- H20Predict
-  - **(Long list of teradataml functions? Could do expandable section. Necessary? Aren't they covered by link to ClearScape functions doc?)**
+  - **(2. Long list of teradataml functions. Could do an expandable section. Is it necessary to list them? Aren't they covered by link to ClearScape functions doc?)**
 
-See the [release notes](/docs/release-notes.md) for details, including features not supported.
-
+:::Note
+See the [release notes](/docs/release-notes.md) for known issue and features not currently supported.
+:::
 
 ## What's coming
+
+**(3. OK to include anticipated month?)**
 
 - **Open Table Format**
   - Update and Delete with predicates for Open Table Format (OTF) queries - June
@@ -62,13 +65,13 @@ See the [release notes](/docs/release-notes.md) for details, including features 
   
 - **Vantage Analytics Library (VAL)**
 
-<br/>
-<br/>
-**Exclude these - not on wiki?**
+**(4. Exclude these? They are in my head, not on wiki.)**
 - ("New manager user interface for improved usability"?)
 - ("Project monitoring in the manager"?)
 - ("Support for Google Cloud Platform (GCP)"?)
 
+
+**5. Deal with relationship between What's Coming (here) and Not Supported (in RNs.) Verify we need both.**
 
 
 

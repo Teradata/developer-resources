@@ -13,11 +13,17 @@ import TabItem from '@theme/TabItem';
 
 # Create your first project
 
-You'll complete this simple workflow from a Jupyter notebook:
+A project is a means to explore and analyze data from a Jupyter notebook. 
+
+:::note
+Each project has a Git repository. [Learn why](/docs/glossary.md#project-repository).
+:::
+
+Using data we provide, you'll complete this simple workflow:
 
 - Create a project
 - Deploy the engine
-- Connect to your data and run an analytics workload
+- Connect to the data and run a workload
 - Suspend the engine
 
 ## Before you begin
@@ -26,7 +32,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 
 - From your admin, get these items:
 
-  - The IP address or  host name of the [AI Unlimited manager](/docs/glossary.md#glo-aiu-manager).
+  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#glo-aiu-manager).
 
   - These environment variables:   
     <Tabs>

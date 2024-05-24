@@ -61,11 +61,7 @@ Project `Project_Name` created
 
 ## %project_delete
 
-**Description**: Delete a project.
-
-:::warning
-Running this command removes the Git repository containing the objects created using AI Unlimited.
-:::
+**Description**: Delete the project. This does not remove the project repository. It removes project metadata from the manager. 
 
 **Usage**:
 ```bash 
