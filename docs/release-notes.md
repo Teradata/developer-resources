@@ -12,7 +12,7 @@ pagination_next: null
 
 As we continue to enhance AI Unlimited, please be aware of known issues and features not currently supported. 
 
-For the latest features and updates, keep an eye on [What's new](/docs/whats-new.md).
+For the latest features and updates, keep an eye on [What's new](/docs/whats-new/).
 
 **(Separate into "Known issues" and "Not curently supported"?)**
 

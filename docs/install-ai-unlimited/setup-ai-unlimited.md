@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-After you install the [manager](/docs/glossary.md#manager), access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
+After you install the [manager](/docs/glossary.md#ai-unlimited-manager), access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
 :::note
 By setting up AI Unlimited, you become the AI Unlimited admin at your organization.
@@ -48,7 +48,7 @@ Select **Private** if you deploy the engine in the same Virtual Private Cloud as
 
 **Use TLS**
 
-We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#transport-layer-security-(tls)) to secure connections to AI Unlimited and safeguard your data in transit.
+We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#transport-layer-security) to secure connections to AI Unlimited and safeguard your data in transit.
 
 - If you are using an [application load balancer (ALB)](/docs/glossary.md#application-load-balancer), with certification termination enabled, select **False**.
 
@@ -58,7 +58,6 @@ We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#tra
 
 	- Or select **Generate Certs** to use a Teradata system-generated certificate. It automatically renews before it expires.
 
-<br />
 Select **Update**.
 
 </details>
@@ -87,7 +86,7 @@ Some of these fields are for default values. Later, when you deploy the engine f
 **Inbound security**
 
 Use these fields to allow source traffic to reach the engine:
-- **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing-(cidr))**
+- **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing)**
 - **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) IDs**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group in this field to ensure that AI Unlimited can communicate with the engine.
 - **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
 
@@ -95,7 +94,6 @@ Use these fields to allow source traffic to reach the engine:
 
 **[Permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) ARN**&mdash;If your IAM entities require a boundary, you can provide one here.   
 
-<br />
 Select **Update**.
 
 </TabItem>
@@ -123,13 +121,12 @@ Learn more about [Azure virtual networks](https://learn.microsoft.com/en-us/azur
 
 Use these fields to allow source traffic to reach the engine:
 
-- **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing-(cidr))**
+- **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing)**
  
 - **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
-<br />
 Select **Update**.
 
 </TabItem>
@@ -162,7 +159,6 @@ Two organizations in your GitHub account can help with access control and reposi
 
 - Project repositories are created in the **Repository organization**. If you don't specify an organization, projects will be in your personal GitHub space.
 
-<br/>
 Select **Update**.
 
 Select **Sign In**. Then, if prompted, sign in.
@@ -187,7 +183,6 @@ Two groups in your GitLab account can help with access control and repository ma
 
 - All project repositories are created in the **Repository group**. If you don't specify a group, projects will be in your personal GitLab space.
 
-<br/>
 Select **Update**.
 
 Select **Sign In**. Then, if prompted, sign in.

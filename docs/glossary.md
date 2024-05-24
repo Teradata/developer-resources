@@ -15,7 +15,7 @@ pagination_next: null
 
 ### AI Unlimited manager
 
-The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#engine) on your [cloud service provider](#cloud-service-provider-(csp)). It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key.
+The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#engine) on your [cloud service provider](#cloud-service-provider). It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key.
 
 ### API key
 
@@ -28,17 +28,17 @@ Load balancers distribute incoming traffic across servers. An application load b
 
 ## C
 
-### Classless Inter-Domain Routing (CIDR)
+### Classless Inter-domain Routing
 
-An IP address allocation method for data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers find each other and communicate. A CIDR block is a range of IP addresses.
+Classless Inter-domain Routing (CIDR) is an IP address allocation method for data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers find each other and communicate. A CIDR block is a range of IP addresses.
 
-### cloud service provider (CSP) 
+### cloud service provider
 
-A company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service (IaaS), Platform as a Service (PaaS), or Software as a Service (SaaS). The [AI Unlimited manager](#ai-unlimited-manager) and [engine](#engine) run on your CSP.
+A cloud service provider (CSP) is a company that delivers computing resources over the internet, on demand. These resources can include Infrastructure as a Service (IaaS), Platform as a Service (PaaS), or Software as a Service (SaaS). The [AI Unlimited manager](#ai-unlimited-manager) and [engine](#engine) run on your CSP.
 
 ### cluster
 
-A group of interconnected computers (also called nodes) that work together as a single system for enhanced processing power, scalability, and reliability. The AI Unlimited engine is deployed on a cluster on your CSP. Each node is a [virtual machine (VM)](#virtual-machine-(vm)).
+A group of interconnected computers (also called nodes) that work together as a single system for enhanced processing power, scalability, and reliability. The AI Unlimited engine is deployed on a cluster on your CSP. Each node is a [virtual machine (VM)](#virtual-machine).
 
 
 ## D
@@ -52,7 +52,7 @@ A central repository of data for data analytics, machine learning, and data expl
 
 ### engine
 
-In cloud computing, a compute engine is an example of Infrastructure as a Service (IaaS). It enables you to create and run [virtual machines (VMs)](#virtual-machine-(vm)) on your cloud service provider's infrastructure. When you deploy the AI Unlimited AI/ML compute engine from a Jupyter notebook, the [AI Unlimited manager](#ai-unlimited-manager) provisions VMs.
+In cloud computing, a compute engine is an example of Infrastructure as a Service (IaaS). It enables you to create and run [virtual machines (VMs)](#virtual-machine) on your cloud service provider's infrastructure. When you deploy the AI Unlimited AI/ML compute engine from a Jupyter notebook, the [AI Unlimited manager](#ai-unlimited-manager) provisions VMs.
 
 
 ## I
@@ -77,10 +77,6 @@ A load balancer distributes incoming traffic evenly across servers, which improv
 
 
 ## M
-
-### manager 
-
-See [AI Unlimited manager](#ai-unlimited-manager).
 
 ### mounting volumes 
 
@@ -134,12 +130,12 @@ Linux foundational software for system and service management. The AI Unlimited 
 
 ## T
 
-### Transport Layer Security (TLS) 
+### Transport Layer Security
 
-A protocol that creates a secure connection between two parties communicating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
+Transport Layer Security (TLS) is a protocol that creates a secure connection between two parties communicating over the internet. TLS encrypts data during transmission, making it unreadable to anyone who intercepts it, and it verifies the identities of both parties. 
 
 
 ## V
 
-## virtual machine (VM)
-A software emulation of a physical computer. Each VM operates as its own computer within a [CSP](#cloud-service-provider-(csp))'s infrastructure. VMs enable scalability, flexibility, easier management, and a pay-as-you-go model.
+### virtual machine
+A virtual machine (VM) is a software emulation of a physical computer. Each VM operates as its own computer within a [cloud service provider's](#cloud-service-provider) infrastructure. VMs enable scalability, flexibility, easier management, and a pay-as-you-go model.

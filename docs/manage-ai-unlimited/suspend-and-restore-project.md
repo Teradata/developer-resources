@@ -34,6 +34,6 @@ In your notebook, run this magic command:
 Each time a project is restored, a new password for connecting to the engine is generated for each user.
 
 :::note
-Learn more about [magic commands](/docs/explore-and-analyze-data/magic-commands.md).
+Learn more about AI Unlimited [magic commands](/docs/explore-and-analyze-data/magic-commands.md).
 :::
 
