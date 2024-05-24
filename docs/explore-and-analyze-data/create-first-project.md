@@ -6,8 +6,8 @@ sidebar_label: Create your first project
 sidebar_position: 2
 pagination_prev: null
 pagination_next: null
-
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -32,7 +32,7 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
 
 - From your admin, get these items:
 
-  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#glo-aiu-manager).
+  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager).
 
   - These environment variables:   
     <Tabs>
@@ -67,7 +67,6 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 1. Connect to the manager.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
-	
     ```
 
 2. Create the project.
@@ -103,8 +102,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace `Authorization_Name` and the `salescenter.csv_file_location` values in the following example with your own values.
     ::::
 
-    a. Create a table to store the sales center data.
-      
+    a. Create a table to store the sales center data. 
     ```sql
     DROP FOREIGN TABLE SalesCenter;
 
@@ -127,8 +125,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     NO PRIMARY INDEX;
 
     ```
- 
-    b. Verify that the data was inserted.
+     b. Verify that the data was inserted.
     ```sql
     SELECT * FROM SalesCenter ORDER BY 1
     ```
@@ -169,16 +166,13 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```bash
     %chart sales_center_name, sales, title=Sales Data
     ```
-	
     f.	Drop the tables.
-	
     ```sql
     DROP TABLE SalesCenter;
     DROP TABLE SalesDemo;
     ```
 	
 7. Back up your project metadata and object definitions in your Git repository.
-
 	```bash
 	%project_backup project=<Project_Name>
 	```

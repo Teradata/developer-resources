@@ -10,11 +10,11 @@ pagination_next: null
 
 # Install the manager on AWS
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#gs-prerequisites).
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
-You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -34,12 +34,12 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `deployments/aws/templates/ai-unlimited/`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-alb)
-    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-nlb)
+    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
 
@@ -62,7 +62,7 @@ We recommend selecting the region closest to your primary work location.
 ## Specify stack details and options
 
 1. Provide a stack name.
-2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br />
+2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br/>
 
 <details>
 
@@ -113,15 +113,18 @@ The manager instance runs in a container and saves its configuration data in a d
 
 A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
-#### Without a persistent volume
+
+**Without a persistent volume**
 
 If the container, pod, or node crashes or terminates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
 
-#### With a persistent volume
+
+**With a persistent volume**
 
 If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persistent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
 
-#### Example
+
+**Example**
 
 1. Deploy the manager, and include these parameters:
    - `UsePersistentVolume`: **New**

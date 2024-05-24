@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Set up AI Unlimited
 
-After you install the [manager](/docs/glossary.md#glo-manager), access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
+After you install the [manager](/docs/glossary.md#manager), access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
 :::note
 By setting up AI Unlimited, you become the AI Unlimited admin at your organization.
@@ -48,11 +48,11 @@ Select **Private** if you deploy the engine in the same Virtual Private Cloud as
 
 **Use TLS**
 
-We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#glo-tls) to secure connections to AI Unlimited and safeguard your data in transit.
+We recommend that you use [Transport Layer Security (TLS)](/docs/glossary.md#transport-layer-security-(tls)) to secure connections to AI Unlimited and safeguard your data in transit.
 
-- If you are using an [application load balancer (ALB)](/docs/glossary.md#glo-alb), with certification termination enabled, select **False**.
+- If you are using an [application load balancer (ALB)](/docs/glossary.md#application-load-balancer), with certification termination enabled, select **False**.
 
-- If you are using a [network load balancer (NLB)](/docs/glossary.md#glo-nlb) or no load balancer, select **True.**
+- If you are using a [network load balancer (NLB)](/docs/glossary.md#network-load-balancer) or no load balancer, select **True.**
 
 	- **AI Unlimited TLS certificate** and **AI Unlimited TLS certificate key**&mdash;If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
 
@@ -80,14 +80,14 @@ Some of these fields are for default values. Later, when you deploy the engine f
 **Default IAM role**
 
 - The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create a role using this policy: [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json).
-- If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#glo-cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must accommodate any cluster that might deploy the engine.
+- If AI Unlimited creates the role, it creates it for the AWS [cluster](/docs/glossary.md#cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must accommodate any cluster that might deploy the engine.
 		
 **Resource tags**&mdash;You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.
 
 **Inbound security**
 
 Use these fields to allow source traffic to reach the engine:
-- **Default [CIDRs](/docs/glossary.md#glo-cidr)**
+- **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing-(cidr))**
 - **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) IDs**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group in this field to ensure that AI Unlimited can communicate with the engine.
 - **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
 
@@ -123,7 +123,7 @@ Learn more about [Azure virtual networks](https://learn.microsoft.com/en-us/azur
 
 Use these fields to allow source traffic to reach the engine:
 
-- **Default [CIDRs](/docs/glossary.md#glo-cidr)**
+- **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing-(cidr))**
  
 - **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 

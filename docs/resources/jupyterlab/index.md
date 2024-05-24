@@ -18,7 +18,7 @@ Or, get JupyterLab with the AI Unlimited kernel now:
 - [Run it locally](/docs/resources/jupyterlab/run-jupyterlab-docker.md) in a Docker container
 
 :::note
-The [QuickStart](/docs/resources/quickstart) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
+The [QuickStart](/docs/resources/quickstart/) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
 :::
 
-Once you have JupyterLab, you can start [exploring and analyzing data](/docs/explore-and-analyze-data/index.md).
+Once you have JupyterLab, you can start [exploring and analyzing data](/docs/explore-and-analyze-data/).

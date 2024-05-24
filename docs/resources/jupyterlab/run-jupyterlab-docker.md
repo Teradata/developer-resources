@@ -11,6 +11,7 @@ pagination_next: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
 # Run JupyterLab locally using Docker
 
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with the AI Unlimited Jupyter Kernel, locally in a container.
@@ -66,6 +67,7 @@ Clone the repository.
 	```bash
 	docker logs <container_name> | grep 'Token'
 	```
+
 
 ## Verify access to JupyterLab
 

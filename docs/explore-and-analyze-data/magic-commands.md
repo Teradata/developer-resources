@@ -7,6 +7,7 @@ sidebar_position: 5
 pagination_prev: null
 pagination_next: null
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -284,7 +285,6 @@ Started deploying.
 Success: Compute Engine setup, look at the connection manager
 ```
 
-
 ## %project_engine_suspend
 
 **Description**: Stop the engine after you're done with your work.
@@ -393,6 +393,7 @@ Where:
 ```
 Username and password of each user on the engine
 ```
+
 ## %project_engine_update_auth
 
 **Description**: Update or add new authorizations on the deployed engine without having to suspend and redeploy the engine.
@@ -410,6 +411,7 @@ Where:
 ```
 Authorizations updated
 ```
+
 ## %project_connection_add
 
 **Description**: Refresh the connection for the deployed engine. Use this command to connect to the engine from another notebook without having to create a new connection manually.

@@ -12,7 +12,7 @@ pagination_next: null
 
 You'll use an  Azure Resource Manager (ARM) template provided by Teradata to install JupyterLab, and the AI Unlimited kernel, from the Azure Portal. 
 
-This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -29,7 +29,7 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#jup-azure-parms).
+- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#specify-instance-details).
 
 
 ## Clone the repository
@@ -45,12 +45,12 @@ ARM templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
 `deployments/azure/templates/arm/jupyter/`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `jupyter-with-alb.json`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
-    - `jupyter-with-nlb.json`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `jupyter-with-alb.json`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#application-load-balancer)
+    - `jupyter-with-nlb.json`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#network-load-balancer)
     - `jupyter-without-lb.json`&mdash;No load balancer
 
 ## Load the template
@@ -61,7 +61,6 @@ You might want to ask a cloud admin at your organization for guidance.
 4. Select the template file you chose to use, and select **Save**.  
 
 
-<a id="jup-azure-parms"></a>
 ## Specify instance details
 
 Review the parameters. Provide values for the required ones. Your organization might require others.
@@ -103,15 +102,15 @@ The JupyterLab instance runs in a container and saves its configuration data in 
 
 But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
-#### Without a persistent volume
+**Without a persistent volume**
 
 If the container, pod, or node crashes or terminates, you lose the JupyterLab configuration data. You can deploy a new JupyterLab instance, but not to the same state as the one that was lost.
 
-#### With a persistent volume
+**With a persistent volume**
 
 If the container, pod, or node crashes or terminates, and the JupyterLab configuration data is stored in a persistent volume, you can deploy a new JupyterLab instance that has the same configuration as the one that was lost.
 
-#### Example
+**Example**
 
 1. Deploy JupyterLab, and include these parameters:
    - `UsePersistentVolume`: **New**
@@ -124,6 +123,7 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 The new JupyterLab instance has the same configuration as the one that was lost.
 
 </details>
+
 
 ## Create the instance
 

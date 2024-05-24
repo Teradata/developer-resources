@@ -31,7 +31,6 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 - The [AI Unlimited Jupyter Kernel](https://downloads.teradata.com/download/tools/teradata-ai-unlimited-jupyter-kernel) for managing projects in notebooks
 
 
-<a id="gs-prerequisites"></a>
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to provision compute resources. See the requirements for your [AWS](/docs/resources/aws-requirements.md) or [Azure](/docs/resources/azure-requirements.md) account.

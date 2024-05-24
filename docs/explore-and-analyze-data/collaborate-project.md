@@ -19,7 +19,7 @@ A project owner might add you to a project as a collaborator. You'll need to acc
 ## Before you begin
 
 From the project owner, get these items:
-- The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#glo-aiu-manager)
+- The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager)
 - The project name
 
 From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md). 

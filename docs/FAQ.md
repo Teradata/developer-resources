@@ -31,20 +31,20 @@ The [community](https://support.teradata.com/community?id=community_forum&sys_id
 
 ### What is a project?
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a Git repository. 
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a repository in your GitHub or GitLab account.
 
 ### How do I use a project?
 
-In a Jupyter notebook, you  create a project, which automatically creates its repository. Then you authorize access to your data store, deploy the project's AI/ML engine, and run analytic workloads. You can suspend the project (and engine) anytime, then restore it, to pay only for the hours you need.
+In a Jupyter notebook, you  create a project, which automatically creates its Git repository. Then you authorize access to your data store, deploy the project's AI/ML engine, and run analytic workloads. You can suspend the project (and engine) anytime, then restore it, to pay only for the hours you need.
 
 ### What's my API key for?
 You use your API key to connect your Jupyter notebook to the AI Unlimited manager. This is the first thing you do when you open a new notebook to create or access a project.
 
-### What's in a project repository?
+### What's in a project's repository?
 
-The project owner adds collaborators to the repository. From the repository, the next time the engine is deployed, the manager derives the users authorized to connect to and use the engine. 
+The project owner adds project collaborators to the Git repository. From there, the next time the engine is deployed, AI Unlimited derives the users authorized to connect to and use the engine. 
 
-But if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.
+But, if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.
 
 :::note
 Each time the engine is deployed, a new password is generated for each project user.
@@ -93,7 +93,6 @@ The manager is the AI Unlimited component that orchestrates the deployment of th
 It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. 
 
 From their user profile in the manager, all users get their API key for connecting a Jupyter notebook to the manager.
-
 
 :::tip
 Don't see your question? Ask it in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)

@@ -10,7 +10,7 @@ pagination_next: null
 
 # Get your API key
 
-Each time you open a new notebook to create or access a project, you'll need your [API key.](/docs/glossary#glo-api-key) It connects your notebook to the [AI Unlimited manager](/docs/glossary#glo-aiu-manager). 
+Each time you open a new notebook to create or access a project, you'll need your [API key.](/docs/glossary#api-key) It connects your notebook to the [AI Unlimited manager](/docs/glossary#ai-unlimited-manager). 
 
 Your API key, available from your user profile in the manager, stays the same for the lifetime of the AI Unlimited installation.
 
