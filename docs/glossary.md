@@ -110,7 +110,7 @@ A project is a means to explore and analyze data from a Jupyter notebook. Each p
 
 ### project repository
 
-The project owner adds project collaborators to the Git repository. From there, the next time the engine is deployed, AI Unlimited derives the users authorized to connect to and use the engine. 
+The project owner (the user who created the project) adds project collaborators to the Git repository. From there, each time the engine is deployed, AI Unlimited derives the users authorized to connect to and use the engine. 
 
 But, if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.
 

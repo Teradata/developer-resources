@@ -21,7 +21,7 @@ Each project has a Git repository. [Learn why](/docs/glossary.md#project-reposit
 
 For your first project, using data we provide, you'll complete this simple workflow:
 
-- Create a project
+- Create the project
 - Deploy the engine
 - Connect to the data and run a workload
 - Suspend the engine
@@ -29,9 +29,7 @@ For your first project, using data we provide, you'll complete this simple workf
 
 ## Before you begin
 
-Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
-
-- From your admin, get these items:
+- Your AI Unlimited admin is the person at your organization who set up AI Unlimited. From your admin, get these items:
 
   - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager).
 
@@ -60,17 +58,19 @@ Run `%help` for details on all the magic commands available in your notebook. Ru
 Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
 :::
 
-1. Connect to the manager.
+1. Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
+
+2. Connect to the manager.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
     ```
 
-2. Create the project.
+3. Create the project.
     ```bash
     %project_create project=<Project_Name>, env=<Cloud_Service_Provider>
     ```
 		
-3. Create an object store authorization to store the cloud service provider credentials. 
+4. Create an object store authorization to store the cloud service provider credentials. 
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
 
@@ -78,7 +78,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     %project_auth_create name=<Authorization_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
 
-4. Deploy the engine.
+5. Deploy the engine.
 
     Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small.
     ```bash
@@ -86,13 +86,13 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```
     The deployment process takes a few minutes. It generates a password.
 
-5. Connect to the project.
+6. Connect to the project.
     ```bash
     %connect <Project_Name>
     ```
     When the connection is made, provide the generated password.
 
-6. Run the sample workload.
+7. Run the sample workload.
 
     :::note
     Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace `Authorization_Name` and the `salescenter.csv_file_location` values in the following example with your own values.
@@ -168,12 +168,12 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     DROP TABLE SalesDemo;
     ```
 	
-7. Back up your project metadata and object definitions in your Git repository.
+8. Back up your project metadata and object definitions in your Git repository.
 	```bash
 	%project_backup project=<Project_Name>
 	```
 
-8. Suspend the engine to avoid paying for unneeded engine resources.
+9. Suspend the engine to avoid paying for unneeded engine resources.
     ```bash
     %project_engine_suspend project=<Project_Name>
     ```

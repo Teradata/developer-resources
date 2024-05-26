@@ -12,7 +12,7 @@ pagination_next: null
 
 To avoid incurring charges for unneeded engine resources, suspend projects you're not working on.
 
-The project information, including user and object store authorizations and data objects, is saved. When you restore the project, you can pick up where you left off.
+User authorizations, object store authorizations, and data objects, are saved. When you restore the project, you can pick up where you left off.
 
 ## Suspend
 

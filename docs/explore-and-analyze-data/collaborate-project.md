@@ -24,11 +24,11 @@ A project owner might [add you to a project](../manage-ai-unlimited/add-collabor
 
 ## Before you begin
 
-From the project owner, get these items:
-- The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager)
-- The project name
+- From the project owner, get these items:
+  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager)
+  - The project name
 
-From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md). 
+- From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md). 
 
 :::tip
 Run `%help` for details on all the magic commands available in your notebook. Run `%help <command>` for details on one of them. 
@@ -39,17 +39,19 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
 ## Access the project
 
-1. Connect to the manager.
+1. Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
+
+2. Connect to the manager.
 ```bash 
 %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=<T|F>
 ```
 
-2. Find out if the engine is deployed.
+3. Find out if the engine is deployed.
 ```bash 
 %project_engine_list project=<Project_Name>
 ```
 
-3. If the engine is not deployed, deploy it.
+4. If the engine is not deployed, deploy it.
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
@@ -65,17 +67,17 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 </TabItem>
 </Tabs>
 
-4. Get your password for the engine
+5. Get your password for the engine
 ```bash
 %project_user_list project=<Project_Name>
 ```
 
-5. Refresh the connection to include your notebook.
+6. Refresh the connection to include your notebook.
 ```bash 
 %project_connection_add project=<Project_Name>
 ```
 
-6. Connect to the project, and provide your password.
+7. Connect to the project, and provide your password.
 ```bash
 %connect <Project_Name>
 ```
