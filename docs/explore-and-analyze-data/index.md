@@ -3,7 +3,7 @@ id: explore-analyze
 title: Explore and analyze data
 description: Learn how to use AI Unlimited projects to run analytics workloads.
 sidebar_label: Explore and analyze data
-sidebar_position: 3
+sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 ---
