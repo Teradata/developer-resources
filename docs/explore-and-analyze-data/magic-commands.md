@@ -76,13 +76,13 @@ Where:
 - **`[Optional]`** team: Name of the team collaborating on the project.
 
 **Output**:
-```bash
+```
 Project `Project_Name` deleted
 ```
 
 ## %project_list
 
-**Description**: List the details of a project.
+**Description**: List the details of one or all projects.
 
 Use the project parameter to get the details of a specific project. All the projects are listed if you run the command without any parameters.
 
@@ -92,13 +92,13 @@ Use the project parameter to get the details of a specific project. All the proj
 ```
 Where:
 
-- project: The project name and URL for its repository.
+- project: The project name.
 
 **Output**:
 
-```
+```bash
 | NAME          | URL      | 
-|---------------|------- --|
+|---------------|----------|
 | <Project_Name>| <Git_URL>| 
 
 ```
