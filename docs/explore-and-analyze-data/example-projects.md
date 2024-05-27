@@ -10,60 +10,46 @@ pagination_next: null
 
 # Sample use cases
 
-
-**This is WIP.**
-
-Intro...
-
-## Large language models (LLMs) for customer segmentation
-
-Use word embeddings and clustering algorithms to discover ideal customer segments. You can experiment with advanced AI and ML techniques to quickly find the ideal number of customer segments, based on the semantic meaning of customer comment history. Use your results for marketing and other tasks, or for further predictive analytics.
-
-### Vector embedding
-
-A numerical representation of data that captures semantic relationships and similarities. It enables you to perform mathematical operations and comparisons&mdash;for text analysis and recommendation systems.
-
-### K-means clustering
-
-An often-used unsupervised machine learning algorithm. It groups similar data points together by minimizing the average (the "means" in K-means) distance for all data points from each cluster's center (centroid).
-
-### What you'll do
-
-With customer comment data we provide, you'll...
-
-1. Create a vector embedding table using open-source LLMs.
-
-2. Run multiple experiments in parallel.
-
-3. Visualize the results to see the best cluster **(cluster or segment?)**.
-
-(link to repo)
-
-
-## Financial services customer journey (using what?)
-
-Financial customers interact with many in-person and digital platforms, including websites and other online interfaces **(meaning ATMs? what are the others?)**. As a result, the experiences offered by firms have become increasingly critical. However, many enterprises struggle to consider all aspects of customers’ journeys at once. Fortunately, Teradata offers innovative solutions in Vantage and ClearScape Analytics to address these challenges. Teradata’s capabilities provide impactful strategies that companies can utilize to overcome common obstacles and enhance the digital experience.
-
-Customer journeys are imperative to consider in many industries, especially financial based scenarios. 
-
-In this demo, we will consider the important interactions customers have with a retail bank. In Vantage, users can discover new insights across various steps in a customer journey. With these functionalities, users can enhance the financial services customer journey to increase customer acquisition and adoption.
-
-(Reduce above to a sentence or two: the need to look at the whole customer journey: ID the obstacles, enhance the experience. Then, state the sort of analytics used. Maybe summarize high-level steps.)
-
-(link to repo)
-
-
-## Third one?
-
-asdf
-asdf
-asdf
-asdf
-
+Explore some of the ways you can experiment with AI/ML analytics on large datasets, before scaling, applying the results to other use cases, or operationalizing your models.
 
 :::tip
 Discuss these and share ideas for other use cases in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
+
+
+## Understand the customer journey
+
+Customers engage with financial institutions through various marketing touchpoints including websites, in-branch interactions with employees, email, and call centers. Understanding the overall customer journey is critical for enhancing it and increasing customer acquisition and adoption.
+
+For this use case, we provide data from customer interactions in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use attribution modeling, channel analysis, and pathing to understand the customer behavior over time.
+
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Financial_Customer_Journey_SQL.ipynb)
+
+
+## Segment customers *(more detail as to why)*
+ 
+**(This is WIP.)**
+
+(business case... what you'll do... what you'll achieve...)
+
+Segment customers by purchase volume and value.
+
+Use k-means clustering and data preparation pipelines.
+
+For this use case, we provide online purchase history data in an AWS Glue catalog in Iceberg format. **(Just like the other 2?)**
+
+
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Native_Data_Prep_Transformation_Pipelines-SQL.ipynb)
+
+
+## Find the ideal number of customer segments
+
+Marketing to the ideal number of customer segments means you benefit from segmentation without having too many segments to manage. You can derive the ideal number of segments from comments from customer purchase history.
+
+For this use case, we provide customer comment data in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use an LLM to create a vector table, and then find the ideal k-means model and number of segments.
+
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Segmentation_With_Vector_Embedding-SQL.ipynb)
+
 
 
 
