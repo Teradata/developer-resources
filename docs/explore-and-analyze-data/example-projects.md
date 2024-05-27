@@ -26,15 +26,13 @@ For this use case, we provide data from customer interactions in an AWS Glue cat
 [Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Financial_Customer_Journey_SQL.ipynb)
 
 
-## Segment customers *(more detail as to why)*
- 
+## Segment customers based on past purchases
+
 **(This is WIP.)**
 
 (business case... what you'll do... what you'll achieve...)
 
-Segment customers by purchase volume and value.
-
-Use k-means clustering and data preparation pipelines.
+Segment customers by purchase volume and value. Use k-means clustering and data preparation pipelines.
 
 For this use case, we provide online purchase history data in an AWS Glue catalog in Iceberg format. **(Just like the other 2?)**
 
@@ -49,8 +47,6 @@ Marketing to the ideal number of customer segments means you benefit from segmen
 For this use case, we provide customer comment data in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use an LLM to create a vector table, and then find the ideal k-means model and number of segments.
 
 [Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Segmentation_With_Vector_Embedding-SQL.ipynb)
-
-
 
 
 
