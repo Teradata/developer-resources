@@ -1,6 +1,0 @@
----
-description: Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code.
-keywords: [data warehouses, cloud data warehouse, compute storage separation, teradata, vantage, cloud data platform, java applications, business intelligence, enterprise analytics, hybrid multi-cloud, business outcomes]
----
-
-# Jupyter Notebook Demos

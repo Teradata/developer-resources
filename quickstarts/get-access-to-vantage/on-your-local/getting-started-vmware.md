@@ -59,7 +59,7 @@ VMware doesn't offer VMware Workstation Player for MacOS. If you are on a Mac, y
 <GettingStartedSummary />
 
 ## Next steps
-* [Query data stored in object storage](../.././nos.md)
+* [Query data stored in object storage](../../manage-data/nos.md)
 
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)

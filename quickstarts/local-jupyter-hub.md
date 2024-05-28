@@ -1,1 +1,0 @@
-# Deploy Teradata Jupyter extensions to JupyterHub

@@ -1,1 +1,0 @@
-# Query Teradata Vantage from a Mule service

@@ -1,10 +1,13 @@
 ---
 sidebar_position: 3
+id: run-vantage-express-on-utm
+title: Run Vantage Express on UTM
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 page_last_update: January 9th, 2023
 description: Run Vantage Express on your laptop using VMware.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
+
 ---
 import GettingStartedIntro from '../../_partials/getting-started-intro.mdx';
 import RunVantage from '../../_partials/run-vantage.mdx';
@@ -81,7 +84,7 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 <GettingStartedSummary />
 
 ## Next steps
-* [Query data stored in object storage](../.././nos.md)
+* [Query data stored in object storage](../../manage-data/nos.md)
 
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)
