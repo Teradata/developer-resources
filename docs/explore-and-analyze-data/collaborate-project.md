@@ -42,45 +42,48 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 1. Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
 
 2. Connect to the manager.
-```bash 
-%workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=<T|F>
-```
+    ```bash 
+    %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=<T|F>
+    ```
 
 3. Find out if the engine is deployed.
-```bash 
-%project_engine_list project=<Project_Name>
-```
+    ```bash 
+    %project_engine_list project=<Project_Name>
+    ```
 
 4. If the engine is not deployed, deploy it.
-<Tabs>
-<TabItem value="aws1" label="AWS">
+    <Tabs>
+    <TabItem value="aws1" label="AWS">
 
-```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore-<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
-```
-</TabItem>
-<TabItem value="azure" label="Azure">
+    ```bash 
+    %project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore-<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
+    ```
 
-```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<>, networkresourcegroup=<>
-```
-</TabItem>
-</Tabs>
+    </TabItem>
+    <TabItem value="azure" label="Azure">
+
+    ```bash 
+    %project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<>, networkresourcegroup=<>
+    ```
+    </TabItem>
+    </Tabs>
+
+	If you don't specify the number of nodes, one node will be deployed.
 
 5. Get your password for the engine
-```bash
-%project_user_list project=<Project_Name>
-```
+    ```bash
+    %project_user_list project=<Project_Name>
+    ```
 
 6. Refresh the connection to include your notebook.
-```bash 
-%project_connection_add project=<Project_Name>
-```
+    ```bash 
+    %project_connection_add project=<Project_Name>
+    ```
 
 7. Connect to the project, and provide your password.
-```bash
-%connect <Project_Name>
-```
+    ```bash
+    %connect <Project_Name>
+    ```
 
 You're all set! Now you can contribute to the project.
 
