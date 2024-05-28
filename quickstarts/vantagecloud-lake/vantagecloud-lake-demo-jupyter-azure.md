@@ -1,4 +1,5 @@
 ---
+sidebar_position: 6
 author: Daniel Herrera
 email: daniel.herrera2@teradata.com
 page_last_update: January 26th, 2024

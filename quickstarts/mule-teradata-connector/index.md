@@ -29,7 +29,7 @@ Before creating an app, you must have:
 * Anypoint Studio version 7.5 or later
 * Credentials to access the Teradata Vantage target resource
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.md'
+import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 <ClearscapeDocsNote />
 
