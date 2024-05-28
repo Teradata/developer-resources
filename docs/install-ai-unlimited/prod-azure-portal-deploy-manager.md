@@ -10,11 +10,11 @@ pagination_next: null
 
 # Install the manager on Azure
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/#gs-prerequisties).
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites).
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.
 
-You'll use an Azure Resource Manager (ARM) template provided by Teradata to install the manager from the Azure Portal. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd)
+You'll use an Azure Resource Manager (ARM) template provided by Teradata to install the manager from the Azure Portal. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
  
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -34,12 +34,12 @@ ARM templates for the manager are here in the AI Unlimited GitHub repository:
 
 `deployments/azure/templates/arm/ai-unlimited`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `ai-unlimited-with-alb.json`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
-    - `ai-unlimited-with-nlb.json`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `ai-unlimited-with-alb.json`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.json`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#network-load-balancer)
     - `ai-unlimited-without-lb.json`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
 
@@ -98,17 +98,17 @@ Review the parameters. Provide values for the required parameters. Your organiza
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
-#### Without a persistent volume
+**Without a persistent volume**
 
-If the container, pod, or node crashes or terminiates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
+If the container, pod, or node crashes or terminates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
 
-#### With a persistent volume
+**With a persistent volume**
 
 If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persistent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
 
-#### Example
+**Example**
 
 1. Deploy the manager, and set the `Use Persistent Volume` parameter to **New**.
 2. After you create the stack, on the **Outputs** page, note the `volume-id`.
@@ -124,11 +124,9 @@ The new manager instance has the same configuration as the one that was lost.
 
 ## Create the instance
 
-***Can a tester please provide a screen recording so we can verify these steps?***
-
 1. Select **Review + create**.
 2. Select **Create**.<br />
-On the **Notifications** page, you can monitor progress. ***(accurate?)***
+On the **Notifications** page, you can monitor progress.
 
 When deployment is complete, the **Outputs** page shows values generated for the created resources.
 

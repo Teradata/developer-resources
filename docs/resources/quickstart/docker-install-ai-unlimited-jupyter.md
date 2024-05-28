@@ -26,7 +26,7 @@ For installation support, ask the [community](https://support.teradata.com/commu
 
 ## Prerequisites
 
-- A pay-as-you-go AWS or Azure account on which to deploy the engine, later, from a Jupyter notebook
+- A pay-as-you-go AWS or Azure account on which to deploy the engine from a Jupyter notebook
 - A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
 - Your object storage, where your Amazon or ADLS Gen2 data lake resides.
 - [Docker](https://www.docker.com/get-started/) installed on your computer
@@ -47,11 +47,25 @@ For installation support, ask the [community](https://support.teradata.com/commu
 2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store the JupyterLab configuration files. The default location is `~/.jupyter`.
 
 
+## Clone the respository
+
+The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes these files that you'll need to run the manager and JupyterLab:
+- `[AWS or Azure]-credentials-env-vars.yaml`
+- `ai-unlimited.yaml`
+- `jupyter.yaml` 
+
+Clone the repository.
+
+    ``` bash
+    git clone https://github.com/Teradata/ai-unlimited
+	```
+
+
 ## Pass your cloud service provider credentials to Docker
 
 :::note 
 You can pass the credentials two ways:
-- Use a YAML file that contains environment variables for storing your credentials.
+- Use `[AWS or Azure]-credentials-env-vars.yaml`, which contains environment variables for storing your credentials.
 - Use a local volume containing your credentials. 
 	
 See both methods in the **Jupyter and AI Unlimited** section of [Deploy with Docker Compose](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/README.md) in the Teradata AI Unlimited GitHub repository.
@@ -71,14 +85,16 @@ This QuickStart uses the first method.
 		</TabItem>
 	</Tabs>
 
-2. Download the `[AWS or Azure]-credentials-env-vars.yaml` file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/docker), and update the environment variable values.
+2. Go to the directory where `[AWS or Azure]-credentials-env-vars.yaml` is located and update the file's environment variable values.
 
 
 ## Start the manager and JupyterLab
 
-1. Download the [ai-unlimited.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/ai-unlimited.yaml) and [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) files.
-
-2. Go to the directory where `[AWS or Azure]-credentials-env-vars.yaml`, `ai-unlimited.yaml`, and `jupyter.yaml` are located, and start the manager and JupyterLab.
+1. From the directory where `[AWS or Azure]-credentials-env-vars.yaml`, `ai-unlimited.yaml`, and `jupyter.yaml` are located, and start the manager and JupyterLab.
+	
+	:::note
+	The `-d` flag in the command is optional.
+	:::
 
 	<Tabs>
 		<TabItem value="aws" label="AWS" default>
@@ -95,7 +111,7 @@ This QuickStart uses the first method.
 	
 	The command downloads and starts the manager and JupyterLab containers.
 
-3. To retrieve the Jupyter token, list the currently running containers.
+2. To retrieve the Jupyter token, list the currently running containers.
 
 	```bash
 	docker ps 

@@ -7,6 +7,7 @@ sidebar_position: 5
 pagination_prev: null
 pagination_next: null
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -14,11 +15,12 @@ import TabItem from '@theme/TabItem';
 
 In Jupyter notebooks, magic commands are shortcuts for common tasks. The AI Unlimited magic commands enable you to connect to the engine and manage projects.
 
-The AI Unlimited Jupyter Kernel supports these magic commands in addition to the standard Teradata SQL kernel magic commands. 
+The AI Unlimited Jupyter Kernel supports the magic commands described here&mdash;in addition to the standard Teradata SQL kernel magic commands. 
+
 
 ## %workspaces_config
 
-**Description**: Create configuration for the AI Unlimited engine connectivity.
+**Description**: Establish communication between your notebook and the AI Unlimited manager.
 
 **Usage**:
 ```bash 
@@ -60,11 +62,7 @@ Project `Project_Name` created
 
 ## %project_delete
 
-**Description**: Delete a project.
-
-:::warning
-Running this command removes the Git repository containing the objects created using AI Unlimited.
-:::
+**Description**: Delete the project. This does not remove the project repository. It removes project metadata from the manager. 
 
 **Usage**:
 ```bash 
@@ -78,13 +76,13 @@ Where:
 - **`[Optional]`** team: Name of the team collaborating on the project.
 
 **Output**:
-```bash
+```
 Project `Project_Name` deleted
 ```
 
 ## %project_list
 
-**Description**: List the details of a project.
+**Description**: List the details of one or all projects.
 
 Use the project parameter to get the details of a specific project. All the projects are listed if you run the command without any parameters.
 
@@ -94,13 +92,13 @@ Use the project parameter to get the details of a specific project. All the proj
 ```
 Where:
 
-- project: The project name and URL for its repository.
+- project: The project name.
 
 **Output**:
 
-```
+```bash
 | NAME          | URL      | 
-|---------------|------- --|
+|---------------|----------|
 | <Project_Name>| <Git_URL>| 
 
 ```
@@ -287,7 +285,6 @@ Started deploying.
 Success: Compute Engine setup, look at the connection manager
 ```
 
-
 ## %project_engine_suspend
 
 **Description**: Stop the engine after you're done with your work.
@@ -396,6 +393,7 @@ Where:
 ```
 Username and password of each user on the engine
 ```
+
 ## %project_engine_update_auth
 
 **Description**: Update or add new authorizations on the deployed engine without having to suspend and redeploy the engine.
@@ -413,6 +411,7 @@ Where:
 ```
 Authorizations updated
 ```
+
 ## %project_connection_add
 
 **Description**: Refresh the connection for the deployed engine. Use this command to connect to the engine from another notebook without having to create a new connection manually.

@@ -10,11 +10,11 @@ pagination_next: null
 
 # Install the manager on AWS
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#gs-prerequisites).
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites).
 
-The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for monitoring projects. And the manager is where you'll set up AI Unlimited. 
+The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
-You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -34,12 +34,12 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `deployments/aws/templates/ai-unlimited/`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#glo-alb)
-    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#glo-nlb)
+    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
 
@@ -62,7 +62,7 @@ We recommend selecting the region closest to your primary work location.
 ## Specify stack details and options
 
 1. Provide a stack name.
-2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br />
+2. Review the parameters. Provide values for the required parameters. Your organization might require others.<br/>
 
 <details>
 
@@ -86,13 +86,13 @@ We recommend selecting the region closest to your primary work location.
 | LoadBalancerSubnetTwo| The subnet where the load balancer is hosted. |Optional. This option is only available in the template with ALB.<br/>Default: NA<br/>|This subnet must be in a different availability zone than the first subnet you chose.|
 |HostedZoneID | The ID that Amazon Route 53 assigned to the hosted zone when you created it.|Optional<br/>Default: NA<br/>Each hosted zone corresponds to a domain name, or possibly a subdomain. The hosted zone is the container for DNS records, where you configure how the world interacts with your domain, such as pointing it to an IP address with a record.<br/>On the AWS console, go to **Route 53** > **Hosted zones**. Find your registered domain name and the corresponding Hosted zone ID.|
 |DnsName| The name of the domain. For public hosted zones, this is the name you registered with your DNS registrar. |Optional<br/>Default: NA<br/>For information about how to specify characters other than a-z, 0-9, and - (hyphen) and how to specify internationalized domain names, see [Create Hosted Zone](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html).|
-|Private	|Specifies whether the service is deployed in a private network without public IPs.|Required<br/>Default: false |
+|Private	|Specifies whether the service is deployed in a private network without public IPs.|Required<br/>Default: false <br/>Make sure you select the `Enable auto-assign public IPv4 address` option in the subnet where the manager resides. If this option is not selected, the installation may fail.|
 |Session	|Specifies whether you can use the AWS Session Manager to access the instance.|Required<br/>Default: false |
 |Vpc		|The network to which you want to deploy the instance.|Required<br/>Default: NA|
 |Subnet	|The subnetwork to which you want to deploy the instance.|Required<br/>Default: NA<br/>The subnet must reside in the selected availability zone.|
 |KeyName		|The public/private key pair which allows you to connect securely to your instance after it launches. When you create an AWS account, this is the key pair you create in your preferred region.|Optional<br/>Default: NA<br/>Leave this field blank if you do not want to include the SSH keys.|
 |AccessCIDR	|The CIDR IP address range that is permitted to access the instance. |Optional<br/>Default: NA<br/>We recommend setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|PrefixList	|The prefix list you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement.|Optional<br/>Default: NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
+|PrefixList	|The prefix list you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement.|Optional<br/>Default: NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules. Make sure to enter the prefix list name, not the ID.|
 |SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance. |Optional<br/>Default: NA<br/>Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
@@ -111,17 +111,20 @@ We recommend selecting the region closest to your primary work location.
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
-#### Without a persistent volume
 
-If the container, pod, or node crashes or terminiates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
+**Without a persistent volume**
 
-#### With a persistent volume
+If the container, pod, or node crashes or terminates, you lose the manager's configuration data. You can deploy a new manager instance, but not to the same state as the one that was lost.
+
+
+**With a persistent volume**
 
 If the container, pod, or node crashes or terminates, and the manager's configuration data is stored in a persistent volume, you can deploy a new manager instance that has the same configuration as the one that was lost.
 
-#### Example
+
+**Example**
 
 1. Deploy the manager, and include these parameters:
    - `UsePersistentVolume`: **New**
@@ -143,8 +146,6 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 
 
 ## Review and create the stack
-
-***Can a tester please provide a screen recording so we can verify these steps?***
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 

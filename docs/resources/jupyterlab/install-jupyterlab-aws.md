@@ -12,7 +12,7 @@ pagination_next: null
 
 You'll use a CloudFormation template provided by Teradata to install JupyterLab and the AI Unlimited kernel from the AWS Management Console. 
 
-This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#glo-systemd).
+This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -26,7 +26,7 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 
 - Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/jupyter).
 
-- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#jup-aws-parms).
+- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#specify-stack-details-and-options).
   
 - If you plan to use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
 	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
@@ -46,12 +46,12 @@ CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repo
 
 `deployments/aws/templates/jupyter/`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#glo-load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `jupyter-alb.yaml`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#glo-application-load-balancer)
-    - `jupyter-with-nlb.yaml`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#glo-network-load-balancer)
+    - `jupyter-alb.yaml`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#application-load-balancer)
+    - `jupyter-with-nlb.yaml`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#network-load-balancer)
     - `jupyter-without-lb.yaml`&mdash;No load balancer
 
 
@@ -65,7 +65,6 @@ You might want to ask a cloud admin at your organization for guidance.
 6. Select the template file you chose to use, and click **Next**.
 
 
-<a id="jup-aws-parms"></a>
 ## Specify stack details and options
 
 1. Provide a stack name.
@@ -85,7 +84,7 @@ You might want to ask a cloud admin at your organization for guidance.
 |AvailabilityZone | The availability zone to which you want to deploy the instance. | Required<br/>Default: NA<br/>The value must match the subnet, the zone of any pre-existing volumes, and the instance type must be available in the selected zone. |
 |LoadBalancing		|Specifies whether the instance is accessed via an NLB. | Required with default<br/>Default: NetworkLoadBalancer<br/>Supported options are: NetworkLoadBalancer or None |
 |LoadBalancerScheme	| If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC. | Optional with default<br/>Default: Internet-facing<br/>The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet. The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.|
-|Private	|Specifies whether the service is deployed in a private network without public IPs.| Required<br/>Default: false|
+|Private	|Specifies whether the service is deployed in a private network without public IPs.| Required<br/>Default: false<br/>Make sure you select the `Enable auto-assign public IPv4 address` option in the subnet where the manager resides. If this option is not selected, the installation may fail.|
 |Session	|Specifies whether you can use the AWS Session Manager to access the instance.| Required<br/>Default: false |
 |Vpc		|The network to which you want to deploy the instance.|Required<br/>Default: NA|
 |Subnet	|The subnetwork to which you want to deploy the instance. |Required<br/>Default: NA<br/>The subnet must reside in the selected availability zone.|
@@ -111,15 +110,15 @@ The JupyterLab instance runs in a container and saves its configuration data in 
 
 But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
-#### Without a persistent volume
+**Without a persistent volume**
 
-If the container, pod, or node crashes or terminiates, you lose the JupyterLab configuration data. You can deploy a new JupyterLab instance, but not to the same state as the one that was lost.
+If the container, pod, or node crashes or terminates, you lose the JupyterLab configuration data. You can deploy a new JupyterLab instance, but not to the same state as the one that was lost.
 
-#### With a persistent volume
+**With a persistent volume**
 
 If the container, pod, or node crashes or terminates, and the JupyterLab configuration data is stored in a persistent volume, you can deploy a new JupyterLab instance that has the same configuration as the one that was lost.
 
-#### Example
+**Example**
 
 1. Deploy JupyterLab, and include these parameters:
    - `UsePersistentVolume`: **New**
@@ -140,8 +139,6 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 
 
 ## Review and create the stack
-
-***Can a tester please provide a screen recording so we can verify these steps?***
 
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 

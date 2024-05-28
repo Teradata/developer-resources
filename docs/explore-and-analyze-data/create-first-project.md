@@ -6,27 +6,32 @@ sidebar_label: Create your first project
 sidebar_position: 2
 pagination_prev: null
 pagination_next: null
-
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Create your first project
 
-You'll complete this simple workflow from a Jupyter notebook:
+A project is a means to explore and analyze data from a Jupyter notebook. 
 
+:::note
+Each project has a Git repository. [Learn why](/docs/glossary.md#project-repository).
+:::
+
+For your first project, using data we provide, you'll complete this simple workflow:
+
+- Create the project
 - Deploy the engine
-- Connect to your data
-- Run an analytics workload
-- Suspend the project
+- Connect to the data and run a workload
+- Suspend the engine
+
 
 ## Before you begin
 
-Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
+- Your AI Unlimited admin is the person at your organization who set up AI Unlimited. From your admin, get these items:
 
-- From your admin, get these items:
-
-  - The IP address or  host name of the [AI Unlimited manager](/docs/glossary.md#glo-manager).
+  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager).
 
   - These environment variables:   
     <Tabs>
@@ -40,36 +45,32 @@ Your AI Unlimited admin is the person at your organization who set up AI Unlimit
     </TabItem>
     </Tabs> 
 
-- From your AI Unlimited profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
+- From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
 
-- Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
+- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data), and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
 
-:::note
-If you don't yet have JupyterLab or the AI Unlimited kernel, see [JupyterLab installation options](/docs/advanced/jupyterlab).
-:::
-
-- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from [GitHub Demo: Charting and Visualization Data](https://github.com/Teradata/jupyter-demos/tree/main/Getting_Started/Charting_and_Visualization/data) and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
 
 ## Connect, and run your first workload
 
 :::tip
-Run `%help` for details on all magic commands. Run `%help <command>` for details on one of them. 
+Run `%help` for details on all the magic commands available in your notebook. Run `%help <command>` for details on one of them. 
 
 Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
 :::
 
-1. Configure the connection to the engine.
+1. Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.
+
+2. Connect to the manager.
     ```bash
     %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=T 	
-	
     ```
 
-2. Create a new project.
+3. Create the project.
     ```bash
     %project_create project=<Project_Name>, env=<Cloud_Service_Provider>
     ```
 		
-3. Create an object store authorization to store the cloud service provider credentials. 
+4. Create an object store authorization to store the cloud service provider credentials. 
 
     Replace `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, and `REGION` with your values.
 
@@ -77,28 +78,27 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     %project_auth_create name=<Authorization_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
 
-4. Deploy the engine.
+5. Deploy the engine.
 
-    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small. **(add link to marketplace listing for pricing info)**
+    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
     The deployment process takes a few minutes. It generates a password.
 
-5. Connect to the project.
+6. Connect to the project.
     ```bash
     %connect <Project_Name>
     ```
     When the connection is made, provide the generated password.
 
-6. Run the sample workload.
+7. Run the sample workload.
 
     :::note
     Make sure you do not have tables named SalesCenter or SalesDemo in the selected database. Replace `Authorization_Name` and the `salescenter.csv_file_location` values in the following example with your own values.
     ::::
 
-    a. Create a table to store the sales center data.
-      
+    a. Create a table to store the sales center data. 
     ```sql
     DROP FOREIGN TABLE SalesCenter;
 
@@ -121,8 +121,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     NO PRIMARY INDEX;
 
     ```
- 
-    b. Verify that the data was inserted.
+     b. Verify that the data was inserted.
     ```sql
     SELECT * FROM SalesCenter ORDER BY 1
     ```
@@ -156,28 +155,25 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     ```
     Open the Navigator for your connection and verify that the tables were created. Run a row count on the tables to verify that the data was loaded.
 	
-	e. Use charting magic to visualize the result.
+	e. Chart the data to visualize the result.
 	
     Provide X and Y axes for your chart.
 	
     ```bash
     %chart sales_center_name, sales, title=Sales Data
     ```
-	
     f.	Drop the tables.
-	
     ```sql
     DROP TABLE SalesCenter;
     DROP TABLE SalesDemo;
     ```
 	
-7. Back up your project metadata and object definitions in your Git repository.
-
+8. Back up your project metadata and object definitions in your Git repository.
 	```bash
 	%project_backup project=<Project_Name>
 	```
 
-8. Suspend the engine to avoid paying for unneeded engine resources.
+9. Suspend the engine to avoid paying for unneeded engine resources.
     ```bash
     %project_engine_suspend project=<Project_Name>
     ```

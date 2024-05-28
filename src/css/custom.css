@@ -139,6 +139,18 @@ aside.theme-doc-sidebar-container {
   line-height: 20px; /* 125% */
 }
 
+.markdown a[target='_blank']:after {
+  content: 'open_in_new';
+  display: inline-block;
+  font-family: var(--mdc-icon-font, 'Material Symbols Outlined');
+  font-size: 0.875rem;
+  line-height: 1rem;
+  padding-left: 1px;
+  position: relative;
+  text-decoration: none;
+  top: 2px;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* html[data-theme='dark'] {
   --ifm-color-primary: #59cecd;

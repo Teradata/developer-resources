@@ -1,13 +1,13 @@
 ---
 id: manage-projects
-sidebar_position: 4
+sidebar_position: 3
 pagination_prev: null
 pagination_next: null
 ---
 
 # Manage projects
 
-What you can do depends on your user type.
+Your user type determines what you can do.
 
 :::tip
 For help with managing projects, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).

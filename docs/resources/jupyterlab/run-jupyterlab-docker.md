@@ -11,6 +11,7 @@ pagination_next: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
 # Run JupyterLab locally using Docker
 
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with the AI Unlimited Jupyter Kernel, locally in a container.
@@ -29,18 +30,31 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
 :::
 
 
+## Clone the repository
+
+The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file you need to run JupyterLab. 
+
+Clone the repository.
+
+    ``` bash
+    git clone https://github.com/Teradata/ai-unlimited
+	```
+
+
 ## Start JupyterLab
 
-1. Download the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file.
+1. Go to the directory where `jupyter.yaml` is located, and start JupyterLab.
 
-2. Go to the directory where `jupyter.yaml` is located, and start JupyterLab.
+    :::note
+	The `-d` flag in the command is optional.
+	:::
 
-	```bash title="Run the Docker Compose file in the background "
+  	```bash title="Run the Docker Compose file in the background "
 	docker compose -f jupyter.yaml -d up 
 	```
 	The command downloads and starts the JupyterLab container.
 
-3. To retrieve the Jupyter token, list the currently running containers.
+2. To retrieve the Jupyter token, list the currently running containers.
 
 	```bash
 	docker ps 
@@ -53,6 +67,7 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
 	```bash
 	docker logs <container_name> | grep 'Token'
 	```
+
 
 ## Verify access to JupyterLab
 
