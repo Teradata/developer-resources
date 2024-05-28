@@ -1,4 +1,7 @@
 ---
+id: teradata-vantage-engine-architecture-and-concepts
+title: Teradata Vantage Engine Architecture and Concepts
+sidebar_label: Teradata Vantage Engine Architecture and Concepts
 sidebar_position: 1
 author: Krutik Pathak
 email: krutik.pathak@teradata.com
