@@ -52,16 +52,19 @@ export default function CodeBlock({ children: rawChildren, ...props }) {
     <BrowserOnly>
       {() => {
         // Need to dynamically import the component to render it after the react app has hydrated
-        const CodeSnippet = require('@bsahitya/react-components').CodeSnippet;
-        return (
+        const CodeSnippet =
+          require('@teradata-web/react-components')?.CodeSnippet;
+        return CodeSnippet ? (
           <CodeSnippet
-            key={isBrowser}
+            key={`${isBrowser}`}
             label={title}
             maxHeight={0}
             language={language || 'text'}
             content={children}
             hideHeader={!title}
           ></CodeSnippet>
+        ) : (
+          <></>
         );
       }}
     </BrowserOnly>

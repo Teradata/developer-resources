@@ -5,7 +5,7 @@ import {
   FooterNavLink,
   SocialLinks,
   Footer as TDFooter,
-} from '@bsahitya/react-components';
+} from '@teradata-web/react-components';
 import { ThemeConfig } from '@docusaurus/types';
 
 function Footer() {
