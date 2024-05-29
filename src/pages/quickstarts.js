@@ -23,7 +23,7 @@ function HomepageHeader() {
           </p>
 
           <p className="hero__subtitle">
-            Existing customer or partner? Explore courses at <a href=''>Teradata University</a>.
+            Existing customer or partner? Explore courses at <a href='https://teradata.com/University/Overview' target='_blank'>Teradata University</a>.
           </p>
         </div>
         <div className={styles.heroImage}>

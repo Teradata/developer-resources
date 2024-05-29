@@ -42,7 +42,7 @@ const FeatureList = [
   },
   {
     title: 'VantageCloud Lake',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     href: '/quickstarts/vantagecloud-lake/getting-started-with-vantagecloud-lake/',
   },
 ];
