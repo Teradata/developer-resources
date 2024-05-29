@@ -14,7 +14,7 @@ const projectName = 'ai-unlimited-docs';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Teradata AI Unlimited Documentation',
-  tagline: 'A scalable, serverless compute engine in any cloud.',
+  tagline: 'A scalable, on-demand compute engine in the cloud.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

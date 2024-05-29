@@ -32,7 +32,7 @@ function HomepageHeader() {
           </div>
         </div>
         <div className={styles.heroImage}>
-          <img src={HeroImageUrl} alt="Two individuals collaborate at a desk with a computer, against an abstract orange and blue backdrop." />
+          <img src={HeroImageUrl} alt="A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background." />
           <div className={styles.heroBlur}></div>
         </div>
       </div>
@@ -44,8 +44,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
-      description="Teradata AI Unlimited documentation"
+      description={siteConfig.tagline}
     >
       <HomepageHeader />
       <main className={styles.features}>

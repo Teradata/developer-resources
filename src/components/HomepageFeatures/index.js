@@ -11,14 +11,24 @@ const FeatureList = [
     href: '/docs/install-ai-unlimited/',
   },
   {
+    title: `Sample use cases`,
+    description: 'Explore ways to use AI Unlimited to expirement and innovate',
+    href: '/docs/explore-and-analyze-data/use-cases/',
+  },
+  {
     title: `What's new`,
-    description: 'Watch for new features and updates--and see what’s coming',
+    description: 'Watch for new features and updates — and see what’s coming',
     href: '/docs/whats-new/',
   },
   {
     title: 'Explore and analyze data',
     description: 'Learn about AI Unlimited projects and create your first one',
     href: '/docs/explore-and-analyze-data/',
+  },
+  {
+    title: `Analytic functions`,
+    description: 'Browse and search ClearScape™ functions to use in projects',
+    href: 'https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita',
   },
   {
     title: 'Manage projects',
