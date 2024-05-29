@@ -109,6 +109,9 @@ const config = {
         theme: {
           customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
         },
+        gtag: {
+          trackingID: 'G-928NX0S21B',
+        },
       }),
     ],
   ],
