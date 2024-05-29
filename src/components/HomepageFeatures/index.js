@@ -12,12 +12,12 @@ const FeatureList = [
   },
   {
     title: `Sample use cases`,
-    description: 'Explore ways to use AI Unlimited to expirement and innovate',
+    description: 'Explore ways to use AI Unlimited to experiment and innovate',
     href: '/docs/explore-and-analyze-data/use-cases/',
   },
   {
     title: `What's new`,
-    description: 'Watch for new features and updates — and see what’s coming',
+    description: 'Watch for new features and updates—and see what’s coming',
     href: '/docs/whats-new/',
   },
   {
