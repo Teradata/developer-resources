@@ -15,10 +15,10 @@ Before you install AI Unlimited, address these items.
 
 ## Prepare your AWS account
 
-- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in the [AI Unlimited template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited).
+- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions to create the cloud resources defined in the [AI Unlimited template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited).
 
-- If you'll need to access the manager instance to run commands or debug, you can connect to it one of these ways:
-	- Use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) that you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options).
+- If you need to access the manager instance to run commands or debug, you can connect to it one of these ways:
+	- Use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options).
 	- Use AWS Session Manager to connect. To enable this, attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to a [role you provide](#provide-roles-created-by-your-organization) to the manager.
   
 - If you plan to use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:

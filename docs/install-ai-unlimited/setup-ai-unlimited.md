@@ -33,6 +33,7 @@ Find information about each group of fields here.
 <summary>Basic setup</summary>
 
 <br />
+
 **AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
 
 
@@ -145,7 +146,7 @@ Select **Update**.
 
 <br />
 
-**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
+**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
 **GitHub base URL**&mdash;The URL for your GitHub instance.
 

@@ -21,7 +21,7 @@ You can suspend and restore a project as needed.
 
 To avoid incurring charges for unneeded engine resources, suspend projects you're not working on.
 
-User authorizations, object store authorizations, and data objects, are saved. When you restore and redeploy the project, you can pick up where you left off.
+User authorizations, object store authorizations, and data objects are saved. When you restore and redeploy the project, you can pick up where you left off.
 
 In your notebook, run this magic command:
 
@@ -44,7 +44,7 @@ In your notebook, run this magic command:
 <TabItem value="azure" label="Azure">
 
 ```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<>, networkresourcegroup=<>
+%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<Key_Vault_Resource_Group>, networkresourcegroup=<Network_Resource_Group>
 ```
 </TabItem>
 </Tabs>

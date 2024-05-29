@@ -129,9 +129,9 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 1. Deploy the manager, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `PersistentVolumeDeletionPolicy`: **Retain**
-3. After you create the stack, on the **Outputs** tab, note the `volume-id`.
-4. Use AI Unlimited.
-5. If the manager instance is lost, deploy the manager again, and include these parameters:
+2. After you create the stack, on the **Outputs** tab, note the `volume-id`.
+3. Use AI Unlimited.
+4. If the manager instance is lost, deploy the manager again, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `PersistentVolumeDeletionPolicy`: **Retain** 
    - `ExistingPersistentVolumeId`: the value you noted in step 2
@@ -154,7 +154,7 @@ On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_
 
 The **Outputs** tab shows the values generated for the created resources.
 
-You'll need the URL to access the manager to set up AI Unlimited.
+You'll need the URL to access the manager and set up AI Unlimited.
 
 
 ## What's next

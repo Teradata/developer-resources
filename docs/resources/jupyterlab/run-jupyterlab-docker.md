@@ -32,7 +32,7 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
 
 ## Clone the repository
 
-The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file you need to run JupyterLab. 
+The `deployments/docker` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file, you need to run JupyterLab. 
 
 Clone the repository.
 
@@ -62,7 +62,7 @@ Clone the repository.
 	
 	And identify the name of the JupyterLab container.
 	
-	Then search for occurrences of the string 'Token' in the container's logs.
+	Then, search for occurrences of the string 'Token' in the container's logs.
 
 	```bash
 	docker logs <container_name> | grep 'Token'

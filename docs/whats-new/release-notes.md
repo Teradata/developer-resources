@@ -10,7 +10,7 @@ pagination_next: null
 
 # Release notes
 
-As we continue to enhance AI Unlimited, please be aware of features not currently supported and known issues. 
+As we continue to enhance AI Unlimited, please be aware of features that are not currently supported and known issues. 
 
 For the latest features and updates, keep an eye on [What's new](/docs/whats-new/).
 
