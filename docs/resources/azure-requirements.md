@@ -19,7 +19,7 @@ Before you install AI Unlimited, address these items.
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-- If you'll need to access the manager instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms).
+- If you'll need to access the manager instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details).
 
 
 ## Create the role for the manager
@@ -28,7 +28,7 @@ The manager needs a role that allows it to do the following:
 - Deploy the engine.
 - Create a new role for the engine (each time it deploys the engine) that allows the engine's nodes to communicate.
 
-The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) that Teradata provides includes a manager role ARM template and a policy sample.
+The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes a manager role ARM template and a policy sample.
 
 	Open a terminal window, and clone the repository.
 
@@ -44,7 +44,7 @@ Create the role:
 
 - Or share the [ai-unlimited.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/policies/ai-unlimited.json) policy, which contains the permissions the manager needs, with your cloud admin so they can create the role for you.
 
-You'll need the `RoleDefinitionId` when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#azure-parms). 
+You'll need the `RoleDefinitionId` when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details). 
 
 
 

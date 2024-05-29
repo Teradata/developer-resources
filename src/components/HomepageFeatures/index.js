@@ -6,36 +6,39 @@ import Link from '@docusaurus/Link';
 const FeatureTitle = 'Categories';
 const FeatureList = [
   {
-    title: `What's new`,
-    href: '/docs/whats-new/',
-  },
-  {
     title: 'Get started',
+    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
     href: '/docs/install-ai-unlimited/',
   },
   {
+    title: `What's new`,
+    description: 'Watch for new features and updates--and see what’s coming',
+    href: '/docs/whats-new/',
+  },
+  {
     title: 'Explore and analyze data',
+    description: 'Learn about AI Unlimited projects and create your first one',
     href: '/docs/explore-and-analyze-data/',
   },
   {
     title: 'Manage projects',
+    description: 'Learn how to manage projects or change AI Unlimited settings',
     href: '/docs/manage-ai-unlimited/',
   },
   {
     title: 'Other resources',
+    description: 'Find additional installation resources, and more',
     href: '/docs/resources/',
   },
   {
     title: 'FAQ',
+    description: 'Get answers to your questions',
     href: '/docs/faq/',
   },
   {
     title: 'Glossary',
+    description: 'Look up AI Unlimited terminology',
     href: '/docs/glossary/',
-  },
-  {
-    title: 'Release notes',
-    href: '/docs/release-notes/',
   },
 ];
 

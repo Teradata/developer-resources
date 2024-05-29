@@ -10,7 +10,9 @@ pagination_next: null
 
 # Add project collaborators
 
-If you are the project owner, you can add collaborators to your project. The steps depend on whether you do this before or after the engine is deployed.
+If you create a project, you are the project owner. If you are the project owner, you can add collaborators to the project. 
+
+The steps depend on whether you do this before or after the engine is deployed.
 
 
 ## Before the engine is deployed
