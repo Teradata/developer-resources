@@ -74,7 +74,7 @@ We recommend selecting the region closest to your primary work location.
 |---------|-------------|-----------|
 | Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks. |Required<br/>Default: NA<br/> The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
 |AiUnlimitedName| The name of the AI Unlimited instance. |Required with default<br/>Default: ai-unlimited<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
-| InstanceType | The EC2 instance type that you want to use for the service. |Required with default<br/>Default: t3.micro<br/> We recommend using the default instance type to save costs. |
+| InstanceType | The EC2 instance type for the manager. |Required with default<br/>Default: t3.micro<br/> **IMPORTANT**: If the instance is not adequately sized, engine deploy and suspend failures may occur, and you will have to re-install the manager on a larger instance.  See *Learn more: Manager instance type (size) recommendations* below the parameters section. |
 | RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default<br/>Default: 20<br/>Supports values between 8 and 1000. |
 | TerminationProtection | Enables instance termination protection. |Required with default<br/>Default: false |
 |IamRole | Specifies whether CloudFormation should create a new IAM role or use an existing one. |Required with default<br/>Default: New<br/>Supported options are: New or Existing |
@@ -102,6 +102,24 @@ We recommend selecting the region closest to your primary work location.
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you attach to the instance. |Required if UsePersistentVolume is set to Existing.<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.|Required with default|Delete <br/>Default: Retain <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
 |LatestAmiId	|The ID of the image that points to the latest version of AMI. This value is used for the SSM lookup.|Required with default<br/>Default: NA<br/>This deployment uses the latest ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 image available.<br/>**IMPORTANT**: Changing this value may break the stack.
+
+</details>
+
+<details>
+
+<summary>Learn more: Manager instance type (size) recommendations</summary>
+
+For the AI Unlimited paid public preview, based on quantity of concurrent engine deploy and suspend operations, we recommend these t3 instance types. The performance of the other available instance types may vary.
+
+| Instance type | Concurrent operations |
+|---------|-------------|
+|t3.micro |1 |
+|t3.small |up to 5 |
+|t3.medium |up to 10 |
+|t3.large |up to 20 |
+|t3.xlarge |more than 21 
+
+The concurrency will increase when AI Unlimited is released for general availability.
 
 </details>
 
