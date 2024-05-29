@@ -86,7 +86,7 @@ mount /dev/cdrom /media/dvd; /media/dvd/VBoxLinuxAdditions.run
 <GettingStartedSummary />
 
 ## Next steps
-* [Query data stored in object storage](../.././nos.md)
+* [Query data stored in object storage](../../manage-data/nos.md)
 
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)
