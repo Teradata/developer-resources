@@ -18,10 +18,6 @@ This deploys a server instance, with JupyterLab running in a container controlle
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
-:::note
-References to the Azure Portal are accurate as of April 14, 2024.
-::: 
-
 
 ## Prepare your Azure account
 
@@ -56,6 +52,9 @@ You might want to ask a cloud admin at your organization for guidance.
 ## Load the template
 
 1. Sign in to the [Azure Portal](https://portal.azure.com).
+   :::note
+   References to Azure Portal elements are up-to-date as of May 29, 2024.
+   ::: 
 2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor**, then **Load file**.
 4. Select the template file you chose to use, and select **Save**.  

@@ -18,9 +18,6 @@ This deploys a server instance, with JupyterLab running in a container controlle
 For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
-:::note
-References to the AWS Management Console are accurate as of April 11, 2024.
-:::
 
 ## Prepare your AWS account
 
@@ -56,8 +53,12 @@ You might want to ask a cloud admin at your organization for guidance.
 
 
 ## Load the template	
-		
-1. Sign in to the [AWS console](https://aws.amazon.com), and select the region in which to deploy JupyterLab. 
+
+1. Sign in to the [AWS console](https://aws.amazon.com).
+   :::note
+   References to AWS Management Console elements are up-to-date as of May 29, 2024.
+   :::
+2. Select the region in which to deploy JupyterLab.<br/>
    We recommend selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
