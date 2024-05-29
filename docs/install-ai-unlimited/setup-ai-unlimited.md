@@ -74,7 +74,7 @@ Some of these fields are for default values. Later, when you deploy the engine f
 <br />
 **Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your data lake.
 
-**Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
+**Default subnet**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
 
 **Default IAM role**
 

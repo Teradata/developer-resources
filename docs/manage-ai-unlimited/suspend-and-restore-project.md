@@ -30,7 +30,7 @@ In your notebook, run this magic command:
 ```
 
 
-## Restore
+## Restore (redeploy)
 
 In your notebook, run this magic command: 
 
