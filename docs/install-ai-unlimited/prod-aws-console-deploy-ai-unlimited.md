@@ -10,7 +10,7 @@ pagination_next: null
 
 # Install the manager on AWS
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites).
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites) and your AWS account meets [the requirements](../resources/aws-requirements.md).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
