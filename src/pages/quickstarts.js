@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import QuickstartsPageCategories from '@site/src/components/QuickstartsPageCategories';
-import HeroImageUrl from '@site/static/img/hero.png';
+import HeroImageUrl from '@site/static/img/quickstarts-hero.png';
 import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
