@@ -61,6 +61,7 @@ a.col {
   margin: 0 -0.625rem;
 }
 
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
     padding: 0 2.5rem 0;

@@ -21,7 +21,6 @@ function HomepageHeader() {
                 Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers.
             </Translate>
           </p>
-
           <p className="hero__subtitle">
             Existing customer or partner? Explore courses at <a href='https://teradata.com/University/Overview' target='_blank'>Teradata University</a>.
           </p>
