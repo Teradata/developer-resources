@@ -9,7 +9,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://*.algolia.net/;">
 <script src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/ai-unlimited-docs/de/assets/css/styles.467a9951.css">
-<script src="/ai-unlimited-docs/de/assets/js/runtime~main.f427d1d0.js" defer="defer"></script>
+<script src="/ai-unlimited-docs/de/assets/js/runtime~main.3b508422.js" defer="defer"></script>
 <script src="/ai-unlimited-docs/de/assets/js/main.906f9dd9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -27,7 +27,7 @@
 <p>Networking requirements: Your Azure <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal" target="_blank" rel="noopener noreferrer">resource group</a> must have an <a href="https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal" target="_blank" rel="noopener noreferrer">Azure Virtual Network (VNet)</a> configured with a <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal" target="_blank" rel="noopener noreferrer">subnet</a>. Use an existing VNet or subnet, or create your own, depending on your account permissions.</p>
 </li>
 <li>
-<p>If you&#x27;ll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys" target="_blank" rel="noopener noreferrer">key pair</a> that you generate to securely connect using Secure Shell (SSH). You&#x27;ll need the key pair when you <a href="#specify-instance-details">specify the instance details</a>.</p>
+<p>If you need to access the JupyterLab instance to run commands or debug, you can use a <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys" target="_blank" rel="noopener noreferrer">key pair</a> to securely connect using Secure Shell (SSH). You&#x27;ll need the key pair when you <a href="#specify-instance-details">specify the instance details</a>.</p>
 </li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="clone-the-repository">Clone the repository<a href="#clone-the-repository" class="hash-link" aria-label="Direkter Link zur Clone the repository" title="Direkter Link zur Clone the repository">​</a></h2>
@@ -37,7 +37,7 @@
 <!-- -->
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="locate-the-jupyter-template">Locate the Jupyter template<a href="#locate-the-jupyter-template" class="hash-link" aria-label="Direkter Link zur Locate the Jupyter template" title="Direkter Link zur Locate the Jupyter template">​</a></h2>
 <p>ARM templates for JupyterLab are here in the AI Unlimited GitHub repository:</p>
-<p><code>deployments/azure/templates/arm/jupyter/</code></p>
+<p><code>deployments/azure/templates/arm/jupyter</code></p>
 <p>Choose a template based on whether you intend to use a <a href="/ai-unlimited-docs/de/docs/glossary/#load-balancer">load balancer</a> and what type.</p>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">note</div><div class="admonitionContent_UjKb"><p>You might want to ask a cloud admin at your organization for guidance.</p></div></span></div>
 <ul>

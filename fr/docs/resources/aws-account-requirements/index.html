@@ -9,7 +9,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://*.algolia.net/;">
 <script src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/ai-unlimited-docs/fr/assets/css/styles.77cc8f2b.css">
-<script src="/ai-unlimited-docs/fr/assets/js/runtime~main.51732007.js" defer="defer"></script>
+<script src="/ai-unlimited-docs/fr/assets/js/runtime~main.69a0f4b0.js" defer="defer"></script>
 <script src="/ai-unlimited-docs/fr/assets/js/main.72074e03.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,12 +18,12 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="prepare-your-aws-account">Prepare your AWS account<a href="#prepare-your-aws-account" class="hash-link" aria-label="Lien direct vers Prepare your AWS account" title="Lien direct vers Prepare your AWS account">​</a></h2>
 <ul>
 <li>
-<p>Work with your cloud admin to ensure you have the <a href="https://aws.amazon.com/iam/" target="_blank" rel="noopener noreferrer">IAM</a> permissions you need to create the cloud resources defined in the <a href="https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited" target="_blank" rel="noopener noreferrer">AI Unlimited template</a>.</p>
+<p>Work with your cloud admin to ensure you have the <a href="https://aws.amazon.com/iam/" target="_blank" rel="noopener noreferrer">IAM</a> permissions to create the cloud resources defined in the <a href="https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited" target="_blank" rel="noopener noreferrer">AI Unlimited template</a>.</p>
 </li>
 <li>
-<p>If you&#x27;ll need to access the manager instance to run commands or debug, you can connect to it one of these ways:</p>
+<p>If you need to access the manager instance to run commands or debug, you can connect to it one of these ways:</p>
 <ul>
-<li>Use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener noreferrer">key pair</a> that you generate to securely connect using Secure Shell (SSH). You will need the key pair when you <a href="/ai-unlimited-docs/fr/docs/install-ai-unlimited/deploy-manager-aws-console/#specify-stack-details-and-options">specify the stack details</a>.</li>
+<li>Use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener noreferrer">key pair</a> to securely connect using Secure Shell (SSH). You will need the key pair when you <a href="/ai-unlimited-docs/fr/docs/install-ai-unlimited/deploy-manager-aws-console/#specify-stack-details-and-options">specify the stack details</a>.</li>
 <li>Use AWS Session Manager to connect. To enable this, attach the <a href="https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json" target="_blank" rel="noopener noreferrer">session-manager.json</a> policy to a <a href="#provide-roles-created-by-your-organization">role you provide</a> to the manager.</li>
 </ul>
 </li>
