@@ -28,13 +28,13 @@ For installation support, ask the [community](https://support.teradata.com/commu
 
 - A pay-as-you-go AWS or Azure account on which to deploy the engine from a Jupyter notebook
 - A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
-- An object storage, where your Amazon or ADLS Gen2 data lake resides
+- Your object storage, where your Amazon or ADLS Gen2 data lake resides
 - [Docker](https://www.docker.com/get-started/) installed on your computer
 
 
 ## Set configuration file locations
 
-1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which the manager's configuration and data files are stored. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
+1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which to store the manager's configuration and data files. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
 
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
@@ -44,7 +44,7 @@ For installation support, ask the [community](https://support.teradata.com/commu
 	Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
 	:::
 	
-2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which the JupyterLab configuration files are stored. The default location is `~/.jupyter`.
+2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store the JupyterLab configuration files. The default location is `~/.jupyter`.
 
 
 ## Clone the repository
