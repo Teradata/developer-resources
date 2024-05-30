@@ -1,6 +1,6 @@
 ---
 id: deploy-manager-aws-console
-title: Deploy the manager using the AWS Management Console
+title: Install on AWS
 description: Learn how to deploy the manager using a CloudFormation template.
 sidebar_label: Install on AWS
 sidebar_position: 1

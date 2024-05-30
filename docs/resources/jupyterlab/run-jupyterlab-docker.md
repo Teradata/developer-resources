@@ -1,6 +1,6 @@
 ---
 id: run-jupyter-docker
-title: Run JupyterLab locally using Docker
+title: Run JupyterLab using Docker
 description: Learn how to run JupyterLab with the AI Unlimited Jupyter Kernel on your computer.
 sidebar_label: Run locally using Docker
 sidebar_position: 3

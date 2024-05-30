@@ -1,7 +1,7 @@
 ---
 id: run-ai-unlimited-jupyterlab-docker
-title: QuickStart - Run AI Unlimited and JupyterLab using Docker
-description: Learn how to run AI Unlimited and JupyterLab using Docker.
+title: Run the manager and JupyterLab locally
+description: Learn how to run the AI Unlimited manager and JupyterLab using Docker.
 sidebar_label: Run the manager and JupyterLab using Docker 
 sidebar_position: 3
 pagination_prev: null

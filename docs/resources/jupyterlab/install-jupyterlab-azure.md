@@ -1,6 +1,6 @@
 ---
 id: deploy-jupyter-azure-portal
-title: Deploy JupyterLab from the Azure Portal
+title: Install JupyterLab on Azure
 description: Learn how to deploy JupyterLab using an ARM template.
 sidebar_label: Install on Azure 
 sidebar_position: 2

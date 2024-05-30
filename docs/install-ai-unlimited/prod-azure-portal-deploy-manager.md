@@ -1,6 +1,6 @@
 ---
 id: deploy-manager-azure-portal
-title: Deploy the manager using the Azure Portal
+title: Install on Azure
 description: Learn how to deploy the manager using an Azure Resource Manager (ARM) template.
 sidebar_label: Install on Azure
 sidebar_position: 2

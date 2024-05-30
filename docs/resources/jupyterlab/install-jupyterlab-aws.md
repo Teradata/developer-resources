@@ -1,7 +1,7 @@
 ---
 id: deploy-jupyter-aws-console
-title: Deploy JupyterLab from the AWS Management Console
-description: Learn how to deploy JupyterLab using a Cloudformation template.
+title: Install JupyterLab on AWS
+description: Learn how to deploy JupyterLab using a CloudFormation template.
 sidebar_label: Install on AWS
 sidebar_position: 1
 pagination_prev: null
