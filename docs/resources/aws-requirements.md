@@ -59,13 +59,13 @@ If your security does not allow AI Unlimited to create roles, provide roles crea
 
 The `deployments` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes policy samples for the manager and engine roles.
 
-	Open a terminal window, and clone the repository.
+Open a terminal window, and clone the repository.
 
-    ``` bash
-    git clone https://github.com/Teradata/ai-unlimited
+``` bash
+git clone https://github.com/Teradata/ai-unlimited
 	```
 
-Or use the links that follow to download what you need.
+Or use the links provided in sections that follow to download what you need.
 
 
 ### Role for the manager
