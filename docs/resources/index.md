@@ -10,7 +10,7 @@ pagination_next: null
 
 # Other resources
 
-Find resources here for these installation-related topics:
+Find resources here for installation-related topics:
 
 - Preparing to install AI Unlimited:
 

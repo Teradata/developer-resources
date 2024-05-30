@@ -10,7 +10,9 @@ pagination_next: null
 
 # Azure account requirements
 
-Before you install AI Unlimited, address these items.
+First, make sure you have the [prerequisites](../install-ai-unlimited/index.md#prerequisites). 
+
+Then before you install AI Unlimited, address these Azure items.
 
 
 ## Prepare your Azure account

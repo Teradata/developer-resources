@@ -10,7 +10,9 @@ pagination_next: null
 
 # AWS account requirements
 
-Before you install AI Unlimited, address these items.
+First, make sure you have the [prerequisites](../install-ai-unlimited/index.md#prerequisites). 
+
+Then before you install AI Unlimited, address these AWS items.
 
 
 ## Prepare your AWS account
