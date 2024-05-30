@@ -80,7 +80,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
 5. Deploy the engine.
 
-    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small.
+    The size can be small, medium, large, or extralarge. The default is small.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
