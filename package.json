@@ -16,6 +16,7 @@
   "dependencies": {
     "@covalent/tokens": "^8.10.1",
     "@docusaurus/core": "3.2.0",
+    "@docusaurus/plugin-google-gtag": "^3.3.2",
     "@docusaurus/preset-classic": "3.2.0",
     "@docusaurus/theme-mermaid": "3.2.0",
     "@mdx-js/react": "^3.0.0",
