@@ -135,4 +135,4 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.

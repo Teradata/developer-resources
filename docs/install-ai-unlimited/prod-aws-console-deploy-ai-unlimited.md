@@ -168,7 +168,7 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />
-On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the manager is ready. 
+On the **Events** tab, you can monitor progress. When the status of all the resources is `CREATE_COMPLETE`, the manager is ready. 
 
 The **Outputs** tab shows the values generated for the created resources.
 
@@ -177,7 +177,7 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 
 

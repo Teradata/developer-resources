@@ -18,7 +18,7 @@ Your API key, available from your user profile in the manager, stays the same fo
 :::note
 Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
 :::
-2. Sign in to GitHub or GitLab.
+2. Sign in to GitHub or GitLab, and authenticate yourself.
 3. After being routed back to the manager, on your **Profile**, copy your API key.
 
 Keep your API key. Or go back to your **Profile** anytime to get it.

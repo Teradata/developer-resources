@@ -145,7 +145,7 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />
-On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the JupyterLab is ready. 
+On the **Events** tab, you can monitor progress. When the status of all the resources is `CREATE_COMPLETE`, the JupyterLab is ready. 
 
 The **Outputs** tab shows the URL for accessing JupyterLab.
 
