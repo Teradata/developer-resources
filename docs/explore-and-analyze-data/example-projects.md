@@ -12,6 +12,8 @@ pagination_next: null
 
 Explore some of the ways you can experiment with AI/ML analytics on large datasets, before scaling, applying the results to other use cases, or operationalizing your models.
 
+For these use cases, use your existing AWS Glue catalog and upload our sample data. Or create a new catalog to use the provided Open Table Format (OTF) examples.
+
 :::tip
 Discuss these and share ideas for other use cases in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
@@ -23,7 +25,7 @@ Customers engage with financial institutions through various marketing touchpoin
 
 Understanding the overall customer journey is critical for enhancing it and increasing customer acquisition and adoption.
 
-For this use case, we provide data from customer interactions in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use attribution modeling, channel analysis, and pathing to understand the customer behavior over time.
+After you access and inspect the data, you'll use attribution modeling, channel analysis, and pathing to understand the customer behavior over time.
 
 [Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Financial_Customer_Journey_SQL.ipynb) (SQL)
 
@@ -34,7 +36,7 @@ For this use case, we provide data from customer interactions in an AWS Glue cat
 
 Purchase history can be a powerful factor for segmenting customers. For instance, you might create segments based on purchase volume and value.
 
-For this use case, we provide online purchase history data in an AWS Glue catalog in Iceberg format. After you prepare the data, you'll use k-means clustering and data preparation pipelines to determine customer segments.
+After you prepare the data, you'll use k-means clustering and data preparation pipelines to determine customer segments.
 
 [Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Native_Data_Prep_Transformation_Pipelines-SQL.ipynb) (SQL)
 
@@ -45,7 +47,7 @@ For this use case, we provide online purchase history data in an AWS Glue catalo
 
 Marketing to the ideal number of customer segments means you benefit from segmentation without having too many segments to manage. You can derive the ideal number of segments from comments from customer purchase history.
 
-For this use case, we provide customer comment data in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use a large language model (LLM) to create a vector table, and then find the ideal k-means model and number of segments.
+After you access and inspect the data, you'll use a large language model (LLM) to create a vector table, and then find the ideal k-means model and number of segments.
 
 [Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Segmentation_With_Vector_Embedding-SQL.ipynb) (SQL)
 
