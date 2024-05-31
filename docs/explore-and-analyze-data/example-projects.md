@@ -12,11 +12,16 @@ pagination_next: null
 
 Explore some of the ways you can experiment with AI/ML analytics on large datasets, before scaling, applying the results to other use cases, or operationalizing your models.
 
-For these use cases, use your existing AWS Glue catalog and upload our sample data. Or create a new catalog to use the provided Open Table Format (OTF) examples.
-
 :::tip
 Discuss these and share ideas for other use cases in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
+
+
+## Before you begin 
+
+- Use the **Before you begin** notebook to prepare your project.
+
+- Use your existing AWS Glue catalog and upload our [sample data](https://github.com/Teradata/ai-unlimited-demos/tree/main/UseCases/Data). Or create a new catalog to use the provided Open Table Format (OTF) examples.
 
 
 ## Understand the customer journey
