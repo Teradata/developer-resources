@@ -83,7 +83,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 | Role Definition ID | The ID of the role to use with AI Unlimited.| Required<br/>Default: NA<br/>Use Azure CLI command- Get-AzRoleDefinition to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure.|  Optional<br/>Default: true |
 | Use Key Vault | Specifies whether to use Key Vault to retrieve the secured password during a deployment. | Optional<br/>Default: New |
-| Use Persistent Volume | Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. | Optional with default<br/>Default: New <br/>Supported options: New, None, Existing, depending on your use case. |
+| Use Persistent Volume | Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. | Optional with default<br/>Default: New <br/>Supported options: New or Existing, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional<br/>Default: 100 |
 | Existing Persistent Volume | <br/>The ID of the existing persistent volume that you can attach to the instance.| Required if UsePersistentVolume is set to Existing.<br/>Default: None<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default<br/>Default: latest<br/>The value is a container version tag. |
@@ -94,7 +94,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 

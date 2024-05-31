@@ -94,7 +94,7 @@ You might want to ask a cloud admin at your organization for guidance.
 |AccessCIDR	|The CIDR IP address range that is permitted to access the instance.| Optional<br/>Default: NA<br/>We recommend setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |PrefixList			| The prefix list that you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement. | Optional<br/>Default: NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance.| Optional<br/>Default: NA<br/>Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|UsePersistentVolume| Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|UsePersistentVolume| Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. |Optional with default<br/>Default: New<br/>Supported options are a new persistent volume or an existing one, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default<br/>Default: 20<br/>Supports values between 8 and 1000|
 |ExistingPersistent<br/>VolumeId		|The ID of the existing persistent volume that you can attach to the instance.| Required if UsePersistentVolume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.| Required with default<br/>Default:  Retain<br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
@@ -106,7 +106,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The JupyterLab instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 

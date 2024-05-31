@@ -84,7 +84,7 @@ Review the parameters. Provide values for the required ones. Your organization m
 | Role Definition ID | The ID of the role to use with AI Unlimited. | Required<br/>Default: NA<br/>Use Azure CLI command- `Get-AzRoleDefinition` command to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure. |  Optional<br/>Default: true |
 | Public Key | The public SSH Key that you can use to connect to a VM over SSH. | Optional<br/>Default: NA<br/>This value must start with `ssh-rsa`.  |
-| Use Persistent Volume | Specifies whether you want to use persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. | Optional with default<br/>Default: New<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case. |
+| Use Persistent Volume | Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. | Optional with default<br/>Default: New<br/>Supported options are a new persistent volume or an existing one, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional<br/>Default: 100<br/>Supports values between 8  and 1000. |
 | Existing Persistent Volume | The ID of the existing persistent volume that you can attach to the instance.| Required if Use Persistent Volume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | JupyterHttpPort | The port to access the JupyterLab service UI. | Required with default<br/>Default: 8888 |
@@ -95,7 +95,7 @@ Review the parameters. Provide values for the required ones. Your organization m
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The JupyterLab instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
