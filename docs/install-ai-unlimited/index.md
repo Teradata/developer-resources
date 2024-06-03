@@ -53,7 +53,14 @@ If you prefer a simpler, single-user approach, try the [QuickStart](/docs/resour
 
 Subscribe to AI Unlimited on the [AWS Marketplace](http://aws.amazon.com/marketplace/pp/prodview-2srvuo3mwqlig) or [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/teradata.ai-unlimited?tab=Overview).
 
-After subscribing, return to this documentation site and continue with **What's next**.
+**For Azure only**: Before you select **Get It Now**, complete these steps:
+1. Read the [License Agreement](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1lQlq).
+2. Open a terminal window and run this command.
+    ``` bash
+    az vm image terms accept --publisher teradata --offer ai-unlimited-vm --plan ai-unlimited-image
+	```
+
+For AWS or Azure, after subscribing, return to this documentation site and continue with **What's next**.
 
 
 ## What's next
