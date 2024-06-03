@@ -19,7 +19,7 @@ Discuss these and share ideas for other use cases in the [community](https://sup
 
 ## Before you begin 
 
-- Use the **Before you begin** notebook to prepare your project.
+- Use the [Project Administration notebook](https://github.com/Teradata/ai-unlimited-demos/blob/main/Notebooks/Project%20Administration.ipynb) to prepare your project.
 
 - Use your existing AWS Glue catalog and upload our [sample data](https://github.com/Teradata/ai-unlimited-demos/tree/main/UseCases/Data). Or create a new catalog to use the provided Open Table Format (OTF) examples.
 
