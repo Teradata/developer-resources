@@ -51,7 +51,7 @@ If you prefer a simpler, single-user approach, try the [QuickStart](/docs/resour
 
 ## Subscribe
 
-Subscribe to AI Unlimited on the AWS Marketplace or Azure Marketplace.
+Subscribe to AI Unlimited on the [AWS Marketplace](http://aws.amazon.com/marketplace/pp/prodview-2srvuo3mwqlig) or [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/teradata.ai-unlimited?tab=Overview).
 
 After subscribing, return to this documentation site and continue with **What's next**.
 

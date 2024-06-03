@@ -80,7 +80,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
 5. Deploy the engine.
 
-    The size can be small, medium, large, or extralarge. The default is small.
+    The size can be small, medium, large, or extralarge. The default is small. See [AWS](http://aws.amazon.com/marketplace/pp/prodview-2srvuo3mwqlig) or [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/teradata.ai-unlimited?tab=Overview) pricing information.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
