@@ -7,6 +7,7 @@ import HeroImageUrl from '@site/static/img/developers/hero.png';
 import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
