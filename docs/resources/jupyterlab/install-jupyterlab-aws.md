@@ -56,7 +56,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 1. Sign in to the [AWS console](https://aws.amazon.com).
    :::note
-   References to AWS Management Console elements are up-to-date as of May 29, 2024.
+   References to AWS Management Console are up-to-date as of May 29, 2024.
    :::
 2. Select the region in which to deploy JupyterLab.<br/>
    We recommend selecting the region closest to your primary work location.
