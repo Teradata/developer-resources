@@ -18,7 +18,7 @@ const Tabs = ({ children }) => {
           return (
             <button
               key={label}
-              className={label === activeTab ? 'active' : ''}
+              className={label === activeTab ? styles.active : styles.inactive}
               onClick={(e) => handleClick(e, label)}
             >
               {label}
@@ -26,7 +26,7 @@ const Tabs = ({ children }) => {
           );
         })}
       </div>
-      <div className=''>
+      <div className={styles.box}>
         {children.map((tab) => {
           if (tab.props.label !== activeTab) return undefined;
           return tab.props.children;
