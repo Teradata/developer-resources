@@ -17,6 +17,7 @@ import businessLeader from '@site/static/img/developers/businessLeader.png'
 import DataLeader from '@site/static/img/developers/DataLeader.png'
 import Developer from '@site/static/img/developers/Developer.png'
 import dataEngineer from  '@site/static/img/developers/dataEngineer.png'
+import Translate from '@docusaurus/Translate';
 import { Tabs, Tab } from './Tabs';
 
 //const FeatureTitle = 'Categories';
@@ -164,7 +165,9 @@ export default function DevelopersHomepage() {
       <div className={clsx('container', styles.container)}>
         <div className={clsx('row', styles.row)}>
           <div className={clsx('col', styles.col)}>
-            <p className={clsx(styles.firstSubheading)}>Solutions for you</p>
+            <p className={clsx(styles.firstSubheading)}>
+              Solutions for you
+            </p>
             <p className={clsx(styles.secondSubheading)}>Get started with Teradata</p>
           </div>
         </div>
@@ -172,43 +175,116 @@ export default function DevelopersHomepage() {
           <div className='col'>
             <Tabs>
               <Tab label="Data Scientist">
-                  <div className={styles.head}>
-                    <h3>Train ML models in Vantage</h3>
+                <div className={styles.head}>
+                  <h3>Train ML models in Vantage</h3>
+                </div>
+                <div className={styles.tabContent}>
+                  <p>There are situations when you want to quickly validate a machine learning model idea. You have a model type in mind. You don’t want to operationalize with an ML pipeline just yet. You just want to test out if the relationship you had in mind exists. Also, sometimes even your production deployment doesn’t require constant relearning with MLops. In such cases, you can use Vantage Analytics Library (VAL) and multiple ML model types it supports.</p>
+                  <div className={styles.but}>
+                    <Link
+                      className={clsx(
+                        'but button button--secondary button--lg',
+                        styles.getStartedButton
+                      )}
+                      to="https://quickstarts.teradata.com/ml.html"
+                    >
+                      <Translate id="theme.button">Get Started</Translate>
+                    </Link>
                   </div>
-                  <div className={styles.tabContent}>
-                    <p>There are situations when you want to quickly validate a machine learning model idea. You have a model type in mind. You don’t want to operationalize with an ML pipeline just yet. You just want to test out if the relationship you had in mind exists. Also, sometimes even your production deployment doesn’t require constant relearning with MLops. In such cases, you can use Vantage Analytics Library (VAL) and multiple ML model types it supports.</p>
-                  </div>
-                  <div>
-                    <img src={DataScientist} className={styles.image} width='498px'></img>
-                  </div>
+                </div>
+                <div className={styles.image}>
+                  <img src={DataScientist} width='498px'></img>
+                </div>
               </Tab>
               <Tab label="Data Engineer">
+                <div className={styles.head}>
                   <h3>dbt with Teradata Vantage</h3>
-                  <div className={styles.tabContent}>
-                    <p>This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantage. It’s based on the original dbt Jaffle Shop tutorial. A couple of models have been adjusted to the SQL dialect supported by Vantage.</p>
-                    <img src={DataLeader} width='498px'></img>
+                </div>
+                <div className={styles.tabContent}>
+                  <p>This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantage. It’s based on the original dbt Jaffle Shop tutorial. A couple of models have been adjusted to the SQL dialect supported by Vantage.</p>
+                  <div className={styles.but}>
+                    <Link
+                      className={clsx(
+                        'but button button--secondary button--lg',
+                        styles.getStartedButton
+                      )}
+                      to="https://quickstarts.teradata.com/dbt.html"
+                    >
+                      <Translate id="theme.button">Get Started</Translate>
+                    </Link>
                   </div>
+                </div>
+                <div className={styles.image}>
+                  <img src={DataLeader} width='498px'></img>
+                </div>                
               </Tab>
-              <Tab label="Developer">
+              <Tab label="Developer">                
+                <div className={styles.head}>
                   <h3>Connect to Vantage using JDBC</h3>
-                  <div className={styles.tabContent}>
-                    <p>This how-to demonstrates how to connect to Teradata Vantage using JDBC using a sample Java application: https://github.com/Teradata/jdbc-sample-app.</p>
-                    <img src={Developer} width='498px'></img>
-                  </div>
+                </div>
+                <div className={styles.tabContent}>
+                  <p>
+                    This how-to demonstrates how to connect to Teradata Vantage using JDBC using a sample Java application: https://github.com/Teradata/jdbc-sample-app.
+                  </p>
+                  <div className={styles.but}>
+                    <Link
+                      className={clsx(
+                        'but button button--secondary button--lg',
+                        styles.getStartedButton
+                      )}
+                      to="https://quickstarts.teradata.com/jdbc.html"
+                    >
+                      <Translate id="theme.button">Get Started</Translate>
+                    </Link>
+                  </div>            
+                </div>  
+                <div className={styles.image}>
+                  <img src={Developer} width='498px'></img>
+                </div>
               </Tab>
               <Tab label="Database Administrator">
+              <div className={styles.head}>
                   <h3>Database Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)</h3>
-                  <div className={styles.tabContent}>
-                    <p>We often have a need to move large volumes of data into Vantage. Teradata offers Teradata Parallel Transporter (TPT) utility that can efficiently load large amounts of data into Teradata Vantage. This how-to demonstrates how to use TPT. In this scenario,</p>
-                    <img src={businessLeader} width='498px'></img>
+                </div>
+                <div className={styles.tabContent}>
+                  <p>We often have a need to move large volumes of data into Vantage. Teradata offers Teradata Parallel Transporter (TPT) utility that can efficiently load large amounts of data into Teradata Vantage. This how-to demonstrates how to use TPT. In this scenario,</p>
+                  <div className={styles.but}>
+                    <Link
+                      className={clsx(
+                        'but button button--secondary button--lg',
+                        styles.getStartedButton
+                      )}
+                      to="https://quickstarts.teradata.com/tools-and-utilities/run-bulkloads-efficiently-with-teradata-parallel-transporter.html"
+                    >
+                      <Translate id="theme.button">Get Started</Translate>
+                    </Link>
                   </div>
+                </div>  
+                <div className={styles.image}>
+                  <img src={businessLeader} width='498px'></img>
+                </div>                
               </Tab>
               <Tab label="IT Operations">
+                <div className={styles.head}>
                   <h3>Query data stored in object storage</h3>
-                  <div className={styles.tabContent}>
-                    <p>Native Object Storage (NOS) is a Vantage feature that allows you to query data stored in files in object storage such as AWS S3, Google GCS, Azure Blob or on-prem implementations. It’s useful in scenarios where you want to explore data without building a</p>
-                    <img src={dataEngineer} width='498px'></img>
+                </div>
+                <div className={styles.tabContent}>
+                  <p>Native Object Storage (NOS) is a Vantage feature that allows you to query data stored in files in object storage such as AWS S3, Google GCS, Azure Blob or on-prem implementations. It’s useful in scenarios where you want to explore data without building a</p>
+                  <div className={styles.but}>
+                    <Link
+                      className={clsx(
+                        'but button button--secondary button--lg',
+                        styles.getStartedButton
+                      )}
+                      to="https://quickstarts.teradata.com/ml.html"
+                    >
+                      <Translate id="theme.button">Get Started</Translate>
+                    </Link>
                   </div>
+                </div>  
+                <div className={styles.image}>
+                  <img src={dataEngineer} width='498px'></img>
+                </div>  
               </Tab>
             </Tabs>
           </div>
@@ -242,10 +318,21 @@ export default function DevelopersHomepage() {
         <div className={clsx('row', styles.row)}>
           <div className='col'>
             <div className={styles.imgFoot}>
-              <img src={teradataCommunityUrl} alt="Teradata Community" title="Teradata Community"/>
-              <img src={mediumUrl} alt="Teradata Community" title="Teradata Community"/>
-              <img src={githubUrl} alt="Teradata Community" title="Teradata Community"/>
-              <img src={stackoverflowUrl} alt="Teradata Community" title="Teradata Community"/>
+              <a href='https://support.teradata.com/community' target='_blank'>
+                <img src={teradataCommunityUrl} alt="Teradata Community" title="Teradata Community"/>
+              </a>
+              <a href='https://medium.com/teradata' target='_blank'>
+                <img src={mediumUrl} alt="Teradata Technical Blogs" title="Teradata Technical Blogs"/>
+              </a>
+              <a href='https://github.com/Teradata' target='_blank'>
+                <img src={githubUrl} alt="GitHub" title="GitHub"/>
+              </a>
+              <a href='https://stackoverflow.com/questions/tagged/teradata' target='_blank'>
+                <img src={stackoverflowUrl} alt="Stackoverflow" title="Stackoverflow"/>
+              </a>
+              
+              
+              
             </div>
           </div>
         </div>
