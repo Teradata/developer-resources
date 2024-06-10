@@ -89,13 +89,6 @@ const config = {
         path: './releases',
       },
     ],
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-RDK4Y0RE7S',
-        anonymizeIP: true,
-      },
-    ],
   ],
 
   presets: [
