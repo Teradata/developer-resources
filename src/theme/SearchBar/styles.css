@@ -33,10 +33,6 @@
   margin: 0;
 }
 
-.DocSearch-Footer {
-  display: none;
-}
-
 .DocSearch-Input {
   font-size: 1rem;
   color: #333a3e;
@@ -70,7 +66,7 @@
 
 .DocSearch-Hit[aria-selected='true'] a {
   background-color: var(--cv-theme-surface-canvas);
-  --docsearch-hit-active-color: var(--ifm-color-secondary);
+  --docsearch-hit-active-color: var(--cv-theme-tertiary);
 }
 
 .DocSearch-Hit a:hover {
@@ -149,7 +145,7 @@
   height: 20px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .DocSearch-Modal {
     position: absolute;
     right: 0;
@@ -179,9 +175,17 @@
   .DocSearch-Cancel {
     padding-right: 1rem;
   }
+
+  .DocSearch-Footer {
+    bottom: 60px;
+  }
+
+  .sideNavPresent .DocSearch-Footer {
+    bottom: 75px;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .DocSearch-Modal {
     margin-top: 5rem;
   }
