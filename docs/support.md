@@ -12,7 +12,7 @@ pagination_next: null
 
 You can get help with installing and using AI Unlimited these ways:
 
-- <a href="mailto:aiunlimited.support@Teradata.com">Email</a> the support team.
+- Email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a>.
 
 - Ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa). Bring your questions, get troubleshooting advice, and share ideas.
 
