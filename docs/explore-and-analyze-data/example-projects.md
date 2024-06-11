@@ -13,7 +13,8 @@ pagination_next: null
 Explore some of the ways you can experiment with AI/ML analytics on large datasets, before scaling, applying the results to other use cases, or operationalizing your models.
 
 :::tip
-Discuss these and share ideas for other use cases in the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+
+For help with these use cases, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 

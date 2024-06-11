@@ -15,8 +15,7 @@ You'll use a CloudFormation template provided by Teradata to install JupyterLab 
 This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 
 
 ## Prepare your AWS account
