@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import HeroImageUrl from '@site/static/img/hero.png';
+import HeroImageUrl from '@site/static/img/hero.webp';
 import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -32,7 +32,7 @@ function HomepageHeader() {
           </div>
         </div>
         <div className={styles.heroImage}>
-          <img src={HeroImageUrl} alt="A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background." />
+          <img src={HeroImageUrl} width="498" alt="A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background." />
           <div className={styles.heroBlur}></div>
         </div>
       </div>
