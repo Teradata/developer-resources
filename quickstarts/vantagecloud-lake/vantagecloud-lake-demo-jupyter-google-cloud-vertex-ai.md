@@ -129,18 +129,13 @@ Right click on vars.json to open the file with editor.
 
 ![vars.json](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/openvars.png)
 
-Edit the *[vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars.json)* file to include the required credentials to run the demos +
+Edit the *[vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars.json)* file to include the required credentials to run the demos 
 
-[cols="1,1"]
-|====
-| *Variable* | *Value*
-| *"host"* 
-| Public IP value from your VantageCloud Lake environment
-| *"UES_URI"* 
-| Open Analytics from your VantageCloud Lake environment
-| *"dbc"*
-| The master password of your VantageCloud Lake environment.
-|====
+|*Variable* | *Value*|
+|---------|----------|
+|*"host"* | Public IP value from your VantageCloud Lake environment |
+| *"UES_URI"*| Open Analytics from your VantageCloud Lake environment |
+| *"dbc"*| The master password of your VantageCloud Lake environment. |
 
 To retrieve a Public IP address and Open Analytics Endpoint follow these [instructions](https://quickstarts.teradata.com/vantagecloud-lake/vantagecloud-lake-demo-jupyter-docker.html#_create_vantagecloud_lake_environment).
 

@@ -7,6 +7,9 @@ description: Learn how to run VantageCloud Lake Demos using Jupyter notebooks in
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy, vantagecloud, vantagecloud lake, public internet, visual studio code, IDE, data analytics, data science]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Run Teradata Jupyter Notebook Demos for VantageCloud Lake in Visual Studio Code
 
 ## Overview
@@ -39,26 +42,26 @@ Next, start a container and bind it to the existing lake-demos directory. Choose
 For Windows, run the docker command in PowerShell.
 :::
 
-[tabs, id="vscode_tab_mount", role="emits-gtm-events"]
-====
-Windows::
-
-
-``` bash
-docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v ${PWD}:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions
+```mdx-code-block
+<Tabs>
+  <TabItem value="Windows" label="Windows" default>
+    ```bash
+      docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v ${PWD}:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions
+    ```
+  </TabItem>
+  <TabItem value="MacOS" label="MacOS">
+    ```bash
+      docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions
+    ```
+  </TabItem>
+  <TabItem value="Linux" label="Linux">
+    ```bash
+    docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions
+    ```
+  </TabItem>
+</Tabs>
 ```
-macOS::
-+
-``` bash
-docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions
-```
 
-Linux::
-+
-``` bash
-docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions
-```
-====
 Take note of the resulting URL and token; you’ll need them to establish the connection from Visual Studio Code.
 
 ![terminal.png](./images/vantagecloud-lake-demos-visual-studio-code/terminal.png)
@@ -79,16 +82,14 @@ LAKE_DEMOS
 ### Edit vars.json file 
 Edit the *[vars.json](https://github.com/Teradata/lake-demos/blob/main/vars.json)* file to include the required credentials to run the demos +
 
-[cols="1,1"]
-|====
-| *Variable* | *Value*
-| *"host"* 
-| Public IP value from your VantageCloud Lake environment
-| *"UES_URI"* 
-| Open Analytics from your VantageCloud Lake environment
-| *"dbc"*
-| The master password of your VantageCloud Lake environment.
-|====
+
+
+| **Variable** | **Value** |
+|--------------|-----------|
+| *"host"*     | Public IP value from your VantageCloud Lake environment |
+| *"UES_URI"*  | Open Analytics from your VantageCloud Lake environment |
+| *"dbc"*      | The master password of your VantageCloud Lake environment. |
+
 
 To retrieve a Public IP address and Open Analytics Endpoint follow these [instructions](https://quickstarts.teradata.com/vantagecloud-lake/vantagecloud-lake-demo-jupyter-docker.html).
 

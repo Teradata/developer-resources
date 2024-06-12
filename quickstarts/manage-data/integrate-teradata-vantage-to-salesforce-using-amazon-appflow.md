@@ -53,14 +53,14 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * An Amazon S3 bucket to store raw Vantage data (Parquet file) (i.e., vantageparquet). This bucket needs to have policy to allow Amazon AppFlow access
 * An Amazon S3 bucket to store converted Vantage data (CSV file) (i.e., vantagecsv)
 * A Salesforce account that satisfies the following requirements:
-** Your Salesforce account must be enabled for API access. API access is enabled by default for Enterprise, Unlimited, Developer, and Performance editions.
-** Your Salesforce account must allow you to install connected apps. If this is disabled, contact your Salesforce administrator. After you create a Salesforce connection in Amazon AppFlow, verify that the connected app named "Amazon AppFlow Embedded Login App" is installed in your Salesforce account.
-** The refresh token policy for the "Amazon AppFlow Embedded Login App" must be set to "Refresh token is valid until revoked". Otherwise, your flows will fail when your refresh token expires.
-** You must enable Change Data Capture in Salesforce to use event-driven flow triggers. From Setup, enter "Change Data Capture" in Quick Find.
-** If your Salesforce app enforces IP address restrictions, you must whitelist the addresses used by Amazon AppFlow. For more information, see [AWS IP address ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in the _Amazon Web Services General Reference_.
-** If you are transferring over 1 million Salesforce records, you cannot choose any Salesforce compound field. Amazon AppFlow uses Salesforce Bulk APIs for the transfer, which does not allow transfer of compound fields.
-** To create private connections using AWS PrivateLink, you must enable both "Manager Metadata" and "Manage External Connections" user permissions in your Salesforce account. Private connections are currently available in the us-east-1 and us-west-2 AWS Regions.
-** Some Salesforce objects can't be updated, such as history objects. For these objects, Amazon AppFlow does not support incremental export (the "Transfer new data only" option) for schedule-triggered flows. Instead, you can choose the "Transfer all data" option and then select the appropriate filter to limit the records you transfer.
+  * Your Salesforce account must be enabled for API access. API access is enabled by default for Enterprise, Unlimited, Developer, and Performance editions.
+  * Your Salesforce account must allow you to install connected apps. If this is disabled, contact your Salesforce administrator. After you create a Salesforce connection in Amazon AppFlow, verify that the connected app named "Amazon AppFlow Embedded Login App" is installed in your Salesforce account.
+  * The refresh token policy for the "Amazon AppFlow Embedded Login App" must be set to "Refresh token is valid until revoked". Otherwise, your flows will fail when your refresh token expires.
+  * You must enable Change Data Capture in Salesforce to use event-driven flow triggers. From Setup, enter "Change Data Capture" in Quick Find.
+  * If your Salesforce app enforces IP address restrictions, you must whitelist the addresses used by Amazon AppFlow. For more information, see [AWS IP address ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in the _Amazon Web Services General Reference_.
+  * If you are transferring over 1 million Salesforce records, you cannot choose any Salesforce compound field. Amazon AppFlow uses Salesforce Bulk APIs for the transfer, which does not allow transfer of compound fields.
+  * To create private connections using AWS PrivateLink, you must enable both "Manager Metadata" and "Manage External Connections" user permissions in your Salesforce account. Private connections are currently available in the us-east-1 and us-west-2 AWS Regions.
+  * Some Salesforce objects can't be updated, such as history objects. For these objects, Amazon AppFlow does not support incremental export (the "Transfer new data only" option) for schedule-triggered flows. Instead, you can choose the "Transfer all data" option and then select the appropriate filter to limit the records you transfer.
 
 ### Procedure
 
@@ -84,58 +84,58 @@ Go to [AppFlow console](https://console.aws.amazon.com/appflow), sign in with yo
 
 This step provides basic information for your flow.
 
-Fill in *Flow name* (i.e. _salesforce_) and *Flow description (optional)*, leave *Customize encryption settings (advanced)* unchecked. Click *Next*.
+Fill in **Flow name** (i.e. _salesforce_) and **Flow description (optional)**, leave **Customize encryption settings (advanced)** unchecked. Click **Next**.
 
 #### Step 2: Configure flow
 
-This step provides information about the source and destination for your flow. For this example, we will be using *_Salesforce_* as the source, and *_Amazon S3_* as the destination.
+This step provides information about the source and destination for your flow. For this example, we will be using **_Salesforce_** as the source, and **_Amazon S3_** as the destination.
 
 * For *Source name*, choose _Salesforce_, then *_Create new connection_* for *Choose Salesforce connection*.
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image4.png)
 
-* Use default for *Salesforce environment* and *Data encryption*. Give your connection a name (i.e. _salesforce_) and click *Continue*.
+* Use default for **Salesforce environment** and **Data encryption**. Give your connection a name (i.e. _salesforce_) and click **Continue**.
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image5.png)
 
-* At the salesforce login window, enter your *Username* and *Password*. Click *Log In*
+* At the salesforce login window, enter your **Username** and **Password**. Click **Log In**
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image6.png)
 
-* Click *Allow* to allow AppFlow to access your salesforce data and information.
+* Click **Allow** to allow AppFlow to access your salesforce data and information.
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image7.png)
 
-* Back at the AppFlow *Configure flow* window, use *Salesforce objects*, and choose _Account_ to be the Salesforce object.
+* Back at the AppFlow **Configure flow** window, use **Salesforce objects**, and choose _Account_ to be the Salesforce object.
 ![A screenshot of a cell phone Description automatically generated,](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image8.png)
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image9.png)
 
-* Use _Amazon S3_ as *Destination name*. Pick the bucket you created [earlier](#prerequisites) where you want the data to be stored (i.e., _ptctsoutput_).
+* Use _Amazon S3_ as **Destination name**. Pick the bucket you created [earlier](#prerequisites) where you want the data to be stored (i.e., _ptctsoutput_).
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image10.png)
 
-* *Flow trigger* is _Run on demand_. Click *Next*.
+* **Flow trigger** is _Run on demand_. Click **Next**.
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image11.png)
 
 #### Step 3: Map data fields
 
 This step determines how data is transferred from the source to the destination.
 
-* Use _Manually map fields_ as *Mapping method*
-* For simplicity, choose _Map all fields directly_ for *Source to destination filed mapping*.
+* Use _Manually map fields_ as **Mapping method**
+* For simplicity, choose _Map all fields directly_ for **Source to destination filed mapping**.
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image12.png)
-+
-Once you click on "_Map all fields directly_", all the fields will show under *Mapped fields*. Click on the checkbox for the field(s) you want to *Add formula (concatenates)*, *Modify values (mask or truncate field values)*, or *Remove selected mappings*.
-+
+
+Once you click on "_Map all fields directly_", all the fields will show under **Mapped fields**. Click on the checkbox for the field(s) you want to **Add formula (concatenates)**, **Modify values (mask or truncate field values)**, or **Remove selected mappings**.
+
 For this example, no checkbox will be ticked.
 
-* For *_Validations_*, add in a condition to ignore the record that contains no "_Billing Address_" (optional). Click *Next*.
+* For **_Validations_**, add in a condition to ignore the record that contains no "_Billing Address_" (optional). Click **Next**.
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image13.png)
 
 #### Step 4: Add filters
 
-You can specify a filter to determine which records to transfer. For this example, add a condition to filter out the records that are deleted (optional). Click *Next*.
+You can specify a filter to determine which records to transfer. For this example, add a condition to filter out the records that are deleted (optional). Click **Next**.
 
 ![A screenshot of a cell phone Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image14.png)
 
 #### Step 5. Review and create
 
-Review all the information you just entered. Modify if necessary. Click *Create flow*.
+Review all the information you just entered. Modify if necessary. Click **Create flow**.
 
 A message of successful flow creation will be displayed with the flow information once the flow is created,
 
@@ -143,7 +143,7 @@ A message of successful flow creation will be displayed with the flow informatio
 
 #### Run flow
 
-Click *Run flow* on the upper right corner.
+Click **Run flow** on the upper right corner.
 
 Upon completion of the flow run, message will be displayed to indicate a successful run.
 
@@ -157,11 +157,11 @@ Click the link to the bucket to view data. Salesforce data will be in JSON forma
 
 By default, Salesforce data is encrypted. We need to remove the encryption for NOS to access it.
 
-Click on the data file in your Amazon S3 bucket, then click the *Properties* tab.
+Click on the data file in your Amazon S3 bucket, then click the **Properties** tab.
 
 ![A screenshot of a social media post Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image17.png)
 
-Click on the _AWS-KMS_ from *Encryption* and change it from _AWS-KMS_ encryption to _None_. Click *Save*.
+Click on the _AWS-KMS_ from **Encryption** and change it from _AWS-KMS_ encryption to _None_. Click **Save**.
 
 ![A screenshot of a social media post Description automatically generate](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image18.png)
 
@@ -216,7 +216,7 @@ The foreign table only contains two columns: Location and Payload. Location is t
 
 Sample output from "SELECT * FROM salesforce;".
 
-![A picture containing monitor Description automatically generated)
+![A picture containing monitor Description automatically generated](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image19.png)
 
 Sample output form "SELECT payload.* FROM salesforce;".
 
@@ -679,18 +679,15 @@ Browse to the Salesforce page, new lead Tom Johnson has been added.
 Once you are done with the Salesforce data, to avoid incurring charges to your AWS account (i.e., [AppFlow](https://aws.amazon.com/appflow/pricing/), Amazon [S3](https://aws.amazon.com/s3/pricing), [Vantage](https://www.teradata.com/Cloud/AWS/Do-it-Yourself/Pricing) and [VM](https://aws.amazon.com/ec2/pricing/)) for the resources used, follow these steps:
 
 1. AppFlow:
-+
-* Delete the "Connections" you created for the flow
-* Delete the flows
+  * Delete the "Connections" you created for the flow
+  * Delete the flows
 
 2. Amazon S3 bucket and file:
-+
-* Go to the Amazon S3 buckets where the Vantage data file is stored, and delete the file(s)
-* If there are no need to keep the buckets, delete the buckets
+  * Go to the Amazon S3 buckets where the Vantage data file is stored, and delete the file(s)
+  * If there are no need to keep the buckets, delete the buckets
 
 3. Teradata Vantage Instance
-+
-* Stop/Terminate the instance if no longer needed
+  * Stop/Terminate the instance if no longer needed
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 

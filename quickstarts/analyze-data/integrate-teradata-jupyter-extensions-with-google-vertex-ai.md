@@ -42,15 +42,15 @@ These two integration methods are described below.
 When we create a new notebook instance, we can specify a startup script. This script runs only once after the instance is created. Here are the steps:
 
 1. Download Teradata Jupyter extensions package
-+
+
 Go to [Vantage Modules for Jupyter](https://downloads.teradata.com/download/tools/vantage-modules-for-jupyter) page to download the Teradata Jupyter extensions package bundle Linux version.
 
 2. Upload the package to a Google Cloud storage bucket
 
 3. Write a startup script and upload it to cloud storage bucket
-+
+
 Below is a sample script. It fetches Teradata Jupyter extension package from cloud storage bucket and installs Teradata SQL kernel and extensions.
-+
+
 ``` bash , role="content-editable"
 #! /bin/bash
 
@@ -91,17 +91,17 @@ pip install teradataml
 Another option is to provide a custom container when creating a notebook.
 
 1. Download Teradata Jupyter extensions package
-+
+
 Go to [Vantage Modules for Jupyter](https://downloads.teradata.com/download/tools/vantage-modules-for-jupyter) page to download the Teradata Jupyter extensions package bundle Linux version.
 
 2. Copy this package to your work directory and unzip it
 
 3. Build custom Docker image
-+
+
 The custom container must expose a service on port 8080. It is recommended to create a container derived from a Google Deep Learning Containers image, because those images are already configured to be compatible with user-managed notebooks.
-+
+
 Below is a sample Dockerfile you can use to build a Docker image with Teradata SQL kernel and extensions installed:
-+
+
 ``` bash
 # Use one of the deep learning images as base image
 # if you need both Python and R, use one of the R images
@@ -150,20 +150,20 @@ RUN Rscript -e "install.packages('tdplyr',repos=c('https://r-repo.teradata.com',
 ```
 
 4. In your work directory (where you unzipped Teradata Jupyter extensions package), run `docker build` to build the image:
-+
+
 ``` bash , id="jupyterlab_ext_on_vertex_first_run", role="content-editable emits-gtm-events
 docker build -f Dockerfile imagename:imagetag .
 ```
 
 5. Push the docker image to Google container registry or artifact registry
-+
+
 Please refer to the following documentations to push docker image to registry:
-+
+
 * [Container Registry: Pushing and pulling images](https://cloud.google.com/container-registry/docs/pushing-and-pulling)
 * [Artifact Registry: Pushing and pulling images](https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling?hl=en)
 
 6. Create a new notebook
-+
+
 In `Environment` section, set `custom container` field to the location of your newly created custom container:
 ![Open notebook](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-google-vertex-ai/vertex.custom.container.png)
 

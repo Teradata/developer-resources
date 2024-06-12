@@ -28,7 +28,7 @@ This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantag
 ## Install dbt
 
 1. Clone the tutorial repository and cd into the project directory:
-```
+``` bash
 git clone https://github.com/Teradata/jaffle_shop-dev.git jaffle_shop
 cd jaffle_shop
 ```
@@ -38,7 +38,7 @@ cd jaffle_shop
 
 
 3. Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
-```
+```bash
 pip install dbt-teradata
 ```
 
@@ -53,7 +53,7 @@ The following dbt profile points to a database called `jaffle_shop`.
 If the database doesn't exist on your Teradata Vantage instance, it will be created. You can also change `schema` value to point to an existing database in your instance.
 :::
 
-```
+```bash
 jaffle_shop:
   outputs:
     dev:
@@ -73,7 +73,7 @@ jaffle_shop:
 
 Now, that we have the profile file in place, we can validate the setup:
 
-```
+```bash
 dbt debug
 ```
 
@@ -97,7 +97,7 @@ dbt takes these raw data table and builds the following dimensional model, which
 
 In real life, we will be getting raw data from platforms like Segment, Stitch, Fivetran or another ETL tool. In our case, we will use dbt's `seed` functionality to create tables from csv files. The csv files are located in `./data` directory. Each csv file will produce one table. dbt will inspect the files and do type inference to decide what data types to use for columns.
 
-```
+```bash
 dbt seed
 ```
 
@@ -106,7 +106,7 @@ You should now see 3 tables in your `jaffle_shop` database: `raw_customers`, `ra
 ### Create the dimensional model
 
 Now that we have the raw tables, we can instruct dbt to create the dimensional model:
-```
+```bash
 dbt run
 ```
 
@@ -117,7 +117,7 @@ In the second step, dbt created `dim_customers` and `fct_orders` tables. These a
 
 dbt applied multiple transformations to our data. How can we ensure that the data in the dimensional model is correct? dbt allows us to define and execute tests against the data. The tests are defined in `./marts/core/schema.yml`. The file describes each column in all relationships. Each column can have multiple tests configured under `tests` key. For example, we expect that `fct_orders.order_id` column will contain unique, non-null values. To validate that the data in the produced tables satisfies the test conditions run:
 
-```
+```bash
 dbt test
 ```
 
@@ -125,7 +125,7 @@ dbt test
 
 Our model consists of just a few tables. Imagine a scenario where where we have many more sources of data and a much more complex dimensional model. We could also have an intermediate zone between the raw data and the dimensional model that follows the Data Vault 2.0 principles. Would it not be useful, if we had the inputs, transformations and outputs documented somehow? dbt allows us to generate documentation from its configuration files:
 
-```
+```bash
 dbt docs generate
 ```
 
@@ -133,7 +133,7 @@ This will produce html files in `./target` directory.
 
 You can start your own server to browse the documentation. The following command will start a server and open up a browser tab with the docs' landing page:
 
-```
+```bash
 dbt docs serve
 ```
 

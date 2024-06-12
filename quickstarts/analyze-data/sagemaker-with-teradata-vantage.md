@@ -49,13 +49,13 @@ Amazon SageMaker trains data from an Amazon S3 bucket. Following are the steps t
 ![Start new file](../cloud-guides/images/sagemaker-with-teradata-vantage/start.new.file.png)
 
 4. Install Teradata Python library:
-+
+
 ``` python
 !pip install teradataml
 ```
 
 5. In a new cell and import additional libraries:
-+
+
 ``` python
 import teradataml as tdml
 from teradataml import create_context, get_context, remove_context
@@ -65,27 +65,27 @@ import boto3, os
 ```
 
 6. In a new cell, connect to Teradata Vantage. Replace `<hostname>`, `<database user name>`, `<database password>` to match your Vantage environment:
-+
+
 ``` python
 create_context(host = '<hostname>', username = '<database user name>', password = '<database password>')
 ```
 
 7. Retrieve data rom the table where the training dataset resides using TeradataML DataFrame API:
-+
+
 ``` python
 train_data = tdml.DataFrame('table_with_training_data')
 trainDF = train_data.to_pandas()
 ```
 
 8. Write data to a local file:
-+
+
 ``` python
 trainFileName = 'train.csv'
 trainDF.to_csv(trainFileName, header=None, index=False)
 ```
 
 9. Upload the file to Amazon S3:
-+
+
 ``` python , id="sagemaker_first_usage", role="content-editable emits-gtm-events
 bucket = 'sagedemo'
 prefix = 'sagemaker/train'
@@ -109,7 +109,7 @@ boto3.Session().resource('s3').Bucket(bucket).Object(os.path.join(prefix, localF
 ![[Resource configuration](../cloud-guides/images/sagemaker-with-teradata-vantage/resource.configuration.png)
 
 5. Fill in following hyperparameters and leave everything else as default:
-+
+
 ```
 num_round=100
 silent=0

@@ -29,23 +29,23 @@ This how-to demonstrates how to run Vantage Express in Microsoft Azure. Vantage 
 
 * Setup the default region to the closest region to you (to list locations run `az account list-locations -o table`):
 
-```
+```bash
 az config set defaults.location=<location>
 ```
 
 * Create a new resource group called `tdve-resource-group` and add it to defaults:
-````
+````bash
 az group create -n tdve-resource-group
 az config set defaults.group=tdve-resource-group
 ````
 
 * To create a VM you will need an ssh key pair. If you don't have it already, create one:
-````
+````bash
 az sshkey create --name vantage-ssh-key
 ````
 
 * Restrict access to the private key. Replace `<path_to_private_key_file>` with the private key path returned by the previous command:
-````
+````bash
 chmod 600 <path_to_private_key_file>
 ````
 
@@ -54,23 +54,23 @@ chmod 600 <path_to_private_key_file>
 <Tabs />
 
 * ssh to your VM. Replace `<path_to_private_key_file>` and `<vm_ip>` with values that match your environment:
-```
+```bash
 ssh -i <path_to_private_key_file> azureuser@<vm_ip>
 ```
 
 * Once in the VM, switch to `root` user:
-```
+```bash
 sudo -i
 ```
 
 * Prepare the download directory for Vantage Express:
-```
+```bash
 mkdir /opt/downloads
 cd /opt/downloads
 ```
 
 * Mount the data disk:
-```
+```bash
 parted /dev/sdc --script mklabel gpt mkpart xfspart xfs 0% 100%
 mkfs.xfs /dev/sdc1
 partprobe /dev/sdc1
@@ -82,27 +82,27 @@ echo "UUID=$DISK_UUID  /opt/downloads   xfs   defaults,nofail   1   2" >> /etc/f
 
 * If you would like to connect to Vantage Express from the Internet, you will need to open up firewall holes to your VM. You should also change the default password to `dbc` user:
 * To change the password for `dbc` user go to your VM and start bteq:
-```
+```bash
 bteq
 ```
 
 * Login to your database using `dbc` as username and password:
-```
+```bash
 .logon localhost/dbc
 ```
 
 * Change the password for `dbc` user:
-```
+```bash
 MODIFY USER dbc AS PASSWORD = new_password;
 ```
 
 * You can now open up port 1025 to the internet using gcloud command:
-```
+```bash
 az vm open-port --name teradata-vantage-express --port 1025
 ```
 
 To stop incurring charges, delete all the resources associated with the resource group:
-```
+```bash
 az group delete --no-wait -n tdve-resource-group
 ```
 

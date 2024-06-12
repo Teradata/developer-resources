@@ -58,8 +58,8 @@ In this section we will cover in detail each of the steps below:
 
 ![Create lifecycle configuration](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-config-2.PNG)
 
-** On create script: 
-+
+    * On create script: 
+
 ``` bash , id="sagemaker_first_config", role="content-editable emits-gtm-events"
 #!/bin/bash
  
@@ -89,8 +89,8 @@ pip install --quiet ipykernel
 EOF
 ```
 
-** On start script (In this script substitute name of your bucket and confirm version of Jupyter modules)
-+
+  * On start script (In this script substitute name of your bucket and confirm version of Jupyter modules)
+
 ``` bash , role="content-editable emits-gtm-events"
 #!/bin/bash
  
@@ -176,27 +176,20 @@ print("My Public IP is:", my_public_ip)
 ## Jupyter Notebook Demos for VantageCloud Lake
 
 ### Configurations
-* The file [vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars.json) should be edited to match the configuration of your VantageCloud Lake environment +
+* The file [vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars.json) should be edited to match the configuration of your VantageCloud Lake environment 
 
 ![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-vars.PNG)
 
 * Especifically the following values should be added 
 
-+
-[cols="1,1"]
-|====
-| *Variable* | *Value*
 
-| *"host"* 
-| Public IP value from your VantageCloud Lake environment
+| *Variable* | *Value*|
+|------------|--------|
+|*"host"*|Public IP value from your VantageCloud Lake environment|
+|*"UES_URI"* |Open Analytics from your VantageCloud Lake environment|
+|*"dbc"*|The master password of your VantageCloud Lake environment|
 
-| *"UES_URI"* 
-| Open Analytics from your VantageCloud Lake environment
-| *"dbc"*
-| The master password of your VantageCloud Lake environment
-|====
 
-+
 :::info
 Remember to change all passwords in the vars.json file.
 :::
