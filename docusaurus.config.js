@@ -7,7 +7,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
-
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
 
@@ -55,7 +54,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja',],
+    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
@@ -107,7 +106,10 @@ const config = {
           editUrl: `https://github.com/teradata/${projectName}/tree/main`,
         },
         theme: {
-          customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
+          customCss: [
+            './node_modules/@covalent/tokens/index.css',
+            './src/css/custom.css',
+          ],
         },
         gtag: {
           trackingID: 'G-RDK4Y0RE7S',
@@ -237,6 +239,10 @@ const config = {
           {
             title: 'How we help',
             items: [
+              {
+                label: 'Trusted AI',
+                href: 'https://www.teradata.com/trusted-ai',
+              },
               {
                 label: 'Roles',
                 href: 'https://www.teradata.com/how-we-help',
