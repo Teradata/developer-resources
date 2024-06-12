@@ -8,6 +8,9 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---
 
+import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx';
+import Tabs from '../_partials/tabsTPT.mdx';
+
 # Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)
 
 ## Overview
@@ -16,8 +19,6 @@ We often have a need to move large volumes of data into Vantage. Teradata offers
 
 ## Prerequisites
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
-
 * Access to a Teradata Vantage instance.
 <ClearscapeDocsNote />
 
@@ -25,27 +26,8 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 ## Install TTU
 
-[tabs]
-====
-Windows::
-+
---
-Unzip the downloaded file and run `setup.exe`.
---
-MacOS::
-+
---
-Unzip the downloaded file and run `TeradataToolsAndUtilitiesXX.XX.XX.pkg`.
---
-Linux::
-+
---
-Unzip the downloaded file, go to the unzipped directory and run:
-``` bash
-./setup.sh a
-```
---
-====
+<Tabs />
+
 
 ## Get Sample data
 
@@ -63,14 +45,14 @@ AS PERMANENT = 120e6, -- 120MB
 
 ## Run TPT
 
-We will now run `TPT`. `TPT` is a command-line tool that can be used to load, extract and update data in Teradata Vantage. These various functions are implemented in so called `operators`. For example, loading data into Vantage is handled by the `Load` operator. The `Load` operator is very efficient in uploading large amounts of data into Vantage. The `Load` operator, in order to be fast, has several restrictions in place. It can only populate empty tables. Inserts to already populated tables are not supported. It doesn't support tables with secondary indices. Also, it won't insert duplicate records, even if a table is a `MULTISET` table. For the full list of restrictions check out [Teradata® TPT Reference - Load Operator - Restrictions and Limitations](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Reference/February-2022/Load-Operator/Usage-Notes/Normalized-Tables/Restrictions-and-Limitations].
+We will now run `TPT`. `TPT` is a command-line tool that can be used to load, extract and update data in Teradata Vantage. These various functions are implemented in so called `operators`. For example, loading data into Vantage is handled by the `Load` operator. The `Load` operator is very efficient in uploading large amounts of data into Vantage. The `Load` operator, in order to be fast, has several restrictions in place. It can only populate empty tables. Inserts to already populated tables are not supported. It doesn't support tables with secondary indices. Also, it won't insert duplicate records, even if a table is a `MULTISET` table. For the full list of restrictions check out [Teradata® TPT Reference - Load Operator - Restrictions and Limitations](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Reference/February-2022/Load-Operator/Usage-Notes/Normalized-Tables/Restrictions-and-Limitations).
 
 TPT has its own scripting language. The language allows you to prepare the database with arbitrary SQL commands, declare the input source and define how the data should be inserted into Vantage.
 
 To load the csv data to Vantage, we will define and run a job. The job will prepare the database. It will remove old log and error tables and create the target table. It will then read the file and insert the data into the database.
 
-. Create a job variable file that will tell TPT how to connect to our Vantage database. Create file `jobvars.txt` and insert the following content. Replace `host` with the host name of your database. For example, if you are using a local Vantage Express instance, use `127.0.0.1`. `username` with the database user name, and `password` with the database password. Note that the preparation step (DDL) and the load step have their own configuration values and that the config values need to be entered twice to configure both the DDL and the load step.
-+
+* Create a job variable file that will tell TPT how to connect to our Vantage database. Create file `jobvars.txt` and insert the following content. Replace `host` with the host name of your database. For example, if you are using a local Vantage Express instance, use `127.0.0.1`. `username` with the database user name, and `password` with the database password. Note that the preparation step (DDL) and the load step have their own configuration values and that the config values need to be entered twice to configure both the DDL and the load step.
+
 ``` bash , id="tpt_first_config", role="emits-gtm-events"
 TargetTdpId           = 'host'
 TargetUserName        = 'username'
@@ -91,8 +73,8 @@ LoadErrorTable2 = 'irs.irs_returns_uv'
 LoadTargetTable = 'irs.irs_returns'
 ```
 
-. Create a file with the following content and save it as `load.txt`. See comments within the job file to understand its structure.
-+
+* Create a file with the following content and save it as `load.txt`. See comments within the job file to understand its structure.
+
 ``` bash
 DEFINE JOB file_load
 DESCRIPTION 'Load a Teradata table from a file'
@@ -174,14 +156,14 @@ DESCRIPTION 'Load a Teradata table from a file'
 );
 ```
 
-. Run the job:
-+
+* Run the job:
+
 ``` bash
 tbuild -f load.txt -v jobvars.txt -j file_load
 ```
-+
+
 A successful run will return logs that look like this:
-+
+
 ``` bash
 Teradata Parallel Transporter Version 17.10.00.10 64-Bit
 The global configuration file '/opt/teradata/client/17.10/tbuild/twbcfg.ini' is used.

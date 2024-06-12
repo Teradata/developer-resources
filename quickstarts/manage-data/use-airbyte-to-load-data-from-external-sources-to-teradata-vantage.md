@@ -39,7 +39,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * Install Docker Compose to run [Airbyte Open Source](https://github.com/airbytehq/airbyte) locally. Docker Compose comes with Docker Desktop. Please refer to [docker docs](https://docs.docker.com/compose/install) for more details. 
 
 * Clone the Airbyte Open Source repository and go to the airbyte directory.
-+
+
 ``` bash
 git clone --depth 1 https://github.com/airbytehq/airbyte.git
 cd airbyte
@@ -49,19 +49,19 @@ Make Sure to have Docker Desktop running before running the shell script `run-ab
 
 * Run the shell script `run-ab-platform` as
 
-+
+
 ``` bash
 ./run-ab-platform.sh
 ```
 
-+
+
 :::note
 You can run the above commands with `git bash` in Windows. Please refer to the [Airbyte Local Deployment](https://docs.airbyte.com/deploying-airbyte/local-deployment) for more details. 
 :::
 
 * Log in to the web app http://localhost:8000/ by entering the default credentials found in the `.env` file included in the repository.
 
-+
+
 ``` bash
 BASIC_AUTH_USERNAME=airbyte
 BASIC_AUTH_PASSWORD=password

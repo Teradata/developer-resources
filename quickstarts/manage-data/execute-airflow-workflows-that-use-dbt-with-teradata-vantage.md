@@ -42,7 +42,7 @@ If you are on a Mac or a Linux machine, these tools are already included. If you
 2. Check if python is installed (should be Python 3.7 or higher). Type `python` or `python3` on the command line.
 
 3. If python is not installed (you are getting `command not found` message) run the commands below to install it. The commands may require you to confirm the installation by typing `y` and enter.
-+
+
 ``` bash , id="install_python", role="content-editable emits-gtm-events"
 sudo yum install python3
 # create a virtual environment for the project
@@ -53,7 +53,7 @@ sudo pip3 install virtualenv
 ### Create an Airflow environment
 
 1. Create the Airflow directory structure (from the ec2-user home directory /home/ec2-user)
-+
+
 ``` bash , id="install_airflow", role="content-editable emits-gtm-events"
 mkdir airflow
 cd airflow
@@ -72,7 +72,7 @@ The steps must be executed in `airflow` directory.
 :::
 
 1. Uninstall podman (RHEL containerization tool)
-+
+
 ``` bash , id="uninstall_podman", role="content-editable emits-gtm-events"
 sudo yum remove docker \
 docker-client \
@@ -87,13 +87,13 @@ runc
 ```
 
 2. Install yum utilities
-+
+
 ``` bash , id="install_yum", role="content-editable emits-gtm-events"
 sudo yum install -y yum-utils
 ```
 
 3. Add docker to yum repository.
-+
+
 ``` bash , id="add_docker_to_yum", role="content-editable emits-gtm-events"
 sudo yum-config-manager \
 --add-repo \
@@ -101,20 +101,20 @@ https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 4. Install docker.
-+
+
 ``` bash , id="install_docker", role="content-editable emits-gtm-events"
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
 5. Start docker as a service. The first command runs the docker service automatically when the system starts up next time. The second command starts Docker now.
-+
+
 ``` bash , id="start_docker", role="content-editable emits-gtm-events"
 sudo systemctl enable docker
 sudo systemctl start docker
 ```
 
 6. Check if Docker is installed correctly. This command should return an empty list of containers (since we have not started any container yet):
-+
+
 ``` bash , id="check_docker", role="content-editable emits-gtm-events"
 sudo docker ps
 ```
@@ -122,18 +122,20 @@ sudo docker ps
 ### Install `docker-compose` and docker environment configuration files
 
 1. Upload [Dockerfile](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/docker-compose.yaml) and [Dockerfile](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/Dockerfile) files to the VM and save them in `airflow` directory.
-:::tip What `docker-compose.yaml` and `Dockerfile` do]
+
+:::tip 
+What `docker-compose.yaml` and `Dockerfile` do
 `docker-compose.yaml` and `Dockerfile` files are necessary to build the environment during the installation. The `docker-compose.yaml` file downloads and installs the Airflow docker container. The container includes the web ui, a Postgres database for metadata, the scheduler, 3 workers (so 3 tasks can be run in parallel), the trigger and the nginx web server to show the docs produced by `dbt`. In addition host directories are mounted on containers and various other install processes are performed. `Dockerfile` will additionally install needed packages in each container.
 
 If you would like to learn more what `docker-compose.yaml` and `Dockerfile` files do, examine these files. There are comments which clarify what is installed and why.
 :::
 
 2. Install docker-compose (necessary to run the yaml file).
-+
+
 :::note
 The instructions are based on version 1.29.2. Check out https://github.com/docker/compose/releases site for the latest release and update the command below as needed.
 :::
-+
+
 ``` bash , id="install_docker_compose", role="content-editable emits-gtm-events"
 sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -141,28 +143,29 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
 3. Test your docker-compose installation. The command should return the docker-compose version, for example `docker-compose version 1.29.2, build 5becea4c`:
-+
+
 ``` bash , id="check_docker_compose", role="content-editable emits-gtm-events"
 docker-compose --version
 ```
 
 ### Install a test dbt project
 
-:::note These steps set up a sample dbt project. `dbt` tool itself will be installed on the containers later by `docker-compose`.
+:::note 
+These steps set up a sample dbt project. `dbt` tool itself will be installed on the containers later by `docker-compose`.
 :::
 
 1. Install git:
-+
+
 ``` bash , id="install_git", role="content-editable emits-gtm-events"
 sudo yum install git
 ```
 
 2. Get the sample jaffle shop dbt project:
-+
+
 :::note
 The dbt directories will be created under the home directory (not under `airflow`). The home directory in our example is `/home/ec2-user`.
 :::
-+
+
 ``` bash , id="download_sample_dbt_project", role="content-editable emits-gtm-events"
 # move to home dir
 cd
@@ -177,14 +180,14 @@ chmod o+w target/index.html
 ```
 
 3. Create the `airflowtest` and `jaffle_shop` users/databases on your Teradata database by using your preferred database tool (Teradata Studio Express, `bteq` or similar). Log into the database as `dbc`, then execute the commands (change the passwords if needed):
-+
+
 ``` sql , id="create_databases", role="content-editable emits-gtm-events"
 CREATE USER "airflowtest" FROM "dbc" AS PERM=5000000000 PASSWORD="abcd";
 CREATE USER "jaffle_shop" FROM "dbc" AS PERM=5000000000 PASSWORD="abcd";
 ```
 
 4. Create the dbt configuration directory:
-+
+
 ``` bash , id="create_dbt_config_dir", role="content-editable emits-gtm-events"
 cd
 mkdir .dbt
@@ -197,29 +200,29 @@ mkdir .dbt
 ### Create the Airflow environment in Docker
 
 1. Run the docker environment creation script in the `airflow` directory where `Dockerfile` and `docker-compose.yaml`:
-+
+
 ``` bash , id="run_docker_compose", role="content-editable emits-gtm-events"
 cd ~/airflow
 sudo docker-compose up --build
 ```
-+
+
 This can take 5-10 minutes, when the installation is complete you should see on the screen a message similar to this:
-+
+
 ``` bash , id="run_docker_compose_response", role="content-editable emits-gtm-events"
 airflow-webserver_1  | 127.0.0.1 - - [13/Sep/2022:00:20:48 +0000] "GET /health HTTP/1.1" 200 187 "-" "curl/7.74.0"
 ```
-+
+
 This means the Airflow webserver is ready to accept calls.
 
 2. Now Airflow should be up. The terminal session that we were using during the installation will be used to display log messages, so it is recommended
 to open another terminal session for subsequent steps. To check the Airflow installation type:
-+
+
 ``` bash , id="check_airflow_in_docker", role="content-editable emits-gtm-events"
 sudo docker ps
 ```
-+
+
 The result should be something like:
-+
+
 ``` bash , id="check_airflow_in_docker_output", role="content-editable emits-gtm-events"
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS                    PORTS                                                 NAMES
 60d50d9f43f5   apache/airflow:2.2.4   "/usr/bin/dumb-init …"   18 minutes ago   Up 18 minutes (healthy)   8080/tcp                                              airflow_airflow-scheduler_1
@@ -235,11 +238,11 @@ e2b46ec98274   apache/airflow:2.2.4   "/usr/bin/dumb-init …"   18 minutes ago 
 ```
 
 3. OPTIONAL: If you want to delete the docker installation (for example to update the docker-compose.yaml and the Dockerfile files and recreate a different environment), the command is (from the airflow directory where these files are located):
-+
+
 ``` bash , id="docker_compose_down", role="content-editable emits-gtm-events"
 sudo docker-compose down --volumes --rmi all
 ```
-+
+
 Once the stack is down, update the configuration files and restart by running the command in step 1.
 
 
@@ -253,7 +256,7 @@ Once the stack is down, update the configuration files and restart by running th
 2. Examine the files:
 * `airflow_dbt_integration.py` - a simple Teradata sql example that creates a few tables and runs queries.
 * `db_test_example_dag.py` - runs a dbt example [i.e. integration of dbt and airflow with a Teradata database). In this example a fictitious jaffle_shop data model is created, loaded and the documentation for this project is produced (you can view it by pointing your browser to `http://<VM_IP_ADDRESS>:4000/`)
-+
+
 :::note
 [Adjust `db_test_example_dag.py`]
 `db_test_example_dag.py` needs to be updated so that the Teradata database IP address points to your database.

@@ -16,7 +16,7 @@ This quickstart details the process for running the [Teradata Jupyter Notebook D
 ## Prerequisites
 * Access to a Microsoft Azure account
 * Access to a VantageCloud Lake environment
-+
+
 import VantageCloudLakeRequest from './_partials/vantagecloud-lake-request.md';
 
 <VantageCloudLakeRequest />
@@ -53,14 +53,14 @@ For purposes of the VantageCloud Lake demo redundancy is not needed
 ![Create Azure web app Basics](./images/vantagecloud-lake-demo-jupyter-azure/azure-app-service-2.PNG)
 
 * On the "Docker" tab:
-** Select "Single Container" from the dropdown
-** In the "Image Source" dropdown select "Docker Hub"
-** In the "Access Type" dropdown select "Public"
-** In "Image and tag" type `teradata/jupyterlab-extensions:latest`
-:::tip
-A startup command is not needed for this App Service
-** Select the "Review + Create" tab to continue
-:::
+    * Select "Single Container" from the dropdown
+    * In the "Image Source" dropdown select "Docker Hub"
+    * In the "Access Type" dropdown select "Public"
+    * In "Image and tag" type `teradata/jupyterlab-extensions:latest`
+    :::tip
+    A startup command is not needed for this App Service
+       * Select the "Review + Create" tab to continue
+    :::
 
 ![Create Azure web app Docker](./images/vantagecloud-lake-demo-jupyter-azure/azure-app-service-3.PNG)
 
@@ -79,19 +79,13 @@ A startup command is not needed for this App Service
 
 * Add the following Application Settings
 
-+
-[cols="1,1"]
-|====
-| *Application Setting* | *Value*
-| *accept_license* 
-| Y
-| *WEBSITES_PORT* 
-| 8888
-| *JUPYTER_TOKEN*
-| Define the Jupyter Lab access token that you would like to use.
-|====
 
-+
+| **Application Setting** | **Value** |
+|--------------|-----------|
+| *"accept_license"*     | Y |
+| *"WEBSITES_PORT"*  | 8888 |
+| *"JUPYTER_TOKEN"*      | Define the Jupyter Lab access token that you would like to use. |
+
 :::info
 If you don't include the "JUPYTER_TOKEN" configuration, the container will generate a new token and log it to the console. You will need to retrieve it from the application logs. If you include the "JUPYTER_TOKEN" configuration key but leave the value blank, the system will set the token as an empty string, resulting in an unprotected Jupyter Lab environment without any token security.
 :::
@@ -130,7 +124,7 @@ If you don't include the "JUPYTER_TOKEN" configuration, the container will gener
 ### Find the IP of the Jupyter Lab extensions Azure Web App
 * In JupyterLab open a notebook with Teradata Python kernel and run the following command to find your notebook instance's IP address.
 
-+
+
 ``` python , id="lakedemos_azure_first_config", role="emits-gtm-events, content-editable"
 import requests
 def get_public_ip():
@@ -160,27 +154,19 @@ A lake environment supports multiple address whitelisting
 ## Jupyter Notebook Demos for VantageCloud Lake
 
 ### Configurations
-* [vars.json](https://github.com/Teradata/lake-demos/blob/main/vars.json) should be edited to match the configuration of your VantageCloud Lake environment +
+* [vars.json](https://github.com/Teradata/lake-demos/blob/main/vars.json) should be edited to match the configuration of your VantageCloud Lake environment 
 
 ![Initiate JupyterLab](./images/vantagecloud-lake-demo-jupyter-sagemaker/sagemaker-vars.PNG)
 
 * Especifically the following values should be added 
 
-+
-[cols="1,1"]
-|====
-| *Variable* | *Value*
 
-| *"host"* 
-| Public IP value from your VantageCloud Lake environment
+| **Variable** | **Value** |
+|--------------|-----------|
+| *"host"*     | Public IP value from your VantageCloud Lake environment |
+| *"UES_URI"*  | Open Analytics from your VantageCloud Lake environment |
+| *"dbc"*      | The master password of your VantageCloud Lake environment. |
 
-| *"UES_URI"* 
-| Open Analytics from your VantageCloud Lake environment
-| *"dbc"*
-| The master password of your VantageCloud Lake environment
-|====
-
-+
 * You'll see that in the sample vars.json, the passwords of all users are defaulted to "password", this is just for illustration purposes, you should change all of these password fields to strong passwords, secure them as necessary, and follow other password management best practices.
 
 :::info

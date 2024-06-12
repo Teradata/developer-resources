@@ -26,7 +26,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * Azure subscription or create [free account](https://azure.microsoft.com/free)
 * [Azure ML Studio workspace](https://docs.microsoft.com/en-us/azure/machine-learning/studio/create-workspace)
 * (Optional) Download [AdventureWorks DW 2016 database](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017) (i.e. _'Training the Model'_ section)
-** Restore and copy _'vTargetMail'_ table from SQL Server to Teradata Vantage
+  * Restore and copy _'vTargetMail'_ table from SQL Server to Teradata Vantage
 
 
 ### Procedure
@@ -56,23 +56,23 @@ Logon to [Azure portal](https://portal.azure.com), go to to your *ML Studio work
 ![](../cloud-guides/images/use-teradata-vantage-with-azure-machine-learning-studio/image7.png)
 
 3. In your jupyter notebook instance, install [Teradata Vantage Python package for Advanced Analytics](https://pypi.org/project/teradataml):
-+
+
 ``` python
 pip install teradataml
 ```
-+
+
 :::note
 There is no validation between Microsoft Azure ML Studio and Teradata Vantage Python package.
 :::
 
 4. Install [Microsoft Azure Storage Blob Client Library for Python](https://pypi.org/project/azure-storage-blob):
-+
+
 ``` python
 !pip install azure-storage-blob
 ```
 
 5. Import the following libraries:
-+
+
 ``` python
 import teradataml as tdml
 from teradataml import create_context, get_context, remove_context
@@ -82,31 +82,31 @@ from azure.storage.blob import (BlockBlobService)
 ```
 
 6. Connect to Teradata using command:
-+
+
 ``` python
 create_context(host = '<hostname>', username = '<database user name>', password = '<password>')
 ```
 
 7. Retrieve Data using Teradata Python DataFrame module:
-+
+
 ``` python
 train_data = DataFrame.from_table("<table_name>")
 ```
 
 8. Convert Teradata DataFrame to Panda DataFrame:
-+
+
 ``` python
 trainDF = train_data.to_pandas()
 ```
 
 9. Convert data to CSV:
-+
+
 ``` python
 trainDF = trainDF.to_csv(head=True,index=False)
 ```
 
 10. Assign variables for Azue Blob Storage account name, key and container name:
-+
+
 ``` python
 accountName="<account_name>"
 accountKey="<account_key>"
@@ -114,7 +114,7 @@ containerName="mldata"
 ```
 
 11. Upload file to Azure Blob Storage:
-+
+
 ``` python , id="azure_ml_studio_first_config", role="content-editable emits-gtm-events
 blobService = BlockBlobService(account_name=accountName, account_key=accountKey)
 blobService.create_blob_from_text(containerNAme, 'vTargetMail.csv', trainDF)
@@ -131,11 +131,11 @@ We will use the existing [Analyze data with Azure Machine Learning](https://docs
 
 The data is on Azure Blob Storage file called `vTargetMail.csv` which we copied in the section above.
 
-1.. Sign into [Azure Machine Learning studio](https://studio.azureml.net) and click on *Experiments*.
-2.. Click *+NEW* on the bottom left of the screen and select *Blank Experiment*.
-3.. Enter a name for your experiment: Targeted Marketing.
-4.. Drag *Import data* module under *Data Input and output* from the modules pane into the canvas.
-5.. Specify the details of your Azure Blob Storage (account name, key and container name) in the Properties pane.
+1. Sign into [Azure Machine Learning studio](https://studio.azureml.net) and click on **Experiments**.
+2. Click **+NEW** on the bottom left of the screen and select **Blank Experiment**.
+3. Enter a name for your experiment: Targeted Marketing.
+4. Drag **Import data** module under **Data Input and output** from the modules pane into the canvas.
+5. Specify the details of your Azure Blob Storage (account name, key and container name) in the Properties pane.
 
 Run the experiment by clicking *Run* under the experiment canvas.
 
@@ -160,12 +160,12 @@ To clean the data, drop some columns that are not relevant for the model. To do 
 
 We will split the data 80-20: 80% to train a machine learning model and 20% to test the model. We will make use of the "Two-Class" algorithms for this binary classification problem.
 
-1. Drag *SplitData* module into the canvas and connect with 'Select Columns in DataSet'.
+1. Drag **SplitData** module into the canvas and connect with 'Select Columns in DataSet'.
 2. In the properties pane, enter 0.8 for Fraction of rows in the first output dataset.
 ![](../cloud-guides/images/use-teradata-vantage-with-azure-machine-learning-studio/image22.png)
 
-3. Search and drag *Two-Class Boosted Decision Tree* module into the canvas.
-4. Search and drag *Train Model* module into the canvas and specify inputs by connecting it to the *Two-Class Boosted Decision Tree* (ML algorithm) and *Split* *Data* (data to train the algorithm on) modules.
+3. Search and drag **Two-Class Boosted Decision Tree** module into the canvas.
+4. Search and drag **Train Model** module into the canvas and specify inputs by connecting it to the **Two-Class Boosted Decision Tree** (ML algorithm) and **Split** **Data** (data to train the algorithm on) modules.
 ![](../cloud-guides/images/use-teradata-vantage-with-azure-machine-learning-studio/image23.png)
 
 5. Then, click *Launch column selector* in the Properties pane. Select the *BikeBuyer* column as the column to predict.
@@ -175,15 +175,15 @@ We will split the data 80-20: 80% to train a machine learning model and 20% to t
 
 Now, we will test how the model performs on test data. We will compare the algorithm of our choice with a different algorithm to see which performs better.
 
-1. Drag *Score Model* module into the canvas and connect it to *Train Model* and *Split Data* modules.
+1. Drag **Score Model** module into the canvas and connect it to **Train Model** and **Split Data** modules.
 +
 
 ![](../cloud-guides/images/use-teradata-vantage-with-azure-machine-learning-studio/image25.png)
 
-2. Search and drag *Two-Class Bayes Point Machine* into the experiment canvas. We will compare how this algorithm performs in comparison to the Two-Class Boosted Decision Tree.
+2. Search and drag **Two-Class Bayes Point Machine** into the experiment canvas. We will compare how this algorithm performs in comparison to the Two-Class Boosted Decision Tree.
 3. Copy and Paste the modules Train Model and Score Model in the canvas.
-4. Search and drag *Evaluate Model* module into the canvas to compare the two algorithms.
-5. *Run* the experiment.
+4. Search and drag **Evaluate Model** module into the canvas to compare the two algorithms.
+5. **Run** the experiment.
 ![](../cloud-guides/images/use-teradata-vantage-with-azure-machine-learning-studio/image26.png)
 6. Click the output port at the bottom of the Evaluate Model module and click Visualize.
 ![](../cloud-guides/images/use-teradata-vantage-with-azure-machine-learning-studio/image27.png)

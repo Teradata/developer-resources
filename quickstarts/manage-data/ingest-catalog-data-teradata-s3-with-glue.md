@@ -81,8 +81,8 @@ In this section, we will cover in detail each of the steps below:
 * In AWS Secrets Manager, select `Create new secret`.
 ![create secret](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-1.PNG)
 * The secret should be an `Other type of secret` with the following keys and values according to your Teradata Vantage Instance:
-** USER
-** PASSWORD
+    * USER
+    * PASSWORD
 :::tip
 In the case of ClearScape Analytics Experience, the user is always "demo_user," and the password is the one you defined when creating your ClearScape Analytics Experience environment.
 :::
@@ -101,12 +101,12 @@ The role you create should have access to the typical permissions of a Glue Serv
 * In select trusted entity, select `AWS service` and pick `Glue` from the dropdown.
 ![role type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-2.PNG)
 * In add permissions:
-** Search for `AWSGlueServiceRole`.
-** Click the related checkbox.
-** Search for `SecretsManagerReadWrite`.
-** Click the related checkbox.
+    * Search for `AWSGlueServiceRole`.
+    * Click the related checkbox.
+    * Search for `SecretsManagerReadWrite`.
+    * Click the related checkbox.
 * In Name, review, and create:
-** Define a name for your role.
+    * Define a name for your role.
 ![name role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-3.PNG)
 * Click on `Create role`.
 * Return to Access Management, Roles, and search for the role you've just created.
@@ -160,11 +160,11 @@ In the case of ClearScape Analytics Experience, the URL follows the following st
 ### Draft a script for automated ingestion and cataloging of Teradata Vantage data into Amazon S3
 
 * Copy the following script into the editor.
-** The script requires the following modifications:
-*** Substitute the name of your S3 bucket.
-*** Substitute the name of your Glue catalog database.
-*** If you are not following the example in the guide, modify the database name and the tables to be ingested and cataloged.
-*** For cataloging purposes, only the first row of each table is ingested in the example. This query can be modified to ingest the whole table or to filter selected rows.
+    * The script requires the following modifications:
+        * Substitute the name of your S3 bucket.
+        * Substitute the name of your Glue catalog database.
+        * If you are not following the example in the guide, modify the database name and the tables to be ingested and cataloged.
+        * For cataloging purposes, only the first row of each table is ingested in the example. This query can be modified to ingest the whole table or to filter selected rows.
 
 ``` python , id="glue-script-first-run" role="emits-gtm-events"
 # Import section
@@ -242,24 +242,24 @@ job.commit()
 ![script in editor](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.PNG)
 
 * In Job details, Basic properties:
-** Select the IAM role you created for the ETL job.
-** For testing, select "2" as the Requested number of workers, this is the minimum allowed.
+    * Select the IAM role you created for the ETL job.
+    * For testing, select "2" as the Requested number of workers, this is the minimum allowed.
 ![script configurations](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.PNG)
-** In `Advanced properties`, `Connections` select your connection to Teradata Vantage. 
+    * In `Advanced properties`, `Connections` select your connection to Teradata Vantage. 
 :::tip
 The connection created must be referenced twice, once in the job configuration, once in the script itself.
 :::
 ![script configuration connection](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-5.PNG)
 * Click on `Save`.
 * Click on `Run`.
-** The ETL job takes a couple of minutes to complete, most of this time is related to starting the Spark cluster.
+    * The ETL job takes a couple of minutes to complete, most of this time is related to starting the Spark cluster.
 
 ### Checking the Results
 
 * After the job is finished:
-** Go to Data Catalog, Databases.
-** Click on the catalog database you created.
-** In this location, you will see the tables extracted and cataloged through your Glue ETL job.
+    * Go to Data Catalog, Databases.
+    * Click on the catalog database you created.
+    * In this location, you will see the tables extracted and cataloged through your Glue ETL job.
 ![result tables](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Results.PNG)
 
 * All tables ingested are also present as compressed files in S3. Rarely, these files would be queried directly. Services such as AWS Athena can be used to query the files relying on the catalog metadata.

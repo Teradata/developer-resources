@@ -1,0 +1,24 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="Windows" label="Windows" default>
+    Run in Powershell:
+    ```bash
+    python -m venv env
+    source env/Scripts/activate
+    ```
+  </TabItem>
+  <TabItem value="MacOS" label="MacOS">
+    ```bash
+    python3 -m venv env
+    source env/bin/activate
+    ```
+  </TabItem>
+  <TabItem value="Linux" label="Linux">
+    ```bash
+    python3 -m venv env
+    source env/bin/activate
+    ```
+  </TabItem>
+</Tabs>

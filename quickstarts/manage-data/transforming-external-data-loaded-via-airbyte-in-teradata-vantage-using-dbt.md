@@ -36,7 +36,7 @@ When you configure a Teradata destination in Airbyte, it will ask for a `Default
 
 ### Clone the project
 Clone the tutorial repository and change the directory to the project directory:
-+
+
 ``` bash
 git clone https://github.com/Teradata/airbyte-dbt-jaffle
 cd airbyte-dbt-jaffle
@@ -44,31 +44,31 @@ cd airbyte-dbt-jaffle
 
 ### Install dbt
 * Create a new python environment to manage dbt and its dependencies. Activate the environment:
-+
+
 ``` bash
 python3 -m venv env
 source env/bin/activate
 ```
 
-+
+
 :::note
 You can activate the virtual environment in Windows by executing the corresponding batch file `./myenv/Scripts/activate`.
 :::
 
 * Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
-+
+
 ``` bash
 pip install dbt-teradata
 ```
 
 ### Configure dbt
 * Initialize a dbt project.
-+
+
 ``` bash
 dbt init
 ```
 
-+
+
 The dbt project wizard will ask you for a project name and database management system to use in the project. In this demo, we define the project name as `dbt_airbyte_demo`. Since we are using the dbt-teradata connector, the only database management system available is Teradata.
 ![Project name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_project_name.png)
 ![Database name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_database_name.png)
@@ -76,7 +76,7 @@ The dbt project wizard will ask you for a project name and database management s
 * Configure the `profiles.yml` file located in the `$HOME/.dbt` directory. If the `profiles.yml` file is not present, you can create a new one. 
 * Adjust `server`, `username`, `password` to match your Teradata instance's `HOST`, `Username`, `Password` respectively. 
 * In this configuration, `schema` stands for the database that contains the sample data, in our case that is the default schema that we defined in Airbyte `airbyte_jaffle_shop`.
-+
+
 ``` yaml , id="dbt_first_config", role="emits-gtm-events"
 dbt_airbyte_demo:
   target: dev
@@ -92,11 +92,11 @@ dbt_airbyte_demo:
 ```
 
 * Once the `profiles.yml` file is ready, we can validate the setup. Go to the dbt project folder and run the command:
-+
+
 ``` bash
 dbt debug
 ```
-+
+
 If the debug command returned errors, you likely have an issue with the content of `profiles.yml`. If the setup is correct, you will get message `All checks passed!`
 ![dbt debug output](../elt/images/getting-started-with-airbyte-dbt/dbt_debug.png)
 
@@ -104,64 +104,14 @@ If the debug command returned errors, you likely have an issue with the content 
 
 `jaffle_shop` is a fictional restaurant that takes orders online. The data of this business consists of tables for `customers`, `orders` and `payments`that follow the entity relations diagram below:
 
-```
-# Entities
-
-[customers] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "int", border: "1", border-color: "#ffffff"}
-  `first_name  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-  `last_name  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-  `email  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-
-[orders] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "int", border: "1", border-color: "#ffffff"}
-  +`user_id  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `order_date  ` {bgcolor: "#fcece8", color: "#868686", label: "date", border: "1", border-color: "#ffffff"}
-  `status  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-
-[payments] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "int", border: "1", border-color: "#ffffff"}
-  +`order_id  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `payment_method  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-
-# Relationships
-
-customers   1--* orders
-orders      1--* payments
-```
+![](../images/dbt1.svg)
 
 The data in the source system is normalized. A dimensional model based on the same data, more suitable for analytics tools, is presented below:
 
-```
-# Entities
-
-[`dimension: customers`] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`customer_id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "int", border: "1", border-color: "#ffffff"}
-  `first_name  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-  `last_name  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-  `email  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-  `first_order  ` {bgcolor: "#fcece8", color: "#868686", label: "date", border: "1", border-color: "#ffffff"}
-  `most_recent_order  ` {bgcolor: "#fcece8", color: "#868686", label: "date", border: "1", border-color: "#ffffff"}
-  `number_of_orders  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `total_order_amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-
-[`fact: orders`] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`order_id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "int", border: "1", border-color: "#ffffff"}
-  +`customer_id  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `order_date  ` {bgcolor: "#fcece8", color: "#868686", label: "date", border: "1", border-color: "#ffffff"}
-  `status  ` {bgcolor: "#fcece8", color: "#868686", label: "varchar", border: "1", border-color: "#ffffff"}
-  `amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `credit_card_amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `coupon_amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `bank_transfer_amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-  `gift_card_amount  ` {bgcolor: "#fcece8", color: "#868686", label: "int", border: "1", border-color: "#ffffff"}
-
-# Relationships
-`dimension: customers`   1--* `fact: orders`
-```
+![](../images/dbt2.svg)
 
 ### dbt transformations
+
 :::note
 The complete dbt project encompassing the transformations detailed below is located at [Jaffle Project with Airbyte](https://github.com/Teradata/airbyte-dbt-jaffle).
 :::
@@ -172,20 +122,9 @@ The reference dbt project performs two types of transformations.
 * Next, it transforms the normalized views into a dimensional model ready for analytics.
 
 The following diagram shows the transformation steps in Teradata Vantage using dbt:
-[ditaa]
-----
-    /--------------\   JSON Transformation  /------------------\
-    | Raw JSON Data|----------------------->| Normalized Views |
-    \--------------/                        \------------------/
-                                                      |
-                                                      | Dimensional Modeling
-                                                      v
-                                               /-------------\
-                                               |  Dimension  |  
-                                               |    and      |
-                                               | Fact Tables |
-                                               \-------------/     
-----
+
+![](../images/dita.svg)
+
 
 As in all dbt projects, the folder `models` contains the data models that the project materializes as tables, or views, according to the corresponding configurations at the project, or individual model level. 
 
@@ -292,7 +231,7 @@ This tutorial demonstrated how to use dbt to transform raw JSON data loaded thro
 
 ### Further reading
 * [dbt documentation](https://docs.getdbt.com/docs)
-* [dbt-teradata plugin documentation](https://github.com/Teradata/dbt-teradata
+* [dbt-teradata plugin documentation](https://github.com/Teradata/dbt-teradata)
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 
