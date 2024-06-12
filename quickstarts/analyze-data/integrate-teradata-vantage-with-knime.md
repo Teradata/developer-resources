@@ -57,7 +57,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 This how-to demonstrats how to connect from KNIME Analytics Platform to Teradata Vantage.
 
 ## Further reading
-* xref:ROOT:ml.adoc[Train ML models in Vantage using only SQL]
+* [Train ML models in Vantage using only SQL](https://quickstarts.teradata.com/ml.html)
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 

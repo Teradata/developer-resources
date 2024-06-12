@@ -40,7 +40,7 @@ If you do not wish to pay for cloud usage, you can get a free hosted instance of
 
 * You will need a VPC with an Internet-facing subnet. If you don't have one available, here is how you can create it:
 
-```
+```bash
 # Copied from https://cloudaffaire.com/how-to-create-a-custom-vpc-using-aws-cli/
 
 # Create VPC
@@ -157,24 +157,24 @@ aws ec2 create-tags \
 ```
 
 * To create a VM you will need an ssh key pair. If you don't have it already, create one:
-```
+```bash
 aws ec2 create-key-pair --key-name vantage-key --query 'KeyMaterial' --output text > vantage-key.pem
 ```
 
 * Restrict access to the private key. Replace `<path_to_private_key_file>` with the private key path returned by the previous command:
 
-```
+```bash
 chmod 600 vantage-key.pem
 ```
 * Get the AMI id of the latest Ubuntu image in your region:
-```
+```bash
 AWS_AMI_ID=$(aws ec2 describe-images \
   --filters 'Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*amd64*' \
   --query 'Images[*].[Name,ImageId,CreationDate]' --output text \
   | sort -k3 -r | head -n1 | cut -f 2)
 ```
 * Create a Ubuntu VM with 4 CPU's and 8GB of RAM, and a 70GB disk. 
-```
+```bash
 AWS_INSTANCE_ID=$(aws ec2 run-instances \
   --image-id $AWS_AMI_ID \
   --count 1 \
@@ -187,7 +187,7 @@ AWS_INSTANCE_ID=$(aws ec2 run-instances \
   --output text)
 ```
 * ssh to your VM:
-```
+```bash
 AWS_INSTANCE_PUBLIC_IP=$(aws ec2 describe-instances \
   --query "Reservations[*].Instances[*].PublicIpAddress" \
   --output=text --instance-ids $AWS_INSTANCE_ID)
@@ -195,12 +195,12 @@ ssh -i vantage-key.pem ubuntu@$AWS_INSTANCE_PUBLIC_IP
 ```
 
 * Once in the VM, switch to `root` user:
-```
+```bash
 sudo -i
 ```
 
 * Prepare the download directory for Vantage Express:
-```
+```bash
 mkdir /opt/downloads
 cd /opt/downloads
 ```
@@ -208,22 +208,22 @@ cd /opt/downloads
 
 * If you would like to connect to Vantage Express from the Internet, you will need to open up firewall holes to your VM. You should also change the default password to `dbc` user:
 * To change the password for `dbc` user go to your VM and start bteq:
-```
+```bash
 bteq
 ```
 
 * Login to your database using `dbc` as username and password:
-```
+```bash
 .logon localhost/dbc
 ```
 
 * Change the password for `dbc` user:
-```
+```bash
 MODIFY USER dbc AS PASSWORD = new_password;
 ```
 
 * You can now open up port 1025 to the internet:
-```
+```bash
 aws ec2 authorize-security-group-ingress \
   --group-id $AWS_CUSTOM_SECURITY_GROUP_ID \
   --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 1025, "ToPort": 1025, "IpRanges": [{"CidrIp": "0.0.0.0/0", "Description": "Allow Teradata port"}]}]'
@@ -231,7 +231,7 @@ aws ec2 authorize-security-group-ingress \
 
 ## Cleanup
 To stop incurring charges, delete all the resources:
-```
+```bash
 # Delete the VM
 aws ec2 terminate-instances --instance-ids $AWS_INSTANCE_ID --output text
 

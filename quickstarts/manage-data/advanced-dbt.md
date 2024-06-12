@@ -40,35 +40,35 @@ The application of these concepts is illustrated through the ELT process of `ted
 ## Demo project setup
 
 1. Clone the tutorial repository and cd into the project directory:
-```
+```bash
 git clone https://github.com/Teradata/teddy_retailers_dbt-dev teddy_retailers
 cd teddy_retailers
 ```
 
 2. Create a new python environment to manage dbt and its dependencies. Confirm that the Python Version you are using to create the environment is within the supported versions listed above.
-```
+```bash
 python -m venv env
 ```
 
 3. Activate the python environment according to your operating system.
-```
+```bash
 source env/bin/activate
 ```
 
 for Mac, Linux, or
-```
+```bash
 env\Scripts\activate
 ```
 for Windows
 4. Install the `dbt-teradata` module. The core dbt module is included as a dependency so you don't have to install it separately:
 
-```
+```bash
 pip install dbt-teradata
 ```
 
 5. Install the project's dependencies `dbt-utils` and `teradata-utils`. This can be done through the following command:
 
-```
+```bash
 dbt deps
 ```
 
@@ -78,7 +78,7 @@ The demo project assumes that the source data is already loaded into your data w
 To achieve this objective we provide public datasets available in Google Cload Platform (GCP), and scripts to load those datasets into your mock data warehouse. + 
 
 1. Create or select a working database. The dbt profile in the project points to a database called `teddy_retailers`. You can change the `schema` value to point to an existing database in your Teradata Vantage instance or you can create the `teddy_retailers` database running the following script in your database client:
-```
+```sql
 CREATE DATABASE teddy_retailers
 AS PERMANENT = 110e6,
     SPOOL = 220e6;
@@ -95,7 +95,7 @@ If you have already used dbt before in your environment you only need to add a p
 If the directory .dbt doesn't exist in your system yet you will need to create it and add the profiles.yml to manage your dbt profiles.
 
  
-```
+```bash
 teddy_retailers:
   outputs:
     dev:
@@ -115,7 +115,7 @@ teddy_retailers:
 
 Now, that we have the profile file in place, we can validate the setup:
 
-```
+```bash
 dbt debug
 ```
 
@@ -130,11 +130,11 @@ Through dbt driven transformations we transform source data ingested from the`te
 
 The source data consists of the following tables customers, orders, products, and order_products, according to the following Entity Relations Diagram:
 
-![](../images/advanceddbt1.svg)
+![advanceddbt1](../images/advanceddbt1.svg)
 
 Using dbt, we leverage the source data tables to construct the following dimensional model, which is optimized for analytics tools.
 
-![](../images/advanceddbt2.svg)
+![advanceddbt2](../images/advanceddbt2.svg)
 
 ### The sources
 
@@ -181,7 +181,7 @@ To facilitate collecting statistics, we have added a `post_hook` that instructs 
 By executing dbt, we generate the dimensional model using the baseline data.
 
 
-``` 
+``` bash
 dbt run
 ```
 
@@ -192,7 +192,7 @@ This will create both our core and dimensional models using the baseline data.
 We can run our defined test by executing:
 
  
-```
+```bash
 dbt test
 ```
 

@@ -36,15 +36,20 @@ If do not wish to pay for cloud usage you can install Vantage Express locally us
 
 
 2. ssh to your VM:
-```
+
+```bash
 gcloud compute ssh teradata-vantage-express --zone=us-central1-a
 ```
+
 3. Switch to `root` user:
-```
+
+```bash
 sudo -i
 ```
+
 4. Prepare the download directory for Vantage Express:
-```
+
+```bash
 mkdir /opt/downloads
 cd /opt/downloads
 ```

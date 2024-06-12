@@ -66,21 +66,21 @@ Once you have met the prerequisites, follow these steps:
 * Open the [Azure portal](https://portal.azure.com/) in a browser (Chrome, Firefox, and Safari work well) and follow the steps in [create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1) in a resource group called _myProviderStorage_rg_ in this article.
 
 * Enter a storage name and connectivity method. We will use _myproviderstorage_ and _public endpoint_ in this article.
-+
+
 :::note
 We suggest that you use the same location for all services you create.
 :::
 
-* Select *Review + create,* then *Create*.
+* Select **Review + create,** then **Create**.
 
-* *Go to resource* and click *Containers* to create container.
+* *Go to resource* and click **Containers** to create container.
 
-* Click the *+ Container* button.
+* Click the **+ Container** button.
 
 * Enter a container name. We will use _providerdata_ in this article.
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image3.png)
 
-* Click *Create*.
+* Click **Create**.
 
 ### Create a Data Share Account
 
@@ -88,13 +88,13 @@ We will create a Data Share account for the provider sharing the dataset.
 
 Follow the [Create an Azure Data Share Account](https://docs.microsoft.com/en-us/azure/data-share/share-your-data?tabs=azure-portal#create-a-data-share-account) steps to create resource in a resource group called _myDataShareProvider_rg_ in this article.
 
-* In *Basics* tab, enter a data share account name. We will use _mydatashareprovider_ in this article.
+* In **Basics** tab, enter a data share account name. We will use _mydatashareprovider_ in this article.
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image4.png)
 :::note
 We suggest that you use the same location for all services you create.
 :::
 
-* Select *Review + create,* then *Create*.
+* Select **Review + create,** then **Create**.
 
 * When the deployment is complete, select *Go to resource*.
 
@@ -102,11 +102,11 @@ We suggest that you use the same location for all services you create.
 
 * Navigate to your Data Share Overview page and follow the steps in [Create a share](https://docs.microsoft.com/en-us/azure/data-share/share-your-data?tabs=azure-portal#create-a-share).
 
-* Select *Start sharing your data*.
+* Select **Start sharing your data**.
 
-* Select + *Create*.
+* Select + **Create**.
 
-* In *Details* tab, enter a share name and share type. We will use _WeatherData_ and _Snapshot_ in this article.
+* In **Details** tab, enter a share name and share type. We will use _WeatherData_ and _Snapshot_ in this article.
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image5.png)
 
 :::note Snapshot share
@@ -122,7 +122,7 @@ Choose in-place sharing to provide access to data at its source.
 Supported data store: Azure Data Explorer
 :::
 
-* Click *Continue*.
+* Click **Continue**.
 
 * In *Datasets* tab, click *Add datasets*
 
@@ -135,7 +135,7 @@ Supported data store: Azure Data Explorer
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image7.png)
 
 
-* Click *Next*.
+* Click ***Next**.
 
 * Double-click container to choose the dataset. We will use _providerdata_ and _onpoint_history_postal-code_hour.csv_ file in this article.
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image8.png)
@@ -146,15 +146,15 @@ Figure 6 Select Storage container and dataset
 Azure Data Share can share at the folder and file level. Use Azure Blob Storage resource to upload a file.
 :::
 
-* Click *Next*.
+* Click **Next**.
 
 * Enter a Dataset name that the consumer will see for the folder and dataset. We will use the default names but delete the providerdata folder this article. Click *Add datasets*.
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image9.png)
 
-* Click *Add datasets*.
+* Click **Add datasets**.
 ![Dataset added to Sent Shares](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image10.png)
 
-* Click *Continue*.
+* Click **Continue**.
 
 * In *Recipients* tab, click *Add recipient* email address to send share notification.
 
@@ -165,7 +165,7 @@ Azure Data Share can share at the folder and file level. Use Azure Blob Storage 
 Set Share expiration for amount of time share is valid for consumer to accept.
 :::
 
-* Click *Continue*.
+* Click **Continue**.
 
 * In *Settings* tab, set Snapshot schedule. We use default _unchecked_ this article.
 ![Set Snapshot schedule](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image12.png)
@@ -203,7 +203,7 @@ Follow the steps in [Accept and receive data using Azure Data Share](https://doc
 #### Accept invitation
 
 * Under _Target Data Share Account_, select the Subscription and Resource Group that you would like to deployed your Data Share into or you can create a new Data Share here.
-+
+
 :::note
 if provider required a Terms of Use acceptance, a dialog box would appear and you'll be required to check the box to indicate you agree to the terms of use.
 :::
@@ -215,17 +215,18 @@ if provider required a Terms of Use acceptance, a dialog box would appear and yo
 
 #### Configure received share
 
-* Select *Datasets* tab. Check the box next to the dataset you'd like to assign a destination to. Select + *Map to target* to choose a target data store.
+* Select **Datasets** tab. Check the box next to the dataset you'd like to assign a destination to. Select + *Map to target* to choose a target data store.
 ![Select Dataset and Map to target](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image18.png)
 
 * Select a target data store type and path that you'd like the data to land in. We will use consumers Azure Blob Storage account _myconsumerstorage_ and container _consumerdata_ for our snapshot example in this article.
-+
+
 :::note
 Azure Data Share provides open and flexible data sharing, including the ability to share from and to different data stores. Check [supported](https://docs.microsoft.com/en-us/azure/data-share/supported-data-stores#supported-data-stores) data sources that can accept snapshot and in place sharing.
 :::
+
 ![Map datasets to target](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image19.png)
 
-* Click on *Map to target*.
+* Click on **Map to target**.
 
 * Once mapping is complete, for snapshot-based sharing click on *Details* tab and click *Trigger snapshot* for _Full_ or _Incremental_. We will select full copy since this is your first time receiving data from your provider.
 ![Trigger full or incremental snapshot](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image20.png)
@@ -249,19 +250,19 @@ NOS supports data in CSV, JSON, and Parquet formats.
 * Login to your Vantage system with Teradata Studio.
 
 * Create an AUTHORIZATION object to access your Blob Storage container with the following SQL command.
-+
+
 ``` sql
 CREATE AUTHORIZATION DefAuth_AZ
 AS DEFINER TRUSTED
 USER 'myconsumerstorage' /* Storage Account Name */
 PASSWORD '*****************' /* Storage Account Access Key or SAS Token */
 ```
-+
+
 ** Replace the string for _USER_ with your Storage Account Name.
 ** Replace the string for _PASSWORD_ with your Storage Account Access Key or SAS Token.
 
 * Create a foreign table definition for the CSV file on Blob Storage with the following SQL command.
-+
+
 ``` sql
 CREATE MULTISET FOREIGN TABLE WeatherData,
 EXTERNAL SECURITY DEFINER TRUSTED DefAuth_AZ (
@@ -272,15 +273,15 @@ USING (
   LOCATION ('/AZ/myconsumerstorage.blob.core.windows.net/consumerdata/')
 )
 ```
-+
+
 :::note
 At a minimum, the foreign table definition must include a table name (WeatherData) and a location clause, which points to the object store data.
 :::
-+
+
 The _LOCATION_ requires a storage account name and container name. You will need to replace this with your own storage account and container name.
-+
+
 If the object doesn't have a standard extension (e.g. “.json”, “.csv”, “.parquet”), then the _Location…Payload_ columns definition phrase is also needed, and the LOCATION phase need to include the file name. For example: LOCATION (`AZ/<storage account name>.blob.core.windows.net/<container>/<filename>`).
-+
+
 Foreign tables are always defined as No Primary Index (NoPI) tables.
 
 ### Query the Dataset in Azure Blob Storage
@@ -313,7 +314,7 @@ Vantage foreign tables use the `..` (double dot or double period) operator to se
 :::
 
 * Run the following SQL command to create a view.
-+
+
 ``` sql
 REPLACE VIEW WeatherData_view AS (
   SELECT
@@ -350,7 +351,7 @@ REPLACE VIEW WeatherData_view AS (
 ```
 
 * Run the following SQL command to validate the view.
-+
+
 ``` sql
 SELECT * FROM WeatherData_view SAMPLE 10;
 ```
@@ -370,10 +371,10 @@ You can select among the approaches below to load the data into Vantage.
 
 You can use a single statement to both create the table and load the data. You can choose the desired attributes from the foreign table payload and what they will be called in the relational table.
 
-A *CREATE TABLE AS … WITH DATA* statement can be used with the foreign table definition as the source table.
+A **CREATE TABLE AS … WITH DATA** statement can be used with the foreign table definition as the source table.
 
 * Run the following SQL command to create the relational table and load the data.
-+
+
 ``` sql
 CREATE MULTISET TABLE WeatherData_temp AS (
   SELECT
@@ -415,7 +416,7 @@ NO PRIMARY INDEX
 ```
 
 * Run the following SQL command to validate the contents of the table.
-+
+
 ``` sql
 SELECT * FROM WeatherData_temp SAMPLE 10;
 ```
@@ -426,7 +427,7 @@ SELECT * FROM WeatherData_temp SAMPLE 10;
 You can also use multiple statements to first create the relational table and then load the data. An advantage of this choice is that you can perform multiple loads, possibly selecting different data or loading in smaller increments if the object is very large.
 
 * Run the following SQL command to create the relational table.
-+
+
 ``` sql
 CREATE MULTISET TABLE WeatherData_temp (
   Postal_code VARCHAR(10),
@@ -462,7 +463,7 @@ UNIQUE PRIMARY INDEX ( Postal_Code, Time_Valid_UTC )
 ```
 
 * Run the following SQL to load the data into the table.
-+
+
 ``` sql
 INSERT INTO WeatherData_temp
   SELECT
@@ -501,7 +502,7 @@ INSERT INTO WeatherData_temp
 ```
 
 * Run the following SQL command to validate the contents of the table.
-+
+
 ``` sql
 SELECT * FROM WeatherData_temp SAMPLE 10;
 ```
@@ -514,7 +515,7 @@ An alternative to defining a foreign table is to use the `READ_NOS` table operat
 You can use the `READ_NOS` table operator to explore the data in an object.
 
 * Run the following command to explore the data in an object.
-+
+
 ``` sql , id="azure_data_share_first_run", role="content-editable emits-gtm-events"
 SELECT
   TOP 5 payload..*
@@ -528,17 +529,17 @@ FROM
   ) AS THE_TABLE
   ORDER BY 1
 ```
-+
-** The _LOCATION_ requires a storage account name and container name. This is highlighted above in yellow. You will need to replace this with your own storage account and container name.
-** Replace the string for _ACCESS_ID_ with your Storage Account Name.
-** Replace the string for _ACCES_KEY_ with your Storage Account Access Key or SAS Token
+
+  * The _LOCATION_ requires a storage account name and container name. This is highlighted above in yellow. You will need to replace this with your own storage account and container name.
+  * Replace the string for _ACCESS_ID_ with your Storage Account Name.
+  * Replace the string for _ACCES_KEY_ with your Storage Account Access Key or SAS Token
 
 ![](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image27.png)[READ_NOS,width=624,height=86]
 
 You can also leverage the READ_NOS table operator to get the length (size) of the object.
 
 * Run the following SQL command to view the size of the object.
-+
+
 ``` sql
 SELECT
   location(CHAR(120)), ObjectLength
@@ -553,7 +554,7 @@ FROM
   ) AS THE_TABLE
 ORDER BY 1
 ```
-** Replace the values for _LOCATION_, _ACCESS_ID_, and _ACCESS_KEY_.
+  * Replace the values for _LOCATION_, _ACCESS_ID_, and _ACCESS_KEY_.
 
 ![READ_NOS object length](../cloud-guides/images/connect-azure-data-share-to-teradata-vantage/image28.png)
 

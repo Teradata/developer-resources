@@ -1,7 +1,7 @@
 import GettingStartedQueries from './getting-started-queries.mdx';
 
 run. Install VirtualBox and 7zip:
-```
+```bash
 apt update && apt-get install p7zip-full p7zip-rar virtualbox -y
 ```
 5. Retrieve the curl command to download Vantage Express.
@@ -17,18 +17,18 @@ apt update && apt-get install p7zip-full p7zip-rar virtualbox -y
 ![Browser Copy culr](../images/browser.copy.curl.png)
 * Head back to the ssh session and download Vantage Express by pasting the curl command. Add `-o ve.7z` to the command to save the download to file named `ve.7z`. You can remove all the HTTP headers, e.g.:
 
-```
+```bash
 curl -o ve.7z 'http://d289lrf5tw1zls.cloudfront.net/database/teradata-express/VantageExpress17.20_Sles12_202108300444.7z?Expires=1638719978&Signature=GKBkNvery_long_signature__&Key-Pair-Id=********************'
 ```
 
 * Unzip the downloaded file. It will take several minutes:
 
-```
+```bash
 7z x ve.7z
 ```
 * Start the VM in VirtualBox. The command will return immediately but the VM init process will take several minutes:
 
-```
+```bash
 export VM_IMAGE_DIR="/opt/downloads/VantageExpress17.20_Sles12"
 DEFAULT_VM_NAME="vantage-express"
 VM_NAME="${VM_NAME:-$DEFAULT_VM_NAME}"
@@ -45,11 +45,11 @@ vboxmanage controlvm "$VM_NAME" keyboardputscancode 1c 1c
 ```
 * ssh to Vantage Express VM. Use `root` as password:
 
-```
+```bash
 ssh -p 4422 root@localhost
 ```
 * Validate that the DB is up:
-```
+```bash
 pdestate -a
 ```
 
@@ -58,12 +58,12 @@ If the status is different, repeat `pdestate -a` till you get the correct status
 
 * Once Vantage Express is up and running, start `bteq` client command line client. BTEQ (pronounced “bee-teek”) is a general-purpose, command-based client tool used to submit SQL queries to a Teradata Database.
 
-```
+```bash
 bteq
 ```
 * Once in bteq, connect to your Vantage Express instance. When asked for the password, enter `dbc`:
  
-```
+```bash
 .logon localhost/dbc
 ```
 
@@ -77,7 +77,7 @@ bteq
 
 * If you intend to stop and start the VM, you may want to add Vantage Express to autostart. ssh to your VM and run the following commands:
 
-```
+```bash
 sudo -i
 
 cat <<EOF >> /etc/default/virtualbox

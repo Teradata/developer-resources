@@ -12,9 +12,9 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 ## Overview
 
-The purpose of the *Model Factory Solution Accelerator* of *ClearScape Analytics* is to streamline and accelerate the end-to-end process of developing, deploying, and managing machine learning models within an organization at *Horizontal Scale* by operationalizing *hundreds of models for a business domain at one effort*. It leverages the scalability of in-database analytics and the openness of supporting partner model formats such as H2O or Dataiku. This unique combination enhances efficiency, scalability, and consistency across various stages of the machine learning lifecycle in Enterprise environments. 
+The purpose of the **Model Factory Solution Accelerator** of **ClearScape Analytics** is to streamline and accelerate the end-to-end process of developing, deploying, and managing machine learning models within an organization at **Horizontal Scale** by operationalizing **hundreds of models for a business domain at one effort**. It leverages the scalability of in-database analytics and the openness of supporting partner model formats such as H2O or Dataiku. This unique combination enhances efficiency, scalability, and consistency across various stages of the machine learning lifecycle in Enterprise environments. 
     
-By incorporating best practices, automation, and standardized workflows, the Model Factory Solution Accelerator enables teams to rapidly select the data to be used, configure the model required, ensure reproducibility, and deploy *unlimited* number of models seamlessly into production. Ultimately, it aims to reduce the time-to-value for machine learning initiatives and promote a more structured and efficient approach to building and deploying models at scale. Here is the diagram of an automated Workflow:
+By incorporating best practices, automation, and standardized workflows, the Model Factory Solution Accelerator enables teams to rapidly select the data to be used, configure the model required, ensure reproducibility, and deploy **unlimited** number of models seamlessly into production. Ultimately, it aims to reduce the time-to-value for machine learning initiatives and promote a more structured and efficient approach to building and deploying models at scale. Here is the diagram of an automated Workflow:
 
 ![Workflow](../modelops/images/execute-airflow-workflows-with-clearscape-analytics-modelops-model-factory-solution/Workflow.png)
 
@@ -95,9 +95,11 @@ mkdir -p ./dags ./logs ./plugins ./config
 
 Create a config file inside config folder and set the parameters to corresponding values depending on which model you want to train.
 
-.Click to reveal the Python code
-[%collapsible]
-====
+<details>
+
+<summary>Click to reveal the Python code</summary>
+
+<pre>
 ``` python , id="Model Factory Solution Config File", role="content-editable emits-gtm-events"
 from configparser import ConfigParser
 import os
@@ -136,8 +138,8 @@ config['MODEL'] = {
 with open('./config/modelOpsConfig.ini', 'w') as f:
     config.write(f)
 ```
-====
-
+</pre>
+</details>
 Now copy the Bearer token from the ModelOps user interface (Left Menu -> Your Account -> Session Details) and set it here as an environment varibale using the following command:
 
 ``` bash , id="Bearer token", role="content-editable emits-gtm-events"
@@ -554,7 +556,7 @@ After initialization is complete, you should see a message like this:
  start_airflow-init_1 exited with code 0
 ```
 
-## Clean up Airflow demo environment¶
+## Clean up Airflow demo environment
 
 You can clean up the environment which will remove the preloaded example DAGs using this command:
 
@@ -608,4 +610,4 @@ docker-compose up -d
 This tutorial aimed at providing a hands on exercise on how to install an Airflow environment on a Linux server and how to use Airflow to interact with ClearScape Analytics ModelOps and Teradata Vantage database. An additional example is provided on how to integrate Airflow and the data modelling and maintenance tool dbt to create and load a Teradata Vantage database.
 
 ## Further reading
-* [+++ModelOps documentation+++](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).
+* [ModelOps documentatioN](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).

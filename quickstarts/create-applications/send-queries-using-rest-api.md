@@ -34,11 +34,11 @@ When using the examples, please keep in mind that:
 
 * The examples in this document use Python, and you can use these to create examples in your language of choice.
 * The examples provided here are complete and ready for you to use, although most require a little customization.
-** The examples in this document use the URL `https://<QS_HOSTNAME>:1443/`.
-** Replace the following variables with your own value:
-*** `<QS_HOSTNAME>`: Server where Query Service is installed
-*** `<SYSTEM_NAME>`: Preconfigured alias of the system
-+
+  * The examples in this document use the URL `https://<QS_HOSTNAME>:1443/`.
+  * Replace the following variables with your own value:
+    * `<QS_HOSTNAME>`: Server where Query Service is installed
+    * `<SYSTEM_NAME>`: Preconfigured alias of the system
+
 :::note
 If your Vantage instance is provided through ClearScape Analytics Experience,`<QS_HOSTNAME>`, is the host URL of your ClearScape Analytics Experience environment, `<SYSTEM_NAME>` is 'local'.
 :::
@@ -127,11 +127,11 @@ In the following example, the request includes:
 
 * `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
 * `'format': 'OBJECT'`: The format for response. The formats supported are: JSON object, JSON array, and CSV.
-+
+
 :::note
 The JSON object format creates one JSON object per row where the column name is the field name, and the column value is the field value.
 :::
-+
+
 * `'includeColumns': true`: The request to include column metadata, such as column names and types, in the response.
 * `'rowLimit': 4`: The number of rows to be returned from a query.
 
@@ -298,13 +298,13 @@ Y5WYUUXj                      ,0.0,0.009313225746154785,0.0,0.009313225746154785
 Use explicit sessions when a transaction needs to span multiple requests or when using volatile tables. These sessions are only reused if you reference the sessions in a query request. The request is queued if a request references an explicit session already in use.
 
 1. Create a session
-+
+
 Send a POST request to the `/system/<SYSTEM_NAME>/sessions` endpoint. The request creates a new database session and returns the session details as the response.
-+
+
 In the following example, the request includes `'auto_commit': True` - the request to commit the query upon completion.
-+
+
 Request
-+
+
 ``` python
 # first create a session
 url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/sessions'
@@ -319,9 +319,9 @@ response = requests.request('POST', url, headers=headers, data=payload_json, ver
 
 print(response.text)
 ```
-+
+
 Response
-+
+
 ```
 {
   'sessionId': 1366010,
@@ -335,20 +335,19 @@ Response
 ```
 
 2. Use the session created in Step 1 to submit queries
-+
+
 Send a POST request to the `/system/<SYSTEM_NAME>/queries` endpoint.
-+
+
 The request submits queries to the target system and returns the release and version number of the target system.
-+
+
 In the following example, the request includes:
-+
+
 * `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
 * `'format': 'OBJECT'`: The format for response.
 * `'Session' : <Session ID>`: The session ID returned in Step 1 to create an explicit session.
 
-+
-=====
-======
+
+
 Request
 
 ``` python
@@ -367,9 +366,7 @@ response = requests.request('POST', url, headers=headers, data=payload_json, ver
 
 print(response.text)
 ```
-======
 
-======
 Response
 
 ``` json
@@ -399,26 +396,24 @@ Response
   ]
 }
 ```
-======
-=====
+
 
 ## Use asynchronous queries
 
 Use asynchronous queries when a system or network performance is affected by querying a large group of data or long running queries.
 
 1. Submit asynchronous queries to the target system and retrieve a Query ID
-+
+
 Send a POST request to the `/system/<SYSTEM_NAME>/queries` endpoint.
-+
+
 In the following example, the request includes:
-+
+
 * `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
 * `'format': 'OBJECT'`: The format for response.
 * `'spooled_result_set': True`: The indication that the request is asynchronous.
 
-+
-=====
-======
+
+
 Request
 
 ``` python
@@ -437,24 +432,22 @@ response = requests.request('POST', url, headers=headers, data=payload_json, ver
 
 print(response.text)
 ```
-======
-======
+
 Response
 
 ```
 {"id":1366025}
 ```
-======
-=====
+
 
 2. Get query details using the ID retrieved from Step 1
 +
 Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
 +
 The request returns the details of the specific query, including `*queryState*`, `*queueOrder*`, `*queueDuration*`, and so on. For a complete list of the response fields and their descriptions, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body).
-+
+
 Request
-+
+
 ``` python
 ## response for async query .
 
@@ -465,9 +458,9 @@ response = requests.request('GET', url, headers=headers, verify=False)
 
 print(response.text)
 ```
-+
+
 Response
-+
+
 ```
 {
   "queryId":1366025,
@@ -497,12 +490,12 @@ Response
 ```
 
 3. View resultset for asynchronous query
-+
+
 Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>/results` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
 The request returns an array of the result sets and update counts produced by the submitted query.
-+
+
 Request
-+
+
 ``` python
 url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries/1366025/results'
 
@@ -511,9 +504,9 @@ response = requests.request('GET', url, headers=headers, verify=False)
 
 print(response.text)
 ```
-+
+
 Response
-+
+
 ``` json
 {
   "queueDuration":6,
