@@ -13,7 +13,7 @@ const projectName = 'ai-unlimited-docs';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Teradata AI Unlimited Documentation',
-  tagline: 'A scalable, serverless compute engine in any cloud.',
+  tagline: 'A scalable, on-demand compute engine in the cloud.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -36,7 +36,7 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.youtube.com/ https://*.algolia.net/;",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.youtube.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://*.algolia.net/;",
       },
     },
     {
@@ -55,7 +55,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja',],
+    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
@@ -116,7 +116,13 @@ const config = {
           editUrl: `https://github.com/teradata/${projectName}/tree/main`,
         },
         theme: {
-          customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
+          customCss: [
+            './node_modules/@covalent/tokens/index.css',
+            './src/css/custom.css',
+          ],
+        },
+        gtag: {
+          trackingID: 'G-RDK4Y0RE7S',
         },
       }),
     ],
@@ -243,6 +249,10 @@ const config = {
           {
             title: 'How we help',
             items: [
+              {
+                label: 'Trusted AI',
+                href: 'https://www.teradata.com/trusted-ai',
+              },
               {
                 label: 'Roles',
                 href: 'https://www.teradata.com/how-we-help',

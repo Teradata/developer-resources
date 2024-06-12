@@ -1,7 +1,7 @@
 ---
 id: run-ai-unlimited-jupyterlab-docker
-title: QuickStart - Run AI Unlimited and JupyterLab using Docker
-description: Learn how to run AI Unlimited and JupyterLab using Docker.
+title: Run the manager and JupyterLab locally
+description: Learn how to run the AI Unlimited manager and JupyterLab using Docker.
 sidebar_label: Run the manager and JupyterLab using Docker 
 sidebar_position: 3
 pagination_prev: null
@@ -20,15 +20,14 @@ You'll use JupyterLab to explore and analyze data.
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
-
 
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to deploy the engine from a Jupyter notebook
 - A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
-- Your object storage, where your Amazon or ADLS Gen2 data lake resides.
+- Your object storage, where your Amazon or ADLS Gen2 data lake resides
 - [Docker](https://www.docker.com/get-started/) installed on your computer
 
 
@@ -47,9 +46,9 @@ For installation support, ask the [community](https://support.teradata.com/commu
 2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store the JupyterLab configuration files. The default location is `~/.jupyter`.
 
 
-## Clone the respository
+## Clone the repository
 
-The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes these files that you'll need to run the manager and JupyterLab:
+The `deployments/docker` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes these files that you'll need to run the manager and JupyterLab:
 - `[AWS or Azure]-credentials-env-vars.yaml`
 - `ai-unlimited.yaml`
 - `jupyter.yaml` 
@@ -90,7 +89,7 @@ This QuickStart uses the first method.
 
 ## Start the manager and JupyterLab
 
-1. From the directory where `[AWS or Azure]-credentials-env-vars.yaml`, `ai-unlimited.yaml`, and `jupyter.yaml` are located, and start the manager and JupyterLab.
+1. From the directory where `[AWS or Azure]-credentials-env-vars.yaml`, `ai-unlimited.yaml`, and `jupyter.yaml` are located, start the manager and JupyterLab.
 	
 	:::note
 	The `-d` flag in the command is optional.
@@ -133,6 +132,6 @@ When JupyterLab is ready, you can access it at `http://localhost:8888`, and ente
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 

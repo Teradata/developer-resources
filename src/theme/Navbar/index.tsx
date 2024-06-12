@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Header, Language, NavListItem } from '@bsahitya/react-components';
+import { Header, Language, NavListItem } from '@teradata-web/react-components';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
-import SearchBar from '@theme/SearchBar';
+import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
 export default function Navbar() {
   const { navItems }: ThemeConfig = useThemeConfig();

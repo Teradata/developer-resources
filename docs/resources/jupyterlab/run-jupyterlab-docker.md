@@ -1,6 +1,6 @@
 ---
 id: run-jupyter-docker
-title: Run JupyterLab locally using Docker
+title: Run JupyterLab using Docker
 description: Learn how to run JupyterLab with the AI Unlimited Jupyter Kernel on your computer.
 sidebar_label: Run locally using Docker
 sidebar_position: 3
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run JupyterLab, with the AI Unlimited Jupyter Kernel, locally in a container.
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 
@@ -32,7 +32,7 @@ Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-va
 
 ## Clone the repository
 
-The `deployments/docker/` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file you need to run JupyterLab. 
+The `deployments/docker` folder in the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited) provided by Teradata includes the [jupyter.yaml](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/docker/jupyter.yaml) file, you need to run JupyterLab. 
 
 Clone the repository.
 
@@ -62,7 +62,7 @@ Clone the repository.
 	
 	And identify the name of the JupyterLab container.
 	
-	Then search for occurrences of the string 'Token' in the container's logs.
+	Then, search for occurrences of the string 'Token' in the container's logs.
 
 	```bash
 	docker logs <container_name> | grep 'Token'

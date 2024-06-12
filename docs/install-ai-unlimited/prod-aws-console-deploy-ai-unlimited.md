@@ -1,6 +1,6 @@
 ---
 id: deploy-manager-aws-console
-title: Deploy the manager using the AWS Management Console
+title: Install on AWS
 description: Learn how to deploy the manager using a CloudFormation template.
 sidebar_label: Install on AWS
 sidebar_position: 1
@@ -10,14 +10,14 @@ pagination_next: null
 
 # Install the manager on AWS
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites).
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites) and your AWS account meets [the requirements](../resources/aws-requirements.md).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
 You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation help, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 
@@ -47,7 +47,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 1. Sign in to the [AWS console](https://aws.amazon.com).<br />
    :::note
-   References to the AWS Console are accurate as of April 11, 2024.
+   References to AWS Management Console are up-to-date as of May 29, 2024.
    ::: 
 2. Select the AWS region in which to deploy AI Unlimited.<br />
 We recommend selecting the region closest to your primary work location.
@@ -74,7 +74,7 @@ We recommend selecting the region closest to your primary work location.
 |---------|-------------|-----------|
 | Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks. |Required<br/>Default: NA<br/> The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
 |AiUnlimitedName| The name of the AI Unlimited instance. |Required with default<br/>Default: ai-unlimited<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
-| InstanceType | The EC2 instance type that you want to use for the service. |Required with default<br/>Default: t3.micro<br/> We recommend using the default instance type to save costs. |
+| InstanceType | The EC2 instance type for the manager. |Required with default<br/>Default: t3.micro<br/> **IMPORTANT**: If the instance is not adequately sized, engine deploy and suspend failures may occur, and you will have to re-install the manager on a larger instance.  See *Learn more: Manager instance type (size) recommendations* below the parameters section. |
 | RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default<br/>Default: 20<br/>Supports values between 8 and 1000. |
 | TerminationProtection | Enables instance termination protection. |Required with default<br/>Default: false |
 |IamRole | Specifies whether CloudFormation should create a new IAM role or use an existing one. |Required with default<br/>Default: New<br/>Supported options are: New or Existing |
@@ -97,7 +97,7 @@ We recommend selecting the region closest to your primary work location.
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
 |AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default<br/>Default: latest<br/>The value is a container version tag.|
-|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|UsePersistentVolume|Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. |Optional with default<br/>Default: New<br/>Supported options are a new persistent volume or an existing one, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you attach to the instance, in GB.|Required with default<br/>Default: 20<br/>Supports values between 8 and 1000. |
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you attach to the instance. |Required if UsePersistentVolume is set to Existing.<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.|Required with default|Delete <br/>Default: Retain <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
@@ -107,7 +107,25 @@ We recommend selecting the region closest to your primary work location.
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Manager instance type (size) recommendations</summary>
+
+For the AI Unlimited paid public preview, based on quantity of concurrent engine deploy and suspend operations, we recommend these t3 instance types. The performance of the other available instance types may vary.
+
+| Instance type | Concurrent operations |
+|---------|-------------|
+|t3.micro |1 |
+|t3.small |up to 5 |
+|t3.medium |up to 10 |
+|t3.large |up to 20 |
+|t3.xlarge |more than 21 
+
+The concurrency will increase when AI Unlimited is released for general availability.
+
+</details>
+
+<details>
+
+<summary>Learn more: Using a persistent volume</summary>
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
@@ -129,9 +147,9 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 1. Deploy the manager, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `PersistentVolumeDeletionPolicy`: **Retain**
-3. After you create the stack, on the **Outputs** tab, note the `volume-id`.
-4. Use AI Unlimited.
-5. If the manager instance is lost, deploy the manager again, and include these parameters:
+2. After you create the stack, on the **Outputs** tab, note the `volume-id`.
+3. Use AI Unlimited.
+4. If the manager instance is lost, deploy the manager again, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `PersistentVolumeDeletionPolicy`: **Retain** 
    - `ExistingPersistentVolumeId`: the value you noted in step 2
@@ -150,16 +168,16 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />
-On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the manager is ready. 
+On the **Events** tab, you can monitor progress. When the status of all the resources is `CREATE_COMPLETE`, the manager is ready. 
 
 The **Outputs** tab shows the values generated for the created resources.
 
-You'll need the URL to access the manager to set up AI Unlimited.
+You'll need the URL to access the manager and set up AI Unlimited.
 
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 
 

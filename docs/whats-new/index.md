@@ -128,7 +128,7 @@ See the [release notes](/docs/whats-new/release-notes.md) for known issues and f
 - Support for Update and Delete with predicates for Open Table Format (OTF) queries - June
 
 - User Defined Functions (UDF)
-  - Fix for first invocation of Java UDFs failing - future
+  - Fix for the first invocation of Java UDFs failing - future
   - Support for API_Request UDF - future
   
 - Unbounded Array Framework (UAF)

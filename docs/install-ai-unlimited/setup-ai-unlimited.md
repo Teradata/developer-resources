@@ -20,7 +20,7 @@ By setting up AI Unlimited, you become the AI Unlimited admin at your organizati
 :::
 
 :::tip
-For setup support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For setup help, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 <a id="setup-fields"></a>	
@@ -33,6 +33,7 @@ Find information about each group of fields here.
 <summary>Basic setup</summary>
 
 <br />
+
 **AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
 
 
@@ -74,7 +75,7 @@ Some of these fields are for default values. Later, when you deploy the engine f
 <br />
 **Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your data lake.
 
-**Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
+**Default subnet**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
 
 **Default IAM role**
 
@@ -123,7 +124,7 @@ Use these fields to allow source traffic to reach the engine:
 
 - **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing)**
  
-- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
@@ -145,7 +146,7 @@ Select **Update**.
 
 <br />
 
-**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
+**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
 **GitHub base URL**&mdash;The URL for your GitHub instance.
 
@@ -161,7 +162,7 @@ Two organizations in your GitHub account can help with access control and reposi
 
 Select **Update**.
 
-Select **Sign In**. Then, if prompted, sign in.
+Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
 
 </TabItem>
 
@@ -169,7 +170,7 @@ Select **Sign In**. Then, if prompted, sign in.
 
 <br />
 
-**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
+**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
 **GitLab base URL**&mdash;The URL for your GitLab instance.
 
@@ -185,7 +186,7 @@ Two groups in your GitLab account can help with access control and repository ma
 
 Select **Update**.
 
-Select **Sign In**. Then, if prompted, sign in.
+Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
 
 </TabItem>
 </Tabs>

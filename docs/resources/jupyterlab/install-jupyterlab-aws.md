@@ -1,7 +1,7 @@
 ---
 id: deploy-jupyter-aws-console
-title: Deploy JupyterLab from the AWS Management Console
-description: Learn how to deploy JupyterLab using a Cloudformation template.
+title: Install JupyterLab on AWS
+description: Learn how to deploy JupyterLab using a CloudFormation template.
 sidebar_label: Install on AWS
 sidebar_position: 1
 pagination_prev: null
@@ -15,18 +15,14 @@ You'll use a CloudFormation template provided by Teradata to install JupyterLab 
 This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::
-
-:::note
-References to the AWS Management Console are accurate as of April 11, 2024.
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 ## Prepare your AWS account
 
-- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/jupyter).
+- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions to create the cloud resources defined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/jupyter).
 
-- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#specify-stack-details-and-options).
+- If you'll need to access the JupyterLab instance to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#specify-stack-details-and-options).
   
 - If you plan to use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
 	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
@@ -44,7 +40,7 @@ import MyPartial from '/docs/_partials/_clone-repo.mdx';
 
 CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
-`deployments/aws/templates/jupyter/`
+`deployments/aws/templates/jupyter`
 
 Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
@@ -56,8 +52,12 @@ You might want to ask a cloud admin at your organization for guidance.
 
 
 ## Load the template	
-		
-1. Sign in to the [AWS console](https://aws.amazon.com), and select the region in which to deploy JupyterLab. 
+
+1. Sign in to the [AWS console](https://aws.amazon.com).
+   :::note
+   References to AWS Management Console are up-to-date as of May 29, 2024.
+   :::
+2. Select the region in which to deploy JupyterLab.<br/>
    We recommend selecting the region closest to your primary work location.
 3. Search for and go to **CloudFormation**.
 4. Select **Create Stack**, then **With new resources (standard)**.
@@ -73,6 +73,7 @@ You might want to ask a cloud admin at your organization for guidance.
 <details>
 
 <summary>AWS and JupyterLab parameters</summary>
+
 | Parameter | Description | Notes 
 |---------|-------------|-----------|
 | InstanceType | The EC2 instance type that you want to use for the service. | Required with default<br/>Default: t3.small<br/>We recommend using the default instance type to save costs. |
@@ -92,7 +93,7 @@ You might want to ask a cloud admin at your organization for guidance.
 |AccessCIDR	|The CIDR IP address range that is permitted to access the instance.| Optional<br/>Default: NA<br/>We recommend setting this value to a trusted IP range. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |PrefixList			| The prefix list that you can use to communicate with the instance. It is a collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement. | Optional<br/>Default: NA<br/>Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
 |SecurityGroup	|The virtual firewall that controls inbound and outbound traffic to the instance.| Optional<br/>Default: NA<br/>Implemented as a set of rules that specify which protocols, ports, and IP addresses or CIDR blocks are allowed to access the instance. Define at least one of AccessCIDR, PrefixList, or SecurityGroup to allow inbound traffic unless you create custom security group ingress rules.|
-|UsePersistentVolume| Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|UsePersistentVolume| Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. |Optional with default<br/>Default: New<br/>Supported options are a new persistent volume or an existing one, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you can attach to the instance, in GB.|Required with default<br/>Default: 20<br/>Supports values between 8 and 1000|
 |ExistingPersistent<br/>VolumeId		|The ID of the existing persistent volume that you can attach to the instance.| Required if UsePersistentVolume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.| Required with default<br/>Default:  Retain<br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
@@ -104,11 +105,11 @@ You might want to ask a cloud admin at your organization for guidance.
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The JupyterLab instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
 **Without a persistent volume**
 
@@ -134,8 +135,8 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 
 </details>
 
-4. Select **Next**.
-5. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
+3. Select **Next**.
+4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
 
 ## Review and create the stack
@@ -143,7 +144,7 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />
-On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the JupyterLab is ready. 
+On the **Events** tab, you can monitor progress. When the status of all the resources is `CREATE_COMPLETE`, the JupyterLab is ready. 
 
 The **Outputs** tab shows the URL for accessing JupyterLab.
 

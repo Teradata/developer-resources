@@ -14,7 +14,7 @@ You may already have [JupyterLab](https://jupyter.org/)&mdash;somewhere on the c
 
 Or, get JupyterLab with the AI Unlimited kernel now:
 
-- Install it on [AWS](/docs/resources/jupyterlab/install-jupyterlab-aws.md) or on [Azure](/docs/resources/jupyterlab/install-jupyterlab-azure.md)
+- Install it on [AWS](/docs/resources/jupyterlab/install-jupyterlab-aws.md) or [Azure](/docs/resources/jupyterlab/install-jupyterlab-azure.md)
 - [Run it locally](/docs/resources/jupyterlab/run-jupyterlab-docker.md) in a Docker container
 
 :::note
