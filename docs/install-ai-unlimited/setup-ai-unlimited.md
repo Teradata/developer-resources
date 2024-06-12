@@ -33,6 +33,7 @@ Find information about each group of fields here.
 <summary>Basic setup</summary>
 
 <br />
+
 **AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
 
 
@@ -74,7 +75,7 @@ Some of these fields are for default values. Later, when you deploy the engine f
 <br />
 **Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your data lake.
 
-**Default subnet ID**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
+**Default subnet**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
 
 **Default IAM role**
 
@@ -145,7 +146,7 @@ Select **Update**.
 
 <br />
 
-**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
+**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
 **GitHub base URL**&mdash;The URL for your GitHub instance.
 

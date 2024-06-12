@@ -25,7 +25,9 @@ Understanding the overall customer journey is critical for enhancing it and incr
 
 For this use case, we provide data from customer interactions in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use attribution modeling, channel analysis, and pathing to understand the customer behavior over time.
 
-[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Financial_Customer_Journey_SQL.ipynb)
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Financial_Customer_Journey_SQL.ipynb) (SQL)
+
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Financial_Customer_Journey_SQL_Python.ipynb) (SQL-Python)
 
 
 ## Segment customers based on past purchases
@@ -34,7 +36,9 @@ Purchase history can be a powerful factor for segmenting customers. For instance
 
 For this use case, we provide online purchase history data in an AWS Glue catalog in Iceberg format. After you prepare the data, you'll use k-means clustering and data preparation pipelines to determine customer segments.
 
-[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Native_Data_Prep_Transformation_Pipelines-SQL.ipynb)
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Native_Data_Prep_Transformation_Pipelines-SQL.ipynb) (SQL)
+
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Native_Data_Prep_Transformation_Pipelines-SQL_Python.ipynb) (SQL-Python)
 
 
 ## Find the ideal number of customer segments
@@ -43,5 +47,7 @@ Marketing to the ideal number of customer segments means you benefit from segmen
 
 For this use case, we provide customer comment data in an AWS Glue catalog in Iceberg format. After you access and inspect the data, you'll use a large language model (LLM) to create a vector table, and then find the ideal k-means model and number of segments.
 
-[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Segmentation_With_Vector_Embedding-SQL.ipynb)
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Segmentation_With_Vector_Embedding-SQL.ipynb) (SQL)
+
+[Try it out](https://github.com/Teradata/ai-unlimited-demos/blob/main/UseCases/Segmentation_With_Vector_Embedding-SQL_Python.ipynb) (SQL-Python)
 

@@ -29,7 +29,7 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#specify-instance-details).
+- If you need to access the JupyterLab instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#specify-instance-details).
 
 
 ## Clone the repository
@@ -43,7 +43,7 @@ import MyPartial from '/docs/_partials/_clone-repo.mdx';
 
 ARM templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
-`deployments/azure/templates/arm/jupyter/`
+`deployments/azure/templates/arm/jupyter`
 
 Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
@@ -114,9 +114,9 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 
 1. Deploy JupyterLab, and include these parameters:
    - `UsePersistentVolume`: **New**
-3. After you create the stack, on the **Outputs** tab, note the `volume-id`.
-4. Use JupyterLab.
-5. If the JupyterLab instance is lost, deploy JupyterLab again, and include these parameters:
+2. After you create the stack, on the **Outputs** tab, note the `volume-id`.
+3. Use JupyterLab.
+4. If the JupyterLab instance is lost, deploy JupyterLab again, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `ExistingPersistentVolumeId`: the value you noted in step 2
    

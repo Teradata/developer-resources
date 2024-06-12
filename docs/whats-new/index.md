@@ -10,7 +10,7 @@ pagination_next: null
 
 # What's new
 
-See what's in this release and what's coming.
+See what's new in this release and what's coming.
 
 
 ## Paid public preview (launch) - May 2024
@@ -119,7 +119,7 @@ Everything you need to start exploring, analyzing, and experimenting:
 </details>
 
 :::note
-See the [release notes](/docs/whats-new/release-notes.md) for known issues and features not currently supported.
+See the [release notes](/docs/whats-new/release-notes.md) for known issues and features that are not currently supported.
 :::
 
 
@@ -128,7 +128,7 @@ See the [release notes](/docs/whats-new/release-notes.md) for known issues and f
 - Support for Update and Delete with predicates for Open Table Format (OTF) queries - June
 
 - User Defined Functions (UDF)
-  - Fix for first invocation of Java UDFs failing - future
+  - Fix for the first invocation of Java UDFs failing - future
   - Support for API_Request UDF - future
   
 - Unbounded Array Framework (UAF)

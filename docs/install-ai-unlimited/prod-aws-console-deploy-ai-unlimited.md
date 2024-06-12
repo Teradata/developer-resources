@@ -10,7 +10,7 @@ pagination_next: null
 
 # Install the manager on AWS
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites).
+Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites) and your AWS account meets [the requirements](../resources/aws-requirements.md).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
@@ -74,7 +74,7 @@ We recommend selecting the region closest to your primary work location.
 |---------|-------------|-----------|
 | Stack name	| The identifier that helps you find the AI Unlimited stack from a list of stacks. |Required<br/>Default: NA<br/> The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.| | The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.|
 |AiUnlimitedName| The name of the AI Unlimited instance. |Required with default<br/>Default: ai-unlimited<br/>The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 20 characters.|
-| InstanceType | The EC2 instance type that you want to use for the service. |Required with default<br/>Default: t3.micro<br/> We recommend using the default instance type to save costs. |
+| InstanceType | The EC2 instance type for the manager. |Required with default<br/>Default: t3.micro<br/> **IMPORTANT**: If the instance is not adequately sized, engine deploy and suspend failures may occur, and you will have to re-install the manager on a larger instance.  See *Learn more: Manager instance type (size) recommendations* below the parameters section. |
 | RootVolumeSize | The size of the root disk you want to attach to the instance, in GB. | Required with default<br/>Default: 20<br/>Supports values between 8 and 1000. |
 | TerminationProtection | Enables instance termination protection. |Required with default<br/>Default: false |
 |IamRole | Specifies whether CloudFormation should create a new IAM role or use an existing one. |Required with default<br/>Default: New<br/>Supported options are: New or Existing |
@@ -107,6 +107,24 @@ We recommend selecting the region closest to your primary work location.
 
 <details>
 
+<summary>Learn more: Manager instance type (size) recommendations</summary>
+
+For the AI Unlimited paid public preview, based on quantity of concurrent engine deploy and suspend operations, we recommend these t3 instance types. The performance of the other available instance types may vary.
+
+| Instance type | Concurrent operations |
+|---------|-------------|
+|t3.micro |1 |
+|t3.small |up to 5 |
+|t3.medium |up to 10 |
+|t3.large |up to 20 |
+|t3.xlarge |more than 21 
+
+The concurrency will increase when AI Unlimited is released for general availability.
+
+</details>
+
+<details>
+
 <summary>Learn more: Why use a persistent volume?</summary>
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
@@ -129,9 +147,9 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 1. Deploy the manager, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `PersistentVolumeDeletionPolicy`: **Retain**
-3. After you create the stack, on the **Outputs** tab, note the `volume-id`.
-4. Use AI Unlimited.
-5. If the manager instance is lost, deploy the manager again, and include these parameters:
+2. After you create the stack, on the **Outputs** tab, note the `volume-id`.
+3. Use AI Unlimited.
+4. If the manager instance is lost, deploy the manager again, and include these parameters:
    - `UsePersistentVolume`: **New**
    - `PersistentVolumeDeletionPolicy`: **Retain** 
    - `ExistingPersistentVolumeId`: the value you noted in step 2
@@ -154,7 +172,7 @@ On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_
 
 The **Outputs** tab shows the values generated for the created resources.
 
-You'll need the URL to access the manager to set up AI Unlimited.
+You'll need the URL to access the manager and set up AI Unlimited.
 
 
 ## What's next

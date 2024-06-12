@@ -96,7 +96,7 @@ Where:
 
 **Output**:
 
-```bash
+```
 | NAME          | URL      | 
 |---------------|----------|
 | <Project_Name>| <Git_URL>| 
@@ -202,7 +202,7 @@ Where:
 - project: Name of the project.
 
 **Output**:
-```bash
+```
 | AUTH NAME           | ACCESS KEY  | SECRET  | 
 |---------------------|-------------|---------|
 | <Authorization_Name>| <ACCESS_KEY>| <SECRET>| 
@@ -218,13 +218,13 @@ Where:
 <TabItem value="aws1" label="AWS">
 
 ```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore-<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
+%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
 ```
 </TabItem>
 <TabItem value="azure" label="Azure">
 
 ```bash 
-%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<>, networkresourcegroup=<>
+%project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<Key_Vault_Resource_Group>, networkresourcegroup=<Network_Resource_Group>
 ```
 </TabItem>
 </Tabs>
@@ -316,7 +316,7 @@ Where:
 - project: Name of the project.
 
 **Output**:
-```bash
+```
 | IP   | STATE   | REGION  | SIZE             | NODE             |
 |------|---------|---------|------------------|------------------|
 | <IP> | Deployed| <Region>| <Size_of_Engine> | <Number_of_Nodes>|
@@ -336,7 +336,7 @@ Where:
 - **`[Optional]`** project: Name of the project.
 
 **Output**:
-```bash
+```
 | PROJECT ID   | USER  | PASSWORD  |
 |--------------|-------|-----------|
 | <Project_ID> | <User>| <Password>| 

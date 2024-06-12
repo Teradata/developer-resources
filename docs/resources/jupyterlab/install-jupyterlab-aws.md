@@ -24,9 +24,9 @@ References to the AWS Management Console are accurate as of April 11, 2024.
 
 ## Prepare your AWS account
 
-- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions you need to create the cloud resources defined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/jupyter).
+- Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions to create the cloud resources defined in the [JupyterLab template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/jupyter).
 
-- If you'll need to access the JupyterLab instance, after it is installed, to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) you generate to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#specify-stack-details-and-options).
+- If you need to access the JupyterLab instance to run commands or debug, you can use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](#specify-stack-details-and-options).
   
 - If you plan to use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
 	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;to issue a new certificate for the hosted zone ID in Route 53.
@@ -44,7 +44,7 @@ import MyPartial from '/docs/_partials/_clone-repo.mdx';
 
 CloudFormation templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
-`deployments/aws/templates/jupyter/`
+`deployments/aws/templates/jupyter`
 
 Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
 :::note
@@ -73,6 +73,7 @@ You might want to ask a cloud admin at your organization for guidance.
 <details>
 
 <summary>AWS and JupyterLab parameters</summary>
+
 | Parameter | Description | Notes 
 |---------|-------------|-----------|
 | InstanceType | The EC2 instance type that you want to use for the service. | Required with default<br/>Default: t3.small<br/>We recommend using the default instance type to save costs. |
@@ -108,7 +109,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 The JupyterLab instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
-But a persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
+A persistent volume stores data for a containerized application beyond the lifetime of the container, pod, or node in which it runs. 
 
 **Without a persistent volume**
 
@@ -134,8 +135,8 @@ If the container, pod, or node crashes or terminates, and the JupyterLab configu
 
 </details>
 
-4. Select **Next**.
-5. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
+3. Select **Next**.
+4. [Configure stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html) per your requirements, then select **Next**. 
 
 
 ## Review and create the stack

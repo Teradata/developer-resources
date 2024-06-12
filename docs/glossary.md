@@ -30,7 +30,7 @@ Load balancers distribute incoming traffic across servers. An application load b
 
 ### Classless Inter-domain Routing
 
-Classless Inter-domain Routing (CIDR) is an IP address allocation method for data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers find each other and communicate. A CIDR block is a range of IP addresses.
+Classless Inter-domain Routing (CIDR) is an IP address allocation method for data routing efficiency on the internet. Every computer that connects to the internet has a unique number called an IP address. IP addresses enable computers to find each other and communicate. A CIDR block is a range of IP addresses.
 
 ### cloud service provider
 
