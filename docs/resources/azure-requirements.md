@@ -10,7 +10,9 @@ pagination_next: null
 
 # Azure account requirements
 
-Before you install AI Unlimited, address these items.
+First, make sure you have the [prerequisites](../install-ai-unlimited/index.md#prerequisites). 
+
+Then before you install AI Unlimited, address these Azure items.
 
 
 ## Prepare your Azure account
@@ -19,7 +21,7 @@ Before you install AI Unlimited, address these items.
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-- If you need to access the manager instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) that you generate to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details).
+- If you'll need to access the manager instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details).
 
 
 ## Create the role for the manager

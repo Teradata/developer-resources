@@ -1,6 +1,6 @@
 ---
 id: deploy-manager-azure-portal
-title: Deploy the manager using the Azure Portal
+title: Install on Azure
 description: Learn how to deploy the manager using an Azure Resource Manager (ARM) template.
 sidebar_label: Install on Azure
 sidebar_position: 2
@@ -17,7 +17,7 @@ The AI Unlimited manager orchestrates the engine's deployment and includes a web
 You'll use an Azure Resource Manager (ARM) template provided by Teradata to install the manager from the Azure Portal. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
  
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation help, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 
@@ -47,9 +47,9 @@ You might want to ask a cloud admin at your organization for guidance.
 
 1. Sign in to the [Azure Portal](https://portal.azure.com). 
    :::note
-   References to the Azure Portal are accurate as of April 14, 2024.
+   References to Azure Portal are up-to-date as of May 29, 2024.
    ::: 
-2. Select **Deploy a custom template**.
+2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor**, then **Load file**.
 4. Select the template file you chose to use, then select **Save**.
 
@@ -83,7 +83,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 | Role Definition ID | The ID of the role to use with AI Unlimited.| Required<br/>Default: NA<br/>Use Azure CLI command- Get-AzRoleDefinition to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure.|  Optional<br/>Default: true |
 | Use Key Vault | Specifies whether to use Key Vault to retrieve the secured password during a deployment. | Optional<br/>Default: New |
-| Use Persistent Volume | Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. | Optional with default<br/>Default: New <br/>Supported options: New, None, Existing, depending on your use case. |
+| Use Persistent Volume | Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. | Optional with default<br/>Default: New <br/>Supported options: New or Existing, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional<br/>Default: 100 |
 | Existing Persistent Volume | <br/>The ID of the existing persistent volume that you can attach to the instance.| Required if UsePersistentVolume is set to Existing.<br/>Default: None<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | AI Unlimited Version | The version of the AI Unlimited you want to deploy. | Required with default<br/>Default: latest<br/>The value is a container version tag. |
@@ -94,7 +94,7 @@ Review the parameters. Provide values for the required parameters. Your organiza
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
@@ -135,4 +135,4 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.

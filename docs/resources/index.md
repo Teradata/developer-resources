@@ -10,4 +10,14 @@ pagination_next: null
 
 # Other resources
 
-Find resources related to installation, and more.
+Find resources here for installation-related topics:
+
+- Preparing to install AI Unlimited:
+
+  - [AWS account requirements](./aws-requirements.md)
+  - [Azure account requirements](./azure-requirements.md)
+  - [Create an OAuth app](./create-oauth-app.md)
+
+- The ways to [install JupyterLab](./jupyterlab/)
+
+- The [QuickStart](./quickstart), for running the AI Unlimited manager and JupyterLab locally

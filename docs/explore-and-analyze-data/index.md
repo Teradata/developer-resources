@@ -32,6 +32,5 @@ To avoid paying for unneeded engine resources, remember to [suspend](/docs/manag
 :::
 
 :::tip
-For help with AI Unlimited projects, magic commands, and analytic functions, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
-:::
+For help with AI Unlimited projects, magic commands, and analytic functions, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 

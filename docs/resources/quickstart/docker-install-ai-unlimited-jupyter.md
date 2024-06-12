@@ -1,7 +1,7 @@
 ---
 id: run-ai-unlimited-jupyterlab-docker
-title: QuickStart - Run AI Unlimited and JupyterLab using Docker
-description: Learn how to run AI Unlimited and JupyterLab using Docker.
+title: Run the manager and JupyterLab locally
+description: Learn how to run the AI Unlimited manager and JupyterLab using Docker.
 sidebar_label: Run the manager and JupyterLab using Docker 
 sidebar_position: 3
 pagination_prev: null
@@ -20,21 +20,20 @@ You'll use JupyterLab to explore and analyze data.
 You'll use [Docker Compose](https://docs.docker.com/compose/) to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers. 
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
-
 
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to deploy the engine from a Jupyter notebook
 - A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
-- An object storage, where your Amazon or ADLS Gen2 data lake resides
+- Your object storage, where your Amazon or ADLS Gen2 data lake resides
 - [Docker](https://www.docker.com/get-started/) installed on your computer
 
 
 ## Set configuration file locations
 
-1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which the manager's configuration and data files are stored. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
+1. Optionally, set the `AI_UNLIMITED_HOME` environment variable to the directory in which to store the manager's configuration and data files. Make sure the directory exists, and that appropriate permission is granted. The default location is `./volumes/ai-unlimited`.
 
     | **Local location** | **Container location** | **Usage** |
     |----------------|--------------------|-------|
@@ -44,7 +43,7 @@ For installation support, ask the [community](https://support.teradata.com/commu
 	Learn about [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) or [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) environment variables.
 	:::
 	
-2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which the JupyterLab configuration files are stored. The default location is `~/.jupyter`.
+2. Optionally, set the `JUPYTER_HOME` environment variable to the directory in which to store the JupyterLab configuration files. The default location is `~/.jupyter`.
 
 
 ## Clone the repository
@@ -133,6 +132,6 @@ When JupyterLab is ready, you can access it at `http://localhost:8888`, and ente
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 

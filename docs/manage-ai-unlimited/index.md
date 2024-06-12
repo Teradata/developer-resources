@@ -10,7 +10,7 @@ pagination_next: null
 Your user type determines what you can do.
 
 :::tip
-For help with managing projects, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For help with managing projects, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 
@@ -18,7 +18,7 @@ For help with managing projects, ask the [community](https://support.teradata.co
 
 - Use [magic commands](/docs/explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
 
-- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-restore-project.md) to pay-as-you-go
+- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-restore-project.md) to pay as you go
 
 
 ## Project owners

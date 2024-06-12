@@ -1,6 +1,6 @@
 ---
 id: deploy-jupyter-azure-portal
-title: Deploy JupyterLab from the Azure Portal
+title: Install JupyterLab on Azure
 description: Learn how to deploy JupyterLab using an ARM template.
 sidebar_label: Install on Azure 
 sidebar_position: 2
@@ -15,12 +15,8 @@ You'll use an  Azure Resource Manager (ARM) template provided by Teradata to ins
 This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
-
-:::note
-References to the Azure Portal are accurate as of April 14, 2024.
-::: 
 
 
 ## Prepare your Azure account
@@ -29,7 +25,7 @@ References to the Azure Portal are accurate as of April 14, 2024.
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-- If you need to access the JupyterLab instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#specify-instance-details).
+- If you'll need to access the JupyterLab instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys) to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](#specify-instance-details).
 
 
 ## Clone the repository
@@ -56,6 +52,9 @@ You might want to ask a cloud admin at your organization for guidance.
 ## Load the template
 
 1. Sign in to the [Azure Portal](https://portal.azure.com).
+   :::note
+   References to Azure Portal are up-to-date as of May 29, 2024.
+   ::: 
 2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor**, then **Load file**.
 4. Select the template file you chose to use, and select **Save**.  
@@ -85,7 +84,7 @@ Review the parameters. Provide values for the required ones. Your organization m
 | Role Definition ID | The ID of the role to use with AI Unlimited. | Required<br/>Default: NA<br/>Use Azure CLI command- `Get-AzRoleDefinition` command to get your Role Definition ID. |
 | Allow Public SSH | Specifies whether you can use secure shell (SSH) keys to connect to VMs in Azure. |  Optional<br/>Default: true |
 | Public Key | The public SSH Key that you can use to connect to a VM over SSH. | Optional<br/>Default: NA<br/>This value must start with `ssh-rsa`.  |
-| Use Persistent Volume | Specifies whether you want to use persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. | Optional with default<br/>Default: New<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case. |
+| Use Persistent Volume | Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. | Optional with default<br/>Default: New<br/>Supported options are a new persistent volume or an existing one, depending on your use case. |
 | Persistent Volume Size | The size of the persistent volume that you can attach to the instance, in GB. | Optional<br/>Default: 100<br/>Supports values between 8  and 1000. |
 | Existing Persistent Volume | The ID of the existing persistent volume that you can attach to the instance.| Required if Use Persistent Volume is set to Existing<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance. |
 | JupyterHttpPort | The port to access the JupyterLab service UI. | Required with default<br/>Default: 8888 |
@@ -96,7 +95,7 @@ Review the parameters. Provide values for the required ones. Your organization m
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The JupyterLab instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
