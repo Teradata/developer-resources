@@ -34,7 +34,7 @@ U.S. Geological Survey. The bucket is at https://td-usgs-public.s3.amazonaws.com
 
 Let's first have a look at sample CSV data. We take the first 10 rows that Vantage will fetch from the bucket:
 
-```
+```sql
 SELECT
   TOP 10 *
 FROM (
@@ -44,7 +44,7 @@ FROM (
 
 Here is what I've got:
 
-```
+```sql
 GageHeight2 Flow   site_no datetime         Precipitation GageHeight
 ----------- ----- -------- ---------------- ------------- -----------
 10.9        15300 09380000 2018-06-28 00:30 671           9.80
@@ -61,7 +61,7 @@ GageHeight2 Flow   site_no datetime         Precipitation GageHeight
 
 We have got plenty of numbers, but what do they mean? To answer this question, we will ask Vantage to detect the schema of the CSV files:
 
-```
+```sql
 SELECT
   *
 FROM (
@@ -72,7 +72,7 @@ FROM (
 
 Vantage will now fetch a data sample to analyze the schema and return results:
 
-```
+```sql
 Name            Datatype                            FileType  Location
 --------------- ----------------------------------- --------- -------------------------------------------------------------------
 GageHeight2     decimal(3,2)                        csv       /S3/s3.amazonaws.com/td-usgs-public/CSVDATA/09513780/2018/06/27.csv
@@ -91,7 +91,7 @@ We see that the CSV files have 6 columns. For each column, we get the name, the 
 
 Now that we know the schema, we can work with the dataset as if it was a regular SQL table. To prove the point, let's try to do some data aggregation. Let's get an average temperature per site for sites that collect temperatures.
 
-```
+```sql
 SELECT
   site_no Site_no, AVG(Flow) Avg_Flow
 FROM (
@@ -105,7 +105,7 @@ HAVING
 
 Result:
 
-```
+```sql
 Site_no  Avg_Flow
 -------- ---------
 09380000 11
@@ -116,7 +116,7 @@ Site_no  Avg_Flow
 
 To register your ad hoc exploratory activity as a permanent source, create it as a foreign table:
 
-```
+```sql
 -- If you are running this sample as dbc user you will not have permissions
 -- to create a table in dbc database. Instead, create a new database and use
 -- the newly create database to create a foreign table.
@@ -136,7 +136,7 @@ SELECT top 10 * FROM riverflow;
 
 Result:
 
-```
+```sql
 Location                                                            GageHeight2 Flow site_no datetime            Precipitation GageHeight
 ------------------------------------------------------------------- ----------- ---- ------- ------------------- ------------- ----------
 /S3/s3.amazonaws.com/td-usgs-public/CSVDATA/09429070/2018/07/02.csv null        null 9429070 2018-07-02 14:40:00 1.21          null
@@ -156,7 +156,7 @@ Querying object storage takes time. What if you decided that the data looks inte
 
 IMPORTANT: This query assumes you created database `Riverflow` and a foreign table called `riverflow` in the previous step.
 
-```
+```sql
 -- This query assumes you created database `Riverflow`
 -- and a foreign table called `riverflow` in the previous step.
 
@@ -171,7 +171,7 @@ SELECT TOP 10 * FROM riverflow_native;
 
 Result:
 
-```
+```sql
 site_no   Flow  GageHeight  datetime
 -------  -----  ----------  -------------------
 9400815    .00        -.01  2018-07-10 00:30:00
@@ -194,7 +194,7 @@ So far, we have used a public bucket. What if you have a private bucket? How do 
 
 It is possible to inline your credentials directly into your query:
 
-```
+```sql
 SELECT
   TOP 10 *
 FROM (
@@ -205,7 +205,7 @@ FROM (
 
 Entering these credentials all the time can be tedious and less secure. In Vantage, you can create an authorization object that will serve as a container for your credentials:
 
-```
+```sql
 CREATE AUTHORIZATION aws_authorization
   USER 'YOUR-ACCESS-KEY-ID'
   PASSWORD 'YOUR-SECRET-ACCESS-KEY';
@@ -213,7 +213,7 @@ CREATE AUTHORIZATION aws_authorization
 
 You can then reference your authorization object when you create a foreign table:
 
-```
+```sql
 CREATE FOREIGN TABLE riverflow
 , EXTERNAL SECURITY aws_authorization
 USING ( LOCATION('/s3/td-usgs-public.s3.amazonaws.com/CSVDATA/') );
@@ -223,7 +223,7 @@ USING ( LOCATION('/s3/td-usgs-public.s3.amazonaws.com/CSVDATA/') );
 
 So far, we have talked about reading and importing data from object storage. Wouldn't it be nice if we had a way to use SQL to export data from Vantage to object storage? This is exactly what `WRITE_NOS` function is for. Let's say we want to export data from `riverflow_native` table to object storage. You can do so with the following query:
 
-```
+```sql
 SELECT * FROM WRITE_NOS (
   ON ( SELECT * FROM riverflow_native )
   PARTITION BY site_no ORDER BY site_no

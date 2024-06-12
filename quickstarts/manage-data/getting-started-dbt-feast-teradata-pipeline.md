@@ -24,10 +24,10 @@ This tutorial shows an approach to creating a dbt pipeline that takes raw data a
 
 ## Prerequisites
 
-
-
 * Access to a Teradata Vantage database instance.
-  <ClearscapeDocsNote />
+
+<ClearscapeDocsNote />
+
 * Feast-Teradata  installed locally. See [Feast-Teradata installation instructions](https://quickstarts.teradata.com/modelops/using-feast-feature-store-with-teradata-vantage.html#_overview)
 
 * dbt installed locally. See [dbt installation instructions](https://quickstarts.teradata.com/dbt.html)
@@ -38,19 +38,19 @@ The goal is to create a data pipeline with Teradata Vantage as a source, and per
 
 ## Getting started
 1. Create a new python environment to manage dbt, feast, and their dependencies. Activate the environment:
-+
+
 ``` bash
 python3 -m venv env
 source env/bin/activate
 ```
 
 2. Clone the tutorial repository and change the directory to the project directory:
-+
+
 ``` bash
 git clone https://github.com/Teradata/tdata-pipeline.git
 ```
 The directory structure of the project cloned looks like this:
-+
+
 ```
 tdata-pipeline/
     feature_repo/
@@ -72,55 +72,7 @@ teddy_bank is a fictitious dataset of banking customers, consisting of mainly 3 
 transactions, with the following entity-relationship diagram:
 
 
-```
-# Entities
-
-
-[raw_customers] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`cust_id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  `income  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(15, 1)", border: "1", border-color: "#ffffff"}
-  `age  ` {bgcolor: "#fcece8", color: "#868686", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  `years_with_bank  ` {bgcolor: "#fcece8", color: "#868686", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  `nbr_children  ` {bgcolor: "#fcece8", color: "#868686", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  `gender  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(1)", border: "1", border-color: "#ffffff"}
-  `marital_status  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(1)", border: "1", border-color: "#ffffff"}
-  `name_prefix  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(4)", border: "1", border-color: "#ffffff"}
-  `first_name  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(12)", border: "1", border-color: "#ffffff"}
-  `last_name  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(15)", border: "1", border-color: "#ffffff"}
-  `street_nbr  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(8)", border: "1", border-color: "#ffffff"}
-  `street_name  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(15)", border: "1", border-color: "#ffffff"}
-  `postal_code  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(5)", border: "1", border-color: "#ffffff"}
-  `city_name  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(16)", border: "1", border-color: "#ffffff"}
-  `state_code  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(2)", border: "1", border-color: "#ffffff"}
-
-
-[raw_accounts] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`acct_nbr  ` {bgcolor: "#f9d6cd", color: "#000000", label: "VARCHAR(18)", border: "1", border-color: "#ffffff"}
-  +`cust_id  ` {bgcolor: "#fcece8", color: "#868686", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  `acct_type  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(2)", border: "1", border-color: "#ffffff"}
-  `account_active  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(1)", border: "1", border-color: "#ffffff"}
-  `acct_start_date  ` {bgcolor: "#fcece8", color: "#868686", label: "DATE", border: "1", border-color: "#ffffff"}
-  `acct_end_date  ` {bgcolor: "#fcece8", color: "#868686", label: "DATE", border: "1", border-color: "#ffffff"}
-  `starting_balance  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(11, 3)", border: "1", border-color: "#ffffff"}
-  `ending_balance  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(11, 3)", border: "1", border-color: "#ffffff"}
-
-[raw_transactions] {bgcolor: "#f37843", color: "#ffffff", border: "0", border-color: "#ffffff"}
-  *`tran_id  ` {bgcolor: "#f9d6cd", color: "#000000", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  +`acct_nbr  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(18)", border: "1", border-color: "#ffffff"}
-  `tran_amt  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(9, 2)", border: "1", border-color: "#ffffff"}
-  `principal_amt  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(15, 2)", border: "1", border-color: "#ffffff"}
-  `interest_amt  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(11, 3)", border: "1", border-color: "#ffffff"}
-  `new_balance  ` {bgcolor: "#fcece8", color: "#868686", label: "DECIMAL(9, 2)", border: "1", border-color: "#ffffff"}
-  `tran_date  ` {bgcolor: "#fcece8", color: "#868686", label: "DATE", border: "1", border-color: "#ffffff"}
-  `tran_time  ` {bgcolor: "#fcece8", color: "#868686", label: "INTEGER", border: "1", border-color: "#ffffff"}
-  `channel  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(1)", border: "1", border-color: "#ffffff"}
-  `tran_code  ` {bgcolor: "#fcece8", color: "#868686", label: "VARCHAR(2)", border: "1", border-color: "#ffffff"}
-
-# Relationships
-
-raw_customers   1--* raw_accounts
-raw_accounts      1--* raw_transactions
-```
+![dbt feast](../images/dbt3.svg)
 
 dbt takes this raw data and builds the following model, which is more suitable for ML modeling and analytics tools:
 

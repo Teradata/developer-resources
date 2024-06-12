@@ -25,7 +25,7 @@ You need access to a Teradata Vantage instance. NOS is enabled in all Vantage ed
 
 ## Explore data with NOS
 
-:::NOTE
+:::note
 Currently, NOS supports CSV, JSON (as array or new-line delimited), and Parquet data formats.
 :::
 
