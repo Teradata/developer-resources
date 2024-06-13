@@ -27,8 +27,6 @@ const config = {
   organizationName: 'teradata', // Usually your GitHub org/user name.
   projectName, // Usually your repo name.
   trailingSlash: true,
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
 
   headTags: [
     {
