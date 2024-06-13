@@ -119,7 +119,7 @@ Everything you need to start exploring, analyzing, and experimenting:
 </details>
 
 :::note
-See the [release notes](./whats-new/release-notes.md) for known issues and features not currently supported.
+See the [release notes](./release-notes.md) for known issues and features not currently supported.
 :::
 
 

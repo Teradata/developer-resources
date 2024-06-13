@@ -52,7 +52,7 @@ The engine-specific policies AI Unlimited creates are restricted this way:
   "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
   ```
 
-To allow AI Unlimited to create a new role for each engine deployment, when you configure the [cloud integration](../install-ai-unlimited/setup-ai-unlimited) in the AI Unlimited setup, leave the **Default IAM role** field blank.
+To allow AI Unlimited to create a new role for each engine deployment, when you configure the [cloud integration](../install-ai-unlimited/setup-ai-unlimited.md) in the AI Unlimited setup, leave the **Default IAM role** field blank.
 
 
 ## Provide roles created by your organization

@@ -211,5 +211,5 @@ Because you are the AI Unlimited admin, you can return to the setup anytime to [
 
 ## What's next
 
-In a Jupyter notebook, start [exploring and analyzing data](../explore-and-analyze-data/).
+In a Jupyter notebook, start [exploring and analyzing data](../explore-and-analyze-data/index.md).
 
