@@ -16,7 +16,7 @@ For help with managing projects, email the <a href="mailto:aiunlimited.support@T
 
 ## All users
 
-- Use [magic commands](./docs/explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
+- Use [magic commands](../explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
 
 - [Suspend and restore projects](./suspend-and-restore-project.md) to pay as you go
 
