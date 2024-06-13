@@ -117,7 +117,7 @@ Use these samples, as needed, in a policy attached to the manager's role:
 If you use [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) for the engine's role, use  [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) for the manager's role.
 :::
 
-- When you configure the [cloud integration](../install-ai-unlimited/setup-ai-unlimited) in the AI Unlimited setup, put the role name in the **Default IAM role** field.
+- When you configure the [cloud integration](../install-ai-unlimited/setup-ai-unlimited.md) in the AI Unlimited setup, put the role name in the **Default IAM role** field.
 
 
 
