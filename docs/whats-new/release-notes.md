@@ -12,7 +12,7 @@ pagination_next: null
 
 As we continue to enhance AI Unlimited, please be aware of features not currently supported and known issues. 
 
-For the latest features and updates, keep an eye on [What's new](/docs/whats-new/).
+For the latest features and updates, keep an eye on [What's new](./whats-new/).
 
 
 ## Paid public preview (launch) - May 2024

@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 A project is a means to explore and analyze data from a Jupyter notebook. 
 
 :::note
-Each project has a Git repository. [Learn why](/docs/glossary.md#project-repository).
+Each project has a Git repository. [Learn why](../glossary.md#project-repository).
 :::
 
 A project owner might [add you to a project](../manage-ai-unlimited/add-collaborators.md) as a collaborator. To contribute, you'll need to access the project from a Jupyter notebook.
@@ -25,15 +25,15 @@ A project owner might [add you to a project](../manage-ai-unlimited/add-collabor
 ## Before you begin
 
 - From the project owner, get these items:
-  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager)
+  - The IP address or  hostname of the [AI Unlimited manager](../glossary.md#ai-unlimited-manager)
   - The project name
 
-- From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md). 
+- From your profile, [get your API key](./get-api-key.md). 
 
 :::tip
 Run `%help` for details on all the magic commands available in your notebook. Run `%help <command>` for details on one of them. 
 
-Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
+Or learn about the [magic commands](./magic-commands.md) specific to AI Unlimited. 
 :::
 
 

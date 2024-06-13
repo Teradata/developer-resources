@@ -12,7 +12,7 @@ pagination_next: null
 
 You'll use an  Azure Resource Manager (ARM) template provided by Teradata to install JupyterLab, and the AI Unlimited kernel, from the Azure Portal. 
 
-This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
+This deploys a server instance, with JupyterLab running in a container controlled by [systemd](../glossary.md#systemd).
 
 :::tip
 For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -30,7 +30,7 @@ For installation support, email the <a href="mailto:aiunlimited.support@Teradata
 
 ## Clone the repository
 
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
+import MyPartial from '../../_partials/_clone-repo.mdx';
 
 <MyPartial />
 
@@ -41,12 +41,12 @@ ARM templates for JupyterLab are here in the AI Unlimited GitHub repository:
 
 `deployments/azure/templates/arm/jupyter`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](../glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `jupyter-with-alb.json`&mdash;Hosts JupyterLab behind an [application load balancer](/docs/glossary.md#application-load-balancer)
-    - `jupyter-with-nlb.json`&mdash;Hosts JupyterLab behind a [network load balancer](/docs/glossary.md#network-load-balancer)
+    - `jupyter-with-alb.json`&mdash;Hosts JupyterLab behind an [application load balancer](../glossary.md#application-load-balancer)
+    - `jupyter-with-nlb.json`&mdash;Hosts JupyterLab behind a [network load balancer](../glossary.md#network-load-balancer)
     - `jupyter-without-lb.json`&mdash;No load balancer
 
 ## Load the template

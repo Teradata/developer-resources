@@ -16,22 +16,22 @@ For help with managing projects, email the <a href="mailto:aiunlimited.support@T
 
 ## All users
 
-- Use [magic commands](/docs/explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
+- Use [magic commands](./docs/explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
 
-- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-restore-project.md) to pay as you go
+- [Suspend and restore projects](./suspend-and-restore-project.md) to pay as you go
 
 
 ## Project owners
 
 A user who creates a project is the project's owner.
 
-- [Add collaborators](/docs/manage-ai-unlimited/add-collaborators.md)
+- [Add collaborators](./add-collaborators.md)
 
 
 ## Admin
 
-The user who [set up AI Unlimited](/docs/install-ai-unlimited/setup-ai-unlimited.md) is the admin.
+The user who [set up AI Unlimited](../install-ai-unlimited/setup-ai-unlimited.md) is the admin.
 
-- [Change settings](/docs/manage-ai-unlimited/change-settings.md)
+- [Change settings](./change-settings.md)
 
 

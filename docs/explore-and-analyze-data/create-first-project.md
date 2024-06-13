@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 A project is a means to explore and analyze data from a Jupyter notebook. 
 
 :::note
-Each project has a Git repository. [Learn why](/docs/glossary.md#project-repository).
+Each project has a Git repository. [Learn why](../glossary.md#project-repository).
 :::
 
 For your first project, using data we provide, you'll complete this simple workflow:
@@ -31,7 +31,7 @@ For your first project, using data we provide, you'll complete this simple workf
 
 - Your AI Unlimited admin is the person at your organization who set up AI Unlimited. From your admin, get these items:
 
-  - The IP address or  hostname of the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager).
+  - The IP address or  hostname of the [AI Unlimited manager](../glossary.md#ai-unlimited-manager).
 
   - These environment variables:   
     <Tabs>
@@ -45,7 +45,7 @@ For your first project, using data we provide, you'll complete this simple workf
     </TabItem>
     </Tabs> 
 
-- From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
+- From your profile, [get your API key](./get-api-key.md).
 
 - To run the sample workload, you'll need the `salescenter.csv` file. Download the file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data), and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. Or if you're using your own file, modify the example accordingly.
 
@@ -55,7 +55,7 @@ For your first project, using data we provide, you'll complete this simple workf
 :::tip
 Run `%help` for details on all the magic commands available in your notebook. Run `%help <command>` for details on one of them. 
 
-Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-commands.md) specific to AI Unlimited. 
+Or learn about the [magic commands](./magic-commands.md) specific to AI Unlimited. 
 :::
 
 1. Connect to JupyterLab, open a notebook, and select the AI Unlimited kernel.

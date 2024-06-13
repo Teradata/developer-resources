@@ -21,7 +21,7 @@ Then before you install AI Unlimited, address these Azure items.
 
 - Networking requirements: Your Azure [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) must have an [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal) configured with a [subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal). Use an existing VNet or subnet, or create your own, depending on your account permissions. 
 
-- If you'll need to access the manager instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details).
+- If you'll need to access the manager instance to run commands or debug, you can use a [key pair](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) to securely connect using Secure Shell (SSH). You'll need the key pair when you [specify the instance details](../install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details).
 
 
 ## Create the role for the manager
@@ -46,7 +46,7 @@ Create the role:
 
 - Or share the [ai-unlimited.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/azure/policies/ai-unlimited.json) policy, which contains the permissions the manager needs, with your cloud admin so they can create the role for you.
 
-You'll need the `RoleDefinitionId` when you [specify the instance details](/docs/install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details). 
+You'll need the `RoleDefinitionId` when you [specify the instance details](../install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details). 
 
 
 

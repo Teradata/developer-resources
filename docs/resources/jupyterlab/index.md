@@ -14,11 +14,11 @@ You may already have [JupyterLab](https://jupyter.org/)&mdash;somewhere on the c
 
 Or, get JupyterLab with the AI Unlimited kernel now:
 
-- Install it on [AWS](/docs/resources/jupyterlab/install-jupyterlab-aws.md) or [Azure](/docs/resources/jupyterlab/install-jupyterlab-azure.md)
-- [Run it locally](/docs/resources/jupyterlab/run-jupyterlab-docker.md) in a Docker container
+- Install it on [AWS](./jupyterlab/install-jupyterlab-aws.md) or [Azure](./jupyterlab/install-jupyterlab-azure.md)
+- [Run it locally](./jupyterlab/run-jupyterlab-docker.md) in a Docker container
 
 :::note
-The [QuickStart](/docs/resources/quickstart/) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
+The [QuickStart](./quickstart/) includes JupyterLab. If you plan to use the QuickStart, you do not need to install JupyterLab separately.
 :::
 
-Once you have JupyterLab, you can start [exploring and analyzing data](/docs/explore-and-analyze-data/).
+Once you have JupyterLab, you can start [exploring and analyzing data](../explore-and-analyze-data/).

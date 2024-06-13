@@ -20,7 +20,7 @@ Then before you install AI Unlimited, address these AWS items.
 - Work with your cloud admin to ensure you have the [IAM](https://aws.amazon.com/iam/) permissions to create the cloud resources defined in the [AI Unlimited template](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited).
 
 - If you'll need to access the manager instance to run commands or debug, you can connect to it one of these ways:
-	- Use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options).
+	- Use a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) to securely connect using Secure Shell (SSH). You will need the key pair when you [specify the stack details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options).
 	- Use AWS Session Manager to connect. To enable this, attach the [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json) policy to a [role you provide](#provide-roles-created-by-your-organization) to the manager.
   
 - If you plan to use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) or [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html), make sure you have permission to manage these AWS services:
@@ -38,7 +38,7 @@ If your security does not allow AI Unlimited to create roles, [create the roles]
 
 ### Role for the manager
 
-To let AI Unlimited create this role for you, when you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), provide these values for these parameters:
+To let AI Unlimited create this role for you, when you [specify the stack details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), provide these values for these parameters:
     - `IamRole`: **New**
     - `IamRoleName`: leave blank
 	
@@ -52,7 +52,7 @@ The engine-specific policies AI Unlimited creates are restricted this way:
   "Resource": ["arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/`CLUSTER_NAME`/`SECRET_NAME`"]
   ```
 
-To allow AI Unlimited to create a new role for each engine deployment, when you configure the [cloud integration](/docs/install-ai-unlimited/setup-ai-unlimited) in the AI Unlimited setup, leave the **Default IAM role** field blank.
+To allow AI Unlimited to create a new role for each engine deployment, when you configure the [cloud integration](../install-ai-unlimited/setup-ai-unlimited) in the AI Unlimited setup, leave the **Default IAM role** field blank.
 
 
 ## Provide roles created by your organization
@@ -74,12 +74,12 @@ Or use the links provided in sections that follow to download what you need.
 
 - If you have permissions to create IAM resources, create the role:
   - Attach a policy that includes the JSON that meets your needs. See the JSON samples that follow.
-  - When you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), use these parameter values:
+  - When you [specify the stack details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), use these parameter values:
     - `IamRole`: **New**
 	 - `IamRoleName`: the new role's name
 - If you don't have permissions to create IAM resources, work with your cloud admin to use an existing role:
   - Attach a policy that includes the JSON that meets your needs. See the JSON samples that follow.
-  - When you [specify the stack details](/docs/install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), use these parameter values:
+  - When you [specify the stack details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), use these parameter values:
   - `IamRole`: **Existing**
   - `IamRoleName`: the existing role's name
   
@@ -117,7 +117,7 @@ Use these samples, as needed, in a policy attached to the manager's role:
 If you use [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) for the engine's role, use  [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) for the manager's role.
 :::
 
-- When you configure the [cloud integration](/docs/install-ai-unlimited/setup-ai-unlimited) in the AI Unlimited setup, put the role name in the **Default IAM role** field.
+- When you configure the [cloud integration](../docs/install-ai-unlimited/setup-ai-unlimited) in the AI Unlimited setup, put the role name in the **Default IAM role** field.
 
 
 

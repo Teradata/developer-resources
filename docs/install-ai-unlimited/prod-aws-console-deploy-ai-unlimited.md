@@ -10,11 +10,11 @@ pagination_next: null
 
 # Install the manager on AWS
 
-Before you begin, make sure you have the [prerequisites](/docs/install-ai-unlimited/index.md#prerequisites) and your AWS account meets [the requirements](../resources/aws-requirements.md).
+Before you begin, make sure you have the [prerequisites](./index.md#prerequisites) and your AWS account meets [the requirements](../resources/aws-requirements.md).
 
 The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup. 
 
-You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
+You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](../glossary.md#systemd).
 
 :::tip
 For installation help, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
@@ -34,12 +34,12 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `deployments/aws/templates/ai-unlimited/`
 
-Choose a template based on whether you intend to use a [load balancer](/docs/glossary.md#load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](../glossary.md#load-balancer) and what type.
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](/docs/glossary.md#application-load-balancer)
-    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](/docs/glossary.md#network-load-balancer)
+    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](../glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](../glossary.md#network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
 
@@ -177,7 +177,7 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
+[Create an OAuth app](../resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 
 
