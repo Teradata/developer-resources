@@ -43,20 +43,21 @@ function Footer() {
   const { links, copyright, socialLinks, legalLinks } = footerItems as FooterItems;
 
   const translatedLinks = translateFooterItems(links);
-  const translatedCopyright = translate({ message: copyright });
+  const translatedCopyright = `${new Date().getFullYear()} ${translate({ message: copyright })}`;
   const translatedSocialLinks = {
     ...socialLinks,
+    title: translate({ message: socialLinks.title ?? '' }),
     items: socialLinks.items?.map((link) => {
       return {
         ...link,
-        title: translate({ message: link.label ?? '' }),
+        label: translate({ message: link.label ?? '' }),
       }
     })
   } 
   const translatedLegalLinks = legalLinks.map((link) => {
     return {
       ...link,
-      title: translate({ message: link.label }),
+      label: translate({ message: link.label }),
     }
   })
 
