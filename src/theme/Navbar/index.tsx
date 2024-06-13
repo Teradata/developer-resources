@@ -5,6 +5,18 @@ import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
+
+
+function translateNavItems(navItems: NavListItem[]): NavListItem[] {
+  return navItems.map((item) => {
+    return {
+      ...item,
+      label: translate({ message: item.label }),
+      navItems: item.navItems ? translateNavItems(item.navItems) : undefined,
+    };
+  });
+}
+
 export default function Navbar() {
   const { navItems }: ThemeConfig = useThemeConfig();
   const {
@@ -16,6 +28,9 @@ export default function Navbar() {
     title: string;
     languages: Language[];
   };
+
+  const transledTitle = translate({ message: title });
+  const translatedNavItems = translateNavItems(nestedNavItems);
 
   const secondaryMenuDetails = {
     menuElement: useNavbarSecondaryMenu().content as JSX.Element,
@@ -75,8 +90,8 @@ export default function Navbar() {
   return (
     <Header
       key={defaultLang}
-      navItems={nestedNavItems}
-      title={title}
+      navItems={translatedNavItems}
+      title={transledTitle}
       headerActions={[{ actionElement: <SearchBar />, type: 'search' }]}
       languages={languages}
       onLanguageChange={handleLanguageChange}

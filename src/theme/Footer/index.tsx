@@ -7,25 +7,65 @@ import {
   Footer as TDFooter,
 } from '@teradata-web/react-components';
 import { ThemeConfig } from '@docusaurus/types';
+import { translate } from '@docusaurus/Translate';
+
+interface FooterItems  {
+  links: FooterLink[],
+  copyright: string;
+  socialLinks: SocialLinks;
+  legalLinks: FooterNavLink[];
+}
+
+function translateFooterItems(footerItems: FooterLink[]): FooterLink[] {
+  return footerItems.map((item) => {
+    return {
+      ...item,
+      title: translate({ message: item.title }),
+      items: item.items ? translateFooterNavLinks(item.items) : undefined,
+    };
+  });
+}
+
+function translateFooterNavLinks(footerNavLinks: FooterNavLink[]): FooterNavLink[] {
+  return footerNavLinks.map((link) => {
+    return {
+      ...link,
+      label: translate({ message: link.label }),
+    }
+  })
+}
 
 function Footer() {
   const { footerItems }: ThemeConfig = useThemeConfig();
   if (!footerItems) {
     return null;
   }
-  const { links, copyright, socialLinks, legalLinks } = footerItems as {
-    links: FooterLink[];
-    copyright: string;
-    socialLinks: SocialLinks;
-    legalLinks: FooterNavLink[];
-  };
+  const { links, copyright, socialLinks, legalLinks } = footerItems as FooterItems;
+
+  const translatedLinks = translateFooterItems(links);
+  const translatedCopyright = translate({ message: copyright });
+  const translatedSocialLinks = {
+    ...socialLinks,
+    items: socialLinks.items?.map((link) => {
+      return {
+        ...link,
+        title: translate({ message: link.label ?? '' }),
+      }
+    })
+  } 
+  const translatedLegalLinks = legalLinks.map((link) => {
+    return {
+      ...link,
+      title: translate({ message: link.label }),
+    }
+  })
 
   return (
     <TDFooter
-      links={links}
-      copyright={copyright}
-      socialLinks={socialLinks}
-      legalLinks={legalLinks}
+      links={translatedLinks}
+      copyright={translatedCopyright}
+      socialLinks={translatedSocialLinks}
+      legalLinks={translatedLegalLinks}
     />
   );
 }
