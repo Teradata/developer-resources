@@ -16,7 +16,7 @@ interface FooterItems  {
   legalLinks: FooterNavLink[];
 }
 
-function translateFooterItems(footerItems: FooterLink[]): FooterLink[] {
+function translateFooterItems(footerItems: FooterLink[]|SocialLinks[]): FooterLink[] {
   return footerItems.map((item) => {
     return {
       ...item,
@@ -41,25 +41,10 @@ function Footer() {
     return null;
   }
   const { links, copyright, socialLinks, legalLinks } = footerItems as FooterItems;
-
   const translatedLinks = translateFooterItems(links);
   const translatedCopyright = `${new Date().getFullYear()} ${translate({ message: copyright })}`;
-  const translatedSocialLinks = {
-    ...socialLinks,
-    title: translate({ message: socialLinks.title ?? '' }),
-    items: socialLinks.items?.map((link) => {
-      return {
-        ...link,
-        label: translate({ message: link.label ?? '' }),
-      }
-    })
-  } 
-  const translatedLegalLinks = legalLinks.map((link) => {
-    return {
-      ...link,
-      label: translate({ message: link.label }),
-    }
-  })
+  const translatedSocialLinks = translateFooterItems([socialLinks])[0] as SocialLinks;
+  const translatedLegalLinks = translateFooterNavLinks(legalLinks);
 
   return (
     <TDFooter
