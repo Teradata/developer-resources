@@ -12,6 +12,6 @@ pagination_next: null
 
 For a simpler, faster way to try AI Unlimited, use the QuickStart. 
  
-This runs the [AI Unlimited manager](/docs/glossary.md#ai-unlimited-manager) and JupyterLab, with the AI Unlimited kernel, on your computer using [Docker](https://www.docker.com/). 
+This runs the [AI Unlimited manager](../../glossary.md#ai-unlimited-manager) and JupyterLab, with the AI Unlimited kernel, on your computer using [Docker](https://www.docker.com/). 
 
 The QuickStart is for a single user.
