@@ -29,7 +29,7 @@ export default function Navbar() {
     languages: Language[];
   };
 
-  const transledTitle = translate({ message: title });
+  const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
 
   const secondaryMenuDetails = {
@@ -91,7 +91,7 @@ export default function Navbar() {
     <Header
       key={defaultLang}
       navItems={translatedNavItems}
-      title={transledTitle}
+      title={translatedTitle}
       headerActions={[{ actionElement: <SearchBar />, type: 'search' }]}
       languages={languages}
       onLanguageChange={handleLanguageChange}
