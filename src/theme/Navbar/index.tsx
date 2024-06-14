@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Header, Language, NavListItem } from '@teradata-web/react-components';
+import React, { ReactElement, useEffect, useState } from 'react';
+import {
+  Button,
+  Header,
+  HeaderAction,
+  Language,
+  NavListItem,
+} from '@teradata-web/react-components';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
-
+import Link from '@docusaurus/Link';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   return navItems.map((item) => {
@@ -31,6 +37,22 @@ export default function Navbar() {
 
   const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
+
+  const headerActions: HeaderAction[] = [
+    { actionElement: <SearchBar />, type: 'search' },
+    {
+      actionElement: (
+        <Link to="https://www.teradata.com/getting-started/demos/clearscape-analytics">
+          <Button
+            label={translate({ message: 'header.actions.free_demo' })}
+            icon="fa-solid fa-arrow-right-long"
+            trailingIcon={true}
+          />
+        </Link>
+      ),
+      type: 'button',
+    },
+  ];
 
   const secondaryMenuDetails = {
     menuElement: useNavbarSecondaryMenu().content as JSX.Element,
@@ -92,7 +114,7 @@ export default function Navbar() {
       key={defaultLang}
       navItems={translatedNavItems}
       title={translatedTitle}
-      headerActions={[{ actionElement: <SearchBar />, type: 'search' }]}
+      headerActions={headerActions}
       languages={languages}
       onLanguageChange={handleLanguageChange}
       selectedLanguage={defaultLang}
