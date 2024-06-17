@@ -80,6 +80,10 @@ a.col {
   .col {
     --ifm-col-width: 50%;
   }
+
+  .col2 {
+    --ifm-col-width: 100% !important;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -215,3 +219,30 @@ a.col {
 }
 
  
+
+.images {
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media (max-width: 600px) {
+  .imgFoot{
+    display: grid;
+    /*
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 120px 0;
+    */
+  }
+
+  .images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0 40px 0;
+  }
+  
+}
+

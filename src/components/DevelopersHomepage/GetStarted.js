@@ -33,7 +33,7 @@ export default function GetStarted() {
     <section className={styles.features}>
       <div className={clsx('container', styles.container)}>
         <div className={clsx('row', styles.row)}>
-          <div className={clsx('col', styles.col)}>
+          <div className={clsx('col', styles.col, styles.col2)}>
             <Typography scale="eyebrow">
               Solutions for you
             </Typography>
