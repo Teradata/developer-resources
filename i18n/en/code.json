@@ -5,6 +5,9 @@
   "header.getting_started": {
     "message": "Getting started"
   },
+  "header.actions.free_demo": {
+    "message": "Start free demo"
+  },
   "header.docs": {
     "message": "Docs"
   },
