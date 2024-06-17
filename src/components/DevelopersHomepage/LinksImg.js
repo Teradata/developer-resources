@@ -13,7 +13,7 @@ export default function LinksImages() {
     <section className={styles.features}>
       <div className={clsx('container', styles.container)}>
         <div className={clsx('row', styles.row)}>
-          <div className={clsx('col', styles.col)}>
+          <div className={clsx('col', styles.col, styles.col2)}>
             <p className={clsx(styles.secondSubheading)}>
               <Typography scale="headline2">
                 Talk to Developers where you are
@@ -24,18 +24,24 @@ export default function LinksImages() {
         <div className={clsx('row', styles.row)}>
           <div className='col'>
             <div className={styles.imgFoot}>
-              <a href='https://support.teradata.com/community' target='_blank'>
-                <img src={teradataCommunityUrl} alt="Teradata Community" title="Teradata Community"/>
-              </a>
-              <a href='https://medium.com/teradata' target='_blank'>
-                <img src={mediumUrl} alt="Teradata Technical Blogs" title="Teradata Technical Blogs"/>
-              </a>
-              <a href='https://github.com/Teradata' target='_blank'>
-                <img src={githubUrl} alt="GitHub" title="GitHub"/>
-              </a>
-              <a href='https://stackoverflow.com/questions/tagged/teradata' target='_blank'>
-                <img src={stackoverflowUrl} alt="Stackoverflow" title="Stackoverflow"/>
-              </a>
+              <div className={styles.images}>
+                <a href='https://support.teradata.com/community' target='_blank'>
+                  <img src={teradataCommunityUrl} alt="Teradata Community" title="Teradata Community"/>
+                </a>                
+              </div>
+              <div className={styles.images}>
+                <a href='https://medium.com/teradata' target='_blank'>
+                  <img src={mediumUrl} alt="Teradata Technical Blogs" title="Teradata Technical Blogs"/>
+                </a>            
+              </div>
+              <div className={styles.images}>
+                <a href='https://github.com/Teradata' target='_blank'>
+                  <img src={githubUrl} alt="GitHub" title="GitHub"/>
+                </a>    
+                <a href='https://stackoverflow.com/questions/tagged/teradata' target='_blank'>
+                  <img src={stackoverflowUrl} alt="Stackoverflow" title="Stackoverflow"/>
+                </a>
+              </div>
             </div>
           </div>
         </div>
