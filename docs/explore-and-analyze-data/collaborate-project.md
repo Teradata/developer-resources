@@ -51,40 +51,42 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     %project_engine_list project=<Project_Name>
     ```
 
-4. If the engine is not deployed, deploy it.
-    <Tabs>
-    <TabItem value="aws1" label="AWS">
+4. If the engine is not deployed, deploy it and restore the project. 
 
-    ```bash 
-    %project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
-    ```
+   The size can be small, medium, large, or extralarge. The default is small. If you don't specify the number of nodes, one node is deployed. The default for restore is true.
+   
+   <Tabs>
+   <TabItem value="aws1" label="AWS">
 
-    </TabItem>
-    <TabItem value="azure" label="Azure">
+   ```bash 
+   %project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, prefixlist=<Prefix_List>, securitygroups=<Security_Group>, cidrs=<CIDR>, tags=<Tags>, iamrole=<IAM_Role>, roleprefix=<Role_Prefix>, permissionboundary=<Permission_Boundary>
+   ```
 
-    ```bash 
-    %project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<Key_Vault_Resource_Group>, networkresourcegroup=<Network_Resource_Group>
-    ```
-    </TabItem>
-    </Tabs>
+   </TabItem>
+   <TabItem value="azure" label="Azure">
 
-	If you don't specify the number of nodes, one node is deployed.
-
+   ```bash 
+   %project_engine_deploy project=<Project_Name>, size=<Size_of_Engine>, node=<Number_of_Nodes>, subnet=<Subnet_id>, region=<Region>, restore=<true|false>, network=<Network>, keyvault=<Key_Vault>, keyvaultresourcegroup=<Key_Vault_Resource_Group>, networkresourcegroup=<Network_Resource_Group>
+   ```
+   </TabItem>
+   </Tabs>
+	
 5. Get your password for the engine.
-    ```bash
-    %project_user_list project=<Project_Name>
-    ```
+   ```bash
+   %project_user_list project=<Project_Name>
+   ```
 
 6. Refresh the connection to include your notebook.
-    ```bash 
-    %project_connection_add project=<Project_Name>
-    ```
+   ```bash 
+   %project_connection_add project=<Project_Name>
+   ```
 
-7. Connect to the project, and provide your password.
-    ```bash
-    %connect <Project_Name>
-    ```
-
+7. Connect to the project.
+   ```bash
+   %connect <Project_Name>
+   ```
+   When the connection is made, provide your password.
+   
 You're all set! Now you can contribute to the project.
 
 

@@ -18,7 +18,7 @@ For help with managing projects, ask the [community](https://support.teradata.co
 
 - Use [magic commands](/docs/explore-and-analyze-data/magic-commands.md) to manage projects in Jupyter notebooks 
 
-- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-restore-project.md) to pay-as-you-go
+- [Suspend and restore projects](/docs/manage-ai-unlimited/suspend-and-restore-project.md) to pay as you go
 
 
 ## Project owners

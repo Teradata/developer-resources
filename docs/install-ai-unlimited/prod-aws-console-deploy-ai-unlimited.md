@@ -1,6 +1,6 @@
 ---
 id: deploy-manager-aws-console
-title: Deploy the manager using the AWS Management Console
+title: Install on AWS
 description: Learn how to deploy the manager using a CloudFormation template.
 sidebar_label: Install on AWS
 sidebar_position: 1
@@ -47,7 +47,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 1. Sign in to the [AWS console](https://aws.amazon.com).<br />
    :::note
-   References to the AWS Console are accurate as of April 11, 2024.
+   References to AWS Management Console elements are up-to-date as of May 29, 2024.
    ::: 
 2. Select the AWS region in which to deploy AI Unlimited.<br />
 We recommend selecting the region closest to your primary work location.
@@ -97,7 +97,7 @@ We recommend selecting the region closest to your primary work location.
 |AIUnlimitedHttpPort		|The port to access the AI Unlimited UI.|Required with default<br/>Default: 3000|
 |AIUnlimitedGrpcPort		|The port to access the AI Unlimited API.|Required with default<br/>Default: 3282|
 |AIUnlimitedVersion		|The version of AI Unlimited you want to deploy.|Required with default<br/>Default: latest<br/>The value is a container version tag.|
-|UsePersistentVolume|Specifies whether you want to use a persistent volume to store data. See *Learn more: Why use a persistent volume?* below the parameters section. |Optional with default<br/>Default: None<br/>Supported options are: new persistent volume, an existing one, or none, depending on your use case.|
+|UsePersistentVolume|Specifies whether you want to use a new or existing persistent volume to store data. See *Learn more: Using a persistent volume* below the parameters section. |Optional with default<br/>Default: New<br/>Supported options are a new persistent volume or an existing one, depending on your use case.|
 |PersistentVolumeSize	|The size of the persistent volume that you attach to the instance, in GB.|Required with default<br/>Default: 20<br/>Supports values between 8 and 1000. |
 |ExistingPersistentVolumeId		|The ID of the existing persistent volume that you attach to the instance. |Required if UsePersistentVolume is set to Existing.<br/>Default: NA<br/>The persistent volume must be in the same availability zone as the AI Unlimited instance.|
 |PersistentVolume<br/>DeletionPolicy		|The persistent volume behavior when you delete the CloudFormation deployment.|Required with default|Delete <br/>Default: Retain <br/>Supported options are: Delete, Retain, RetainExceptOnCreate, and Snapshot.|
@@ -125,7 +125,7 @@ The concurrency will increase when AI Unlimited is released for general availabi
 
 <details>
 
-<summary>Learn more: Why use a persistent volume?</summary>
+<summary>Learn more: Using a persistent volume</summary>
 
 The manager instance runs in a container and saves its configuration data in a database in the root volume of the instance. This data persists if you shut down, restart, or snapshot and relaunch the instance. 
 
@@ -168,7 +168,7 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 1. Review the template settings. 
 2. Select the check box to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />
-On the **Events** tab, you can monitor progress. When the **Status** is `CREATE_COMPLETE`, the manager is ready. 
+On the **Events** tab, you can monitor progress. When the status of all the resources is `CREATE_COMPLETE`, the manager is ready. 
 
 The **Outputs** tab shows the values generated for the created resources.
 
@@ -177,7 +177,7 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authorization between AI Unlimited and your Git provider account.
+[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 
 

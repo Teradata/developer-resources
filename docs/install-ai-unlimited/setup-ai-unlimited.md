@@ -124,7 +124,7 @@ Use these fields to allow source traffic to reach the engine:
 
 - **Default [CIDRs](/docs/glossary.md#classless-inter-domain-routing)**
  
-- **Default [application security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
+- **Default [security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
 
 **Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
 
@@ -162,7 +162,7 @@ Two organizations in your GitHub account can help with access control and reposi
 
 Select **Update**.
 
-Select **Sign In**. Then, if prompted, sign in.
+Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Select **Sign In**. Then, if prompted, sign in.
 
 <br />
 
-**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect back to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
+**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](docs/resources/create-oauth-app.md).
 
 **GitLab base URL**&mdash;The URL for your GitLab instance.
 
@@ -186,7 +186,7 @@ Two groups in your GitLab account can help with access control and repository ma
 
 Select **Update**.
 
-Select **Sign In**. Then, if prompted, sign in.
+Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
 
 </TabItem>
 </Tabs>

@@ -1,7 +1,7 @@
 ---
 id: create-oauth-app
-title: Create a GitHub or GitLab OAuth app
-description: It will allow AI Unlimited to authorize your Git provider account to store user and project information.
+title: Create an OAuth app
+description: It will allow AI Unlimited to use your Git provider's authentication to manage project repositories.
 sidebar_label: Create an OAuth app
 sidebar_position: 4
 pagination_prev: null

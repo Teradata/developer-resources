@@ -47,7 +47,7 @@ For your first project, using data we provide, you'll complete this simple workf
 
 - From your profile, [get your API key](/docs/explore-and-analyze-data/get-api-key.md).
 
-- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data), and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. If you're using your own file, modify the example accordingly.
+- To run the sample workload, you'll need the `salescenter.csv` file. Download the file from the [AI Unlimited GitHub repository](https://github.com/Teradata/ai-unlimited/tree/develop/examples/GetStarted/data), and upload it to your Amazon Simple Storage Service (S3) or Azure Blob Storage location. Or if you're using your own file, modify the example accordingly.
 
 
 ## Connect, and run your first workload
@@ -80,7 +80,7 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
 5. Deploy the engine.
 
-    Replace `Project_Name`. The size can be small, medium, large, or extralarge. The default is small.
+    The size can be small, medium, large, or extralarge. The default is small.
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
@@ -168,14 +168,16 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
     DROP TABLE SalesDemo;
     ```
 	
-8. Back up your project metadata and object definitions in your Git repository.
+8. Back up your project metadata and object definitions (the schema) in your Git repository.
 	```bash
 	%project_backup project=<Project_Name>
 	```
-
+   This backs up your project, but it does not suspend the engine.
+   
 9. Suspend the engine to avoid paying for unneeded engine resources.
     ```bash
     %project_engine_suspend project=<Project_Name>
     ```
+   This backs up your project and suspends the engine. Typically you will not use `%project_backup` immediately followed by `%project_engine_suspend`.
 
 Congratulations! You've run your first workload.
