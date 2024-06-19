@@ -14,12 +14,12 @@ import JupyterClearscapeNote from '../_partials/jupyter_notebook_clearscape_anal
 
 <JupyterClearscapeNote />
 
-### Overview
+## Overview
 Teradata Jupyter extensions provide Teradata SQL kernel and several UI extensions to allow users to easily access and navigate Teradata database from Jupyter envioronment. Google Vertex AI is Google Cloud's new unified ML platform. Vertex AI Workbench provides a Jupyter-base development environment for the entire data science workflow. This article describes how to integate our Jupyter extensions with Vertex AI Workbench so that Vertex AI users can take advantage of our Teradata extensions in their ML pipeline.
 
 Vertex AI workbench supports two types of notebooks: managed notebooks and user-managed notebooks. Here we will focus on user-managed notebooks. We will show two ways to integrate our Jupyter extensions with user-managed notebooks: use startup script to install our kernel and extensions or use custom container.
 
-### Prerequisites
+## Prerequisites
 
 
 
@@ -28,12 +28,12 @@ Vertex AI workbench supports two types of notebooks: managed notebooks and user-
 * Google Cloud account with Vertex AI enabled
 * Google cloud storage to store startup scripts and Teradata Jupyter extension package
 
-### Integration
+## Integration
 
 There are two ways to run Teradata Jupyter Extensions in Vertex AI:
 
-1. [Use startup script](#use_startup_script)
-2. [Use custom container](#use_custom_container)
+1. [Use startup script](#use-startup-script)
+2. [Use custom container](#use-custom-container)
 
 These two integration methods are described below.
 
@@ -167,7 +167,7 @@ Please refer to the following documentations to push docker image to registry:
 In `Environment` section, set `custom container` field to the location of your newly created custom container:
 ![Open notebook](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-google-vertex-ai/vertex.custom.container.png)
 
-### Further reading
+## Further reading
 * [Teradata Jupyter Extensions Website](https://teradata.github.io/jupyterextensions)
 * [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/KQLs1kPXZ02rGWaS9Ktoww/root)
 * [Teradata® Package for Python User Guide](https://docs.teradata.com/r/1YKutX2ODdO9ppo_fnguTA/root)
