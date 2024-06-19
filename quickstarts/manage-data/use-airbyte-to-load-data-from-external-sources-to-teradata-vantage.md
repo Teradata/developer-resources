@@ -12,7 +12,7 @@ dir: getting-started-with-airbyte
 # Use Airbyte to load data from external sources to Teradata Vantage
 
 
-### Overview
+## Overview
 
 This tutorial showcases how to use Airbyte to move data from sources to Teradata Vantage, detailing both the [Airbyte Open Source](https://docs.airbyte.com/using-airbyte/getting-started) and [Airbyte Cloud options](https://airbyte.com). This specific example covers replication from Google Sheets to Teradata Vantage.
 
@@ -21,7 +21,7 @@ This tutorial showcases how to use Airbyte to move data from sources to Teradata
 
 ![Sample Employees Payrate Google Sheets](../elt/images/getting-started-with-airbyte/sample_employees_payrate_google_sheets.png)
 
-### Prerequisites
+## Prerequisites
 
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
@@ -33,7 +33,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * Data from the source system. In this case, we use a [sample spreadsheet from google sheets](https://docs.google.com/spreadsheets/d/1XNBYUw3p7xG6ptfwjChqZ-dNXbTuVwPi7ToQfYKgJIE/edit). The sample data is a breakdown of payrate by employee type.
 
 ### Airbyte Cloud
-* Create an account on [Airbyte Cloud](https://airbyte.com) and skip to the instructions under the [Airbyte Configuration](#airbyte_configuration) section.
+* Create an account on [Airbyte Cloud](https://airbyte.com) and skip to the instructions under the [Airbyte Configuration](#airbyte-configuration) section.
 
 ### Airbyte Open Source
 * Install Docker Compose to run [Airbyte Open Source](https://github.com/airbytehq/airbyte) locally. Docker Compose comes with Docker Desktop. Please refer to [docker docs](https://docs.docker.com/compose/install) for more details. 
@@ -74,7 +74,7 @@ When logging in for the first time, Airbyte will prompt you to provide your emai
 
 Once Airbyte Open Source is launched you will see a connections dashboard. If you launched Airbyte Open Source for the first time, it would not show any connections.
 
-### Airbyte Configuration
+## Airbyte Configuration
 
 ### Setting the Source Connection
 * You can either click "Create your first connection" or click on the top right corner to initiate the new connection workflow on Airbyte's Connections dashboard.

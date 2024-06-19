@@ -61,7 +61,7 @@ mkdir -p ./dags ./logs ./plugins ./data ./config ./data
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 
-2. Use your preferred file transfer tool (`scp`, `PuTTY`, `MobaXterm`, or similar) to upload [airflow.cfg](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/airflow.cfg) file to `airflow/config` directory.
+2. Use your preferred file transfer tool (`scp`, `PuTTY`, `MobaXterm`, or similar) to upload [airflow.cfg](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/airflow.cfg) file to `airflow/config` directory.
 
 ### Install Docker
 
@@ -121,7 +121,7 @@ sudo docker ps
 
 ### Install `docker-compose` and docker environment configuration files
 
-1. Upload [Dockerfile](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/docker-compose.yaml) and [Dockerfile](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/Dockerfile) files to the VM and save them in `airflow` directory.
+1. Upload [Dockerfile](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/docker-compose.yaml) and [Dockerfile](attachments/Dockerfile.txt) files to the VM and save them in `airflow` directory.
 
 :::tip 
 What `docker-compose.yaml` and `Dockerfile` do
@@ -193,7 +193,7 @@ cd
 mkdir .dbt
 ```
 
-5. Copy [profiles.yml](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/profiles.yml) into the `.dbt` directory.
+5. Copy [profiles.yml](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/profiles.yml) into the `.dbt` directory.
 
 6. Edit the file so it corresponds to your Teradata database setup. At a minium, you will need to change the host, user and password. Use `jaffle_shop` user credentials you set up in step 3.
 
@@ -252,7 +252,7 @@ Once the stack is down, update the configuration files and restart by running th
 
 ### Run an Airflow DAG
 
-1. Copy [airflow_dbt_integration.py](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/airflow_dbt_integration.py), [db_test_example_dag.py](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/db_test_example_dag.py), [discover_dag.txt](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/discover_dag.txt), [variables.json](./attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/variables.json) files to `/home/ec2-user/airflow/dags`.
+1. Copy [airflow_dbt_integration.py](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/airflow_dbt_integration.py), [db_test_example_dag.py](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/db_test_example_dag.py), [discover_dag.py](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/discover_dag.py), [variables.json](../other-integrations/attachments/execute-airflow-workflows-that-use-dbt-with-teradata-vantage/variables.json) files to `/home/ec2-user/airflow/dags`.
 2. Examine the files:
 * `airflow_dbt_integration.py` - a simple Teradata sql example that creates a few tables and runs queries.
 * `db_test_example_dag.py` - runs a dbt example [i.e. integration of dbt and airflow with a Teradata database). In this example a fictitious jaffle_shop data model is created, loaded and the documentation for this project is produced (you can view it by pointing your browser to `http://<VM_IP_ADDRESS>:4000/`)
