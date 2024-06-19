@@ -11,6 +11,9 @@
   color: #333A3E;
   z-index: 1;
 }
+.ali{
+  text-align: left;
+}
 
 .heroBanner h1 {
   color: var(--Primary-Navy, #00233C);
