@@ -2,20 +2,20 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import QuickstartsPageCategories from '@site/src/components/QuickstartsPageCategories';
+import QuickstartsPages from '@site/src/components/QuickstartsPages';
 import HeroImageUrl from '@site/static/img/quickstarts-hero.png';
 import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import { Typography } from '@teradata-web/react-components';
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero--primary', styles.heroBanner, styles.ali)}>
       <div className={clsx('container', styles.container)}>
-        <div className="">
-          <Heading as="h1" className="hero__title">
-            Getting started
-          </Heading>
+        <div >
+          <Typography scale="headline1">Getting started</Typography>
           <p className="hero__subtitle">
             <Translate id="theme.tagline">
                 Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers.
@@ -43,7 +43,7 @@ export default function Home() {
     >
       <HomepageHeader />
       <main className={styles.features}>
-        <QuickstartsPageCategories />
+        <QuickstartsPages />
       </main>
     </Layout>
   );
