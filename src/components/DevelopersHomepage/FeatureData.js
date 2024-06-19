@@ -17,7 +17,7 @@ export const FeatureList = [
     title: 'Getting started',
     description: 'Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code.',
     descriptionLink:'View Getting started',
-    href: 'https://quickstarts.teradata.com',
+    href: '/ai-unlimited-docs/quickstarts',
   },
   {
     imgBullet: bulletUrl,
