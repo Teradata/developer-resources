@@ -22,26 +22,22 @@ Currently, AWS and Azure.
 ### How do I pay for AI Unlimited?
 You pay your cloud service provider for the hours that AI/ML engine resources are running. The charges depend on instance size and number of instances.
 
-### If I get errors or have any problems, what should I do?
-
-The [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) is ready to help you. Go there to ask questions, get troubleshooting advice, and share ideas.
+### If I get errors or have problems I can't resolve, what should I do?
+Email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a>. Also, the [AI Unlimited community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa) is ready to help you. Go there to ask questions, get troubleshooting advice, and share ideas.
 
 
 ## Projects
 
 ### What is a project?
-
 A project is a means to explore and analyze data from a Jupyter notebook. Each project has a repository in your GitHub or GitLab account.
 
 ### How do I use a project?
-
 In a Jupyter notebook, you  create a project, which automatically creates its Git repository. Then you authorize access to your data store, deploy the project's AI/ML engine, and run analytic workloads. You can suspend the project (and engine) anytime, then restore it, to pay only for the hours you need.
 
 ### What's my API key for?
 You use your API key to connect your Jupyter notebook to the AI Unlimited manager. This is the first thing you do when you open a new notebook to create or access a project.
 
 ### What's in a project's repository?
-
 The project owner (the user who created the project) adds project collaborators to the Git repository. From there, each time the engine is deployed, AI Unlimited derives the users authorized to connect to and use the engine. 
 
 But, if the engine is already deployed, the project owner must update the engine to add those users so they can connect to and use the engine during that deployment.

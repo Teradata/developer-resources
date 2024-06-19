@@ -53,7 +53,9 @@ Or learn about the [magic commands](/docs/explore-and-analyze-data/magic-command
 
 4. If the engine is not deployed, deploy it and restore the project. 
 
-   The size can be small, medium, large, or extralarge. The default is small. If you don't specify the number of nodes, one node is deployed. The default for restore is true.
+   The size can be small, medium, large, or extralarge. The default is small. See [AWS](http://aws.amazon.com/marketplace/pp/prodview-2srvuo3mwqlig) or [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/teradata.ai-unlimited?tab=Overview) pricing information.
+   
+   If you don't specify the number of nodes, one node is deployed. The default for restore is true.
    
    <Tabs>
    <TabItem value="aws1" label="AWS">

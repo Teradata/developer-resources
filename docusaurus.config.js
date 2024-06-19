@@ -7,7 +7,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
-
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
 
@@ -37,13 +36,14 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://*.algolia.net/;",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.youtube.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://*.algolia.net/;",
       },
     },
     {
       // Load font awesome icons
       tagName: 'script',
       attributes: {
+        defer: 'true',
         src: 'https://kit.fontawesome.com/17a35e44e3.js',
         crossorigin: 'anonymous',
       },
@@ -55,7 +55,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja',],
+    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
@@ -89,6 +89,15 @@ const config = {
         path: './releases',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'quickstarts',
+        path: 'quickstarts',
+        routeBasePath: 'quickstarts',
+        sidebarPath: './sidebars.js',
+      },
+    ],
   ],
 
   presets: [
@@ -107,7 +116,10 @@ const config = {
           editUrl: `https://github.com/teradata/${projectName}/tree/main`,
         },
         theme: {
-          customCss: ['./node_modules/@covalent/tokens/index.css', './src/css/custom.css'],
+          customCss: [
+            './node_modules/@covalent/tokens/index.css',
+            './src/css/custom.css',
+          ],
         },
         gtag: {
           trackingID: 'G-RDK4Y0RE7S',
@@ -158,7 +170,7 @@ const config = {
         title: 'Developers',
         navItems: [
           {
-            href: 'https://quickstarts.teradata.com/',
+            href: `${baseUrl}/quickstarts/business-intelligence/create-stunning-visualizations-in-power-bi-using-data-from-teradata-vantage/`,
             label: 'Getting started',
           },
           {
@@ -237,6 +249,10 @@ const config = {
           {
             title: 'How we help',
             items: [
+              {
+                label: 'Trusted AI',
+                href: 'https://www.teradata.com/trusted-ai',
+              },
               {
                 label: 'Roles',
                 href: 'https://www.teradata.com/how-we-help',

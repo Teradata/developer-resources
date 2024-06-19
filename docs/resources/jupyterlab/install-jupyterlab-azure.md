@@ -15,7 +15,7 @@ You'll use an  Azure Resource Manager (ARM) template provided by Teradata to ins
 This deploys a server instance, with JupyterLab running in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation support, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 
@@ -53,7 +53,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 1. Sign in to the [Azure Portal](https://portal.azure.com).
    :::note
-   References to Azure Portal elements are up-to-date as of May 29, 2024.
+   References to Azure Portal are up-to-date as of May 29, 2024.
    ::: 
 2. Search for **custom deployment**, then select **Deploy a custom template**.
 3. Select **Build your own template in the editor**, then **Load file**.

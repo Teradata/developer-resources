@@ -17,7 +17,7 @@ The AI Unlimited manager orchestrates the engine's deployment and includes a web
 You'll use a CloudFormation template provided by Teradata to install the manager from the AWS Management Console. You'll deploy a server instance, on which the manager runs in a container controlled by [systemd](/docs/glossary.md#systemd).
 
 :::tip
-For installation support, ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
+For installation help, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
 :::
 
 
@@ -47,7 +47,7 @@ You might want to ask a cloud admin at your organization for guidance.
 
 1. Sign in to the [AWS console](https://aws.amazon.com).<br />
    :::note
-   References to AWS Management Console elements are up-to-date as of May 29, 2024.
+   References to AWS Management Console are up-to-date as of May 29, 2024.
    ::: 
 2. Select the AWS region in which to deploy AI Unlimited.<br />
 We recommend selecting the region closest to your primary work location.
