@@ -3,29 +3,33 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { Typography } from '@teradata-web/react-components';
+import aiml from '@site/static/img/quickstarts/AI-ML.png';
 
 const FeatureTitle = 'Categories';
 const Guides = [
   {
+    img: aiml,
     title: `Getting started with Teradata AI Unlimited`,
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    href: '/quickstarts/introduction/teradata-vantage-engine-architecture-and-concepts/',
+    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
+    href: '/ai-unlimited-docs/docs/install-ai-unlimited/',
   },
   {
+    img: aiml,
     title: 'Deploy Teradata AI Unlimited locally using Docker',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    href: '/quickstarts/get-access-to-vantage/on-your-local/getting-started-vmware/',
+    description: `You'll use Docker Compose to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers.`,
+    href: '/docs/resources/quickstart/run-ai-unlimited-jupyterlab-docker/',
   },
   {
+    img: aiml,
     title: 'Deploy Teradata AI Unlimited on AWS',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    href: '/quickstarts/connect-to-vantage/install-teradata-studio-on-mac-m1-m2/',
+    description: `The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.`,
+    href: 'docs/install-ai-unlimited/deploy-manager-aws-console/',
   }
 ];
 const FeatureList = [
   {
     title: `Introduction`,
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Teradata Vantage Engine Architecture and Concepts.',
     href: '/quickstarts/introduction/teradata-vantage-engine-architecture-and-concepts/',
   },
   {
@@ -66,10 +70,11 @@ const FeatureList = [
 ];
 
 
-function Feature({ title, description, href }) {
+function Feature({ img, title, description, href }) {
   return (
     <Link to={href} className={clsx('col col--4', styles.col)}>
       <div className={clsx('doc-card', styles.card)}>
+        <img src={img}></img>
         <Heading as="h3">{title}</Heading>
         {<p className={clsx(styles.description)}>{description}</p>}
       </div>
@@ -91,6 +96,7 @@ export default function Categories() {
           </div>
         </div>
       </section>
+      
       <section className={styles.features}>
         <div className={clsx('container', styles.container)}>
           <Typography scale="headline2">{FeatureTitle}</Typography>
