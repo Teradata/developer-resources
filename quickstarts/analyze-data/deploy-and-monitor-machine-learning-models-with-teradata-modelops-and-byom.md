@@ -25,7 +25,7 @@ In this tutorial, you will learn:
 
 ## Prerequisites
 
-We provide an associated notebook and sample data that you can import into your clearscape environment to access and run all of the code examples included in the quickstart. [Download the ModelOps sample notebooks and data](attachments/ModelOps_Quickstart_BYOM.zip)
+We provide an associated notebook and sample data that you can import into your clearscape environment to access and run all of the code examples included in the quickstart. [Download the ModelOps sample notebooks and data](../modelops/attachments/ModelOps_Quickstart_BYOM.zip)
 
 * Access to a Teradata Vantage instance with ClearScape Analytics (includes ModelOps)
 
