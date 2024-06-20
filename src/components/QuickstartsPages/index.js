@@ -11,7 +11,7 @@ const Guides = [
     img: aiml,
     title: `Getting started with Teradata AI Unlimited`,
     description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
-    href: '/ai-unlimited-docs/docs/install-ai-unlimited/',
+    href: '/docs/install-ai-unlimited/',
   },
   {
     img: aiml,
