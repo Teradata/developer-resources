@@ -23,7 +23,7 @@ const Guides = [
     img: aiml,
     title: 'Deploy Teradata AI Unlimited on AWS',
     description: `The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.`,
-    href: 'docs/install-ai-unlimited/deploy-manager-aws-console/',
+    href: '/docs/install-ai-unlimited/deploy-manager-aws-console/',
   }
 ];
 const FeatureList = [
