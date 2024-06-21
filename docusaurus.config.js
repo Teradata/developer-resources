@@ -7,8 +7,8 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
-const baseUrl = '/developers';
-const projectName = 'developers';
+const baseUrl = '/ai-unlimited-docs';
+const projectName = 'ai-unlimited-docs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
