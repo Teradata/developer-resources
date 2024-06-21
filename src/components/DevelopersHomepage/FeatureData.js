@@ -77,20 +77,20 @@ export const FeatureList2 = [
     img2: externalUrl,
     title: `Connect to Vantage using Python`,
     description: 'This how-to demonstrates how to connect to Vantage using teradatasql Python database driver for Teradata Vantage.',
-    href: '/docs/explore-and-analyze-data/use-cases/',
+    href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
   },
   {
     img: downloadsUrl,
     img2: externalUrl,
     title: `Vantage Analytics Library`,
     description: 'The Vantage Analytics Library (VAL) consists of a Java XSP (a SQL generator), 2 table operators (to support the KMeans and Decision Tree algorithms) and statistical te...',
-    href: '/docs/whats-new/',
+    href: '/ai-unlimited/whats-new/',
   },
   {
     img: downloadsUrl,
     img2: externalUrl,
     title: `Teradata JDBC Driver`,
     description: 'The Teradata JDBC Driver enables Java applications to connect to the Teradata Database.',
-    href: '/docs/whats-new/',
+    href: '/ai-unlimited/whats-new/',
   }
 ];
