@@ -7,8 +7,8 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 
-const baseUrl = '/ai-unlimited-docs';
-const projectName = 'ai-unlimited-docs';
+const baseUrl = '/developers';
+const projectName = 'developers';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -104,6 +104,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: 'ai-unlimited',
           sidebarPath: './sidebars.js',
         },
         blog: {
@@ -168,7 +169,7 @@ const config = {
         title: 'header.title',
         navItems: [
           {
-            href: `${baseUrl}/quickstarts/business-intelligence/create-stunning-visualizations-in-power-bi-using-data-from-teradata-vantage/`,
+            href: `${baseUrl}/quickstarts/`,
             label: 'header.getting_started',
           },
           {
@@ -181,7 +182,7 @@ const config = {
               },
               {
                 label: 'header.docs.ai_unlimited',
-                href: baseUrl,
+                href: `${baseUrl}/ai-unlimited/`,
                 active: true,
               },
               {
@@ -481,51 +482,6 @@ const config = {
           ],
         },
         copyright: 'footer.copyright',
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/install-ai-unlimited',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/whatsnew',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Teradata/ai-unlimited',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © Built with ❤️ by Teradata`,
       },
       prism: {
         theme: prismThemes.github,

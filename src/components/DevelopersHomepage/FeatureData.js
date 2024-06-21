@@ -17,7 +17,7 @@ export const FeatureList = [
     title: 'Getting started',
     description: 'Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code.',
     descriptionLink:'View Getting started',
-    href: '/ai-unlimited-docs/quickstarts',
+    href: '/quickstarts',
   },
   {
     imgBullet: bulletUrl,
@@ -56,21 +56,21 @@ export const FeatureList2 = [
     img2: externalUrl,
     title: 'Run Scripts on Vantage',
     description: 'Sometimes, you need to apply complex logic to your data that can’t be easily expressed in SQL. One option is to wrap your logic in a User Defined Function (UDF). What if you ...',
-    href: '/docs/install-ai-unlimited/',
+    href: '/ai-unlimited/install-ai-unlimited/',
   },
   {
     img: gettingStartedUrl,
     img2: externalUrl,
     title: `Using Vantage from a Jupyter notebook`,
     description: 'In this how-to we will go through the steps for connecting to Teradata Vantage from a Jupyter notebook.',
-    href: '/docs/explore-and-analyze-data/use-cases/',
+    href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
   },
   {
     img: downloadsUrl,
     img2: externalUrl,
     title: `Teradata Tools and Utilities`,
     description: 'In this how-to we will go through the steps for connecting to Teradata Vantage from a Jupyter notebook.',
-    href: '/docs/whats-new/',
+    href: '/ai-unlimited/whats-new/',
   },
   {
     img: gettingStartedUrl,

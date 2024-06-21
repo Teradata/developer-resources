@@ -12,6 +12,7 @@ import { translate } from '@docusaurus/Translate';
 import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   return navItems.map((item) => {
@@ -35,6 +36,7 @@ export default function Navbar() {
     languages: Language[];
   };
 
+  const basePath = useBaseUrl('');
   const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
 
@@ -64,7 +66,6 @@ export default function Navbar() {
   };
 
   const [defaultLang, setDefaulLang] = useState('');
-  const basePath = '/ai-unlimited-docs';
 
   const handleLanguageChange = (language) => {
     // Replace current language with another language
@@ -91,7 +92,7 @@ export default function Navbar() {
   };
 
   const getCurrentLanguage = () => {
-    const langRegEx = /\/ai-unlimited-docs\/(\w{2})\//;
+    const langRegEx = `/\/${basePath}\/(\w{2})\//`;
     const currentLocation = window.location.pathname;
     const match = currentLocation.match(langRegEx);
     return match ? match[1] : '';

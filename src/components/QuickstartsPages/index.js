@@ -11,19 +11,19 @@ const Guides = [
     img: aiml,
     title: `Getting started with Teradata AI Unlimited`,
     description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
-    href: '/docs/install-ai-unlimited/',
+    href: '/ai-unlimited/install-ai-unlimited/',
   },
   {
     img: aiml,
     title: 'Deploy Teradata AI Unlimited locally using Docker',
     description: `You'll use Docker Compose to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers.`,
-    href: '/docs/resources/quickstart/run-ai-unlimited-jupyterlab-docker/',
+    href: '/ai-unlimited/resources/quickstart/run-ai-unlimited-jupyterlab-docker/',
   },
   {
     img: aiml,
     title: 'Deploy Teradata AI Unlimited on AWS',
     description: `The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.`,
-    href: '/docs/install-ai-unlimited/deploy-manager-aws-console/',
+    href: '/ai-unlimited/install-ai-unlimited/deploy-manager-aws-console/',
   }
 ];
 const FeatureList = [
@@ -60,7 +60,7 @@ const FeatureList = [
   {
     title: 'Teradata AI Unlimited',
     description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    href: '/',
+    href: '/ai-unlimited/',
   },
   {
     title: 'VantageCloud Lake',
