@@ -184,5 +184,14 @@
   },
   "footer.copyright": {
     "message": "Teradata. All rights reserved"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home"
+  },
+  "theme.docs.breadcrumbs.default": {
+    "message": "AI Unlimited"
+  },
+  "theme.docs.breadcrumbs.quickstarts": {
+    "message": "Getting started"
   }
 }
