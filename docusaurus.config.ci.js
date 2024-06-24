@@ -1,4 +1,5 @@
 import config from './docusaurus.config';
+import headerItems from './src/config/header.navitems.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {
