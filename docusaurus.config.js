@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
+import headerItems from './src/config/header.navitems.js';
 
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
@@ -138,110 +139,6 @@ const config = {
         appId: 'FKCGWXPUTX',
         apiKey: '72dfc486e67f40cf44879ef55fcdd88d',
         indexName: 'teradataio',
-      },
-      navbar: {
-        title: 'Developers',
-        logo: {
-          alt: 'Teradata logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Docs',
-          },
-          { to: '/whatsnew', label: "What's new", position: 'left' },
-          { to: '/releases', label: 'Releases', position: 'left' },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/Teradata/ai-unlimited',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      navItems: {
-        title: 'header.title',
-        navItems: [
-          {
-            href: `${baseUrl}/quickstarts/`,
-            label: 'header.getting_started',
-          },
-          {
-            label: 'header.docs',
-            active: true,
-            navItems: [
-              {
-                label: 'header.docs.vantagecloud_lake',
-                href: 'https://docs.teradata.com/p/VantageCloud/Lake',
-              },
-              {
-                label: 'header.docs.ai_unlimited',
-                href: `${baseUrl}/ai-unlimited/`,
-                active: true,
-              },
-              {
-                label: 'header.docs.all_documentation',
-                href: 'https://docs.teradata.com/',
-              },
-            ],
-          },
-          {
-            href: 'https://downloads.teradata.com/',
-            label: 'header.downloads',
-          },
-          {
-            label: 'header.community',
-            navItems: [
-              {
-                label: 'header.community.teradata_community',
-                href: 'https://support.teradata.com/community',
-              },
-              {
-                label: 'header.community.technical_medium_blogs',
-                href: 'https://medium.com/teradata',
-                external: true,
-              },
-              {
-                label: 'header.community.github',
-                href: 'https://github.com/Teradata',
-                external: true,
-              },
-              {
-                label: 'header.community.stack_overflow',
-                href: 'https://stackoverflow.com/questions/tagged/teradata',
-                external: true,
-              },
-            ],
-          },
-        ],
-        languages: [
-          {
-            label: 'Global',
-            value: '',
-          },
-          {
-            label: 'Duestshcland',
-            value: 'de',
-          },
-          {
-            label: 'France',
-            value: 'fr',
-          },
-          {
-            label: '日本',
-            value: 'ja',
-          },
-          {
-            label: '대한민국',
-            value: 'ko',
-          },
-        ],
       },
       footerItems: {
         links: [
@@ -490,5 +387,10 @@ const config = {
       },
     }),
 };
+
+// Add header items to the themeConfig with the correct baseUrl
+if(config.themeConfig) {
+  config.themeConfig.navItems = headerItems(config.baseUrl);
+}
 
 export default config;
