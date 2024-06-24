@@ -16,9 +16,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   return navItems.map((item) => {
+    let isActive = item.href ? location.pathname.startsWith(item.href) : false;
+
+    if (item.navItems) {
+      isActive = item.navItems.some((navItem) => navItem.href ? location.pathname.startsWith(navItem.href) : false);
+    }
+
     return {
       ...item,
       label: translate({ message: item.label }),
+      active: isActive,
       navItems: item.navItems ? translateNavItems(item.navItems) : undefined,
     };
   });
