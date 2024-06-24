@@ -11,10 +11,12 @@ import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
+import { useLocation } from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
+  const location = useLocation();
   return navItems.map((item) => {
     let isActive = item.href ? location.pathname.startsWith(item.href) : false;
 
