@@ -4,11 +4,6 @@ import downloadsUrl from '@site/static/img/developers/Download.png';
 import communityUrl from '@site/static/img/developers/People.png';
 import bulletUrl from '@site/static/img/developers/Bullet.png';
 import externalUrl from '@site/static/img/developers/External.png';
-//import DataScientist from '@site/static/img/developers/DataScientist.png';
-//import DataLeader from '@site/static/img/developers/DataLeader.png';
-//import Developer from '@site/static/img/developers/Developer.png';
-//import businessLeader from '@site/static/img/developers/businessLeader.png';
-//import dataEngineer from '@site/static/img/developers/dataEngineer.png';
 
 export const FeatureList = [
   {
@@ -17,7 +12,7 @@ export const FeatureList = [
     title: 'Getting started',
     description: 'Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code.',
     descriptionLink:'View Getting started',
-    href: '/quickstarts',
+    href: '/ai-unlimited-docs/quickstarts',
   },
   {
     imgBullet: bulletUrl,
@@ -54,43 +49,43 @@ export const FeatureList2 = [
   {
     img: gettingStartedUrl,
     img2: externalUrl,
-    title: 'Run Scripts on Vantage',
-    description: 'Sometimes, you need to apply complex logic to your data that can’t be easily expressed in SQL. One option is to wrap your logic in a User Defined Function (UDF). What if you ...',
-    href: '/ai-unlimited/install-ai-unlimited/',
+    title: 'Explore Vantage AI/ML features',
+    description: 'Get a free hands-on demo environment to explore Teradata VantageCloud’s ClearScape Analytics™',
+    href: 'https://www.teradata.com/getting-started/demos/clearscape-analytics',
   },
   {
     img: gettingStartedUrl,
     img2: externalUrl,
-    title: `Using Vantage from a Jupyter notebook`,
-    description: 'In this how-to we will go through the steps for connecting to Teradata Vantage from a Jupyter notebook.',
-    href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
+    title: `Use dbt with Teradata Vantage`,
+    description: 'Learn how to use dbt, a leading ELT tool, with Teradata Vantage.',
+    href: 'quickstarts/manage-data/dbt/',
   },
   {
     img: downloadsUrl,
     img2: externalUrl,
-    title: `Teradata Tools and Utilities`,
-    description: 'In this how-to we will go through the steps for connecting to Teradata Vantage from a Jupyter notebook.',
-    href: '/ai-unlimited/whats-new/',
+    title: `Query data in object storage`,
+    description: 'Learn how to analyze data stored in object storage using SQL.',
+    href: 'quickstarts/manage-data/nos/',
   },
   {
     img: gettingStartedUrl,
     img2: externalUrl,
-    title: `Connect to Vantage using Python`,
-    description: 'This how-to demonstrates how to connect to Vantage using teradatasql Python database driver for Teradata Vantage.',
-    href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
+    title: `Use Airbyte to load data to Vantage`,
+    description: 'Use Airbyte ELT tool to load data from your applications and databases into VantageCloud.',
+    href: 'quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/',
   },
   {
     img: downloadsUrl,
     img2: externalUrl,
-    title: `Vantage Analytics Library`,
-    description: 'The Vantage Analytics Library (VAL) consists of a Java XSP (a SQL generator), 2 table operators (to support the KMeans and Decision Tree algorithms) and statistical te...',
-    href: '/ai-unlimited/whats-new/',
+    title: `Getting Started with Teradata ModelOps`,
+    description: 'In the tutorial, you will be able to create a new project in ModelOps, upload the required data to Vantage, and track the full lifecycle.',
+    href: 'quickstarts/analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git/',
   },
   {
     img: downloadsUrl,
     img2: externalUrl,
-    title: `Teradata JDBC Driver`,
-    description: 'The Teradata JDBC Driver enables Java applications to connect to the Teradata Database.',
-    href: '/ai-unlimited/whats-new/',
+    title: `Connect to Vantage using JDBC`,
+    description: 'The JDBC Driver allows you to connect to the Teradata database from external applications.',
+    href: 'quickstarts/create-applications/jdbc/',
   }
 ];

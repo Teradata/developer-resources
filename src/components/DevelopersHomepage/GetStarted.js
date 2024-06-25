@@ -12,19 +12,19 @@ import { Typography, TabBar, Tab, Banner, Button } from '@teradata-web/react-com
 
 export default function GetStarted() {
   const handleButtonClick1 = () => {
-    window.location.href = 'https://quickstarts.teradata.com/ml.html';
+    window.location.href = `quickstarts/analyze-data/ml/`;
   };
   const handleButtonClick2 = () => {
-    window.location.href = 'https://quickstarts.teradata.com/dbt.html';
+    window.location.href = 'quickstarts/manage-data/dbt/';
   };
   const handleButtonClick3 = () => {
-    window.location.href = 'https://quickstarts.teradata.com/jdbc.html';
+    window.location.href = 'quickstarts/create-applications/jdbc/';
   };
   const handleButtonClick4 = () => {
-    window.location.href = 'https://quickstarts.teradata.com/tools-and-utilities/run-bulkloads-efficiently-with-teradata-parallel-transporter.html';
+    window.location.href = 'quickstarts/manage-data/run-bulkloads-efficiently-with-teradata-parallel-transporter/';
   };
   const handleButtonClick5 = () => {
-    window.location.href = 'https://quickstarts.teradata.com/ml.html';
+    window.location.href = 'quickstarts/manage-data/nos/';
   };
   
                       
