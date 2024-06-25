@@ -56,6 +56,6 @@ For the restore parameter, leave the default value of true. This restores the pr
 Each time the engine is deployed, a new password for connecting to the engine is generated for each user.
 
 :::tip
-Learn more about AI Unlimited [magic commands](/docs/explore-and-analyze-data/magic-commands.md).
+Learn more about AI Unlimited [magic commands](../explore-and-analyze-data/magic-commands.md).
 :::
 

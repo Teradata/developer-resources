@@ -21,7 +21,7 @@ You received the URL when you installed the manager.
 2. Sign in to GitHub or GitLab.
 3. After being routed back to the manager, select **Setup**.
 3. In any section, make changes, then select **Update**.<br/>
-[Learn about the fields](/docs/install-ai-unlimited/setup-ai-unlimited.md).
+[Learn about the fields](../install-ai-unlimited/setup-ai-unlimited.md).
 4. Sign in to authenticate yourself.
 6. If you enabled TLS, on your **Profile**, select **Restart**.<br/>
   AI Unlimited restarts with TLS in place.

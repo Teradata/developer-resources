@@ -1,0 +1,197 @@
+{
+  "header.title": {
+    "message": "Developers"
+  },
+  "header.getting_started": {
+    "message": "Getting started"
+  },
+  "header.actions.free_demo": {
+    "message": "Start free demo"
+  },
+  "header.docs": {
+    "message": "Docs"
+  },
+  "header.docs.vantagecloud_lake": {
+    "message": "VantageCloud Lake"
+  },
+  "header.docs.ai_unlimited": {
+    "message": "AI Unlimited"
+  },
+  "header.docs.all_documentation": {
+    "message": "All documentation"
+  },
+  "header.downloads": {
+    "message": "Downloads"
+  },
+  "header.community": {
+    "message": "Community"
+  },
+  "header.community.teradata_community": {
+    "message": "Teradata community"
+  },
+  "header.community.technical_medium_blogs": {
+    "message": "Technical medium blogs"
+  },
+  "header.community.github": {
+    "message": "Github"
+  },
+  "header.community.stack_overflow": {
+    "message": "Stack overflow"
+  },
+  "footer.how_we_help": {
+    "message": "How we help"
+  },
+  "footer.trusted_ai": {
+    "message": "Trusted AI"
+  },
+  "footer.roles": {
+    "message": "Roles"
+  },
+  "footer.industries": {
+    "message": "Industries"
+  },
+  "footer.partners": {
+    "message": "Partners"
+  },
+  "footer.partner_registration": {
+    "message": "Partner registration"
+  },
+  "footer.partner_portal_login": {
+    "message": "Partner portal login"
+  },
+  "footer.success_stories": {
+    "message": "Success stories"
+  },
+  "footer.our_platform": {
+    "message": "Our platform"
+  },
+  "footer.platform": {
+    "message": "Platform"
+  },
+  "footer.vantagecloud": {
+    "message": "VantageCloud"
+  },
+  "footer.clearscape_analytics": {
+    "message": "ClearScape Analytics"
+  },
+  "footer.unleash_ai_innovation": {
+    "message": "Unleash AI Innovation"
+  },
+  "footer.workloads": {
+    "message": "Workloads"
+  },
+  "footer.deployment": {
+    "message": "Deployment"
+  },
+  "footer.getting_started": {
+    "message": "Getting started"
+  },
+  "footer.pricing": {
+    "message": "Pricing"
+  },
+  "footer.demos": {
+    "message": "Demos"
+  },
+  "footer.modernization_workshop": {
+    "message": "Modernization workshop"
+  },
+  "footer.executive_briefing_center": {
+    "message": "Executive Briefing Center"
+  },
+  "footer.events": {
+    "message": "Events"
+  },
+  "footer.learning": {
+    "message": "Learning"
+  },
+  "footer.insights": {
+    "message": "Insights"
+  },
+  "footer.ai_ml": {
+    "message": "AI/ML"
+  },
+  "footer.cloud_data_analytics": {
+    "message": "Cloud data analytics"
+  },
+  "footer.data_architecture": {
+    "message": "Data architecture"
+  },
+  "footer.data_platform": {
+    "message": "Data platform"
+  },
+  "footer.data_security": {
+    "message": "Data security"
+  },
+  "footer.glossary": {
+    "message": "Glossary"
+  },
+  "footer.about_us": {
+    "message": "About us"
+  },
+  "footer.who_we_are": {
+    "message": "Who we are"
+  },
+  "footer.our_leadership": {
+    "message": "Our leadership"
+  },
+  "footer.newsroom": {
+    "message": "Newsroom"
+  },
+  "footer.careers": {
+    "message": "Careers"
+  },
+  "footer.investors": {
+    "message": "Investors"
+  },
+  "footer.social_media": {
+    "message": "Social media"
+  },
+  "footer.social_media.linkedin": {
+    "message": "LinkedIn"
+  },
+  "footer.social_media.twitter": {
+    "message": "Twitter"
+  },
+  "footer.social_media.facebook": {
+    "message": "Facebook"
+  },
+  "footer.social_media.instagram": {
+    "message": "Instagram"
+  },
+  "footer.social_media.youtube": {
+    "message": "Youtube"
+  },
+  "footer.social_media.rss": {
+    "message": "RSS"
+  },
+  "footer.privacy": {
+    "message": "Privacy"
+  },
+  "footer.do_not_sell_share": {
+    "message": "Don’t Sell/Share My Info"
+  },
+  "footer.terms_of_use": {
+    "message": "Terms of use"
+  },
+  "footer.legal": {
+    "message": "Legal"
+  },
+  "footer.support_policy": {
+    "message": "Support Policies"
+  },
+  "footer.tracking_consent": {
+    "message": "Tracking Consent"
+  },
+  "footer.copyright": {
+    "message": "Teradata. All rights reserved"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home"
+  },
+  "theme.docs.breadcrumbs.default": {
+    "message": "AI Unlimited"
+  },
+  "theme.docs.breadcrumbs.quickstarts": {
+    "message": "Getting started"
+  }
+}

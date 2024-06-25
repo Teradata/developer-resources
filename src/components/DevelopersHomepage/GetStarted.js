@@ -11,8 +11,6 @@ import { Typography, TabBar, Tab, Banner, Button } from '@teradata-web/react-com
 
 
 export default function GetStarted() {
-  const  baseUrl = 'ai-unlimited-docs';
-
   const handleButtonClick1 = () => {
     window.location.href = `quickstarts/analyze-data/ml/`;
   };

@@ -5,7 +5,6 @@ import communityUrl from '@site/static/img/developers/People.png';
 import bulletUrl from '@site/static/img/developers/Bullet.png';
 import externalUrl from '@site/static/img/developers/External.png';
 
-
 export const FeatureList = [
   {
     imgBullet: bulletUrl,

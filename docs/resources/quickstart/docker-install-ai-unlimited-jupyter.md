@@ -132,6 +132,6 @@ When JupyterLab is ready, you can access it at `http://localhost:8888`, and ente
 
 ## What's next
 
-[Create an OAuth app](/docs/resources/create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
+[Create an OAuth app](../../create-oauth-app) to allow authentication between AI Unlimited and your Git provider account.
 
 

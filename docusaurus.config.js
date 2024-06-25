@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
+import headerItems from './src/config/header.navitems.js';
 
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
@@ -27,8 +28,6 @@ const config = {
   organizationName: 'teradata', // Usually your GitHub org/user name.
   projectName, // Usually your repo name.
   trailingSlash: true,
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
 
   headTags: [
     {
@@ -55,7 +54,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'fr', 'es', 'ka', 'ja'],
+    locales: ['en', 'de', 'fr', 'es', 'ko', 'ja'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
@@ -106,6 +105,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: 'ai-unlimited',
           sidebarPath: './sidebars.js',
         },
         blog: {
@@ -244,152 +244,153 @@ const config = {
           },
         ],
       },
+
       footerItems: {
         links: [
           {
-            title: 'How we help',
+            title: 'footer.how_we_help',
             items: [
               {
-                label: 'Trusted AI',
+                label: 'footer.trusted_ai',
                 href: 'https://www.teradata.com/trusted-ai',
               },
               {
-                label: 'Roles',
+                label: 'footer.roles',
                 href: 'https://www.teradata.com/how-we-help',
               },
               {
-                label: 'Industries',
+                label: 'footer.industries',
                 href: 'https://www.teradata.com/industries',
               },
               {
-                label: 'Partners',
+                label: 'footer.partners',
                 href: 'https://www.teradata.com/partners',
               },
               {
-                label: 'Partner registration',
+                label: 'footer.partner_registration',
                 external: true,
                 href: 'https://www.teradata.com/getattachment/49d347ac-d544-4a6c-9db3-27c9cd2d5afd/new-user-registration-instructions-for-td-partner-community.pdf?lang=en-us',
               },
               {
-                label: 'Partner portal login',
+                label: 'footer.partner_portal_login',
                 external: true,
                 href: 'https://teradata.my.site.com/teradataPRM/s/login/',
               },
               {
-                label: 'Success stories',
+                label: 'footer.success_stories',
                 href: 'https://www.teradata.com/customers',
               },
             ],
           },
           {
-            title: 'Our platform',
+            title: 'footer.our_platform',
             items: [
               {
-                label: 'Platform',
+                label: 'footer.platform',
                 href: 'https://www.teradata.com/platform',
               },
               {
-                label: 'VantageCloud',
+                label: 'footer.vantagecloud',
                 href: 'https://www.teradata.com/platform/vantagecloud',
               },
               {
-                label: 'ClearScape Analytics',
+                label: 'footer.clearscape_analytics',
                 href: 'https://www.teradata.com/platform/clearscape-analytics',
               },
               {
-                label: 'Unleash AI Innovation',
+                label: 'footer.unleash_ai_innovation',
                 href: 'https://www.teradata.com/platform/ai-ml',
               },
               {
-                label: 'Workloads',
+                label: 'footer.workloads',
                 href: 'https://www.teradata.com/platform/workloads',
               },
               {
-                label: 'Deployment',
+                label: 'footer.deployment',
                 href: 'https://www.teradata.com/platform/deployment',
               },
             ],
           },
           {
-            title: 'Getting started',
+            title: 'footer.getting_started',
             items: [
               {
-                label: 'Pricing',
+                label: 'footer.pricing',
                 href: 'https://www.teradata.com/getting-started/pricing',
               },
               {
-                label: 'Demos',
+                label: 'footer.demos',
                 href: 'https://www.teradata.com/getting-started/demos',
               },
               {
-                label: 'Modernization workshop',
+                label: 'footer.modernization_workshop',
                 href: 'https://www.teradata.com/getting-started/modernization-workshop',
               },
               {
-                label: 'Executive Briefing Center',
+                label: 'footer.executive_briefing_center',
                 href: 'https://www.teradata.com/getting-started/executive-briefing-center',
               },
               {
-                label: 'Events',
+                label: 'footer.events',
                 href: 'https://www.teradata.com/events',
               },
               {
-                label: 'Learning',
+                label: 'footer.learning',
                 href: 'https://www.teradata.com/university',
               },
             ],
           },
           {
-            title: 'Insights',
+            title: 'footer.insights',
             items: [
               {
-                label: 'AI/ML',
+                label: 'footer.ai_ml',
                 href: 'https://www.teradata.com/insights/ai-and-machine-learning',
               },
               {
-                label: 'Cloud data analytics',
+                label: 'footer.cloud_data_analytics',
                 href: 'https://www.teradata.com/insights/cloud-data-analytics',
               },
               {
-                label: 'Data architecture',
+                label: 'footer.data_architecture',
                 href: 'https://www.teradata.com/insights/data-architecture',
               },
               {
-                label: 'Data platform',
+                label: 'footer.data_platform',
                 href: 'https://www.teradata.com/insights/data-platform',
               },
               {
-                label: 'Data security',
+                label: 'footer.data_security',
                 href: 'https://www.teradata.com/insights/data-security',
               },
               {
-                label: 'Glossary',
+                label: 'footer.glossary',
                 href: 'https://www.teradata.com/glossary',
               },
             ],
           },
           {
-            title: 'About us',
+            title: 'footer.about_us',
             items: [
               {
-                label: 'Who we are',
+                label: 'footer.who_we_are',
                 href: 'https://www.teradata.com/about-us',
               },
               {
-                label: 'Our leadership',
+                label: 'footer.our_leadership',
                 href: 'https://www.teradata.com/about-us/leadership',
               },
               {
-                label: 'Newsroom',
+                label: 'footer.newsroom',
                 href: 'https://www.teradata.com/newsroom',
               },
               {
-                label: 'Careers',
+                label: 'footer.careers',
                 external: true,
                 href: 'https://careers.teradata.com/?_gl=1*ebzjes*_ga*MjIwNzU5MDQuMTcxMDc3MDE3MQ..*_ga_7PE2TMW3FE*MTcxMjc3NjAwNy4yOS4wLjE3MTI3NzYwMDcuNjAuMC4w',
               },
               {
-                label: 'Investors',
+                label: 'footer.investors',
                 external: true,
                 href: 'https://investor.teradata.com/?_gl=1*ebzjes*_ga*MjIwNzU5MDQuMTcxMDc3MDE3MQ..*_ga_7PE2TMW3FE*MTcxMjc3NjAwNy4yOS4wLjE3MTI3NzYwMDcuNjAuMC4w',
               },
@@ -397,112 +398,67 @@ const config = {
           },
         ],
         socialLinks: {
-          title: 'Social media',
+          title: 'footer.social_media',
           items: [
             {
               icon: 'fa-brands fa-linkedin-in',
               href: 'https://www.linkedin.com/company/teradata',
-              label: 'LinkedIn',
+              label: 'footer.social_media.linkedin',
             },
             {
               icon: 'fa-brands fa-x-twitter',
               href: 'https://twitter.com/teradata',
-              label: 'Twitter',
+              label: 'footer.social_media.twitter',
             },
             {
               icon: 'fa-brands fa-facebook-f',
               href: 'https://www.facebook.com/Teradata',
-              label: 'Facebook',
+              label: 'footer.social_media.facebook',
             },
             {
               icon: 'fa-brands fa-instagram',
               href: 'https://www.instagram.com/teradata/',
-              label: 'Instagram',
+              label: 'footer.social_media.instagram',
             },
             {
               icon: 'fa-brands fa-youtube',
               href: 'https://www.youtube.com/user/teradata',
-              label: 'Youtube',
+              label: 'footer.social_media.youtube',
             },
             {
               icon: 'fa fa-rss',
               href: 'https://www.teradata.com/rss',
-              label: 'RSS',
+              label: 'footer.social_media.rss',
             },
           ],
         },
         legalLinks: [
           {
-            label: 'Privacy',
+            label: 'footer.privacy',
             href: 'https://www.teradata.com/privacy',
           },
           {
-            label: 'Don’t Sell/Share My Info',
+            label: 'footer.do_not_sell_share',
             href: 'https://www.teradata.com/privacy#do-not-sell-share',
           },
           {
-            label: 'Terms of use',
+            label: 'footer.terms_of_use',
             href: 'https://www.teradata.com/legal/terms-of-use',
           },
           {
-            label: 'Legal',
+            label: 'footer.legal',
             href: 'https://www.teradata.com/legal/legal-notice',
           },
           {
-            label: 'Support Policies',
+            label: 'footer.support_policy',
             href: 'https://www.teradata.com/product-support-policy',
           },
           {
-            label: 'Tracking Consent',
+            label: 'footer.tracking_consent',
             href: 'https://www.teradata.com/how-we-help#tracking-consent',
           },
         ],
-        copyright: '2024 Teradata. All Rights Reserved',
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/install-ai-unlimited',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/whatsnew',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Teradata/ai-unlimited',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Built with ❤️ by Teradata`,
+        copyright: 'footer.copyright',
       },
       prism: {
         theme: prismThemes.github,
@@ -511,5 +467,10 @@ const config = {
       },
     }),
 };
+
+// Add header items to the themeConfig with the correct baseUrl
+if(config.themeConfig) {
+  config.themeConfig.navItems = headerItems(config.baseUrl);
+}
 
 export default config;
