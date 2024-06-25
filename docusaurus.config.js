@@ -35,7 +35,7 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.youtube.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://*.algolia.net/;",
       },
     },
     {
@@ -140,6 +140,111 @@ const config = {
         apiKey: '72dfc486e67f40cf44879ef55fcdd88d',
         indexName: 'teradataio',
       },
+      navbar: {
+        title: 'Developers',
+        logo: {
+          alt: 'Teradata logo',
+          src: 'img/logo.svg',
+        },
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Docs',
+          },
+          { to: '/whatsnew', label: "What's new", position: 'left' },
+          { to: '/releases', label: 'Releases', position: 'left' },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/Teradata/ai-unlimited',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+      navItems: {
+        title: 'Developers',
+        navItems: [
+          {
+            href: `${baseUrl}/quickstarts/business-intelligence/create-stunning-visualizations-in-power-bi-using-data-from-teradata-vantage/`,
+            label: 'Getting started',
+          },
+          {
+            label: 'Docs',
+            active: true,
+            navItems: [
+              {
+                label: 'VantageCloud Lake Documentation',
+                href: 'https://docs.teradata.com/p/VantageCloud/Lake',
+              },
+              {
+                label: 'AI Unlimited',
+                href: baseUrl,
+                active: true,
+              },
+              {
+                label: 'All Documentation',
+                href: 'https://docs.teradata.com/',
+              },
+            ],
+          },
+          {
+            href: 'https://downloads.teradata.com/',
+            label: 'Downloads',
+          },
+          {
+            label: 'Community',
+            navItems: [
+              {
+                label: 'Teradata Community',
+                href: 'https://support.teradata.com/community',
+              },
+              {
+                label: 'Technical Medium Blogs',
+                href: 'https://medium.com/teradata',
+                external: true,
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/Teradata',
+                external: true,
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/teradata',
+                external: true,
+              },
+            ],
+          },
+        ],
+        languages: [
+          {
+            label: 'Global',
+            value: '',
+          },
+          {
+            label: 'Duestshcland',
+            value: 'de',
+          },
+          {
+            label: 'France',
+            value: 'fr',
+          },
+          {
+            label: '日本',
+            value: 'ja',
+          },
+          {
+            label: '대한민국',
+            value: 'ka',
+          },
+        ],
+      },
+
       footerItems: {
         links: [
           {

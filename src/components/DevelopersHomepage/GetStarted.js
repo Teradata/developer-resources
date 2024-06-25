@@ -11,7 +11,7 @@ import { Typography, TabBar, Tab, Banner, Button } from '@teradata-web/react-com
 
 
 export default function GetStarted() {
-                      
+
   return (
     <>
     <section className={styles.features}>

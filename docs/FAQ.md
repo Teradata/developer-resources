@@ -17,7 +17,7 @@ pagination_next: null
 Currently, AWS and Azure.
 
 ### What analytics functions can I use?
-[ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions. See the [release notes](./whats-new/release-notes.md) for any functions not currently supported.
+[ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions. See the [release notes](/docs/whats-new/release-notes.md) for any functions not currently supported.
 
 ### How do I pay for AI Unlimited?
 You pay your cloud service provider for the hours that AI/ML engine resources are running. The charges depend on instance size and number of instances.
