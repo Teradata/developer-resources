@@ -40,7 +40,7 @@ export default function GetStarted() {
                     <Link to="/quickstarts/analyze-data/ml/">
                       <Button
                         label="Get started"
-                        primary={true}
+                        primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
                       />
@@ -58,7 +58,7 @@ export default function GetStarted() {
                     <Link to="/quickstarts/manage-data/dbt/">
                       <Button
                         label="Get started"
-                        primary={true}
+                        primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
                       />
@@ -76,7 +76,7 @@ export default function GetStarted() {
                     <Link to="/quickstarts/create-applications/jdbc/">
                       <Button
                         label="Get started"
-                        primary={true}
+                        primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
                       />
@@ -94,7 +94,7 @@ export default function GetStarted() {
                     <Link to="/quickstarts/manage-data/run-bulkloads-efficiently-with-teradata-parallel-transporter/">
                       <Button
                         label="Get started"
-                        primary={true}
+                        primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
                       />
@@ -112,7 +112,7 @@ export default function GetStarted() {
                     <Link to="/quickstarts/manage-data/nos/">
                       <Button
                         label="Get started"
-                        primary={true}
+                        primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
                       />
