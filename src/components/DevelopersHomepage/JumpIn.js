@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import { FeatureList } from './FeatureData';
+import Link from '@docusaurus/Link';
 
 function Feature({ imgBullet, imgBullet2, img, title, description, href, href2, descriptionLink, descriptionLink2   }) {
   return (
@@ -15,17 +16,18 @@ function Feature({ imgBullet, imgBullet2, img, title, description, href, href2, 
         {description && <p>{description}</p>}
         <div className={clsx(styles.dot)}>
           <img src={imgBullet} className={clsx(styles.dotPad)}/>
-          <a href={href} 
+          <Link 
+            to={href} 
             target={descriptionLink === 'View Getting started' ? '_self' : '_blank'} 
             className={clsx(styles.links)}
           >
             {descriptionLink}
-          </a>
+          </Link>
         </div>
         <br/>
         <div className={clsx(styles.dot)}>  
           <img src={imgBullet2} className={clsx(styles.dotPad)}/>
-          <a href={href2} target='_blank' className={clsx(styles.links)}>{descriptionLink2}</a>
+          <Link to={href2} target='_blank' className={clsx(styles.links)}>{descriptionLink2}</Link>
         </div>
       </div>
     </div>
