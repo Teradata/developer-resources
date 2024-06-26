@@ -15,7 +15,12 @@ function Feature({ imgBullet, imgBullet2, img, title, description, href, href2, 
         {description && <p>{description}</p>}
         <div className={clsx(styles.dot)}>
           <img src={imgBullet} className={clsx(styles.dotPad)}/>
-          <a href={href} target='_blank' className={clsx(styles.links)}>{descriptionLink}</a>
+          <a href={href} 
+            target={descriptionLink === 'View Getting started' ? '_self' : '_blank'} 
+            className={clsx(styles.links)}
+          >
+            {descriptionLink}
+          </a>
         </div>
         <br/>
         <div className={clsx(styles.dot)}>  
