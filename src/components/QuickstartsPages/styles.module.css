@@ -61,6 +61,9 @@ a.col {
   margin: 0 -0.625rem;
 }
 
+.d{
+  display: flex;
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
@@ -108,4 +111,8 @@ a.col {
 
 .fGuides{
   background: var(--Gray-25, #F6F7FB);
+}
+
+.cardHeigth{
+  flex: 1;
 }

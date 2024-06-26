@@ -2,7 +2,9 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-
+.imgBanner{
+  width: 498px !important;
+}
 .heroBanner {
   padding: 6rem 0 2rem;
 /*  text-align: center;*/
@@ -139,7 +141,7 @@
   }
 
   .heroBanner {
-    padding: 3.5rem 0 4rem;
+    padding: 3.5rem 0 4rem 0;
   }
 
   .buttons {
@@ -150,5 +152,15 @@
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
+  }
+}
+
+.imgW{
+ width: 498px !important; 
+}
+
+@media only screen and (max-width: 1024px) {
+  .heroBlur {
+    background: transparent;
   }
 }
