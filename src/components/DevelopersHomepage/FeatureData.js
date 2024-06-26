@@ -4,11 +4,6 @@ import downloadsUrl from '@site/static/img/developers/Download.png';
 import communityUrl from '@site/static/img/developers/People.png';
 import bulletUrl from '@site/static/img/developers/Bullet.png';
 import externalUrl from '@site/static/img/developers/External.png';
-//import DataScientist from '@site/static/img/developers/DataScientist.png';
-//import DataLeader from '@site/static/img/developers/DataLeader.png';
-//import Developer from '@site/static/img/developers/Developer.png';
-//import businessLeader from '@site/static/img/developers/businessLeader.png';
-//import dataEngineer from '@site/static/img/developers/dataEngineer.png';
 
 export const FeatureList = [
   {
@@ -17,7 +12,7 @@ export const FeatureList = [
     title: 'Getting started',
     description: 'Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code.',
     descriptionLink:'View Getting started',
-    href: '/quickstarts',
+    href: '/ai-unlimited-docs/quickstarts/',
   },
   {
     imgBullet: bulletUrl,

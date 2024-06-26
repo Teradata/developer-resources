@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-//import Link from '@docusaurus/Link';
+import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import DevelopersHomepage from '@site/src/components/DevelopersHomepage';
@@ -21,7 +21,14 @@ function HomepageHeader() {
               <div>
                 <Typography scale="body1">A scalable, on-demand compute engine in the cloud.</Typography> 
                 <br/>
-                <Button label='Learn more' primary={true} icon='fa fa-arrow-right' trailingIcon={true}></Button>
+                <Link to="/quickstarts">
+                  <Button
+                    label="Learn more"
+                    primary={true}
+                    icon="fa fa-arrow-right"
+                    trailingIcon={true}
+                  />
+                </Link>
               </div>}
             imageSrc={HeroImageUrl}
             isHero={true}
