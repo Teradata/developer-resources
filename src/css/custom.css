@@ -77,7 +77,11 @@ body {
   background: url(/img/dots_pattern_hero.webp) no-repeat right 0;
   background-size: contain;
 }
-
+@media only screen and (max-width: 1024px) {
+  .plugin-pages body {
+    background: none !important;
+  }
+}
 .button.button--secondary {
   color: #ffffff;
   border-radius: 12px;

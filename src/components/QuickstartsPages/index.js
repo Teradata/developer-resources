@@ -70,11 +70,22 @@ const FeatureList = [
 ];
 
 
-function Feature({ img, title, description, href }) {
+function Feature1({ img, title, description, href }) {
   return (
-    <Link to={href} className={clsx('col col--4', styles.col)}>
-      <div className={clsx('doc-card', styles.card)}>
+    <Link to={href} className={clsx('col col--4', styles.col, styles.d)}>
+      <div className={clsx('doc-card', styles.card, styles.cardHeigth)}>
         <img src={img}></img>
+        <Heading as="h3">{title}</Heading>
+        {<p className={clsx(styles.description)}>{description}</p>}
+      </div>
+    </Link>
+  );
+}
+
+function Feature2({ title, description, href }) {
+  return (
+    <Link to={href} className={clsx('col col--4', styles.col, styles.d)}>
+      <div className={clsx('doc-card', styles.card, styles.cardHeigth)}>
         <Heading as="h3">{title}</Heading>
         {<p className={clsx(styles.description)}>{description}</p>}
       </div>
@@ -87,11 +98,12 @@ export default function Categories() {
     <>
       <section className={clsx(styles.features, styles.fGuides)}>
         <div className={clsx('container', styles.container)}>
-            <Typography scale="headline2">Featured guides</Typography>
             <br/>
-            <div className={clsx('row', styles.row)}>
+            <Typography scale="headline2">Featured guides</Typography>
+            <br/><br/>
+            <div className={clsx('row', styles.row)}> 
             {Guides.map((props, idx) => (
-              <Feature key={idx} {...props} />
+              <Feature1 key={idx} {...props} />
             ))}
           </div>
         </div>
@@ -99,14 +111,16 @@ export default function Categories() {
       
       <section className={styles.features}>
         <div className={clsx('container', styles.container)}>
+          <br/>
+          <br/>
           <Typography scale="headline2">{FeatureTitle}</Typography>
           <br/>
-          
           <div className={clsx('row', styles.row)}>
             {FeatureList.map((props, idx) => (
-              <Feature key={idx} {...props} />
+              <Feature2 key={idx} {...props} />
             ))}
           </div>
+          <br/><br/>
         </div>
       </section>
     </>
