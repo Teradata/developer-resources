@@ -13,7 +13,7 @@ function FeatureStayUpToDate({ img, img2, title, description, href }) {
       <div className={clsx('doc-card', styles.card)}>
         <div className={clsx(styles.toppicks)}>
           <img src={img} alt={title} title={title}/>
-          <img src={img2} alt={title} title={title}/>
+          {img2 && <img src={img2} alt={title} title={title}/>}
         </div>
         <div className={styles.stayCon}>
           <Heading as="h3">{title}</Heading>
