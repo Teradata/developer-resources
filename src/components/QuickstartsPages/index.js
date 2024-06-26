@@ -34,37 +34,37 @@ const FeatureList = [
   },
   {
     title: 'Get access to Vantage',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Run Vantage Express on VMware, VirtualBox and UTM.',
     href: '/quickstarts/get-access-to-vantage/on-your-local/getting-started-vmware/',
   },
   {
     title: 'Connect to Vantage',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Use Teradata Studio/Express on Apple Mac M1/M2.',
     href: '/quickstarts/connect-to-vantage/install-teradata-studio-on-mac-m1-m2/',
   },
   {
     title: 'Manage data',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Query data stored in object storage.',
     href: '/quickstarts/manage-data/nos/',
   },
   {
     title: 'Connect applications',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Connect to Vantage using JDBC, python and Mule service.',
     href: '/quickstarts/create-applications/jdbc/',
   },
   {
     title: 'Analyze data',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'Use Vantage from a Jupyter notebook.',
     href: '/quickstarts/analyze-data/jupyter/',
   },
   {
     title: 'Teradata AI Unlimited',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
     href: '/ai-unlimited/',
   },
   {
     title: 'VantageCloud Lake',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    description: `Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform.`,
     href: '/quickstarts/vantagecloud-lake/getting-started-with-vantagecloud-lake/',
   },
 ];

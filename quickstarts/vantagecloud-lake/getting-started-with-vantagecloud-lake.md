@@ -10,8 +10,9 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 ## Overview
 
-Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform. It provides lakehouse deployment patterns along with the ability to run independent elastic workloads using an object storage-centric design. +
-It empowers organizations to unlock their data, activate analytics, and accelerate value. Customers can optimize their analytics environment using specially configured compute cluster resources that best accommodate their workload requirements. +
+Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform. It provides lakehouse deployment patterns along with the ability to run independent elastic workloads using an object storage-centric design. 
+
+It empowers organizations to unlock their data, activate analytics, and accelerate value. Customers can optimize their analytics environment using specially configured compute cluster resources that best accommodate their workload requirements. 
 
 ![VantageCloud](../images/VantageCloud.png)
 
@@ -20,7 +21,9 @@ VantageCloud Lake provides all the benefits you’d expect in a cloud solution p
 
 ## Sign-on to VantageCloud Lake
 
-IMPORTANT: To get a VantageCloud Lake sign-on link and credentials, fill the [contact form](https://www.teradata.com/about-us/contact) to reach out to Teradata team.   
+:::important
+To get a VantageCloud Lake sign-on link and credentials, fill the [contact form](https://www.teradata.com/about-us/contact) to reach out to Teradata team.   
+:::
 
 Go to the URL provided by Teradata, for example, **_ourcompany.innovationlabs.teradata.com_** and sign on:
 
