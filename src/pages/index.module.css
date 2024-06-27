@@ -155,12 +155,31 @@
   }
 }
 
-.imgW{
- width: 498px !important; 
-}
 
 @media only screen and (max-width: 1024px) {
   .heroBlur {
     background: transparent;
+  }
+}
+
+/* Default for large screens */
+.imgW {
+  max-width: 398px;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .imgW {
+      max-width: 248px;
+      margin-left: 120px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .imgW {
+    /*
+      max-width: 243px;
+      */width: 100%;
   }
 }
