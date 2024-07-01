@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+//import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import DevelopersHomepage from '@site/src/components/DevelopersHomepage';
@@ -13,7 +13,7 @@ import { Banner, Button, Typography } from '@teradata-web/react-components';
 
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+//  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero--primary', styles.heroBanner)}>
       <div className={clsx('container', styles.container)}>
@@ -41,9 +41,9 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+//  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout description={siteConfig.tagline}>
+    <Layout>
       <Head>
         <title>Teradata Developer Portal</title>
         <meta name="description" content="Teradata Developer Portal" />
@@ -53,7 +53,7 @@ export default function Home() {
         <meta property="og:url" content="https://www.developers.teradata.com" />
         <meta property="og:title" content="Teradata Developer Portal | Teradata for Developers" />
         <meta property="og:description" content="Build innovative solutions with the most powerful analytical platform on the planet. Get Started with Vantage, Browse technical Docs and Download useful assets." />
-        <meta property="og:image" content="https://developers.teradata.com/assets/images/developer-portal-preview.png" />
+        <meta property="og:image" content="https://github.com/Teradata/developers.teradata.com/blob/main/assets/images/developer-portal-preview.png" />
         <meta property="og:image:width" content="640" />
         <meta property="og:image:height" content="336" />
 
@@ -61,7 +61,7 @@ export default function Home() {
         <meta property="twitter:url" content="https://www.developers.teradata.com" />
         <meta property="twitter:title" content="Teradata Developer Portal | Teradata for Developers" />
         <meta property="twitter:description" content="Build innovative solutions with the most powerful analytical platform on the planet. Get Started with Vantage, Browse technical Docs and Download useful assets." />
-        <meta property="twitter:image" content="https://developers.teradata.com/assets/images/developer-portal-preview.png" />
+        <meta property="twitter:image" content="https://github.com/Teradata/developers.teradata.com/blob/main/assets/images/developer-portal-preview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -69,7 +69,7 @@ export default function Home() {
             '@type': 'Organization',
             name: 'Meta Open Source',
             url: 'https://teradata.com/',
-            logo: 'https://developers.teradata.com/assets/images/developer-portal-preview.png',
+            logo: 'https://github.com/Teradata/developers.teradata.com/blob/main/assets/images/developer-portal-preview.png',
           })}
         </script>
       </Head>
