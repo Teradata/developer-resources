@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+//import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import QuickstartsPages from '@site/src/components/QuickstartsPages';
 import HeroImageUrl from '@site/static/img/quickstarts-hero.png';
 import Translate from '@docusaurus/Translate';
@@ -40,12 +41,36 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+//  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
+    <Layout>
+        <title>Teradata Getting Started</title>
+        <meta name="description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
+        <link rel="preconnect" href="https://teradata.com" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quickstarts.teradata.com/" />
+        <meta property="og:title" content="Teradata Getting Started" />
+        <meta property="og:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
+        <meta property="og:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
+        <meta property="og:image:width" content="640" />
+        <meta property="og:image:height" content="336" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://quickstarts.teradata.com/" />
+        <meta property="twitter:title" content="Teradata Getting Started" />
+        <meta property="twitter:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
+        <meta property="twitter:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://teradata.com/',
+            '@type': 'Organization',
+            name: 'Meta Open Source',
+            url: 'https://teradata.com/',
+            logo: 'https://www.teradata.com/Content/Assets/default/teradata-logo-social.png',
+          })}
+        </script>
       <HomepageHeader />
       <main className={styles.features}>
         <QuickstartsPages />
