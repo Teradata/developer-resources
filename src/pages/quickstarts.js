@@ -44,7 +44,8 @@ export default function Home() {
 //  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout>
-        <title>Teradata Getting Started</title>
+      <Head>
+      <title>Teradata Getting Started</title>
         <meta name="description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <link rel="preconnect" href="https://teradata.com" />
 
@@ -71,6 +72,7 @@ export default function Home() {
             logo: 'https://www.teradata.com/Content/Assets/default/teradata-logo-social.png',
           })}
         </script>
+      </Head>
       <HomepageHeader />
       <main className={styles.features}>
         <QuickstartsPages />
