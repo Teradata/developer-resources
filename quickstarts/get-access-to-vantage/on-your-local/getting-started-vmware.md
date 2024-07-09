@@ -8,7 +8,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 import GettingStartedIntro from '../../_partials/getting-started-intro.mdx';
 import RunVantage from '../../_partials/run-vantage.mdx';
-import RunSimpleQueries from '../../_partials/running-sample-queries.mdx';
+import RunSampleQueries from '../../_partials/running-sample-queries.mdx';
 import GettingStartedSummary from '../../_partials/getting-started-summary.mdx';
 import CommunityLink from '../../_partials/community_link.mdx';
 
@@ -33,7 +33,7 @@ For M1/M2 MacOS systems, see [Run Vantage Express on UTM.](./getting-started-utm
 * [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html).
 
 :::important 
-Commercial organizations require commercial licenses to use VMware Workstation Player. If you don't want to acquire VMware licenses you can run Vantage Express on [VirtualBox](xref:getting.started.vbox.adoc).
+Commercial organizations require commercial licenses to use VMware Workstation Player. If you don't want to acquire VMware licenses you can run Vantage Express on [VirtualBox](./getting-started-vbox.md).
 :::
 
 :::important 
@@ -48,13 +48,12 @@ VMware doesn't offer VMware Workstation Player for MacOS. If you are on a Mac, y
 
 ### Run Vantage Express
 
-1. Go to the directory where you downloaded Vantage Express and unzip the downloaded file.
-2. Double-click on the `.vmx` file. This will start the VM image in VMware Player/Fusion.
-3. Press <kbd>ENTER</kbd> to select the highlighted `LINUX` boot partition.
+- Go to the directory where you downloaded Vantage Express and unzip the downloaded file.
+- Double-click on the `.vmx` file. This will start the VM image in VMware Player/Fusion.
 
 <RunVantage />
 
-<RunSimpleQueries />
+<RunSampleQueries />
 
 <GettingStartedSummary />
 
