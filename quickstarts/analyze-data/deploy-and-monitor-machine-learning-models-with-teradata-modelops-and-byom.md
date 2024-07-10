@@ -288,7 +288,7 @@ Now select the target/output variable of our prediction. In this demo case is: p
 
 Click on Save and let the helper copy the expression for you. 
 
-![[ModelOps monitoring2](../modelops/images/byom_monitoring2.png), width=50%]
+![ModelOps monitoring2](../modelops/images/byom_monitoring2.png)
 
 This is the CAST expression, Click on Save on the dialog:
 CAST(CAST(json_report AS JSON).JSONExtractValue('$.predicted_HasDiabetes') AS INT)
@@ -380,7 +380,7 @@ A new Deployment job will be running by the ModelOps Agent. once this is finishe
 
 Go to the left-hand menu Deployments, and see the new deployment from the BYOM model is available, click on it to see the details and go to the Jobs tab
 
-![[ModelOps deployments](../modelops/images/deployments.png), width=50%]
+![ModelOps deployments](../modelops/images/deployments.png)
 
 In the Jobs tab you will see the history of executions of this model deployed. Let's run now a new scoring using the Run now button. This button can be also scheduled externally through REST APIs
 
