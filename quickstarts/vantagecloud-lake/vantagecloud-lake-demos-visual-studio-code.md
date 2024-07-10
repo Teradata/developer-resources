@@ -22,7 +22,7 @@ Before you begin, ensure you have the following prerequisites in place:
 
 * [Docker Desktop](https://www.docker.com/products/docker-desktop) installed
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed
-** Required to download git repo from https://github.com/Teradata/lake-demos.git
+  * Required to download git repo from https://github.com/Teradata/lake-demos.git
 * [Visual Studio Code](https://code.visualstudio.com/download) installed
 * A Teradata VantageCloud Lake account with organization URL and login details from the Teradata welcome letter
 ** Once logged in follow these [intructions](https://quickstarts.teradata.com/getting-started-with-vantagecloud-lake.html#_create_an_environment) to create a VantageCloud Lake Enviorment
