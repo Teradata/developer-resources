@@ -16,7 +16,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;">
 <script defer="true" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/ai-unlimited-docs/pr-preview/pr-20/assets/css/styles.59e1a9ef.css">
-<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.1aa41663.js" defer="defer"></script>
+<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.242e083c.js" defer="defer"></script>
 <script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/main.1acc058b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -47,15 +47,17 @@
 <li>Prepare the download directory for Vantage Express:</li>
 </ol>
 <!-- -->
-<p>run. Install VirtualBox and 7zip:</p>
+<ul>
+<li>Install VirtualBox and 7zip:</li>
+</ul>
 <!-- -->
-<ol start="5">
-<li>Retrieve the curl command to download Vantage Express.</li>
-</ol>
+<ul>
+<li>
+<p>Retrieve the curl command to download Vantage Express.</p>
 <ul>
 <li>Go to <a href="https://downloads.teradata.com/download/database/teradata-express-for-vmware-player" target="_blank" rel="noopener noreferrer">Vantage Expess download page</a> (registration required).</li>
-<li>Click on the latest download link, e.g. &quot;Vantage Express 17.20&quot;. You will see a license agreement popup. Don&#x27;t accept the license yet.</li>
-<li>Open the network view in your browser. For example, in Chrome press kbd:[F12] and navigate to <code>Network</code> tab:</li>
+<li>Click on the latest download link, e.g. <strong>&quot;Vantage Express 17.20&quot;</strong>. You will see a license agreement popup. Don&#x27;t accept the license yet.</li>
+<li>Open the network view in your browser. For example, in Chrome press <kbd>F12</kbd> and navigate to <code>Network</code> tab:</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Browser Network Tab" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/browser.network-10b20cd42fc007de4c04d0c25874a866.png" width="1172" height="764" class="img_ev3q"></p>
 <ul>
@@ -63,8 +65,10 @@
 <li>In the network view, find the last request that starts with <code>VantageExpress</code>. Right click on it and select <code>Copy -&gt; Copy as cURL</code>:</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Browser Copy culr" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/browser.copy.curl-ef8d15fbb3caf4c7c5981d9e8888f5aa.png" width="1024" height="928" class="img_ev3q"></p>
-<ul>
-<li>Head back to the ssh session and download Vantage Express by pasting the curl command. Add <code>-o ve.7z</code> to the command to save the download to file named <code>ve.7z</code>. You can remove all the HTTP headers, e.g.:</li>
+</li>
+<li>
+<p>Head back to the ssh session and download Vantage Express by pasting the curl command. Add <code>-o ve.7z</code> to the command to save the download to file named <code>ve.7z</code>. You can remove all the HTTP headers, e.g.:</p>
+</li>
 </ul>
 <!-- -->
 <ul>
@@ -95,20 +99,20 @@ If the status is different, repeat <code>pdestate -a</code> till you get the cor
 <!-- -->
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-sample-queries">Run sample queries<a href="#run-sample-queries" class="hash-link" aria-label="Direct link to Run sample queries" title="Direct link to Run sample queries">​</a></h2>
 <ul>
-<li>Using <code>dbc</code> user, we will create a new database called <code>HR</code>. Copy/paste this query and run press kbd:[Enter]:</li>
+<li>Using <code>dbc</code> user, we will create a new database called <code>HR</code>. Copy/paste this query and run press <kbd>Enter</kbd>:</li>
 </ul>
 <!-- -->
-<ol start="5">
+<ul>
 <li>Let’s create a sample table and insert some data and query it. We will first create a table to hold employee information:</li>
-</ol>
+</ul>
 <!-- -->
-<ol start="6">
+<ul>
 <li>Now, let&#x27;s insert a record:</li>
-</ol>
+</ul>
 <!-- -->
-<ol start="7">
+<ul>
 <li>Finally, let&#x27;s see if we can retrieve the data:</li>
-</ol>
+</ul>
 <!-- -->
 <p>You should get the following results:</p>
 <!-- -->
