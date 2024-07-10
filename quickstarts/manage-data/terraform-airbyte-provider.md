@@ -8,6 +8,8 @@ keywords: [Terraform, Airbyte, Teradata Vantage, data engineering, ELT, automati
 ---
 
 import YouTubeVideo from '../_partials/terraform-video.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Manage ELT pipelines as code with Terraform and Airbyte on Teradata Vantage 
 
@@ -40,37 +42,34 @@ Airbyte, the data integration platform, has a Terraform provider that communicat
 ### Install Terraform 
 * Apply the respective commands to install Terraform on your Operating System. Find additional options on the [Terraform site](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli).
 
-[tabs, id="terraform_tab_install", role="emits-gtm-events"]
-====
 
-macOS::
-+
-First, install the HashiCorp tap, a repository of all [Homebrew](https://brew.sh) packages.
-+
-``` bash
- brew tap hashicorp/tap
+```mdx-code-block
+<Tabs>
+  <TabItem value="MacOS" label="MacOS" default>
+    First, install the HashiCorp tap, a repository of all [Homebrew](https://brew.sh) packages.
+    ```bash
+      brew tap hashicorp/tap
+    ```
+    Next, install Terraform with hashicorp/tap/terraform.
+    ```bash
+      brew install hashicorp/tap/terraform
+    ```
+  </TabItem>
+  <TabItem value="Windows" label="Windows">
+    [Chocolatey](https://chocolatey.org) is a free and open-source package management system for Windows. Install the Terraform package from the command-line.
+    ```bash
+      choco install terraform
+    ```
+  </TabItem>
+  <TabItem value="Linux" label="Linux">
+    ```bash
+    wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    sudo apt update && sudo apt install terraform 
+    ```
+  </TabItem>
+</Tabs>
 ```
-+
-Next, install Terraform with hashicorp/tap/terraform.
-+ 
-``` bash
- brew install hashicorp/tap/terraform
-```
-Windows::
-+
-[Chocolatey](https://chocolatey.org) is a free and open-source package management system for Windows. Install the Terraform package from the command-line.
-+
-``` bash
- choco install terraform
-```
-Linux::
-+ 
-``` bash
-wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update && sudo apt install terraform 
-```
-====
 
 ### Environment preparation
 
@@ -221,10 +220,7 @@ You now have a Source, Destination and Connection on Airbyte Cloud created and m
 
 ### Additional Resources 
 
-[Use Airbyte to load data from external sources to Teradata Vantage](https://quickstarts.teradata.com/elt/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.html)
-
-[Transform data Loaded with Airbyte using dbt](https://quickstarts.teradata.com/elt/transforming-external-data-loaded-via-airbyte-in-teradata-vantage-using-dbt.html)
-
-[Airbyte API reference documentation](https://reference.airbyte.com/reference/createsource).
-
-[Terraform Airbyte Provider Docs](https://registry.terraform.io/providers/airbytehq/airbyte/latest/docs/resources/destination_teradata#example-usage)
+- [Use Airbyte to load data from external sources to Teradata Vantage](./use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md)
+- [Transform data Loaded with Airbyte using dbt](./transforming-external-data-loaded-via-airbyte-in-teradata-vantage-using-dbt.md)
+- [Airbyte API reference documentation](https://reference.airbyte.com/reference/createsource).
+- [Terraform Airbyte Provider Docs](https://registry.terraform.io/providers/airbytehq/airbyte/latest/docs/resources/destination_teradata#example-usage)
