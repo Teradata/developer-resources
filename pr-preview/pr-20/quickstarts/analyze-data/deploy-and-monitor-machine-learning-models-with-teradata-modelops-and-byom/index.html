@@ -16,7 +16,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;">
 <script defer="true" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/ai-unlimited-docs/pr-preview/pr-20/assets/css/styles.59e1a9ef.css">
-<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.d465bd6d.js" defer="defer"></script>
+<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.1aa41663.js" defer="defer"></script>
 <script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/main.1acc058b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -241,7 +241,7 @@ Once you have your compatible model created or converted using a supported forma
 <p><img decoding="async" loading="lazy" alt="ModelOps monitoring1" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/byom_monitoring1-78a8c979dac3aaa2d7246f4578ba9b4b.png" width="1368" height="1746" class="img_ev3q"></p>
 <p>Now select the target/output variable of our prediction. In this demo case is: predicted_HasDiabetes.</p>
 <p>Click on Save and let the helper copy the expression for you.</p>
-<p>![<a href="/ai-unlimited-docs/pr-preview/pr-20/assets/files/byom_monitoring2-36c19068454d0831d8d42481b92ee1f8.png/" target="_blank">ModelOps monitoring2</a>, width=50%]</p>
+<p><img decoding="async" loading="lazy" alt="ModelOps monitoring2" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/byom_monitoring2-36c19068454d0831d8d42481b92ee1f8.png" width="1368" height="1750" class="img_ev3q"></p>
 <p>This is the CAST expression, Click on Save on the dialog:
 CAST(CAST(json_report AS JSON).JSONExtractValue(&#x27;$.predicted_HasDiabetes&#x27;) AS INT)</p>
 <p><img decoding="async" loading="lazy" alt="ModelOps monitoring save" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/byom_monitoring_save-8b690e9705b017f4f93957f49e578cbf.png" width="1380" height="528" class="img_ev3q"></p>
@@ -298,7 +298,7 @@ CAST(CAST(json_report AS JSON).JSONExtractValue(&#x27;$.predicted_HasDiabetes&#x
 <p><img decoding="async" loading="lazy" alt="ModelOps deploy job" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/deploy_job-fa482f0e06b74ab4ded1131c87f27df9.png" width="1724" height="1722" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-details-including-history-of-jobs-featureprediction-drift-and-performance-monitoring">Deployment details including history of jobs, feature/prediction drift and performance monitoring<a href="#deployment-details-including-history-of-jobs-featureprediction-drift-and-performance-monitoring" class="hash-link" aria-label="Direct link to Deployment details including history of jobs, feature/prediction drift and performance monitoring" title="Direct link to Deployment details including history of jobs, feature/prediction drift and performance monitoring">​</a></h3>
 <p>Go to the left-hand menu Deployments, and see the new deployment from the BYOM model is available, click on it to see the details and go to the Jobs tab</p>
-<p>![<a href="/ai-unlimited-docs/pr-preview/pr-20/assets/files/deployments-0fa812328d7cab97fef502996f54d249.png/" target="_blank">ModelOps deployments</a>, width=50%]</p>
+<p><img decoding="async" loading="lazy" alt="ModelOps deployments" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/deployments-0fa812328d7cab97fef502996f54d249.png" width="3440" height="552" class="img_ev3q"></p>
 <p>In the Jobs tab you will see the history of executions of this model deployed. Let&#x27;s run now a new scoring using the Run now button. This button can be also scheduled externally through REST APIs</p>
 <p><img decoding="async" loading="lazy" alt="ModelOps deployments" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/deployment_jobs-891d6ddb243087e1cffd12fd62738399.png" width="3428" height="548" class="img_ev3q"></p>
 <p>After executing the scoring job, it should look like this:</p>
