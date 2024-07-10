@@ -72,12 +72,12 @@ VirtualBox Guest Extensions is a piece of software that runs in a VM. It makes t
 
 To update VirtualBox Guest Extensions:
 
-. Insert the VirtualBox Guest Extensions DVD by clicking on `SATA Port 3: [Optical Drive]` in `Storage` section:
+1. Insert the VirtualBox Guest Extensions DVD by clicking on `SATA Port 3: [Optical Drive]` in `Storage` section:
 
 ![Insert Guest Additions DVD](../../images/insert-guest-additions-dvd.png)
 
-. Back in the VM window, start the `Gnome Terminal` application.
-. Run the following command in the terminal:
+2. Back in the VM window, start the `Gnome Terminal` application.
+3. Run the following command in the terminal:
 
 ```
 mount /dev/cdrom /media/dvd; /media/dvd/VBoxLinuxAdditions.run
