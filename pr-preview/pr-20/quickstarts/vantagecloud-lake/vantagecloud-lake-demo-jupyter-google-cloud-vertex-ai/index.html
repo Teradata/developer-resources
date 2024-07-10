@@ -16,7 +16,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;">
 <script defer="true" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/ai-unlimited-docs/pr-preview/pr-20/assets/css/styles.59e1a9ef.css">
-<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.f713f9b2.js" defer="defer"></script>
+<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.09c14008.js" defer="defer"></script>
 <script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/main.1acc058b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,14 +33,15 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="vertex-ai-google-cloud-environment-setup">Vertex AI Google Cloud environment setup<a href="#vertex-ai-google-cloud-environment-setup" class="hash-link" aria-label="Direct link to Vertex AI Google Cloud environment setup" title="Direct link to Vertex AI Google Cloud environment setup">​</a></h2>
 <p>When you create a new notebook instance, you can specify a startup script. This script, which runs only once after instance creation, will install the Teradata Jupyter extension package and clone a GitHub repository into the new user-managed notebooks instance.</p>
 <ul>
-<li>Download Teradata Jupyter extensions package</li>
-</ul>
+<li>
+<p>Download Teradata Jupyter extensions package</p>
 <ul>
 <li>Visit <a href="https://downloads.teradata.com/download/tools/vantage-modules-for-jupyter" target="_blank" rel="noopener noreferrer">Vantage Modules for Jupyter page</a></li>
 <li>Sign in and download the Teradata Linux version of the package.</li>
 </ul>
-<ul>
-<li>Create Google Cloud Storage Bucket<!-- -->
+</li>
+<li>
+<p>Create Google Cloud Storage Bucket</p>
 <ul>
 <li>Create a bucket with a name relevant to the project (e.g., teradata_jupyter).</li>
 <li>Ensure that the bucket name is globally unique. For instance, if the name teradata_jupyter has already been used, it will not be available for subsequent users.</li>
@@ -65,14 +66,16 @@
 <p><img decoding="async" loading="lazy" alt="files uploaded to bucket" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/upload-81801d8d1591e421a960d4b9032d7c88.png" width="2738" height="1030" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="initiating-a-user-managed-notebook-instance">Initiating a user managed notebook instance<a href="#initiating-a-user-managed-notebook-instance" class="hash-link" aria-label="Direct link to Initiating a user managed notebook instance" title="Direct link to Initiating a user managed notebook instance">​</a></h3>
 <ul>
-<li>Access Vertex AI Workbench</li>
-</ul>
+<li>
+<p>Access Vertex AI Workbench</p>
 <ul>
 <li>Return to Vertex AI Workbench in Google Cloud console.</li>
 <li>Create a new User-Managed Notebook via Advanced Options or directly at <a href="https://notebook.new/" target="_blank" rel="noopener noreferrer">https://notebook.new/</a>.</li>
 </ul>
-<ul>
-<li>Under Details, name your notebook, select your region and select continue.</li>
+</li>
+<li>
+<p>Under Details, name your notebook, select your region and select continue.</p>
+</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="notebook env details" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/detailsenv-a90448ce8de3e3e5efd8acc6001831c1.png" width="2010" height="1006" class="img_ev3q"></p>
 <ul>
