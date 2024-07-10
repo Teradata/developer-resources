@@ -10,7 +10,8 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
-import tabsDBT from '../_partials/tabsDBT.mdx'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # dbt with Teradata Vantage
 
@@ -23,7 +24,8 @@ This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantag
 * Access to a Teradata Vantage instance.
 
 <ClearscapeDocsNote />
-* Python *3.7*, *3.8*, *3.9*, *3.10* or *3.11* installed.
+
+* Python **3.7**, *3.8*, **3.9**, **3.10** or **3.11** installed.
 
 ## Install dbt
 
@@ -34,20 +36,80 @@ cd jaffle_shop
 ```
 
 2. Create a new python environment to manage dbt and its dependencies. Activate the environment:
-<tabsDBT/>
-
+```mdx-code-block
+<Tabs>
+  <TabItem value="Windows" label="Windows" default>
+    Run in Powershell:
+    ```bash
+    gcloud compute instances create teradata-vantage-express `
+    --zone=us-central1-a `
+    --machine-type=n2-custom-4-8192 `
+    --create-disk=boot=yes,device-name=ve-disk,image-project=ubuntu-os-cloud,image-family=ubuntu-2004-lts,size=70,type=pd-balanced `
+    --enable-nested-virtualization `
+    --tags=ve
+    ```
+  </TabItem>
+  <TabItem value="MacOS" label="MacOS">
+    ```bash
+    gcloud compute instances create teradata-vantage-express \
+  --zone=us-central1-a \
+  --machine-type=n2-custom-4-8192 \
+  --create-disk=boot=yes,device-name=ve-disk,image-project=ubuntu-os-cloud,image-family=ubuntu-2004-lts,size=70,type=pd-balanced \
+  --enable-nested-virtualization \
+  --tags=ve
+    ```
+  </TabItem>
+  <TabItem value="Linux" label="Linux">
+    ```bash
+    gcloud compute instances create teradata-vantage-express \
+  --zone=us-central1-a \
+  --machine-type=n2-custom-4-8192 \
+  --create-disk=boot=yes,device-name=ve-disk,image-project=ubuntu-os-cloud,image-family=ubuntu-2004-lts,size=70,type=pd-balanced \
+  --enable-nested-virtualization \
+  --tags=ve
+    ```
+  </TabItem>
+</Tabs>
+```
 
 3. Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
+:::note
+**dbt dependencies**
+
+`dbt-core` module was included as a dependency only up to version 1.7.x of dbt-teradata. Starting from `dbt-teradata` 1.8.0 and above, `dbt-core` will not be installed as a dependency. Therefore, you need to explicitly install `dbt-core` in addition to installing `dbt-teradata`. More information on decoupling dbt adapters from `dbt-core` can be found here: https://github.com/dbt-labs/dbt-core/discussions/9171
+:::
 ```bash
 pip install dbt-teradata
 ```
 
 ## Configure dbt
+Configure dbt to connect to your Vantage database. Create `profiles.yml` file in the location show below.
+```mdx-code-block
+<Tabs>
+  <TabItem value="Windows" label="Windows" default>
+    Run in Powershell:
+    ```bash
+    c:\Users\<user name>\.dbt\profiles.yml
+    ```
+  </TabItem>
+  <TabItem value="MacOS" label="MacOS">
+    ```bash
+    ~/.dbt/profiles.yml
+    ```
+  </TabItem>
+  <TabItem value="Linux" label="Linux">
+    ```bash
+    ~/.dbt/profiles.yml
+    ```
+  </TabItem>
+</Tabs>
+```
 
-We will now configure dbt to connect to your Vantage database. Create file `$HOME/.dbt/profiles.yml` with the following content. Adjust `<host>`, `<user>`, `<password>` to match your Teradata instance.
+Add the following config to `profile.yml` file. Adjust `<host>`, `<user>`, `<password>` to match your Teradata Vantage instance.
+
 
 :::note
-* Database setup
+**Database setup**
 
 The following dbt profile points to a database called `jaffle_shop`. 
 If the database doesn't exist on your Teradata Vantage instance, it will be created. You can also change `schema` value to point to an existing database in your instance.
