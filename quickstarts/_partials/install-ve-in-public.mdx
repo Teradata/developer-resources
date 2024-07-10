@@ -1,20 +1,20 @@
 import GettingStartedQueries from './getting-started-queries.mdx';
 
-run. Install VirtualBox and 7zip:
+* Install VirtualBox and 7zip:
 ```bash
 apt update && apt-get install p7zip-full p7zip-rar virtualbox -y
 ```
-5. Retrieve the curl command to download Vantage Express.
-* Go to [Vantage Expess download page](https://downloads.teradata.com/download/database/teradata-express-for-vmware-player) (registration required).
-* Click on the latest download link, e.g. "Vantage Express 17.20". You will see a license agreement popup. Don't accept the license yet.
-* Open the network view in your browser. For example, in Chrome press kbd:[F12] and navigate to `Network` tab:
+* Retrieve the curl command to download Vantage Express.
+    * Go to [Vantage Expess download page](https://downloads.teradata.com/download/database/teradata-express-for-vmware-player) (registration required).
+    * Click on the latest download link, e.g. **"Vantage Express 17.20"**. You will see a license agreement popup. Don't accept the license yet.
+    * Open the network view in your browser. For example, in Chrome press <kbd>F12</kbd> and navigate to `Network` tab:
 
-![Browser Network Tab](../images/browser.network.png)
+    ![Browser Network Tab](../images/browser.network.png)
 
-* Accept the license by clicking on `I Agree` button and cancel the download.
-* In the network view, find the last request that starts with `VantageExpress`. Right click on it and select `Copy -> Copy as cURL`:
+    * Accept the license by clicking on `I Agree` button and cancel the download.
+    * In the network view, find the last request that starts with `VantageExpress`. Right click on it and select `Copy -> Copy as cURL`:
 
-![Browser Copy culr](../images/browser.copy.curl.png)
+    ![Browser Copy culr](../images/browser.copy.curl.png)
 * Head back to the ssh session and download Vantage Express by pasting the curl command. Add `-o ve.7z` to the command to save the download to file named `ve.7z`. You can remove all the HTTP headers, e.g.:
 
 ```bash
@@ -69,7 +69,7 @@ bteq
 
 ## Run sample queries
 
-* Using `dbc` user, we will create a new database called `HR`. Copy/paste this query and run press kbd:[Enter]:
+* Using `dbc` user, we will create a new database called `HR`. Copy/paste this query and run press <kbd>Enter</kbd>:
 
 <GettingStartedQueries />
 
