@@ -23,8 +23,8 @@ This quickstart explains how to run [Teradata Jupyter Notebook Demos for Vantage
 When you create a new notebook instance, you can specify a startup script. This script, which runs only once after instance creation, will install the Teradata Jupyter extension package and clone a GitHub repository into the new user-managed notebooks instance.
 
 * Download Teradata Jupyter extensions package
-- Visit [Vantage Modules for Jupyter page](https://downloads.teradata.com/download/tools/vantage-modules-for-jupyter)
-- Sign in and download the Teradata Linux version of the package.
+    * Visit [Vantage Modules for Jupyter page](https://downloads.teradata.com/download/tools/vantage-modules-for-jupyter)
+    * Sign in and download the Teradata Linux version of the package.
 
 * Create Google Cloud Storage Bucket 
      - Create a bucket with a name relevant to the project (e.g., teradata_jupyter). 
@@ -79,9 +79,8 @@ su - jupyter -c "git clone https://github.com/Teradata/lake-demos.git"
 ### Initiating a user managed notebook instance
 
 * Access Vertex AI Workbench
-
-- Return to Vertex AI Workbench in Google Cloud console.
-- Create a new User-Managed Notebook via Advanced Options or directly at https://notebook.new/.
+    - Return to Vertex AI Workbench in Google Cloud console.
+    - Create a new User-Managed Notebook via Advanced Options or directly at https://notebook.new/.
 
 * Under Details, name your notebook, select your region and select continue.
 
