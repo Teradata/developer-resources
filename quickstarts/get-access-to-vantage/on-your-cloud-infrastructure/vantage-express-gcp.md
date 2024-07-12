@@ -30,24 +30,24 @@ If do not wish to pay for cloud usage you can install Vantage Express locally us
 * `gcloud` command line utility installed on your machine. You can find installation instructions here: https://cloud.google.com/sdk/docs/install.
 
 ## Installation
-1. Create a Ubuntu VM with 4 CPU's and 8GB of RAM, a 70GB balanced disk. The following command creates a VM in `us-central1` region. For best performance, replace the  region with one that is the closest to you. For the list of supported regions see [Google Cloud regions documentation](https://cloud.google.com/compute/docs/regions-zones).
+* Create a Ubuntu VM with 4 CPU's and 8GB of RAM, a 70GB balanced disk. The following command creates a VM in `us-central1` region. For best performance, replace the  region with one that is the closest to you. For the list of supported regions see [Google Cloud regions documentation](https://cloud.google.com/compute/docs/regions-zones).
 
 <Tabs />
 
 
-2. ssh to your VM:
+* ssh to your VM:
 
 ```bash
 gcloud compute ssh teradata-vantage-express --zone=us-central1-a
 ```
 
-3. Switch to `root` user:
+* Switch to `root` user:
 
 ```bash
 sudo -i
 ```
 
-4. Prepare the download directory for Vantage Express:
+* Prepare the download directory for Vantage Express:
 
 ```bash
 mkdir /opt/downloads
