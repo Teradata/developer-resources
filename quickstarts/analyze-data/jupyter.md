@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 id: jupyter
-title: Run Vantage Express on UTM
+title: Use Vantage from a Jupyter notebook
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 page_last_update: November 10th, 2022
@@ -35,13 +35,13 @@ This option uses a regular Jupyter Lab notebook. We will see how to load the Ter
 
 1. We start with a plain Jupyter Lab notebook. Here, I'm using docker but any method of starting a notebook, including Jupyter Hub, Google Cloud AI Platform Notebooks, AWS SageMaker Notebooks, Azure ML Notebooks will do.
 
-```
+```bash
 docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes \
   -v "${PWD}":/home/jovyan/work jupyter/datascience-notebook
 ```
 
 2. Docker logs will display the url that you need to go to:
-```
+```bash
 Entered start.sh with args: jupyter lab
 Executing the command: jupyter lab
 ....
@@ -55,15 +55,16 @@ Or copy and paste one of these URLs:
 3. We will open a new notebook and create a cell to install the required libraries:
 :::note
 I've published a notebook with all the cells described below on GitHub: https://github.com/Teradata/quickstarts/blob/main/modules/ROOT/attachments/vantage-with-python-libraries.ipynb
+:::
 
-```
+```bash
 import sys
 !{sys.executable} -m pip install teradatasqlalchemy
 ```
 
 4. Now, we will import `Pandas` and define the connection string to connect to Teradata. Since I'm running my notebook in Docker on my local machine and I want to connect to a local Vantage Express VM, I'm using `host.docker.internal` DNS name provided by Docker to reference the IP of my machine.
 
-```
+```bash
 import pandas as pd
 # Define the db connection string. Pandas uses SQLAlchemy connection strings.
 # For Teradata Vantage, it's teradatasql://username:password@host/database_name .
@@ -72,18 +73,18 @@ db_connection_string = "teradatasql://dbc:dbc@host.docker.internal/dbc"
 ```
 
 5. I can now call Pandas to query Vantage and move the result to a Pandas dataframe:
-```
+```bash
 pd.read_sql("SELECT * FROM dbc.dbcinfo", con = db_connection_string)
 ```
 
 6. The syntax above is concise but it can get tedious if all you need is to explore data in Vantage. We will use `ipython-sql` and its `%%sql` magic to create SQL-only cells. We start with importing the required libraries.
-```
+```bash
 import sys
 !{sys.executable} -m pip install ipython-sql teradatasqlalchemy
 ```
 
 7. We load `ipython-sql` and define the db connection string:
-```
+```bash
 %load_ext sql
 # Define the db connection string. The sql magic uses SQLAlchemy connection strings.
 # For Teradata Vantage, it's teradatasql://username:password@host/database_name .
@@ -92,13 +93,13 @@ import sys
 ```
 
 8. We can now use `%sql` and `%%sql` magic. Let's say we want to explore data in a table. We can create a cell that says:
-```
+```sql
 %%sql
 SELECT * FROM dbc.dbcinfo
 ```
 
 9. If we want to move the data to a Pandas frame, we can say:
-```
+```sql
 result = %sql SELECT * FROM dbc.dbcinfo
 result.DataFrame()
 ```
@@ -119,7 +120,7 @@ The Teradata Jupyter Docker image can be used when you want to run Jupyter local
 By passing `-e "accept_license=Y` you accept [the license agreement](https://github.com/Teradata/jupyterextensions/blob/master/licensefiles/license.txt) for Teradata Jupyter Extensions.
 :::
 
-```
+```bash
 docker volume create notebooks
 docker run -e "accept_license=Y" -p :8888:8888 \
   -v notebooks:/home/jovyan/JupyterLabRoot \
@@ -127,7 +128,7 @@ docker run -e "accept_license=Y" -p :8888:8888 \
 ```
 
 2. Docker logs will display the url that you need to go to. For example, this is what I've got:
-```
+```bash
 Starting JupyterLab ...
 Docker Build ID = 3.2.0-ec02012022
 Using unencrypted HTTP
