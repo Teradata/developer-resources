@@ -24,7 +24,7 @@ This how-to goes through the installation of Teradata Studio and Teradata Studio
 3. Download the latest Teradata Studio or Teradata Studio Express release from the Teradata Downloads page:
 * [Teradata Studio](https://downloads.teradata.com/download/tools/teradata-studio)
 * [Teradata Studio Express](https://downloads.teradata.com/download/tools/teradata-studio-express)
-4. Install the Teradata Studio/Teradata Studio Express. Refer to [Teradata Studio and Teradata Studio Express Installation Guide](attachments/Studio-Express-InstallGuide.pdf) for details.
+4. Install the Teradata Studio/Teradata Studio Express. Refer to [Teradata Studio and Teradata Studio Express Installation Guide](./attachments/Studio-Express-InstallGuide.pdf) for details.
 
 ## Summary
 
