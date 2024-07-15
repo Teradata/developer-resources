@@ -7,6 +7,8 @@ description: Send queries using REST API. Teradata® Query Service is a middlewa
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
+import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+
 # Send queries using REST API
 
 ## Overview
@@ -18,11 +20,10 @@ This how-to provides examples of common use cases to help you get started with Q
 ## Prerequisites
 
 Before starting, make sure you have:
-
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
-
 *	Access to a VantageCloud system where Query Service is provisioned, or a VantageCore with Query Service enabled connectivity. If you are an admin and need to install Query Service, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022).
+
   <ClearscapeDocsNote />
+
 *	Query Service hostname and system name
 * Authorization credentials to connect to the database
 
@@ -52,7 +53,7 @@ Provide valid credentials to access the target Analytics Database using HTTP Bas
 
 The database username and password are combined into a string (`"username : password"`) which is then encoded using Base64. The API response contains the authorization method and encoded credentials.
 
-Request
+**Request**
 
 ``` python , id="queryservice_first_query", role="emits-gtm-events"
 import requests
@@ -77,9 +78,8 @@ headers = {
 print(headers)
 ```
 
-Response
-
-```
+**Response**
+```python
 Basic ZGJjOmRiYw==
 {
   'Content-Type': 'application/json',
@@ -92,10 +92,9 @@ Basic ZGJjOmRiYw==
 Prerequisites:
 
 * The user must already exist in the database.
-
 * The database must be JWT enabled.
 
-Request
+**Request**
 
 ``` python
 import requests
@@ -115,9 +114,9 @@ headers = {
 print(headers)
 ```
 
-Response
+**Response**
 
-```
+```python
 {'Content-Type': 'application/json', 'Authorization': 'Bearer <YOUR_JWT_HERE>'}
 ```
 
@@ -128,14 +127,14 @@ In the following example, the request includes:
 * `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
 * `'format': 'OBJECT'`: The format for response. The formats supported are: JSON object, JSON array, and CSV.
 
-:::note
-The JSON object format creates one JSON object per row where the column name is the field name, and the column value is the field value.
-:::
+    :::note
+    The JSON object format creates one JSON object per row where the column name is the field name, and the column value is the field value.
+    :::
 
 * `'includeColumns': true`: The request to include column metadata, such as column names and types, in the response.
 * `'rowLimit': 4`: The number of rows to be returned from a query.
 
-Request
+**Request**
 
 ``` python
 url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries'
@@ -158,7 +157,7 @@ print('==========================================================')
 print(response.json())
 ```
 
-Response
+**Response**
 
 ``` json
 NUMBER of ROWS 4
@@ -244,7 +243,7 @@ To return an API response in CSV format, set the `*format*` field in the request
 
 The CSV format contains only the query results and not response metadata. The response contains a line for each row, where each line contains the row columns separated by a comma. The following example returns the data as comma-separated values.
 
-Request
+**Request**
 
 ``` python
 # CSV with all rows included
@@ -264,9 +263,9 @@ response = requests.request('POST', url, headers=headers, data=payload_json, ver
 print(response.text)
 ```
 
-Response
+**Response**
 
-``` 
+```python
 DatabaseName,USEDSPACE_IN_GB,MAXSPACE_IN_GB,Percentage_Used,REMAININGSPACE_IN_GB
 DBC                           ,317.7634754180908,1510.521079641879,21.036679308932754,1192.7576042237881
 EM                            ,7.491111755371094E-4,11.546071618795395,0.006488017745513208,11.545322507619858
@@ -298,104 +297,97 @@ Y5WYUUXj                      ,0.0,0.009313225746154785,0.0,0.009313225746154785
 Use explicit sessions when a transaction needs to span multiple requests or when using volatile tables. These sessions are only reused if you reference the sessions in a query request. The request is queued if a request references an explicit session already in use.
 
 1. Create a session
+    Send a POST request to the `/system/<SYSTEM_NAME>/sessions` endpoint. The request creates a new database session and returns the session details as the response.
 
-Send a POST request to the `/system/<SYSTEM_NAME>/sessions` endpoint. The request creates a new database session and returns the session details as the response.
+    In the following example, the request includes `'auto_commit': True` - the request to commit the query upon completion.
 
-In the following example, the request includes `'auto_commit': True` - the request to commit the query upon completion.
+    **Request**
+    ``` python
+    # first create a session
+    url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/sessions'
 
-Request
+    payload = {
+      'auto_commit': True
+    }
 
-``` python
-# first create a session
-url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/sessions'
+    payload_json = json.dumps(payload)
 
-payload = {
-  'auto_commit': True
-}
+    response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
 
-payload_json = json.dumps(payload)
+    print(response.text)
+    ```
 
-response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
-
-print(response.text)
-```
-
-Response
-
-```
-{
-  'sessionId': 1366010,
-  'system': 'testsystem',
-  'user': 'dbc',
-  'tdSessionNo': 1626922,
-  'createMode': 'EXPLICIT',
-  'state': 'LOGGINGON',
-  'autoCommit': true
-}
-```
+    **Response**
+    ```python
+    {
+      'sessionId': 1366010,
+      'system': 'testsystem',
+      'user': 'dbc',
+      'tdSessionNo': 1626922,
+      'createMode': 'EXPLICIT',
+      'state': 'LOGGINGON',
+      'autoCommit': true
+    }
+    ```
 
 2. Use the session created in Step 1 to submit queries
+    
+    Send a POST request to the `/system/<SYSTEM_NAME>/queries` endpoint.
 
-Send a POST request to the `/system/<SYSTEM_NAME>/queries` endpoint.
+    The request submits queries to the target system and returns the release and version number of the target system.
 
-The request submits queries to the target system and returns the release and version number of the target system.
+    In the following example, the request includes:
+      * `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
+      * `'format': 'OBJECT'`: The format for response.
+      * `'Session' : <Session ID>`: The session ID returned in Step 1 to create an explicit session.
 
-In the following example, the request includes:
+    **Request**
 
-* `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
-* `'format': 'OBJECT'`: The format for response.
-* `'Session' : <Session ID>`: The session ID returned in Step 1 to create an explicit session.
+    ``` python
+    # use this session to submit queries afterwards
 
+    url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries'
 
-
-Request
-
-``` python
-# use this session to submit queries afterwards
-
-url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries'
-
-payload = {
-  'query': 'SELECT * FROM DBC.DBCInfo;',
-  'format': 'OBJECT',
-  'session': 1366010 # <-- sessionId
-}
-payload_json = json.dumps(payload)
-
-response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
-
-print(response.text)
-```
-
-Response
-
-``` json
-{
-  "queueDuration":6,
-  "queryDuration":41,
-  "results":[
-    {
-      "resultSet":true,
-      "data":[
-        {
-          "InfoKey":"LANGUAGE SUPPORT MODE",
-          "InfoData":"Standard"
-        },
-        {
-          "InfoKey":"RELEASE",
-          "InfoData":"15.10.07.02"
-        },
-        {
-          "InfoKey":"VERSION",
-          "InfoData":"15.10.07.02"
-        }
-      ],
-      "rowCount":3,
-      "rowLimitExceeded":false
+    payload = {
+      'query': 'SELECT * FROM DBC.DBCInfo;',
+      'format': 'OBJECT',
+      'session': 1366010 # <-- sessionId
     }
-  ]
-}
-```
+    payload_json = json.dumps(payload)
+
+    response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
+
+    print(response.text)
+    ```
+
+    **Response**
+    ``` json
+    {
+      "queueDuration":6,
+      "queryDuration":41,
+      "results":[
+        {
+          "resultSet":true,
+          "data":[
+            {
+              "InfoKey":"LANGUAGE SUPPORT MODE",
+              "InfoData":"Standard"
+            },
+            {
+              "InfoKey":"RELEASE",
+              "InfoData":"15.10.07.02"
+            },
+            {
+              "InfoKey":"VERSION",
+              "InfoData":"15.10.07.02"
+            }
+          ],
+          "rowCount":3,
+          "rowLimitExceeded":false
+        }
+      ]
+    }
+    ```
 
 
 ## Use asynchronous queries
@@ -403,143 +395,134 @@ Response
 Use asynchronous queries when a system or network performance is affected by querying a large group of data or long running queries.
 
 1. Submit asynchronous queries to the target system and retrieve a Query ID
+  Send a POST request to the `/system/<SYSTEM_NAME>/queries` endpoint.
+  In the following example, the request includes:
+    * `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
+    * `'format': 'OBJECT'`: The format for response.
+    * `'spooled_result_set': True`: The indication that the request is asynchronous.
+  
+    **Request**
+    ``` python
+    ## Run async query .
 
-Send a POST request to the `/system/<SYSTEM_NAME>/queries` endpoint.
+    url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries'
 
-In the following example, the request includes:
+    payload = {
+      'query': 'SELECT * FROM DBC.DBCInfo;',
+      'format': 'OBJECT',
+      'spooled_result_set': True
+    }
 
-* `SELECT * FROM DBC.DBCInfo`: The query to the system with the alias `<SYSTEM_NAME>`.
-* `'format': 'OBJECT'`: The format for response.
-* `'spooled_result_set': True`: The indication that the request is asynchronous.
+    payload_json = json.dumps(payload)
+    response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
 
+    print(response.text)
+    ```
 
-
-Request
-
-``` python
-## Run async query .
-
-url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries'
-
-payload = {
-  'query': 'SELECT * FROM DBC.DBCInfo;',
-  'format': 'OBJECT',
-  'spooled_result_set': True
-}
-
-payload_json = json.dumps(payload)
-response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
-
-print(response.text)
-```
-
-Response
-
-```
-{"id":1366025}
-```
-
+    **Response**
+    ```
+    {"id":1366025}
+    ```
 
 2. Get query details using the ID retrieved from Step 1
-+
-Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
-+
-The request returns the details of the specific query, including `*queryState*`, `*queueOrder*`, `*queueDuration*`, and so on. For a complete list of the response fields and their descriptions, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body).
 
-Request
+    Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
 
-``` python
-## response for async query .
+    The request returns the details of the specific query, including **`queryState`**, **`queueOrder`**, **`queueDuration`**, and so on. For a complete list of the response fields and their descriptions, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body).
 
-url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries/1366025'
+    **Request**
+    ``` python
+    ## response for async query .
 
-payload_json = json.dumps(payload)
-response = requests.request('GET', url, headers=headers, verify=False)
+    url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries/1366025'
 
-print(response.text)
-```
+    payload_json = json.dumps(payload)
+    response = requests.request('GET', url, headers=headers, verify=False)
 
-Response
+    print(response.text)
+    ```
 
-```
-{
-  "queryId":1366025,
-  "query":"SELECT * FROM DBC.DBCInfo;",
-  "batch":false,
-  "system":"testsystem",
-  "user":"dbc",
-  "session":1366015,
-  "queryState":"RESULT_SET_READY",
-  "queueOrder":0,
-  "queueDuration":6,
-  "queryDuration":9,
-  "statusCode":200,
-  "resultSets":{
+    **Response**
+    ```python
+    {
+      "queryId":1366025,
+      "query":"SELECT * FROM DBC.DBCInfo;",
+      "batch":false,
+      "system":"testsystem",
+      "user":"dbc",
+      "session":1366015,
+      "queryState":"RESULT_SET_READY",
+      "queueOrder":0,
+      "queueDuration":6,
+      "queryDuration":9,
+      "statusCode":200,
+      "resultSets":{
 
-  },
-  "counts":{
+      },
+      "counts":{
 
-  },
-  "exceptions":{
+      },
+      "exceptions":{
 
-  },
-  "outParams":{
+      },
+      "outParams":{
 
-  }
-}
-```
+      }
+    }
+    ```
 
 3. View resultset for asynchronous query
 
-Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>/results` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
-The request returns an array of the result sets and update counts produced by the submitted query.
+    Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>/results` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
 
-Request
+    The request returns an array of the result sets and update counts produced by the submitted query.
 
-``` python
-url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries/1366025/results'
+    **Request**
 
-payload_json = json.dumps(payload)
-response = requests.request('GET', url, headers=headers, verify=False)
+    ``` python
+    url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries/1366025/results'
 
-print(response.text)
-```
+    payload_json = json.dumps(payload)
+    response = requests.request('GET', url, headers=headers, verify=False)
 
-Response
+    print(response.text)
+    ```
 
-``` json
-{
-  "queueDuration":6,
-  "queryDuration":9,
-  "results":[
+    **Response**
+
+    ``` json
     {
-      "resultSet":true,
-      "data":[
+      "queueDuration":6,
+      "queryDuration":9,
+      "results":[
         {
-          "InfoKey":"LANGUAGE SUPPORT MODE",
-          "InfoData":"Standard"
-        },
-        {
-          "InfoKey":"RELEASE",
-          "InfoData":"15.10.07.02"
-        },
-        {
-          "InfoKey":"VERSION",
-          "InfoData":"15.10.07.02"
+          "resultSet":true,
+          "data":[
+            {
+              "InfoKey":"LANGUAGE SUPPORT MODE",
+              "InfoData":"Standard"
+            },
+            {
+              "InfoKey":"RELEASE",
+              "InfoData":"15.10.07.02"
+            },
+            {
+              "InfoKey":"VERSION",
+              "InfoData":"15.10.07.02"
+            }
+          ],
+          "rowCount":3,
+          "rowLimitExceeded":false
         }
-      ],
-      "rowCount":3,
-      "rowLimitExceeded":false
+      ]
     }
-  ]
-}
-```
+    ```
 
 ## Get a list of active or queued queries
 
 Send a GET request to the `/system/<SYSTEM_NAME>/queries` endpoint. The request returns the IDs of active queries.
 
-Request
+**Request**
 
 ``` python
 url = 'https://<QS_HOSTNAME>:1443/systems/<SYSTEM_NAME>/queries'
@@ -551,7 +534,7 @@ response = requests.request('GET', url, headers=headers, data=payload, verify=Fa
 print(response.json())
 ```
 
-Response
+**Response**
 
 ``` json
 [
