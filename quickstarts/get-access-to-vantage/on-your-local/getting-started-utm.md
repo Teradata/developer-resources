@@ -33,8 +33,7 @@ Vantage Express runs on x86 architecture. When you run the VM on M1/2 chips, UTM
 :::note
 No admin rights on your local machine? Have a look at how to run Vantage Express in [AWS](../on-your-cloud-infrastructure/run-vantage-express-on-aws.md), [Azure](../on-your-cloud-infrastructure/run-vantage-express-on-microsoft-azure.md), [Google Cloud](../on-your-cloud-infrastructure/vantage-express-gcp.md).
 :::
-[test](./getting-started-vbox.md),
-[Google Cloud](../on-your-cloud-infrastructure/vantage-express-gcp.md)
+
 ## Installation
 
 ### Download required software
@@ -54,26 +53,26 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 4. On `Other` screen select `Skip ISO Boot`.
 5. On `Hardware` screen allocate at least 4GB of memory and at least 1 CPU core. We recommend 10GB RAM and 2 CPUs.
 
-![UTM Hardware](../../images/utm.hardware.png)
+    ![UTM Hardware](../../images/utm.hardware.png)
 
 6. On `Storage` screen accept the defaults by clicking `Next`.
 7. On `Shared Direct` screen click `Next`.
 8. On `Summary` screen check `Open VM Settings` and click `Save`.
 9. Go through the setup wizard. You only need to adjust the following tabs:
-    - *QEMU* - disable `UEFI Boot` option
-    - *Network* - expose ssh (22) and Vantage (1025) ports on the host computer:
+    - **QEMU** - disable `UEFI Boot` option
+    - **Network** - expose ssh (22) and Vantage (1025) ports on the host computer:
 
-![UTM Network](../../images/utm.network.png)
+    ![UTM Network](../../images/utm.network.png)
 
 10. Map drives:
-* Delete the default `IDE Drive`.
-* Map the 3 Vantage Express drives by importing the disk files from the downloaded VM zip file. Make sure you map them in the right order, `-disk1`, `-disk2`, `-disk3` . The first disk is bootable and contains the database itself. Disks 2 and 3 are so called `pdisks` and contain data. As you import the files UTM will automatically convert them fro `vmdk` into `qcow2` format. Make sure that each disk is configured using the `IDE` interface:
+    * Delete the default `IDE Drive`.
+    * Map the 3 Vantage Express drives by importing the disk files from the downloaded VM zip file. Make sure you map them in the right order, `-disk1`, `-disk2`, `-disk3` . The first disk is bootable and contains the database itself. Disks 2 and 3 are so called `pdisks` and contain data. As you import the files UTM will automatically convert them fro `vmdk` into `qcow2` format. Make sure that each disk is configured using the `IDE` interface:
 
-![UTM Drives](../../images/utm.drives.png)
+    ![UTM Drives](../../images/utm.drives.png)
 
-* Once you are done mapping all 3 drives, your configuration should look like this:
+    * Once you are done mapping all 3 drives, your configuration should look like this:
 
-![UTM Drives Final](../../images/utm.final.png)
+    ![UTM Drives Final](../../images/utm.final.png)
 
 11. Save the configuration and start the VM.
 

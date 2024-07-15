@@ -28,7 +28,7 @@ You need access to a Teradata Vantage instance.
 
 Let's start with something simple. What if you wanted the database to print "Hello World"?
 
-```
+```sql
 SELECT *
 FROM
   SCRIPT(
@@ -37,7 +37,7 @@ FROM
 ```
 
 Here is what I've got:
-```
+```sql
 Message
 ------------
 Hello World!
@@ -46,13 +46,13 @@ Hello World!
 
 Let's analyze what just happened here. The SQL includes `echo Hello World!`. This is a Bash command. OK, so now we know how to run Bash commands. But why did we get 2 rows and not one? That's because our simple script was run once on each AMP and I happen to have 2 AMPs:
 
-```
+```sql
 -- Teradata magic that returns the number of AMPs in a system
 SELECT hashamp()+1 AS number_of_amps;
 ```
 
 Returns:
-```
+```sql
 number_of_amps
 --------------
              2
@@ -70,7 +70,7 @@ Ok, Hello World is super exciting, but what if we have existing logic in a large
 
 Say you have `helloworld.py` script with the following content:
 
-```
+```bash
 print("Hello World!")
 ```
 
@@ -78,7 +78,7 @@ Let's assume the script is on your local machine at `/tmp/helloworld.py`.
 
 First, we need to setup permissions in Vantage. We are going to do this using a new database to keep it clean.
 
-```
+```sql
 -- Create a new database called sto
 CREATE DATABASE STO
 AS PERMANENT = 60e6, -- 60MB
@@ -90,14 +90,14 @@ GRANT CREATE EXTERNAL PROCEDURE ON STO to dbc;
 
 You can upload the script to Vantage using the following procedure call:
 
-```
+```python
 call SYSUIF.install_file('helloworld',
                          'helloworld.py', 'cz!/tmp/helloworld.py');
 ```
 
 Now that the script has been uploaded, you can call it like this:
 
-```
+```sql
 -- We switch to STO database
 DATABASE STO
 
@@ -117,7 +117,7 @@ FROM SCRIPT(
 ```
 
 The last call should return:
-```
+```sql
 Message
 ------------
 Hello World!
@@ -132,7 +132,7 @@ So far, we have been using `SCRIPT` operator to run standalone scripts. But the 
 
 We will start with creating a table with a few rows.
 
-```
+```sql
 -- Switch to STO database.
 DATABASE STO
 
@@ -146,7 +146,7 @@ INS urls('https://www.contrivedexample.com/example?mylist=1&mylist=2&mylist=...t
 
 We will use the following script to parse out query parameters:
 
-```
+```python
 from urllib.parse import urlparse
 from urllib.parse import parse_qsl
 import sys
@@ -164,13 +164,13 @@ for line in sys.stdin:
 Note, how the scripts assumes that urls will be fed into `stdin` one by one, line by line. Also, note how it prints results line by line, using the tab character as a delimiter between values.
 
 Let's install the script. Here, we assume that the script file is at `/tmp/urlparser.py` on our local machine:
-```
+```python
 CALL SYSUIF.install_file('urlparser',
 	'urlparser.py', 'cz!/tmp/urlparser.py');
 ```
 
 With the script installed, we will now retrieve data from `urls` table and feed it into the script to retrieve query parameters:
-```
+```sql
 -- We inform Vantage to create a symbolic link from the UIF directory to ./sto/
 SET SESSION SEARCHUIFDBPATH = sto ;
 
@@ -182,9 +182,9 @@ SELECT *
 ```
 
 As a result, we get query params and their values. There are as many rows as key/value pairs. Also, since we inserted a tab between the key and the value output in the script, we get 2 columns from STO.
-```
+```sql
 param_key   |param_value
-------------+-----------------------------------------------------
+-----------------------------------------------------------------
 q           |NYSE:TDC
 _trksid     |p2050601.m570.l1313.TR0.TRC0.H0.Xteradata merchandise
 search_query|teradata commercial
@@ -201,7 +201,7 @@ mylist      |...testing
 
 We have learned how to take data from Vantage, pass it to a script and get output. Is there an easy way to store this output in a table? Sure, there is. We can combine the select above with `CREATE TABLE` statement:
 
-```
+```sql
 -- We inform Vantage to create a symbolic link from the UIF directory to ./sto/
 SET SESSION SEARCHUIFDBPATH = sto ;
 
@@ -219,12 +219,12 @@ NO PRIMARY INDEX;
 
 Now, let's inspect the contents of `url_params` table:
 
-```
+```sql
 SELECT * FROM url_params;
 ```
 
 You should see the following output:
-```
+```sql
 param_key   |param_value
 ------------+-----------------------------------------------------
 q           |NYSE:TDC
