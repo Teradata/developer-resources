@@ -3,6 +3,7 @@ sidebar_position: 11
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 page_last_update: April 6th, 2022
+title: Load data with TPT
 description: Load data into Vantage efficiently using Teradata Parallel Transporter (TPT).
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, Fastload, Teradata Parallel Transporter, TPT]
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
