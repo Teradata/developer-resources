@@ -48,7 +48,7 @@ The Welcome page has navigation menu that not only gives you a complete control 
 * [Environments](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Getting-Started-First-Sign-On-by-Organization-Admin/Step-1-Signing-On-and-Creating-Your-First-Environment) - Create your environments and see all the created environments
 * [Organization](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Introduction-to-VantageCloud-Lake/VantageCloud-Lake-Organizations-and-Environments) - View organizations configuration, manage Organization Admins and view the configuration and status of your account
 * [Consumption](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Managing-Compute-Resources/Review-Consumption-Usage) - Monitor how your organization consumes compute and storage resources
-* [Cost Calculator](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Using-VantageCloud-Lake-Console-to-Manage-VantageCloud-Lake/Using-the-Consumption-Estimates) - Calculate the cost and consumption of your environment and whole organization. 
+* [Cost Calculator](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Managing-Consumption/Using-the-Consumption-Estimates) - Calculate the cost and consumption of your environment and whole organization. 
 * [Queries](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Running-and-Monitoring-Queries/Monitoring-and-Managing-Queries) - Inspect an environment's queries to understand their efficiency.
 * [Editor](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Running-and-Monitoring-Queries) - Create and run queries in an editor.  
 * [Data Copy](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Data-Copy) - Provision, configure and run data copy (also known as Data Mover) jobs from VantageCloud Lake Console.
@@ -77,7 +77,7 @@ Fill out the Environment configuration fields:
 ![Environment configuration](../images/lake_environment_configuration.png)
 
 :::important
-The **Consumption estimates**, to your right, provide guidance for configuring the environment. See [Using the Consumption Estimates](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Using-VantageCloud-Lake-Console-to-Manage-VantageCloud-Lake/Using-the-Consumption-Estimates) for more detail.   
+The **Consumption estimates**, to your right, provide guidance for configuring the environment. See [Using the Consumption Estimates](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Managing-Consumption/Using-the-Consumption-Estimates) for more detail.   
 :::
 
 ### Primary cluster configuration
