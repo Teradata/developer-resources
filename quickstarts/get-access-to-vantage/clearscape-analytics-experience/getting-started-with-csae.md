@@ -11,7 +11,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 ## Overview
 
-[ClearScape Analytics^TM^](https://www.teradata.com/platform/clearscape-analytics) is a powerful analytics engine in [Teradata VantageCloud](https://www.teradata.com/platform/vantagecloud). It delivers breakthrough performance, value, and growth across the enterprise with the most powerful, open and connected AI/ML capabilities on the market. You can experience ClearClearScape Analytics^TM^ and Teradata Vantage, in a non-production setting, through [ClearScape Analytics Experience](https://www.teradata.com/experience).
+[ClearScape Analytics<sup>TM</sup>](https://www.teradata.com/platform/clearscape-analytics) is a powerful analytics engine in [Teradata VantageCloud](https://www.teradata.com/platform/vantagecloud). It delivers breakthrough performance, value, and growth across the enterprise with the most powerful, open and connected AI/ML capabilities on the market. You can experience ClearClearScape Analytics<sup>TM</sup> and Teradata Vantage, in a non-production setting, through [ClearScape Analytics Experience](https://www.teradata.com/experience).
 
 In this how-to we will go through the steps for creating an environment in ClearScape Analytics Experience and access demos.
 
