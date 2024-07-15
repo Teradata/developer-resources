@@ -16,7 +16,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;">
 <script defer="true" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/ai-unlimited-docs/pr-preview/pr-20/assets/css/styles.59e1a9ef.css">
-<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.2c6e2dcd.js" defer="defer"></script>
+<script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/runtime~main.32b33ff4.js" defer="defer"></script>
 <script src="/ai-unlimited-docs/pr-preview/pr-20/assets/js/main.1acc058b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,8 +35,6 @@
 <li>Admin rights to be able to install and run the software.</li>
 </ol>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">note</div><div class="admonitionContent_UjKb"><p>No admin rights on your local machine? Have a look at how to run Vantage Express in <a href="/ai-unlimited-docs/pr-preview/pr-20/quickstarts/get-access-to-vantage/on-your-cloud-infrastructure/run-vantage-express-on-aws/">AWS</a>, <a href="/ai-unlimited-docs/pr-preview/pr-20/quickstarts/get-access-to-vantage/on-your-cloud-infrastructure/run-vantage-express-on-microsoft-azure/">Azure</a>, <a href="/ai-unlimited-docs/pr-preview/pr-20/quickstarts/get-access-to-vantage/on-your-cloud-infrastructure/vantage-express-gcp/">Google Cloud</a>.</p></div></span></div>
-<p><a href="/ai-unlimited-docs/pr-preview/pr-20/quickstarts/get-access-to-vantage/on-your-local/getting-started-vbox/">test</a>,
-<a href="/ai-unlimited-docs/pr-preview/pr-20/quickstarts/get-access-to-vantage/on-your-cloud-infrastructure/vantage-express-gcp/">Google Cloud</a></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="installation">Installation<a href="#installation" class="hash-link" aria-label="Direct link to Installation" title="Direct link to Installation">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="download-required-software">Download required software<a href="#download-required-software" class="hash-link" aria-label="Direct link to Download required software" title="Direct link to Download required software">​</a></h3>
 <ol>
@@ -49,28 +47,41 @@
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="run-vantage-express">Run Vantage Express<a href="#run-vantage-express" class="hash-link" aria-label="Direct link to Run Vantage Express" title="Direct link to Run Vantage Express">​</a></h3>
 <ol>
-<li>Go to the directory where you downloaded Vantage Express and unzip the downloaded file.</li>
-<li>Start UTM, click on the <code>+</code> sign and select <code>Virtualize</code> (for Intel Macs) or <code>Emulate</code> (for M1 Macs).</li>
-<li>On <code>Operating System</code> screen select <code>Other</code>.</li>
-<li>On <code>Other</code> screen select <code>Skip ISO Boot</code>.</li>
-<li>On <code>Hardware</code> screen allocate at least 4GB of memory and at least 1 CPU core. We recommend 10GB RAM and 2 CPUs.</li>
-</ol>
-<p><img decoding="async" loading="lazy" alt="UTM Hardware" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/utm.hardware-82832cf0cc6707547bdd37897134e631.png" width="450" height="522" class="img_ev3q"></p>
-<ol start="6">
-<li>On <code>Storage</code> screen accept the defaults by clicking <code>Next</code>.</li>
-<li>On <code>Shared Direct</code> screen click <code>Next</code>.</li>
-<li>On <code>Summary</code> screen check <code>Open VM Settings</code> and click <code>Save</code>.</li>
-<li>Go through the setup wizard. You only need to adjust the following tabs:<!-- -->
-<ul>
-<li><em>QEMU</em> - disable <code>UEFI Boot</code> option</li>
-<li><em>Network</em> - expose ssh (22) and Vantage (1025) ports on the host computer:</li>
-</ul>
+<li>
+<p>Go to the directory where you downloaded Vantage Express and unzip the downloaded file.</p>
 </li>
-</ol>
+<li>
+<p>Start UTM, click on the <code>+</code> sign and select <code>Virtualize</code> (for Intel Macs) or <code>Emulate</code> (for M1 Macs).</p>
+</li>
+<li>
+<p>On <code>Operating System</code> screen select <code>Other</code>.</p>
+</li>
+<li>
+<p>On <code>Other</code> screen select <code>Skip ISO Boot</code>.</p>
+</li>
+<li>
+<p>On <code>Hardware</code> screen allocate at least 4GB of memory and at least 1 CPU core. We recommend 10GB RAM and 2 CPUs.</p>
+<p><img decoding="async" loading="lazy" alt="UTM Hardware" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/utm.hardware-82832cf0cc6707547bdd37897134e631.png" width="450" height="522" class="img_ev3q"></p>
+</li>
+<li>
+<p>On <code>Storage</code> screen accept the defaults by clicking <code>Next</code>.</p>
+</li>
+<li>
+<p>On <code>Shared Direct</code> screen click <code>Next</code>.</p>
+</li>
+<li>
+<p>On <code>Summary</code> screen check <code>Open VM Settings</code> and click <code>Save</code>.</p>
+</li>
+<li>
+<p>Go through the setup wizard. You only need to adjust the following tabs:</p>
+<ul>
+<li><strong>QEMU</strong> - disable <code>UEFI Boot</code> option</li>
+<li><strong>Network</strong> - expose ssh (22) and Vantage (1025) ports on the host computer:</li>
+</ul>
 <p><img decoding="async" loading="lazy" alt="UTM Network" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/utm.network-44e2e9a9cd0b67626ec82ef537fa305f.png" width="801" height="473" class="img_ev3q"></p>
-<ol start="10">
-<li>Map drives:</li>
-</ol>
+</li>
+<li>
+<p>Map drives:</p>
 <ul>
 <li>Delete the default <code>IDE Drive</code>.</li>
 <li>Map the 3 Vantage Express drives by importing the disk files from the downloaded VM zip file. Make sure you map them in the right order, <code>-disk1</code>, <code>-disk2</code>, <code>-disk3</code> . The first disk is bootable and contains the database itself. Disks 2 and 3 are so called <code>pdisks</code> and contain data. As you import the files UTM will automatically convert them fro <code>vmdk</code> into <code>qcow2</code> format. Make sure that each disk is configured using the <code>IDE</code> interface:</li>
@@ -80,8 +91,10 @@
 <li>Once you are done mapping all 3 drives, your configuration should look like this:</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="UTM Drives Final" src="/ai-unlimited-docs/pr-preview/pr-20/assets/images/utm.final-fd397f998100e5b6a11430d1f5e75351.png" width="1708" height="1170" class="img_ev3q"></p>
-<ol start="11">
-<li>Save the configuration and start the VM.</li>
+</li>
+<li>
+<p>Save the configuration and start the VM.</p>
+</li>
 </ol>
 <ul>
 <li>Press <kbd>[ENTER]</kbd> to select the highlighted <code>LINUX</code> boot partition.</li>
