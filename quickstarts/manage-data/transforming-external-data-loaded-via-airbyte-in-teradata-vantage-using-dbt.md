@@ -9,7 +9,7 @@ keywords: [dbt, airbyte, data transformation, data warehouses, compute storage s
 
 # Transform data Loaded with Airbyte using dbt
 
-### Overview
+## Overview
 
 This tutorial demonstrates how to use [dbt (Data Build Tool)](https://docs.getdbt.com/docs/introduction) to transform external data load through [Airbyte](https://github.com/airbytehq/airbyte) (an Open-Source Extract Load tool) in Teradata Vantage. 
 
@@ -17,7 +17,7 @@ This tutorial is based on the original [dbt Jaffle Shop tutorial](https://github
 
 ![Raw data in Teradata Vantage](../elt/images/getting-started-with-airbyte-dbt/raw_data_vantage_dbeaver.png)
 
-### Prerequisites
+## Prerequisites
 
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
@@ -27,25 +27,25 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * Reference dbt project repository: [Jaffle Project with Airbyte.](https://github.com/Teradata/airbyte-dbt-jaffle)
 * Python 3.7, 3.8, 3.9, 3.10 or 3.11 installed.
 
-### Sample Data Loading
-* Follow the steps in the [Airbyte tutorial](https://quickstarts.teradata.com/elt/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.html). Make sure you load data from the [Jaffle Shop spreadsheet](https://docs.google.com/spreadsheets/d/1-R4F3q8J9KDnFRWpiT3Ysp1RlOoUu3PeQR7xDeLxFts/edit#gid=42273685) and not the default dataset referenced by the Airbyte tutorial. Also, set the `Default Schema` in the Teradata destination to `airbyte_jaffle_shop`.
+## Sample Data Loading
+* Follow the steps in the [Airbyte tutorial](./use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md). Make sure you load data from the [Jaffle Shop spreadsheet](https://docs.google.com/spreadsheets/d/1-R4F3q8J9KDnFRWpiT3Ysp1RlOoUu3PeQR7xDeLxFts/edit#gid=42273685) and not the default dataset referenced by the Airbyte tutorial. Also, set the `Default Schema` in the Teradata destination to `airbyte_jaffle_shop`.
 
 :::note
 When you configure a Teradata destination in Airbyte, it will ask for a `Default Schema`. Set the `Default Schema` to `airbyte_jaffle_shop`. 
 :::
 
-### Clone the project
+## Clone the project
 Clone the tutorial repository and change the directory to the project directory:
 
-``` bash
+```bash
 git clone https://github.com/Teradata/airbyte-dbt-jaffle
 cd airbyte-dbt-jaffle
 ```
 
-### Install dbt
+## Install dbt
 * Create a new python environment to manage dbt and its dependencies. Activate the environment:
 
-``` bash
+```bash
 python3 -m venv env
 source env/bin/activate
 ```
@@ -57,14 +57,14 @@ You can activate the virtual environment in Windows by executing the correspondi
 
 * Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
 
-``` bash
+```bash
 pip install dbt-teradata
 ```
 
-### Configure dbt
+## Configure dbt
 * Initialize a dbt project.
 
-``` bash
+```bash
 dbt init
 ```
 
@@ -100,7 +100,7 @@ dbt debug
 If the debug command returned errors, you likely have an issue with the content of `profiles.yml`. If the setup is correct, you will get message `All checks passed!`
 ![dbt debug output](../elt/images/getting-started-with-airbyte-dbt/dbt_debug.png)
 
-### The Jaffle Shop dbt project
+## The Jaffle Shop dbt project
 
 `jaffle_shop` is a fictional restaurant that takes orders online. The data of this business consists of tables for `customers`, `orders` and `payments`that follow the entity relations diagram below:
 
@@ -145,7 +145,7 @@ As the method of extracting JSON strings remains consistent across all staging m
 :::
 
 Below an example of transforming raw JSON data into a view through the `stg_orders.sql` model : 
-``` sql
+```sql
 WITH source AS (
     SELECT * FROM {{ source('airbyte_jaffle_shop', '_airbyte_raw_orders')}}
 ),
@@ -177,7 +177,7 @@ Building a Dimensional Model is a two-step process:
 ### Executing transformations
 For executing the transformations defined in the dbt project we run:
 
-``` bash
+```bash
 dbt run
 ```
 
@@ -224,12 +224,12 @@ dbt docs serve
 
 ![dbt lineage graph](../elt/images/getting-started-with-airbyte-dbt/dbt_docs_serve.png)
 
-### Summary
+## Summary
 
 This tutorial demonstrated how to use dbt to transform raw JSON data loaded through Airbyte into dimensional model in Teradata Vantage. The sample project takes raw JSON data loaded in Teradata Vantage, creates normalized views and finally produces a dimensional data mart. We used dbt to transform JSON into Normalized views and multiple dbt commands to create models (`dbt run`), test the data (`dbt test`), and generate and serve model documentation (`dbt docs generate`, `dbt docs serve`).
 
 
-### Further reading
+## Further reading
 * [dbt documentation](https://docs.getdbt.com/docs)
 * [dbt-teradata plugin documentation](https://github.com/Teradata/dbt-teradata)
 
