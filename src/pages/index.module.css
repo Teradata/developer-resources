@@ -182,6 +182,14 @@
       max-width: 243px;
       */width: 100%;
   }
+  .heroBanner {
+    padding: 6rem 0 0 0 !important;
+  /*  text-align: center;*/
+    position: relative;
+    background: none;
+    color: #333A3E;
+    z-index: 1;
+  }
 }
 
 @media screen and (min-width: 1025px) {
