@@ -15,7 +15,7 @@ import { Banner, Button, Typography } from '@teradata-web/react-components';
 function HomepageHeader() {
 //  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero--primary', styles.heroBanner, styles.noPadding)}>
       <div className={clsx('container', styles.container)}>
         <Banner
             content={
