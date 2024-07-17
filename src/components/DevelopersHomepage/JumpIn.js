@@ -7,7 +7,7 @@ import Link from '@docusaurus/Link';
 
 function Feature({ imgBullet, imgBullet2, img, title, description, href, href2, descriptionLink, descriptionLink2   }) {
   return (
-    <div className={clsx('col', styles.col)}>
+    <div className={clsx('col col--4', styles.col)}>
       <div className={clsx('', styles.card)}>
         <img src={img} alt={title} title={title} width="40px"/>
         <div className={clsx(styles.pad)}>
