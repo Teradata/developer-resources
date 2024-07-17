@@ -9,7 +9,7 @@ function Feature({ imgBullet, imgBullet2, img, title, description, href, href2, 
   return (
     <div className={clsx('col', styles.col)}>
       <div className={clsx('', styles.card)}>
-        <img src={img} alt={title} title={title}/>
+        <img src={img} alt={title} title={title} width="40px"/>
         <div className={clsx(styles.pad)}>
           <Heading as="h3">{title}</Heading>
         </div>

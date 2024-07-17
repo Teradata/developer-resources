@@ -1,4 +1,4 @@
-import gettingStartedUrl from '@site/static/img/developers/Document.png';
+import gettingStartedUrl from '@site/static/img/developers/article.png';
 import documentationUrl from '@site/static/img/developers/Library.png';
 import downloadsUrl from '@site/static/img/developers/Download.png';
 import communityUrl from '@site/static/img/developers/People.png';
