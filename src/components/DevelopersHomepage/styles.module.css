@@ -78,11 +78,11 @@ a.col {
   }
 
   .col {
-    --ifm-col-width: 50%;
+    --ifm-col-width: 50% !important;
   }
 
   .col2 {
-    --ifm-col-width: 100% !important;
+    --ifm-col-width: 100%;
   }
 }
 
