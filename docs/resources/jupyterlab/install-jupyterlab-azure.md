@@ -45,7 +45,6 @@ Choose a template based on whether you intend to use a [load balancer](../../glo
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `jupyter-with-alb.json`&mdash;Hosts JupyterLab behind an [application load balancer](../../glossary.md#application-load-balancer)
     - `jupyter-with-nlb.json`&mdash;Hosts JupyterLab behind a [network load balancer](../../glossary.md#network-load-balancer)
     - `jupyter-without-lb.json`&mdash;No load balancer
 

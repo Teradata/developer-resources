@@ -1,16 +1,16 @@
 ---
 id: change-settings
-title: Change settings (admin)
-description: Learn how to change AI Unlimited settings.
-sidebar_label: Change settings (admin)
+title: Change AI Unlimited settings (owner)
+description: Learn how to change AI Unlimited settings in the manager.
+sidebar_label: Change AI Unlimited settings (owner)
 sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
 
-# Change settings (admin)
+# Change AI Unlimited settings (owner)
 
-If you are the AI Unlimited admin, you can return to the AI Unlimited setup in the manager and change any basic, cloud integration, or Git integration setting.
+If you are the AI Unlimited owner, you can return to the setup in the manager and change any Git, cloud, or application setting.
 
 1. Access the setup using the same URL you used to access it originally.
 
@@ -18,11 +18,10 @@ If you are the AI Unlimited admin, you can return to the AI Unlimited setup in t
 You received the URL when you installed the manager.
 :::
 
-2. Sign in to GitHub or GitLab.
-3. After being routed back to the manager, select **Setup**.
-3. In any section, make changes, then select **Update**.<br/>
-[Learn about the fields](../install-ai-unlimited/setup-ai-unlimited.md).
-4. Sign in to authenticate yourself.
-6. If you enabled TLS, on your **Profile**, select **Restart**.<br/>
-  AI Unlimited restarts with TLS in place.
+2. Sign in to GitLab or GitHub.
+3. After being routed back to the manager, select **Settings**.
+4. In any of the 3 steps, make changes, then select **Next**.<br/>
+[Learn more about the fields](../install-ai-unlimited/setup-ai-unlimited.md).
+5. If you changed TLS settings (enabled TLS, disabled TLS, changed the certificate, etc.), a restart message appears. Restart AI Unlimited.<br/>
+  AI Unlimited restarts with your TLS changes in place.
  

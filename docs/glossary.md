@@ -3,7 +3,7 @@ id: glossary
 title: Glossary
 description: Terminology for the installation and use of AI Unlimited.
 sidebar_label: Glossary
-sidebar_position: 7
+sidebar_position: 8
 pagination_prev: null
 pagination_next: null
 ---
@@ -15,15 +15,11 @@ pagination_next: null
 
 ### AI Unlimited manager
 
-The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#engine) on your [cloud service provider](#cloud-service-provider). It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key.
+The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML [engine](#engine) on your [cloud service provider](#cloud-service-provider). It also provides a web-based user interface from which the AI Unlimited owner sets up AI Unlimited after installing it, and changes settings later as needed. From the manager, all users get their API key.
 
 ### API key
 
 Your Application Programming Interface (API) key enables you to connect your Jupyter notebook to the manager. This is the first thing you do in a new Jupyter notebook before you create or access a project.
-
-### application load balancer
-
-Load balancers distribute incoming traffic across servers. An application load balancer inspects incoming traffic content, such as HTTP headers and paths, to make routing decisions. You can use an application load balancer as a way to expose AI Unlimited manager and the engine to the public IP network.
 
 
 ## C
@@ -96,7 +92,7 @@ Load balancers distribute incoming traffic across servers. A network load balanc
 
 An OAuth app allows a user to grant access to their account on one website or service to another, without sharing their password. 
 
-An OAuth app, that you or someone at your organization creates, allows AI Unlimited to use GitHub or GitLab authentication to manage each [project repository](#project-repository) and, each time the engine is deployed, derive the engine users from the collaborators that have been added to the repository.
+An OAuth app, that you or someone at your organization creates, allows AI Unlimited to use GitLab or GitHub authentication to manage each [project repository](#project-repository) and, each time the engine is deployed, derive the engine users from the collaborators that have been added to the repository.
 
 ### object storage
 A scalable, highly effective way to store large amounts of structured, semi-structured, or unstructured data in the cloud. Amazon S3 is object storage on AWS. Azure Blob Storage is object storage on Azure. Object storage is the basis for a [data lake](#data-lake).
@@ -106,7 +102,7 @@ A scalable, highly effective way to store large amounts of structured, semi-stru
 
 ### project
 
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a repository in your GitHub or GitLab account.
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a repository in your GitLab or GitHub account.
 
 ### project repository
 

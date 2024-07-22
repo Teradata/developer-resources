@@ -26,7 +26,7 @@ For installation support, email the <a href="mailto:aiunlimited.support@Teradata
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to deploy the engine from a Jupyter notebook
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information
+- A [GitLab](https://gitlab.com) or [GitHub](https://github.com) account to host each project repository for authenticating users and storing project information
 - Your object storage, where your Amazon or ADLS Gen2 data lake resides
 - [Docker](https://www.docker.com/get-started/) installed on your computer
 
@@ -132,6 +132,6 @@ When JupyterLab is ready, you can access it at `http://localhost:8888`, and ente
 
 ## What's next
 
-[Create an OAuth app](../create-oauth-app.md) to allow authentication between AI Unlimited and your Git provider account.
+[Create an OAuth app](../../install-ai-unlimited/create-oauth-app.md) to allow authentication between AI Unlimited and your Git provider account.
 
 
