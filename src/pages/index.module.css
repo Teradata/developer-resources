@@ -95,10 +95,11 @@
   .heroBanner {
     padding: calc(57px + 2rem) 2.5rem 0;
   }
-
+/*
   .container {
     padding: 0;
   }
+*/
 }
 
 @media screen and (max-width: 767px) {
