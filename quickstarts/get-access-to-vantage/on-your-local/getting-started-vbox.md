@@ -20,9 +20,9 @@ import CommunityLink from '../../_partials/community_link.mdx';
 
 1. A computer using one of the following operating systems: Windows 10, Linux or Intel-based MacOS.
 
-:::note
-For M1/M2 MacOS systems, see xref:getting.started.utm.adoc[].
-:::
+    :::note
+    For M1/M2 MacOS systems, see [ Run Vantage Express on UTM](getting-started-utm.md).
+    :::
 
 2. 30GB of disk space and enough CPU and RAM to be able to dedicate at least one core and 6GB RAM to the virtual machine.
 3. Admin rights to be able to install and run the software.
@@ -34,33 +34,33 @@ For M1/M2 MacOS systems, see xref:getting.started.utm.adoc[].
 
 1. The latest version of [Vantage Express VirtualBox Open Virtual Appliance (OVA)](https://downloads.teradata.com/download/database/teradata-express-for-vmware-player).
 
-:::note
-If you have not used the Teradata Downloads website before, you will need to register first.
-:::
+    :::note
+    If you have not used the Teradata Downloads website before, you will need to register first.
+    :::
 
 2. [VirtualBox](https://www.virtualbox.org/wiki/Downloads), version 6.1.
 
-:::note
-You can also install VirtualBox using `brew` and other package managers.
-:::
+    :::note
+    You can also install VirtualBox using `brew` and other package managers.
+    :::
 
 ### Run installers
 
 1. Install VirtualBox by running the installer and accepting the default values.
 
-:::note
-VirtualBox includes functionality that requires elevated privileges. When you start VirtualBox for the first time, you will be asked to confirm this elevated access. You may also need to reboot your machine to activate the VirtualBox kernel plugin.
-:::
+    :::note
+    VirtualBox includes functionality that requires elevated privileges. When you start VirtualBox for the first time, you will be asked to confirm this elevated access. You may also need to reboot your machine to activate the VirtualBox kernel plugin.
+    :::
 
 ### Run Vantage Express
 
-1. Start VirtualBox.
-2. Go to `File -> Import Appliance...` menu.
-3. In `File` field, select the downloaded OVA file.
-4. On the next screen, accept the defaults and click on `Import`.
-5. Back in the main VirtualBox panel, start the Vantage Express appliance double clicking on VM `Vantage 17.20`.
+- Start VirtualBox.
+- Go to `File -> Import Appliance...` menu.
+- In `File` field, select the downloaded OVA file.
+- On the next screen, accept the defaults and click on `Import`.
+- Back in the main VirtualBox panel, start the Vantage Express appliance double clicking on VM `Vantage 17.20`.
 
-![Start VM](../../images/getting-started-vbox/start-vm.png)
+    ![Start VM](../../images/getting-started-vbox/start-vm.png)
 
 <RunVantage />
 
@@ -79,7 +79,7 @@ To update VirtualBox Guest Extensions:
 2. Back in the VM window, start the `Gnome Terminal` application.
 3. Run the following command in the terminal:
 
-```
+```bash
 mount /dev/cdrom /media/dvd; /media/dvd/VBoxLinuxAdditions.run
 ```
 

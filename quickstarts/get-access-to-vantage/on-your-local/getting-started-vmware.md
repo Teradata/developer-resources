@@ -19,9 +19,9 @@ import CommunityLink from '../../_partials/community_link.mdx';
 ## Prerequisites
 
 1. A computer using one of the following operating systems: Windows, Linux or Intel-based MacOS.
-:::note
-For M1/M2 MacOS systems, see [Run Vantage Express on UTM.](./getting-started-utm.md).
-:::
+    :::note
+    For M1/M2 MacOS systems, see [Run Vantage Express on UTM.](./getting-started-utm.md)
+    :::
 2. 30GB of disk space and enough CPU and RAM to be able to dedicate at least one core and 6GB RAM to the virtual machine.
 3. Admin rights to be able to install and run the software.
 

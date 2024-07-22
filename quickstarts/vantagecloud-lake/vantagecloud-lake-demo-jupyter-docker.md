@@ -114,4 +114,4 @@ In this quick start we learned how to run Teradata VantageCloud Lake demos from 
 ## Further reading
 
 * [Teradata VantageCloud Lake documentation](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Getting-Started-First-Sign-On-by-Organization-Admin)
-* [Use Vantage from a Jupyter notebook](https://quickstarts.teradata.com/jupyter.html)
+* [Use Vantage from a Jupyter notebook](../analyze-data/jupyter.md)
