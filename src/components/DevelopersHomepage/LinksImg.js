@@ -13,7 +13,7 @@ export default function LinksImages() {
     <section className={styles.features}>
       <div className={clsx('container', styles.container)}>
         <div className={clsx('row', styles.row)}>
-          <div className={clsx('col', styles.col, styles.col2)}>
+          <div className={clsx('col', styles.col2)}>
             <p className={clsx(styles.secondSubheading)}>
               <Typography scale="headline2">
                 Talk to Developers where you are
@@ -38,6 +38,8 @@ export default function LinksImages() {
                 <a href='https://github.com/Teradata' target='_blank'>
                   <img src={githubUrl} alt="GitHub" title="GitHub" width= "76px"/>
                 </a>    
+              </div>
+              <div className={styles.images}>
                 <a href='https://stackoverflow.com/questions/tagged/teradata' target='_blank'>
                   <img src={stackoverflowUrl} alt="Stackoverflow" title="Stackoverflow" width="126px"/>
                 </a>
