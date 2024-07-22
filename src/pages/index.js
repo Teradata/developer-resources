@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import DevelopersHomepage from '@site/src/components/DevelopersHomepage';
-import HeroImageUrl from '@site/static/img/developers/hero.png';
+import HeroImageUrl from '@site/static/img/developers/developers_homepage_1x.webp';
 //import Translate from '@docusaurus/Translate';
 //import Heading from '@theme/Heading';
 import styles from './index.module.css';
