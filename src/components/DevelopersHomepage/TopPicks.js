@@ -37,7 +37,7 @@ export default function DevelopersHomepage() {
               Stay up to date
             </Typography>
             
-            <p className={clsx(styles.secondSubheading)}>
+            <p className={clsx(styles.secondSubheading, styles.eyebrow)}>
               <Typography scale="headline2">
                 Top picks from Teradata
               </Typography>

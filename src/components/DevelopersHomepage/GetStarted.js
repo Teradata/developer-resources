@@ -22,7 +22,7 @@ export default function GetStarted() {
               Solutions for you
             </Typography>
             
-            <p className={clsx(styles.secondSubheading)}>
+            <p className={clsx(styles.secondSubheading, styles.eyebrow)}>
               <Typography scale="headline2">
                 Get started with Teradata
               </Typography>

@@ -161,7 +161,7 @@ a.col {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0 120px 0;
+  padding: 35px 0 120px 0;
 }
 .imgFoot img {
   margin: 0 34px;  
@@ -235,7 +235,7 @@ a.col {
     /*
     justify-content: center;
     align-items: center;*/
-    padding: 0 0 30px 0;
+    padding: 20px 0 30px 0;
     
   }
   
@@ -325,3 +325,6 @@ a.col {
   color:#5E7484 !important;
 }
  
+.eyebrow{
+  padding: 16px 0 40px 0;
+}
