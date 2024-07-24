@@ -9,11 +9,12 @@ import {
 import { ThemeConfig } from '@docusaurus/types';
 import { translate } from '@docusaurus/Translate';
 
-interface FooterItems  {
-  links: FooterLink[],
+interface FooterItems {
+  links: FooterLink[];
   copyright: string;
   socialLinks: SocialLinks;
   legalLinks: FooterNavLink[];
+  linksOfInterest: FooterLink;
 }
 
 function translateFooterItems(footerItems: FooterLink[]|SocialLinks[]): FooterLink[] {
@@ -40,11 +41,15 @@ function Footer() {
   if (!footerItems) {
     return null;
   }
-  const { links, copyright, socialLinks, legalLinks } = footerItems as FooterItems;
+  const { links, copyright, socialLinks, legalLinks, linksOfInterest } =
+    footerItems as FooterItems;
   const translatedLinks = translateFooterItems(links);
   const translatedCopyright = `${new Date().getFullYear()} ${translate({ message: copyright })}`;
   const translatedSocialLinks = translateFooterItems([socialLinks])[0] as SocialLinks;
   const translatedLegalLinks = translateFooterNavLinks(legalLinks);
+  const translatedLinksOfInterest = translateFooterItems([
+    linksOfInterest,
+  ])[0] as FooterLink;
 
   return (
     <TDFooter
@@ -52,6 +57,7 @@ function Footer() {
       copyright={translatedCopyright}
       socialLinks={translatedSocialLinks}
       legalLinks={translatedLegalLinks}
+      linksOfInterest={translatedLinksOfInterest}
     />
   );
 }
