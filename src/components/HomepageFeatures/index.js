@@ -2,12 +2,16 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import PossibleImageUrl from '@site/static/img/possible_img.webp';
+import { Card, Typography } from '@teradata-web/react-components';
+import { translate } from '@docusaurus/Translate';
 
 const FeatureTitle = 'Categories';
 const FeatureList = [
   {
     title: 'Get started',
-    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
+    description:
+      'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
     href: '/docs/install-ai-unlimited/',
   },
   {
@@ -52,6 +56,30 @@ const FeatureList = [
   },
 ];
 
+function BannerContent() {
+  return (
+    <section className={styles.bannerContent}>
+      <div className={styles.bannerCaption}>
+        <Typography scale="caption">
+          <span className={styles.featuredEvent}>
+            {translate({ message: 'home_page.featured_event' })}
+          </span>
+        </Typography>
+        <Typography scale="headline3">
+          <span className={styles.bannerTitle}>
+            {translate({ message: 'home_page.possible_banner_title' })}
+          </span>
+        </Typography>
+      </div>
+      <Typography scale="body1">
+        <div className={styles.registerNow}>
+          {translate({ message: 'home_page.register_now' })}
+        </div>
+      </Typography>
+    </section>
+  );
+}
+
 function Feature({ title, description, href }) {
   return (
     <Link to={href} className={clsx('col col--4', styles.col)}>
@@ -65,15 +93,36 @@ function Feature({ title, description, href }) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className={clsx('container', styles.container)}>
-        <h2>{FeatureTitle}</h2>
-        <div className={clsx('row', styles.row)}>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <>
+      <section className={clsx('container', styles.container)}>
+        <a
+          className={styles.possibleBannerLink}
+          href="https://www.teradata.com/events/possible"
+          target="_blank"
+          aria-label={translate({
+            message: 'home_page.possible_banner_title',
+          })}
+        >
+          <Card
+            imageSrc={PossibleImageUrl}
+            imageAltText={translate({
+              message: 'home_page.possible_banner_title',
+            })}
+            imageWidth="1"
+            content={<BannerContent />}
+          />
+        </a>
+      </section>
+      <section className={styles.features}>
+        <div className={clsx('container', styles.container)}>
+          <h2>{FeatureTitle}</h2>
+          <div className={clsx('row', styles.row)}>
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

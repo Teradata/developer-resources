@@ -59,6 +59,12 @@
   "footer.partner_portal_login": {
     "message": "Partner portal login"
   },
+  "footer.services": {
+    "message": "Services"
+  },
+  "footer.solutions": {
+    "message": "Solutions"
+  },
   "footer.success_stories": {
     "message": "Success stories"
   },
@@ -184,5 +190,26 @@
   },
   "footer.copyright": {
     "message": "Teradata. All rights reserved"
+  },
+  "footer.also_of_interest": {
+    "message": "Also of interest"
+  },
+  "footer.big_data": {
+    "message": "Big data"
+  },
+  "footer.data_security_insights": {
+    "message": "Become an expert at defending your data"
+  },
+  "footer.platform_ai_ml": {
+    "message": "Drive ROI with Trusted AI today"
+  },
+  "home_page.featured_event": {
+    "message": "Featured event"
+  },
+  "home_page.possible_banner_title": {
+    "message": "If you imagine it, envision it, create it... Teradata makes it Possible. Join us."
+  },
+  "home_page.register_now": {
+    "message": "Register now"
   }
 }
