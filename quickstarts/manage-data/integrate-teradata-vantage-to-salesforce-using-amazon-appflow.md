@@ -679,15 +679,15 @@ Browse to the Salesforce page, new lead Tom Johnson has been added.
 Once you are done with the Salesforce data, to avoid incurring charges to your AWS account (i.e., [AppFlow](https://aws.amazon.com/appflow/pricing/), Amazon [S3](https://aws.amazon.com/s3/pricing), [Vantage](https://www.teradata.com/Cloud/AWS/Do-it-Yourself/Pricing) and [VM](https://aws.amazon.com/ec2/pricing/)) for the resources used, follow these steps:
 
 1. AppFlow:
-  * Delete the "Connections" you created for the flow
-  * Delete the flows
+    * Delete the "Connections" you created for the flow
+    * Delete the flows
 
 2. Amazon S3 bucket and file:
-  * Go to the Amazon S3 buckets where the Vantage data file is stored, and delete the file(s)
-  * If there are no need to keep the buckets, delete the buckets
+    * Go to the Amazon S3 buckets where the Vantage data file is stored, and delete the file(s)
+    * If there are no need to keep the buckets, delete the buckets
 
 3. Teradata Vantage Instance
-  * Stop/Terminate the instance if no longer needed
+    * Stop/Terminate the instance if no longer needed
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 

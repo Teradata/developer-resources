@@ -1,5 +1,6 @@
 ---
 id: ubuntu
+title: Ubuntu
 sidebar_position: 1
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
@@ -20,24 +21,26 @@ This how-to demonstrates how to use the ODBC driver with Teradata Vantage on Ubu
 ## Prerequisites
 
 * Access to a Teradata Vantage instance.
+    <ClearscapeDocsNote/>
+* Root access to a Ubuntu machine.
 
 ## Installation
 
 * Install dependencies:
 
-```
+```bash
 apt update && DEBIAN_FRONTEND=noninteractive apt install -y wget unixodbc unixodbc-dev iodbc python3-pip
 ```
 
 * Install Teradata ODBC driver for Ubuntu:
-```
+```bash
 wget https://downloads.teradata.com/download/cdn/connectivity/odbc/17.10.x.x/tdodbc1710__ubuntu_x8664.17.10.00.14-1.tar.gz \
     && tar -xzf tdodbc1710__ubuntu_x8664.17.10.00.14-1.tar.gz \
     && dpkg -i tdodbc1710/tdodbc1710-17.10.00.14-1.x86_64.deb
 ```
 
 * Configure ODBC, by creating file `/etc/odbcinst.ini` with the following content:
-```
+```bash
 [ODBC Drivers]
 Teradata Database ODBC Driver 17.10=Installed
 
@@ -51,7 +54,7 @@ Driver=/opt/teradata/client/17.10/odbc_64/lib/tdataodbc_sb64.so
 We will validate the installation with a sample Python application. Create `test.py` file with the following content.
 Replace `DBCName=192.168.86.33;UID=dbc;PWD=dbc` with the IP address of your Teradata Vantage instance, username and password:
 
-```
+```python
 import pyodbc
 
 print(pyodbc.drivers())
@@ -67,13 +70,13 @@ EOF
 
 Run the test application:
 
-```
+```python
 python3 test.py
 ```
 
 You should get output similar to:
 
-```
+```python
 ['ODBC Drivers', 'Teradata Database ODBC Driver 17.10']
 (datetime.date(2022, 1, 5), )
 ```

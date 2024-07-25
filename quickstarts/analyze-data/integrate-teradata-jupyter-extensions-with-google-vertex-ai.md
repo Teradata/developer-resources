@@ -21,8 +21,6 @@ Vertex AI workbench supports two types of notebooks: managed notebooks and user-
 
 ## Prerequisites
 
-
-
 * Access to a Teradata Vantage instance
   <ClearscapeDocsNote />
 * Google Cloud account with Vertex AI enabled

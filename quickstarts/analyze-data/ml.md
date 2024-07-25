@@ -220,11 +220,11 @@ SELECT * FROM TD_GLM (
 
 ![TTrained GLM](../images/ml_model_trained.png)
 
-== Scoring on Testing Dataset
+## Scoring on Testing Dataset
 
 We will now use our model `GLM_model_training` to score our testing dataset `testing_table` using link:[TD_GLMPredict](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Database-Analytic-Functions/Model-Scoring-Functions/TD_GLMPredict)Database Analytic Function.
 
-```
+```sql
 -- Scoring the GLM_Model with Testing Dataset
 CREATE TABLE td_analytics_functions_demo.GLM_model_test_prediction AS (
 SELECT * from TD_GLMPredict (
@@ -243,7 +243,7 @@ Accumulate('cc_avg_bal')
 
 Finally, we evaluate our model on the scored results. Here we are using [TD_RegressionEvaluator](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Database-Analytic-Functions/Model-Evaluation-Functions/TD_RegressionEvaluator) function. The model can be evaluated based on parameters such as `R2`, `RMSE`, `F_score`. 
 
-```
+```sql
 -- Evaluating the model
 SELECT * FROM TD_RegressionEvaluator(
 ON td_analytics_functions_demo.GLM_model_test_prediction AS InputTable

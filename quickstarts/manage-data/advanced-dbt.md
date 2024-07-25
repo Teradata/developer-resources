@@ -17,7 +17,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 ## Overview
 
 This project showcases the integration of dbt with Teradata Vantage from an advanced user perspective. 
-If you are new to data engineering with dbt we recommend that you start with our [introductory project.](https://quickstarts.teradata.com/dbt.html)
+If you are new to data engineering with dbt we recommend that you start with our [introductory project.](dbt.md)
 
 The advanced use cases showcased in the demo are the following:
 
@@ -31,58 +31,60 @@ The application of these concepts is illustrated through the ELT process of `ted
 
 * Access to a Teradata Vantage instance.
 
-<ClearscapeDocsNote />
+    <ClearscapeDocsNote />
 
-* Python *3.7*, *3.8*, *3.9* or *3.10* installed.
+* Python **3.7**, **3.8**, **3.9** or **3.10** installed.
 
-* A database client for running database commands, an example of the configuration of one such client is presented in [this tutorial.](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-vantage-connection-in-dbeaver.html).
+* A database client for running database commands, an example of the configuration of one such client is presented in [this tutorial.](../connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md).
 
 ## Demo project setup
 
 1. Clone the tutorial repository and cd into the project directory:
-```bash
-git clone https://github.com/Teradata/teddy_retailers_dbt-dev teddy_retailers
-cd teddy_retailers
-```
+    ```bash
+    git clone https://github.com/Teradata/teddy_retailers_dbt-dev teddy_retailers
+    cd teddy_retailers
+    ```
 
 2. Create a new python environment to manage dbt and its dependencies. Confirm that the Python Version you are using to create the environment is within the supported versions listed above.
-```bash
-python -m venv env
-```
+    ```bash
+    python -m venv env
+    ```
 
 3. Activate the python environment according to your operating system.
-```bash
-source env/bin/activate
-```
+    ```bash
+    source env/bin/activate
+    ```
 
-for Mac, Linux, or
-```bash
-env\Scripts\activate
-```
-for Windows
+    for Mac, Linux, or
+
+    ```bash
+    env\Scripts\activate
+    ```
+    for Windows
+
 4. Install the `dbt-teradata` module. The core dbt module is included as a dependency so you don't have to install it separately:
 
-```bash
-pip install dbt-teradata
-```
+    ```bash
+    pip install dbt-teradata
+    ```
 
 5. Install the project's dependencies `dbt-utils` and `teradata-utils`. This can be done through the following command:
 
-```bash
-dbt deps
-```
+    ```bash
+    dbt deps
+    ```
 
 ## Data warehouse setup
 
 The demo project assumes that the source data is already loaded into your data warehouse, this mimics the way that dbt is used in a production environment. 
-To achieve this objective we provide public datasets available in Google Cload Platform (GCP), and scripts to load those datasets into your mock data warehouse. + 
+To achieve this objective we provide public datasets available in Google Cload Platform (GCP), and scripts to load those datasets into your mock data warehouse. 
 
 1. Create or select a working database. The dbt profile in the project points to a database called `teddy_retailers`. You can change the `schema` value to point to an existing database in your Teradata Vantage instance or you can create the `teddy_retailers` database running the following script in your database client:
-```sql
-CREATE DATABASE teddy_retailers
-AS PERMANENT = 110e6,
-    SPOOL = 220e6;
-```
+    ```sql
+    CREATE DATABASE teddy_retailers
+    AS PERMANENT = 110e6,
+        SPOOL = 220e6;
+    ```
 2. Load Initial data set. 
 To load the initial data set into the data warehouse, the required scripts are available in the `references/inserts/create_data.sql` path of the project.
 You can execute these scripts by copying and pasting them into your database client. For guidance on running these scripts in your specific case please consult your database client's documentation.
