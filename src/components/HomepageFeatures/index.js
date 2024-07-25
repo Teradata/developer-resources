@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import PossibleImageUrl from '@site/static/img/possible_img.webp';
 import { Card, Typography } from '@teradata-web/react-components';
 import { translate } from '@docusaurus/Translate';
 
@@ -103,7 +104,7 @@ export default function HomepageFeatures() {
           })}
         >
           <Card
-            imageSrc="https://marvel-b1-cdn.bc0a.com/f00000000151999/www.teradata.com/getmedia/fee7f169-ae6a-4a8c-8b6a-2d88931e2ed1/og_image-possible_2024.jpg?origin=fd"
+            imageSrc={PossibleImageUrl}
             imageAltText={translate({
               message: 'home_page.possible_banner_title',
             })}
