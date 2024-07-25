@@ -202,5 +202,14 @@
   },
   "footer.platform_ai_ml": {
     "message": "Drive ROI with Trusted AI today"
+  },
+  "home_page.featured_event": {
+    "message": "Featured event"
+  },
+  "home_page.possible_banner_title": {
+    "message": "If you imagine it, envision it, create it... Teradata makes it Possible. Join us."
+  },
+  "home_page.register_now": {
+    "message": "Register now"
   }
 }
