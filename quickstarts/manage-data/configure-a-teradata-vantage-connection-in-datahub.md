@@ -60,7 +60,8 @@ With DataHub running, open the DataHub GUI and login.  In this example this is r
 * Start the new connection wizard by clicking on the ingestion plug icon 
 ![Ingestion Label](../other-integrations/images/configure-a-teradata-connection-in-datahub/ingestion-icon.png)
 
-and then selecting "Create new source" 
+  and then selecting "Create new source" 
+  
 ![Create New Source](../other-integrations/images/configure-a-teradata-connection-in-datahub/create-new-source.png)
 
 * Scroll the list of available sources and select Other 

@@ -57,37 +57,35 @@ cd /opt/downloads
 <InstallVeInPublic />
 
 * If you would like to connect to Vantage Express from the Internet, you will need to open up firewall holes to your VM. You should also change the default password to `dbc` user:
-* To change the password for `dbc` user go to your VM and start 
+* To change the password for `dbc` user go to your VM and start bteq:
 
-bteq:
-
-```
+```bash
 bteq
 ```
 
 * Login to your database using `dbc` as username and password:
-```
+```bash
 .logon localhost/dbc
 ```
 * Change the password for `dbc` user:
-```
+```sql
 MODIFY USER dbc AS PASSWORD = new_password;
 ```
 
 * You can now open up port 1025 to the internet using gcloud command:
-```
+```bash
 gcloud compute firewall-rules create vantage-express --allow=tcp:1025 --direction=IN --target-tags=ve
 ```
 
 ## Cleanup
 
 To stop incurring charges, delete the VM:
-```
+```bash
 gcloud compute instances delete teradata-vantage-express --zone=us-central1-a
 ```
 
 Also, remember to remove any firewall rules that you have added, e.g.:
-```
+```bash
 gcloud compute firewall-rules delete vantage-express
 ```
 

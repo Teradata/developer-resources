@@ -101,7 +101,7 @@ Click on the URL in docker logs to open Jupyter notebook in your browser.
 ![Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_jupyter_notebook.png)
 
 ## Run demos
-Open and execute all the cells in *0_Demo_Environment_Setup.ipynb* to setup your environment, followed by **1_Demo_Setup_Base_Data.ipynb** to load the base data required for the demos. +
+Open and execute all the cells in **0_Demo_Environment_Setup.ipynb** to setup your environment, followed by **1_Demo_Setup_Base_Data.ipynb** to load the base data required for the demos. +
 
 ![Environment setup Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_0_setup.png)
 

@@ -33,7 +33,7 @@ Airbyte, the data integration platform, has a Terraform provider that communicat
 * [Airbyte Cloud Account](https://airbyte.com/connectors/teradata-vantage). Start with a 14-day free trial that begins after the first successful sync.
 - Generate an Airbyte API Key by logging into the [developer portal](https://portal.airbyte.com).
 * Teradata Vantage Instance. You will need a database `Host`, `Username`, and `Password` for Airbyte’s Terraform configuration. 
-- [Create a free Teradata instance on ClearScape Analytics Experience](https://quickstarts.teradata.com/getting-started-with-csae.html)
+- [Create a free Teradata instance on ClearScape Analytics Experience](../get-access-to-vantage/clearscape-analytics-experience/getting-started-with-csae.md)
 
 * Source Data. For demonstration purposes we will use a [sample Google Sheets,](https://docs.google.com/spreadsheets/d/1XNBYUw3p7xG6ptfwjChqZ-dNXbTuVwPi7ToQfYKgJIE/edit#gid=0). Make a copy of it into a personal Google worspace. 
 

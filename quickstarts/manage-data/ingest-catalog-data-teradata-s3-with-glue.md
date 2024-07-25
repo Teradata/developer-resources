@@ -24,11 +24,11 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * Access to an [Amazon AWS account](https://aws.amazon.com)
 * Access to a Teradata Vantage instance
   <ClearscapeDocsNote />
-* A database [client](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-vantage-connection-in-dbeaver.html) to send queries for loading the test data
+* A database [client](../connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md) to send queries for loading the test data
 
 ### Loading of test data
 * In your favorite database client run the following queries
-+
+
 ``` sql
 CREATE DATABASE teddy_retailers_inventory
 AS PERMANENT = 110e6;
@@ -269,7 +269,7 @@ The connection created must be referenced twice, once in the job configuration, 
 In this quick start, we learned how to ingest and catalog data in Teradata Vantage to Amazon S3 with AWS Glue Scripts.
 
 ### Further reading
-* [Integrate Teradata Vantage with Google Cloud Data Catalog](https://quickstarts.teradata.com/cloud-guides/integrate-teradata-vantage-with-google-cloud-data-catalog.html)
+* [Integrate Teradata Vantage with Google Cloud Data Catalog](./integrate-teradata-vantage-with-google-cloud-data-catalog.md)
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 

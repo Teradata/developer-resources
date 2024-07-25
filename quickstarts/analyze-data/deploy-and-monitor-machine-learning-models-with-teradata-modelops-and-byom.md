@@ -89,7 +89,6 @@ Inside the Project creation sheet panel, include the following values:
 * Branch: tmo
 
 Click the TEST GIT CONNECTION button. If the test is succesful then click on save and continue.
-
 ![ModelOps projects creating](../modelops/images/Project_Creating.png)
 
 ## Create a Personal Connection

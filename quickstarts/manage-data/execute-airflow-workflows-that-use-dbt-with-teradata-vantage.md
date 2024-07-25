@@ -23,7 +23,7 @@ This tutorial can be adjusted to other compute platforms or even on a bare metal
 :::tip
 If you are on a Mac or a Linux machine, these tools are already included. If you are on Windows, consider [PuTTY](https://www.putty.org) or [MobaXterm](https://mobaxterm.mobatek.net/download.html).
 :::
-3. Access to a Teradata Vantage database. If you don't have access to Teradata Vantage, explore [Vantage Express](https://quickstarts.teradata.com/#getting-access-to-vantage) - a free edition for developers.
+3. Access to a Teradata Vantage database. If you don't have access to Teradata Vantage, explore [Vantage Express](../get-access-to-vantage/on-your-local/getting-started-utm.md) - a free edition for developers.
 
 ## Install and execute Airflow
 
@@ -283,7 +283,7 @@ Once the stack is down, update the configuration files and restart by running th
 This tutorial aimed at providing a hands on exercise on how to install an Airflow environment on a Linux server and how to use Airflow to interact with a Teradata Vantage database. An additional example is provided on how to integrate Airflow and the data modelling and maintenance tool dbt to create and load a Teradata Vantage database.
 
 ## Further reading
-* [Use dbt (data build tool) with Teradata Vantage](https://quickstarts.teradata.com/dbt.html#_install_dbt)
+* [Use dbt (data build tool) with Teradata Vantage](dbt.md)
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 

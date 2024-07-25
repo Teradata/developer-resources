@@ -29,7 +29,7 @@ Sign in to your [ClearScape Analytics account](https://clearscape.teradata.com/s
 
 ## Create an Environment
 
-Once signed in, click on *CREATE ENVIRONMENT*
+Once signed in, click on **CREATE ENVIRONMENT**
 
 ![Create environment](../../images/csae_create_env.png)
 
@@ -56,7 +56,7 @@ Click on *CREATE* button to complete the creation of your environment and now, y
 
 The ClearScape Analytics Experience environment includes a variety of demos that showcase how to use analytics to solve business problems across many industries. 
 
-To access demos, click on *RUN DEMOS USING JUPYTER* button. It will open a Jupyter environment in a new tab of your browser. 
+To access demos, click on **RUN DEMOS USING JUPYTER** button. It will open a Jupyter environment in a new tab of your browser. 
 
 :::note
 You can find all the detail of demos on the demo index page.

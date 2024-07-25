@@ -26,7 +26,7 @@ This tutorial showcases how to use Airbyte to move data from sources to Teradata
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 * Access to a Teradata Vantage Instance. This will be defined as the destination of the Airbyte connection. You will need a database `Host`, `Username`, and `Password` for Airbyte’s configuration.
-<ClearscapeDocsNote />
+        <ClearscapeDocsNote />
 
 * [Google Cloud Platform API enabled for your personal or organizational account](https://support.google.com/googleapi/answer/6158841?hl=en). You’ll need to authenticate your Google account via OAuth or via Service Account Key Authenticator. In this example, we use Service Account Key Authenticator.
 
@@ -40,32 +40,32 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 * Clone the Airbyte Open Source repository and go to the airbyte directory.
 
-``` bash
-git clone --depth 1 https://github.com/airbytehq/airbyte.git
-cd airbyte
-```
+        ``` bash
+        git clone --depth 1 https://github.com/airbytehq/airbyte.git
+        cd airbyte
+        ```
 
 Make Sure to have Docker Desktop running before running the shell script `run-ab-platform`.
 
 * Run the shell script `run-ab-platform` as
 
 
-``` bash
-./run-ab-platform.sh
-```
+        ``` bash
+        ./run-ab-platform.sh
+        ```
 
 
-:::note
-You can run the above commands with `git bash` in Windows. Please refer to the [Airbyte Local Deployment](https://docs.airbyte.com/deploying-airbyte/local-deployment) for more details. 
-:::
+        :::note
+        You can run the above commands with `git bash` in Windows. Please refer to the [Airbyte Local Deployment](https://docs.airbyte.com/deploying-airbyte/local-deployment) for more details. 
+        :::
 
 * Log in to the web app http://localhost:8000/ by entering the default credentials found in the `.env` file included in the repository.
 
 
-``` bash
-BASIC_AUTH_USERNAME=airbyte
-BASIC_AUTH_PASSWORD=password
-```
+        ``` bash
+        BASIC_AUTH_USERNAME=airbyte
+        BASIC_AUTH_PASSWORD=password
+        ```
 
 
 When logging in for the first time, Airbyte will prompt you to provide your email address and specify your preferences for product improvements. Enter your preferences and click on "Get started."
@@ -172,7 +172,7 @@ DATABASE gsheet_airbyte_td;
 SELECT * FROM _airbyte_raw_sample_employee_payrate;  
 ```
 
-The stream [table) name in destination is prefixed with `\_airbyte_raw_` because Normalization and Transformation are not supported for this connection, and [we only have the raw table](https://docs.airbyte.com/understanding-airbyte/namespaces/#:~:text=If%20you%20don%27t%20enable%20basic%20normalization%2C%20you%20will%20only%20receive%20the%20raw%20tables.]. Each stream (table) contains 3 columns: 
+The stream (table) name in destination is prefixed with `\_airbyte_raw_` because Normalization and Transformation are not supported for this connection, and [we only have the raw table](https://docs.airbyte.com/understanding-airbyte/namespaces/#:~:text=If%20you%20don%27t%20enable%20basic%20normalization%2C%20you%20will%20only%20receive%20the%20raw%20tables). Each stream (table) contains 3 columns: 
 
 1. `_airbyte_ab_id`: a uuid assigned by Airbyte to each event that is processed. The column type in Teradata is `VARCHAR(256)`.
 

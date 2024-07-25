@@ -25,7 +25,7 @@ Here are the steps to implement Model Factory Solution Accelerator using Airflow
 * In this tutorial it is implemented on local machine using **Visual Studio code** IDE. 
 
 In order to execute shell commands, you can install the VS code extension **"Remote Development"** using the followng link. This extension pack includes the WSL extension, in addition to the Remote - SSH, and Dev Containers extensions, enabling you to open any folder in a container, on a remote machine, or in WSL:
-[+++VS code marketplace+++](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+[VS code marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
 
 * Access to a Teradata Vantage instance with ClearScape Analytics (includes ModelOps)
 
@@ -42,13 +42,13 @@ In order to execute shell commands, you can install the VS code extension **"Rem
 
 * Set the AIRFLOW_HOME environment variable. Airflow requires a home directory and uses ~/airflow by default, but you can set a different location if you prefer. The AIRFLOW_HOME environment variable is used to inform Airflow of the desired location.
 
-``` bash , id="set Airflow Home directory", role="content-editable emits-gtm-events"
+``` bash 
 AIRFLOW_HOME=./[folder_name]
 ```
 
 * Install apache-airflow stable version 2.8.2 from PyPI repository.:
 
-``` bash , id="Install Airflow", role="content-editable emits-gtm-events"
+``` bash  
     AIRFLOW_VERSION=2.8.2
 
     PYTHON_VERSION="$(python3 --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
@@ -60,7 +60,7 @@ AIRFLOW_HOME=./[folder_name]
 
 * Install the Airflow Teradata provider stable version from PyPI repository.
 
-``` bash , id="Install Airflow Teradata", role="content-editable emits-gtm-events"
+``` bash  
 pip install "apache-airflow-providers-teradata" --default-timeout=100
 ```
 
@@ -68,13 +68,13 @@ pip install "apache-airflow-providers-teradata" --default-timeout=100
 
 * Check docker version using this command:
 
-``` bash , id="Check Docker version", role="content-editable emits-gtm-events"
+``` bash  
 docker --version
 ```
 
 Check the version of docker compose. Docker Compose is a tool for defining and running multi-container applications
 
-``` bash , id="Check Docker compose version", role="content-editable emits-gtm-events"
+``` bash  
 docker-compose --version
 ```
 
@@ -100,7 +100,7 @@ Create a config file inside config folder and set the parameters to correspondin
 <summary>Click to reveal the Python code</summary>
 
 <pre>
-``` python , id="Model Factory Solution Config File", role="content-editable emits-gtm-events"
+```python  
 from configparser import ConfigParser
 import os
 
@@ -156,10 +156,13 @@ python3 createConfig.py
 
 Now you can create a DAG using the following python code. Add this python code file inside dags folder. This DAG contains 5 tasks of ModelOps lifecycle (i.e., Train, Evaluate, Approve, Deploy and Retire)
 
-.Click to reveal the Python code
-[%collapsible]
-====
-``` python , id="DAG Code", role="content-editable emits-gtm-events"
+
+<details>
+
+<summary>Click to reveal the Python code</summary>
+
+<pre>
+```python  
 import base64
 from datetime import datetime, timedelta, date
 import json
@@ -531,7 +534,8 @@ task2.set_downstream(task3)
 task3.set_downstream(task4)
 task4.set_downstream(task5)
 ```
-====
+</pre>
+</details>
 
 ## Initialize Airflow in Docker Compose
 

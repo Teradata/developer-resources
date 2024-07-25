@@ -23,19 +23,22 @@ This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantag
 
 * Access to a Teradata Vantage instance.
 
-<ClearscapeDocsNote />
+    <ClearscapeDocsNote />
 
-* Python **3.7**, *3.8*, **3.9**, **3.10** or **3.11** installed.
+* Python **3.7**, **3.8**, **3.9**, **3.10** or **3.11** installed.
 
 ## Install dbt
 
 1. Clone the tutorial repository and cd into the project directory:
-``` bash
-git clone https://github.com/Teradata/jaffle_shop-dev.git jaffle_shop
-cd jaffle_shop
-```
+    ``` bash
+    git clone https://github.com/Teradata/jaffle_shop-dev.git jaffle_shop
+    cd jaffle_shop
+    ```
 
-2. Create a new python environment to manage dbt and its dependencies. Activate the environment:
+2. Create a new python environment to manage dbt and its dependencies. 
+    
+    Activate the environment:
+    
 ```mdx-code-block
 <Tabs>
   <TabItem value="Windows" label="Windows" default>
@@ -73,14 +76,15 @@ cd jaffle_shop
 ```
 
 3. Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
-:::note
-**dbt dependencies**
+    :::note
+    **dbt dependencies**
 
-`dbt-core` module was included as a dependency only up to version 1.7.x of dbt-teradata. Starting from `dbt-teradata` 1.8.0 and above, `dbt-core` will not be installed as a dependency. Therefore, you need to explicitly install `dbt-core` in addition to installing `dbt-teradata`. More information on decoupling dbt adapters from `dbt-core` can be found here: https://github.com/dbt-labs/dbt-core/discussions/9171
-:::
-```bash
-pip install dbt-teradata
-```
+    `dbt-core` module was included as a dependency only up to version 1.7.x of dbt-teradata. Starting from `dbt-teradata` 1.8.0 and above, `dbt-core` will not be installed as a dependency. Therefore, you need to explicitly install `dbt-core` in addition to installing `dbt-teradata`. More information on decoupling dbt adapters from `dbt-core` can be found here: https://github.com/dbt-labs/dbt-core/discussions/9171
+    :::
+
+    ```bash
+    pip install dbt-teradata
+    ```
 
 ## Configure dbt
 Configure dbt to connect to your Vantage database. Create `profiles.yml` file in the location show below.

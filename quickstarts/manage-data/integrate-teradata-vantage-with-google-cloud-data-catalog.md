@@ -39,7 +39,7 @@ See the [documentation](https://docs.teradata.com/home) for more information on 
 
 * Access to a Teradata Vantage instance.
 
-* A **[Google Service Account](https://support.google.com/accounts/answer/27441?hl=en) **with Data Catalog Admin role
+* A [**Google Service Account**](https://support.google.com/accounts/answer/27441?hl=en) with Data Catalog Admin role
 * A [**Cloud Console Project created**](https://cloud.google.com/resource-manager/docs/creating-managing-projects) for your account (i.e. partner-integration-lab)
 * Billing enabled
 * Google Cloud SDK [installed](https://cloud.google.com/sdk/docs/install) and [initialized](https://cloud.google.com/sdk/docs/initializing)
@@ -68,13 +68,13 @@ A Teradata Data Catalog connector is available on [GitHub](https://github.com/Go
 
 * Run following command to authorize gcloud to access the Cloud Platform with Google user credentials.
 
-  ``` bash -
+  ```bash 
   gcloud auth login
   ```
 * Choose your Google account when the Google login page opens up and click _Allow_ on the next page.
 * Next, set up default project if you haven’t already done so
 
-  ``` bash
+  ```bash
   gcloud config set project &lt;project id>
   ```
 

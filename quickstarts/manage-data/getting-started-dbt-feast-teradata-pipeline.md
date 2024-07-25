@@ -26,11 +26,11 @@ This tutorial shows an approach to creating a dbt pipeline that takes raw data a
 
 * Access to a Teradata Vantage database instance.
 
-<ClearscapeDocsNote />
+        <ClearscapeDocsNote />
 
-* Feast-Teradata  installed locally. See [Feast-Teradata installation instructions](https://quickstarts.teradata.com/modelops/using-feast-feature-store-with-teradata-vantage.html#_overview)
+* Feast-Teradata  installed locally. See [Feast-Teradata installation instructions](using-feast-feature-store-with-teradata-vantage.md)
 
-* dbt installed locally. See [dbt installation instructions](https://quickstarts.teradata.com/dbt.html)
+* dbt installed locally. See [dbt installation instructions](dbt.md)
 
 ## Objective
 The goal is to create a data pipeline with Teradata Vantage as a source, and perform data transformation on some variables in dbt. The principle transformation of data we do in dbt is the one-hot encoding of several columns like gender, marital status, state code, etc. On top of that, the account type column data will be transformed by performing aggregation operations on a couple of columns. All of this together generates the desired dataset with transformed data. The transformed dataset is used as an input into FEAST to store features. Features are then used to generate a training dataset for models.
@@ -39,32 +39,33 @@ The goal is to create a data pipeline with Teradata Vantage as a source, and per
 ## Getting started
 1. Create a new python environment to manage dbt, feast, and their dependencies. Activate the environment:
 
-``` bash
-python3 -m venv env
-source env/bin/activate
-```
+        ``` bash
+        python3 -m venv env
+        source env/bin/activate
+        ```
 
 2. Clone the tutorial repository and change the directory to the project directory:
 
-``` bash
-git clone https://github.com/Teradata/tdata-pipeline.git
-```
-The directory structure of the project cloned looks like this:
+        ``` bash
+        git clone https://github.com/Teradata/tdata-pipeline.git
+        ```
 
-```
-tdata-pipeline/
-    feature_repo/
-        feature_views.py
-        feature_store.yml
-    dbt_transformation/
-        ...
-        macros
-        models
-        ...
-    generate_training_data.py
-    CreateDB.sql
-    dbt_project.yml
-```
+    The directory structure of the project cloned looks like this:
+
+        ```
+        tdata-pipeline/
+            feature_repo/
+                feature_views.py
+                feature_store.yml
+            dbt_transformation/
+                ...
+                macros
+                models
+                ...
+            generate_training_data.py
+            CreateDB.sql
+            dbt_project.yml
+        ```
 
 
 ## About the Banking warehouse
@@ -81,7 +82,7 @@ dbt takes this raw data and builds the following model, which is more suitable f
 ## Configure dbt
 Create file `$HOME/.dbt/profiles.yml` with the following content. Adjust `<host>`, `<user>`, `<password>` to match your Teradata instance.
 
-:::note [Database setup]
+:::note **Database setup**
 The following dbt profile points to a database called `teddy_bank`. You can change `schema` value to point to an existing database in your Teradata Vantage instance:
 :::
 
@@ -110,7 +111,7 @@ Feast configuration addresses connection to your Vantage database. The yaml file
 project, `$HOME/.feast/feature_repo/feature_store.yml` can hold the details of offline storage, online storage, provider
 and registry. Adjust `<host>`, `<user>`, `<password>` to match your Teradata instance.
 
-:::note [Database setup]
+:::note **Database setup**
 The following dbt profile points to a database called `teddy_bank`. You can change `schema` value to point to an
 existing database in your Teradata Vantage instance
 :::
@@ -132,6 +133,7 @@ offline_store:
     log_mech: TDNEGO
 entity_key_serialization_version: 2
 ```
+
 ### Syntax for Teradata SQL Registry
 ``` python
 path = 'teradatasql://'+ teradata_user +':' + teradata_password + '@'+host + '/?database=' +
