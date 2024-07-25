@@ -29,7 +29,7 @@ Our sample data sets are available on S3 bucket and can be accessed from Vantage
 
 Let's have a look at the data first. Below query will fetch 10 rows from S3 bucket.
 
-```
+```sql
 SELECT TOP 10 * FROM (
 	LOCATION='/s3/nos-demo-apj.s3.amazonaws.com/taxi/2014/11/data_2014-11-25.csv'
 ) AS d;
@@ -37,7 +37,7 @@ SELECT TOP 10 * FROM (
 
 Here is what we've got:
 
-```
+```sql
 
 Location					        		vendor_id	pickup_datetime		dropoff_datetime	passenger_count		trip_distance		pickup_longitude	        pickup_latitude		rate_code	store_and_fwd_flag	dropoff_longitude	dropoff_latitude	payment_type	fare_amount	surcharge	mta_tax		tip_amount	tolls_amount	total_amount
 ------------------------------------------------------------------	---------	-----------------	-----------------	----------------	--------------		-----------------		----------------	----------	-------------------	------------------	-----------------	-------------	------------	----------	--------	----------	------------	------------
@@ -56,7 +56,7 @@ Location					        		vendor_id	pickup_datetime		dropoff_datetime	passenger_cou
 
 Let's extract the complete data and bring it into Vantage for further analysis.
 
-```
+```sql
 
 CREATE TABLE trip
 (
@@ -93,7 +93,7 @@ SELECT TOP 200000 vendor_id ,
 
 Result:
 
-```
+```sql
 200000 rows affected.
 ```
 
@@ -103,7 +103,7 @@ Vantage will now fetch the data from S3 and insert into trip table we just creat
 
 Now that we are familiar with the data set, we can use Vantage capabilities to quickly analyse the data set. First, let's identify how many passengers are being picked up by hour in the month of November.
 
-```
+```sql
 
 SELECT TOP 10
 	$TD_TIMECODE_RANGE
@@ -121,7 +121,7 @@ For further reading on [GROUP BY TIME](https://www.docs.teradata.com/r/Teradata-
 
 Result:
 
-```
+```sql
 TIMECODE_RANGE							time_bucket_start			passenger_count
 ---------------------------------------------------------	---------------------------------	----------------
 (2013-11-04 11:00:00.000000, 2013-11-04 12:00:00.000000)	2013-11-04 11:00:00.000000-05:00	4
@@ -142,7 +142,7 @@ Yes, this can also be achieved by extracting the hour from time and then aggrega
 
 But, now let's go a step further to identify how many passengers are being picked up and what is the average trip duration by vendor every 15 minutes in November.
 
-```
+```sql
 SELECT TOP 10
     $TD_TIMECODE_RANGE,
     vendor_id,
@@ -157,7 +157,7 @@ ORDER BY 1,2;
 
 Result:
 
-```
+```sql
 
 TIMECODE_RANGE							vendor_id	passenger_count		avg_trip_time_in_mins
 --------------------------------------------------------	----------	----------------	----------------------
@@ -177,7 +177,7 @@ TIMECODE_RANGE							vendor_id	passenger_count		avg_trip_time_in_mins
 
 This is the power of Vantage time series functionality. Without needing complicated, cumbersome logic we are able to find average trip duration by vendor every 15 minutes just by modifying the group by time clause. Let's now look at how simple it is to build moving averages based on this. First, let's start by creating a view as below.
 
-```
+```sql
 REPLACE VIEW NYC_taxi_trip_ts as
 SELECT
 	$TD_TIMECODE_RANGE time_bucket_per
@@ -193,7 +193,7 @@ WHERE extract(month from pickup_datetime)=11
 
 Let's calculate a 2 hours moving average on our 15-minutes time series. 2 hour is 8 * 15 minutes periods.
 
-```
+```sql
 SELECT * FROM MovingAverage (
   ON NYC_taxi_trip_ts PARTITION BY vendor_id ORDER BY time_bucket_per
   USING
@@ -208,7 +208,7 @@ ORDER BY vendor_id, time_bucket_per;
 
 Result:
 
-```
+```sql
 
 time_bucket_per							vendor_id	passenger_cnt		avg_trip_time_in_mins	passenger_cnt_smavg
 ---------------------------------------------------------	--------------	----------------------	--------------------	--------------------
@@ -247,7 +247,7 @@ In this quick start we have learnt how easy it is to analyse time series dataset
 
 ## Further reading
 * [Teradata Vantage™ - Time Series Tables and Operations](https://docs.teradata.com/r/Teradata-VantageTM-Time-Series-Tables-and-Operations/July-2021/Introduction-to-Teradata-Time-Series-Tables-and-Operations)
-* [NOS](https://quickstarts.teradata.com/nos.html)
+* [Query data stored in object storage](../manage-data/nos.md)
 * [Teradata Vantage™ - Native Object Store Getting Started Guide](https://docs.teradata.com/r/2mw8ooFr~xX0EaaGFaDW8A/root)
 
 <CommunityLink />

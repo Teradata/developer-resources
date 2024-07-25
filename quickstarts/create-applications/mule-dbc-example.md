@@ -35,14 +35,14 @@ The Mule HTTP connector listens for HTTP GET requests with the form: `http://<ho
 The HTTP connector passes the value of `<parameter>` as one of the message properties to a database connector.
 The database connector is configured to extract this value and use it in this SQL query:
 
-```
+```sql
 SELECT * FROM hr.employees WHERE LastName = :lastName
 ```
 
 As you can see, we are using parameterized query with reference to the value of the parameter passed to the HTTP connector.
 So if the HTTP connector receives http://localhost:8081/?lastname=Smith, the SQL query will be:
 
-```
+```sql
 SELECT * FROM employees WHERE last_name = Smith
 ```
 
@@ -52,7 +52,7 @@ Since the HTTP connector is configured as request-response, the result is return
 ## Setup
 
 * Clone `Teradata/mule-jdbc-example` repository:
-```
+```bash
   git clone https://github.com/Teradata/mule-jdbc-example
 ```
 
@@ -119,7 +119,7 @@ The project will now build and run. It will take a minute.
 You should get the following JSON response:
 
 
-```
+```json
 [
   {
     "JoinedDate": "2004-08-01T00:00:00",

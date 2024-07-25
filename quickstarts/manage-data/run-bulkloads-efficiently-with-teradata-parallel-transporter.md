@@ -21,7 +21,7 @@ We often have a need to move large volumes of data into Vantage. Teradata offers
 ## Prerequisites
 
 * Access to a Teradata Vantage instance.
-<ClearscapeDocsNote />
+    <ClearscapeDocsNote />
 
 * Download Teradata Tools and Utilities (TTU) -  supported platforms: [Windows](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-windows-installation-package), [MacOS](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-mac-osx-installation-package), [Linux](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-linux-installation-package-0) (requires registration).
 
@@ -54,173 +54,173 @@ To load the csv data to Vantage, we will define and run a job. The job will prep
 
 * Create a job variable file that will tell TPT how to connect to our Vantage database. Create file `jobvars.txt` and insert the following content. Replace `host` with the host name of your database. For example, if you are using a local Vantage Express instance, use `127.0.0.1`. `username` with the database user name, and `password` with the database password. Note that the preparation step (DDL) and the load step have their own configuration values and that the config values need to be entered twice to configure both the DDL and the load step.
 
-``` bash , id="tpt_first_config", role="emits-gtm-events"
-TargetTdpId           = 'host'
-TargetUserName        = 'username'
-TargetUserPassword    = 'password'
+    ``` bash , id="tpt_first_config", role="emits-gtm-events"
+    TargetTdpId           = 'host'
+    TargetUserName        = 'username'
+    TargetUserPassword    = 'password'
 
-FileReaderDirectoryPath = ''
-FileReaderFileName      = 'index_2020.csv'
-FileReaderFormat        = 'Delimited'
-FileReaderOpenMode      = 'Read'
-FileReaderTextDelimiter = ','
-FileReaderSkipRows      = 1
+    FileReaderDirectoryPath = ''
+    FileReaderFileName      = 'index_2020.csv'
+    FileReaderFormat        = 'Delimited'
+    FileReaderOpenMode      = 'Read'
+    FileReaderTextDelimiter = ','
+    FileReaderSkipRows      = 1
 
-DDLErrorList = '3807'
+    DDLErrorList = '3807'
 
-LoadLogTable    = 'irs.irs_returns_lg'
-LoadErrorTable1 = 'irs.irs_returns_et'
-LoadErrorTable2 = 'irs.irs_returns_uv'
-LoadTargetTable = 'irs.irs_returns'
-```
+    LoadLogTable    = 'irs.irs_returns_lg'
+    LoadErrorTable1 = 'irs.irs_returns_et'
+    LoadErrorTable2 = 'irs.irs_returns_uv'
+    LoadTargetTable = 'irs.irs_returns'
+    ```
 
 * Create a file with the following content and save it as `load.txt`. See comments within the job file to understand its structure.
 
-``` bash
-DEFINE JOB file_load
-DESCRIPTION 'Load a Teradata table from a file'
-(
-  /*
-    Define the schema of the data in the csv file
-  */
-  DEFINE SCHEMA SCHEMA_IRS
+    ``` bash
+    DEFINE JOB file_load
+    DESCRIPTION 'Load a Teradata table from a file'
     (
-      in_return_id     VARCHAR(19),
-      in_filing_type   VARCHAR(5),
-      in_ein           VARCHAR(19),
-      in_tax_period    VARCHAR(19),
-      in_sub_date      VARCHAR(22),
-      in_taxpayer_name VARCHAR(100),
-      in_return_type   VARCHAR(5),
-      in_dln           VARCHAR(19),
-      in_object_id     VARCHAR(19)
+      /*
+        Define the schema of the data in the csv file
+      */
+      DEFINE SCHEMA SCHEMA_IRS
+        (
+          in_return_id     VARCHAR(19),
+          in_filing_type   VARCHAR(5),
+          in_ein           VARCHAR(19),
+          in_tax_period    VARCHAR(19),
+          in_sub_date      VARCHAR(22),
+          in_taxpayer_name VARCHAR(100),
+          in_return_type   VARCHAR(5),
+          in_dln           VARCHAR(19),
+          in_object_id     VARCHAR(19)
+        );
+
+      /*
+        In the first step, we are sending statements to remove old tables
+        and create a new one.
+        This step replies on configuration stored in `od_IRS` operator
+      */
+      STEP st_Setup_Tables
+      (
+        APPLY
+          ('DROP TABLE ' || @LoadLogTable || ';'),
+          ('DROP TABLE ' || @LoadErrorTable1 || ';'),
+          ('DROP TABLE ' || @LoadErrorTable2 || ';'),
+          ('DROP TABLE ' || @LoadTargetTable || ';'),
+          ('CREATE TABLE ' || @LoadTargetTable || ' (
+              return_id INT,
+              filing_type VARCHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
+              ein INT,
+              tax_period INT,
+              sub_date VARCHAR(100) CHARACTER SET LATIN NOT CASESPECIFIC,
+              taxpayer_name VARCHAR(100) CHARACTER SET LATIN NOT CASESPECIFIC,
+              return_type VARCHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
+              dln BIGINT,
+              object_id BIGINT
+            )
+            PRIMARY INDEX ( return_id );')
+        TO OPERATOR ($DDL);
+      );
+
+      /*
+        Finally, in this step we read the data from the file operator
+        and send it to the load operator.
+      */
+      STEP st_Load_File
+      (
+        APPLY
+          ('INSERT INTO ' || @LoadTargetTable || ' (
+              return_id,
+              filing_type,
+              ein,
+              tax_period,
+              sub_date,
+              taxpayer_name,
+              return_type,
+              dln,
+              object_id
+          ) VALUES (
+              :in_return_id,
+              :in_filing_type,
+              :in_ein,
+              :in_tax_period,
+              :in_sub_date,
+              :in_taxpayer_name,
+              :in_return_type,
+              :in_dln,
+              :in_object_id
+          );')
+        TO OPERATOR ($LOAD)
+        SELECT * FROM OPERATOR($FILE_READER(SCHEMA_IRS));
+      );
     );
-
-  /*
-     In the first step, we are sending statements to remove old tables
-     and create a new one.
-     This step replies on configuration stored in `od_IRS` operator
-  */
-  STEP st_Setup_Tables
-  (
-    APPLY
-      ('DROP TABLE ' || @LoadLogTable || ';'),
-      ('DROP TABLE ' || @LoadErrorTable1 || ';'),
-      ('DROP TABLE ' || @LoadErrorTable2 || ';'),
-      ('DROP TABLE ' || @LoadTargetTable || ';'),
-      ('CREATE TABLE ' || @LoadTargetTable || ' (
-          return_id INT,
-          filing_type VARCHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
-          ein INT,
-          tax_period INT,
-          sub_date VARCHAR(100) CHARACTER SET LATIN NOT CASESPECIFIC,
-          taxpayer_name VARCHAR(100) CHARACTER SET LATIN NOT CASESPECIFIC,
-          return_type VARCHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
-          dln BIGINT,
-          object_id BIGINT
-        )
-        PRIMARY INDEX ( return_id );')
-    TO OPERATOR ($DDL);
-  );
-
-  /*
-    Finally, in this step we read the data from the file operator
-    and send it to the load operator.
-  */
-  STEP st_Load_File
-  (
-    APPLY
-      ('INSERT INTO ' || @LoadTargetTable || ' (
-          return_id,
-          filing_type,
-          ein,
-          tax_period,
-          sub_date,
-          taxpayer_name,
-          return_type,
-          dln,
-          object_id
-      ) VALUES (
-          :in_return_id,
-          :in_filing_type,
-          :in_ein,
-          :in_tax_period,
-          :in_sub_date,
-          :in_taxpayer_name,
-          :in_return_type,
-          :in_dln,
-          :in_object_id
-      );')
-    TO OPERATOR ($LOAD)
-    SELECT * FROM OPERATOR($FILE_READER(SCHEMA_IRS));
-  );
-);
-```
+    ```
 
 * Run the job:
 
-``` bash
-tbuild -f load.txt -v jobvars.txt -j file_load
-```
+    ``` bash
+    tbuild -f load.txt -v jobvars.txt -j file_load
+    ```
 
-A successful run will return logs that look like this:
+    A successful run will return logs that look like this:
 
-``` bash
-Teradata Parallel Transporter Version 17.10.00.10 64-Bit
-The global configuration file '/opt/teradata/client/17.10/tbuild/twbcfg.ini' is used.
-   Log Directory: /opt/teradata/client/17.10/tbuild/logs
-   Checkpoint Directory: /opt/teradata/client/17.10/tbuild/checkpoint
+    ``` bash
+    Teradata Parallel Transporter Version 17.10.00.10 64-Bit
+    The global configuration file '/opt/teradata/client/17.10/tbuild/twbcfg.ini' is used.
+      Log Directory: /opt/teradata/client/17.10/tbuild/logs
+      Checkpoint Directory: /opt/teradata/client/17.10/tbuild/checkpoint
 
-Job log: /opt/teradata/client/17.10/tbuild/logs/file_load-4.out
-Job id is file_load-4, running on osboxes
-Teradata Parallel Transporter SQL DDL Operator Version 17.10.00.10
-od_IRS: private log not specified
-od_IRS: connecting sessions
-od_IRS: sending SQL requests
-od_IRS: TPT10508: RDBMS error 3807: Object 'irs_returns_lg' does not exist.
-od_IRS: TPT18046: Error is ignored as requested in ErrorList
-od_IRS: TPT10508: RDBMS error 3807: Object 'irs_returns_et' does not exist.
-od_IRS: TPT18046: Error is ignored as requested in ErrorList
-od_IRS: TPT10508: RDBMS error 3807: Object 'irs_returns_uv' does not exist.
-od_IRS: TPT18046: Error is ignored as requested in ErrorList
-od_IRS: disconnecting sessions
-od_IRS: Total processor time used = '0.013471 Second(s)'
-od_IRS: Start : Thu Apr  7 20:56:32 2022
-od_IRS: End   : Thu Apr  7 20:56:32 2022
-Job step st_Setup_Tables completed successfully
-Teradata Parallel Transporter Load Operator Version 17.10.00.10
-ol_IRS: private log not specified
-Teradata Parallel Transporter DataConnector Operator Version 17.10.00.10
-op_IRS[1]: Instance 1 directing private log report to 'dtacop-root-368731-1'.
-op_IRS[1]: DataConnector Producer operator Instances: 1
-op_IRS[1]: ECI operator ID: 'op_IRS-368731'
-op_IRS[1]: Operator instance 1 processing file 'index_2020.csv'.
-ol_IRS: connecting sessions
-ol_IRS: preparing target table
-ol_IRS: entering Acquisition Phase
-ol_IRS: entering Application Phase
-ol_IRS: Statistics for Target Table:  'irs.irs_returns'
-ol_IRS: Total Rows Sent To RDBMS:      333722
-ol_IRS: Total Rows Applied:            333722
-ol_IRS: Total Rows in Error Table 1:   0
-ol_IRS: Total Rows in Error Table 2:   0
-ol_IRS: Total Duplicate Rows:          0
-op_IRS[1]: Total files processed: 1.
-ol_IRS: disconnecting sessions
-Job step st_Load_File completed successfully
-Job file_load completed successfully
-ol_IRS: Performance metrics:
-ol_IRS:     MB/sec in Acquisition phase: 9.225
-ol_IRS:     Elapsed time from start to Acquisition phase:   2 second(s)
-ol_IRS:     Elapsed time in Acquisition phase:   5 second(s)
-ol_IRS:     Elapsed time in Application phase:   3 second(s)
-ol_IRS:     Elapsed time from Application phase to end: < 1 second
-ol_IRS: Total processor time used = '0.254337 Second(s)'
-ol_IRS: Start : Thu Apr  7 20:56:32 2022
-ol_IRS: End   : Thu Apr  7 20:56:42 2022
-Job start: Thu Apr  7 20:56:32 2022
-Job end:   Thu Apr  7 20:56:42 2022
-```
+    Job log: /opt/teradata/client/17.10/tbuild/logs/file_load-4.out
+    Job id is file_load-4, running on osboxes
+    Teradata Parallel Transporter SQL DDL Operator Version 17.10.00.10
+    od_IRS: private log not specified
+    od_IRS: connecting sessions
+    od_IRS: sending SQL requests
+    od_IRS: TPT10508: RDBMS error 3807: Object 'irs_returns_lg' does not exist.
+    od_IRS: TPT18046: Error is ignored as requested in ErrorList
+    od_IRS: TPT10508: RDBMS error 3807: Object 'irs_returns_et' does not exist.
+    od_IRS: TPT18046: Error is ignored as requested in ErrorList
+    od_IRS: TPT10508: RDBMS error 3807: Object 'irs_returns_uv' does not exist.
+    od_IRS: TPT18046: Error is ignored as requested in ErrorList
+    od_IRS: disconnecting sessions
+    od_IRS: Total processor time used = '0.013471 Second(s)'
+    od_IRS: Start : Thu Apr  7 20:56:32 2022
+    od_IRS: End   : Thu Apr  7 20:56:32 2022
+    Job step st_Setup_Tables completed successfully
+    Teradata Parallel Transporter Load Operator Version 17.10.00.10
+    ol_IRS: private log not specified
+    Teradata Parallel Transporter DataConnector Operator Version 17.10.00.10
+    op_IRS[1]: Instance 1 directing private log report to 'dtacop-root-368731-1'.
+    op_IRS[1]: DataConnector Producer operator Instances: 1
+    op_IRS[1]: ECI operator ID: 'op_IRS-368731'
+    op_IRS[1]: Operator instance 1 processing file 'index_2020.csv'.
+    ol_IRS: connecting sessions
+    ol_IRS: preparing target table
+    ol_IRS: entering Acquisition Phase
+    ol_IRS: entering Application Phase
+    ol_IRS: Statistics for Target Table:  'irs.irs_returns'
+    ol_IRS: Total Rows Sent To RDBMS:      333722
+    ol_IRS: Total Rows Applied:            333722
+    ol_IRS: Total Rows in Error Table 1:   0
+    ol_IRS: Total Rows in Error Table 2:   0
+    ol_IRS: Total Duplicate Rows:          0
+    op_IRS[1]: Total files processed: 1.
+    ol_IRS: disconnecting sessions
+    Job step st_Load_File completed successfully
+    Job file_load completed successfully
+    ol_IRS: Performance metrics:
+    ol_IRS:     MB/sec in Acquisition phase: 9.225
+    ol_IRS:     Elapsed time from start to Acquisition phase:   2 second(s)
+    ol_IRS:     Elapsed time in Acquisition phase:   5 second(s)
+    ol_IRS:     Elapsed time in Application phase:   3 second(s)
+    ol_IRS:     Elapsed time from Application phase to end: < 1 second
+    ol_IRS: Total processor time used = '0.254337 Second(s)'
+    ol_IRS: Start : Thu Apr  7 20:56:32 2022
+    ol_IRS: End   : Thu Apr  7 20:56:42 2022
+    Job start: Thu Apr  7 20:56:32 2022
+    Job end:   Thu Apr  7 20:56:42 2022
+    ```
 
 
 ## `TPT` vs. NOS
@@ -250,6 +250,7 @@ This how-to demonstrated how to ingest large amounts of data into Vantage. We lo
 ## Further reading
 * [Teradata® TPT User Guide](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/February-2022)
 * [Teradata® TPT Reference](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Reference/February-2022)
+* [Query data stored in object storage](./nos.md)
  
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';

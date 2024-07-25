@@ -10,7 +10,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 # Create Vizualizations in Power BI using Vantage
 
-### Overview
+## Overview
 
 :::note
 This guide includes content from both Microsoft and Teradata product documentation.
@@ -20,7 +20,7 @@ This article describes the process to connect your Power BI Desktop to Teradata 
 
 [Power BI](https://docs.microsoft.com/en-us/power-bi/power-bi-overview) is a collection of software services, applications, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights.
 
-.Power BI consists of:
+**Power BI consists of:**
 * A Windows desktop application, called [Power BI Desktop](https://docs.microsoft.com/en-us/power-bi/fundamentals/desktop-what-is-desktop)
 * An online SaaS (Software as a Service) service, called the [Power BI service](https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-service-overview)
 * [Power BI mobile](https://docs.microsoft.com/en-us/power-bi/consumer/mobile/mobile-apps-for-mobile-devices) apps for Windows, iOS, and Android devices
@@ -37,7 +37,7 @@ Power BI Desktop supports Vantage as a 3rd party data source not as a ‘native�
 
 This getting started guide will show you how to connect to a Teradata Vantage. Power BI Desktop Teradata connector uses the [.NET Data Provider for Teradata](https://downloads.teradata.com/download/connectivity/net-data-provider-for-teradata). You need to install the driver on computers that use the Power BI Desktop. The .NET Data Provider for Teradata single installation supports both 32-bit or 64-bit Power BI Desktop application.
 
-### Prerequisites
+## Prerequisites
 You are expected to be familiar with Azure services, Teradata Vantage, and Power BI Desktop.
 
 You will need the following accounts and system.
@@ -45,15 +45,13 @@ You will need the following accounts and system.
 * The Power BI Desktop is a free application for Windows. (Power BI Desktop is not available for Macs. You could run it in a virtual machine, such as [Parallels](https://www.parallels.com) or [VMware Fusion](https://www.vmware.com/products/fusion.html), or in Apple’s [Boot Camp](https://support.apple.com/en-vn/boot-camp), but that is beyond the scope of this article.)
 
 * A Teradata Vantage instance with a user and password. The user must have permission to data that can be used by Power BI Desktop. Vantage must be accessible from Power BI Desktop.
-+
 
-
-<ClearscapeDocsNote />
+        <ClearscapeDocsNote />
 
 
 * The [.NET Data Provider for Teradata](https://downloads.teradata.com/download/connectivity/net-data-provider-for-teradata).
 
-### Getting Started
+## Getting Started
 ### Install Power BI Desktop
 You can install Power BI Desktop from the [Microsoft Store](https://aka.ms/pbidesktopstore) or [download the installer](https://aka.ms/pbiSingleInstaller) and run it directly.
 
@@ -64,16 +62,13 @@ Note that there are multiple files available for download. You want the file tha
 
 ### Connect to Teradata Vantage
 * Run Power BI Desktop, which has a yellow icon. 
-
 ![Power BI icon](../business-intelligence/images/connect-power-bi/power.bi.icon.png)
 
 * If the opening (splash) screen is showing, click on Get data.
-
-![Power BI splash screen](../business-intelligence/images/connect-power-bi/power.bi.splash.screen.png)
+        ![Power BI splash screen](../business-intelligence/images/connect-power-bi/power.bi.splash.screen.png)
 
 Otherwise, if you are in the main form of Power BI, ensure that you are on the _Home_ ribbon and click on _Get data_. Click on _More…_.
-
-![Power BI Get Data menu](../business-intelligence/images/connect-power-bi/power.bi.get.data.menu.png)
+    ![Power BI Get Data menu](../business-intelligence/images/connect-power-bi/power.bi.get.data.menu.png)
 
 * Click on _Database_ on the left.
 * Scroll the list on the right until you see _Teradata database_. Click on _Teradata database_, and then click on the _Connect_ button.
@@ -130,7 +125,7 @@ This is an example of a report created in Power BI Desktop.
 
 ![Power BI Report](../business-intelligence/images/connect-power-bi/power.bi.report.png)
 
-### Next steps
+## Next steps
 You can combine data from many sources with Power BI Desktop. Look at the following links for more information.
 
 * [What is Power BI Desktop?](https://docs.microsoft.com/en-us/power-bi/desktop-what-is-desktop)

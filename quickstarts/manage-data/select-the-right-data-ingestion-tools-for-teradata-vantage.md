@@ -14,7 +14,7 @@ keywords: [data ingestion, teradata, nos, tpt, bteq, querygrid, airbyte, object 
 
 This article outlines different use cases involving data ingestion. It lists available solutions and recommends the optimal solution for each use case.
 
-## High-volume ingestion, including streaming
+### High-volume ingestion, including streaming
 Available solutions:
 
 * Use [Teradata Parallel Transporter API](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Application-Programming-Interface-Programmer-Guide-17.20)
@@ -62,7 +62,7 @@ Available solutions:
 ### Use data stored in other databases for unified query processing
 Available solutions:
 
-* [Teradata QueryGrid](https://docs.teradata.com/r/Teradata-QueryGridTM-Installation-and-User-Guide/October-2020/Teradata-QueryGrid-Overview)
+* [Teradata QueryGrid](https://docs.teradata.com/r/Enterprise_IntelliFlex_Lake_VMware/QueryGridTM-Installation-and-User-Guide-3.05)
 * Export from other databases to local files and then ingest using [Teradata Parallel Transporter (TPT)](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/June-2022/Introduction-to-Teradata-PT)
 * Export from other databases to object storage and then ingest using [Teradata Native Object Store (NOS)](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-VantageTM-Native-Object-Store-Getting-Started-Guide-17.20/Welcome-to-Native-Object-Store).
 
@@ -73,10 +73,10 @@ In this article, we explored various data ingestion use cases, provided a list o
 
 ## Further Reading
 
-* [Query data stored in object storage using NOS](https://quickstarts.teradata.com/nos.html)
+* [Query data stored in object storage using NOS](nos.md)
 
-* [Run large bulkloads efficiently with Teradata Parallel Transporter](https://quickstarts.teradata.com/tools-and-utilities/run-bulkloads-efficiently-with-teradata-parallel-transporter.html)
+* [Run large bulkloads efficiently with Teradata Parallel Transporter](./run-bulkloads-efficiently-with-teradata-parallel-transporter.md)
 
-* [Teradata QueryGrid](https://docs.teradata.com/r/Teradata-QueryGridTM-Installation-and-User-Guide/October-2020/Teradata-QueryGrid-Overview)
+* [Teradata QueryGrid](https://docs.teradata.com/r/Enterprise_IntelliFlex_Lake_VMware/QueryGridTM-Installation-and-User-Guide-3.05)
 
-* [Use Airbyte to load data from external sources to Teradata Vantage](https://quickstarts.teradata.com/elt/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.html)
+* [Use Airbyte to load data from external sources to Teradata Vantage](./use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md)

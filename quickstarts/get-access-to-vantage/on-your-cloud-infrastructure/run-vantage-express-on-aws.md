@@ -27,13 +27,13 @@ Vantage Express is distributed as a virtual machine image. This how-to uses the 
 
 If you want a cheaper option, try [Google Cloud](./vantage-express-gcp.md) and [Azure](run-vantage-express-on-microsoft-azure.md) which support nested virtualization and can run Vantage Express on cheap VM's.
 
-If you do not wish to pay for cloud usage, you can get a free hosted instance of Vantage at [](https://clearscape.teradata.com/). Alternatively, you install Vantage Express locally using xref:getting.started.vmware.adoc[VMware], [VirtualBox](../on-your-local/getting-started-vbox.md), or [UTM](../on-your-local/getting-started-utm.md).
+If you do not wish to pay for cloud usage, you can get a free hosted instance of Vantage at [https://clearscape.teradata.com/](https://clearscape.teradata.com/). Alternatively, you install Vantage Express locally using [VMware](../on-your-local/getting-started-vmware.md), [VirtualBox](../on-your-local/getting-started-vbox.md), or [UTM](../on-your-local/getting-started-utm.md).
 :::
 
 ## Prerequisites
 
 * An AWS account. If you need to create a new account follow [the official AWS instructions](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
-* `awscli` command line utility installed and configured on your machine. You can find installation instructions here: [](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+* `awscli` command line utility installed and configured on your machine. You can find installation instructions here: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 ## Installation
 

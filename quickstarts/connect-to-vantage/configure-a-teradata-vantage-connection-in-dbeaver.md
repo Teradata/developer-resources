@@ -27,20 +27,19 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 2. On `Select your database` screen, start typing `teradata` and select the Teradata icon.
 ![Select your database](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/select-your-database-windows.png)
 3. On the main tab, you need to set all primary connection settings. The required ones include `Host`, `Port`, `Database`, `Username`, and `Password`.
+    :::tip
+    In Teradata Vantage, when a user is created a corresponding database with the same is created as well. DBeaver requires that you enter the database. If you don't know what database you want to connect to, use your username in the `database` field.
+    :::
 
-:::tip
-In Teradata Vantage, when a user is created a corresponding database with the same is created as well. DBeaver requires that you enter the database. If you don't know what database you want to connect to, use your username in the `database` field.
-:::
+    :::tip
+    With DBeaver PRO, you can not only use the standard ordering of tables but also hierarchically link tables to a specific database or user. Expanding and collapsing the databases or users will help you navigate from one area to another without swamping the Database Navigator window. Check the `Show databases and users hierarchically` box to enable this setting.
+    :::
 
-:::tip
-With DBeaver PRO, you can not only use the standard ordering of tables but also hierarchically link tables to a specific database or user. Expanding and collapsing the databases or users will help you navigate from one area to another without swamping the Database Navigator window. Check the `Show databases and users hierarchically` box to enable this setting.
-:::
+    :::tip
+    In many environments Teradata Vantage can only be accessed using the TLS protocol. When in DBeaver PRO, check `Use TLS protocol` option to enable TLS.
+    :::
 
-:::tip
-In many environments Teradata Vantage can only be accessed using the TLS protocol. When in DBeaver PRO, check `Use TLS protocol` option to enable TLS.
-:::
-
-![Teradata connection settings](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/teradata-connection-settings-windows.png)
+    ![Teradata connection settings](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/teradata-connection-settings-windows.png)
 
 4. Click on `Finish`.
 

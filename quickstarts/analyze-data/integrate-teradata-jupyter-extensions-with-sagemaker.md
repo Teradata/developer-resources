@@ -116,17 +116,16 @@ EOF
 
 3. Create a notebook instance. Please select 'Amazon Linux 2, Jupyter Lab3' for Platform identifier and select the lifecycle configuration created in step 2 for Lifecycle configuration.
 
-![Create notebook instance](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.create.notebook.instance.png)
+    ![Create notebook instance](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.create.notebook.instance.png)
 
 You might also need to add vpc, subnet and security group in 'Network' section to gain access to Teradata databases.
 
 4. Wait until notebook instance Status turns 'InService', click 'Open JupyterLab' to open the notebook.
+    ![Open notebook](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.notebook.inservice.png)
 
-![Open notebook](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.notebook.inservice.png)
 
-
-Access the demo notebooks to get usage tips
-![access demo notebooks](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.start.png)
+    Access the demo notebooks to get usage tips
+    ![access demo notebooks](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.start.png)
 
 
 ### Further reading

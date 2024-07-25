@@ -41,19 +41,19 @@ For instructions to start a personal JupyterLab server in a local Docker contain
 1. Go to [Vantage Modules for Jupyter](https://downloads.teradata.com/download/tools/vantage-modules-for-jupyter) page and download the Docker image. It is a tarball with name in this format `teradatajupyterlabext_VERSION.tar.gz`.
 
 2. Load the image:
-```
+```bash
 docker load -i teradatajupyterlabext_VERSION.tar.gz
 ```
 
 3. Push the image to your Docker registry:
-```
+```bash
 docker push
 ```
 
 :::tip
 You may want to consider changing the name of the loaded image for simplicity:
 
-```
+```bash
 docker tag OLD_IMAGE_NAME NEW_IMAGE_NAME
 ```
 :::
@@ -62,7 +62,7 @@ docker tag OLD_IMAGE_NAME NEW_IMAGE_NAME
 
 1. To use the Teradata Jupyter Docker image directly in your JupyterHub cluster, modify the override file as described in [herein the JupyterHub documentation](https://zero-to-jupyterhub.readthedocs.io/en/latest/jupyterhub/customizing/user-environment.html#choose-and-use-an-existing-docker-image). Replace `REGISTRY_URL` and `VERSION` with appropriate values from the step above:
 
-```
+```bash
 singleuser:
   image:
   name: REGISTRY_URL/teradatajupyterlabext_VERSION
@@ -73,6 +73,7 @@ singleuser:
 
 :::tip
 You can use multiple profiles to allow users to select which image they want to use when they log in to JupyterHub. For detailed instructions and examples on configuring multiple profiles, please see [JupyterHub documentation](https://zero-to-jupyterhub.readthedocs.io/en/latest/jupyterhub/customizing/user-environment.html#using-multiple-profiles-to-let-users-select-their-environment).
+:::
 
 ### Customize Teradata Jupyter Docker image
 
@@ -80,7 +81,7 @@ If your users need some packages or notebooks that are not bundled in the Terada
 
 Here is an example Dockerfile that builds on top of Teradata image and adds additional packages and notebooks. Use the Dockerfile to build a new Docker image, push the image to a designated registry, modify override file as shown above to use the new image as singleuser image, apply the changes to the cluster as described above. Replace `REGISTRY_URL` and `VERSION` with appropriate values:
  
-```
+```bash
 FROM REGISTRY_URL/teradatajupyterlabext_VERSION:latest
 
 # install additional packages
@@ -98,70 +99,70 @@ If you prefer, you can include the Teradata SQL kernel and extensions into into 
 2. Unzip the bundle file to your working directory.
 3. Below is an example Dockerfile to add Teradata Jupyter extensions to your existing Docker image. Use the Dockerfile to build a new Docker image, push the image to a designated registry, modify override file as shown above to use the new image as singleuser image, apply the changes to the cluster:
 
-```
-FROM REGISTRY_URL/your-existing-image:tag
-ENV NB_USER=jovyan \
-  HOME=/home/jovyan \
-  EXT_DIR=/opt/teradata/jupyterext/packages
+    ```bash
+    FROM REGISTRY_URL/your-existing-image:tag
+    ENV NB_USER=jovyan \
+      HOME=/home/jovyan \
+      EXT_DIR=/opt/teradata/jupyterext/packages
 
-USER root
+    USER root
 
-##############################################################
-# Install kernel and copy supporting files
-##############################################################
+    ##############################################################
+    # Install kernel and copy supporting files
+    ##############################################################
 
-# Copy the kernel
-COPY ./teradatakernel /usr/local/bin
-RUN chmod 755 /usr/local/bin/teradatakernel
+    # Copy the kernel
+    COPY ./teradatakernel /usr/local/bin
+    RUN chmod 755 /usr/local/bin/teradatakernel
 
-# Copy directory with kernel.json file into image
-COPY ./teradatasql teradatasql/
+    # Copy directory with kernel.json file into image
+    COPY ./teradatasql teradatasql/
 
-##############################################################
-# Switch to user jovyan to copy the notebooks and license files.
-##############################################################
+    ##############################################################
+    # Switch to user jovyan to copy the notebooks and license files.
+    ##############################################################
 
-USER $NB_USER
+    USER $NB_USER
 
-# Copy notebooks
-COPY ./notebooks/ /tmp/JupyterLabRoot/TeradataSampleNotebooks/
+    # Copy notebooks
+    COPY ./notebooks/ /tmp/JupyterLabRoot/TeradataSampleNotebooks/
 
-# Copy license files
-COPY ./ThirdPartyLicenses /tmp/JupyterLabRoot/ThirdPartyLicenses/
+    # Copy license files
+    COPY ./ThirdPartyLicenses /tmp/JupyterLabRoot/ThirdPartyLicenses/
 
-USER root
+    USER root
 
-# Install the kernel file to /opt/conda jupyter lab instance
-RUN jupyter kernelspec install ./teradatasql --prefix=/opt/conda
+    # Install the kernel file to /opt/conda jupyter lab instance
+    RUN jupyter kernelspec install ./teradatasql --prefix=/opt/conda
 
-##############################################################
-# Install Teradata extensions
-##############################################################
+    ##############################################################
+    # Install Teradata extensions
+    ##############################################################
 
-COPY ./teradata_*.tgz $EXT_DIR
+    COPY ./teradata_*.tgz $EXT_DIR
 
-WORKDIR $EXT_DIR
+    WORKDIR $EXT_DIR
 
-RUN jupyter labextension install --no-build teradata_database* && \
-  jupyter labextension install --no-build teradata_resultset* && \
-  jupyter labextension install --no-build teradata_sqlhighlighter* && \
-  jupyter labextension install --no-build teradata_connection_manager* && \
-  jupyter labextension install --no-build teradata_preferences* && \
-  jupyter lab build --dev-build=False --minimize=False && \
-  rm -rf *
+    RUN jupyter labextension install --no-build teradata_database* && \
+      jupyter labextension install --no-build teradata_resultset* && \
+      jupyter labextension install --no-build teradata_sqlhighlighter* && \
+      jupyter labextension install --no-build teradata_connection_manager* && \
+      jupyter labextension install --no-build teradata_preferences* && \
+      jupyter lab build --dev-build=False --minimize=False && \
+      rm -rf *
 
-WORKDIR $HOME
+    WORKDIR $HOME
 
-# Give back ownership of /opt/conda to  jovyan
-RUN chown -R jovyan:users /opt/conda
+    # Give back ownership of /opt/conda to  jovyan
+    RUN chown -R jovyan:users /opt/conda
 
-# Jupyter will create .local directory
-RUN rm -rf $HOME/.local
-```
+    # Jupyter will create .local directory
+    RUN rm -rf $HOME/.local
+    ```
 
 4. You can optionally install Teradata package for Python and Teradata package for R. See the following pages for details:
-* [Teradata Package for Python - teradataml download page](https://downloads.teradata.com/download/aster/teradata-python-package-teradataml)
-* [Teradata Package for R - tdplyr download page](https://downloads.teradata.com/download/aster/tdplyr-download-page)
+    * [Teradata Package for Python - teradataml download page](https://downloads.teradata.com/download/aster/teradata-python-package-teradataml)
+    * [Teradata Package for R - tdplyr download page](https://downloads.teradata.com/download/aster/tdplyr-download-page)
 
 ## Further reading
 * [Teradata Jupyter Extensions Website](https://teradata.github.io/jupyterextensions)

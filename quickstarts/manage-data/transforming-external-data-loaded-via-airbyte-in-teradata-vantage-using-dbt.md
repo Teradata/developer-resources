@@ -45,60 +45,62 @@ cd airbyte-dbt-jaffle
 ## Install dbt
 * Create a new python environment to manage dbt and its dependencies. Activate the environment:
 
-```bash
-python3 -m venv env
-source env/bin/activate
-```
+    ```bash
+    python3 -m venv env
+    source env/bin/activate
+    ```
 
 
-:::note
-You can activate the virtual environment in Windows by executing the corresponding batch file `./myenv/Scripts/activate`.
-:::
+    :::note
+    You can activate the virtual environment in Windows by executing the corresponding batch file `./myenv/Scripts/activate`.
+    :::
 
 * Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
 
-```bash
-pip install dbt-teradata
-```
+    ```bash
+    pip install dbt-teradata
+    ```
 
 ## Configure dbt
 * Initialize a dbt project.
 
-```bash
-dbt init
-```
+    ```bash
+    dbt init
+    ```
 
 
-The dbt project wizard will ask you for a project name and database management system to use in the project. In this demo, we define the project name as `dbt_airbyte_demo`. Since we are using the dbt-teradata connector, the only database management system available is Teradata.
-![Project name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_project_name.png)
-![Database name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_database_name.png)
+    The dbt project wizard will ask you for a project name and database management system to use in the project. In this demo, we define the project name as `dbt_airbyte_demo`. Since we are using the dbt-teradata connector, the only database management system available is Teradata.
+
+    ![Project name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_project_name.png)
+    
+    ![Database name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_database_name.png)
  
 * Configure the `profiles.yml` file located in the `$HOME/.dbt` directory. If the `profiles.yml` file is not present, you can create a new one. 
 * Adjust `server`, `username`, `password` to match your Teradata instance's `HOST`, `Username`, `Password` respectively. 
 * In this configuration, `schema` stands for the database that contains the sample data, in our case that is the default schema that we defined in Airbyte `airbyte_jaffle_shop`.
 
-``` yaml , id="dbt_first_config", role="emits-gtm-events"
-dbt_airbyte_demo:
-  target: dev
-  outputs:
-    dev:
-      type: teradata
-      server: <host>
-      schema: airbyte_jaffle_shop
-      username: <user>
-      password: <password>
-      tmode: ANSI
-
-```
+    ``` yaml , id="dbt_first_config", role="emits-gtm-events"
+    dbt_airbyte_demo:
+      target: dev
+      outputs:
+        dev:
+          type: teradata
+          server: <host>
+          schema: airbyte_jaffle_shop
+          username: <user>
+          password: <password>
+          tmode: ANSI
+    ```
 
 * Once the `profiles.yml` file is ready, we can validate the setup. Go to the dbt project folder and run the command:
 
-``` bash
-dbt debug
-```
+    ``` bash
+    dbt debug
+    ```
 
-If the debug command returned errors, you likely have an issue with the content of `profiles.yml`. If the setup is correct, you will get message `All checks passed!`
-![dbt debug output](../elt/images/getting-started-with-airbyte-dbt/dbt_debug.png)
+    If the debug command returned errors, you likely have an issue with the content of `profiles.yml`. If the setup is correct, you will get message `All checks passed!`
+
+    ![dbt debug output](../elt/images/getting-started-with-airbyte-dbt/dbt_debug.png)
 
 ## The Jaffle Shop dbt project
 
