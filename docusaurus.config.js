@@ -172,8 +172,16 @@ const config = {
                 href: 'https://teradata.my.site.com/teradataPRM/s/login/',
               },
               {
+                label: 'footer.solutions',
+                href: 'https://www.teradata.com/solutions/business-use-cases',
+              },
+              {
                 label: 'footer.success_stories',
                 href: 'https://www.teradata.com/customers',
+              },
+              {
+                label: 'footer.services',
+                href: 'https://www.teradata.com/how-we-help/teradata-services',
               },
             ],
           },
@@ -353,6 +361,23 @@ const config = {
             href: 'https://www.teradata.com/how-we-help#tracking-consent',
           },
         ],
+        linksOfInterest: {
+          title: 'footer.also_of_interest',
+          items: [
+            {
+              label: 'footer.platform_ai_ml',
+              href: 'https://www.teradata.com/platform/ai-ml',
+            },
+            {
+              label: 'footer.big_data',
+              href: 'https://www.teradata.com/solutions/big-data',
+            },
+            {
+              label: 'footer.data_security_insights',
+              href: 'https://www.teradata.com/insights/data-security',
+            },
+          ],
+        },
         copyright: 'footer.copyright',
       },
       prism: {

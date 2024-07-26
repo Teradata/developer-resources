@@ -41,7 +41,7 @@
 }
 
 .heroBlur {
-  width: 360px;
+  max-width: 360px;
   overflow: visible;
   position: relative;
   z-index: -1;

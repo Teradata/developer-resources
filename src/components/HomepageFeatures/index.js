@@ -2,28 +2,32 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import PossibleImageUrl from '@site/static/img/possible_img.webp';
+import { Card, Typography } from '@teradata-web/react-components';
+import { translate } from '@docusaurus/Translate';
 
 const FeatureTitle = 'Categories';
 const FeatureList = [
   {
     title: 'Get started',
-    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
-    href: '/ai-unlimited/install-ai-unlimited/',
+    description:
+      'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
+    href: '/docs/install-ai-unlimited/',
   },
   {
     title: `Sample use cases`,
     description: 'Explore ways to use AI Unlimited to experiment and innovate',
-    href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
+    href: '/docs/explore-and-analyze-data/use-cases/',
   },
   {
     title: `What's new`,
     description: 'Watch for new features and updates—and see what’s coming',
-    href: '/ai-unlimited/whats-new/',
+    href: '/docs/whats-new/',
   },
   {
     title: 'Explore and analyze data',
     description: 'Learn about AI Unlimited projects and create your first one',
-    href: '/ai-unlimited/explore-and-analyze-data/',
+    href: '/docs/explore-and-analyze-data/',
   },
   {
     title: `Analytic functions`,
@@ -33,24 +37,48 @@ const FeatureList = [
   {
     title: 'Manage projects',
     description: 'Learn how to manage projects or change AI Unlimited settings',
-    href: '/ai-unlimited/manage-ai-unlimited/',
+    href: '/docs/manage-ai-unlimited/',
   },
   {
     title: 'Other resources',
     description: 'Find additional installation resources, and more',
-    href: '/ai-unlimited/resources/',
+    href: '/docs/resources/',
   },
   {
     title: 'FAQ',
     description: 'Get answers to your questions',
-    href: '/ai-unlimited/faq/',
+    href: '/docs/faq/',
   },
   {
     title: 'Glossary',
     description: 'Look up AI Unlimited terminology',
-    href: '/ai-unlimited/glossary/',
+    href: '/docs/glossary/',
   },
 ];
+
+function BannerContent() {
+  return (
+    <section className={styles.bannerContent}>
+      <div className={styles.bannerCaption}>
+        <Typography scale="caption">
+          <span className={styles.featuredEvent}>
+            {translate({ message: 'home_page.featured_event' })}
+          </span>
+        </Typography>
+        <Typography scale="headline3">
+          <span className={styles.bannerTitle}>
+            {translate({ message: 'home_page.possible_banner_title' })}
+          </span>
+        </Typography>
+      </div>
+      <Typography scale="body1">
+        <div className={styles.registerNow}>
+          {translate({ message: 'home_page.register_now' })}
+        </div>
+      </Typography>
+    </section>
+  );
+}
 
 function Feature({ title, description, href }) {
   return (
@@ -65,15 +93,36 @@ function Feature({ title, description, href }) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className={clsx('container', styles.container)}>
-        <h2>{FeatureTitle}</h2>
-        <div className={clsx('row', styles.row)}>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <>
+      <section className={clsx('container', styles.container)}>
+        <a
+          className={styles.possibleBannerLink}
+          href="https://www.teradata.com/events/possible"
+          target="_blank"
+          aria-label={translate({
+            message: 'home_page.possible_banner_title',
+          })}
+        >
+          <Card
+            imageSrc={PossibleImageUrl}
+            imageAltText={translate({
+              message: 'home_page.possible_banner_title',
+            })}
+            imageWidth="1"
+            content={<BannerContent />}
+          />
+        </a>
+      </section>
+      <section className={styles.features}>
+        <div className={clsx('container', styles.container)}>
+          <h2>{FeatureTitle}</h2>
+          <div className={clsx('row', styles.row)}>
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
