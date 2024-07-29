@@ -132,6 +132,6 @@ JupyterLabの準備ができたら、 `http://localhost:8888`でアクセスし�
 
 ## 次のステップ
 
-[OAuthアプリを作成する](../../create-oauth-app) AI Unlimited と Git プロバイダ アカウント間の認証を許可します。
+[OAuthアプリを作成する](../create-oauth-app.md) AI Unlimited と Git プロバイダ アカウント間の認証を許可します。
 
 

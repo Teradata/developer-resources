@@ -65,7 +65,7 @@ AWS または Azure の場合は、サブスクライブ後、このドキュメ
 
 ## 次のステップ
 
-これで、 [AWS](./prod-aws-console-deploy-ai-unlimited.md) または [Azure](./prod-azure-portal-deploy-manager.md)に AI Unlimited をインストールする準備が整いました。
+これで、 [AWS](deploy-manager-aws-console) または [Azure](deploy-manager-azure-portal)に AI Unlimited をインストールする準備が整いました。
 
 
 
