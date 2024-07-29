@@ -10,9 +10,8 @@ const FeatureTitle = 'Categories';
 const FeatureList = [
   {
     title: 'Get started',
-    description:
-      'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
-    href: '/docs/install-ai-unlimited/',
+    description:'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
+    href: 'install-ai-unlimited/',
   },
   {
     title: `Sample use cases`,

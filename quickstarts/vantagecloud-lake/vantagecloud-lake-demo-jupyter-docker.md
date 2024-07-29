@@ -24,7 +24,7 @@ In this how-to we will go through the steps for connecting to Teradata VantageCl
 
 ## Create VantageCloud Lake environment
 Follow the instructions from the [VantageCloud Lake getting started](./getting-started-with-vantagecloud-lake.md) to create your own environment. 
-Once created, go to **SETTINGS** tab and provide your public IP address to [access the environment](./getting-started-with-vantagecloud-lake.md#access-environment-from_public-internet).
+Once created, go to **SETTINGS** tab and provide your public IP address to [access the environment](./getting-started-with-vantagecloud-lake.md#access-environment-from-public-internet).
 
 :::note
 You can find your IP address from [WhatIsMyIp.com](https://www.whatismyip.com) website. Take note of the IPv4 address.
