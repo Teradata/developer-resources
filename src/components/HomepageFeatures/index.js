@@ -10,24 +10,23 @@ const FeatureTitle = 'Categories';
 const FeatureList = [
   {
     title: 'Get started',
-    description:
-      'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
-    href: '/docs/install-ai-unlimited/',
+    description:'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
+    href: 'install-ai-unlimited/',
   },
   {
     title: `Sample use cases`,
     description: 'Explore ways to use AI Unlimited to experiment and innovate',
-    href: '/docs/explore-and-analyze-data/use-cases/',
+    href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
   },
   {
     title: `What's new`,
     description: 'Watch for new features and updates—and see what’s coming',
-    href: '/docs/whats-new/',
+    href: '/ai-unlimited/whats-new/',
   },
   {
     title: 'Explore and analyze data',
     description: 'Learn about AI Unlimited projects and create your first one',
-    href: '/docs/explore-and-analyze-data/',
+    href: '/ai-unlimited/explore-and-analyze-data/',
   },
   {
     title: `Analytic functions`,
@@ -37,22 +36,22 @@ const FeatureList = [
   {
     title: 'Manage projects',
     description: 'Learn how to manage projects or change AI Unlimited settings',
-    href: '/docs/manage-ai-unlimited/',
+    href: '/ai-unlimited/manage-ai-unlimited/',
   },
   {
     title: 'Other resources',
     description: 'Find additional installation resources, and more',
-    href: '/docs/resources/',
+    href: '/ai-unlimited/resources/',
   },
   {
     title: 'FAQ',
     description: 'Get answers to your questions',
-    href: '/docs/faq/',
+    href: '/ai-unlimited/faq/',
   },
   {
     title: 'Glossary',
     description: 'Look up AI Unlimited terminology',
-    href: '/docs/glossary/',
+    href: '/ai-unlimited/glossary/',
   },
 ];
 
