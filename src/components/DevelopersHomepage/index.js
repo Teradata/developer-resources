@@ -2,8 +2,7 @@ import JumpIn from './JumpIn';
 import GetStarted from './GetStarted';
 import TopPicks from './TopPicks';
 import LinksImages from './LinksImg';
-import PossibleBanner from './PossibleBanner';
-
+import { PossibleBanner } from '../HomepageFeatures';
 
 
 export default function DevelopersHomepage() {
