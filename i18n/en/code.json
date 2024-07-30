@@ -278,5 +278,11 @@
   },
   "home_page.title": {
     "message": "Teradata AI Unlimited Documentation"
+  },
+  "sidenav.title": {
+    "message": "Docs"
+  },
+  "sidenav.title_description": {
+    "message": "The title for the sidebar in mobile view"
   }
 }
