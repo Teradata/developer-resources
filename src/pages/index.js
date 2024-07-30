@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import HeroImageUrl from '@site/static/img/hero.webp';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 function HomepageHeader() {
@@ -14,10 +14,12 @@ function HomepageHeader() {
       <div className={clsx('container', styles.container)}>
         <div className="">
           <Heading as="h1" className="hero__title">
-            {siteConfig.title}
+            {translate({ message: siteConfig.title })}
           </Heading>
           <p className="hero__subtitle">
-            <Translate id="theme.tagline">{siteConfig.tagline}</Translate>
+            <Translate id="theme.tagline">
+              {translate({ message: siteConfig.tagline })}
+            </Translate>
           </p>
           <div className={styles.buttons}>
             <Link
@@ -27,12 +29,18 @@ function HomepageHeader() {
               )}
               to="/docs/install-ai-unlimited"
             >
-              <Translate id="theme.button">Get Started</Translate>
+              <Translate id="theme.button">
+                {translate({ message: 'home_page.get_started' })}
+              </Translate>
             </Link>
           </div>
         </div>
         <div className={styles.heroImage}>
-          <img src={HeroImageUrl} width="498" alt="A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background." />
+          <img
+            src={HeroImageUrl}
+            width="498"
+            alt="A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background."
+          />
           <div className={styles.heroBlur}></div>
         </div>
       </div>
@@ -43,9 +51,7 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      description={siteConfig.tagline}
-    >
+    <Layout description={translate({ message: siteConfig.tagline })}>
       <HomepageHeader />
       <main className={styles.features}>
         <HomepageFeatures />

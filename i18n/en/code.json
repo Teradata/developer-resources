@@ -203,13 +203,77 @@
   "footer.platform_ai_ml": {
     "message": "Drive ROI with Trusted AI today"
   },
+
+  "feature.title.analytic_functions": {
+    "message": "Analytic functions"
+  },
+  "feature.title.explore_data": {
+    "message": "Explore and analyze data"
+  },
+  "feature.title.faq": {
+    "message": "FAQ"
+  },
+  "feature.title.glossary": {
+    "message": "Glossary"
+  },
+  "feature.title.manage_projects": {
+    "message": "Manage projects"
+  },
+  "feature.title.other_resources": {
+    "message": "Other resources"
+  },
+  "feature.title.sample_use_cases": {
+    "message": "Sample use cases"
+  },
+  "feature.title.whats_new": {
+    "message": "What's new"
+  },
+  "feature.description.analytic_functions": {
+    "message": "Browse and search ClearScape™ functions to use in projects"
+  },
+  "feature.description.explore_data": {
+    "message": "Learn about AI Unlimited projects and create your first one"
+  },
+  "feature.description.faq": {
+    "message": "Get answers to your questions"
+  },
+  "feature.description.get_started": {
+    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos"
+  },
+  "feature.description.glossary": {
+    "message": "Look up AI Unlimited terminology"
+  },
+  "feature.description.manage_projects": {
+    "message": "Learn how to manage projects or change AI Unlimited settings"
+  },
+  "feature.description.other_resources": {
+    "message": "Find additional installation resources, and more"
+  },
+  "feature.description.sample_use_cases": {
+    "message": "Explore ways to use AI Unlimited to experiment and innovate"
+  },
+  "feature.description.whats_new": {
+    "message": "Watch for new features and updates—and see what's coming"
+  },
+  "home_page.categories": {
+    "message": "Categories"
+  },
   "home_page.featured_event": {
     "message": "Featured event"
+  },
+  "home_page.get_started": {
+    "message": "Get started"
   },
   "home_page.possible_banner_title": {
     "message": "If you imagine it, envision it, create it... Teradata makes it Possible. Join us."
   },
   "home_page.register_now": {
     "message": "Register now"
+  },
+  "home_page.tagline": {
+    "message": "A scalable, on-demand compute engine in the cloud."
+  },
+  "home_page.title": {
+    "message": "Teradata AI Unlimited Documentation"
   }
 }
