@@ -43,7 +43,7 @@ export const FeatureList = [
 
 export const FeatureList2 = [
   {
-    img: 'article',
+    img: 'developer_board',
     img2: 'open_in_new',
     title: 'Explore Vantage AI/ML features',
     description: 'Get a free hands-on demo environment to explore Teradata VantageCloud’s ClearScape Analytics™',
@@ -57,7 +57,7 @@ export const FeatureList2 = [
     href: '/quickstarts/manage-data/dbt/',
   },
   {
-    img: 'download',
+    img: 'article',
     img2: '',
     title: `Query data in object storage`,
     description: 'Learn how to analyze data stored in object storage using SQL.',
@@ -71,14 +71,14 @@ export const FeatureList2 = [
     href: '/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/',
   },
   {
-    img: 'download',
+    img: 'article',
     img2: '',
     title: `Getting Started with Teradata ModelOps`,
     description: 'In the tutorial, you will be able to create a new project in ModelOps, upload the required data to Vantage, and track the full lifecycle.',
     href: '/quickstarts/analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git/',
   },
   {
-    img: 'download',
+    img: 'article',
     img2: '',
     title: `Connect to Vantage using JDBC`,
     description: 'The JDBC Driver allows you to connect to the Teradata database from external applications.',
