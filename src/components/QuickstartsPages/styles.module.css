@@ -24,7 +24,7 @@ a.col {
 }
 
 .col {
-  padding: 0 0.75rem 1.5rem;
+  padding: 0 0.75rem 0.5rem;
 }
 
 .card {
@@ -128,4 +128,14 @@ a.col {
   transform-origin: 0 50%;
   transition: transform 0.25s ease-in-out;
   width: 100%;
+}
+
+
+.card {
+  overflow: hidden;
+}
+
+.symbols {
+  font-size: 32px !important;
+  color:var(--cv-theme-tertiary) !important;
 }

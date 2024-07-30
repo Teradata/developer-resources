@@ -3,24 +3,24 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { Typography } from '@teradata-web/react-components';
-import aiml from '@site/static/img/quickstarts/AI-ML.png';
+//import aiml from '@site/static/img/quickstarts/AI-ML.png';
 
 const FeatureTitle = 'Categories';
 const Guides = [
   {
-    img: aiml,
+    img: 'memory',
     title: `Getting started with Teradata AI Unlimited`,
     description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
     href: '/ai-unlimited/install-ai-unlimited/',
   },
   {
-    img: aiml,
+    img: 'memory',
     title: 'Deploy Teradata AI Unlimited locally using Docker',
     description: `You'll use Docker Compose to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers.`,
     href: '/ai-unlimited/resources/quickstart/run-ai-unlimited-jupyterlab-docker/',
   },
   {
-    img: aiml,
+    img: 'memory',
     title: 'Deploy Teradata AI Unlimited on AWS',
     description: `The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.`,
     href: '/ai-unlimited/install-ai-unlimited/deploy-manager-aws-console/',
@@ -74,7 +74,7 @@ function Feature1({ img, title, description, href }) {
   return (
     <Link to={href} className={clsx('col col--4', styles.col, styles.d)}>
       <div className={clsx('doc-card', styles.card, styles.cardHeigth)}>
-        <img src={img}></img>
+        <span className={clsx('material-symbols-outlined', styles.symbols)}>{img}</span>
         <Heading as="h3">{title}</Heading>
         {<p className={clsx(styles.description)}>{description}</p>}
       </div>

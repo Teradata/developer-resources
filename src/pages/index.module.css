@@ -110,7 +110,7 @@
 
   .container > div:last-child {
     align-self: center;
-  /*  margin-bottom: 2.5rem; */
+    margin-bottom: 2.5rem; 
     max-width: 100%;
   }
 }
@@ -167,12 +167,21 @@
 .imgW {
   max-width: 398px;
 }
-
+.headline{
+  font-family: var(--td-web-typography-headline1-font-family);
+  font-size: var(--td-web-typography-headline1-font-size);
+  font-weight: var(--td-web-typography-headline1-font-weight);
+  line-height: var(--td-web-typography-headline1-line-height);
+  letter-spacing: var(--td-web-typography-headline1-letter-spacing);
+}
 /* Tablet view */
 @media (max-width: 1024px) and (min-width: 768px) {
   .imgW {
       max-width: 248px;
-      margin-left: 120px;
+      margin-left: 80px;
+  }
+  .headline_size{
+    width: 360px;
   }
 }
 
