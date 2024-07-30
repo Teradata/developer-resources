@@ -55,6 +55,32 @@ const FeatureList = [
   },
 ];
 
+export function PossibleBanner() {
+  return (
+    <>
+      <section className={clsx('container', styles.container)}>
+        <a
+          className={styles.possibleBannerLink}
+          href="https://www.teradata.com/events/possible"
+          target="_blank"
+          aria-label={translate({
+            message: 'home_page.possible_banner_title',
+          })}
+        >
+          <Card
+            imageSrc={PossibleImageUrl}
+            imageAltText={translate({
+              message: 'home_page.possible_banner_title',
+            })}
+            imageWidth="1"
+            content={<BannerContent />}
+          />
+        </a>
+      </section>
+    </>
+  );
+}
+
 function BannerContent() {
   return (
     <section className={styles.bannerContent}>
@@ -93,25 +119,7 @@ function Feature({ title, description, href }) {
 export default function HomepageFeatures() {
   return (
     <>
-      <section className={clsx('container', styles.container)}>
-        <a
-          className={styles.possibleBannerLink}
-          href="https://www.teradata.com/events/possible"
-          target="_blank"
-          aria-label={translate({
-            message: 'home_page.possible_banner_title',
-          })}
-        >
-          <Card
-            imageSrc={PossibleImageUrl}
-            imageAltText={translate({
-              message: 'home_page.possible_banner_title',
-            })}
-            imageWidth="1"
-            content={<BannerContent />}
-          />
-        </a>
-      </section>
+      <PossibleBanner />
       <section className={styles.features}>
         <div className={clsx('container', styles.container)}>
           <h2>{FeatureTitle}</h2>
