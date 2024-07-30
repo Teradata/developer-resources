@@ -57,9 +57,8 @@ export default function Navbar() {
   const secondaryMenuDetails = {
     menuElement: useNavbarSecondaryMenu().content as JSX.Element,
     title: translate({
-      id: 'theme.docs.sidebar.title',
-      message: 'Docs',
-      description: 'The title for the sidebar in mobile view',
+      message: 'sidenav.title',
+      description: 'sidenav.title_description',
     }),
   };
 
