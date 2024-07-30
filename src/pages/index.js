@@ -39,7 +39,7 @@ function HomepageHeader() {
           <img
             src={HeroImageUrl}
             width="498"
-            alt="A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background."
+            alt={translate({ message: 'home_page.hero_img_description' })}
           />
           <div className={styles.heroBlur}></div>
         </div>

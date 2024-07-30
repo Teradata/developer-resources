@@ -255,6 +255,9 @@
   "feature.description.whats_new": {
     "message": "Watch for new features and updates—and see what's coming"
   },
+  "home_page.hero_img_description": {
+    "message": "A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background."
+  },
   "home_page.categories": {
     "message": "Categories"
   },
