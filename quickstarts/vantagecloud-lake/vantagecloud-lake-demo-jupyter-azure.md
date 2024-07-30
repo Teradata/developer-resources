@@ -42,9 +42,11 @@ In this section we will cover in detail each of the steps below:
     * Select "Linux" as the operating system
     * Select the appropriate region from the dropdown
     * Select the appropriate App Service plan. If you don't have one, a new one will be created with default configurations
+
     :::tip
     For purposes of the VantageCloud Lake demo redundancy is not needed
     :::
+    
     * After completing this tab, click the "Docker" tab to continue
     ![Create Azure web app Basics](./images/vantagecloud-lake-demo-jupyter-azure/azure-app-service-2.PNG)
 
