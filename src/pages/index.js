@@ -17,9 +17,7 @@ function HomepageHeader() {
             {translate({ message: siteConfig.title })}
           </Heading>
           <p className="hero__subtitle">
-            <Translate id="theme.tagline">
-              {translate({ message: siteConfig.tagline })}
-            </Translate>
+            <Translate id={siteConfig.tagline} />
           </p>
           <div className={styles.buttons}>
             <Link
@@ -29,9 +27,7 @@ function HomepageHeader() {
               )}
               to="/docs/install-ai-unlimited"
             >
-              <Translate id="theme.button">
-                {translate({ message: 'home_page.get_started' })}
-              </Translate>
+              <Translate id="home_page.get_started" />
             </Link>
           </div>
         </div>
