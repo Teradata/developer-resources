@@ -4,8 +4,8 @@
   <ShortName>Teradata AI Unlimited Documentation</ShortName>
   <Description>Search Teradata AI Unlimited Documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-undefined/ja/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-undefined/ja/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-undefined/ja/opensearch.xml" />
-  <moz:SearchForm>https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-undefined/ja/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-87/ja/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-87/ja/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-87/ja/opensearch.xml" />
+  <moz:SearchForm>https://teradata.github.io/ai-unlimited-docs/pr-preview/pr-87/ja/</moz:SearchForm>
 </OpenSearchDescription>
