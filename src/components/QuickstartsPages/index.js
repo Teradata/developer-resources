@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { Typography } from '@teradata-web/react-components';
 //import aiml from '@site/static/img/quickstarts/AI-ML.png';
+import { PossibleBanner } from '../HomepageFeatures';
 
 const FeatureTitle = 'Categories';
 const Guides = [
@@ -96,6 +97,7 @@ function Feature2({ title, description, href }) {
 export default function Categories() {
   return (
     <>
+    <PossibleBanner />
       <section className={clsx(styles.features, styles.fGuides)}>
         <div className={clsx('container', styles.container)}>
             <br/>
