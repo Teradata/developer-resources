@@ -7,6 +7,7 @@ import { Card, Typography } from '@teradata-web/react-components';
 import { translate } from '@docusaurus/Translate';
 
 const FeatureTitle = 'Categories';
+
 const FeatureList = [
   {
     title: 'Get started',
