@@ -5,6 +5,9 @@
   "header.getting_started": {
     "message": "スタートガイド"
   },
+  "header.actions.free_demo": {
+    "message": "無料デモを始める"
+  },
   "header.docs": {
     "message": "ドキュメント"
   },
@@ -56,6 +59,12 @@
   "footer.partner_portal_login": {
     "message": "パートナーポータル"
   },
+  "footer.services": {
+    "message": "サービス"
+  },
+  "footer.solutions": {
+    "message": "ソリューション"
+  },
   "footer.success_stories": {
     "message": "事例"
   },
@@ -78,7 +87,7 @@
     "message": "ワークロード"
   },
   "footer.deployment": {
-    "message": "デプロイメント"
+    "message": "デプロイ環境"
   },
   "footer.getting_started": {
     "message": "はじめに"
@@ -126,7 +135,7 @@
     "message": "Teradataについて"
   },
   "footer.who_we_are": {
-    "message": "Teradataについて"
+    "message": "概要"
   },
   "footer.our_leadership": {
     "message": "リーダーシップ"
@@ -181,5 +190,98 @@
   },
   "footer.copyright": {
     "message": "Teradata. All rights reserved"
+  },
+  "footer.also_of_interest": {
+    "message": "興味深い記事"
+  },
+  "footer.big_data": {
+    "message": "Big data"
+  },
+  "footer.data_security_insights": {
+    "message": "データ保護のエキスパートになる"
+  },
+  "footer.platform_ai_ml": {
+    "message": "今すぐTrusted AI でROIを高めましょう"
+  },
+  "feature.title.analytic_functions": {
+    "message": "分析関数"
+  },
+  "feature.title.explore_data": {
+    "message": "データの探索と分析"
+  },
+  "feature.title.faq": {
+    "message": "FAQ"
+  },
+  "feature.title.glossary": {
+    "message": "用語集"
+  },
+  "feature.title.manage_projects": {
+    "message": "プロジェクトの管理"
+  },
+  "feature.title.other_resources": {
+    "message": "その他のリソース"
+  },
+  "feature.title.sample_use_cases": {
+    "message": "サンプル ユースケース"
+  },
+  "feature.title.whats_new": {
+    "message": "新着情報"
+  },
+  "feature.description.analytic_functions": {
+    "message": "プロジェクトで使用するClearScape™機能の参照と検索"
+  },
+  "feature.description.explore_data": {
+    "message": "AI Unlimitedプロジェクトについて学び、最初のプロジェクトを作成しましょう"
+  },
+  "feature.description.faq": {
+    "message": "質問への回答を得る"
+  },
+  "feature.description.get_started": {
+    "message": "AI Unlimited に含まれるもの、必要な前提条件、インストール方法を確認する"
+  },
+  "feature.description.glossary": {
+    "message": "AI Unlimitedの用語を調べる"
+  },
+  "feature.description.manage_projects": {
+    "message": "プロジェクトの管理方法や AI Unlimited の設定を変更する方法を学ぶ"
+  },
+  "feature.description.other_resources": {
+    "message": "追加のインストールリソースなどを見つける"
+  },
+  "feature.description.sample_use_cases": {
+    "message": "AI Unlimitedを使用して実験と革新を行う方法を探る"
+  },
+  "feature.description.whats_new": {
+    "message": "新しい機能やアップデートに注目して、今後の展開を見守りましょう"
+  },
+  "home_page.hero_img_description": {
+    "message": "抽象的な幾何学的図形を背景にしたモダンなオフィス環境に立って、ラップトップを持ち笑顔を浮かべている女性。"
+  },
+  "home_page.categories": {
+    "message": "カテゴリー"
+  },
+  "home_page.featured_event": {
+    "message": "注目のイベント"
+  },
+  "home_page.get_started": {
+    "message": "始めましょう"
+  },
+  "home_page.possible_banner_title": {
+    "message": "想像し、思い描き、創造すれば... Teradata ならそれが可能です。参加しませんか。"
+  },
+  "home_page.register_now": {
+    "message": "今すぐ登録"
+  },
+  "home_page.tagline": {
+    "message": "クラウド内のスケーラブルなオンデマンド コンピューティング エンジン。"
+  },
+  "home_page.title": {
+    "message": "Teradata AI Unlimited ドキュメント"
+  },
+  "sidenav.title": {
+    "message": "ドキュメント"
+  },
+  "sidenav.title_description": {
+    "message": "モバイルビューのサイドバーのタイトル"
   }
 }
