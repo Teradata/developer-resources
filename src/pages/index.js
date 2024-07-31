@@ -14,11 +14,9 @@ function HomepageHeader() {
       <div className={clsx('container', styles.container)}>
         <div className="">
           <Heading as="h1" className="hero__title">
-            {translate({ message: siteConfig.title })}
+            {siteConfig.title}
           </Heading>
-          <p className="hero__subtitle">
-            <Translate id={siteConfig.tagline} />
-          </p>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -47,7 +45,7 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout description={translate({ message: siteConfig.tagline })}>
+    <Layout description={siteConfig.tagline}>
       <HomepageHeader />
       <main className={styles.features}>
         <HomepageFeatures />

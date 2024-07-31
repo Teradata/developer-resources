@@ -10,10 +10,35 @@ import tailwindPlugin from './plugins/tailwind-config.cjs';
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
 
+const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
+
+/**
+ * This is a workaround for translations of site title and tagline.
+ * Docusaurus does not support translations for title and tagline in site config yet.
+ * Refer to: https://github.com/facebook/docusaurus/issues/4542 for details
+ */
+const getSiteTagline = () => {
+  // Add translations for the tagline in the switch case
+  switch (getCurrentLocale()) {
+    case 'en':
+    default:
+      return 'A scalable, on-demand compute engine in the cloud.';
+  }
+};
+
+const getSiteTitle = () => {
+  // Add translations for the title in the switch case
+  switch (getCurrentLocale()) {
+    case 'en':
+    default:
+      return 'Teradata AI Unlimited Documentation';
+  }
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'home_page.title',
-  tagline: 'home_page.tagline',
+  title: getSiteTitle(),
+  tagline: getSiteTagline(),
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
