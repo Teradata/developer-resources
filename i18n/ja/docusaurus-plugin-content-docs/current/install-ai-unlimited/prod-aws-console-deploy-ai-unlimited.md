@@ -23,7 +23,7 @@ AWS Management Consoleからマネージャをインストールするには、T
 
 ## リポジトリをクローンする
 
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
+import MyPartial from '../_partials/_clone-repo.mdx';
 
 <MyPartial />
 

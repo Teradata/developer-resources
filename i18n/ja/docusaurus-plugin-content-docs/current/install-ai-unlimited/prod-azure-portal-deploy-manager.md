@@ -23,7 +23,7 @@ Teradata が提供する Azure Resource Manager (ARM) テンプレートを使�
 
 ## リポジトリをクローンする
 
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
+import MyPartial from '../_partials/_clone-repo.mdx';
 
 <MyPartial />
 
