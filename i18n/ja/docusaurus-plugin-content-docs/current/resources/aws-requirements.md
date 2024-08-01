@@ -32,7 +32,7 @@ pagination_next: null
 
 マネージャには、エンジンをデプロイできるロールが必要です。エンジンには、エンジン ノードが通信できるロールが必要です。AI Unlimited にこれらのロールの両方を作成させることができます。
 
-:::注記
+:::note
 セキュリティにより AI Unlimited によるロールの作成が許可されていない場合は、 [ロールを作成する](#provide-roles-created-by-your-organization) 自分で、またはクラウド管理者の支援を受けて作成してください。
 ::: 
 
@@ -91,7 +91,7 @@ git clone https://github.com/Teradata/ai-unlimited
 
 - セキュリティにより AI Unlimited によるロールの作成が許可されていない場合は、 [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) を含めます。これにはエンジン インスタンスを作成するための権限が含まれますが、AI Unlimited がクラスター固有のロールとポリシーを作成するために必要な権限は含まれません。 
 
-  :::注記
+  :::note
   マネージャのロールに [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) を使用する場合は、エンジンのロールに  [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) を使用してください。
   :::
 
@@ -113,7 +113,7 @@ git clone https://github.com/Teradata/ai-unlimited
   
   ```
   
-:::注記
+:::note
 エンジンのロールに [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) を使用する場合は、マネージャのロールに  [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) を使用します。
 :::
 

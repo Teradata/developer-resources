@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 プロジェクトは、Jupyter ノートブックからデータを探索および分析するための手段です。 
 
-:::注記
+:::note
 各プロジェクトには Git リポジトリがあります。 [理由を学ぶ](../glossary.md#project-repository).
  :::
 
@@ -52,7 +52,7 @@ import TabItem from '@theme/TabItem';
 
 ## 接続して最初のワークロードを実行する
 
-:::ヒント
+:::tip
 ノートブックで使用できるすべてのマジック コマンドの詳細については  、`%help`を実行してください。そのうちの 1 つの詳細については  、`%help <command>`を実行してください。 
 
 または、AI Unlimited に固有の [マジック コマンド](./magic-commands.md) について学びます。 
@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
 
 7. サンプル ワークロードを実行します。
 
-   :::注記
+   :::note
     選択したデータベースに SalesCenter または SalesDemo という名前のテーブルがないことを確認してください。次の例の `Authorization_Name` と `salescenter.csv_file_location` の値を独自の値に置き換えてください。
     : :::
 

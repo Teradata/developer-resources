@@ -118,7 +118,7 @@ pagination_next: null
 - set_license
 </details>
 
-:::注記
+:::note
 既知の問題と現在サポートされていない機能については 、[リリースノート](./release-notes.md)を参照してください。
 :::
 

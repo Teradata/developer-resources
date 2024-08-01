@@ -16,7 +16,7 @@ AI Unlimited マネージャはエンジンのデプロイを調整し、セッ�
 
 AWS Management Consoleからマネージャをインストールするには、Teradata が提供する CloudFormation テンプレートを使用します。マネージャが [systemd](../glossary.md#systemd)によって制御されるコンテナ内で実行されるサーバーインスタンスをデプロイします。
 
-:::ヒント
+:::tip
 インストールに関するヘルプについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティに質問してください](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -35,7 +35,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 `deployments/aws/templates/ai-unlimited/`
 
  [ロード バランサ](../glossary.md#load-balancer) を使用するかどうか、およびどのタイプを使用するかに基づいてテンプレートを選択します。
-:::注記
+:::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
     \- — `ai-unlimited-with-alb.yaml`の背後にマネージャーをホストする[application load balancer](../glossary.md#application-load-balancer)
@@ -46,7 +46,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 ## テンプレートを読み込む	
 
 1. [AWS コンソール](https://aws.amazon.com)にサインインします。<br />
-   :::注記
+   :::note
    AWS Management Consoleへの参照は、2024 年 5 月 29 日時点で最新です。
    ::: 
 2. AI Unlimited をデプロイする AWS リージョンを選択します。<br />
@@ -70,7 +70,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 
  テンプレートごとにパラメータは異なります。コンソールには表示されないパラメータがここに表示されることがあります。
  
-| パラメータ | 説明 | 注記 | 
+| パラメータ | 説明 | note | 
 |---------|-------------|-----------|
 | Stack name	| スタックのリストから AI Unlimited スタックを見つけるのに役立つ識別子。 |必須<br/>デフォルト: NA<br/> 名前には、英数字 (大文字と小文字が区別されます) とハイフンのみを含めることができます。名前は英字で始まる必要があり、128 文字を超えることはできません。| | 名前には、英数字 (大文字と小文字が区別されます) とハイフンのみを含めることができます。名前は英字で始まる必要があり、128 文字を超えることはできません。|
 |AiUnlimitedName| AI Unlimited インスタンスの名前。 |デフォルトで必須<br/>デフォルト: ai-unlimited<br/>名前には、英数字 (大文字と小文字が区別されます) とハイフンのみを含めることができます。名前はアルファベットで始まる必要があり、20 文字を超えることはできません。

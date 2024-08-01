@@ -19,7 +19,7 @@ AI Unlimited を使用すると、データ サイエンティストやデータ
 
 ノートブックを [AWS](https://aws.amazon.com/) または [Azure](https://azure.microsoft.com/en-us)の AI/ML エンジンに接続し、エンジンを [Amazon S3](https://aws.amazon.com/pm/serv-s3/?gclid=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB&trk=fecf68c9-3874-4ae2-a7ed-72b6d19c8034&sc_channel=ps&ef_id=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB:G:s&s_kwcid=AL!4422!3!536452728638!e!!g!!amazon%20s3!11204620052!112938567994) または [ADLS Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) データレイクに接続します。分析プロジェクトはいつでも中断および復元でき、使用した時間に対してのみ料金をお支払いいただきます。
 
-:::注記
+:::note
 組織内の誰かがすでに AI Unlimited をインストールしてセットアップしている場合は、 [データの探索と分析](../explore-and-analyze-data) に直接進んで開始できます。
 :::
 
@@ -38,11 +38,11 @@ AI Unlimited を使用すると、データ サイエンティストやデータ
 - Amazon または ADLS Gen2 データレイクが存在するオブジェクト ストレージ。
 - JupyterLab。[インストール オプション](../resources/jupyterlab)を参照してください。
 
-:::ヒント
+:::tip
 [マネージャ](../glossary.md#ai-unlimited-manager)をインストールするときに、クラウドデプロイに必要な詳細情報を提供します。クラウド管理者と貢献して事前に詳細情報を取得する場合は [AWSの詳細](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options) 、または [Azureの詳細](../install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details)を参照してください。
 :::
 
-:::注記
+:::note
 AI Unlimited を使用すると、他のユーザーとプロジェクトで共同作業を行うことができます。 
 
 よりシンプルな single-user アプローチを希望する場合は、コンピューター上の Docker コンテナでマネージャと JupyterLab を実行する [QuickStart](../resources/quickstart) をお試しください。

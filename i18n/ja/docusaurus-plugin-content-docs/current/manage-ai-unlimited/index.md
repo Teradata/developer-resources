@@ -9,7 +9,7 @@ pagination_next: null
 
 ユーザータイプによって、実行できる操作が決まります。
 
-:::ヒント
+:::tip
 プロジェクトの管理に関するサポートが必要な場合は、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティ](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 

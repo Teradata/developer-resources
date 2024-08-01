@@ -16,7 +16,7 @@ AI Unlimited マネージャはエンジンのデプロイを調整し、セッ�
 
 Teradata が提供する Azure Resource Manager (ARM) テンプレートを使用して、Azure Portal からマネージャをインストールします。マネージャが [systemd](../glossary.md#systemd)によって制御されるコンテナ内で実行されるサーバー インスタンスをデプロイします。
 
-:::ヒント
+:::tip
 インストールに関するヘルプについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティに質問してください](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -35,7 +35,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 `deployments/azure/templates/arm/ai-unlimited`
 
 [ロード バランサ](../glossary.md#load-balancer) を使用するかどうか、およびどのタイプを使用するかに基づいてテンプレートを選択します。
-:::注記
+:::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
     \- — `ai-unlimited-with-alb.json`の背後にマネージャーをホストする[application load balancer](../glossary.md#application-load-balancer)
@@ -46,7 +46,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 ## テンプレートを読み込む
 
 1. [Azure Portal](https://portal.azure.com)にサインインします。
-   :::注記
+   :::note
    Azure Portal への参照は、2024 年 5 月 29 日時点で最新です。
    ::: 
 2. **カスタムデプロイメント**を検索し、 **カスタムテンプレートをデプロイする**を選択します。
@@ -63,7 +63,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 <details>
 <summary>AzureとAI Unlimitedのパラメータ</summary>
 
-| パラメータ| 説明 | 注記 |
+| パラメータ| 説明 | note |
 |---------|-------------|-----------|
 | Subscription | AI Unlimited のデプロイに使用する Azure サブスクリプション。| 必須<br/>デフォルト: NA <br/>これは従量課金制のアカウントである必要があります。 |
 | Region | AI Unlimited をデプロイするリージョン。| 必須<br/>デフォルト: NA<br/>作業場所に最も近い Azure リージョンと、AI Unlimited で使用するデータ リソースを選択します。|

@@ -14,7 +14,7 @@ Teradata が提供する CloudFormation テンプレートを使用して、AWS 
 
 これにより、サーバー インスタンスがデプロイされ、JupyterLab は [systemd](../../glossary.md#systemd)によって制御されるコンテナ内で実行されます。
 
-:::ヒント
+:::tip
 インストールに関するサポートについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティ](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -43,7 +43,7 @@ JupyterLab 用の CloudFormation テンプレートは、AI Unlimited GitHub リ
 `deployments/aws/templates/jupyter`
 
 [ロード バランサ](../../glossary.md#load-balancer) を使用するかどうか、およびどのタイプを使用するかに基づいてテンプレートを選択します。
-:::注記
+:::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
     -`jupyter-alb.yaml` — JupyterLabをロード バランサの背後にホスト [application load balancer](../../glossary.md#application-load-balancer)
@@ -54,7 +54,7 @@ JupyterLab 用の CloudFormation テンプレートは、AI Unlimited GitHub リ
 ## テンプレートを読み込む	
 
 1. [AWS コンソール](https://aws.amazon.com)にサインインします。
-   :::注記
+   :::note
    AWS Management Consoleへの参照は、2024 年 5 月 29 日時点で最新です。
    :::
 2. JupyterLab をデプロイするリージョンを選択します。<br/>
@@ -74,7 +74,7 @@ JupyterLab 用の CloudFormation テンプレートは、AI Unlimited GitHub リ
 
 <summary>AWS と JupyterLab のパラメータ</summary>
 
-| パラメータ | 説明 | 注記 
+| パラメータ | 説明 | note 
 |---------|-------------|-----------|
 | InstanceType | サービスに使用する EC2 インスタンスタイプ。 | デフォルトで必須<br/>デフォルト: t3.small<br/>コストを節約するために、デフォルトのインスタンス タイプを使用することをお勧めします。|
 | RootVolumeSize | インスタンスに接続するルートディスクのサイズ（GB 単位）。| デフォルトで必須<br/>デフォルト: 8<br/>8 ～ 1000 までの値をサポートします。 |

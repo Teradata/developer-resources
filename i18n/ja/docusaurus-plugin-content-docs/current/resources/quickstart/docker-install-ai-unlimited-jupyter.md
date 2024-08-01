@@ -19,7 +19,7 @@ JupyterLab を使用してデータを探索および分析します。
 
 [Docker Compose](https://docs.docker.com/compose/) を使用して、AI Unlimited マネージャと JupyterLab を、AI Unlimited Jupyter カーネルとともにコンテナ内でローカルに実行します。 
 
-:::ヒント
+:::tip
 インストールに関するサポートについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティ](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -39,7 +39,7 @@ JupyterLab を使用してデータを探索および分析します。
     |----------------|--------------------|-------|
     | $AI_UNLIMITED_HOME | /etc/td | データと設定を保存する |
 
-	:::ヒント [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
+	:::tip [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
 
 	:::
 
@@ -62,7 +62,7 @@ Teradata が提供する [AI Unlimited GitHubリポジトリ](https://github.com
 
 ## クラウド サービス プロバイダの認証情報をDockerに渡す
 
-:::注記
+:::note
 認証情報を渡す方法は 2 つあります。
 - 認証情報を保存するための環境変数を含む `[AWS or Azure]-credentials-env-vars.yaml`を使用します。
 - 認証情報を含むローカル ボリュームを使用します。 
@@ -91,7 +91,7 @@ Teradata が提供する [AI Unlimited GitHubリポジトリ](https://github.com
 
 1. `[AWS or Azure]-credentials-env-vars.yaml`、 `ai-unlimited.yaml`、 `jupyter.yaml` があるディレクトリから、マネージャと JupyterLab を起動します。
 
-	:::注記
+	:::note
 	コマンド内の `-d` フラグはオプションです。
 	:::
 

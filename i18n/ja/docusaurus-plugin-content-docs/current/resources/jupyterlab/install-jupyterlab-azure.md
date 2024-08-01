@@ -14,7 +14,7 @@ Teradata が提供する  Azure Resource Manager (ARM) テンプレートを使�
 
 これにより、サーバー インスタンスがデプロイされ、JupyterLab は [systemd](../../glossary.md#systemd)によって制御されるコンテナ内で実行されます。
 
-:::ヒント
+:::tip
 インストールに関するサポートについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティ](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -42,7 +42,7 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
 `deployments/azure/templates/arm/jupyter`
 
 [ロード バランサ](../../glossary.md#load-balancer) を使用するかどうか、およびどのタイプを使用するかに基づいてテンプレートを選択します。
-:::注記
+:::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
     -`jupyter-with-alb.json` — JupyterLabをロード バランサの背後にホスト [application load balancer](../../glossary.md#application-load-balancer)
@@ -52,7 +52,7 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
 ## テンプレートを読み込む
 
 1. [Azure Portal](https://portal.azure.com)にサインインします。
-   :::注記
+   :::note
    Azure Portal への参照は、2024 年 5 月 29 日時点で最新です。
    ::: 
 2. **カスタムデプロイメント**を検索し、 **カスタムテンプレートをデプロイする**を選択します。
@@ -68,7 +68,7 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
 
 <summary>Azure と JupyterLab のパラメータ</summary>
 
-| パラメータ | 説明 | 注記 
+| パラメータ | 説明 | note 
 |---------|-------------|-----------|
 | Subscription | AI Unlimited のデプロイに使用する Azure サブスクリプション。| 必須<br/>デフォルト: NA<br/>無料トライアルではないアカウントを使用することをお勧めします。 |
 | Region | AI Unlimited をデプロイするリージョン。 | 必須<br/>デフォルト: NA<br/>作業場所に最も近い Azure リージョンと、AI Unlimited で使用するデータ リソースを選択します。 |

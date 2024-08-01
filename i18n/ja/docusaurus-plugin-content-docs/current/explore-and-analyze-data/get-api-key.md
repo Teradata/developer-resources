@@ -15,7 +15,7 @@ pagination_next: null
 マネージャのユーザー プロファイルから入手できる API キーは、AI Unlimited のインストール期間中は同じままです。
 
 1. AI Unlimited 管理者から提供された URL を使用してマネージャにアクセスします。
-:::注記
+:::note
 AI Unlimited 管理者は、組織内で AI Unlimited を設定したユーザーです。
 :::
 2. GitHub または GitLab にサインインして、認証します。

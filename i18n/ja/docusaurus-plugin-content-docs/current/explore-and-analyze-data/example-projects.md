@@ -12,7 +12,7 @@ pagination_next: null
 
 スケーリング、他のユースケースへの結果の適用、モデルの運用化を行う前に、大規模なデータセットで AI/ML 分析を試す方法をいくつか紹介します。
 
-:::ヒント
+:::tip
 
 これらのユースケースに関するサポートが必要な場合は、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティに質問してください](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::

@@ -17,7 +17,7 @@ pagination_next: null
 - [AWS](./install-jupyterlab-aws.md) にインストールするか、 [Azure](./install-jupyterlab-azure.md)
 - [ローカルで実行する](./run-jupyterlab-docker.md) Dockerコンテナ内
 
-:::注記
+:::note
 [QuickStart](../quickstart/index.md) には JupyterLab が含まれています。QuickStartを使用する場合は、JupyterLab を別途インストールする必要はありません。
 :::
 

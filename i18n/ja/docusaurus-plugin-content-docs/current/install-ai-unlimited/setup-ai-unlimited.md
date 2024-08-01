@@ -15,11 +15,11 @@ import TabItem from '@theme/TabItem';
 
 [マネージャ](../glossary.md#ai-unlimited-manager)をインストールした後、インストールプロセスの最後に受け取ったURLを使用して、AI Unlimitedのセットアップにアクセスします。`http://[ip_or_hostname]:[port]` 
 
-:::注記
+:::note
 AI Unlimited を設定すると、組織の AI Unlimited 管理者になります。
 :::
 
-:::ヒント
+:::tip
 セットアップに関するヘルプについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティに質問してください](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -204,7 +204,7 @@ GitLab アカウントの 2 つのグループが、アクセス制御とリポ�
 おめでとうございます！AI Unlimitedのセットアップが完了しました。
 
 
-:::注記
+:::note
 あなたは AI Unlimited 管理者なので、いつでもセットアップに戻って [設定を変更](../manage-ai-unlimited/change-settings.md)することができます。 
 :::
 

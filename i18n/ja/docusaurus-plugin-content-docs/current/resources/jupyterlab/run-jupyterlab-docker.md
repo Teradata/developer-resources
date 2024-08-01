@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 [Docker Compose](https://docs.docker.com/compose/) を使用して、AI Unlimited Jupyter カーネルを搭載した JupyterLab をコンテナ内でローカルに実行します。
 
-:::ヒント
+:::tip
 インストールに関するサポートについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティ](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 オプションで、 `JUPYTER_HOME` 環境変数を、JupyterLab 構成ファイルを保存するディレクトリに設定します。デフォルトの場所は `~/.jupyter`です。
 
-:::ヒント [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
+:::tip [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
 
 :::
 
@@ -45,7 +45,7 @@ Teradata が提供する [AI Unlimited GitHubリポジトリ](https://github.com
 
 1. `jupyter.yaml` があるディレクトリに移動し、JupyterLab を起動します。
 
-   :::注記
+   :::note
 	コマンド内の `-d` フラグはオプションです。
 	:::
 

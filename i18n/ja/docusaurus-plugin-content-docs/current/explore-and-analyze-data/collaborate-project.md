@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 プロジェクトは、Jupyter ノートブックからデータを探索および分析するための手段です。 
 
-:::注記
+:::note
 各プロジェクトには Git リポジトリがあります。 [理由を学ぶ](../glossary.md#project-repository).
  :::
 
@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 
 - あなたのプロフィールから、 [APIキーを取得する](./get-api-key.md)。 
 
-:::ヒント
+:::tip
 ノートブックで使用できるすべてのマジック コマンドの詳細については  、`%help`を実行してください。そのうちの 1 つの詳細については  、`%help <command>`を実行してください。 
 
 または、AI Unlimited に固有の [マジック コマンド](./magic-commands.md) について学びます。 
