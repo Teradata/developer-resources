@@ -20,6 +20,8 @@ const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
 const getSiteTagline = () => {
   // Add translations for the tagline in the switch case
   switch (getCurrentLocale()) {
+    case 'ja':
+      return 'クラウド内のスケーラブルなオンデマンド コンピューティング エンジン。';
     case 'en':
     default:
       return 'A scalable, on-demand compute engine in the cloud.';
@@ -29,6 +31,8 @@ const getSiteTagline = () => {
 const getSiteTitle = () => {
   // Add translations for the title in the switch case
   switch (getCurrentLocale()) {
+    case 'ja':
+      return 'Teradata AI Unlimited ドキュメント';
     case 'en':
     default:
       return 'Teradata AI Unlimited Documentation';
