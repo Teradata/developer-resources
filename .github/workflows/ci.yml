@@ -23,7 +23,7 @@ jobs:
       - name: Build docusaurus artifacts
         env:
           GH_PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: npm run build -- --locale en --config ./docusaurus.config.ci.js 
+        run: npm run build -- --config ./docusaurus.config.ci.js 
       - name: PR Number
         run: echo "PR-${{ github.event.pull_request.number }}"
       - name: Deploy PR Preview

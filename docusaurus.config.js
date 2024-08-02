@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
+import fs from 'fs';
 
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
@@ -17,28 +18,32 @@ const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
  * Docusaurus does not support translations for title and tagline in site config yet.
  * Refer to: https://github.com/facebook/docusaurus/issues/4542 for details
  */
-const getSiteTagline = () => {
-  // Add translations for the tagline in the switch case
-  switch (getCurrentLocale()) {
-    case 'en':
-    default:
-      return 'A scalable, on-demand compute engine in the cloud.';
-  }
-};
+const getTranslationFromFile = (filePath, key) => {
+  const codeJson = fs.readFileSync(filePath, 'utf8');
+  const translations = JSON.parse(codeJson);
+  return translations[key].message;
+}
 
-const getSiteTitle = () => {
-  // Add translations for the title in the switch case
-  switch (getCurrentLocale()) {
-    case 'en':
-    default:
-      return 'Teradata AI Unlimited Documentation';
+const getLocalizedTranslation = (key) => {
+  const currentLocale = getCurrentLocale();
+  const filePath = `./i18n/${currentLocale}/code.json`;
+
+  try {
+    return getTranslationFromFile(filePath, key);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // File not found, use 'en' as the default locale
+      return getTranslationFromFile('./i18n/en/code.json', key);
+    } else {
+      throw error;
+    }
   }
 };
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: getSiteTitle(),
-  tagline: getSiteTagline(),
+  title: getLocalizedTranslation('home_page.title'),
+  tagline: getLocalizedTranslation('home_page.tagline'),
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

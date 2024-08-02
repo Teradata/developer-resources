@@ -1,4 +1,4 @@
-import config from './docusaurus.config';
+import config from './docusaurus.config.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {

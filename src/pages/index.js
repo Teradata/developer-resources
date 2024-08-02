@@ -14,9 +14,9 @@ function HomepageHeader() {
       <div className={clsx('container', styles.container)}>
         <div className="">
           <Heading as="h1" className="hero__title">
-            {siteConfig.title}
+            <Translate id='home_page.title'></Translate>
           </Heading>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle"><Translate id='home_page.tagline'></Translate></p>
           <div className={styles.buttons}>
             <Link
               className={clsx(

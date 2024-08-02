@@ -23,7 +23,7 @@ For installation help, email the <a href="mailto:aiunlimited.support@Teradata.co
 
 ## Clone the repository
 
-import MyPartial from '/docs/_partials/_clone-repo.mdx';
+import MyPartial from '../_partials/_clone-repo.mdx';
 
 <MyPartial />
 
