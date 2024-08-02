@@ -7,14 +7,44 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 import headerItems from './src/config/header.navitems.js';
+import fs from 'fs';
 
 const baseUrl = '/ai-unlimited-docs';
 const projectName = 'ai-unlimited-docs';
 
+const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
+
+/**
+ * This is a workaround for translations of site title and tagline.
+ * Docusaurus does not support translations for title and tagline in site config yet.
+ * Refer to: https://github.com/facebook/docusaurus/issues/4542 for details
+ */
+const getTranslationFromFile = (filePath, key) => {
+  const codeJson = fs.readFileSync(filePath, 'utf8');
+  const translations = JSON.parse(codeJson);
+  return translations[key].message;
+}
+
+const getLocalizedTranslation = (key) => {
+  const currentLocale = getCurrentLocale();
+  const filePath = `./i18n/${currentLocale}/code.json`;
+
+  try {
+    return getTranslationFromFile(filePath, key);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // File not found, use 'en' as the default locale
+      return getTranslationFromFile('./i18n/en/code.json', key);
+    } else {
+      throw error;
+    }
+  }
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'home_page.title',
-  tagline: 'home_page.tagline',
+  title: getLocalizedTranslation('home_page.title'),
+  tagline: getLocalizedTranslation('home_page.tagline'),
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

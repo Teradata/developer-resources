@@ -65,7 +65,7 @@ For AWS or Azure, after subscribing, return to this documentation site and conti
 
 ## What's next
 
-Now you're ready to install AI Unlimited on [AWS](./prod-aws-console-deploy-ai-unlimited.md) or [Azure](./prod-azure-portal-deploy-manager.md).
+Now you're ready to install AI Unlimited on [AWS](deploy-manager-aws-console) or [Azure](deploy-manager-azure-portal).
 
 
 

@@ -43,36 +43,7 @@ function HomepageHeader() {
 export default function Home() {
 //  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout>
-      <Head>
-        <title>Teradata Developer Portal</title>
-        <meta name="description" content="Teradata Developer Portal" />
-        <link rel="preconnect" href="https://teradata.com" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.developers.teradata.com" />
-        <meta property="og:title" content="Teradata Developer Portal | Teradata for Developers" />
-        <meta property="og:description" content="Build innovative solutions with the most powerful analytical platform on the planet. Get Started with Vantage, Browse technical Docs and Download useful assets." />
-        <meta property="og:image" content="https://github.com/Teradata/developers.teradata.com/blob/main/assets/images/developer-portal-preview.png" />
-        <meta property="og:image:width" content="640" />
-        <meta property="og:image:height" content="336" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.developers.teradata.com" />
-        <meta property="twitter:title" content="Teradata Developer Portal | Teradata for Developers" />
-        <meta property="twitter:description" content="Build innovative solutions with the most powerful analytical platform on the planet. Get Started with Vantage, Browse technical Docs and Download useful assets." />
-        <meta property="twitter:image" content="https://github.com/Teradata/developers.teradata.com/blob/main/assets/images/developer-portal-preview.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://teradata.com/',
-            '@type': 'Organization',
-            name: 'Meta Open Source',
-            url: 'https://teradata.com/',
-            logo: 'https://github.com/Teradata/developers.teradata.com/blob/main/assets/images/developer-portal-preview.png',
-          })}
-        </script>
-      </Head>
+    <Layout description={siteConfig.tagline}>
       <HomepageHeader />
       <main className={styles.features}>
         <DevelopersHomepage />

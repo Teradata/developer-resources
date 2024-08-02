@@ -1,4 +1,4 @@
-import config from './docusaurus.config';
+import config from './docusaurus.config.js';
 import headerItems from './src/config/header.navitems.js';
 
 /** @type {import('@docusaurus/types').Config} */
