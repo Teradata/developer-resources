@@ -38,14 +38,14 @@
   "header.community.stack_overflow": {
     "message": "Stack overflow"
   },
-  "footer.how_we_help": {
-    "message": "How we help"
+  "footer.why_teradata_title": {
+    "message": "Why Teradata"
+  },
+  "footer.why_teradata": {
+    "message": "Why Teradata"
   },
   "footer.trusted_ai": {
     "message": "Trusted AI"
-  },
-  "footer.roles": {
-    "message": "Roles"
   },
   "footer.industries": {
     "message": "Industries"

@@ -38,14 +38,14 @@
   "header.community.stack_overflow": {
     "message": "スタックオーバーフロー"
   },
-  "footer.how_we_help": {
+  "footer.why_teradata_title": {
     "message": "ご支援できること"
+  },
+  "footer.why_teradata": {
+    "message": "お役職別"
   },
   "footer.trusted_ai": {
     "message": "Trusted AI"
-  },
-  "footer.roles": {
-    "message": "お役職別"
   },
   "footer.industries": {
     "message": "業種別"
