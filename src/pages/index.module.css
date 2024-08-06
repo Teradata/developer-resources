@@ -13,7 +13,7 @@
   color: #333A3E;
   z-index: 1;
 }
-.ali{
+.ali {
   text-align: left;
 }
 
@@ -89,6 +89,14 @@
   pointer-events: none;
   position: relative;
   top: 1px;
+}
+
+.apiContainer {
+  padding: 2rem 0 4rem;
+}
+
+.apiContainer a:hover {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

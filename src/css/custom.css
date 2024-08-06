@@ -405,3 +405,15 @@ html.plugin-search-algolia .main-wrapper .container {
 html[data-navbar='false'] .navbar {
   display: none;
 }
+
+
+.redocusaurus .menu-content {
+  top: 116px;
+}
+
+
+@media screen and (max-width: 50rem) {
+  .redocusaurus .menu-content {
+    top: 57px;
+  }
+}
