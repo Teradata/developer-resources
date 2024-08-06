@@ -8,7 +8,7 @@ export const FeatureList = [
     title: 'Getting started',
     description: 'Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code.',
     descriptionLink:'View Getting started',
-    href: '/quickstarts/',
+    href: 'https://quickstarts.teradata.com/',
   },
   {
     imgBullet: bulletUrl,
@@ -54,34 +54,34 @@ export const FeatureList2 = [
     img2: '',
     title: `Use dbt with Teradata Vantage`,
     description: 'Learn how to use dbt, a leading ELT tool, with Teradata Vantage.',
-    href: '/quickstarts/manage-data/dbt/',
+    href: 'https://quickstarts.teradata.com/dbt.html',
   },
   {
     img: 'article',
     img2: '',
     title: `Query data in object storage`,
     description: 'Learn how to analyze data stored in object storage using SQL.',
-    href: '/quickstarts/manage-data/nos/',
+    href: 'https://quickstarts.teradata.com/nos.html',
   },
   {
     img: 'article',
     img2: '',
     title: `Use Airbyte to load data to Vantage`,
     description: 'Use Airbyte ELT tool to load data from your applications and databases into VantageCloud.',
-    href: '/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/',
+    href: 'https://quickstarts.teradata.com/elt/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.html',
   },
   {
     img: 'article',
     img2: '',
     title: `Getting Started with Teradata ModelOps`,
     description: 'In the tutorial, you will be able to create a new project in ModelOps, upload the required data to Vantage, and track the full lifecycle.',
-    href: '/quickstarts/analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git/',
+    href: 'https://quickstarts.teradata.com/modelops/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git.html',
   },
   {
     img: 'article',
     img2: '',
     title: `Connect to Vantage using JDBC`,
     description: 'The JDBC Driver allows you to connect to the Teradata database from external applications.',
-    href: '/quickstarts/create-applications/jdbc/',
+    href: 'https://quickstarts.teradata.com/jdbc.html',
   }
 ];

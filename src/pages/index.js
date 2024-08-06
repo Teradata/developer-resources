@@ -5,8 +5,7 @@ import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import DevelopersHomepage from '@site/src/components/DevelopersHomepage';
 import HeroImageUrl from '@site/static/img/developers/developers_homepage_1x.webp';
-//import Translate from '@docusaurus/Translate';
-//import Heading from '@theme/Heading';
+import { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import React from 'react';
 import { Banner, Button, Typography } from '@teradata-web/react-components';
@@ -19,9 +18,9 @@ function HomepageHeader() {
         <Banner
             content={
               <div>
-                <Typography scale="body1">A scalable, on-demand compute engine in the cloud.</Typography> 
+                <Typography scale="body1">{translate({ message: 'developers.title_description' })}</Typography> 
                 <br/>
-                <Link to="/quickstarts">
+                <Link to="https://quickstarts.teradata.com/">
                   <Button
                     label="Learn more"
                     primary={true}
@@ -32,7 +31,7 @@ function HomepageHeader() {
               </div>}
             imageSrc={HeroImageUrl}
             isHero={true}
-            title="Welcome to the Teradata Developers Portal"
+            title={translate({ message: 'developers.welcome_message' })}
           />
       </div>
     </header>
