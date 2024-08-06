@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 import fs from 'fs';
 
-const baseUrl = '/ai-unlimited-docs';
+const baseUrl = '/';
 const projectName = 'ai-unlimited-docs';
 
 const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
