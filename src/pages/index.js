@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-//import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import DevelopersHomepage from '@site/src/components/DevelopersHomepage';
@@ -13,7 +13,6 @@ import { Banner, Button, Typography } from '@teradata-web/react-components';
 
 
 function HomepageHeader() {
-//  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero--primary', styles.heroBanner, styles.noPadding)}>
       <div className={clsx('container', styles.container)}>
@@ -41,7 +40,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-//  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout description={siteConfig.tagline}>
       <HomepageHeader />

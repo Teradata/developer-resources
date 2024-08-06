@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-//import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import QuickstartsPages from '@site/src/components/QuickstartsPages';
@@ -11,7 +10,6 @@ import styles from './index.module.css';
 import { Typography } from '@teradata-web/react-components';
 
 function HomepageHeader() {
-  // const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero--primary', styles.heroBanner, styles.ali)}>
       <div className={clsx('container', styles.container)}>
@@ -41,7 +39,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-//  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout>
       <Head>
