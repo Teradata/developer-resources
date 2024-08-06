@@ -9,10 +9,12 @@ const apiContent = [
   {
     title: translate({ message: "apis.query_service" }),
     body: translate({ message: "apis.query_service_description" }),
+    href: "/api/teradata_query_service",
   },
   {
     title: translate({ message: "apis.data_labs" }),
     body: translate({ message: "apis.data_labs_description" }),
+    href: "/api/teradata_datalabs",
   },
 ];
 
