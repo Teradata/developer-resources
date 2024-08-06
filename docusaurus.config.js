@@ -23,7 +23,7 @@ const getTranslationFromFile = (filePath, key) => {
   const codeJson = fs.readFileSync(filePath, 'utf8');
   const translations = JSON.parse(codeJson);
   return translations[key].message;
-}
+};
 
 const getLocalizedTranslation = (key) => {
   const currentLocale = getCurrentLocale();
@@ -173,15 +173,15 @@ const config = {
       footerItems: {
         links: [
           {
-            title: 'footer.how_we_help',
+            title: 'footer.why_teradata_title',
             items: [
+              {
+                label: 'footer.why_teradata',
+                href: 'https://www.teradata.com/why-teradata',
+              },
               {
                 label: 'footer.trusted_ai',
                 href: 'https://www.teradata.com/trusted-ai',
-              },
-              {
-                label: 'footer.roles',
-                href: 'https://www.teradata.com/how-we-help',
               },
               {
                 label: 'footer.industries',
