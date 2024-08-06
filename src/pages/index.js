@@ -19,9 +19,9 @@ function HomepageHeader() {
         <Banner
             content={
               <div>
-                <Typography scale="body1">A scalable, on-demand compute engine in the cloud.</Typography> 
+                <Typography scale="body1">Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products.</Typography> 
                 <br/>
-                <Link to="/quickstarts">
+                <Link to="https://quickstarts.teradata.com/">
                   <Button
                     label="Learn more"
                     primary={true}
@@ -32,7 +32,7 @@ function HomepageHeader() {
               </div>}
             imageSrc={HeroImageUrl}
             isHero={true}
-            title="Welcome to the Teradata Developers Portal"
+            title="Welcome to the Teradata Developer Portal"
           />
       </div>
     </header>
