@@ -39,7 +39,7 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 - JupyterLab. See [installation options](../resources/jupyterlab).
 
 :::tip
-When you install the [manager](../glossary.md#ai-unlimited-manager), you'll provide details needed for its cloud deployment. See the [AWS details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options) or [Azure details](../install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details)&mdash;if you want to work with a cloud admin to get them ahead of time.
+When you install the [manager](../glossary.md#ai-unlimited-manager), you'll provide details needed for its cloud deployment. See the [AWS details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md) or [Azure details](../install-ai-unlimited/prod-azure-portal-deploy-manager.md)&mdash;if you want to work with a cloud admin to get them ahead of time.
 :::
 
 :::note

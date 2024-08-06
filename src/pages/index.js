@@ -2,41 +2,38 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import HeroImageUrl from '@site/static/img/hero.webp';
-import Translate, { translate } from '@docusaurus/Translate';
-import Heading from '@theme/Heading';
+import Head from '@docusaurus/Head';
+import DevelopersHomepage from '@site/src/components/DevelopersHomepage';
+import HeroImageUrl from '@site/static/img/developers/developers_homepage_1x.webp';
+//import Translate from '@docusaurus/Translate';
+//import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import React from 'react';
+import { Banner, Button, Typography } from '@teradata-web/react-components';
+
+
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero--primary', styles.heroBanner, styles.noPadding)}>
       <div className={clsx('container', styles.container)}>
-        <div className="">
-          <Heading as="h1" className="hero__title">
-            <Translate id='home_page.title'></Translate>
-          </Heading>
-          <p className="hero__subtitle"><Translate id='home_page.tagline'></Translate></p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--secondary button--lg',
-                styles.getStartedButton
-              )}
-              to="/docs/install-ai-unlimited"
-            >
-              <Translate id="home_page.get_started" />
-            </Link>
-          </div>
-        </div>
-        <div className={styles.heroImage}>
-          <img
-            src={HeroImageUrl}
-            width="498"
-            alt={translate({ message: 'home_page.hero_img_description' })}
+        <Banner
+            content={
+              <div>
+                <Typography scale="body1">A scalable, on-demand compute engine in the cloud.</Typography> 
+                <br/>
+                <Link to="/quickstarts">
+                  <Button
+                    label="Learn more"
+                    primary={true}
+                    icon="fa fa-arrow-right"
+                    trailingIcon={true}
+                  />
+                </Link>
+              </div>}
+            imageSrc={HeroImageUrl}
+            isHero={true}
+            title="Welcome to the Teradata Developers Portal"
           />
-          <div className={styles.heroBlur}></div>
-        </div>
       </div>
     </header>
   );
@@ -48,7 +45,7 @@ export default function Home() {
     <Layout description={siteConfig.tagline}>
       <HomepageHeader />
       <main className={styles.features}>
-        <HomepageFeatures />
+        <DevelopersHomepage />
       </main>
     </Layout>
   );

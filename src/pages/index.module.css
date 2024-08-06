@@ -2,14 +2,19 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-
+.imgBanner{
+  width: 498px !important;
+}
 .heroBanner {
   padding: 6rem 0 2rem;
-  text-align: center;
+/*  text-align: center;*/
   position: relative;
   background: none;
   color: #333A3E;
   z-index: 1;
+}
+.ali{
+  text-align: left;
 }
 
 .heroBanner h1 {
@@ -88,12 +93,13 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .heroBanner {
-    padding: calc(57px + 2rem) 2.5rem 2rem;
+    padding: calc(57px + 2rem) 2.5rem 0;
   }
-
+/*
   .container {
     padding: 0;
   }
+*/
 }
 
 @media screen and (max-width: 767px) {
@@ -104,7 +110,7 @@
 
   .container > div:last-child {
     align-self: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem; 
     max-width: 100%;
   }
 }
@@ -136,7 +142,7 @@
   }
 
   .heroBanner {
-    padding: 3.5rem 0 4rem;
+    padding: 3.5rem 0 4rem 0;
   }
 
   .buttons {
@@ -147,5 +153,57 @@
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .heroBlur {
+    background: transparent;
+  }
+}
+
+/* Default for large screens */
+.imgW {
+  max-width: 398px;
+}
+.headline{
+  font-family: var(--td-web-typography-headline1-font-family);
+  font-size: var(--td-web-typography-headline1-font-size);
+  font-weight: var(--td-web-typography-headline1-font-weight);
+  line-height: var(--td-web-typography-headline1-line-height);
+  letter-spacing: var(--td-web-typography-headline1-letter-spacing);
+}
+/* Tablet view */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .imgW {
+      max-width: 248px;
+      margin-left: 80px;
+  }
+  .headline_size{
+    width: 360px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .imgW {
+    /*
+      max-width: 243px;
+      */width: 100%;
+  }
+  .heroBanner {
+    padding: 6rem 0 0 0 !important;
+  /*  text-align: center;*/
+    position: relative;
+    background: none;
+    color: #333A3E;
+    z-index: 1;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .noPadding {
+      padding: 3.5rem 0 0 0 !important;
   }
 }
