@@ -1,0 +1,313 @@
+---
+title: Teradata Vantage Editor FAQ
+draft: true
+---
+
+<h2>Teradata Vantage Editor FAQ</h2>
+
+<details open="false">
+	<summary>What is Vantage Editor?</summary>
+
+<div>Vantage Editor is a lightweight SQL editor intended for doing common business tasks, ad hoc data discovery/analysis that is fully supported by Teradata.</div>
+</details>
+
+<details open="">
+	<summary>What are the main product capabilities of Vantage Editor?</summary>
+
+<div>
+<ul>
+	<li>
+	<p>Query Editor (built on the open-source Monaco Editor), with SQL syntax highlight and error handling&nbsp;</p>
+	</li>
+	<li>
+	<p>Database Explorer Tree to view and browse Database&nbsp;</p>
+	</li>
+	<li>
+	<p>Result Set for viewing and managing query results&nbsp;</p>
+	</li>
+	<li>
+	<p>Basic data load and export  &nbsp;</p>
+	</li>
+	<li>
+	<p>Connection Manager for managing Vantage connections &nbsp;</p>
+	</li>
+	<li>
+	<p>Query History of submitted SQL statements &nbsp;</p>
+	</li>
+</ul>
+</div>
+</details>
+
+<details open="">
+	<summary>Will Vantage Editor provide feature parity with SQL assistant and Teradata Studio?</summary>
+
+<div>
+<p>Vantage Editor will NOT provide feature parity with SQL assistant/Studio. Based on customer feedback and user research, it will provide the most critical functionalities that are required for providing an optimal SQL editor.  &nbsp;</p>
+
+<p>
+  For users that require more advanced IDEs (integrated development
+  environments) for SQL development to complement their Vantage Editor
+  experience, they can explore incremental integrations from open ecosystem
+  tools and products from 3rd party partners such as the listed below: &nbsp;
+</p>
+
+<ul>
+  <li>
+    <p>
+      Teradata integrations open ecosystem tools: Vantage Modules for Jupyter,
+      VS Code SQL Tools Extensions, Visual Studio Tools &nbsp;
+    </p>
+  </li>
+  <li>
+    <p>3rd Party Teradata Partners: VSCode, DBeaver, Toad, Razor&nbsp;&nbsp;</p>
+  </li>
+</ul>
+
+<p>
+  As part of our move-forward strategy and being competitive in the market,
+  Teradata will continue to expand partnerships to provide modern tools for
+  increased flexibility.
+</p>
+
+<p>Other open ecosystem and 3rd party tools exist in the marketplace that have been proven to work with Vantage and used by users but are neither provided nor supported by Teradata.</p>
+</div>
+</details>
+
+<details open="">
+	<summary>How can Vantage Editor be accessed?</summary>
+
+<div>
+<p>Customers have multiple options for accessing Vantage Editor &nbsp;</p>
+
+<ul>
+	<li>
+	<p>Browser: Deployed and managed by the Teradata through Vantage Console. Available for VantageCloud Enterprise and VantageCloud Lake&nbsp;</p>
+	</li>
+	<li>
+	<p>Desktop: A downloadable install that will be&nbsp;available from Teradata Downloads once the product is GA. Available for VantageCore, VantageCloud Enterprise and VantageCloud Lake customers.  Please reach out if you want access to the current beta version.&nbsp;</p>
+	</li>
+	<li>
+	<p>Customers can deploy the desktop editor on any environment of their choice. As of now, we are not aware of any limitations that would prevent running on VMs or Citrix.&nbsp;</p>
+	</li>
+</ul>
+</div>
+</details>
+
+<details open="">
+	<summary>Why is Teradata offering a desktop Vantage Editor?</summary>
+
+<div>
+<p>As many of our customers transition to the cloud, we know they will live in a Hybrid environment and want to provide a unified customer experience across all our platforms (VantageCloud and VantageCore).  &nbsp;</p>
+
+<p>
+  Some of the reasons why customers / users may prefer or require a desktop
+  Vantage Editor: &nbsp;
+</p>
+
+<ul>
+	<li>
+	<p>Need to connect to a Teradata on-premises Vantage Core system. &nbsp;</p>
+	</li>
+	<li>
+	<p>Prefer to connect directly from their computer to Vantage, meaning they prefer dedicated desktop apps in general — Navigating browser tabs gets messy real fast. Nobody needs yet another tab that’s somehow impossible to find when you need it. &nbsp;</p>
+	</li>
+	<li>
+	<p>As of today, Teradata still has thousands of customers connecting to their systems through SQL Assistant, which is a desktop application. This tells us that this is still a trend among our users.&nbsp;</p>
+	</li>
+</ul>
+</div>
+</details>
+
+<details open="">
+	<summary>Will the Web version of Vantage Editor be available for VantageCore?</summary>
+
+<div>
+<p>No. At this moment the Web versions of Vantage Editor will only be accessible through Vantage Console from VantageCloud.</p>
+</div>
+</details>
+
+<details open="">
+	<summary>Are there major differences when accessing Vantage Editor from Web versus the desktop application? </summary>
+
+<div>
+<p>Vantage Editor is one product that can be accessed through different channels (Web, Desktop). Our goal is to provide the same unified experience. This means that the key major capabilities of the SQL Editor product will be available, with only small differences that are applicable to the specific access method. &nbsp;</p>
+
+<p>Note: In the initial releases of desktop Vantage Editor there may differences in the product, but we will converge these as part of our product roadmap.</p>
+</div>
+</details>
+
+<details open="">
+	<summary>Does Vantage Editor support connectivity to other 3rd Party Databases/DW/Sources such as Oracle, MySQL, hadoop?</summary>
+
+<div>
+<p>No. Customers that require connectivity to other sources can explore the following options: &nbsp;</p>
+
+<ul>
+	<li>
+	<p>Integration with external data sources through core Vantage capabilities such as QueryGrid, NOS. &nbsp;</p>
+	</li>
+	<li>
+	<p>3rd party tools that provide universal access such as DBeaver. &nbsp;</p>
+	</li>
+</ul>
+</div>
+</details>
+
+<details open="">
+	<summary>Will desktop Vantage Editor support past SQLe versions (i.e., 16.20)?</summary>
+
+<div>
+<p>No. Vantage Editor will only support 17.20 and forward Vantage SQL Engine versions. Previous versions may work but will not be officially supported.</p>
+</div>
+</details>
+
+<details open="">
+	<summary>Does desktop Vantage Editor have external dependencies such as Java JRE/JDK runtimes like Teradata Studio?</summary>
+
+<div>
+<p>No. Desktop Vantage Editor is built on the very popular cross-platform <span><span><span><span><span><span><span><span><span><span><a href="https://www.electronjs.org/">Electron</a>&nbsp;</span></span></span></span></span></span></span></span></span></span>framework for creating native applications from web technologies. <span><span><span><span><span><span><span><span><span><span>The other frameworks are <a href="https://github.com/microsoft/monaco-editor">Monaco</a> (editor), <a href="https://teradata.github.io/covalent/v7/#/">Covalent</a> and Angular JS.&nbsp;</span></span></span></span></span></span></span></span></span></span>The installer will bundle all required components. &nbsp;</p>
+</div>
+</details>
+
+<details open="">
+	<summary>What operating systems will desktop Vantage Editor support?</summary>
+
+<div>
+<p>Desktop Vantage Editor will be available for major Windows and Mac (Intel & ARM) distributions.  &nbsp;</p>
+</div>
+</details>
+
+<details open="">
+	<summary>How does desktop Vantage Editor connect to Teradata?</summary>
+
+<div>
+<p><span><span><span><span><span><span><span><span><span><span>The VantageCloud Lake editor uses the Query Service (REST API) and the Desktop Editor uses the Teradata node.js driver.</span></span></span></span></span></span></span></span></span></span></p>
+</div>
+</details>
+
+<details open="">
+	<summary>Will desktop Vantage Editor be bundled with Teradata Tools and Utilities? </summary>
+
+<div>
+<p>No, desktop Vantage Editor will only be available as a separate install.</p>
+</div>
+</details>
+
+<details open="">
+	<summary>Does Vantage Editor have an end development date defined?</summary>
+
+<div>
+<p>No, desktop Vantage Editor is a product with an ongoing evolving product roadmap that will be focused on improving the core capabilities of a modern light SQL editor.</p>
+</div>
+</details>
+
+<details open="">
+	<summary>Will desktop Vantage Editor have better performance than SQL assistant? </summary>
+
+<div>
+<p>Due to architectural differences, some variance in performance depends on the use case. Given performance is a crucial factor for SQL editors, we will continue to monitor and improve as part of our product roadmap. &nbsp;</p>
+
+<p>Dependent on the use case, other tools may be better suited for maximizing performance/throughput. For example, for automating bulk loading leverage TPT. &nbsp;</p>
+</div>
+</details>
+
+<details open="">
+	<summary>Will Teradata Studio continue to be supported and enhanced?</summary>
+
+<div>
+<p>Teradata Studio is currently supported with no new feature development. As part of the General Availability of Vantage Editor in 2024, Teradata Studio is targeted to be end of life in 2024. An official communication and timelines for Teradata Studio end of life will be formally announced after release of Vantage Editor Desktop (31st May,2024)</p>
+
+<p>Customers and users are encouraged to start to plan transition to Vantage Editor, or a 3rd party tool offering . </p>
+</div>
+</details>
+
+<details open="">
+	<summary>Will SQL assistant continue to be supported and enhanced? </summary>
+
+<div>
+<p>Teradata will be providing EDM support 16.20 SQL assistant for special cases only. This is planned until 6 months past the Desktop Vantage Editor GA. Extended SQL assistant support with SQLE 17.10 will continue to be as is for EDM: &nbsp;</p>
+
+<ul>
+  <li>
+    <p>
+      SQL Assistant 16.20 will work with DB 17.10, though it will not be able to
+      take advantage of any new DB features introduced after 16.20. For
+      example: &nbsp;
+    </p>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <p>Cannot configure Federated Authorization &nbsp;</p>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <p>
+      Syntax highlighting of keywords/restricted words since (note there is only
+      one in 17.10) &nbsp;
+    </p>
+  </li>
+  <li>
+    <p>Cannot configure TLS or JWT with .NET data provider &nbsp;</p>
+  </li>
+  <li>
+    <p>
+      EDM support will be for only for P1 incidents, i.e. those causing
+      production stoppage and have no workaround. &nbsp;
+    </p>
+  </li>
+</ul>
+
+<ul>
+	<li>
+	<p>SQL Assistant 16.20 will work with DB 17.20 by installing both TTU 16.20 & 17.10 without erasing previous versions. Although this setup will only be supported for P1 cases, on business hours and as best effort.&nbsp;</p>
+	</li>
+</ul>
+</div>
+</details>
+
+<details open="">
+	<summary>What is the recommended migration strategy from SQL Assistant /Teradata Studio? </summary>
+
+<div>
+<p>If you are a SQL Assistant user, we recommend that you don’t migrate to Teradata Studio. Instead, we request you to wait on the Desktop Vantage Editor GA release and migrate directly to Desktop Vantage Editor. To make direct transition from SQL Assistant to Desktop Vantage Editor possible, we have extended support for SQL Assistant until 6 months past the Desktop Vantage Editor GA release. Alternatively, you can also consider 3rd party IDEs that we have partnered with - Razor, Dbeaver / Cloudbeaver, and Toad.</p>
+
+<p>If you’re already in the process of migrating from SQL Assistant to Teradata Studio, we’d like to remind you that Teradata Studio will be nearing end of life by Dec 31, 2024 and you will be required to migrate again to Desktop Vantage Editor in 2024.</p>
+</div>
+</details>
+
+<details>
+	<summary>What are the authentication mechanisms for the Desktop Editor?</summary>
+
+<div>
+<p>Currently, LDAP and TD2 are supported mechanisms on Vantage Editor. TD2 is the default Teradata Logon mechanism. Federated SSO will be part of future release.</p>
+</div>
+</details>
+
+<details>
+	<summary>Are in- DB functions available in Desktop Editor?</summary>
+
+<div>
+<p>The in-DB function explorer, is available in the Web editor to provide easy discovery and execution of the in-DB functions. It is currently not part of the desktop editor for GA - < is this being considered>. However, users can still execute the in-DB functions in the desktop editor by creating their queries with these functions manually. Users need to find such syntax in places such as Teradata docs.</p>
+</div>
+</details>
+
+<details>
+	<summary>Are the admin features which were in SQL-A admin version and TD Studio ?</summary>
+
+<div>
+<p>We are looking at these, and interview-based research is underway to include them in the future release.</p>
+</div>
+</details>
+
+<div>
+  <p class="space">
+    <i>
+      Please contact &nbsp;[Seema Ray](Seema.lnu@teradata.com) for any further
+      information.
+    </i>
+  </p>
+</div>
