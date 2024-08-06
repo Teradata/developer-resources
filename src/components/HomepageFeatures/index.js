@@ -6,52 +6,52 @@ import PossibleImageUrl from '@site/static/img/possible_img.webp';
 import { Card, Typography } from '@teradata-web/react-components';
 import { translate } from '@docusaurus/Translate';
 
-const FeatureTitle = 'Categories';
+const FeatureTitle = 'home_page.categories';
 
 const FeatureList = [
   {
-    title: 'Get started',
-    description:'See what AI Unlimited includes, prerequisites you need, and installation how-tos',
+    title: 'home_page.get_started',
+    description: 'feature.description.get_started',
     href: 'install-ai-unlimited/',
   },
   {
-    title: `Sample use cases`,
-    description: 'Explore ways to use AI Unlimited to experiment and innovate',
+    title: 'feature.title.sample_use_cases',
+    description: 'feature.description.sample_use_cases',
     href: '/ai-unlimited/explore-and-analyze-data/use-cases/',
   },
   {
-    title: `What's new`,
-    description: 'Watch for new features and updates—and see what’s coming',
+    title: 'feature.title.whats_new',
+    description: 'feature.description.whats_new',
     href: '/ai-unlimited/whats-new/',
   },
   {
-    title: 'Explore and analyze data',
-    description: 'Learn about AI Unlimited projects and create your first one',
+    title: 'feature.title.explore_data',
+    description: 'feature.description.explore_data',
     href: '/ai-unlimited/explore-and-analyze-data/',
   },
   {
-    title: `Analytic functions`,
-    description: 'Browse and search ClearScape™ functions to use in projects',
+    title: 'feature.title.analytic_functions',
+    description: 'feature.description.analytic_functions',
     href: 'https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita',
   },
   {
-    title: 'Manage projects',
-    description: 'Learn how to manage projects or change AI Unlimited settings',
+    title: 'feature.title.manage_projects',
+    description: 'feature.description.manage_projects',
     href: '/ai-unlimited/manage-ai-unlimited/',
   },
   {
-    title: 'Other resources',
-    description: 'Find additional installation resources, and more',
+    title: 'feature.title.other_resources',
+    description: 'feature.description.other_resources',
     href: '/ai-unlimited/resources/',
   },
   {
-    title: 'FAQ',
-    description: 'Get answers to your questions',
+    title: 'feature.title.faq',
+    description: 'feature.description.faq',
     href: '/ai-unlimited/faq/',
   },
   {
-    title: 'Glossary',
-    description: 'Look up AI Unlimited terminology',
+    title: 'feature.title.glossary',
+    description: 'feature.description.glossary',
     href: '/ai-unlimited/glossary/',
   },
 ];
@@ -110,8 +110,8 @@ function Feature({ title, description, href }) {
   return (
     <Link to={href} className={clsx('col col--4', styles.col)}>
       <div className={clsx('doc-card', styles.card)}>
-        <Heading as="h3">{title}</Heading>
-        {description && <p>{description}</p>}
+        <Heading as="h3">{translate({ message: title })}</Heading>
+        {description && <p>{translate({ message: description })}</p>}
       </div>
     </Link>
   );
@@ -123,7 +123,7 @@ export default function HomepageFeatures() {
       <PossibleBanner />
       <section className={styles.features}>
         <div className={clsx('container', styles.container)}>
-          <h2>{FeatureTitle}</h2>
+          <h2>{translate({ message: FeatureTitle })}</h2>
           <div className={clsx('row', styles.row)}>
             {FeatureList.map((props, idx) => (
               <Feature key={idx} {...props} />
