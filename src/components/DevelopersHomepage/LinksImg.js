@@ -6,6 +6,7 @@ import githubUrl from '@site/static/img/developers/Github-icon.png';
 import stackoverflowUrl from '@site/static/img/developers/Stackoverflow-icon.png';
 import mediumUrl from '@site/static/img/developers/Medium-icon.png';
 import { Typography } from '@teradata-web/react-components';
+import { translate } from '@docusaurus/Translate';
 
 export default function LinksImages() {
   return (
@@ -16,7 +17,7 @@ export default function LinksImages() {
           <div className={clsx('col', styles.col2)}>
             <p className={clsx(styles.secondSubheading)}>
               <Typography scale="headline2">
-                Talk to Developers where you are
+                {translate({ message: 'developers.talk-to-developers-where-you-are' })}
               </Typography>
             </p>
           </div>

@@ -9,7 +9,7 @@ import dataEngineer from  '@site/static/img/developers/dataEngineer.png'
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { Typography, TabBar, Tab, Banner, Button } from '@teradata-web/react-components';
-
+import { translate } from '@docusaurus/Translate';
 
 export default function GetStarted() {                
   return (
@@ -19,12 +19,12 @@ export default function GetStarted() {
         <div className={clsx('row', styles.row)}>
           <div className={clsx('col', styles.col2)}>
             <Typography scale="eyebrow">
-              Solutions for you
+              {translate({ message: 'developers.solutions-for-you' })}
             </Typography>
             
             <p className={clsx(styles.secondSubheading, styles.eyebrow)}>
               <Typography scale="headline2">
-                Get started with Teradata
+                {translate({ message: 'developers.get-started-with-teradata' })}
               </Typography>
             </p>
           </div>
@@ -38,15 +38,19 @@ export default function GetStarted() {
         <div className={clsx('row', styles.row)}>
           <div className='col'>
             <TabBar className={clsx(styles.chipSet)}>
-              <Tab label='Data Scientist'>
+              <Tab label={translate({ message: 'developers.data-scientist' })}>
               <div className={clsx(styles.container)}>
                 <Banner
                   content={<>
-                    <p><React.Fragment key=".0">There are situations when you want to quickly validate a machine learning model idea. You have a model type in mind. You don’t want to operationalize with an ML pipeline just yet. You just want to test out if the relationship you had in mind exists. Also, sometimes even your production deployment doesn’t require constant relearning with MLops. In such cases, you can use Vantage Analytics Library (VAL) and multiple ML model types it supports.</React.Fragment></p>
+                    <p>
+                      <React.Fragment key=".0">
+                        {translate({ message: 'developers.data-scientist-text' })}
+                      </React.Fragment>
+                    </p>
                     <br/>
                     <Link to="https://quickstarts.teradata.com/ml.html">
                       <Button
-                        label="Get started"
+                        label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
@@ -54,19 +58,23 @@ export default function GetStarted() {
                     </Link>
                   </>}
                   imageSrc={DataScientist}
-                  title="Train ML models in Vantage"
+                  title={translate({ message: 'developers.data-scientist-title' })}
                 />
               </div>
               </Tab>
-              <Tab label='Data Engineer'>
+              <Tab label={translate({ message: 'developers.data-engineer' })}>
               <div className={clsx(styles.container)}>
                 <Banner
                   content={<>
-                    <p><React.Fragment key=".0">This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantage. It’s based on the original dbt Jaffle Shop tutorial. A couple of models have been adjusted to the SQL dialect supported by Vantage.</React.Fragment></p>
+                    <p>
+                      <React.Fragment key=".0">
+                      {translate({ message: 'developers.data-engineer-text' })}
+                      </React.Fragment>
+                    </p>
                     <br/>
                     <Link to="https://quickstarts.teradata.com/dbt.html">
                       <Button
-                        label="Get started"
+                        label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
@@ -74,19 +82,23 @@ export default function GetStarted() {
                     </Link>
                   </>}
                   imageSrc={DataLeader}
-                  title="dbt with Teradata Vantage"
+                  title={translate({ message: 'developers.data-engineer-title' })}
                 />
                 </div>
               </Tab>
-              <Tab label='Developer'>
+              <Tab label={translate({ message: 'developers.developer' })}>
               <div className={clsx(styles.container)}>
               <Banner
                   content={<>
-                    <p><React.Fragment key=".0">This how-to demonstrates how to connect to Teradata Vantage using JDBC using a sample Java application: https://github.com/Teradata/jdbc-sample-app.</React.Fragment></p>
+                    <p>
+                      <React.Fragment key=".0">
+                        {translate({ message: 'developers.developer-text' })}
+                      </React.Fragment>
+                    </p>
                     <br/>
                     <Link to="https://quickstarts.teradata.com/jdbc.html">
                       <Button
-                        label="Get started"
+                        label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
@@ -94,19 +106,23 @@ export default function GetStarted() {
                     </Link>
                   </>}
                   imageSrc={Developer}
-                  title="Connect to Vantage using JDBC"
+                  title={translate({ message: 'developers.developer-title' })}
                 />
                 </div>
               </Tab>
-              <Tab label='Database Administrator'>
+              <Tab label={translate({ message: 'developers.database-administrator' })}>
               <div className={clsx(styles.container)}>
               <Banner
                   content={<>
-                    <p><React.Fragment key=".0">We often have a need to move large volumes of data into Vantage. Teradata offers Teradata Parallel Transporter (TPT) utility that can efficiently load large amounts of data into Teradata Vantage. This how-to demonstrates how to use TPT. In this scenario,</React.Fragment></p>
+                    <p>
+                      <React.Fragment key=".0">
+                        {translate({ message: 'developers.database-administrator-text' })}
+                      </React.Fragment>
+                    </p>
                     <br/>
                     <Link to="https://quickstarts.teradata.com/tools-and-utilities/run-bulkloads-efficiently-with-teradata-parallel-transporter.html">
                       <Button
-                        label="Get started"
+                        label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
@@ -114,19 +130,23 @@ export default function GetStarted() {
                     </Link>
                   </>}
                   imageSrc={businessLeader}
-                  title="Database Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)"
+                  title={translate({ message: 'developers.database-administrator-title' })}
                 />
                 </div>
               </Tab>
-              <Tab label='IT Operations'>
+              <Tab label={translate({ message: 'developers.it-operations' })}>
               <div className={clsx(styles.container)}>
               <Banner
                   content={<>
-                    <p><React.Fragment key=".0">Native Object Storage (NOS) is a Vantage feature that allows you to query data stored in files in object storage such as AWS S3, Google GCS, Azure Blob or on-prem implementations. It’s useful in scenarios where you want to explore data without building a</React.Fragment></p>
+                    <p>
+                      <React.Fragment key=".0">
+                       {translate({ message: 'developers.it-operations-text' })}  
+                      </React.Fragment>
+                    </p>
                     <br/>
                     <Link to="https://quickstarts.teradata.com/nos.html">
                       <Button
-                        label="Get started"
+                        label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
                         icon="fa fa-arrow-right"
                         trailingIcon={true}
@@ -134,17 +154,13 @@ export default function GetStarted() {
                     </Link>
                   </>}
                   imageSrc={dataEngineer}
-                  title="Query data stored in object storage"
+                  title={translate({ message: 'developers.it-operations-title' })}  
                 />
                 </div>
               </Tab>
             </TabBar>
           </div>
         </div>
-     
-
-      
- 
     </>
   );
 }
