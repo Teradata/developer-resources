@@ -152,7 +152,7 @@ const config = {
           ],
         },
         gtag: {
-          trackingID: 'G-RDK4Y0RE7S',
+          trackingID: 'G-928NX0S21B',
         },
       }),
     ],
