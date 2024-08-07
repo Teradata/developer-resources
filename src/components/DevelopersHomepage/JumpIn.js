@@ -16,7 +16,7 @@ function Feature({ img, title, description, href, href2, descriptionLink, descri
         {description && <p>{description}</p>}
   
         <div className={clsx(styles.dot)}>
-        <ul>
+        <ul className={clsx(styles.customBullets)}>
           <li>
             <Link 
               to={href} 
@@ -30,7 +30,7 @@ function Feature({ img, title, description, href, href2, descriptionLink, descri
         </div>
         <br/>
         <div className={clsx(styles.dot)}>  
-          <ul>
+          <ul className={clsx(styles.customBullets)}>
             {descriptionLink2 && (
               <li>
                 <Link to={href2} target='_blank' className={clsx(styles.links)}>
