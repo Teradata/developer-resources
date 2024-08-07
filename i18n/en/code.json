@@ -431,5 +431,23 @@
   },
   "developers.talk-to-developers-where-you-are": {
     "message": "Talk to Developers where you are"
+  },
+  "apis.title": {
+    "message": "APIs"
+  },
+  "apis.description": {
+    "message": "An extensive portfolio of modern REST APIs to automate your workflows with Vantage. Use these APIs with the REST calls or client SDKs in popular programming languages."
+  },
+  "apis.query_service": {
+    "message": "Query Service"
+  },
+  "apis.query_service_description": {
+    "message": "Execute SQL queries and retrieve results from Vantage using the Query Service API."
+  },
+  "apis.data_labs": {
+    "message": "Data labs"
+  },
+  "apis.data_labs_description": {
+    "message": "Create and manage data labs in Vantage using the Data Labs API."
   }
 }

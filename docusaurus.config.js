@@ -65,7 +65,7 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;",
+          "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;",
       },
     },
     {
@@ -155,6 +155,26 @@ const config = {
           trackingID: 'G-928NX0S21B',
         },
       }),
+    ],
+     // Redocusaurus config
+     [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            spec: 'apis/data-labs.yaml',
+            route: '/api/teradata_datalabs',
+          },
+          {
+            spec: 'apis/query-service.yaml',
+            route: '/api/teradata_query_service',
+          },
+        ],
+        // Theme Options for modifying how redoc renders them
+        theme: {
+          primaryColor: '#3053f4',
+        },
+      },
     ],
   ],
 

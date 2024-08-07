@@ -21,7 +21,9 @@ function translateNavItems(navItems: NavListItem[]): NavListItem[] {
     let isActive = item.href ? location.pathname.startsWith(item.href) : false;
 
     if (item.navItems) {
-      isActive = item.navItems.some((navItem) => navItem.href ? location.pathname.startsWith(navItem.href) : false);
+      isActive = item.navItems.some((navItem) =>
+        navItem.href ? location.pathname.startsWith(navItem.href) : false
+      );
     }
 
     return {
@@ -100,7 +102,8 @@ export default function Navbar() {
   };
 
   const getCurrentLanguage = () => {
-    const langRegEx = `/\/${basePath}\/(\w{2})\//`;
+    // Regex to capture characters from the url which represent the selected language
+    const langRegEx = /^\/([a-zA-Z]{2})(\/|$)/;
     const currentLocation = window.location.pathname;
     const match = currentLocation.match(langRegEx);
     return match ? match[1] : '';
