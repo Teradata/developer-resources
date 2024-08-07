@@ -41,6 +41,22 @@ const getLocalizedTranslation = (key) => {
   }
 };
 
+const allowedUrls = [
+  'https://www.teradata.com', 
+  'https://avatars.githubusercontent.com',
+  'https://github.com',
+  'https://kit.fontawesome.com/',
+  'https://ka-f.fontawesome.com/',
+  'https://fonts.googleapis.com/',
+  'https://fonts.gstatic.com/',
+  'https://www.google-analytics.com/',
+  'https://www.analytics.google.com/',
+  'https://www.googletagmanager.com/',
+  'https://td.doubleclick.net/',
+  'https://www.youtube.com/',
+  'https://*.algolia.net/',
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: getLocalizedTranslation('home_page.title'),
@@ -65,7 +81,7 @@ const config = {
       attributes: {
         'http-equiv': 'Content-Security-Policy',
         content:
-          "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.googletagmanager.com/ https://www.youtube.com/ https://*.algolia.net/;",
+          `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${allowedUrls.join(' ')};`,
       },
     },
     {
