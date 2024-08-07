@@ -3,7 +3,7 @@ export default function headerItems (baseUrl = '/') {
         title: 'header.title',
         navItems: [
             {
-              href: `${baseUrl}/quickstarts`,
+              href: 'https://quickstarts.teradata.com/',
               label: 'header.getting_started',
             },
             {
