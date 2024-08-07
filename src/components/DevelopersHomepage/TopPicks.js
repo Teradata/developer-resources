@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { FeatureList2 } from './FeatureData';
 import { Typography } from '@teradata-web/react-components';
-
+import { translate } from '@docusaurus/Translate';
 
 function FeatureStayUpToDate({ img, img2, title, description, href }) {
   return (
@@ -34,12 +34,12 @@ export default function DevelopersHomepage() {
           <div className={clsx('col', styles.col2)}>
             <p className={clsx(styles.firstSubheading)}></p>
             <Typography scale="eyebrow">
-              Stay up to date
+              {translate({ message: 'developers.stay-up-to-date' })}
             </Typography>
             
             <p className={clsx(styles.secondSubheading, styles.eyebrow)}>
               <Typography scale="headline2">
-                Top picks from Teradata
+               {translate({ message: 'developers.top-picks-from-Teradata' })}
               </Typography>
             </p>
           </div>
