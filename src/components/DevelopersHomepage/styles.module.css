@@ -330,11 +330,11 @@ a.col {
 }
  
 .customBullets {
-  padding-left: 1rem !important;
-  list-style: disc !important;
+  padding-left: 1rem ;
+  list-style: disc ;
 }
 
 .customBullets li::marker {
-  color: var(--Primary-Orange, #FF5F02) !important;
-  font-size: 13px !important;
+  color: var(--Primary-Orange, #FF5F02);
+  font-size: 13px;
 }
