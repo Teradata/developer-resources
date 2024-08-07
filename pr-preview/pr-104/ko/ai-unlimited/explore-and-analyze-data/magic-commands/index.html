@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-explore-and-analyze-data/magic-commands" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.2.0">
+<title data-rh="true">Magic commands | Teradata AI Unlimited Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://developers.teradata.com/pr-preview/pr-104/ko/img/teradata-logo-social.png"><meta data-rh="true" name="twitter:image" content="https://developers.teradata.com/pr-preview/pr-104/ko/img/teradata-logo-social.png"><meta data-rh="true" property="og:url" content="https://developers.teradata.com/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/magic-commands/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="de"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="keywords" content="Teradata, AI Unlimited"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Magic commands | Teradata AI Unlimited Documentation"><meta data-rh="true" name="description" content="Learn about the AI Unlimited magic commands you can use in a Jupyter notebook to manage projects."><meta data-rh="true" property="og:description" content="Learn about the AI Unlimited magic commands you can use in a Jupyter notebook to manage projects."><link data-rh="true" rel="icon" href="/pr-preview/pr-104/ko/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://developers.teradata.com/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/magic-commands/"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/de/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="de"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/fr/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/es/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="es"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/ja/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developers.teradata.com/pr-preview/pr-104/ai-unlimited/explore-and-analyze-data/magic-commands/" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://FKCGWXPUTX-dsn.algolia.net" crossorigin="anonymous"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-928NX0S21B",{})</script>
+
+
+
+
+<link rel="search" type="application/opensearchdescription+xml" title="Teradata AI Unlimited Documentation" href="/pr-preview/pr-104/ko/opensearch.xml">
+
+
+
+
+
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://www.analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/;">
+<script defer="true" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script>
+<script defer="true" src="https://www.teradata.com/js/Celebrus/bsci.js"></script><link rel="stylesheet" href="/pr-preview/pr-104/ko/assets/css/styles.79ad0a07.css">
+<script src="/pr-preview/pr-104/ko/assets/js/runtime~main.c0965898.js" defer="defer"></script>
+<script src="/pr-preview/pr-104/ko/assets/js/main.9edd783c.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav class="_headerNavWrapper_qa41p_82 navbar" aria-label="Primary navigation"><section class="_headerUtility_qa41p_41"><div class="_containerWide_qa41p_1"><ul><li><a href="https://teradata.com" target="_self">Teradata.com</a></li><li><div class="_headerNavVDivider_qa41p_154"></div></li><li><div class="_languageSelectorWrapper_q57mv_1"><button aria-label="Click or press enter to open menu" tabindex="0" aria-haspopup="true" class="_languageSelectorToggle_q57mv_6 undefined">Global</button><ul class="_languageSelector_q57mv_1" role="menu"><li class="_languageOption_q57mv_50 _active_q57mv_58" tabindex="0">Global</li><li class="_languageOption_q57mv_50" tabindex="0">Duestshcland</li><li class="_languageOption_q57mv_50" tabindex="0">France</li><li class="_languageOption_q57mv_50" tabindex="0">日本</li><li class="_languageOption_q57mv_50" tabindex="0">대한민국</li></ul></div></li></ul></div></section><section id="site-header" class="_siteHeader_qa41p_37"><header class="_headerNav_qa41p_82 _containerWide_qa41p_1"><nav><div class="_headerNavElement_qa41p_109"><a class="_headerNavLogo_qa41p_115" href="https://www.teradata.com/" target="_self"><img class="_teradataLogo_qa41p_183" src="data:image/svg+xml,%3csvg%20id=&#x27;teradata-logo&#x27;%20viewBox=&#x27;0%200%20148%2029&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3e%3ctitle%3eTeradata%20logo%3c/title%3e%3cpath%20d=&#x27;M0%203.17767H5.11585V7.90138H10.8217V12.4272H5.11585V20.3384C5.11585%2022.3855%206.17716%2023.0547%207.67378%2023.0547H10.8217V27.5805H7.67378C2.4392%2027.5805%200%2025.2996%200%2020.3384V3.17767Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M23.0609%2028.0482C16.765%2028.0482%2012.5522%2023.9145%2012.5522%2017.7769C12.5522%2011.6393%2016.6859%207.42649%2022.7839%207.42649C28.8819%207.42649%2032.8573%2011.4415%2032.8573%2017.5791C32.8573%2018.1691%2032.8177%2018.7987%2032.699%2019.547H17.9055C18.3768%2022.3028%2020.0713%2023.6015%2023.1401%2023.6015C25.0684%2023.6015%2026.4859%2022.7741%2027.0363%2021.6732H32.3105C31.1304%2025.4903%2027.8242%2028.0482%2023.0609%2028.0482ZM17.9846%2015.3773H27.5076C26.9967%2012.8985%2025.5001%2011.7185%2022.7839%2011.7185C20.226%2011.7185%2018.5747%2012.9777%2017.9846%2015.3773Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M35.6923%207.89779H40.6102V10.2578C42.4199%208.44823%2044.5856%207.54162%2046.6327%207.89779V12.6215C44.0748%2012.3085%2042.4235%2013.4885%2040.8081%2015.5716V27.5733H35.6923V7.89779Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M53.0041%2027.8108C49.3849%2027.8108%2046.5104%2025.6845%2046.5104%2021.2774C46.5104%2017.6582%2048.7913%2015.1794%2053.9071%2015.1794H58.3538V14.5894C58.3538%2012.7798%2057.2134%2012.0315%2054.3784%2012.0315C52.4897%2012.0315%2050.993%2012.2294%2048.946%2012.8194V8.21438C50.5218%207.78266%2052.4897%207.50564%2054.8102%207.50564C60.7139%207.50564%2063.4661%209.74698%2063.4661%2014.5894V27.5769H58.469V26.4365L57.3285%2026.9078C55.8715%2027.4978%2054.3784%2027.8144%2053.0005%2027.8144L53.0041%2027.8108ZM55.7995%2023.2058L58.3574%2022.1049V19.1944H54.4612C52.6911%2019.1944%2051.6262%2020.0219%2051.6262%2021.3206C51.6262%2022.8568%2052.6875%2023.6015%2054.0259%2023.6015C54.5763%2023.6015%2055.2059%2023.4432%2055.7959%2023.2094L55.7995%2023.2058Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M81.5731%2027.5769V26.2782L81.2996%2026.3969C79.49%2027.2639%2077.5617%2027.6956%2075.7125%2027.6956C70.7945%2027.6956%2066.4629%2024.5081%2066.4629%2017.7409C66.4629%2010.9738%2070.7909%207.74668%2075.7521%207.74668C77.5617%207.74668%2079.49%208.1784%2081.2996%209.04543L81.4579%209.12458V0.421875H86.5738V27.5769H81.5731ZM76.6551%2022.9719C77.7559%2022.9719%2078.9755%2022.6949%2080.2347%2022.1049L81.4543%2021.5149V13.9598L80.2347%2013.3698C78.9755%2012.7798%2077.7559%2012.5028%2076.6551%2012.5028C73.8201%2012.5028%2071.6975%2014.2728%2071.6975%2017.7373C71.6975%2021.2019%2073.8237%2022.9719%2076.6551%2022.9719Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M95.8197%2027.8108C92.2005%2027.8108%2089.326%2025.6845%2089.326%2021.2774C89.326%2017.6582%2091.6069%2015.1794%2096.7227%2015.1794H101.169V14.5894C101.169%2012.7798%20100.029%2012.0315%2097.194%2012.0315C95.3053%2012.0315%2093.8086%2012.2294%2091.7616%2012.8194V8.21438C93.3373%207.78266%2095.3053%207.50564%2097.6257%207.50564C103.529%207.50564%20106.282%209.74698%20106.282%2014.5894V27.5769H101.285V26.4365L100.144%2026.9078C98.687%2027.4978%2097.194%2027.8144%2095.8161%2027.8144L95.8197%2027.8108ZM98.6151%2023.2058L101.173%2022.1049V19.1944H97.2768C95.5067%2019.1944%2094.4418%2020.0219%2094.4418%2021.3206C94.4418%2022.8568%2095.5031%2023.6015%2096.8415%2023.6015C97.3919%2023.6015%2098.0215%2023.4432%2098.6115%2023.2094L98.6151%2023.2058Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M110.063%203.17767H115.179V7.90138H120.885V12.4272H115.179V20.3384C115.179%2022.3855%20116.24%2023.0547%20117.737%2023.0547H120.885V27.5805H117.737C112.502%2027.5805%20110.063%2025.2996%20110.063%2020.3384V3.17767Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M129.148%2027.8108C125.529%2027.8108%20122.655%2025.6845%20122.655%2021.2774C122.655%2017.6582%20124.935%2015.1794%20130.051%2015.1794H134.498V14.5894C134.498%2012.7798%20133.358%2012.0315%20130.523%2012.0315C128.634%2012.0315%20127.137%2012.2294%20125.09%2012.8194V8.21438C126.666%207.78266%20128.634%207.50564%20130.954%207.50564C136.858%207.50564%20139.61%209.74698%20139.61%2014.5894V27.5769H134.613V26.4365L133.473%2026.9078C132.016%2027.4978%20130.523%2027.8144%20129.145%2027.8144L129.148%2027.8108ZM131.944%2023.2058L134.502%2022.1049V19.1944H130.605C128.835%2019.1944%20127.77%2020.0219%20127.77%2021.3206C127.77%2022.8568%20128.832%2023.6015%20130.17%2023.6015C130.721%2023.6015%20131.35%2023.4432%20131.94%2023.2094L131.944%2023.2058Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M142.568%2025.332C142.568%2023.8354%20143.748%2022.6553%20145.284%2022.6553C146.82%2022.6553%20148%2023.8354%20148%2025.332C148%2026.8286%20146.78%2028.0482%20145.284%2028.0482C143.787%2028.0482%20142.568%2026.8286%20142.568%2025.332Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3c/svg%3e" alt="Teradata Logo"><span class="_headerNavLogoText_qa41p_115">Developers</span></a></div><div class="_headerNavElement_qa41p_109"><ul class="_headerNavMainMenu_qa41p_125"><li><a href="/pr-preview/pr-104/quickstarts" target="_self" class="_navItemLink_1h9ad_1">Getting started</a></li><li><div class="_navItemWrapper_1h9ad_33"><div class="_navItemLink_1h9ad_1">Docs</div></div></li><li><a href="https://downloads.teradata.com/" target="_self" class="_navItemLink_1h9ad_1">Downloads</a></li><li><div class="_navItemWrapper_1h9ad_33"><div class="_navItemLink_1h9ad_1">Community</div></div></li></ul></div><ul class="_headerNavActions_qa41p_135 _headerNavElement_qa41p_109"><li class="_headerNavActionItem_qa41p_141"><button type="button" class="DocSearch DocSearch-Button" aria-label="검색"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">검색</span></span><span class="DocSearch-Button-Keys"></span></button></li><li class="_headerNavActionItem_qa41p_141"><a href="https://www.teradata.com/getting-started/demos/clearscape-analytics" target="_blank" rel="noopener noreferrer"><button type="button" class="_tdButton_14uww_1 _tdButtonSecondary_14uww_37 _trailingIcon_14uww_32"><i class="fa-solid fa-arrow-right-long" style="font-size:0.75rem"></i>Start free demo</button></a></li></ul></nav></header><header class="_headerNavMobile_qa41p_105"><nav><section class="_headerNavMobileWrapper_qa41p_177"><a class="_headerNavLogo_qa41p_115" href="http://developers.teradata.com/" target="_self"><img class="_teradataLogo_qa41p_183" src="data:image/svg+xml,%3csvg%20id=&#x27;teradata-logo&#x27;%20viewBox=&#x27;0%200%20148%2029&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3e%3ctitle%3eTeradata%20logo%3c/title%3e%3cpath%20d=&#x27;M0%203.17767H5.11585V7.90138H10.8217V12.4272H5.11585V20.3384C5.11585%2022.3855%206.17716%2023.0547%207.67378%2023.0547H10.8217V27.5805H7.67378C2.4392%2027.5805%200%2025.2996%200%2020.3384V3.17767Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M23.0609%2028.0482C16.765%2028.0482%2012.5522%2023.9145%2012.5522%2017.7769C12.5522%2011.6393%2016.6859%207.42649%2022.7839%207.42649C28.8819%207.42649%2032.8573%2011.4415%2032.8573%2017.5791C32.8573%2018.1691%2032.8177%2018.7987%2032.699%2019.547H17.9055C18.3768%2022.3028%2020.0713%2023.6015%2023.1401%2023.6015C25.0684%2023.6015%2026.4859%2022.7741%2027.0363%2021.6732H32.3105C31.1304%2025.4903%2027.8242%2028.0482%2023.0609%2028.0482ZM17.9846%2015.3773H27.5076C26.9967%2012.8985%2025.5001%2011.7185%2022.7839%2011.7185C20.226%2011.7185%2018.5747%2012.9777%2017.9846%2015.3773Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M35.6923%207.89779H40.6102V10.2578C42.4199%208.44823%2044.5856%207.54162%2046.6327%207.89779V12.6215C44.0748%2012.3085%2042.4235%2013.4885%2040.8081%2015.5716V27.5733H35.6923V7.89779Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M53.0041%2027.8108C49.3849%2027.8108%2046.5104%2025.6845%2046.5104%2021.2774C46.5104%2017.6582%2048.7913%2015.1794%2053.9071%2015.1794H58.3538V14.5894C58.3538%2012.7798%2057.2134%2012.0315%2054.3784%2012.0315C52.4897%2012.0315%2050.993%2012.2294%2048.946%2012.8194V8.21438C50.5218%207.78266%2052.4897%207.50564%2054.8102%207.50564C60.7139%207.50564%2063.4661%209.74698%2063.4661%2014.5894V27.5769H58.469V26.4365L57.3285%2026.9078C55.8715%2027.4978%2054.3784%2027.8144%2053.0005%2027.8144L53.0041%2027.8108ZM55.7995%2023.2058L58.3574%2022.1049V19.1944H54.4612C52.6911%2019.1944%2051.6262%2020.0219%2051.6262%2021.3206C51.6262%2022.8568%2052.6875%2023.6015%2054.0259%2023.6015C54.5763%2023.6015%2055.2059%2023.4432%2055.7959%2023.2094L55.7995%2023.2058Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M81.5731%2027.5769V26.2782L81.2996%2026.3969C79.49%2027.2639%2077.5617%2027.6956%2075.7125%2027.6956C70.7945%2027.6956%2066.4629%2024.5081%2066.4629%2017.7409C66.4629%2010.9738%2070.7909%207.74668%2075.7521%207.74668C77.5617%207.74668%2079.49%208.1784%2081.2996%209.04543L81.4579%209.12458V0.421875H86.5738V27.5769H81.5731ZM76.6551%2022.9719C77.7559%2022.9719%2078.9755%2022.6949%2080.2347%2022.1049L81.4543%2021.5149V13.9598L80.2347%2013.3698C78.9755%2012.7798%2077.7559%2012.5028%2076.6551%2012.5028C73.8201%2012.5028%2071.6975%2014.2728%2071.6975%2017.7373C71.6975%2021.2019%2073.8237%2022.9719%2076.6551%2022.9719Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M95.8197%2027.8108C92.2005%2027.8108%2089.326%2025.6845%2089.326%2021.2774C89.326%2017.6582%2091.6069%2015.1794%2096.7227%2015.1794H101.169V14.5894C101.169%2012.7798%20100.029%2012.0315%2097.194%2012.0315C95.3053%2012.0315%2093.8086%2012.2294%2091.7616%2012.8194V8.21438C93.3373%207.78266%2095.3053%207.50564%2097.6257%207.50564C103.529%207.50564%20106.282%209.74698%20106.282%2014.5894V27.5769H101.285V26.4365L100.144%2026.9078C98.687%2027.4978%2097.194%2027.8144%2095.8161%2027.8144L95.8197%2027.8108ZM98.6151%2023.2058L101.173%2022.1049V19.1944H97.2768C95.5067%2019.1944%2094.4418%2020.0219%2094.4418%2021.3206C94.4418%2022.8568%2095.5031%2023.6015%2096.8415%2023.6015C97.3919%2023.6015%2098.0215%2023.4432%2098.6115%2023.2094L98.6151%2023.2058Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M110.063%203.17767H115.179V7.90138H120.885V12.4272H115.179V20.3384C115.179%2022.3855%20116.24%2023.0547%20117.737%2023.0547H120.885V27.5805H117.737C112.502%2027.5805%20110.063%2025.2996%20110.063%2020.3384V3.17767Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M129.148%2027.8108C125.529%2027.8108%20122.655%2025.6845%20122.655%2021.2774C122.655%2017.6582%20124.935%2015.1794%20130.051%2015.1794H134.498V14.5894C134.498%2012.7798%20133.358%2012.0315%20130.523%2012.0315C128.634%2012.0315%20127.137%2012.2294%20125.09%2012.8194V8.21438C126.666%207.78266%20128.634%207.50564%20130.954%207.50564C136.858%207.50564%20139.61%209.74698%20139.61%2014.5894V27.5769H134.613V26.4365L133.473%2026.9078C132.016%2027.4978%20130.523%2027.8144%20129.145%2027.8144L129.148%2027.8108ZM131.944%2023.2058L134.502%2022.1049V19.1944H130.605C128.835%2019.1944%20127.77%2020.0219%20127.77%2021.3206C127.77%2022.8568%20128.832%2023.6015%20130.17%2023.6015C130.721%2023.6015%20131.35%2023.4432%20131.94%2023.2094L131.944%2023.2058Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3cpath%20d=&#x27;M142.568%2025.332C142.568%2023.8354%20143.748%2022.6553%20145.284%2022.6553C146.82%2022.6553%20148%2023.8354%20148%2025.332C148%2026.8286%20146.78%2028.0482%20145.284%2028.0482C143.787%2028.0482%20142.568%2026.8286%20142.568%2025.332Z&#x27;%20fill=&#x27;%23FF5F02&#x27;/%3e%3c/svg%3e" alt="Teradata Logo"><span class="_headerNavMobileLogoText_qa41p_194">Developers</span></a><ul class="_headerNavMobileTopLinks_qa41p_202"><li><button type="button" class="DocSearch DocSearch-Button" aria-label="검색"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">검색</span></span><span class="DocSearch-Button-Keys"></span></button></li><li><button id="showMenu" aria-label="Click or Press enter to open menu" tabindex="0" class="_headerNavMobileMenuIcon_qa41p_213"><img src="data:image/svg+xml,%3csvg%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20width=&#x27;24&#x27;%20height=&#x27;24&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%20fill=&#x27;none&#x27;%3e%3cpath%20d=&#x27;M3%2018V16.5H21V18H3ZM3%2012.75V11.25H21V12.75H3ZM3%207.5V6H21V7.5H3Z&#x27;%20fill=&#x27;%2300233C&#x27;/%3e%3c/svg%3e" alt="Mobile Menu"></button></li></ul></section></nav><aside><div class="_sidenav_ahtnp_1 _left_ahtnp_18"><div class="_sidenavHeader_qa41p_264"><h3>Docs</h3><img src="data:image/svg+xml,%3csvg%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20width=&#x27;24&#x27;%20height=&#x27;24&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%20fill=&#x27;none&#x27;%3e%3cpath%20d=&#x27;M6.22505%2018.8248L5.17505%2017.7748L10.95%2011.9998L5.17505%206.2248L6.22505%205.1748L12%2010.9498L17.775%205.1748L18.825%206.2248L13.05%2011.9998L18.825%2017.7748L17.775%2018.8248L12%2013.0498L6.22505%2018.8248Z&#x27;%20fill=&#x27;%23001F36&#x27;/%3e%3c/svg%3e" alt="Docs Menu"></div><div class="_sidenavContent_qa41p_280"></div></div></aside><section id="mobile-slide"><div class="_sidenav_ahtnp_1 _right_ahtnp_21" style="width:100%;padding-top:3.5rem"><div class="_headerNavMobileDropdownMenu_qa41p_241"><ul class="_dropdownMenu_sjcen_42"><li class="_dropdownMenuItem_sjcen_49"><a href="/pr-preview/pr-104/quickstarts" target="_blank" rel="noreferrer">Getting started</a></li><li class="_dropdownMenuItem_sjcen_49 undefined"><div class="_dropdownMenuItemLabel_sjcen_84"><span>Docs</span><span class="_caret_sjcen_1"></span></div></li><li class="_dropdownMenuItem_sjcen_49"><a href="https://downloads.teradata.com/" target="_blank" rel="noreferrer">Downloads</a></li><li class="_dropdownMenuItem_sjcen_49 undefined"><div class="_dropdownMenuItemLabel_sjcen_84"><span>Community</span><span class="_caret_sjcen_1"></span></div></li></ul></div><footer><ul class="_headerNavActions_qa41p_135 _headerNavElement_qa41p_109 _headerNavMobileActions_qa41p_245"><li><a href="https://www.teradata.com/getting-started/demos/clearscape-analytics" target="_blank" rel="noopener noreferrer"><button type="button" class="_tdButton_14uww_1 _tdButtonSecondary_14uww_37 _trailingIcon_14uww_32"><i class="fa-solid fa-arrow-right-long" style="font-size:0.75rem"></i>Start free demo</button></a></li></ul><div class="_headerNavMobileFooter_qa41p_222"><ul><li><a href="https://teradata.com" target="_self" rel="noopener">Teradata.com</a></li><li><div class="_headerNavVDivider_qa41p_154"></div></li><li><div class="_languageSelectorWrapper_q57mv_1"><button aria-label="Click or press enter to open menu" tabindex="0" aria-haspopup="true" class="_languageSelectorToggle_q57mv_6 undefined">Global</button><ul class="_languageSelector_q57mv_1 _top_q57mv_75" role="menu"><li class="_languageOption_q57mv_50 _active_q57mv_58" tabindex="0">Global</li><li class="_languageOption_q57mv_50" tabindex="0">Duestshcland</li><li class="_languageOption_q57mv_50" tabindex="0">France</li><li class="_languageOption_q57mv_50" tabindex="0">日本</li><li class="_languageOption_q57mv_50" tabindex="0">대한민국</li></ul></div></li></ul></div></footer></div></section></header></section></nav><div class="_pageBlackout_198wd_1 _pageBlackout_qa41p_306"></div><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/pr-preview/pr-104/ko/ai-unlimited/install-ai-unlimited/">Get started</a><button aria-label="Expand sidebar category &#x27;Get started&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/">Explore and analyze data</a><button aria-label="Collapse sidebar category &#x27;Explore and analyze data&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/get-api-key/">Get your API key</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/create-first-project/">Create your first project</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/collaborate-project/">Collaborate on a project</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/project-flow/">Project flow</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/use-cases/">Sample use cases</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/magic-commands/">Magic commands</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/pr-preview/pr-104/ko/ai-unlimited/manage-ai-unlimited/">Manage projects</a><button aria-label="Expand sidebar category &#x27;Manage projects&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/pr-preview/pr-104/ko/ai-unlimited/resources/">Other resources</a><button aria-label="Expand sidebar category &#x27;Other resources&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/pr-preview/pr-104/ko/ai-unlimited/whats-new/">What&#x27;s new</a><button aria-label="Expand sidebar category &#x27;What&#x27;s new&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/pr-preview/pr-104/ko/ai-unlimited/faq/">FAQ</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/pr-preview/pr-104/ko/ai-unlimited/glossary/">Glossary</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/pr-preview/pr-104/ko/ai-unlimited/support/">Support</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/pr-preview/pr-104/ko/">홈</a></li><li class="breadcrumbs__item"><a aria-label="AI Unlimited" class="breadcrumbs__link" href="/pr-preview/pr-104/ko/ai-unlimited/">AI Unlimited</a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/pr-preview/pr-104/ko/ai-unlimited/explore-and-analyze-data/"><span itemprop="name">Explore and analyze data</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Magic commands</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><h1>Magic commands</h1>
+<p>In Jupyter notebooks, magic commands are shortcuts for common tasks. The AI Unlimited magic commands enable you to connect to the engine and manage projects.</p>
+<p>The AI Unlimited Jupyter Kernel supports the magic commands described here—in addition to the standard Teradata SQL kernel magic commands.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="workspaces_config">%workspaces_config<a href="#workspaces_config" class="hash-link" aria-label="%workspaces_config에 대한 직접 링크" title="%workspaces_config에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Establish communication between your notebook and the AI Unlimited manager.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>
+<p>host:  Name or IP address of the AI Unlimited manager.</p>
+</li>
+<li>
+<p>apikey: API key value from the AI Unlimited setup <strong>Profile</strong> page.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> withTLS: If False (F), the default client-server communication does not use TLS.</p>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_create">%project_create<a href="#project_create" class="hash-link" aria-label="%project_create에 대한 직접 링크" title="%project_create에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Create a new project. This command also creates a new repository with the project name in your Git account. The configurations are stored in the <strong>engine.yml</strong> file.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>
+<p>project: Name of the project to be created.</p>
+</li>
+<li>
+<p>env: Cloud environment where the project is hosted. For the current release, AWS and Azure are supported.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> team: Name of the team collaborating on the project.</p>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_delete">%project_delete<a href="#project_delete" class="hash-link" aria-label="%project_delete에 대한 직접 링크" title="%project_delete에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Delete the project. This does not remove the project repository. It removes project metadata from the manager.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>
+<p>project: Name of the project to be deleted.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> team: Name of the team collaborating on the project.</p>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_list">%project_list<a href="#project_list" class="hash-link" aria-label="%project_list에 대한 직접 링크" title="%project_list에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: List the details of one or all projects.</p>
+<p>Use the project parameter to get the details of a specific project. All the projects are listed if you run the command without any parameters.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project: The project name.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_auth_create">%project_auth_create<a href="#project_auth_create" class="hash-link" aria-label="%project_auth_create에 대한 직접 링크" title="%project_auth_create에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Create an authorization object to store object store credentials.</p>
+<p>You must create the authorization object before deploying the engine. The authorization details are retained and are included while redeploying the project. Optionally, you can create authorizations manually using the <code>CREATE AUTHORIZATION</code> SQL command after deploying the engine. In this case, the authorization details are not retained.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>
+<p>project: Name of the project.</p>
+</li>
+<li>
+<p>name:	Authorization name for the object store.</p>
+</li>
+<li>
+<p>key: Authorization key of the object store.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> secret: Authorization secret access ID of the object store.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> region: Region of the object store; local for the local object store.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> token: Session token for the object store access.</p>
+</li>
+<li>
+<p><strong><code>[Optional-AWS Only]</code></strong> role: IAM users or service account to access AWS resources from an AWS account by assuming a role and its entitlements. The owner of the AWS resource defines the role. For example: arn:aws:iam::00000<!-- -->:role<!-- -->/STSAssumeRole.</p>
+</li>
+<li>
+<p><strong><code>[Optional-AWS Only]</code></strong> ExternalID: External ID used to access object store. This parameter is required when using the <code>role</code> parameter.</p>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_auth_update">%project_auth_update<a href="#project_auth_update" class="hash-link" aria-label="%project_auth_update에 대한 직접 링크" title="%project_auth_update에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Update an object store authorization.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>
+<p>project: Name of the project.</p>
+</li>
+<li>
+<p>name: Authorization name for the object store.</p>
+</li>
+<li>
+<p>key: Authorization key of the object store.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> secret: Authorization secret access ID of the object store.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> region: Region of the object store; local for the local object store.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> token: Session token for the object store access.</p>
+</li>
+<li>
+<p><strong><code>[Optional-AWS Only]</code></strong> role: IAM users or service account to access AWS or Azure resources from a CSP account by assuming a role and its entitlements. The owner of the AWS or Azure resource defines the role. For example: arn:aws:iam::00000<!-- -->:role<!-- -->/STSAssumeRole.</p>
+</li>
+<li>
+<p><strong><code>[Optional-AWS Only]</code></strong> ExternalID: External ID used to access object store. This parameter is required when using the <code>role</code> parameter.</p>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_auth_delete">%project_auth_delete<a href="#project_auth_delete" class="hash-link" aria-label="%project_auth_delete에 대한 직접 링크" title="%project_auth_delete에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Remove an object store authorization.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>
+<p>project: Name of the project.</p>
+</li>
+<li>
+<p>name:	Authorization name for the object store.</p>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_auth_list">%project_auth_list<a href="#project_auth_list" class="hash-link" aria-label="%project_auth_list에 대한 직접 링크" title="%project_auth_list에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: List object store authorizations that are created for a project.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project: Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_engine_deploy">%project_engine_deploy<a href="#project_engine_deploy" class="hash-link" aria-label="%project_engine_deploy에 대한 직접 링크" title="%project_engine_deploy에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Deploy an engine for the project. The deployment process takes a few minutes to complete. On successful deployment, a password is generated.</p>
+<p><strong>Usage</strong>:</p>
+<div class="tabs-container tabList__CuJ"><ul role="tablist" aria-orientation="horizontal" class="tabs"><li role="tab" tabindex="0" aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active">AWS</li><li role="tab" tabindex="-1" aria-selected="false" class="tabs__item tabItem_LNqP">Azure</li></ul><div class="margin-top--md"><div role="tabpanel" class="tabItem_Ymn6"></div><div role="tabpanel" class="tabItem_Ymn6" hidden=""></div></div></div>
+<p>Where:</p>
+<ul>
+<li>
+<p>project: Name of the project.</p>
+</li>
+<li>
+<p>size: Size of the engine. The value can be:</p>
+<ul>
+<li>small</li>
+<li>medium</li>
+<li>large</li>
+<li>extralarge</li>
+</ul>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> node: Number of engine nodes to be deployed. The default value is 1.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> subnet: Subnet used for the engine if there are no default values from the AI Unlimited setup.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> region: Region used for the engine if there are no default values from the AI Unlimited setup.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> restore: If False (F), the engine is deployed but the project&#x27;s objects are not restored, which reduces deployment time. You can manually restore them using %project_restore. The default value is True (T).</p>
+</li>
+</ul>
+<div class="tabs-container tabList__CuJ"><ul role="tablist" aria-orientation="horizontal" class="tabs"><li role="tab" tabindex="0" aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active">AWS</li><li role="tab" tabindex="-1" aria-selected="false" class="tabs__item tabItem_LNqP">Azure</li></ul><div class="margin-top--md"><div role="tabpanel" class="tabItem_Ymn6"><ul>
+<li>
+<p><strong><code>[Optional]</code></strong> prefixlist: The collection of CIDR blocks that define a set of IP address ranges that require the same policy enforcement. It is used to specify which IP addresses can communicate with the engine.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> securitygroups: List of security groups for the VPC in each region. If you don&#x27;t specify a security group, the engine is automatically associated with the default security group for the VPC.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> cidrs: List of CIDR addresses used for the engine.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> tags: The key-value pairs that are assigned to the engine for quick identification.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> iamrole: The IAM role used for the engine.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> roleprefix: The string appended to the beginning of the IAM role assigned to the engine.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> permissionboundary: The ARN of the IAM permissions boundary to associate with the IAM role assigned to the engine. The permissions boundary defines the maximum permissions that the role can have.</p>
+</li>
+</ul></div><div role="tabpanel" class="tabItem_Ymn6" hidden=""><ul>
+<li>
+<p><strong><code>[Optional]</code></strong> network: The network to which you want to deploy the engine.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> keyvault: The key vault used by the engine where sensitive information such as passwords can be securely stored.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> keyvaultresourcegroup: The resource group that contains the key vault.</p>
+</li>
+<li>
+<p><strong><code>[Optional]</code></strong> networkresourcegroup: The resource group that contains the network.</p>
+</li>
+</ul></div></div></div>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_engine_suspend">%project_engine_suspend<a href="#project_engine_suspend" class="hash-link" aria-label="%project_engine_suspend에 대한 직접 링크" title="%project_engine_suspend에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Stop the engine after you&#x27;re done with your work.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project: Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_engine_list">%project_engine_list<a href="#project_engine_list" class="hash-link" aria-label="%project_engine_list에 대한 직접 링크" title="%project_engine_list에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: View the list of engines deployed for your project.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project: Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_user_list">%project_user_list<a href="#project_user_list" class="hash-link" aria-label="%project_user_list에 대한 직접 링크" title="%project_user_list에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: View the list of collaborators assigned to the project in the Git repository.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li><strong><code>[Optional]</code></strong> project: Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_backup">%project_backup<a href="#project_backup" class="hash-link" aria-label="%project_backup에 대한 직접 링크" title="%project_backup에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Back up your project information and object definition inside the engine.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project:	Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_restore">%project_restore<a href="#project_restore" class="hash-link" aria-label="%project_restore에 대한 직접 링크" title="%project_restore에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Restore your project information and object definition from your Git repository.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project:	Name of the project.</li>
+<li><strong><code>[Optional]</code></strong> gitref: The Git reference for the commit from which to restore the project, if you don&#x27;t want to restore from the latest.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_engine_update_users">%project_engine_update_users<a href="#project_engine_update_users" class="hash-link" aria-label="%project_engine_update_users에 대한 직접 링크" title="%project_engine_update_users에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Update users on the deployed engine. If users are added as collaborators to the Git repository after the engine is deployed, you can use this command to update and create new users for the deployed engine.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project:	Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_engine_update_auth">%project_engine_update_auth<a href="#project_engine_update_auth" class="hash-link" aria-label="%project_engine_update_auth에 대한 직접 링크" title="%project_engine_update_auth에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Update or add new authorizations on the deployed engine without having to suspend and redeploy the engine.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project:	Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project_connection_add">%project_connection_add<a href="#project_connection_add" class="hash-link" aria-label="%project_connection_add에 대한 직접 링크" title="%project_connection_add에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: Refresh the connection for the deployed engine. Use this command to connect to the engine from another notebook without having to create a new connection manually.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Where:</p>
+<ul>
+<li>project:	Name of the project.</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="help">%help<a href="#help" class="hash-link" aria-label="%help에 대한 직접 링크" title="%help에 대한 직접 링크">​</a></h2>
+<p><strong>Description</strong>: View the list of magic commands provided by the AI Unlimited kernel.</p>
+<p><strong>Usage</strong>:</p>
+<!-- -->
+<p>Additionally, you can see detailed help messages per command.</p>
+<p><strong>Usage</strong>:</p>
+</div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="문서 페이지"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#workspaces_config" class="table-of-contents__link toc-highlight">%workspaces_config</a></li><li><a href="#project_create" class="table-of-contents__link toc-highlight">%project_create</a></li><li><a href="#project_delete" class="table-of-contents__link toc-highlight">%project_delete</a></li><li><a href="#project_list" class="table-of-contents__link toc-highlight">%project_list</a></li><li><a href="#project_auth_create" class="table-of-contents__link toc-highlight">%project_auth_create</a></li><li><a href="#project_auth_update" class="table-of-contents__link toc-highlight">%project_auth_update</a></li><li><a href="#project_auth_delete" class="table-of-contents__link toc-highlight">%project_auth_delete</a></li><li><a href="#project_auth_list" class="table-of-contents__link toc-highlight">%project_auth_list</a></li><li><a href="#project_engine_deploy" class="table-of-contents__link toc-highlight">%project_engine_deploy</a></li><li><a href="#project_engine_suspend" class="table-of-contents__link toc-highlight">%project_engine_suspend</a></li><li><a href="#project_engine_list" class="table-of-contents__link toc-highlight">%project_engine_list</a></li><li><a href="#project_user_list" class="table-of-contents__link toc-highlight">%project_user_list</a></li><li><a href="#project_backup" class="table-of-contents__link toc-highlight">%project_backup</a></li><li><a href="#project_restore" class="table-of-contents__link toc-highlight">%project_restore</a></li><li><a href="#project_engine_update_users" class="table-of-contents__link toc-highlight">%project_engine_update_users</a></li><li><a href="#project_engine_update_auth" class="table-of-contents__link toc-highlight">%project_engine_update_auth</a></li><li><a href="#project_connection_add" class="table-of-contents__link toc-highlight">%project_connection_add</a></li><li><a href="#help" class="table-of-contents__link toc-highlight">%help</a></li></ul></div></div></div></div></main></div></div></div><section class="_linksOfInterest_1xroz_130"><div class="_linksOfInterestTitle_1xroz_151">Also of interest</div><ul><li class="_linkOfInterest_1xroz_157"><a class="_footerNavLink_1xroz_70" href="https://www.teradata.com/platform/ai-ml" target="_self" rel="noreferrer">Drive ROI with Trusted AI today</a></li><li class="_linkOfInterest_1xroz_157"><a class="_footerNavLink_1xroz_70" href="https://www.teradata.com/solutions/big-data" target="_self" rel="noreferrer">Big data</a></li><li class="_linkOfInterest_1xroz_157"><a class="_footerNavLink_1xroz_70" href="https://www.teradata.com/insights/data-security" target="_self" rel="noreferrer">Become an expert at defending your data</a></li></ul></section><footer class="_footer_1xroz_38"><section class="_containerWide_1xroz_1 _footerLinksWrapper_1xroz_43"><div class="_footerLink_1xroz_43 _collapsible_1xroz_205"><div class="_footerLinkTitle_1xroz_54">Why Teradata<span class="_caret_1xroz_19"></span></div><ul class="_footerLinkList_1xroz_219"><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/why-teradata" class="_footerNavLink_1xroz_70">Why Teradata</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/trusted-ai" class="_footerNavLink_1xroz_70">Trusted AI</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/industries" class="_footerNavLink_1xroz_70">Industries</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/partners" class="_footerNavLink_1xroz_70">Partners</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/getattachment/49d347ac-d544-4a6c-9db3-27c9cd2d5afd/new-user-registration-instructions-for-td-partner-community.pdf?lang=en-us" class="_footerNavLink_1xroz_70">Partner registration<img src="data:image/svg+xml,%3csvg%20width=&#x27;16&#x27;%20height=&#x27;16&#x27;%20viewBox=&#x27;0%200%2016%2016&#x27;%20fill=&#x27;none&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3e%3cpath%20d=&#x27;M3.5335%2013.6668C3.20016%2013.6668%202.91683%2013.5502%202.6835%2013.3168C2.45016%2013.0835%202.3335%2012.8002%202.3335%2012.4668V3.5335C2.3335%203.20016%202.45016%202.91683%202.6835%202.6835C2.91683%202.45016%203.20016%202.3335%203.5335%202.3335H7.75016V3.3335H3.5335C3.48905%203.3335%203.44461%203.35572%203.40016%203.40016C3.35572%203.44461%203.3335%203.48905%203.3335%203.5335V12.4668C3.3335%2012.5113%203.35572%2012.5557%203.40016%2012.6002C3.44461%2012.6446%203.48905%2012.6668%203.5335%2012.6668H12.4668C12.5113%2012.6668%2012.5557%2012.6446%2012.6002%2012.6002C12.6446%2012.5557%2012.6668%2012.5113%2012.6668%2012.4668V8.25016H13.6668V12.4668C13.6668%2012.8002%2013.5502%2013.0835%2013.3168%2013.3168C13.0835%2013.5502%2012.8002%2013.6668%2012.4668%2013.6668H3.5335ZM6.4835%2010.2168L5.7835%209.51683L11.9668%203.3335H9.3335V2.3335H13.6668V6.66683H12.6668V4.0335L6.4835%2010.2168Z&#x27;%20fill=&#x27;%2300233C&#x27;/%3e%3c/svg%3e" class="_externalIconImg_1xroz_121" alt="Link to Partner registration"></a></li><li class="_footerLinkItem_1xroz_66"><a href="https://teradata.my.site.com/teradataPRM/s/login/" class="_footerNavLink_1xroz_70">Partner portal login<img src="data:image/svg+xml,%3csvg%20width=&#x27;16&#x27;%20height=&#x27;16&#x27;%20viewBox=&#x27;0%200%2016%2016&#x27;%20fill=&#x27;none&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3e%3cpath%20d=&#x27;M3.5335%2013.6668C3.20016%2013.6668%202.91683%2013.5502%202.6835%2013.3168C2.45016%2013.0835%202.3335%2012.8002%202.3335%2012.4668V3.5335C2.3335%203.20016%202.45016%202.91683%202.6835%202.6835C2.91683%202.45016%203.20016%202.3335%203.5335%202.3335H7.75016V3.3335H3.5335C3.48905%203.3335%203.44461%203.35572%203.40016%203.40016C3.35572%203.44461%203.3335%203.48905%203.3335%203.5335V12.4668C3.3335%2012.5113%203.35572%2012.5557%203.40016%2012.6002C3.44461%2012.6446%203.48905%2012.6668%203.5335%2012.6668H12.4668C12.5113%2012.6668%2012.5557%2012.6446%2012.6002%2012.6002C12.6446%2012.5557%2012.6668%2012.5113%2012.6668%2012.4668V8.25016H13.6668V12.4668C13.6668%2012.8002%2013.5502%2013.0835%2013.3168%2013.3168C13.0835%2013.5502%2012.8002%2013.6668%2012.4668%2013.6668H3.5335ZM6.4835%2010.2168L5.7835%209.51683L11.9668%203.3335H9.3335V2.3335H13.6668V6.66683H12.6668V4.0335L6.4835%2010.2168Z&#x27;%20fill=&#x27;%2300233C&#x27;/%3e%3c/svg%3e" class="_externalIconImg_1xroz_121" alt="Link to Partner portal login"></a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/solutions/business-use-cases" class="_footerNavLink_1xroz_70">Solutions</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/customers" class="_footerNavLink_1xroz_70">Success stories</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/how-we-help/teradata-services" class="_footerNavLink_1xroz_70">Services</a></li></ul></div><div class="_footerLink_1xroz_43 _collapsible_1xroz_205"><div class="_footerLinkTitle_1xroz_54">Our platform<span class="_caret_1xroz_19"></span></div><ul class="_footerLinkList_1xroz_219"><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/platform" class="_footerNavLink_1xroz_70">Platform</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/platform/vantagecloud" class="_footerNavLink_1xroz_70">VantageCloud</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/platform/clearscape-analytics" class="_footerNavLink_1xroz_70">ClearScape Analytics</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/platform/ai-ml" class="_footerNavLink_1xroz_70">Unleash AI Innovation</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/platform/workloads" class="_footerNavLink_1xroz_70">Workloads</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/platform/deployment" class="_footerNavLink_1xroz_70">Deployment</a></li></ul></div><div class="_footerLink_1xroz_43 _collapsible_1xroz_205"><div class="_footerLinkTitle_1xroz_54">Getting started<span class="_caret_1xroz_19"></span></div><ul class="_footerLinkList_1xroz_219"><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/getting-started/pricing" class="_footerNavLink_1xroz_70">Pricing</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/getting-started/demos" class="_footerNavLink_1xroz_70">Demos</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/getting-started/modernization-workshop" class="_footerNavLink_1xroz_70">Modernization workshop</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/getting-started/executive-briefing-center" class="_footerNavLink_1xroz_70">Executive Briefing Center</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/events" class="_footerNavLink_1xroz_70">Events</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/university" class="_footerNavLink_1xroz_70">Learning</a></li></ul></div><div class="_footerLink_1xroz_43 _collapsible_1xroz_205"><div class="_footerLinkTitle_1xroz_54">Insights<span class="_caret_1xroz_19"></span></div><ul class="_footerLinkList_1xroz_219"><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/insights/ai-and-machine-learning" class="_footerNavLink_1xroz_70">AI/ML</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/insights/cloud-data-analytics" class="_footerNavLink_1xroz_70">Cloud data analytics</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/insights/data-architecture" class="_footerNavLink_1xroz_70">Data architecture</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/insights/data-platform" class="_footerNavLink_1xroz_70">Data platform</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/insights/data-security" class="_footerNavLink_1xroz_70">Data security</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/glossary" class="_footerNavLink_1xroz_70">Glossary</a></li></ul></div><div class="_footerLink_1xroz_43 _collapsible_1xroz_205"><div class="_footerLinkTitle_1xroz_54">About us<span class="_caret_1xroz_19"></span></div><ul class="_footerLinkList_1xroz_219"><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/about-us" class="_footerNavLink_1xroz_70">Who we are</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/about-us/leadership" class="_footerNavLink_1xroz_70">Our leadership</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/newsroom" class="_footerNavLink_1xroz_70">Newsroom</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://careers.teradata.com/?_gl=1*ebzjes*_ga*MjIwNzU5MDQuMTcxMDc3MDE3MQ..*_ga_7PE2TMW3FE*MTcxMjc3NjAwNy4yOS4wLjE3MTI3NzYwMDcuNjAuMC4w" class="_footerNavLink_1xroz_70">Careers<img src="data:image/svg+xml,%3csvg%20width=&#x27;16&#x27;%20height=&#x27;16&#x27;%20viewBox=&#x27;0%200%2016%2016&#x27;%20fill=&#x27;none&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3e%3cpath%20d=&#x27;M3.5335%2013.6668C3.20016%2013.6668%202.91683%2013.5502%202.6835%2013.3168C2.45016%2013.0835%202.3335%2012.8002%202.3335%2012.4668V3.5335C2.3335%203.20016%202.45016%202.91683%202.6835%202.6835C2.91683%202.45016%203.20016%202.3335%203.5335%202.3335H7.75016V3.3335H3.5335C3.48905%203.3335%203.44461%203.35572%203.40016%203.40016C3.35572%203.44461%203.3335%203.48905%203.3335%203.5335V12.4668C3.3335%2012.5113%203.35572%2012.5557%203.40016%2012.6002C3.44461%2012.6446%203.48905%2012.6668%203.5335%2012.6668H12.4668C12.5113%2012.6668%2012.5557%2012.6446%2012.6002%2012.6002C12.6446%2012.5557%2012.6668%2012.5113%2012.6668%2012.4668V8.25016H13.6668V12.4668C13.6668%2012.8002%2013.5502%2013.0835%2013.3168%2013.3168C13.0835%2013.5502%2012.8002%2013.6668%2012.4668%2013.6668H3.5335ZM6.4835%2010.2168L5.7835%209.51683L11.9668%203.3335H9.3335V2.3335H13.6668V6.66683H12.6668V4.0335L6.4835%2010.2168Z&#x27;%20fill=&#x27;%2300233C&#x27;/%3e%3c/svg%3e" class="_externalIconImg_1xroz_121" alt="Link to Careers"></a></li><li class="_footerLinkItem_1xroz_66"><a href="https://investor.teradata.com/?_gl=1*ebzjes*_ga*MjIwNzU5MDQuMTcxMDc3MDE3MQ..*_ga_7PE2TMW3FE*MTcxMjc3NjAwNy4yOS4wLjE3MTI3NzYwMDcuNjAuMC4w" class="_footerNavLink_1xroz_70">Investors<img src="data:image/svg+xml,%3csvg%20width=&#x27;16&#x27;%20height=&#x27;16&#x27;%20viewBox=&#x27;0%200%2016%2016&#x27;%20fill=&#x27;none&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3e%3cpath%20d=&#x27;M3.5335%2013.6668C3.20016%2013.6668%202.91683%2013.5502%202.6835%2013.3168C2.45016%2013.0835%202.3335%2012.8002%202.3335%2012.4668V3.5335C2.3335%203.20016%202.45016%202.91683%202.6835%202.6835C2.91683%202.45016%203.20016%202.3335%203.5335%202.3335H7.75016V3.3335H3.5335C3.48905%203.3335%203.44461%203.35572%203.40016%203.40016C3.35572%203.44461%203.3335%203.48905%203.3335%203.5335V12.4668C3.3335%2012.5113%203.35572%2012.5557%203.40016%2012.6002C3.44461%2012.6446%203.48905%2012.6668%203.5335%2012.6668H12.4668C12.5113%2012.6668%2012.5557%2012.6446%2012.6002%2012.6002C12.6446%2012.5557%2012.6668%2012.5113%2012.6668%2012.4668V8.25016H13.6668V12.4668C13.6668%2012.8002%2013.5502%2013.0835%2013.3168%2013.3168C13.0835%2013.5502%2012.8002%2013.6668%2012.4668%2013.6668H3.5335ZM6.4835%2010.2168L5.7835%209.51683L11.9668%203.3335H9.3335V2.3335H13.6668V6.66683H12.6668V4.0335L6.4835%2010.2168Z&#x27;%20fill=&#x27;%2300233C&#x27;/%3e%3c/svg%3e" class="_externalIconImg_1xroz_121" alt="Link to Investors"></a></li></ul></div><div class="_footerLink_1xroz_43 _socialLinksWrapper_1xroz_62"><div class="_footerLinkTitle_1xroz_54">Social media</div><ul class="_socialLinksList_1xroz_90"><li><a href="https://www.linkedin.com/company/teradata" target="_blank" class="_iconLink_hea44_1" rel="noreferrer" aria-label="Social Link- LinkedIn"><i class="fa-brands fa-linkedin-in" style="color:#fff;font-size:12px"></i></a></li><li><a href="https://twitter.com/teradata" target="_blank" class="_iconLink_hea44_1" rel="noreferrer" aria-label="Social Link- Twitter"><i class="fa-brands fa-x-twitter" style="color:#fff;font-size:12px"></i></a></li><li><a href="https://www.facebook.com/Teradata" target="_blank" class="_iconLink_hea44_1" rel="noreferrer" aria-label="Social Link- Facebook"><i class="fa-brands fa-facebook-f" style="color:#fff;font-size:12px"></i></a></li><li><a href="https://www.instagram.com/teradata/" target="_blank" class="_iconLink_hea44_1" rel="noreferrer" aria-label="Social Link- Instagram"><i class="fa-brands fa-instagram" style="color:#fff;font-size:12px"></i></a></li><li><a href="https://www.youtube.com/user/teradata" target="_blank" class="_iconLink_hea44_1" rel="noreferrer" aria-label="Social Link- Youtube"><i class="fa-brands fa-youtube" style="color:#fff;font-size:12px"></i></a></li><li><a href="https://www.teradata.com/rss" target="_blank" class="_iconLink_hea44_1" rel="noreferrer" aria-label="Social Link- RSS"><i class="fa fa-rss" style="color:#fff;font-size:12px"></i></a></li></ul></div></section><section class="_containerWide_1xroz_1 _copyrightWrapper_1xroz_102"><div class="_copyrightLinks_1xroz_108"><div class="_copyrightText_1xroz_117">©<!-- -->2024 Teradata. All rights reserved</div><ul class="_legalLinksWrapper_1xroz_96"><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/privacy" class="_footerNavLink_1xroz_70">Privacy</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/privacy#do-not-sell-share" class="_footerNavLink_1xroz_70">Don’t Sell/Share My Info</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/legal/terms-of-use" class="_footerNavLink_1xroz_70">Terms of use</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/legal/legal-notice" class="_footerNavLink_1xroz_70">Legal</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/product-support-policy" class="_footerNavLink_1xroz_70">Support Policies</a></li><li class="_footerLinkItem_1xroz_66"><a href="https://www.teradata.com/how-we-help#tracking-consent" class="_footerNavLink_1xroz_70">Tracking Consent</a></li></ul></div></section></footer></div>
+</body>
+</html>
