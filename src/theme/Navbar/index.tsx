@@ -73,6 +73,7 @@ export default function Navbar() {
       message: 'sidenav.title',
       description: 'sidenav.title_description',
     }),
+    
   };
 
   const [defaultLang, setDefaulLang] = useState('');
@@ -126,6 +127,7 @@ export default function Navbar() {
       key={defaultLang}
       navItems={translatedNavItems}
       title={translatedTitle}
+      titleLink='https://developers.teradata.com/'
       headerActions={headerActions}
       languages={languages}
       onLanguageChange={handleLanguageChange}
