@@ -328,3 +328,11 @@ a.col {
 .eyebrow{
   padding: 16px 0 40px 0;
 }
+
+li::marker {
+  color: var(--Primary-Orange, #FF5F02);;
+  font-size: 13px;
+}
+ul, ol {
+  padding-left: 1rem;
+}

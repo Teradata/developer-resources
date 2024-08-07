@@ -1,9 +1,7 @@
-import bulletUrl from '@site/static/img/developers/Bullet.png';
 import { translate } from '@docusaurus/Translate';
 
 export const FeatureList = [
   {
-    imgBullet: bulletUrl,
     img: 'article',
     title: translate({ message: 'developers.getting_started_title' }),
     description: translate({ message: 'developers.getting_started_message' }),
@@ -11,18 +9,15 @@ export const FeatureList = [
     href: 'https://quickstarts.teradata.com/',
   },
   {
-    imgBullet: bulletUrl,
     img: 'local_library',
     title: translate({ message: 'developers.documentation_title' }),
     description: translate({ message: 'developers.documentation_message' }),
     descriptionLink: translate({ message: 'developers.documentation_link_1' }),
     href: 'https://docs.teradata.com/p/VantageCloud/Lake',
-    imgBullet2:bulletUrl,
     descriptionLink2: translate({ message: 'developers.documentation_link_2' }),
     href2: 'https://docs.teradata.com/',
   },
   {
-    imgBullet: bulletUrl,
     img: 'download',
     title: translate({ message: 'developers.downloads_title' }),
     description: translate({ message: 'developers.downloads_message' }),
@@ -31,11 +26,10 @@ export const FeatureList = [
     descriptionLink2:''
   },
   {
-    imgBullet: bulletUrl,
     img: 'groups',
     title: translate({ message: 'developers.community_title' }),
     description: translate({ message: 'developers.community_message' }),
-    descriptionLink: translate({ message: 'developers.getting_started_link' }),
+    descriptionLink: translate({ message: 'developers.community_link' }),
     href: 'https://support.teradata.com/community',
     descriptionLink2:''
   }

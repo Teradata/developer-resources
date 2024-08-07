@@ -330,7 +330,7 @@
   "developers.community_message": {
     "message": "Recent Community Blogs. The best minds from Teradata, our partners, and customers blog about relevant topics and features."
   },
-  "developers.community": {
+  "developers.community_link": {
     "message": "View Community"
   },
   "developers.solutions-for-you": {
