@@ -43,6 +43,7 @@ const getLocalizedTranslation = (key) => {
 
 const allowedUrls = [
   'https://www.teradata.com', 
+  'https://*.teradata.com', 
   'https://avatars.githubusercontent.com',
   'https://github.com',
   'https://kit.fontawesome.com/',
@@ -50,7 +51,7 @@ const allowedUrls = [
   'https://fonts.googleapis.com/',
   'https://fonts.gstatic.com/',
   'https://www.google-analytics.com/',
-  'https://www.analytics.google.com/',
+  'https://analytics.google.com/',
   'https://www.googletagmanager.com/',
   'https://td.doubleclick.net/',
   'https://www.youtube.com/',
