@@ -77,6 +77,14 @@ const config = {
         crossorigin: 'anonymous',
       },
     },
+    {
+      // Add Celebrus script
+      tagName: 'script',
+      attributes: {
+        defer: 'true',
+        src: 'https://www.teradata.com/js/Celebrus/bsci.js',
+      },
+    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set
