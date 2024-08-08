@@ -1,6 +1,6 @@
 import config from './docusaurus.config.js';
 import headerItems from './src/config/header.navitems.js';
-import footerItems from './src/config/header.navitems.js';
+import footerItems from './src/config/footer.navItems.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {

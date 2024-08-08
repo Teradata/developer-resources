@@ -19,7 +19,7 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
           },
           {
             label: 'header.docs.ai_unlimited',
-            href: `${baseUrl}${locale}/ai-unlimited/`,
+            href: `${baseUrl ?? ''}${locale ?? ''}/ai-unlimited/`,
           },
           {
             label: 'header.docs.all_documentation',
