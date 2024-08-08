@@ -285,6 +285,12 @@
   "sidenav.title_description": {
     "message": "The title for the sidebar in mobile view"
   },
+  "developer_home_page.title": {
+    "message": "Teradata developers portal"
+  },
+  "developer_home_page.tagline": {
+    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+ },
   "developers.title_description": {
     "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
   },
@@ -381,7 +387,7 @@
   "developers.it-operations": {
     "message": "IT Operations"
   },
-  "developers.deit-operations-title": {
+  "developers.it-operations-title": {
     "message": "Query data stored in object storage"
   },
   "developers.it-operations-text": {
