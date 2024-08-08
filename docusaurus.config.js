@@ -8,6 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindPlugin from './plugins/tailwind-config.cjs';
 import headerItems from './src/config/header.navitems.js';
 import fs from 'fs';
+import footerItems from './src/config/footer.navItems.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
@@ -226,10 +227,8 @@ const config = {
 
 // Add header items to the themeConfig with the correct baseUrl
 if (config.themeConfig) {
-  const locale = getCurrentLocale() === 'en' ? '' : '/' + getCurrentLocale();
-  config.themeConfig.navItems = headerItems(
-    config.baseUrl ? config.baseUrl + locale : ''
-  );
+  config.themeConfig.navItems = headerItems(config.baseUrl, getCurrentLocale());
+  config.themeConfig.footerItems = footerItems(getCurrentLocale());
 }
 
 export default config;
