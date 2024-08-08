@@ -61,7 +61,7 @@ const allowedUrls = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: getLocalizedTranslation('developer_home_page.title'),
-  tagline: getLocalizedTranslation('home_page.tagline'),
+  tagline: getLocalizedTranslation('developers.title_description'),
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
