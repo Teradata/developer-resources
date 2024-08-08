@@ -10,8 +10,9 @@ const prConfig = {
 
 // Modify the header items to include the PR number
 if (prConfig.themeConfig) {
+  const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
   prConfig.themeConfig.navItems = headerItems(prConfig.baseUrl, currentLocale);
-  prConfig.themeConfig.footerItems = footerItems(getCurrentLocale());
+  prConfig.themeConfig.footerItems = footerItems(currentLocale);
 }
 
 export default prConfig;
