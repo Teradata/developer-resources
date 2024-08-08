@@ -73,14 +73,13 @@ export default function Navbar() {
       message: 'sidenav.title',
       description: 'sidenav.title_description',
     }),
-    
   };
 
   const [defaultLang, setDefaulLang] = useState('');
 
   const handleLanguageChange = (language) => {
     // Replace current language with another language
-    if (getCurrentLanguage() !== '') {
+    if (getCurrentLanguage() !== '' && language !== '') {
       window.location = window.location.pathname.replace(
         `/${getCurrentLanguage()}/`,
         `/${language}/`
@@ -127,7 +126,7 @@ export default function Navbar() {
       key={defaultLang}
       navItems={translatedNavItems}
       title={translatedTitle}
-      titleLink='https://developers.teradata.com/'
+      titleLink="https://developers.teradata.com/"
       headerActions={headerActions}
       languages={languages}
       onLanguageChange={handleLanguageChange}
