@@ -58,7 +58,7 @@ export default function headerItems (baseUrl = '/') {
               value: '',
             },
             {
-              label: 'Duestshcland',
+              label: 'Deutschland',
               value: 'de',
             },
             {
