@@ -60,7 +60,7 @@ const allowedUrls = [
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: getLocalizedTranslation('home_page.title'),
+  title: getLocalizedTranslation('developer_home_page.title'),
   tagline: getLocalizedTranslation('home_page.tagline'),
   favicon: 'img/favicon.ico',
 

@@ -285,6 +285,9 @@
   "sidenav.title_description": {
     "message": "The title for the sidebar in mobile view"
   },
+  "developer_home_page.title": {
+    "message": "Teradata developers portal"
+  },
   "developers.title_description": {
     "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
   },
