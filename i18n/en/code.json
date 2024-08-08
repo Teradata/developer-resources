@@ -381,7 +381,7 @@
   "developers.it-operations": {
     "message": "IT Operations"
   },
-  "developers.deit-operations-title": {
+  "developers.it-operations-title": {
     "message": "Query data stored in object storage"
   },
   "developers.it-operations-text": {
