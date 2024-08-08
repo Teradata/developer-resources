@@ -126,7 +126,7 @@ export default function Navbar() {
       key={defaultLang}
       navItems={translatedNavItems}
       title={translatedTitle}
-      titleLink="https://developers.teradata.com/"
+      titleLink={`https://developers.teradata.com/${getCurrentLanguage()}`}
       headerActions={headerActions}
       languages={languages}
       onLanguageChange={handleLanguageChange}
