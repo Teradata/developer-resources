@@ -22,7 +22,7 @@ function HomepageHeader() {
                 <br/>
                 <Link to="https://quickstarts.teradata.com/">
                   <Button
-                    label="Learn more"
+                    label={translate({ message: 'developers.learn_more' })}
                     primary={true}
                     icon="fa fa-arrow-right"
                     trailingIcon={true}
