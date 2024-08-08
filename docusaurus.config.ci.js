@@ -1,6 +1,5 @@
 import config from './docusaurus.config.js';
 import headerItems from './src/config/header.navitems.js';
-import footerItems from './src/config/footer.navItems.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {
@@ -13,7 +12,6 @@ const prConfig = {
 if (prConfig.themeConfig) {
   const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
   prConfig.themeConfig.navItems = headerItems(prConfig.baseUrl, currentLocale);
-  prConfig.themeConfig.footerItems = footerItems(currentLocale);
 }
 
 export default prConfig;
