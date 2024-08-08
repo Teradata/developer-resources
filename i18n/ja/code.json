@@ -289,5 +289,152 @@
   },
   "developer_home_page.tagline": {
     "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+  },
+   "developers.title_description": {
+    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+  },
+  "developers.welcome_message": {
+    "message": "Welcome to the Teradata Developer Portal"
+  },
+  "developers.learn_more": {
+    "message": "Learn more"
+  },
+  "developers.getting_started_title": {
+    "message": "Getting started"
+  },
+  "developers.getting_started_message": {
+    "message": "Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code."
+  },
+  "developers.getting_started_link": {
+    "message": "View Getting started"
+  },
+  "developers.documentation_title": {
+    "message": "Documentation"
+  },
+  "developers.documentation_message": {
+    "message": "Access Vantage Documentation for VantageCloud Enterprise, VantageCore VMware and VantageCore IntelliFlex."
+  },
+  "developers.documentation_link_1": {
+    "message": "View Lake docs"
+  },
+  "developers.documentation_link_2": {
+    "message": "View all Teradata docs"
+  },
+  "developers.downloads_title": {
+    "message": "Downloads"
+  },
+  "developers.downloads_message": {
+    "message": "Find publicly available downloads from Teradata. Browse by category or select one of the popular downloads below."
+  },
+  "developers.downloads_link": {
+    "message": "View Downloads"
+  },
+  "developers.community_title": {
+    "message": "Community"
+  },
+  "developers.community_message": {
+    "message": "Recent Community Blogs. The best minds from Teradata, our partners, and customers blog about relevant topics and features."
+  },
+  "developers.community_link": {
+    "message": "View Community"
+  },
+  "developers.solutions-for-you": {
+    "message": "Solutions for you"
+  },
+  "developers.get-started-with-teradata": {
+    "message": "Get started with Teradata"
+  },
+  "developers.getting_started_button": {
+    "message": "Get started"
+  },
+  "developers.data-scientist": {
+    "message": "Data Scientist"
+  },
+  "developers.data-scientist-title": {
+    "message": "Train ML models in Vantage"
+  },
+  "developers.data-scientist-text": {
+    "message": "There are situations when you want to quickly validate a machine learning model idea. You have a model type in mind. You don’t want to operationalize with an ML pipeline just yet. You just want to test out if the relationship you had in mind exists. Also, sometimes even your production deployment doesn’t require constant relearning with MLops. In such cases, you can use Vantage Analytics Library (VAL) and multiple ML model types it supports."
+  },
+  "developers.data-engineer": {
+    "message": "Data Engineer"
+  },
+  "developers.data-engineer-title": {
+    "message": "dbt with Teradata Vantage"
+  },
+  "developers.data-engineer-text": {
+    "message": "This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantage. It’s based on the original dbt Jaffle Shop tutorial. A couple of models have been adjusted to the SQL dialect supported by Vantage."
+  },
+  "developers.developer": {
+    "message": "Developer"
+  },
+  "developers.developer-title": {
+    "message": "Connect to Vantage using JDBC"
+  },
+  "developers.developer-text": {
+    "message": "This how-to demonstrates how to connect to Teradata Vantage using JDBC using a sample Java application: https://github.com/Teradata/jdbc-sample-app."
+  },
+  "developers.database-administrator": {
+    "message": "Database Administrator"
+  },
+  "developers.database-administrator-title": {
+    "message": "Database Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)"
+  },
+  "developers.database-administrator-text": {
+    "message": "We often have a need to move large volumes of data into Vantage. Teradata offers Teradata Parallel Transporter (TPT) utility that can efficiently load large amounts of data into Teradata Vantage. This how-to demonstrates how to use TPT. In this scenario,"
+  },
+  "developers.it-operations": {
+    "message": "IT Operations"
+  },
+  "developers.it-operations-title": {
+    "message": "Query data stored in object storage"
+  },
+  "developers.it-operations-text": {
+    "message": "Native Object Storage (NOS) is a Vantage feature that allows you to query data stored in files in object storage such as AWS S3, Google GCS, Azure Blob or on-prem implementations. It’s useful in scenarios where you want to explore data without building a ..."
+  },
+  "developers.stay-up-to-date": {
+    "message": "Stay up to date"
+  },
+  "developers.top-picks-from-Teradata": {
+    "message": "Top picks from Teradata"
+  },
+  "developers.top-picks-from-teradata-title-card1": {
+    "message": "Explore Vantage AI/ML features"
+  },
+  "developers.top-picks-from-teradata-text-card1": {
+    "message": "Get a free hands-on demo environment to explore Teradata VantageCloud’s ClearScape Analytics™"
+  },
+  "developers.top-picks-from-teradata-title-card2": {
+    "message": "Use dbt with Teradata Vantage"
+  },
+  "developers.top-picks-from-teradata-text-card2": {
+    "message": "Learn how to use dbt, a leading ELT tool, with Teradata Vantage."
+  },
+  "developers.top-picks-from-teradata-title-card3": {
+    "message": "Query data in object storage"
+  },
+  "developers.top-picks-from-teradata-text-card3": {
+    "message": "Learn how to analyze data stored in object storage using SQL."
+  },
+  "developers.top-picks-from-teradata-title-card4": {
+    "message": "Use Airbyte to load data to Vantage"
+  },
+  "developers.top-picks-from-teradata-text-card4": {
+    "message": "Use Airbyte ELT tool to load data from your applications and databases into VantageCloud."
+  },
+  "developers.top-picks-from-teradata-title-card5": {
+    "message": "Getting Started with Teradata ModelOps"
+  },
+  "developers.top-picks-from-teradata-text-card5": {
+    "message": "In the tutorial, you will be able to create a new project in ModelOps, upload the required data to Vantage, and track the full lifecycle."
+  },
+  "developers.top-picks-from-teradata-title-card6": {
+    "message": "Connect to Vantage using JDBC"
+  },
+  "developers.top-picks-from-teradata-text-card6": {
+    "message": "The JDBC Driver allows you to connect to the Teradata database from external applications."
+  },
+  "developers.talk-to-developers-where-you-are": {
+    "message": "Talk to Developers where you are"
   }
 }
