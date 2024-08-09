@@ -17,7 +17,9 @@ interface FooterItems {
   linksOfInterest: FooterLink;
 }
 
-function translateFooterItems(footerItems: FooterLink[]|SocialLinks[]): FooterLink[] {
+function translateFooterItems(
+  footerItems: FooterLink[] | SocialLinks[]
+): FooterLink[] {
   return footerItems.map((item) => {
     return {
       ...item,
@@ -27,25 +29,28 @@ function translateFooterItems(footerItems: FooterLink[]|SocialLinks[]): FooterLi
   });
 }
 
-function translateFooterNavLinks(footerNavLinks: FooterNavLink[]): FooterNavLink[] {
+function translateFooterNavLinks(
+  footerNavLinks: FooterNavLink[]
+): FooterNavLink[] {
   return footerNavLinks.map((link) => {
     return {
       ...link,
       label: translate({ message: link.label }),
-    }
-  })
+    };
+  });
 }
 
 function Footer() {
   const { footerItems }: ThemeConfig = useThemeConfig();
-  if (!footerItems) {
-    return null;
-  }
   const { links, copyright, socialLinks, legalLinks, linksOfInterest } =
     footerItems as FooterItems;
   const translatedLinks = translateFooterItems(links);
-  const translatedCopyright = `${new Date().getFullYear()} ${translate({ message: copyright })}`;
-  const translatedSocialLinks = translateFooterItems([socialLinks])[0] as SocialLinks;
+  const translatedCopyright = `${new Date().getFullYear()} ${translate({
+    message: copyright,
+  })}`;
+  const translatedSocialLinks = translateFooterItems([
+    socialLinks,
+  ])[0] as SocialLinks;
   const translatedLegalLinks = translateFooterNavLinks(legalLinks);
   const translatedLinksOfInterest = translateFooterItems([
     linksOfInterest,
