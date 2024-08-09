@@ -289,5 +289,152 @@
   },
   "developer_home_page.tagline": {
     "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+  },
+   "developers.title_description": {
+    "message": "すべての Teradata 製品のクイックスタート、ガイド、チュートリアル、コード サンプル、技術ドキュメント、ダウンロードのハブです。"
+  },
+  "developers.welcome_message": {
+    "message": "Teradata 開発者ポータルへようこそ"
+  },
+  "developers.learn_more": {
+    "message": "詳細"
+  },
+  "developers.getting_started_title": {
+    "message": "スタートガイド"
+  },
+  "developers.getting_started_message": {
+    "message": "Teradata Vantageを迅速にご利用いただけます。機能について学習、一般的なタスクのハウツーを検索、またサンプル ソース コードを探索することができます。"
+  },
+  "developers.getting_started_link": {
+    "message": "スタートガイド"
+  },
+  "developers.documentation_title": {
+    "message": "ドキュメント"
+  },
+  "developers.documentation_message": {
+    "message": "VantageCloud Enterprise、VantageCore VMware、VantageCore IntelliFlexのVantageドキュメントにアクセスします。"
+  },
+  "developers.documentation_link_1": {
+    "message": "Lakeドキュメント"
+  },
+  "developers.documentation_link_2": {
+    "message": "すべてのドキュメント"
+  },
+  "developers.downloads_title": {
+    "message": "ダウンロード"
+  },
+  "developers.downloads_message": {
+    "message": "Teradataから共通に入手可能なダウンロードを検索します。"
+  },
+  "developers.downloads_link": {
+    "message": "ダウンロード サイト"
+  },
+  "developers.community_title": {
+    "message": "コミュニティ"
+  },
+  "developers.community_message": {
+    "message": "最近のコミュニティ ブログ。Teradata、パートナー、顧客の優秀な人材が、関連するトピックや機能についてブログを書いています。"
+  },
+  "developers.community_link": {
+    "message": "コミュニティ"
+  },
+  "developers.solutions-for-you": {
+    "message": "あなたのためのソリューション"
+  },
+  "developers.get-started-with-teradata": {
+    "message": "Teradataを使い始める"
+  },
+  "developers.getting_started_button": {
+    "message": "はじめる"
+  },
+  "developers.data-scientist": {
+    "message": "データサイエンティスト"
+  },
+  "developers.data-scientist-title": {
+    "message": "Vantageで機械学習モデルのトレーニングを行う方法"
+  },
+  "developers.data-scientist-text": {
+    "message": "機械学習モデルのアイデアを素早く検証したい場合があります。モデルの種類は決まっているますが、まだ機械学習パイプラインで運用する気はない。思い描いた関係が存在するかどうかをテストしたい。また、本番環境であっても、MLopsで常に再学習する必要がない。そのような場合は、Vantageアナリティクス ライブラリとそれがサポートする複数の機械学習モデル タイプを使用することができます。"
+  },
+  "developers.data-engineer": {
+    "message": "データエンジニア"
+  },
+  "developers.data-engineer-title": {
+    "message": "VantageでData Build Tool (dbt)を使用する"
+  },
+  "developers.data-engineer-text": {
+    "message": "このハウツーでは、Teradata Vantageでdbt (Data Build Tool)を使用する方法について説明します。オリジナルのdbt Jaffle Shopチュートリアルをベースにしています。いくつかのモデルは、VantageでサポートされるSQLに調整されています。"
+  },
+  "developers.developer": {
+    "message": "開発者"
+  },
+  "developers.developer-title": {
+    "message": "JDBCでVantageに接続する方法"
+  },
+  "developers.developer-text": {
+    "message": "このハウツーでは、JDBCを使用してTeradata Vantageに接続する方法を説明します。サンプルJDBCプロジェクトを通して説明します。プロジェクト全体はGitHubhttps://github.com/Teradata/jdbc-sample-appで公開されています。"
+  },
+  "developers.database-administrator": {
+    "message": "データベース管理者"
+  },
+  "developers.database-administrator-title": {
+    "message": "Teradata Parallel Transporter (TPT)を使用した巨大なデータのバルクロード"
+  },
+  "developers.database-administrator-text": {
+    "message": "Vantageに大量のデータを移動させるニーズはよくあります。Teradataは、このようなニーズにこたえるためTeradata Parallel Transporter (TPT)ユーティリティを提供しています。このハウツーでは、TPT の使用方法を説明します。このシナリオでは、30万件以上のレコードをもつ40MB以上のデータを数秒でロードします。"
+  },
+  "developers.it-operations": {
+    "message": "IT運用"
+  },
+  "developers.it-operations-title": {
+    "message": "オブジェクト ストレージに格納された データ"
+  },
+  "developers.it-operations-text": {
+    "message": "Native Object Storage(NOS)は、AWS S3、Google GCS、Azure Blob、オンプレミス実装などのオブジェクト ストレージ ファイルに保存されたデータをクエリーできるVantage機能です。これは、Vantageに取り込むためのデータ パイプラインを構築することなく、データを探索したい場合に便利です。"
+  },
+  "developers.stay-up-to-date": {
+    "message": "最新情報を入手"
+  },
+  "developers.top-picks-from-Teradata": {
+    "message": "Teradata推奨の機能"
+  },
+  "developers.top-picks-from-teradata-title-card1": {
+    "message": "Vantage AI/ML機能を探索する"
+  },
+  "developers.top-picks-from-teradata-text-card1": {
+    "message": "Teradata VantageCloudのClearScape Analytics™を体験するための無料ハンズオンデモ環境を手に入れましょう"
+  },
+  "developers.top-picks-from-teradata-title-card2": {
+    "message": "Teradata VantageでData Build Tool（dbt）を使用する"
+  },
+  "developers.top-picks-from-teradata-text-card2": {
+    "message": "主要な ELT ツールである dbt を Teradata Vantage で使用する方法を学びます。"
+  },
+  "developers.top-picks-from-teradata-title-card3": {
+    "message": "オブジェクトストレージに保存されたクエリーデータ"
+  },
+  "developers.top-picks-from-teradata-text-card3": {
+    "message": "SQL を使用してオブジェクト ストレージに保存されているデータを分析する方法を学習します。"
+  },
+  "developers.top-picks-from-teradata-title-card4": {
+    "message": "Airbyte を使用して外部ソースから Teradata Vantage にデータをロードする方法"
+  },
+  "developers.top-picks-from-teradata-text-card4": {
+    "message": "Airbyte ELT ツールを使用して、アプリケーションとデータベースから VantageCloud にデータをロードします。"
+  },
+  "developers.top-picks-from-teradata-title-card5": {
+    "message": "Teradata ModelOps を使い始める"
+  },
+  "developers.top-picks-from-teradata-text-card5": {
+    "message": "このチュートリアルでは、ModelOps で新しいプロジェクトを作成し、必要なデータを Vantage にアップロードし、ライフサイクル全体を追跡できるようになります。"
+  },
+  "developers.top-picks-from-teradata-title-card6": {
+    "message": "JDBC を使用して Vantage に接続する方法"
+  },
+  "developers.top-picks-from-teradata-text-card6": {
+    "message": "JDBC ドライバーを使用すると、外部アプリケーションから Teradata データベースに接続できます。"
+  },
+  "developers.talk-to-developers-where-you-are": {
+    "message": "どこにいても開発者と話す"
   }
 }
