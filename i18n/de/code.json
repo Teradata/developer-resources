@@ -515,5 +515,8 @@
   },
   "quickstarts.vantageCloud_lake_descrip": {
     "message": "Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform."
-  }
+  },
+  "quickstarts.teradata_university": {
+    "message": "Teradata University"
+  }  
 }

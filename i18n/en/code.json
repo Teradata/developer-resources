@@ -460,7 +460,7 @@
     "message": "Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers."
   },
   "quickstarts.tagline_2": {
-    "message": "Existing customer or partner? Explore courses at"
+    "message": "Existing customer or partner? Explore courses at "
   },
   "quickstarts.alt-img-banner": {
     "message": "Two individuals collaborate at a desk with a computer, against an abstract orange and blue backdrop."
@@ -533,5 +533,8 @@
   },
   "quickstarts.vantageCloud_lake_descrip": {
     "message": "Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform."
+  },
+  "quickstarts.teradata_university": {
+    "message": " Teradata University"
   }  
 }

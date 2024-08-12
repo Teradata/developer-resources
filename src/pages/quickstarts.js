@@ -19,7 +19,10 @@ function HomepageHeader() {
             {translate({ message: 'quickstarts.tagline' })}
           </p>
           <p className="hero__subtitle">
-          {translate({ message: 'quickstarts.tagline_2' })} <Link href='https://teradata.com/University/Overview' target='_blank'>Teradata University</Link>.
+            {translate({ message: 'quickstarts.tagline_2' })} 
+              <Link href='https://teradata.com/University/Overview' target='_blank'>
+                {translate({ message: 'quickstarts.teradata_university' })} 
+              </Link>.
           </p>
         </div>
         <div className={styles.heroImage}>
