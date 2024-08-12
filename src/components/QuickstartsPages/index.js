@@ -3,69 +3,69 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { Typography } from '@teradata-web/react-components';
-//import aiml from '@site/static/img/quickstarts/AI-ML.png';
 import { PossibleBanner } from '../HomepageFeatures';
+import { translate } from '@docusaurus/Translate';
 
-const FeatureTitle = 'Categories';
+const FeatureTitle = translate({ message: 'home_page.categories' });
 const Guides = [
   {
     img: 'memory',
-    title: `Getting started with Teradata AI Unlimited`,
-    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
+    title: translate({ message: 'quickstarts.gs_w_ai_unlimited_title' }),
+    description: translate({ message: 'quickstarts.gs_w_ai_unlimited_text' }),
     href: '/ai-unlimited/install-ai-unlimited/',
   },
   {
     img: 'memory',
-    title: 'Deploy Teradata AI Unlimited locally using Docker',
-    description: `You'll use Docker Compose to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers.`,
+    title: translate({ message: 'quickstarts.deploy_ai_unlimited_title' }),
+    description: translate({ message: 'quickstarts.deploy_ai_unlimited_text' }),
     href: '/ai-unlimited/resources/quickstart/run-ai-unlimited-jupyterlab-docker/',
   },
   {
     img: 'memory',
-    title: 'Deploy Teradata AI Unlimited on AWS',
-    description: `The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup.`,
+    title: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_title' }),
+    description: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_text' }),
     href: '/ai-unlimited/install-ai-unlimited/deploy-manager-aws-console/',
   }
 ];
 const FeatureList = [
   {
-    title: `Introduction`,
-    description: 'Teradata Vantage Engine Architecture and Concepts.',
+    title: translate({ message: 'quickstarts.introduction' }),
+    description: translate({ message: 'quickstarts.introduction_description' }),
     href: '/quickstarts/introduction/teradata-vantage-engine-architecture-and-concepts/',
   },
   {
-    title: 'Get access to Vantage',
-    description: 'Run Vantage Express on VMware, VirtualBox and UTM.',
+    title: translate({ message: 'quickstarts.get_access_vantage' }),
+    description: translate({ message: 'quickstarts.get_access_vantage_description' }),
     href: '/quickstarts/get-access-to-vantage/on-your-local/getting-started-vmware/',
   },
   {
-    title: 'Connect to Vantage',
-    description: 'Use Teradata Studio/Express on Apple Mac M1/M2.',
+    title: translate({ message: 'quickstarts.connect_to_vantage' }),
+    description: translate({ message: 'quickstarts.connect_to_vantage_description' }),
     href: '/quickstarts/connect-to-vantage/install-teradata-studio-on-mac-m1-m2/',
   },
   {
-    title: 'Manage data',
-    description: 'Query data stored in object storage.',
+    title: translate({ message: 'quickstarts.manage_data' }),
+    description: translate({ message: 'quickstarts.manage_data_description' }),
     href: '/quickstarts/manage-data/nos/',
   },
   {
-    title: 'Connect applications',
-    description: 'Connect to Vantage using JDBC, python and Mule service.',
+    title: translate({ message: 'quickstarts.connect_apps' }),
+    description: translate({ message: 'quickstarts.connect_apps_descrip' }),
     href: '/quickstarts/create-applications/jdbc/',
   },
   {
-    title: 'Analyze data',
-    description: 'Use Vantage from a Jupyter notebook.',
+    title: translate({ message: 'quickstarts.analyze_data' }),
+    description: translate({ message: 'quickstarts.analyze_data_descrip' }),
     href: '/quickstarts/analyze-data/jupyter/',
   },
   {
-    title: 'Teradata AI Unlimited',
-    description: 'See what AI Unlimited includes, prerequisites you need, and installation how-tos.',
+    title: translate({ message: 'quickstarts.td_ai_unlimited' }),
+    description: translate({ message: 'quickstarts.td_ai_unlimited_descrip' }),
     href: '/ai-unlimited/',
   },
   {
-    title: 'VantageCloud Lake',
-    description: `Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform.`,
+    title: translate({ message: 'quickstarts.vantageCloud_lake' }),
+    description: translate({ message: 'quickstarts.vantageCloud_lake_descrip' }),
     href: '/quickstarts/vantagecloud-lake/getting-started-with-vantagecloud-lake/',
   },
 ];
@@ -101,7 +101,9 @@ export default function Categories() {
       <section className={clsx(styles.features, styles.fGuides)}>
         <div className={clsx('container', styles.container)}>
             <br/>
-            <Typography scale="headline2">Featured guides</Typography>
+            <Typography scale="headline2">
+              {translate({ message: 'quickstarts.featured_guides' })}
+            </Typography>
             <br/><br/>
             <div className={clsx('row', styles.row)}> 
             {Guides.map((props, idx) => (
