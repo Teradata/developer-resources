@@ -1,6 +1,9 @@
 import config from './docusaurus.config.js';
 import headerItems from './src/config/header.navitems.js';
 
+// Remove the Google Analytics tracking ID from the PR preview
+delete config.presets[0][1].gtag
+
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {
   ...config,
