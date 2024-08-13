@@ -22,13 +22,13 @@ AI Unlimited Jupyter カーネルは、標準の Teradata SQL カーネル マ�
 
 **説明**: ノートブックと AI Unlimited マネージャ間の通信を確立します。
 
-**使用**:
+**使用法**:
 ```bash 
 %workspaces_config host=<ip_or_hostname>, apikey=<API_Key>, withtls=<T|F>
 ```
 条件:
 
-- host:  AI Unlimitedマネージャの名前またはIPアドレス。
+- ホスト： AI Unlimited マネージャの名前または IP アドレス。
 
 - apikey: AI Unlimited セットアップ **プロファイル** ページからの API キー値。
 
@@ -43,7 +43,7 @@ Workspace configured for host=<ip_or_hostname>
 
 **説明**: 新しいプロジェクトを作成します。このコマンドは、Git アカウントにプロジェクト名の新しいリポジトリも作成します。設定は **engine.yml** ファイルに保存されます。
 
-**使用**:
+**使用法**:
 ```bash
 %project_create project=<Project_Name>, env=<Cloud_Service_Provider>, team=<Project_Team>
 ```
@@ -64,7 +64,7 @@ Project `Project_Name` created
 
 **説明**: プロジェクトを削除します。これにより、プロジェクト リポジトリは削除されません。マネージャからプロジェクト メタデータが削除されます。 
 
-**使用**:
+**使用法**:
 ```bash 
 %project_delete project=<Project_Name>, team=<Project_Team>
 ```
@@ -86,7 +86,7 @@ Project `Project_Name` deleted
 
 特定のプロジェクトの詳細を取得するには、プロジェクト パラメータを使用します。パラメータなしでコマンドを実行すると、すべてのプロジェクトがリストされます。
 
-**使用**:
+**使用法**:
 ```bash
 %project_list project=<Project_Name>
 ```
@@ -100,6 +100,7 @@ Project `Project_Name` deleted
 | NAME          | URL      | 
 |---------------|----------|
 | <Project_Name>| <Git_URL>| 
+
 ```
 
 ## %project_auth_create
@@ -108,15 +109,15 @@ Project `Project_Name` deleted
 
 エンジンをデプロイする前に、許可オブジェクトを作成する必要があります。許可の詳細は保持され、プロジェクトの再デプロイ時に含められます。オプションで、エンジンをデプロイした後、 `CREATE AUTHORIZATION` SQL コマンドを使用して手動で許可を作成することもできます。この場合、許可の詳細は保持されません。
 
-**使用**:
+**使用法**:
 ```bash 
-%project_auth_プロジェクトを作成=<Project_Name> 、名前=<Authorization_Name> 、キー=<Authorization_Key> 、秘密=<Authorization_Secret> 、地域=<ObjectStore_Region> 、トークン=<Session_Token>
+%project_auth_create project=<Project_Name>, name=<Authorization_Name>, key=<Authorization_Key>, secret=<Authorization_Secret>, region=<ObjectStore_Region>, token=<Session_Token>
 ```
 条件:
 
 - project: プロジェクトの名前。
 
-- name:	オブジェクトストアの認証名。
+- name:	オブジェクト ストアの認証名。
 
 - key: オブジェクト ストアの認証キー。
 
@@ -126,9 +127,9 @@ Project `Project_Name` deleted
 
 - **`[オプション]`** token: オブジェクト ストア アクセス用のセッション トークン。
 
-- **`[オプション-AWS のみ]`** role: ロールとその権限を引き受けて、AWS アカウントから AWS リソースにアクセスする IAM ユーザーまたはサービスアカウント。AWS リソースの所有者がロールを定義します。例: arn:aws:iam::00000:role/STSAssumeRole。
+- **`[オプション - AWS のみ]`** role: ロールとその権限を引き受けて、AWS アカウントから AWS リソースにアクセスする IAM ユーザーまたはサービスアカウント。AWS リソースの所有者がロールを定義します。例: arn:aws:iam::00000:role/STSAssumeRole。
 
-- **`[オプション-AWS のみ]`** ExternalID: オブジェクト ストアへのアクセスに使用される外部 ID。このパラメータは `role` 、パラメータを使用する場合に必須です。
+- **`[オプション - AWS のみ]`** ExternalID: オブジェクト ストアへのアクセスに使用される外部 ID。このパラメータは `role` 、パラメータを使用する場合に必須です。
 
 **出力**:
 ```
@@ -139,7 +140,7 @@ Authorization 'name' created
 
 **説明**: オブジェクト ストアの許可を更新します。
 
-**使用**:
+**使用法**:
 
 ```bash 
 %project_auth_update project=<Project_Name>, name=<Authorization_Name>, key=<Authorization_Key>, secret=<Authorization_Secret>, region=<ObjectStore_Region>, token=<Session_Token>
@@ -159,9 +160,9 @@ Authorization 'name' created
 
 - **`[オプション]`** token: オブジェクト ストア アクセス用のセッション トークン。
 
-- **`[オプション-AWS のみ]`** role: ロールとその権限を引き受けて、CSP アカウントから AWS または Azure リソースにアクセスする IAM ユーザーまたはサービス アカウント。AWS または Azure リソースの所有者がロールを定義します。例: arn:aws:iam::00000:role/STSAssumeRole。
+- **`[オプション - AWS のみ]`** role: ロールとその権限を引き受けて、CSP アカウントから AWS または Azure リソースにアクセスする IAM ユーザーまたはサービス アカウント。AWS または Azure リソースの所有者がロールを定義します。例: arn:aws:iam::00000:role/STSAssumeRole。
 
-- **`[オプション-AWS のみ]`** ExternalID: オブジェクト ストアへのアクセスに使用される外部 ID。このパラメータは `role` 、パラメータを使用する場合に必須です。
+- **`[オプション - AWS のみ]`** ExternalID: オブジェクト ストアへのアクセスに使用される外部 ID。このパラメータは `role` 、パラメータを使用する場合に必須です。
 
 **出力**:
 ```
@@ -172,7 +173,7 @@ Authorization 'name' updated
 
 **説明**: オブジェクト ストアの許可を削除します。
 
-**使用**:
+**使用法**:
 ```bash
 %project_auth_delete project=<Project_Name>, name=<Authorization_Name>
 ```
@@ -180,7 +181,7 @@ Authorization 'name' updated
 
 - project: プロジェクトの名前。
 
-- name:	オブジェクトストアの認証名。
+- name:	オブジェクト ストアの認証名。
 
 **出力**:
 ```
@@ -191,7 +192,7 @@ Authorization 'name' deleted
 
 **説明**: プロジェクトに対して作成されたオブジェクト ストアの許可を一覧表示します。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_auth_list project=<Project_Name>
 
@@ -211,7 +212,7 @@ Authorization 'name' deleted
 
 **説明**: プロジェクトのエンジンをデプロイします。デプロイ プロセスは完了するまでに数分かかります。デプロイが成功すると、パスワードが生成されます。
 
-**使用**:
+**使用法**:
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
@@ -250,13 +251,13 @@ Authorization 'name' deleted
 <Tabs>
 <TabItem value="aws1" label="AWS">
 
-- **`[オプション]`** prefixlist: 同じポリシーの適用を必要とする IP アドレス範囲のセットを定義する CIDR ブロックのコレクション。エンジンと通信できる IP アドレスを指定するために使用されます。
+- **`[オプション]`** プレフィックスリスト: 同じポリシーの適用を必要とする IP アドレス範囲のセットを定義する CIDR ブロックのコレクション。エンジンと通信できる IP アドレスを指定するために使用されます。
 
-- **`[オプション]`** securitygroups: 各リージョンの VPC のセキュリティグループのリスト。セキュリティグループを指定しない場合、エンジンは VPC のデフォルトのセキュリティグループに自動的に関連付けられます。
+- **`[オプション]`** securitygroups: 各リージョンの VPC のセキュリティ グループのリスト。セキュリティ グループを指定しない場合、エンジンは VPC のデフォルトのセキュリティ グループに自動的に関連付けられます。
 
 - **`[オプション]`** cidrs: エンジンに使用される CIDR アドレスのリスト。
 
-- **`[オプション]`** tags: エンジンに割り当てられた、簡単に識別できるキーと値のペア。
+- **`[オプション]`** tags: エンジンに割り当てられた、すばやく識別できるキーと値のペア。
 
 - **`[オプション]`** iamrole: エンジンに使用される IAM ロール。
 
@@ -267,11 +268,11 @@ Authorization 'name' deleted
 </TabItem>
 <TabItem value="azure" label="Azure">
 
-- **`[オプション]`** network: エンジンをデプロイするネットワーク。
+- **`[オプション]`** ネットワーク: エンジンをデプロイするネットワーク。
 
 - **`[オプション]`** keyvault: エンジンが使用するキー ボールト。パスワードなどの機密情報を安全に保存できます。
 
-- **`[オプション]`** keyvaultresourcegroup: キー ボールトを含むリソース グループ。
+- **`[オプション]`** keyvaultresourcegroup: キー コンテナを含むリソース グループ。
 
 - **`[オプション]`** networkresourcegroup: ネットワークを含むリソース グループ。
 
@@ -288,7 +289,7 @@ Success: Compute Engine setup, look at the connection manager
 
 **説明**: 作業が完了したらエンジンを停止してください。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_engine_suspend <Project_Name>
 ```
@@ -306,7 +307,7 @@ Success: Suspended Compute Engine
 
 **説明**: プロジェクトにデプロイされたエンジンのリストを表示します。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_engine_list project=<Project_Name>
 ```
@@ -325,7 +326,7 @@ Success: Suspended Compute Engine
 
 **説明**: Git リポジトリ内のプロジェクトに割り当てられた貢献者のリストを表示します。
 
-**使用**:
+**使用法**:
 ```bash
 %project_user_list project=<Project_Name>
 ```
@@ -345,7 +346,7 @@ Success: Suspended Compute Engine
 
 **説明**: エンジン内のプロジェクト情報とオブジェクト定義をバックアップします。
 
-**使用**:
+**使用法**:
 ```bash
 %project_backup project=<Project_Name>
 ```
@@ -362,7 +363,7 @@ Backup of the object definitions created
 
 **説明**: Git リポジトリからプロジェクト情報とオブジェクト定義を復元します。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_restore project=<Project_Name>, gitref=<Git_Reference>
 ```
@@ -380,7 +381,7 @@ Restore of the object definitions done
 
 **説明**: デプロイされたエンジンのユーザーを更新します。エンジンのデプロイ後にユーザーが Git リポジトリに貢献者として追加された場合は、このコマンドを使用して、デプロイされたエンジンのユーザーを更新および新規作成できます。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_engine_update_users project=<Project_Name>
 ```
@@ -397,7 +398,7 @@ Username and password of each user on the engine
 
 **説明**: エンジンを中断して再デプロイすることなく、デプロイされたエンジンで新しい許可を更新または追加します。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_engine_update_auth project=<Project_Name>
 ```
@@ -413,9 +414,9 @@ Authorizations updated
 
 ## %project_connection_add
 
-**説明**: デプロイされたエンジンの接続を更新します。このコマンドを使用すると、手動で新しい接続を作成しなくても、別のノートブックからエンジンに接続できます。
+**説明**: デプロイされたエンジンの接続を更新します。このコマンドを使用法すると、手動で新しい接続を作成しなくても、別のノートブックからエンジンに接続できます。
 
-**使用**:
+**使用法**:
 ```bash 
 %project_connection_add project=<Project_Name>
 ```
@@ -433,13 +434,13 @@ The connection manager shows the refreshed connection
 
 **説明**: AI Unlimited カーネルによって提供されるマジック コマンドのリストを表示します。
 
-**使用**:
+**使用法**:
 ```bash
 %help
 ```
 さらに、コマンドごとに詳細なヘルプ メッセージを表示できます。
 
-**使用**:
+**使用法**:
 ```bash 
 %help `command`
 ```

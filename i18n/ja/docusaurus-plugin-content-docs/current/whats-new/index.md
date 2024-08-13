@@ -23,9 +23,9 @@ pagination_next: null
     - Python Client Libraries
       - teradataml 20.0.0.0
       - teradatamlwidgets 20.0.0.2
-	  \- teradatasql 20.0.0.12
-	  \- teradatasqlalchemy 20.0.0.2
-	  \- tdapiclient 1.4.0.1
+	  \- テラデータSQL 20.0.0.12
+	  \- テラデータSQLアルケミー 20.0.0.2
+	  \- tdapiクライアント 1.4.0.1
 - プロジェクト作成とデータベーススキーマのバックアップのためのGitHubとGitLabのサポート
 - AI Unlimited manager v0.2.15
 
@@ -33,15 +33,15 @@ pagination_next: null
 <summary>サポートされている Teradata Vantage&trade; 機能</summary>
 - Native Object Store (NOS) 20.00.17.08
 - Open Table Format (OTF) 20.00.17.07
-  - Iceberg と AWS Glue、Hive、および Databricks Unity Catalog
-  - Delta Lake と Databricks Unity Catalog
+  - AWS Glue、Hive、Databricks を使用した Iceberg Unity Catalog
+  - Databricks を使用した Databricks Unity Catalog
 - Bring Your Own Model 05.00.00.01
   - PMMLPredict
   - H20Predict
 </details>  
 
 <details>
-<summary>サポートされている teradataml 関数</summary>
+<summary>サポートされているteradataml関数</summary>
 - Antiselect
 - Attribution
 - BincodeFit

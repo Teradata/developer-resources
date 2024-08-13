@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # 完了したら
 
-不要なエンジン リソース [プロジェクトを中断する](../../manage-ai-unlimited/suspend-and-restore-project.md) に対して料金が発生しないようにするには、作業していないリソースをいつでも復元できます。
+作業していない不要なエンジン リソース [プロジェクトを中断する](../../manage-ai-unlimited/suspend-and-restore-project.md) に対して料金が発生しないようにするには、いつでもそれらを復元できます。
 
 QuickStartが完了し、コンピューターのリソースを解放したい場合は、このコマンドを実行して、作成されたすべてのコンテナとネットワークを停止して削除します。
 

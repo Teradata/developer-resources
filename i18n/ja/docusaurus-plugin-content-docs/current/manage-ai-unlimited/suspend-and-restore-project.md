@@ -56,6 +56,6 @@ restore パラメータについては、デフォルト値の true のままに
 エンジンがデプロイされるたびに、エンジンに接続するための新しいパスワードがユーザーごとに生成されます。
 
 :::tip
-AI Unlimited [マジック コマンド](../explore-and-analyze-data/magic-commands.md)の詳細については、こちらをご覧ください 。
+AI Unlimited [マジック コマンド](../explore-and-analyze-data/magic-commands.md) の詳細については、こちらをご覧ください。
 :::
 

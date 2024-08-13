@@ -10,7 +10,7 @@ pagination_next: null
 
 # Azure に JupyterLab をインストールする
 
-Teradata が提供する  Azure Resource Manager (ARM) テンプレートを使用して、Azure Portal から JupyterLab と AI Unlimited カーネルをインストールします。 
+使用するには Azure Portal から JupyterLab と AI Unlimited カーネルをインストールするための、Teradata が提供する Azure Resource Manager (ARM) テンプレート。 
 
 これにより、サーバー インスタンスがデプロイされ、JupyterLab は [systemd](../../glossary.md#systemd)によって制御されるコンテナ内で実行されます。
 
@@ -45,9 +45,9 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
 :::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
-    -`jupyter-with-alb.json` — JupyterLabをロード バランサの背後にホスト [application load balancer](../../glossary.md#application-load-balancer)
-    \- `jupyter-with-nlb.json`— JupyterLabをロード バランサの背後にホスト[network load balancer](../../glossary.md#network-load-balancer)
-     \- `jupyter-without-lb.json`— ロード バランサなし
+    \- `jupyter-with-alb.json `—アプリケーション ロード バランサー の背後に JupyterLab をホストする(../../glossary.md#application-load-balancer)
+    \- `jupyter-with-nlb.json` —ネットワーク ロード バランサー の背後に JupyterLab をホストする(../../glossary.md#network-load-balancer)
+    \- `jupyter-without-lb.json`—ロードバランサーなし
 
 ## テンプレートを読み込む
 
@@ -68,54 +68,54 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
 
 <summary>Azure と JupyterLab のパラメータ</summary>
 
-| パラメータ | 説明 | note 
+| パラメータ | 説明 | 注意事項 
 |---------|-------------|-----------|
-| Subscription | AI Unlimited のデプロイに使用する Azure サブスクリプション。| 必須<br/>デフォルト: NA<br/>無料トライアルではないアカウントを使用することをお勧めします。 |
+| Subscription | AI Unlimited のデプロイに使用する Azure サブスクリプション。 | 必須<br/>デフォルト: NA<br/>無料トライアルではないアカウントを使用することをお勧めします。 |
 | Region | AI Unlimited をデプロイするリージョン。 | 必須<br/>デフォルト: NA<br/>作業場所に最も近い Azure リージョンと、AI Unlimited で使用するデータ リソースを選択します。 |
-| Resource Group Name | 関連する AI Unlimited リソースをグループ化するコンテナーの名前。 | 必須<br/>デフォルト: ai-unlimited-jupyter |
-| OS バージョン  | 現在のサブスクリプションで使用できるオペレーティング システムのバージョン。| デフォルトで  オプション<br/>デフォルト: Ubuntu-2004 |
+| Resource Group Name | 関連する AI Unlimited リソースをグループ化するコンテナの名前。 | 必須<br/>デフォルト: ai-unlimited-jupyter |
+| OS Version  | 現在のサブスクリプションで利用可能なオペレーティング システムのバージョン。| オプション  デフォルト<br/>デフォルト: Ubuntu-2004 |
 | Instance Type | AI Unlimited に使用するインスタンス タイプ。| オプション<br/>デフォルト: STANDARD_D2_V3<br/>コストを節約するには、デフォルトのインスタンス タイプを使用することをお勧めします。デフォルトのインスタンス タイプは、2 つの vCPU と 8.0 GiB のメモリを備えた標準の Dv3 シリーズです。|
 | Network | AI Unlimited インスタンスをデプロイするネットワークの名前。| オプション<br/>デフォルト: NA| 
 | Subnet | AI Unlimited インスタンスをデプロイするサブネットワーク。| 必須<br/>デフォルト: NA<br/>サブネットは、選択した可用性ゾーンに存在する必要があります。 |
-| Security Group | インスタンスへの受信トラフィックと送信トラフィックを制御する仮想ファイアウォール。| オプション<br/>デフォルト: JupyterSecurityGroup<br/>セキュリティ グループは、インスタンスへのアクセスを許可するプロトコル、ポート、IP アドレスまたは CIDR ブロックを指定する一連のルールとして実装されます。カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、アクセス CIDR またはセキュリティ グループの少なくとも 1 つを定義します。 |
-| アクセス CIDR | インスタンスへのアクセスが許可される CIDR IP アドレス範囲。 | オプション<br/>デフォルト: 0.0.0.0/0<br/>この値は信頼できる IP 範囲に設定することをお勧めします。カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、アクセス CIDR またはセキュリティ グループの少なくとも 1 つを定義します。|
+| Security Group | インスタンスへの受信トラフィックと送信トラフィックを制御する仮想ファイアウォール。 | オプション<br/>デフォルト: JupyterSecurityGroup<br/>セキュリティ グループは、インスタンスへのアクセスを許可するプロトコル、ポート、IP アドレスまたは CIDR ブロックを指定する一連のルールとして実装されます。カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、アクセス CIDR またはセキュリティ グループの少なくとも 1 つを定義します。 |
+| Access CIDR | インスタンスへのアクセスが許可される CIDR IP アドレスの範囲。 | オプション<br/>デフォルト: 0.0.0.0/0<br/>この値は信頼できる IP 範囲に設定することをお勧めします。カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、アクセス CIDR またはセキュリティ グループの少なくとも 1 つを定義します。 |
 | Source App Sec Groups (ASG) | AI Unlimited インスタンスに接続する権限を持つソース アプリケーション セキュリティ グループ。ASG を使用すると、特定のネットワーク セキュリティ ポリシーに基づいて仮想マシン (VM) を整理できます。これらのセキュリティ ポリシーによって、仮想マシンで許可されるトラフィックと許可されないトラフィックが決まります。 | オプション<br/>デフォルト: NA<br/>ネットワーク インターフェイスと同じリージョン内のアプリケーション セキュリティ グループを選択します。 |
 | Destination App Sec Groups | AI Unlimited インスタンスに接続する権限を持つ宛先アプリケーション セキュリティ グループ。 | オプション<br/>デフォルト: NA<br/>ネットワーク インターフェイスと同じリージョン内のアプリケーション セキュリティ グループを選択します。 |
-| Role Definition ID | AI Unlimited で使用するロールの ID。| 必須<br/>デフォルト: NA<br/>Azure CLI コマンド「Get-AzRoleDefinition」を使用して、ロール定義 ID を取得します。|
+| Role Definition ID | AI Unlimited で使用するロールの ID。 | 必須<br/>既定値: NA<br/>Azure CLI コマンド `Get-AzRoleDefinition` を使用して、ロール定義 ID を取得します。 |
 | Allow Public SSH | Azure 内の VM に接続するためにセキュア シェル (SSH) キーを使用できるかどうかを指定します。 |  オプション<br/>デフォルト: true |
-| Public Key | SSH 経由で VM に接続するために使用できる公開 SSH キー。| オプション<br/>デフォルト: NA<br/>この値は `ssh-rsa` で始まる必要があります。|
-| Use Persistent Volume | データの保存に新しい永続ボリュームを使用するか、既存の永続ボリュームを使用するかを指定します。パラメータ セクションの下にある「*詳細: 永続ボリュームの使用*」を参照してください。| デフォルトでオプション<br/>デフォルト: New<br/>サポートされるオプションは、ユースケースに応じて、新しい永続ボリュームまたは既存の永続ボリュームです。|
+| Public Key | SSH 経由で VM に接続するために使用できる公開 SSH キー。 | オプション<br/>デフォルト: NA<br/>この値は `ssh-rsa` で始まる必要があります。 |
+| Use Persistent Volume | データの保存に新しい永続ボリュームを使用するか、既存の永続ボリュームを使用するかを指定します。パラメータ セクションの下の「*詳細: 永続ボリュームの使用*」を参照してください。 | オプション、デフォルト<br/>デフォルト: 新規<br/>サポートされるオプションは、使用ケースに応じて、新しい永続ボリュームまたは既存のボリュームです。 |
 | Persistent Volume Size | インスタンスに接続できる永続ボリュームのサイズ（GB 単位）。 | オプション<br/>デフォルト: 100<br/>8 ～ 1000 までの値をサポートします。 |
-| Existing Persistent Volume | インスタンスに接続できる既存の永続ボリュームの ID。| 永続ボリュームの使用がExistingに設定されている場合に必須<br/>デフォルト: NA<br/>永続ボリュームは、AI Unlimited インスタンスと同じアベイラビリティーゾーンに存在する必要があります。 |
-| JupyterHttpPort | JupyterLab サービス UI にアクセスするためのポート。| デフォルトで必須<br/>デフォルト: 8888 |
-| JupyterVersion | デプロイする JupyterLab のバージョン。 | デフォルトで必須<br/>デフォルト: latest<br/>値はコンテナのバージョン タグ (例: latest) です。 |
-| JupyterToken | UI から JupyterLab にアクセスするために使用されるトークンまたはパスワード。| 必須<br/>デフォルト: NA<br/>トークンは文字で始まり、英数字のみで構成されている必要があります。許可されるパターンは^[a-zA-Z][a-zA-Z0-9-]*です。 |
+| Existing Persistent Volume | インスタンスに接続できる既存の永続ボリュームの ID。| 永続ボリュームの使用が既存に設定されている場合は必須です<br/>デフォルト: NA<br/>永続ボリュームは、AI Unlimited インスタンスと同じアベイラビリティーゾーンに存在する必要があります。 |
+| JupyterHttpPort | JupyterLab サービス UI にアクセスするためのポート。 | デフォルトで必須<br/>デフォルト: 8888 |
+| JupyterVersion | デプロイする JupyterLab のバージョン。 | デフォルトで必須<br/>デフォルト: latest<br/>値は、latest などのコンテナ バージョン タグです。 |
+| JupyterToken | UI から JupyterLab にアクセスするために使用されるトークンまたはパスワード。| 必須<br/>デフォルト: NA<br/>トークンは文字で始まり、英数字のみで構成されている必要があります。 許可されるパターンは ^[a-zA-Z][a-zA-Z0-9-]* です。 |
 
 </details>
 
 <details>
 
-<summary>詳細: 永続ボリュームの使用</summary>
+<summary>もっと学ぶ.: 永続ボリュームの使用</summary>
 
-JupyterLab インスタンスはコンテナ内で実行され、その構成データはインスタンスのルート ボリュームのデータベースに保存されます。このデータは、インスタンスをシャットダウン、再起動、またはスナップショットを作成して再起動しても保持されます。 
+JupyterLab インスタンスはコンテナ内で実行され、その構成データをインスタンスのルート ボリュームのデータベースに保存します。このデータは、インスタンスをシャットダウン、再起動、またはスナップショットを作成して再起動しても保持されます。 
 
-ただし、永続ボリュームには、コンテナ化されたアプリケーションのデータが、それが実行されるコンテナ、ポッド、またはノードの存続期間を超えて保存されます。 
+ただし、永続ボリュームには、コンテナ化されたアプリケーションのデータが、それが実行されるコンテナ、ポッド、またはノードの有効期間を超えて保存されます。 
 
-**永続ボリュームがない場合**
+**永続ボリュームなし**
 
 コンテナ、ポッド、またはノードがクラッシュまたは終了すると、JupyterLab 構成データが失われます。新しい JupyterLab インスタンスをデプロイすることはできますが、失われたインスタンスと同じ状態にすることはできません。
 
-**永続ボリュームがある場合**
+**永続ボリュームの場合**
 
-コンテナ、ポッド、またはノードがクラッシュまたは終了し、JupyterLab 構成データが永続ボリュームに保存されている場合は、失われたインスタンスと同じ構成の新しい JupyterLab インスタンスをデプロイできます。
+コンテナ、ポッド、またはノードがクラッシュまたは終了し、JupyterLab 構成データが永続ボリュームに保存されている場合は、失われたものと同じ構成を持つ新しい JupyterLab インスタンスをデプロイできます。
 
 **例**
 
-1. JupyterLab をデプロイし、次のパラメータを含めます:
+1. JupyterLab をデプロイし、次のパラメータを含めます。
    - `UsePersistentVolume`: **New**
-2. スタックを作成したら、[**Outputs**] タブで `volume-id` をメモします。
+2. スタックを作成したら、**Outputs** タブで `volume-id` をメモします。
 3. JupyterLab を使用します。
-4. JupyterLab インスタンスが失われた場合は、JupyterLab を再度デプロイし、次のパラメータを含めます:
+4. JupyterLab インスタンスが失われた場合は、JupyterLab を再度デプロイし、次のパラメータを含めます。
    - `UsePersistentVolume`: **New**
    - `ExistingPersistentVolumeId`: 手順 2 でメモした値
    
@@ -127,8 +127,8 @@ JupyterLab インスタンスはコンテナ内で実行され、その構成デ
 ## インスタンスを作成する
 
 1. **レビュー + 作成**を選択します。
-2. **作成**を選択します。<br />
-**通知** ページで進行状況を監視できます。
+2. **作成**を選択します。.<br />
+**通知** ページでは進行状況を監視できます。
 
 デプロイが完了すると、 **出力** ページに JupyterLab にアクセスするための URL が表示されます。
 

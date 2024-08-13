@@ -13,102 +13,102 @@ pagination_next: null
 
 ## A
 
-### AI Unlimitedマネージャ
+### AI Unlimited manager
 
 マネージャは、AI/ML [Engine (エンジン)](#engine) の [クラウド サービス プロバイダ](#cloud-service-provider)へのデプロイを調整する AI Unlimited コンポーネントです。また、AI Unlimited 管理者がインストール後に AI Unlimited を設定し、必要に応じて後で設定を変更するための Web ベースのユーザー インターフェイスも提供します。すべてのユーザーはマネージャから API キーを取得します。
 
-### APIキー
+### API key
 
 アプリケーション プログラミング インターフェイス (API) キーを使用すると、Jupyter ノートブックをマネージャに接続できます。これは、プロジェクトを作成またはアクセスする前に、新しい Jupyter ノートブックで最初に行うことです。
 
-### Application Load Balance (アプリケーション ロード バランサ)
+### application load balancer
 
 ロード バランサは、受信トラフィックをサーバー間で分散します。アプリケーション ロード バランサは、HTTP ヘッダーやパスなどの受信トラフィックのコンテンツを検査して、ルーティングを決定します。アプリケーション ロード バランサを使用して、AI Unlimited マネージャとエンジンをパブリック IP ネットワークに公開できます。
 
 
 ## C
 
-### Classless Inter-Domain Routing (CIDR、サイダー)
+### Classless Inter-domain Routing
 
 クラスレス インタードメイン ルーティング (CIDR) は、インターネット上のデータ ルーティング効率を高めるための IP アドレス割り当て方法です。インターネットに接続するすべてのコンピューターには、IP アドレスと呼ばれる固有の番号があります。IP アドレスにより、コンピューターは互いを見つけて通信することができます。CIDR ブロックは、IP アドレスの範囲です。
 
-### Cloud Service Provider (クラウド サービス プロバイダ )
+### cloud service provider
 
-クラウド サービス プロバイダ (CSP) は、インターネット経由でオンデマンドでコンピューティング リソースを提供する企業です。これらのリソースには、Infrastructure as a Service (IaaS)、Platform as a Service (PaaS)、Software as a Service (SaaS) などがあります。 [AI Unlimitedマネージャ](#ai-unlimited-manager) と [Engine (エンジン)](#engine) はCSP 上で実行されます。
+クラウド サービス プロバイダ (CSP) は、インターネット経由でオンデマンドでコンピューティング リソースを提供する企業です。これらのリソースには、Infrastructure as a Service (IaaS)、Platform as a Service (PaaS)、Software as a Service (SaaS) などがあります。 [AI Unlimitedマネージャ](#ai-unlimited-manager) と [engine](#engine) はCSP 上で実行されます。
 
-### Cluster (クラスタ)
+### cluster
 
 処理能力、スケーラビリティ、信頼性を強化するために、単一のシステムとして連携して動作する相互接続されたコンピューターのグループ (ノードとも呼ばれます)。AI Unlimited エンジンは、CSP 上のクラスタにデプロイされます。各ノードは [仮想マシン (VM)](#virtual-machine)です。
 
 
 ## D
 
-### Data Lake (データレイク)
+### data lake
 
 データ分析、機械学習、データ探索のためのデータの中央リポジトリ。データ レイクは通常 [オブジェクト ストレージ](#object-storage) 上に構築され、予定のデータ分析のためにデータにアクセスできるように設計されます。  
 
 
 ## E
 
-### Engine (エンジン)
+### engine
 
 クラウド コンピューティングでは、コンピューティング エンジンは Infrastructure as a Service (IaaS) の一例です。これにより、クラウド サービス プロバイダのインフラストラクチャ上で [仮想マシン (VM)](#virtual-machine) を作成して実行できます。Jupyter ノートブックから AI Unlimited AI/ML コンピューティング エンジンをデプロイすると、 [AI Unlimitedマネージャ](#ai-unlimited-manager) によって VM がプロビジョニングされます。
 
 
 ## I
 
-### IAMロール
+### IAM role
 
 [Identity and Access Management (IAM) ロール](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) は、ユーザーまたは組織のクラウド管理者が組織の AWS アカウントで作成できるロールです。このロールには、そのロールを持つエンティティが AWS で実行できる操作と実行できない操作を決定する 1 つ以上のアクセス許可ポリシーが添付されています。
 
 
 ## K
 
-### kernel (カーネル)
+### kernel
 
 Jupyter カーネルは、Jupyter ノートブックに記述したコードを処理し、その結果をノートブックに返して表示する、言語固有のプログラムです。 
 
 
 ## L
 
-### Load Balancer (ロード バランサ) 
+### load balancer 
 
 ロード バランサは、受信トラフィックをサーバー間で均等に分散し、パフォーマンス、信頼性、およびスケーラビリティを向上させます。組織でリソースによるパブリック IP アドレスの使用を許可していない場合は、ロード バランサを使用して AI Unlimited マネージャとエンジンをパブリック IP ネットワークに公開できます。 
 
 
 ## M
 
-### Mounting Volumes (ボリュームのマウント) 
+### mounting volumes 
 
 Docker などのコンテナ化されたプラットフォームの概念。コンテナを実行しているマシン (ホスト) 上のディレクトリをコンテナ内のディレクトリにマップして、ホストとコンテナ間でデータとファイルを共有できます。
 
 
 ## N
 
-### Network Load Balancer (ネットワーク ロード バランサ)
+### network load balancer
 
 ロード バランサは、受信トラフィックをサーバー間で分散します。ネットワーク ロード バランサはトラフィックの内容を検査しません。ルーティングの決定は、ポートや IP アドレスなどの要素に基づいて行われます。ネットワーク ロード バランサは、AI Unlimited とそのエンジンをパブリック IP ネットワークに公開する方法として使用できます。
 
 
 ## O
 
-### OAuthアプリ
+### OAuth app
 
 OAuth アプリを使用すると、ユーザーはパスワードを共有せずに、ある Web サイトまたはサービス上の自分のアカウントへのアクセスを別の Web サイトまたはサービスに許可できます。 
 
 あなたまたはあなたの組織の誰かが作成した OAuth アプリにより、AI Unlimited は GitHub または GitLab 認証を使用して各 [プロジェクト リポジトリ](#project-repository) を管理し、エンジンがデプロイされるたびに、リポジトリに追加された貢献者からエンジン ユーザーを取得できるようになります。
 
-### Object Storage (オブジェクト ストレージ)
-大量の構造化データ、半構造化データ、非構造化データをクラウドに保存するためのスケーラブルで非常に効果的な方法です。Amazon S3 は AWS 上のオブジェクト ストレージです。Azure Blob Storage は Azure 上のオブジェクト ストレージです。オブジェクト ストレージは [Data Lake (データレイク)](#data-lake)の基礎となります。
+### object storage
+大量の構造化データ、半構造化データ、非構造化データをクラウドに保存するためのスケーラブルで非常に効果的な方法です。Amazon S3 は AWS 上のオブジェクト ストレージです。Azure Blob Storage は Azure 上のオブジェクト ストレージです。オブジェクト ストレージは [data lake](#data-lake)の基礎となります。
 
 
 ## P
 
-### Project (プロジェクト)
+### project
 
 プロジェクトは、Jupyter ノートブックからデータを探索および分析するための手段です。各プロジェクトには、GitHub または GitLab アカウント内にリポジトリがあります。
 
-### プロジェクト リポジトリ
+### project repository
 
 プロジェクト所有者 (プロジェクトを作成したユーザー) は、プロジェクト貢献者を Git リポジトリに追加します。そこから、エンジンがデプロイされるたびに、AI Unlimited はエンジンに接続して使用する権限を持つユーザーを導出します。 
 
@@ -130,12 +130,12 @@ OAuth アプリを使用すると、ユーザーはパスワードを共有せ�
 
 ## T
 
-### Transport Layer Security (トランスポート レイヤー セキュリティ)
+### Transport Layer Security
 
 トランスポート レイヤー セキュリテ (TLS) は、インターネット経由で通信する 2 者間の安全な接続を確立するプロトコルです。TLS は送信中にデータを暗号化し、傍受した人がデータを解読できないようにし、両者の ID を検証します。 
 
 
 ## V
 
-### Virtual Machine (仮想マシン)
+### virtual machine
 仮想マシン (VM) は、物理コンピューターのソフトウェア エミュレーションです。各 VM は、[クラウド サービス プロバイダ](#cloud-service-provider)のインフラストラクチャ内で独自のコンピューターとして動作します。VM により、スケーラビリティ、柔軟性、管理の容易さ、従量課金モデルが実現します。

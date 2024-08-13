@@ -21,13 +21,13 @@ OAuth アプリを使用すると、ユーザーはパスワードを共有す�
     OAuth アプリを登録する際には、これらの URL を使用します。
 
     - ホームページURL: `http://[ip_or_hostname]:[port]`<br/>
-       :::note
+      :::note
       これは、インストール プロセスの最後に受け取ったマネージャ URL です。
       :::
 
-    - 承認コールバック URL: `[Homepage URL]/auth/github/callback`
+    - 認証コールバック URL: `[Homepage URL]/auth/github/callback`
     
-    GitLabの場合は、 [承認されたアプリケーション](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications)で定義されている適切なOAuth **スコープ** を選択します。
+    GitLabの場合は、 [認証されたアプリケーション](https://docs.gitlab.com/ee/integration/oauth_provider.html#view-all-authorized-applications)で定義されている適切なOAuth **スコープ** を選択します。
 
 3.	**クライアントID** と **クライアント シークレット**をコピーして保存します。これらは AI Unlimited の設定に必要になります。 
 
