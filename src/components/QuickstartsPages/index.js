@@ -101,7 +101,9 @@ export default function Categories() {
       <section className={clsx(styles.features, styles.fGuides)}>
         <div className={clsx('container', styles.container)}>
             <br/>
-            <Typography scale="headline2">Featured guides</Typography>
+            <Typography scale="headline2">
+              {translate({ message: 'quickstarts.featured_guides' })}
+            </Typography>
             <br/><br/>
             <div className={clsx('row', styles.row)}> 
             {Guides.map((props, idx) => (

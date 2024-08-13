@@ -438,84 +438,84 @@
     "message": "どこにいても開発者と話す"
   },
   "quickstarts.tagline": {
-    "message": "Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers."
+    "message": "従業員、パートナー、顧客など、Teradata コミュニティのすべてのメンバーによる、Teradata Vantage の使用方法に関する詳細なチュートリアルとガイドをご覧ください。"
   },
   "quickstarts.tagline_2": {
-    "message": "Existing customer or partner? Explore courses at"
+    "message": "既存のお客様またはパートナーですか? 以下のサイトよりコースを探索してください。"
   },
   "quickstarts.alt-img-banner": {
-    "message": "Two individuals collaborate at a desk with a computer, against an abstract orange and blue backdrop."
+    "message": "抽象的なオレンジと青の背景を背景に、2 人の人物がコンピューターのあるデスクで共同作業を行っています。"
   },
   "quickstarts.featured_guides": {
-    "message": "Featured guides"
+    "message": "注目のガイド"
   },
   "quickstarts.gs_w_ai_unlimited_title": {
-    "message": "Getting started with Teradata AI Unlimited"
+    "message": "Teradata AI Unlimitedスタートガイド"
   },
   "quickstarts.gs_w_ai_unlimited_text": {
-    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos."
+    "message": "AI Unlimited に含まれるもの、必要な前提条件、インストール方法を確認する"
   },
   "quickstarts.deploy_ai_unlimited_title": {
-    "message": "Deploy Teradata AI Unlimited locally using Docker"
+    "message": "Docker を使用して Teradata AI Unlimited をローカルにデプロイする"
   },
   "quickstarts.deploy_ai_unlimited_text": {
-    "message": "You'll use Docker Compose to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers."
+    "message": "Docker Compose を使用して、AI Unlimited マネージャーと JupyterLab を、AI Unlimited Jupyter カーネルとともにコンテナー内でローカルに実行します。"
   },
   "quickstarts.deploy_ai_unlimited_aws_title": {
-    "message": "Deploy Teradata AI Unlimited on AWS"
+    "message": "AWS に Teradata AI Unlimited を導入する"
   },
   "quickstarts.deploy_ai_unlimited_aws_text": {
-    "message": "The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup."
+    "message": "AI Unlimited マネージャーはエンジンの展開を調整し、セットアップ用の Web ベースのユーザー インターフェイスを備えています。"
   },
   "quickstarts.introduction": {
-    "message": "Introduction"
+    "message": "はじめに"
   },
   "quickstarts.introduction_description": {
-    "message": "Teradata Vantage Engine Architecture and Concepts."
+    "message": "Teradata Vantage エンジンのアーキテクチャと概念"
   },
   "quickstarts.get_access_vantage": {
-    "message": "Get access to Vantage"
+    "message": "Vantageへのアクセス"
   },
   "quickstarts.get_access_vantage_description": {
-    "message": "Run Vantage Express on VMware, VirtualBox and UTM."
+    "message": "Vantage Express を VMware、VirtualBox、UTM 上で実行します。"
   },
   "quickstarts.connect_to_vantage": {
-    "message": "Connect to Vantage"
+    "message": "Vantage への接続"
   },
   "quickstarts.connect_to_vantage_description": {
-    "message": "Use Teradata Studio/Express on Apple Mac M1/M2."
+    "message": "Apple Mac M1/M2でTeradata Studio/Expressを使用する"
   },
   "quickstarts.manage_data": {
-    "message": "Manage data"
+    "message": "データの管理"
   },
   "quickstarts.manage_data_description": {
-    "message": "Query data stored in object storage."
+    "message": "オブジェクトストレージに保存されたクエリーデータ"
   },
   "quickstarts.connect_apps": {
-    "message": "Connect applications"
+    "message": "アプリケーションの作成"
   },
   "quickstarts.connect_apps_descrip": {
-    "message": "Connect to Vantage using JDBC, python and Mule service."
+    "message": "JDBC、Python、Mule サービスを使用して Vantage に接続します。"
   },
   "quickstarts.analyze_data": {
-    "message": "Analyze data"
+    "message": "データの分析"
   },
   "quickstarts.analyze_data_descrip": {
-    "message": "Use Vantage from a Jupyter notebook."
+    "message": "Jupyter NotebookからVantageを利用する方法"
   },
   "quickstarts.td_ai_unlimited": {
     "message": "Teradata AI Unlimited"
   },
   "quickstarts.td_ai_unlimited_descrip": {
-    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos."
+    "message": "AI Unlimited に含まれるもの、必要な前提条件、インストール方法を確認する"
   },
   "quickstarts.vantageCloud_lake": {
     "message": "VantageCloud Lake"
   },
   "quickstarts.vantageCloud_lake_descrip": {
-    "message": "Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform."
+    "message": "Teradata VantageCloud Lakeは、Teradataの次世代のクラウドネイティブな分析およびデータプラットフォームです。"
   },
   "quickstarts.teradata_university": {
-    "message": " Teradata University"
+    "message": "Teradata University"
   }  
 }
