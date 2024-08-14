@@ -73,7 +73,7 @@ export function PossibleBanner() {
             imageAltText={translate({
               message: 'home_page.possible_banner_title',
             })}
-            imageWidth="1"
+            imageWidth="350px"
             content={<BannerContent />}
           />
         </a>
