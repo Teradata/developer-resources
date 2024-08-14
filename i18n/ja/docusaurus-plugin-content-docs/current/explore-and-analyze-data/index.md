@@ -22,7 +22,7 @@ JupyterLab または AI Unlimited カーネルをお持ちでない場合は、 
 
 
 ## 学習方法
-- [プロジェクトの流れ](./project-flow.md)の全体を確認する 
+- [プロジェクトの流れ](./project-flow.md)全体を確認する 
 - [サンプル ユースケース](./example-projects.md)を探索する — 試してみる
 - AI Unlimited[マジック コマンド](./magic-commands.md)の詳細を見る 
 - [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) 関数を見る

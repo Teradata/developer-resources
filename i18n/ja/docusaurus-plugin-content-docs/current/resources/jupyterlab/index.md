@@ -15,7 +15,7 @@ pagination_next: null
 または、AI Unlimited カーネルを搭載した JupyterLab を今すぐ入手してください。
 
 - [AWS](./install-jupyterlab-aws.md)または[Azure](./install-jupyterlab-azure.md)にインストールする 
-- Dockerコンテナ内で[ローカルで実行する](./run-jupyterlab-docker.md) 
+- Dockerコンテナで[ローカルに実行する](./run-jupyterlab-docker.md) 
 
 :::note
 [QuickStart](../quickstart/index.md) には JupyterLab が含まれています。QuickStartを使用する場合は、JupyterLab を別途インストールする必要はありません。

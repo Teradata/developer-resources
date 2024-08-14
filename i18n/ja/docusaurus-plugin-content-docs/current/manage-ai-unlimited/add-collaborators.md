@@ -18,7 +18,7 @@ pagination_next: null
 ## エンジンがデプロイされる前に
 
 1. GitHub または GitLab で、プロジェクト リポジトリにユーザーを追加します。<br/>
-[GitHub]のリポジトリ ユーザーの追加の詳細については、(https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository) または [GitLab]のリポジトリ ユーザーの追加の詳細については、(https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project)を参照してください。
+[GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)または[GitLab](https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project)のリポジトリユーザーの追加に関する詳細を参照してください。
 
 2. Jupyter ノートブックからエンジンをデプロイすると、ユーザーは自動的にエンジンに追加されます。
 
@@ -26,6 +26,6 @@ pagination_next: null
 ## エンジンがデプロイされた後に
 
 1. GitHub または GitLab で、プロジェクト リポジトリにユーザーを追加します。<br/>
-[GitHub]のリポジトリ ユーザーの追加の詳細については、(https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository) または [GitLab]のリポジトリ ユーザーの追加の詳細については、(https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project)を参照してください。
+[GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)または[GitLab](https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project)のリポジトリユーザーの追加に関する詳細を参照してください。
 2. Jupyter ノートブックで、マジック コマンド `%project_engine_update_users` を実行して、ユーザーをエンジンに追加します。
 

@@ -38,9 +38,9 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 :::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
-    \- `ai-unlimited-with-alb.json`ーアプリケーション ロード バランサ の背後にあるマネージャをホストする(../glossary.md#application-load-balancer)
-    \- `ai-unlimited-with-nlb.json`—ネットワーク ロード バランサー の背後でマネージャをホストする(../glossary.md#network-load-balancer)
-    \- `ai-unlimited-without-lb.json`—ロードバランサーなし。どのテンプレートを使用するかわからない場合は、このテンプレートをお勧めします。
+    - `ai-unlimited-with-alb.json`&mdash;[アプリケーション ロード バランサ](../glossary.md#application-load-balancer)の背後にあるマネージャをホストする
+    - `ai-unlimited-with-nlb.json`&mdash;[ネットワーク ロード バランサ](../glossary.md#network-load-balancer)の背後でマネージャをホストする
+    - `ai-unlimited-without-lb.json`&mdash;ロードバランサなし。どのテンプレートを使用するかわからない場合は、このテンプレートをお勧めします。
 
 
 ## テンプレートを読み込む
@@ -49,8 +49,8 @@ import MyPartial from '../_partials/_clone-repo.mdx';
    :::note
    Azure Portal への参照は、2024 年 5 月 29 日時点で最新です。
    ::: 
-2. **カスタムデプロイメント**を検索し、 **カスタムテンプレートをデプロイする**を選択します。
-3. **エディタで独自のテンプレートを作成する**を選択し、次に **ファイルを読み込む**を選択します。
+2. **カスタム デプロイ**を検索し、 **カスタム テンプレートのデプロイ**を選択します。
+3. **エディターで独自のテンプレートを作成する**を選択し、次に **ファイルの読み込み**を選択します。
 4. 使用するテンプレート ファイルを選択し、 **保存**を選択します。
 
 <a id="azure-parms"></a>
@@ -68,7 +68,7 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 | Subscription | AI Unlimited のデプロイに使用する Azure サブスクリプション。| 必須<br/>デフォルト: NA <br/>これは従量課金制アカウントである必要があります。  |
 | Region | AI Unlimited をデプロイするリージョン。| 必須<br/>デフォルト: NA<br/>作業場所に最も近い Azure リージョンと、AI Unlimited で使用するデータ リソースを選択します。 |
 | Resource Group Name | 関連する AI Unlimited リソースをグループ化するコンテナの名前。| 必須<br/>デフォルト: ai-unlimited-workspace |
-| AI Unlimitedの名前| AI Unlimited に与えられた固有の名前。| 必須<br/>デフォルト: NA | 
+| AI Unlimited Name| AI Unlimited に与えられた固有の名前。| 必須<br/>デフォルト: NA | 
 | Public Key | SSH 経由で VM に接続するために使用できる公開 SSH キー。| 必須<br/>デフォルト: NA<br/>この値は「ssh-rsa」で始まる必要があります。 |
 | OS Version  | 現在のサブスクリプションで利用可能なオペレーティング システムのバージョン。 | オプション  デフォルト<br/>デフォルト: Ubuntu-2004 |
 | Instance Type | AI Unlimited に使用するインスタンス タイプ。 | オプション<br/>デフォルト: STANDARD_D2_V3<br/>コストを節約するには、デフォルトのインスタンス タイプを使用することをお勧めします。デフォルトのインスタンス タイプは、2 つの vCPU と 8.0 GiB のメモリを備えた標準の Dv3 シリーズです。|
@@ -83,11 +83,11 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 | Role Definition ID | AI Unlimited で使用するロールの ID。| 必須<br/>デフォルト: NA<br/>Azure CLI コマンド Get-AzRoleDefinition を使用して、ロール定義 ID を取得します。 |
 | Allow Public SSH | Azure 内の VM に接続するためにセキュア シェル (SSH) キーを使用できるかどうかを指定します。|  オプション<br/>デフォルト: true |
 | Use Key Vault | デプロイ中にセキュリティで保護されたパスワードを取得するために Key Vault を使用するかどうかを指定します。 | オプション<br/>デフォルト: New |
-| Use Persistent Volume | データの保存に新しい永続ボリュームを使用するか、既存の永続ボリュームを使用するかを指定します。パラメータ セクションの下の「*詳細: 永続ボリュームの使用*」を参照してください。 | オプション、デフォルト<br/>デフォルト: 新規 <br/>サポートされているオプション: 使用ケースに応じて、新規または既存。 |
+| Use Persistent Volume | データの保存に新しい永続ボリュームを使用するか、既存の永続ボリュームを使用するかを指定します。パラメータ セクションの下の「*詳細: 永続ボリュームの使用*」を参照してください。 | オプション、デフォルトあり<br/>デフォルト: 新規 <br/>サポートされているオプション: 使用ケースに応じて、新規または既存。 |
 | Persistent Volume Size | インスタンスに接続できる永続ボリュームのサイズ（GB 単位）。 | オプション<br/>デフォルト: 100 |
 | Existing Persistent Volume | <br/>インスタンスに接続できる既存の永続ボリュームの ID。| UsePersistentVolume が Existing に設定されている場合は必須です。<br/>デフォルト: なし<br/>永続ボリュームは、AI Unlimited インスタンスと同じアベイラビリティーゾーンに存在する必要があります。 |
 | AI Unlimited Version | デプロイする AI Unlimited のバージョン。 | デフォルトで必須<br/>デフォルト: latest<br/>値はコンテナのバージョン タグです。 |
-|Use NLB| インスタンスにネットワーク ロード バランサーを使用してアクセスするかどうかを指定します。|デフォルトで必須<br/>デフォルト: false|
+|Use NLB| インスタンスにネットワーク ロード バランサを使用してアクセスするかどうかを指定します。|デフォルトで必須<br/>デフォルト: false|
 | Tags | すばやく識別できるようにリソースに割り当てられるキーと値のペア。| オプション<br/>デフォルト:NA |   
 
 </details>
@@ -111,11 +111,11 @@ import MyPartial from '../_partials/_clone-repo.mdx';
 **例**
 
 1. マネージャをデプロイし、「Use Persistent Volume」パラメータを **New** に設定します。
-2. スタックを作成したら、**Outputs** ページで `volume-id` をメモします。
+2. スタックを作成したら、**出力** ページで `volume-id` をメモします。
 3. AI Unlimited を使用します。
 4. マネージャ インスタンスが失われた場合は、マネージャを再度デプロイし、次のパラメーターを含めます。
-   - `永続ボリュームを使用する`: **新機能**
-   - 「既存の永続ボリューム」: 手順 2 でメモした値
+   - `永続ボリュームを使用する`: **New**
+   - `既存の永続ボリューム`: 手順 2 でメモした値
    
 新しいマネージャ インスタンスは、失われたものと同じ構成を持ちます。
 

@@ -23,9 +23,9 @@ pagination_next: null
     - Python Client Libraries
       - teradataml 20.0.0.0
       - teradatamlwidgets 20.0.0.2
-	  \- テラデータSQL 20.0.0.12
-	  \- テラデータSQLアルケミー 20.0.0.2
-	  \- tdapiクライアント 1.4.0.1
+	  - teradatasql 20.0.0.12
+	  - teradatasqlalchemy 20.0.0.2
+	  - tdapiclient 1.4.0.1
 - プロジェクト作成とデータベーススキーマのバックアップのためのGitHubとGitLabのサポート
 - AI Unlimited manager v0.2.15
 
@@ -132,14 +132,14 @@ pagination_next: null
   - API_Request UDFのサポート - 予定
   
 - Unbounded Array Framework (UAF)
-  - UAF をサポートする SQL - 6 月 
+  - UAFをサポートするSQL - 6 月 
   - UAFをサポートするteradataml - 予定
 
 - teradataml
   - データベース名に特殊文字が含まれている場合に UAF 関数が失敗する問題を修正 - 6 月
   - 揮発テーブルの作成に関する問題により SQLE および UAF 関数が実行できない問題を修正 - 6 月
-  - automl と openml 関数 - 6 月
-  - map_row および map_partition 関数 - 予定
+  - automlとopenml 関数 - 6 月
+  - map_rowおよびmap_partition 関数 - 予定
   
 - Vantage Analytics Library (VAL)  - 予定
 

@@ -15,7 +15,7 @@ pagination_next: null
 
 ### AI Unlimited manager
 
-マネージャは、AI/ML [Engine (エンジン)](#engine) の [クラウド サービス プロバイダ](#cloud-service-provider)へのデプロイを調整する AI Unlimited コンポーネントです。また、AI Unlimited 管理者がインストール後に AI Unlimited を設定し、必要に応じて後で設定を変更するための Web ベースのユーザー インターフェイスも提供します。すべてのユーザーはマネージャから API キーを取得します。
+マネージャは、AI/ML [engine](#engine) の [cloud service provider](#cloud-service-provider)へのデプロイを調整する AI Unlimited コンポーネントです。また、AI Unlimited 管理者がインストール後に AI Unlimited を設定し、必要に応じて後で設定を変更するための Web ベースのユーザー インターフェイスも提供します。すべてのユーザーはマネージャから API キーを取得します。
 
 ### API key
 
@@ -34,25 +34,26 @@ pagination_next: null
 
 ### cloud service provider
 
-クラウド サービス プロバイダ (CSP) は、インターネット経由でオンデマンドでコンピューティング リソースを提供する企業です。これらのリソースには、Infrastructure as a Service (IaaS)、Platform as a Service (PaaS)、Software as a Service (SaaS) などがあります。 [AI Unlimitedマネージャ](#ai-unlimited-manager) と [engine](#engine) はCSP 上で実行されます。
+クラウド サービス プロバイダ (CSP) は、インターネット経由でオンデマンドでコンピューティング リソースを提供する企業です。これらのリソースには、Infrastructure as a Service (IaaS)、Platform as a Service (PaaS)、Software as a Service (SaaS) などがあります。 [
+AI Unlimited manager](#ai-unlimited-manager) と [engine](#engine) はCSP 上で実行されます。
 
 ### cluster
 
-処理能力、スケーラビリティ、信頼性を強化するために、単一のシステムとして連携して動作する相互接続されたコンピューターのグループ (ノードとも呼ばれます)。AI Unlimited エンジンは、CSP 上のクラスタにデプロイされます。各ノードは [仮想マシン (VM)](#virtual-machine)です。
+処理能力、スケーラビリティ、信頼性を強化するために、単一のシステムとして連携して動作する相互接続されたコンピューターのグループ (ノードとも呼ばれます)。AI Unlimited エンジンは、CSP 上のクラスタにデプロイされます。各ノードは [virtual machine (VM)](#virtual-machine)です。
 
 
 ## D
 
 ### data lake
 
-データ分析、機械学習、データ探索のためのデータの中央リポジトリ。データ レイクは通常 [オブジェクト ストレージ](#object-storage) 上に構築され、予定のデータ分析のためにデータにアクセスできるように設計されます。  
+データ分析、機械学習、データ探索のためのデータの中央リポジトリ。データ レイクは通常 [object storage](#object-storage) 上に構築され、予定のデータ分析のためにデータにアクセスできるように設計されます。  
 
 
 ## E
 
 ### engine
 
-クラウド コンピューティングでは、コンピューティング エンジンは Infrastructure as a Service (IaaS) の一例です。これにより、クラウド サービス プロバイダのインフラストラクチャ上で [仮想マシン (VM)](#virtual-machine) を作成して実行できます。Jupyter ノートブックから AI Unlimited AI/ML コンピューティング エンジンをデプロイすると、 [AI Unlimitedマネージャ](#ai-unlimited-manager) によって VM がプロビジョニングされます。
+クラウド コンピューティングでは、コンピューティング エンジンは Infrastructure as a Service (IaaS) の一例です。これにより、クラウド サービス プロバイダのインフラストラクチャ上で [virtual machines (VMs)](#virtual-machine) を作成して実行できます。Jupyter ノートブックから AI Unlimited AI/ML コンピューティング エンジンをデプロイすると、 [AI Unlimited manager](#ai-unlimited-manager) によって VM がプロビジョニングされます。
 
 
 ## I
@@ -96,7 +97,7 @@ Docker などのコンテナ化されたプラットフォームの概念。コ�
 
 OAuth アプリを使用すると、ユーザーはパスワードを共有せずに、ある Web サイトまたはサービス上の自分のアカウントへのアクセスを別の Web サイトまたはサービスに許可できます。 
 
-あなたまたはあなたの組織の誰かが作成した OAuth アプリにより、AI Unlimited は GitHub または GitLab 認証を使用して各 [プロジェクト リポジトリ](#project-repository) を管理し、エンジンがデプロイされるたびに、リポジトリに追加された貢献者からエンジン ユーザーを取得できるようになります。
+あなたまたはあなたの組織の誰かが作成した OAuth アプリにより、AI Unlimited は GitHub または GitLab 認証を使用して各 [project repository](#project-repository) を管理し、エンジンがデプロイされるたびに、リポジトリに追加された貢献者からエンジン ユーザーを取得できるようになります。
 
 ### object storage
 大量の構造化データ、半構造化データ、非構造化データをクラウドに保存するためのスケーラブルで非常に効果的な方法です。Amazon S3 は AWS 上のオブジェクト ストレージです。Azure Blob Storage は Azure 上のオブジェクト ストレージです。オブジェクト ストレージは [data lake](#data-lake)の基礎となります。
@@ -138,4 +139,4 @@ OAuth アプリを使用すると、ユーザーはパスワードを共有せ�
 ## V
 
 ### virtual machine
-仮想マシン (VM) は、物理コンピューターのソフトウェア エミュレーションです。各 VM は、[クラウド サービス プロバイダ](#cloud-service-provider)のインフラストラクチャ内で独自のコンピューターとして動作します。VM により、スケーラビリティ、柔軟性、管理の容易さ、従量課金モデルが実現します。
+仮想マシン (VM) は、物理コンピューターのソフトウェア エミュレーションです。各 VM は、[cloud service provider](#cloud-service-provider)のインフラストラクチャ内で独自のコンピューターとして動作します。VM により、スケーラビリティ、柔軟性、管理の容易さ、従量課金モデルが実現します。

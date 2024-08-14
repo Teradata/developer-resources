@@ -45,9 +45,9 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
 :::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
-    \- `jupyter-with-alb.json `—アプリケーション ロード バランサー の背後に JupyterLab をホストする(../../glossary.md#application-load-balancer)
-    \- `jupyter-with-nlb.json` —ネットワーク ロード バランサー の背後に JupyterLab をホストする(../../glossary.md#network-load-balancer)
-    \- `jupyter-without-lb.json`—ロードバランサーなし
+    - `jupyter-with-alb.json`&mdash;[アプリケーション ロード バランサ](../../glossary.md#application-load-balancer)の背後に JupyterLab をホストする
+    - `jupyter-with-nlb.json`&mdash;[ネットワーク ロード バランサ](../../glossary.md#network-load-balancer)の背後に JupyterLab をホストする
+    - `jupyter-without-lb.json`&mdash;ロードバランサーなし
 
 ## テンプレートを読み込む
 
@@ -55,8 +55,8 @@ JupyterLab の ARM テンプレートは、AI Unlimited GitHub リポジトリ�
    :::note
    Azure Portal への参照は、2024 年 5 月 29 日時点で最新です。
    ::: 
-2. **カスタムデプロイメント**を検索し、 **カスタムテンプレートをデプロイする**を選択します。
-3. **エディタで独自のテンプレートを作成する**を選択し、次に **ファイルを読み込む**を選択します。
+2. **カスタム デプロイ**を検索し、 **カスタム テンプレートのデプロイ**を選択します。
+3. **エディターで独自のテンプレートを作成する**を選択し、次に **ファイルの読み込み**を選択します。
 4. 使用するテンプレートファイルを選択し、 **保存**を選択します。  
 
 
@@ -113,7 +113,7 @@ JupyterLab インスタンスはコンテナ内で実行され、その構成デ
 
 1. JupyterLab をデプロイし、次のパラメータを含めます。
    - `UsePersistentVolume`: **New**
-2. スタックを作成したら、**Outputs** タブで `volume-id` をメモします。
+2. スタックを作成したら、**出力** タブで `volume-id` をメモします。
 3. JupyterLab を使用します。
 4. JupyterLab インスタンスが失われた場合は、JupyterLab を再度デプロイし、次のパラメータを含めます。
    - `UsePersistentVolume`: **New**

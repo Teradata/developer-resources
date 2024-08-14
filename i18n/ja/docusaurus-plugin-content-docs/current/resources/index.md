@@ -18,6 +18,6 @@ pagination_next: null
   - [Azure アカウントの要件](./azure-requirements.md)
   - [OAuthアプリを作成する](./create-oauth-app.md)
 
-- 方法 [JupyterLabをインストールする](./jupyterlab/)
+- [JupyterLabをインストールする](./jupyterlab/)方法
 
 - [QuickStart](./quickstart)は、AI UnlimitedマネージャとJupyterLabをローカルで実行するためのものです。

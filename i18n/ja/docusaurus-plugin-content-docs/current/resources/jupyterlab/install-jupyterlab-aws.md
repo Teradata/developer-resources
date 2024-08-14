@@ -25,8 +25,8 @@ Teradata が提供する CloudFormation テンプレートを使用して、AWS 
 - コマンドを実行したりデバッグしたりするために JupyterLab インスタンスにアクセスする必要がある場合は、 [キー ペア](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) を使用してセキュア シェル (SSH) で安全に接続できます。 [スタックの詳細を指定する](#specify-stack-details-and-options)ときに、キー ペアが必要になります。
   
 - [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) または [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html)を使用する予定の場合は、これらの AWS サービスを管理する権限があることを確認してください。
-	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)—Route 53 のホストゾーン ID の新しい証明書を発行します。
-	\- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)—カスタムドメイン名を設定し、DNS クエリをロードバランサーにルーティングします。
+	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)&mdash;Route 53 のホストゾーン ID の新しい証明書を発行します。
+	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)&mdash;カスタムドメイン名を設定し、DNS クエリをロードバランサーにルーティングします。
 
 
 ## リポジトリをクローンする
@@ -46,9 +46,9 @@ JupyterLab 用の CloudFormation テンプレートは、AI Unlimited GitHub リ
 :::note
 組織のクラウド管理者にガイダンスを依頼することをお勧めします。
 :::
-    \- `jupyter-alb.yaml`—[アプリケーション ロード バランサー ]の背後に JupyterLab をホストする(../../glossary.md#application-load-balancer)
-    \- `jupyter-with-nlb.yaml`—[ネットワーク ロード バランサー ]の背後に JupyterLab をホストする(../../glossary.md#network-load-balancer)
-    \- `jupyter-without-lb.yaml`—ロードバランサーなし
+    - `jupyter-alb.yaml`&mdash;[アプリケーション ロード バランサ](../../glossary.md#application-load-balancer)の背後に JupyterLab をホストする
+    - `jupyter-with-nlb.yaml`&mdash;[ネットワーク ロード バランサ](../../glossary.md#network-load-balancer)の背後に JupyterLab をホストする
+    - `jupyter-without-lb.yaml`&mdash;ロードバランサーなし
 
 
 ## テンプレートを読み込む	
@@ -80,7 +80,7 @@ JupyterLab 用の CloudFormation テンプレートは、AI Unlimited GitHub リ
 | RootVolumeSize | インスタンスに接続するルートディスクのサイズ（GB 単位）。 | デフォルトで必須<br/>デフォルト: 8<br/>8 ～ 1000 の値をサポートします。 |
 | TerminationProtection | インスタンス終了保護を有効にします。 | デフォルトで必須<br/>デフォルト: false |
 |IamRole | CloudFormation が新しい IAM ロールを作成するか、既存のロールを使用するかを指定します。 | デフォルトで必須<br/>デフォルト: 新規<br/>サポートされているオプション: 新規または既存 |
-|IamRoleName | インスタンスに割り当てるIAMロールの名前。既存のIAMロールまたは  新しく作成された IAM ロール。 | オプション、デフォルト<br/>デフォルト:  ai-unlimited-iam-role<br/>新しい IAM ロールに名前を付ける場合、CloudFormation では CAPABILITY_NAMED_IAM 機能が必要です。自動生成された名前を使用するには、これを空白のままにします。 |
+|IamRoleName | インスタンスに割り当てるIAMロールの名前。既存のIAMロールまたは  新しく作成された IAM ロール。 | オプション、デフォルトあり<br/>デフォルト:  ai-unlimited-iam-role<br/>新しい IAM ロールに名前を付ける場合、CloudFormation では CAPABILITY_NAMED_IAM 機能が必要です。自動生成された名前を使用するには、これを空白のままにします。 |
 |IamPermissions<br/>Boundary | インスタンスに割り当てられた IAM ロールに関連付ける IAM アクセス許可境界の ARN。| オプション<br/>デフォルト: NA|
 |AvailabilityZone | インスタンスをデプロイするアベイラビリティーゾーン。 | 必須<br/>デフォルト: NA<br/>値はサブネット、既存のボリュームのゾーンと一致する必要があり、インスタンス タイプは選択したゾーンで使用可能である必要があります。 |
 |LoadBalancing		|インスタンスが NLB 経由でアクセスされるかどうかを指定します。 | デフォルトで必須 <br/>デフォルト: NetworkLoadBalancer<br/>サポートされているオプション: NetworkLoadBalancer または None |
@@ -93,7 +93,7 @@ JupyterLab 用の CloudFormation テンプレートは、AI Unlimited GitHub リ
 |AccessCIDR	|インスタンスへのアクセスが許可される CIDR IP アドレスの範囲。| オプション<br/>デフォルト: NA<br/>この値は信頼できる IP 範囲に設定することをお勧めします。カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、AccessCIDR、PrefixList、または SecurityGroup の少なくとも 1 つを定義します。|
 |PrefixList			| インスタンスとの通信に使用できるプレフィックス リスト。同じポリシーの適用を必要とする一連の IP アドレス範囲を定義する CIDR ブロックのコレクションです。 | オプション<br/>デフォルト: NA<br/>カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、AccessCIDR、PrefixList、または SecurityGroup の少なくとも 1 つを定義します。|
 |SecurityGroup	|インスタンスへの受信トラフィックと送信トラフィックを制御する仮想ファイアウォール。| オプション<br/>デフォルト: NA<br/>インスタンスへのアクセスを許可するプロトコル、ポート、IP アドレスまたは CIDR ブロックを指定するルール セットとして実装されます。カスタム セキュリティ グループ イングレス ルールを作成しない限り、受信トラフィックを許可するには、AccessCIDR、PrefixList、または SecurityGroup の少なくとも 1 つを定義します。|
-|UsePersistentVolume| データの保存に新しい永続ボリュームを使用するか、既存の永続ボリュームを使用するかを指定します。パラメータ セクションの下の「*詳細: 永続ボリュームの使用*」を参照してください。 |オプション、デフォルト<br/>デフォルト: 新規<br/>サポートされるオプションは、使用ケースに応じて、新しい永続ボリュームまたは既存のボリュームです。|
+|UsePersistentVolume| データの保存に新しい永続ボリュームを使用するか、既存の永続ボリュームを使用するかを指定します。パラメータ セクションの下の「*詳細: 永続ボリュームの使用*」を参照してください。 |オプション、デフォルトあり<br/>デフォルト: 新規<br/>サポートされるオプションは、使用ケースに応じて、新しい永続ボリュームまたは既存のボリュームです。|
 |PersistentVolumeSize	|インスタンスに接続できる永続ボリュームのサイズ（GB 単位）。|デフォルトは必須<br/>デフォルト: 20<br/>8～1000 の値をサポート|
 |ExistingPersistent<br/>VolumeId		|インスタンスに接続できる既存の永続ボリュームの ID。| UsePersistentVolume が Existing に設定されている場合は必須<br/>デフォルト: NA<br/>永続ボリュームは、AI Unlimited インスタンスと同じアベイラビリティーゾーンに存在する必要があります。|
 |PersistentVolume<br/>DeletionPolicy		|CloudFormation デプロイメントを削除するときの永続ボリュームの動作。| デフォルトで必須<br/>デフォルト:  Retain<br/>サポートされているオプションは、Delete、Retain、RetainExceptOnCreate、および Snapshot です。|

@@ -78,7 +78,7 @@ import TabItem from '@theme/TabItem';
    %project_user_list project=<Project_Name>
    ```
 
-6. ノートブックを含めるには接続を更新してください。
+6. ノートブックを含めるには接続を更新します。
    ```bash 
    %project_connection_add project=<Project_Name>
    ```

@@ -47,13 +47,13 @@ AI Unlimited と同じ仮想プライベート クラウドにエンジンをデ
 
 **パブリック** または **プライベート** は、AI Unlimited がエンジンと通信する方法を示します。エンジンには、パブリック IP アドレス、プライベート IP アドレス、またはその両方がある場合があります。AI Unlimited が接続する IP アドレスの種類を指定します。
 
-**TLS を使用する**
+**TLS を使用**
 
-AI Unlimited への接続をセキュリティで保護し、転送中のデータを保護するには、[トランスポート層セキュリティ (TLS)](../glossary.md#transport-layer-security) を使用することをお勧めします。
+AI Unlimited への接続をセキュリティで保護し、転送中のデータを保護するには、[Transport Layer Security (TLS)](../glossary.md#transport-layer-security)を使用することをお勧めします。
 
-- 証明書の終了が有効になっている [アプリケーション ロード バランサー (ALB)](../glossary.md#application-load-balancer) を使用している場合は、**False** を選択します。
+- 証明書の終了が有効になっている[application load balancer (ALB)](../glossary.md#application-load-balancer)を使用している場合は、**False** を選択します。
 
-- [ネットワーク ロード バランサー (NLB)](../glossary.md#network-load-balancer) を使用している場合、またはロード バランサーを使用していない場合は、**True** を選択します。
+- [network load balancer (NLB)](../glossary.md#network-load-balancer)を使用している場合、またはロード バランサーを使用していない場合は、**True** を選択します。
 ..
 	- **AI Unlimited TLS 証明書** と **AI Unlimited TLS 証明書キー** - 信頼できる証明機関 (CA) によって発行された証明書がある場合は、その証明書とそのキーを提供できます。更新と検証を含む証明書のライフサイクルの管理はお客様の責任となります。特定の要件がある場合や、証明書をより細かく制御する必要がある場合は、独自の証明書を用意することをお勧めします。
 

@@ -284,13 +284,7 @@
   "sidenav.title_description": {
     "message": "モバイルビューのサイドバーのタイトル"
   },
-  "developer_home_page.title": {
-    "message": "Teradata developers portal"
-  },
-  "developer_home_page.tagline": {
-    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
-  },
-   "developers.title_description": {
+  "developers.title_description": {
     "message": "すべての Teradata 製品のクイックスタート、ガイド、チュートリアル、コード サンプル、技術ドキュメント、ダウンロードのハブです。"
   },
   "developers.welcome_message": {
@@ -335,7 +329,7 @@
   "developers.community_message": {
     "message": "最近のコミュニティブログ。Teradata、当社のパートナー、および顧客の優秀な人材が、関連するトピックや機能についてブログに書いています。"
   },
-  "developers.community_link": {
+  "developers.community": {
     "message": "コミュニティを見る"
   },
   "developers.solutions-for-you": {
@@ -436,87 +430,6 @@
   },
   "developers.talk-to-developers-where-you-are": {
     "message": "どこにいても開発者と話す"
-  },
-  "quickstarts.tagline": {
-    "message": "従業員、パートナー、顧客など、Teradata コミュニティのすべてのメンバーによる、Teradata Vantage の使用方法に関する詳細なチュートリアルとガイドをご覧ください。"
-  },
-  "quickstarts.tagline_2": {
-    "message": "既存のお客様またはパートナーですか? 以下のサイトよりコースを探索してください。"
-  },
-  "quickstarts.alt-img-banner": {
-    "message": "抽象的なオレンジと青の背景を背景に、2 人の人物がコンピューターのあるデスクで共同作業を行っています。"
-  },
-  "quickstarts.featured_guides": {
-    "message": "注目のガイド"
-  },
-  "quickstarts.gs_w_ai_unlimited_title": {
-    "message": "Teradata AI Unlimitedスタートガイド"
-  },
-  "quickstarts.gs_w_ai_unlimited_text": {
-    "message": "AI Unlimited に含まれるもの、必要な前提条件、インストール方法を確認する"
-  },
-  "quickstarts.deploy_ai_unlimited_title": {
-    "message": "Docker を使用して Teradata AI Unlimited をローカルにデプロイする"
-  },
-  "quickstarts.deploy_ai_unlimited_text": {
-    "message": "Docker Compose を使用して、AI Unlimited マネージャーと JupyterLab を、AI Unlimited Jupyter カーネルとともにコンテナー内でローカルに実行します。"
-  },
-  "quickstarts.deploy_ai_unlimited_aws_title": {
-    "message": "AWS に Teradata AI Unlimited を導入する"
-  },
-  "quickstarts.deploy_ai_unlimited_aws_text": {
-    "message": "AI Unlimited マネージャーはエンジンの展開を調整し、セットアップ用の Web ベースのユーザー インターフェイスを備えています。"
-  },
-  "quickstarts.introduction": {
-    "message": "はじめに"
-  },
-  "quickstarts.introduction_description": {
-    "message": "Teradata Vantage エンジンのアーキテクチャと概念"
-  },
-  "quickstarts.get_access_vantage": {
-    "message": "Vantageへのアクセス"
-  },
-  "quickstarts.get_access_vantage_description": {
-    "message": "Vantage Express を VMware、VirtualBox、UTM 上で実行します。"
-  },
-  "quickstarts.connect_to_vantage": {
-    "message": "Vantage への接続"
-  },
-  "quickstarts.connect_to_vantage_description": {
-    "message": "Apple Mac M1/M2でTeradata Studio/Expressを使用する"
-  },
-  "quickstarts.manage_data": {
-    "message": "データの管理"
-  },
-  "quickstarts.manage_data_description": {
-    "message": "オブジェクトストレージに保存されたクエリーデータ"
-  },
-  "quickstarts.connect_apps": {
-    "message": "アプリケーションの作成"
-  },
-  "quickstarts.connect_apps_descrip": {
-    "message": "JDBC、Python、Mule サービスを使用して Vantage に接続します。"
-  },
-  "quickstarts.analyze_data": {
-    "message": "データの分析"
-  },
-  "quickstarts.analyze_data_descrip": {
-    "message": "Jupyter NotebookからVantageを利用する方法"
-  },
-  "quickstarts.td_ai_unlimited": {
-    "message": "Teradata AI Unlimited"
-  },
-  "quickstarts.td_ai_unlimited_descrip": {
-    "message": "AI Unlimited に含まれるもの、必要な前提条件、インストール方法を確認する"
-  },
-  "quickstarts.vantageCloud_lake": {
-    "message": "VantageCloud Lake"
-  },
-  "quickstarts.vantageCloud_lake_descrip": {
-    "message": "Teradata VantageCloud Lakeは、Teradataの次世代のクラウドネイティブな分析およびデータプラットフォームです。"
-  },
-  "quickstarts.teradata_university": {
-    "message": "Teradata University"
   },
   "apis.title": {
     "message": "APIについて"

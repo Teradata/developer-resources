@@ -20,12 +20,12 @@ pagination_next: null
 - クラウド管理者と貢献して、 [AI Unlimitedテンプレート](https://github.com/Teradata/ai-unlimited/tree/develop/deployments/aws/templates/ai-unlimited)で定義されたクラウド リソースを作成するための [IAM](https://aws.amazon.com/iam/) 権限があることを確認してください。
 
 - コマンドを実行したりデバッグしたりするためにマネージャ インスタンスにアクセスする必要がある場合は、次のいずれかの方法で接続できます。
-	- Secure Shell (SSH) を使用して安全に接続するには、 [キー ペア](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) を使用します。 [スタックの詳細を指定する](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options)を使用する場合はキー ペアが必要になります。
-	- AWS Session Manager を使用して接続します。これを有効にするには、マネージャに提供する [ロール]に [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json)ポリシーを添付します。(#provide-roles-created-by-your-organization)
+	- Secure Shell (SSH) を使用して安全に接続するには、 [キー ペア](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) を使用します。 [スタックの詳細を指定する](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options)場合はキー ペアが必要になります。
+	- AWS Session Manager を使用して接続します。これを有効にするには、マネージャに[提供するロール](#provide-roles-created-by-your-organization)に [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json)ポリシーを添付します。
   
 - [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) または [Network Load Balancer (NLB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-getting-started.html)を使用する予定の場合は、これらの AWS サービスを管理する権限があることを確認してください。
 	- [AWS Certificate Manager](https://docs.aws.amazon.com/acm/)—Route 53 のホストゾーン ID の新しい証明書を発行します。
-	\- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)—カスタムドメイン名を設定し、DNS クエリをロードバランサーにルーティングします。
+	- [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)—カスタムドメイン名を設定し、DNS クエリをロードバランサーにルーティングします。
 
 
 ## AI Unlimitedにロールの作成を許可する
@@ -33,14 +33,14 @@ pagination_next: null
 マネージャには、エンジンをデプロイできるロールが必要です。エンジンには、エンジン ノードが通信できるロールが必要です。AI Unlimited にこれらのロールの両方を作成させることができます。
 
 :::note
-セキュリティにより AI Unlimited によるロールの作成が許可されていない場合は、 [ロールを作成する](#provide-roles-created-by-your-organization) 自分で、またはクラウド管理者の支援を受けて作成してください。
+セキュリティにより AI Unlimited によるロールの作成が許可されていない場合は、 自分で[ロールを作成する](#provide-roles-created-by-your-organization)またはクラウド管理者の支援を受けて作成してください。
 ::: 
 
 ### マネージャのロール
 
 AI Unlimited がこのロールを作成できるようにするには、 [スタックの詳細を指定する](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options)のときに、次のパラメータに次の値を指定します。
-    \- `IamRole`: **New**
-    \- `IamRoleName`: 空白のままにする
+    - `IamRole`: **New**
+    - `IamRoleName`: 空白のままにする
 
 ### エンジンのロール
 
@@ -67,42 +67,42 @@ Teradata が提供する [AI Unlimited GitHubリポジトリ](https://github.com
 git clone https://github.com/Teradata/ai-unlimited
 	```
 
-Or use the links provided in sections that follow to download what you need.
+または、次のセクションにあるリンクを使用して必要なものをダウンロードしてください。
 
 
-### Role for the manager
+### マネージャのロール
 
-- If you have permissions to create IAM resources, create the role:
-  - Attach a policy that includes the JSON that meets your needs. See the JSON samples that follow.
-  - When you [specify the stack details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), use these parameter values:
+- IAM リソースを作成する権限がある場合は、ロールを作成します。
+  - ニーズを満たす JSON を含むポリシーを添付します。次の JSON サンプルを参照してください。
+  - [スタックの詳細を指定する(../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options)場合は、次のパラメータ値を使用します。
     - `IamRole`: **New**
-	 - `IamRoleName`: the new role's name
-- If you don't have permissions to create IAM resources, work with your cloud admin to use an existing role:
-  - Attach a policy that includes the JSON that meets your needs. See the JSON samples that follow.
-  - When you [specify the stack details](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options), use these parameter values:
+	 - `IamRoleName`: 新しいロールの名前
+- IAM リソースを作成する権限がない場合は、クラウド管理者と協力して既存のロールを使用してください。
+  - ニーズを満たす JSON を含むポリシーを添付します。次の JSON サンプルを参照してください。
+  - [スタックの詳細を指定する(../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options)場合は、次のパラメータ値を使用します。
   - `IamRole`: **Existing**
-  - `IamRoleName`: the existing role's name
+  - `IamRoleName`: 既存のロールの名前
   
-#### JSON samples
+#### JSON サンプル
 
-Use these samples, as needed, in a policy attached to the manager's role:
+必要に応じて、マネージャのロールに添付されたポリシーで次のサンプルを使用します。
 
-- Allow AI Unlimited to create the engine role. Include [ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json). It includes permissions to create engine instances, and grants AI Unlimited permissions to create cluster-specific roles and policies.
+- AI Unlimited がエンジン ロールを作成できるようにします。[ai-unlimited-workspaces.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces.json)を含めます。これには、エンジン インスタンスを作成する権限が含まれており、クラスタ固有のロールとポリシーを作成するための AI Unlimited 権限が付与されます。
 
-- If your security does not allow AI Unlimited to create roles, include [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json). It includes permissions to create engine instances, but not those needed for AI Unlimited to create cluster-specific roles and policies. 
+- セキュリティによりAI Unlimitedがロールを作成できない場合は、 [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json)を含めます。これにはエンジン インスタンスを作成するための権限が含まれますが、AI Unlimited がクラスタ固有のロールとポリシーを作成するために必要な権限は含まれません。 
 
   :::note
-  If you use [ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json) for the manager's role, use  [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) for the engine's role.
+  マネージャーのロールに[ai-unlimited-without-iam-role-permissions.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-workspaces-without-iam-role-permissions.json)を使用する場合は、エンジンのロールに [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json) を使用します。
   :::
 
-- Optionally, include [session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json): It includes permissions for the engine to interact with the [AWS Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html). Use this if you plan to use Session Manager to connect to the engine to closely manage it.
+- オプションで、[session-manager.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/session-manager.json)を含めます。これには、エンジンが [AWSセッション マネージャ](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html)と対話するための権限が含まれます。セッション マネージャを使用してエンジンに接続し、エンジンを詳細に管理する予定の場合は、これを使用します。
 
 
-### Role for the engine
+### エンジンのロール
 
-- To the role you provide for the engine, attach a policy that includes [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json). This allows AI Unlimited to pass the role to the cluster each time the engine is deployed. 
+- エンジンに提供するロールに、[ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json)を含むポリシーをアタッチします。これにより、エンジンがデプロイされるたびに、AI Unlimited がロールをクラスタに渡すことができます。 
 
-- Add your account details to the policy. You can't predict the cluster name, so use a wildcard.
+- ポリシーにアカウントの詳細を追加します。クラスタ名は予測できないため、ワイルドカードを使用します。
 
   ``` bash
   "arn:aws:secretsmanager:`REGION`:`ACCOUNT_ID`:secret:compute-engine/*"

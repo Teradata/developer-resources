@@ -24,7 +24,7 @@ AI Unlimited を使用すると、データ サイエンティストやデータ
 :::
 
 
-## AI Unlimitedに含まれる
+## AI Unlimitedに含まれるもの
 
 - AWS または Azure にデプロイする AI/ML エンジン
 - AI Unlimitedマネージャは、エンジンのデプロイを調整し、セットアップ用のWebベースのユーザーインターフェイスを備えています。
@@ -56,7 +56,7 @@ AI Unlimited を使用すると、他のユーザーとプロジェクトで共�
 **Azureのみ**: **今すぐ入手**を選択する前に、次の手順を完了してください。
 1.  [ライセンス契約](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1lQlq)をお読みください。
 2. ターミナル ウィンドウを開き、このコマンドを実行します。
-    \`\`\` bash
+    ``` bash
     az vm image terms accept --publisher teradata --offer ai-unlimited-vm --plan ai-unlimited-image
 	```
 

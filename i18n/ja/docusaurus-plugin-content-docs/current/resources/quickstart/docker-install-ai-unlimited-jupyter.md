@@ -28,7 +28,7 @@ JupyterLab を使用してデータを探索および分析します。
 - Jupyter ノートブックからエンジンをデプロイするための従量課金制の AWS または Azure アカウント
 - ユーザーを認証し、プロジェクト情報を保存するための各プロジェクト リポジトリをホストする [GitHub](https://github.com) または [GitLab](https://gitlab.com) アカウント
 - Amazon または ADLS Gen2 データレイクが存在するオブジェクト ストレージ
-- [Docker](https://www.docker.com/get-started/) コンピュータにインストールされている
+- コンピュータにインストールされている[Docker](https://www.docker.com/get-started/) 
 
 
 ## 設定ファイルの場所を設定する
