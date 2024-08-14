@@ -437,5 +437,86 @@
   },
   "developers.talk-to-developers-where-you-are": {
     "message": "Talk to Developers where you are"
-  }
+  },
+  "quickstarts.tagline": {
+    "message": "Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers."
+  },
+  "quickstarts.tagline_2": {
+    "message": "Existing customer or partner? Explore courses at"
+  },
+  "quickstarts.alt-img-banner": {
+    "message": "Two individuals collaborate at a desk with a computer, against an abstract orange and blue backdrop."
+  },
+  "quickstarts.featured_guides": {
+    "message": "Featured guides"
+  },
+  "quickstarts.gs_w_ai_unlimited_title": {
+    "message": "Getting started with Teradata AI Unlimited"
+  },
+  "quickstarts.gs_w_ai_unlimited_text": {
+    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos."
+  },
+  "quickstarts.deploy_ai_unlimited_title": {
+    "message": "Deploy Teradata AI Unlimited locally using Docker"
+  },
+  "quickstarts.deploy_ai_unlimited_text": {
+    "message": "You'll use Docker Compose to run the AI Unlimited manager and JupyterLab, with the AI Unlimited Jupyter Kernel, locally in containers."
+  },
+  "quickstarts.deploy_ai_unlimited_aws_title": {
+    "message": "Deploy Teradata AI Unlimited on AWS"
+  },
+  "quickstarts.deploy_ai_unlimited_aws_text": {
+    "message": "The AI Unlimited manager orchestrates the engine's deployment and includes a web-based user interface for setup."
+  },
+  "quickstarts.introduction": {
+    "message": "Introduction"
+  },
+  "quickstarts.introduction_description": {
+    "message": "Teradata Vantage Engine Architecture and Concepts."
+  },
+  "quickstarts.get_access_vantage": {
+    "message": "Get access to Vantage"
+  },
+  "quickstarts.get_access_vantage_description": {
+    "message": "Run Vantage Express on VMware, VirtualBox and UTM."
+  },
+  "quickstarts.connect_to_vantage": {
+    "message": "Connect to Vantage"
+  },
+  "quickstarts.connect_to_vantage_description": {
+    "message": "Use Teradata Studio/Express on Apple Mac M1/M2."
+  },
+  "quickstarts.manage_data": {
+    "message": "Manage data"
+  },
+  "quickstarts.manage_data_description": {
+    "message": "Query data stored in object storage."
+  },
+  "quickstarts.connect_apps": {
+    "message": "Connect applications"
+  },
+  "quickstarts.connect_apps_descrip": {
+    "message": "Connect to Vantage using JDBC, python and Mule service."
+  },
+  "quickstarts.analyze_data": {
+    "message": "Analyze data"
+  },
+  "quickstarts.analyze_data_descrip": {
+    "message": "Use Vantage from a Jupyter notebook."
+  },
+  "quickstarts.td_ai_unlimited": {
+    "message": "Teradata AI Unlimited"
+  },
+  "quickstarts.td_ai_unlimited_descrip": {
+    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos."
+  },
+  "quickstarts.vantageCloud_lake": {
+    "message": "VantageCloud Lake"
+  },
+  "quickstarts.vantageCloud_lake_descrip": {
+    "message": "Teradata VantageCloud Lake is Teradata's next-generation, cloud-native analytics and data platform."
+  },
+  "quickstarts.teradata_university": {
+    "message": "Teradata University"
+  }  
 }
