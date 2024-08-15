@@ -284,6 +284,12 @@
   "sidenav.title_description": {
     "message": "モバイルビューのサイドバーのタイトル"
   },
+  "developer_home_page.title": {
+    "message": "Teradata developers portal"
+  },
+  "developer_home_page.tagline": {
+    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+  },
   "developers.title_description": {
     "message": "すべての Teradata 製品のクイックスタート、ガイド、チュートリアル、コード サンプル、技術ドキュメント、ダウンロードのハブです。"
   },
