@@ -37,7 +37,7 @@ AI Unlimited を設定すると、組織の AI Unlimited 管理者になりま�
 **AI Unlimited ベース URL** - セットアップにアクセスするために使用した URL。マネージャをインストールしたときに受け取りました。
 
 
-**Git プロバイダー** - GitHub または GitLab。
+**Git プロバイダ** - GitHub または GitLab。
 
 **AI Unlimited ログ レベル** - AI Unlimited ログで表示する詳細レベル。
 

@@ -21,7 +21,7 @@ AI Unlimited 管理者の場合は、マネージャの AI Unlimited セット�
 2. GitHub または GitLab にサインインします。
 3. マネージャに戻されたら、 **セットアップ**を選択します。
 3. 任意のセクションで変更を加えてから、 **更新**を選択します。<br/>
-[フィールドの詳細については](、 ../install-ai-unlimited/setup-ai-unlimited.md)を参照してください。
+[フィールドについて学ぶ](../install-ai-unlimited/setup-ai-unlimited.md)。
 4. 認証するにはサインインしてください。
 6. TLS を有効にした場合は、 **プロファイル**で **再起動**を選択します。<br/>
   AI Unlimited は TLS が有効な状態で再起動します。
