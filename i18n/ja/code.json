@@ -6,7 +6,7 @@
     "message": "スタートガイド"
   },
   "header.actions.free_demo": {
-    "message": "無料デモを始める"
+    "message": "無料で試す"
   },
   "header.docs": {
     "message": "ドキュメント"
@@ -290,7 +290,7 @@
   "developer_home_page.tagline": {
     "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
   },
-   "developers.title_description": {
+  "developers.title_description": {
     "message": "すべての Teradata 製品のクイックスタート、ガイド、チュートリアル、コード サンプル、技術ドキュメント、ダウンロードのハブです。"
   },
   "developers.welcome_message": {
