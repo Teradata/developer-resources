@@ -234,7 +234,7 @@ export default function footerItems(currentLocale = 'en') {
       },
       {
         label: 'footer.tracking_consent',
-        href: `https://${footerBaseUrl}/how-we-help#tracking-consent`,
+        href: `https://${footerBaseUrl}/#tracking-consent`,
       },
     ],
     linksOfInterest: {
