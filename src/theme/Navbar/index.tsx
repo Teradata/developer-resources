@@ -14,6 +14,7 @@ import { ThemeConfig } from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import AlertComponent from '../../components/MatDisclaimer';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   const location = useLocation();
@@ -122,6 +123,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <Header
       key={defaultLang}
       navItems={translatedNavItems}
@@ -133,5 +135,7 @@ export default function Navbar() {
       selectedLanguage={defaultLang}
       secondaryMenu={secondaryMenuDetails}
     ></Header>
+    <AlertComponent />
+    </>
   );
 }

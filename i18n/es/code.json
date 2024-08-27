@@ -518,5 +518,20 @@
   },
   "quickstarts.teradata_university": {
     "message": "Teradata University"
-  }  
+  },
+  "mat.alert-message": {
+    "message": "Este sitio web usa traducción asistida por ordenador (Machine-Assisted Translation, MAT)."
+  },
+  "mat.link": {
+    "message": "Más información"
+  },
+  "mat.heading": {
+    "message": "Traducción asistida por máquina"
+  },
+  "mat.content": {
+    "message": "El objetivo de las traducciones asistidas por máquina de cualquier material a idiomas distintos del inglés es únicamente para la comodidad de los usuarios que no leen el inglés y no son legalmente vinculantes. Toda persona que se base en dicha información lo hace bajo su propio riesgo. Ninguna traducción automatizada es perfecta ni está destinada a reemplazar a los traductores humanos. Teradata no hace promesas ni otorga garantías en cuanto a la exactitud de las traducciones asistidas por máquina proporcionadas. Teradata no acepta ninguna responsabilidad ni será responsable de ningún daño o problema que pueda resultar del uso de dichas traducciones. Se recuerda a los usuarios que utilicen los contenidos en inglés."
+  },
+  "mat.button": {
+    "message": "Cerrar"
+  }                 
 }
