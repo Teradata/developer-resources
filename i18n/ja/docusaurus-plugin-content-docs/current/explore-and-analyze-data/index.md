@@ -18,14 +18,14 @@ JupyterLab または AI Unlimited カーネルをお持ちでない場合は、 
 
 ## 始め方
 - [最初のプロジェクトを作成する](./create-first-project.md)
-- [プロジェクトに貢献する](./collaborate-project) 他人によって作成された
+- 他の人によって作成された[プロジェクトに貢献する](./collaborate-project) 
 
 
 ## 学習方法
-- 全体を見る [プロジェクトの流れ](./project-flow.md)
-- [サンプル ユースケース](./example-projects.md)を探索 して — 試してみる
-- AI Unlimitedの詳細を見る [マジック コマンド](./magic-commands.md)
-- [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) 関数を検出する
+- [プロジェクトの流れ](./project-flow.md)全体を確認する 
+- [サンプル ユースケース](./example-projects.md)を探索する — 試してみる
+- AI Unlimited[マジック コマンド](./magic-commands.md)の詳細を見る 
+- [ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) 関数を見る
 
 :::note
 不要なエンジン リソースの支払いを避けるために、作業していないプロジェクトを [中断](../manage-ai-unlimited/suspend-and-restore-project.md) することを忘れないでください。

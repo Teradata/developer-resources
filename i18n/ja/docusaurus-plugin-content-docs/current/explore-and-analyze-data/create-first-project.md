@@ -16,8 +16,8 @@ import TabItem from '@theme/TabItem';
 プロジェクトは、Jupyter ノートブックからデータを探索および分析するための手段です。 
 
 :::note
-各プロジェクトには Git リポジトリがあります。 [理由を学ぶ](../glossary.md#project-repository).
- :::
+各プロジェクトには Git リポジトリがあります。 [理由を学ぶ](../glossary.md#project-repository)。
+:::
 
 最初のプロジェクトでは、当社が提供するデータを使用して、次の簡単なワークフローを完了します。
 
@@ -31,16 +31,16 @@ import TabItem from '@theme/TabItem';
 
 - AI Unlimited 管理者は、組織内で AI Unlimited を設定したユーザーです。管理者から次の項目を取得します。
 
-  - [AI Unlimitedマネージャ](../glossary.md#ai-unlimited-manager)の IP アドレスまたは  ホスト名。
-
+  - IPアドレスまたは [AI Unlimitedマネージャ](../glossary.md#ai-unlimited-manager)のホスト名。
+     
   - これらの環境変数:   
     <Tabs>
     <TabItem value="aws" label="AWS" default>
-    `AWS_ACCESS_KEY_ID`、`AWS_SECRET_ACCESS_KEY`、および `AWS_SESSION_TOKEN`
+    `AWS_ACCESS_KEY_ID`、`AWS_SECRET_ACCESS_KEY`、および`AWS_SESSION_TOKEN`
 
     </TabItem>
     <TabItem value="azure" label="Azure">
-    `ARM_SUBSCRIPTION_ID`、`ARM_CLIENT_ID`、および `ARM_CLIENT_SECRET`
+    `ARM_SUBSCRIPTION_ID`、`ARM_CLIENT_ID`、および`ARM_CLIENT_SECRET`
 
     </TabItem>
     </Tabs> 
@@ -78,9 +78,9 @@ import TabItem from '@theme/TabItem';
     %project_auth_create name=<Authorization_Name>, project=<Project_Name>, key=<ACCESS_KEY_ID>, secret=<SECRET_ACCESS_KEY>, region=<REGION>
     ```
 
-5. エンジンをデプロイする。
+5. エンジンをデプロイします。
 
-    サイズは、小、中、大、特大のいずれかです。デフォルトは小です。料金情報については、 [AWS](http://aws.amazon.com/marketplace/pp/prodview-2srvuo3mwqlig) または [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/teradata.ai-unlimited?tab=Overview) を参照してください。
+    サイズは、small、medium、large、extralargeいずれかです。デフォルトはsmallです。料金情報については、 [AWS](http://aws.amazon.com/marketplace/pp/prodview-2srvuo3mwqlig) または [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/teradata.ai-unlimited?tab=Overview) を参照してください。
     ```bash
     %project_engine_deploy name=<Project_Name>, size=<Size_of_Engine>
     ```
@@ -94,9 +94,9 @@ import TabItem from '@theme/TabItem';
 
 7. サンプル ワークロードを実行します。
 
-   :::note
+    :::note
     選択したデータベースに SalesCenter または SalesDemo という名前のテーブルがないことを確認してください。次の例の `Authorization_Name` と `salescenter.csv_file_location` の値を独自の値に置き換えてください。
-    : :::
+    ::::
 
     a. 販売センターのデータを保存するテーブルを作成します。 
     ```sql
@@ -123,7 +123,7 @@ import TabItem from '@theme/TabItem';
     ```
      b. データが挿入されたことを確認します。
     ```sql
-    SalesCenterから*を選択ORDER BY 1
+    SELECT * FROM SalesCenter ORDER BY 1
     ```
     c. 販売デモデータを含むテーブルを作成します。
     ```sql
@@ -172,7 +172,7 @@ import TabItem from '@theme/TabItem';
 	```bash
 	%project_backup project=<Project_Name>
 	```
-   これによりプロジェクトがバックアップされますが、エンジンは停止されません。
+   これによりプロジェクトはバックアップされますが、エンジンは停止されません。
    
 9. 不要なエンジン リソースの支払いを避けるために、エンジンを停止します。
     ```bash

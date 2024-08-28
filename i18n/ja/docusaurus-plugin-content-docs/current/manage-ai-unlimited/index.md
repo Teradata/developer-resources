@@ -18,7 +18,7 @@ pagination_next: null
 
 - Jupyterノートブックでプロジェクトを管理するには [マジック コマンド](../explore-and-analyze-data/magic-commands.md) を使用します 
 
-- [プロジェクトの中断と復元](./suspend-and-restore-project.md) 使用した分だけ支払う
+- [プロジェクトの中断と復元](./suspend-and-restore-project.md) を行い、従量課金制にします 
 
 
 ## プロジェクト所有者

@@ -20,7 +20,7 @@ AI Unlimited を設定すると、組織の AI Unlimited 管理者になりま�
 :::
 
 :::tip
-セットアップに関するヘルプについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティに質問してください](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
+セットアップに関するヘルプについては、 <a href="mailto:aiunlimited.support@Teradata.com">サポート チーム</a> にメールを送信するか、 [コミュニティ](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa)にお問い合わせください。
 :::
 
 <a id="setup-fields"></a>	
@@ -34,32 +34,32 @@ AI Unlimited を設定すると、組織の AI Unlimited 管理者になりま�
 
 <br />
 
-**AI Unlimited ベース URL** - 設定にアクセスするために使用した URL。マネージャをインストールしたときに受け取りました。
+**AI Unlimited ベース URL** - セットアップにアクセスするために使用した URL。マネージャをインストールしたときに受け取りました。
 
 
-**Git プロバイダー** - GitHub または GitLab。
+**Git プロバイダ** - GitHub または GitLab。
 
 **AI Unlimited ログ レベル** - AI Unlimited ログで表示する詳細レベル。
 
 **エンジン IP ネットワーク タイプ**
 
-AI Unlimited と同じ仮想プライベート クラウドにエンジンをデプロイする場合は、**プライベート** を選択します。
+AI Unlimited と同じ仮想プライベート クラウドにエンジンをデプロイする場合は、[**プライベート**] を選択します。
 
-**パブリック** または **プライベート** は、AI Unlimited がエンジンと通信する方法を示します。エンジンには、パブリック IP アドレス、プライベート IP アドレス、またはその両方がある可能性があります。AI Unlimited が接続する IP アドレスのタイプを指定します。
+**パブリック** または **プライベート** は、AI Unlimited がエンジンと通信する方法を示します。エンジンには、パブリック IP アドレス、プライベート IP アドレス、またはその両方がある場合があります。AI Unlimited が接続する IP アドレスの種類を指定します。
 
-**TLS を使用する**
+**TLS を使用**
 
-AI Unlimited への接続を保護し、転送中のデータを保護するために [Transport Layer Security (TLS)]、 (../glossary.md#transport-layer-security) を使用することをお勧めします。
+AI Unlimited への接続をセキュリティで保護し、転送中のデータを保護するには、[Transport Layer Security (TLS)](../glossary.md#transport-layer-security)を使用することをお勧めします。
 
-- [application load balancer (ALB)](../glossary.md#application-load-balancer) を使用しており、証明書の終了が有効になっている場合は、**False** を選択します。
+- 証明書の終了が有効になっている[application load balancer (ALB)](../glossary.md#application-load-balancer)を使用している場合は、**False** を選択します。
 
-- [network load balancer (NLB)](../glossary.md#network-load-balancer) を使用しているか、ロード バランサがない場合は、**True** を選択します。
+- [network load balancer (NLB)](../glossary.md#network-load-balancer)を使用している場合、またはロード バランサーを使用していない場合は、**True** を選択します。
 ..
-	- **AI Unlimited TLS 証明書** と **AI Unlimited TLS 証明書キー** - 信頼できる証明機関 (CA) によって発行された証明書がある場合は、その証明書とそのキーを提供できます。証明書のライフサイクル (更新と検証を含む) の管理は、お客様の責任となります。特定の要件がある場合や、証明書をより細かく制御する必要がある場合は、独自の証明書を使用することをお勧めします。
+	- **AI Unlimited TLS 証明書** と **AI Unlimited TLS 証明書キー** - 信頼できる証明機関 (CA) によって発行された証明書がある場合は、その証明書とそのキーを提供できます。更新と検証を含む証明書のライフサイクルの管理はお客様の責任となります。特定の要件がある場合や、証明書をより細かく制御する必要がある場合は、独自の証明書を用意することをお勧めします。
 
-	- または、**Generate Certs** を選択して、Teradata システムによって生成された証明書を使用します。有効期限が切れる前に自動的に更新されます。
+	- または、**証明書の生成** を選択して、Teradata システム生成の証明書を使用します。有効期限が切れる前に自動的に更新されます。
 
-**Update** を選択します。
+**更新**を選択します。
 
 </details>
 
@@ -68,34 +68,34 @@ AI Unlimited への接続を保護し、転送中のデータを保護するた�
 
 <summary>クラウド統合</summary>
 <br />
-これらのフィールドの一部はデフォルト値用です。後で Jupyter ノートブックからエンジンをデプロイするときに、そのデプロイメントに対してデフォルトとは異なる値を指定できます。
+これらのフィールドの一部はデフォルト値用です。後で Jupyter ノートブックからエンジンをデプロイするときに、そのデプロイに対してデフォルトとは異なる値を指定できます。
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
 <br />
 **デフォルトのリージョン** - エンジンをデプロイする AWS リージョン。データレイクに最も近いリージョンを選択することをお勧めします。
 
-**デフォルトのサブネット** - エンジンをデプロイする [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html)。AWS コンソールにリージョン内のサブネットが表示されます。
+**デフォルトのサブネット** - エンジンをデプロイする [AWS サブネット](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html)。AWS コンソールには、リージョン内のサブネットが表示されます。
 
 **デフォルトの IAM ロール**
 
-- エンジンの [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html)。セキュリティで許可されている場合は、空白のままにして AI Unlimited にロールを作成させます。それ以外の場合は、このポリシーを使用してロールを作成します: [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json)。
-- AI Unlimited がロールを作成する場合、エンジンをデプロイするたびに、エンジンをデプロイする AWS [cluster](../glossary.md#cluster) に対してロールが作成されます。組織がロールを作成する場合、エンジンをデプロイする可能性のあるすべてのクラスターに対応する必要があります。
+- エンジンの [IAM ロール](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html)。セキュリティで許可されている場合は、空白のままにして AI Unlimited にロールを作成させます。それ以外の場合は、このポリシーを使用してロールを作成します: [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json)。
+- AI Unlimited がロールを作成する場合、エンジンをデプロイするたびに、エンジンをデプロイする AWS [クラスター](../glossary.md#cluster) に対してロールが作成されます。組織がロールを作成する場合、エンジンをデプロイする可能性のあるすべてのクラスターに対応する必要があります。
 		
-**リソースタグ** - エンジンをデプロイする AWS リソースを [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) して、管理しやすくすることができます。
+**リソース タグ** — エンジンをデプロイする AWS リソースに [タグ](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) を付けて、管理しやすくすることができます。
 
-**受信セキュリティ**
+**インバウンドセキュリティ**
 
-これらのフィールドを使用して、ソーストラフィックがエンジンに到達できるようにします。
-- **デフォルト [CIDRs](../glossary.md#classless-inter-domain-routing)**
-- **デフォルト [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) ID**—AI Unlimited と同じ Virtual Private Cloud にエンジンをデプロイする場合は、このフィールドに AI Unlimited セキュリティグループを含めて、AI Unlimited がエンジンと通信できるようにします。
-- **デフォルト [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) 名前**
+ソース トラフィックがエンジンに到達できるようにするには、次のフィールドを使用します。
+- **デフォルトの [CIDR](../glossary.md#classless-inter-domain-routing)**
+- **デフォルトの [セキュリティ グループ](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) ID** - AI Unlimited と同じ Virtual Private Cloud にエンジンをデプロイする場合は、AI Unlimited がエンジンと通信できるように、このフィールドに AI Unlimited セキュリティ グループを含めます。
+- **デフォルトの[プレフィックスリスト](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html)名**
 
-**ロールプレフィックス**—AI Unlimited がロールを作成すると、このプレフィックスがロール名に追加されます。
+**ロール プレフィックス** - AI Unlimited がロールを作成すると、このプレフィックスがロール名に追加されます。
 
-**[Permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) ARN** — IAM エンティティに境界が必要な場合は、ここで境界を指定できます。   
+**[アクセス許可の境界](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) ARN** — IAM エンティティに境界が必要な場合は、ここで指定できます。   
 
-[ **更新**] を選択します。
+**更新**を選択します。
 
 </TabItem>
 
@@ -105,30 +105,30 @@ AI Unlimited への接続を保護し、転送中のデータを保護するた�
 
 **既定のリージョン** - エンジンをデプロイする Azure リージョン。データ レイクに最も近いリージョンを選択することをお勧めします。
 
-] [Azure virtual networks]の詳細については、こちらをご覧ください (https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices)。
+[Azure 仮想ネットワーク](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices) の詳細をご覧ください。
 
 
-**既定のネットワーク リソース グループ** - ネットワークを含むリソース グループ。
+**デフォルトのネットワーク リソース グループ** - ネットワークを含むリソース グループ。
 
-**既定のネットワーク** - エンジンをデプロイするネットワーク。
+**デフォルト ネットワーク** - エンジンをデプロイするネットワーク。
 
-] **既定のサブネット** - エンジンをデプロイするサブネット。
+**デフォルトのサブネット** - エンジンをデプロイするサブネット。
 
-**既定のキー コンテナー** - エンジンによって使用されるキー コンテナー。パスワードなどの機密情報を安全に保存できます。
+**既定のキー コンテナ** - エンジンによって使用されるキー コンテナ。パスワードなどの機密情報を安全に保存できます。
 
-**既定のキー コンテナー リソース グループ** - キー コンテナーを含むリソース グループ。
+**既定のキー コンテナ リソース グループ** - キー コンテナが含まれるリソース グループ。
 
-**受信セキュリティ**
+**インバウンドセキュリティ**
 
 ソース トラフィックがエンジンに到達できるようにするには、次のフィールドを使用します。
 
-- **既定の [CIDRs](../glossary.md#classless-inter-domain-routing)**
+- **デフォルトの [CIDR](../glossary.md#classless-inter-domain-routing)**
  
-- **既定の [security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) 名**— AI Unlimited と同じ仮想プライベート クラウドにエンジンをデプロイする場合は、このフィールドに AI Unlimited アプリケーション セキュリティ グループを含めて、AI Unlimited がエンジンと通信できるようにします。
+- **既定の [セキュリティ グループ](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) 名** - AI Unlimited と同じ仮想プライベート クラウドにエンジンをデプロイする場合は、AI Unlimited がエンジンと通信できるように、このフィールドに AI Unlimited アプリケーション セキュリティ グループを含めます。
 
-**リソース タグ**—エンジンをデプロイする Azure リソースを [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) して、管理しやすくすることができます。
+**リソース タグ** - エンジンをデプロイする Azure リソースに [タグ](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) を付けて、管理しやすくすることができます。
 
-[ **更新**] を選択します。
+**更新**を選択します。
 
 </TabItem>
 </Tabs>
@@ -138,7 +138,7 @@ AI Unlimited への接続を保護し、転送中のデータを保護するた�
 
 <details>
 
-<summary>Git 統合</summary>
+<summary>Gitの統合</summary>
 
 <Tabs>
 
@@ -146,23 +146,23 @@ AI Unlimited への接続を保護し、転送中のデータを保護するた�
 
 <br />
 
-**GitHub コールバック URL** - ユーザーを認証した後、GitHub はこの URL を使用してマネージャにリダイレクトします。これは、OAuth アプリ [when it was created](../resources/create-oauth-app.md) に提供されました。
+**GitHub コールバック URL** - ユーザーを認証した後、GitHub はこの URL を使用してマネージャにリダイレクトします。これは、OAuth アプリの作成時に提供されました (../resources/create-oauth-app.md)。
 
 **GitHub ベース URL** - GitHub インスタンスの URL。
 
-**GitHub クライアント ID** と **GitHub クライアント シークレット** - [OAuth app was created](../resources/create-oauth-app.md) の実行時に GitHub から受信した資格情報。
+**GitHub クライアント ID** と **GitHub クライアント シークレット** - [OAuth アプリが作成されたとき](../resources/create-oauth-app.md) に GitHub から受け取った資格情報。
 
 **組織アクセス**
 
-GitHub アカウントの 2 つの組織が、アクセス制御とリポジトリ管理に役立ちます。
+GitHub アカウント内の 2 つの組織が、アクセス制御とリポジトリ管理に役立ちます。
 
-- **承認組織** のメンバーは、AI Unlimited にサインインして認証できます。組織を指定しない場合は、どの GitHub アカウント ユーザーでもサインインして認証できます。
+- **認証組織** のメンバーは、AI Unlimited にサインインして認証できます。組織を指定しない場合は、どの GitHub アカウント ユーザーでもサインインして認証できます。
 
-- プロジェクト リポジトリは、**リポジトリ組織** に作成されます。組織を指定しない場合は、プロジェクトは個人の GitHub スペースにあります。
+- プロジェクト リポジトリは **リポジトリ組織** に作成されます。組織を指定しない場合、プロジェクトは個人の GitHub スペースに保存されます。
 
-[**更新**] を選択します。
+**更新**を選択します。
 
-[**サインイン**] を選択します。次に、サインイン (要求された場合) して、認証します。
+**サインイン** を選択します。次に、サインイン (求められた場合) して認証します。
 
 </TabItem>
 
@@ -170,23 +170,23 @@ GitHub アカウントの 2 つの組織が、アクセス制御とリポジト�
 
 <br />
 
-**GitLab コールバック URL** - ユーザーを認証した後、GitLab はこの URL を使用してマネージャにリダイレクトします。これは、OAuth アプリ [when it was created][OAuth app was created]( ../resources/create-oauth-app.md) に提供されました。
+**GitLab コールバック URL** — ユーザーを認証した後、GitLab はこの URL を使用してマネージャにリダイレクトします。これは、OAuth アプリの作成時に提供されました (../resources/create-oauth-app.md)。
 
 **GitLab ベース URL** - GitLab インスタンスの URL。
 
-**GitLab クライアント ID** と **GitLab クライアント シークレット** - GitLab インスタンスにログインしたときに GitLab から受信した資格情報 (../resources/create-oauth-app.md)。
+**GitLab クライアント ID** と **GitLab クライアント シークレット** - [OAuth アプリが作成されたとき](../resources/create-oauth-app.md) に GitLab から受け取った資格情報。
 
-**グループ アクセス**
+**グループアクセス**
 
-GitLab アカウントの 2 つのグループが、アクセス制御とリポジトリ管理に役立ちます。
+GitLab アカウント内の 2 つのグループは、アクセス制御とリポジトリ管理に役立ちます。
 
-- **承認グループ** のメンバーは、AI Unlimited にサインインして認証できます。グループを指定しないと、どの GitLab アカウント ユーザーでもサインインして認証できます。
+- **認証グループ** のメンバーは、AI Unlimited にサインインして認証できます。グループを指定しない場合は、どの GitLab アカウント ユーザーでもサインインして認証できます。
 
 - すべてのプロジェクト リポジトリは **リポジトリ グループ** に作成されます。グループを指定しない場合、プロジェクトは個人の GitLab スペースに保存されます。
 
-[**更新**] を選択します。
+**更新**を選択します。
 
-[**サインイン**] を選択します。次に、サインイン (プロンプトが表示された場合) して認証します。
+**サインイン** を選択します。次に、サインイン (求められた場合) して認証します。
 
 </TabItem>
 </Tabs>
