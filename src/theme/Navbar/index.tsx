@@ -14,6 +14,7 @@ import { ThemeConfig } from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MatDisclaimer from '../../components/MatDisclaimer';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   const location = useLocation();
@@ -60,6 +61,7 @@ export default function Navbar() {
             label={translate({ message: 'header.actions.free_demo' })}
             icon="fa-solid fa-arrow-right-long"
             trailingIcon={true}
+            variant=''
           />
         </Link>
       ),
@@ -122,7 +124,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Header
+    <><Header
       key={defaultLang}
       navItems={translatedNavItems}
       title={translatedTitle}
@@ -133,5 +135,7 @@ export default function Navbar() {
       selectedLanguage={defaultLang}
       secondaryMenu={secondaryMenuDetails}
     ></Header>
+    <MatDisclaimer/>
+    </>
   );
 }
