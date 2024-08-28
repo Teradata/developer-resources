@@ -6,7 +6,7 @@
     "message": "Empezar"
   },
   "header.actions.free_demo": {
-    "message": "Empieza gratis"
+    "message": "Prueba gratis"
   },
   "header.docs": {
     "message": "Docs"
@@ -518,5 +518,5 @@
   },
   "quickstarts.teradata_university": {
     "message": "Teradata University"
-  }  
+  }
 }

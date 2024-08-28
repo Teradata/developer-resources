@@ -6,7 +6,7 @@
     "message": "スタートガイド"
   },
   "header.actions.free_demo": {
-    "message": "無料デモを始める"
+    "message": "無料で試す"
   },
   "header.docs": {
     "message": "ドキュメント"
@@ -454,5 +454,8 @@
   },
   "apis.data_labs_description": {
     "message": "Data Labs API を使用して、Vantage でデータ ラボを作成および管理します。"
+  },
+  "quickstarts.teradata_university": {
+    "message": "Teradata University"
   }
 }
