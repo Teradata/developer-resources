@@ -1,24 +1,35 @@
 import React from 'react';
-import { Dialog, Button } from '@teradata-web/react-components';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export default function DialogComponent({ onClose, dialogHeading, dialogContent, buttonLabel  }) {
+export default function DialogComponent({ onClose, dialogHeading, dialogContent, buttonLabel }) {
   return (
-    <Dialog
-      open
-      scrimClickAction=""
-      escapeKeyAction=""
-      heading={dialogHeading}
-      onClose={onClose}
-    >
-      {dialogContent}
-      <div slot="primaryAction">
-        <Button 
-          label={buttonLabel}
-          primary={true}
-          slot="primaryAction" 
-          onClick={onClose}
-        />
-      </div>
-    </Dialog>
+    <BrowserOnly>
+      {() => {
+        const Dialog = require('@teradata-web/react-components')?.Dialog;
+        const Button = require('@teradata-web/react-components')?.Button;
+
+        return Dialog ? (
+          <Dialog
+            open
+            scrimClickAction=""
+            escapeKeyAction=""
+            heading={dialogHeading}
+            onClose={onClose}
+          >
+            {dialogContent}
+            <div slot="primaryAction">
+              <Button 
+                label={buttonLabel}
+                primary={true}
+                slot="primaryAction" 
+                onClick={onClose}
+              />
+            </div>
+          </Dialog>
+        ) : (
+          <></>
+        );
+      }}
+    </BrowserOnly>
   );
 }

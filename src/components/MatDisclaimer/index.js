@@ -1,4 +1,6 @@
 import React from 'react';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 import { useLocation } from 'react-router-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import AlertComponent from './AlertComponent';
@@ -26,7 +28,7 @@ export default function MatDisclaimer() {
   if (!isVisible || !shouldDisplayAlert || !shouldDisplayAlertForLocale) return null;
 
   return (
-    <>
+    <div className={clsx(styles.alertWrapper)}>
       <AlertComponent 
         onClose={hideAlert} 
         onOpenDialog={showDialog} 
@@ -41,6 +43,6 @@ export default function MatDisclaimer() {
           buttonLabel={translate({ message: 'mat.button' })}
           />
         )}
-    </>
+    </div>
   );
 }
