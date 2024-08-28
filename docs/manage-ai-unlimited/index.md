@@ -7,7 +7,13 @@ pagination_next: null
 
 # Manage projects
 
-Your user type determines what you can do.
+Your user type determines what you can do. i changed this again
+
+
+
+
+
+i changed this again
 
 :::tip
 For help with managing projects, email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a> or ask the [community](https://support.teradata.com/community?id=community_forum&sys_id=b0aba91597c329d0e6d2bd8c1253affa).
