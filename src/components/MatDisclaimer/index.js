@@ -14,16 +14,26 @@ export default function MatDisclaimer() {
   const { i18n } = useDocusaurusContext();
 
   const normalizePath = (path) => path.replace(/\/$/, ''); 
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 14d4eaf350fddf1fcc3532de866066b578d3b05c
   const pathsNoAlert = [
     normalizePath(`/${i18n.currentLocale}`),
     normalizePath(`/${i18n.currentLocale}/ai-unlimited`),
     normalizePath(`/${i18n.currentLocale}/quickstarts`),
   ];
+<<<<<<< HEAD
   
   const currentPath = normalizePath(location.pathname);
 //const shouldDisplayAlert = !pathsNoAlert.includes(currentPath);
   const shouldDisplayAlert = !pathsNoAlert.some(noAlertPath => currentPath.startsWith(noAlertPath)); 
+=======
+
+  const currentPath = normalizePath(location.pathname);
+  const shouldDisplayAlert = !pathsNoAlert.includes(currentPath);
+>>>>>>> 14d4eaf350fddf1fcc3532de866066b578d3b05c
   const shouldDisplayAlertForLocale = i18n.currentLocale !== 'en';
 
   if (!isVisible || !shouldDisplayAlert || !shouldDisplayAlertForLocale) return null;

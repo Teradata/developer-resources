@@ -28,19 +28,19 @@ JupyterLab を使用してデータを探索および分析します。
 - Jupyter ノートブックからエンジンをデプロイするための従量課金制の AWS または Azure アカウント
 - ユーザーを認証し、プロジェクト情報を保存するための各プロジェクト リポジトリをホストする [GitHub](https://github.com) または [GitLab](https://gitlab.com) アカウント
 - Amazon または ADLS Gen2 データレイクが存在するオブジェクト ストレージ
-- [Docker](https://www.docker.com/get-started/) コンピュータにインストールされている
+- コンピュータにインストールされている[Docker](https://www.docker.com/get-started/) 
 
 
 ## 設定ファイルの場所を設定する
 
 1. オプションで、マネージャの設定ファイルとデータ ファイルを保存するディレクトリを `AI_UNLIMITED_HOME` 環境変数に設定します。ディレクトリが存在し、適切な権限が付与されていることを確認してください。デフォルトの場所は `./volumes/ai-unlimited`です。
 
-    | **ローカルロケーション** | **コンテナの場所** | **使用** |
+    | **ローカルロケーション** | **コンテナの場所** | **使用法** |
     |----------------|--------------------|-------|
     | $AI_UNLIMITED_HOME | /etc/td | データと設定を保存する |
 
-	:::tip [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
-
+	:::tip
+	[AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
 	:::
 
 2. オプションで、 `JUPYTER_HOME` 環境変数を、JupyterLab 構成ファイルを保存するディレクトリに設定します。デフォルトの場所は `~/.jupyter`です。
@@ -62,7 +62,7 @@ Teradata が提供する [AI Unlimited GitHubリポジトリ](https://github.com
 
 ## クラウド サービス プロバイダの認証情報をDockerに渡す
 
-:::note
+:::note 
 認証情報を渡す方法は 2 つあります。
 - 認証情報を保存するための環境変数を含む `[AWS or Azure]-credentials-env-vars.yaml`を使用します。
 - 認証情報を含むローカル ボリュームを使用します。 
@@ -132,6 +132,6 @@ JupyterLabの準備ができたら、 `http://localhost:8888`でアクセスし�
 
 ## 次のステップ
 
-[OAuthアプリを作成する](../create-oauth-app.md) AI Unlimited と Git プロバイダ アカウント間の認証を許可します。
+[OAuthアプリを作成する](../create-oauth-app.md) を実行してAI Unlimited と Git プロバイダ アカウント間の認証を許可します。
 
 

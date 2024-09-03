@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 必要に応じてプロジェクトを中断したり復元したりできます。
 
 
-## 中断する
+## 中断
 
 不要なエンジン リソースに対して料金が発生しないようにするには、作業していないプロジェクトを中断します。
 
@@ -56,6 +56,6 @@ restore パラメータについては、デフォルト値の true のままに
 エンジンがデプロイされるたびに、エンジンに接続するための新しいパスワードがユーザーごとに生成されます。
 
 :::tip
-AI Unlimited [マジック コマンド](../explore-and-analyze-data/magic-commands.md)の詳細については、こちらをご覧ください 。
+AI Unlimited [マジック コマンド](../explore-and-analyze-data/magic-commands.md) の詳細については、こちらをご覧ください。
 :::
 

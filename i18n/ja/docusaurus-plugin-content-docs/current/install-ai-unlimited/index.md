@@ -20,11 +20,11 @@ AI Unlimited を使用すると、データ サイエンティストやデータ
 ノートブックを [AWS](https://aws.amazon.com/) または [Azure](https://azure.microsoft.com/en-us)の AI/ML エンジンに接続し、エンジンを [Amazon S3](https://aws.amazon.com/pm/serv-s3/?gclid=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB&trk=fecf68c9-3874-4ae2-a7ed-72b6d19c8034&sc_channel=ps&ef_id=Cj0KCQjwlZixBhCoARIsAIC745AmyEzPaBnrARQxyUW_un0BjgTxlHygMScf4ZbX-7dTeznc-psOFlwaAkjmEALw_wcB:G:s&s_kwcid=AL!4422!3!536452728638!e!!g!!amazon%20s3!11204620052!112938567994) または [ADLS Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) データレイクに接続します。分析プロジェクトはいつでも中断および復元でき、使用した時間に対してのみ料金をお支払いいただきます。
 
 :::note
-組織内の誰かがすでに AI Unlimited をインストールしてセットアップしている場合は、 [データの探索と分析](../explore-and-analyze-data) に直接進んで開始できます。
+組織内の誰かが AI Unlimited をすでにインストールしてセットアップしている場合は、 [データの探索と分析](../explore-and-analyze-data) に直接進んで開始できます。
 :::
 
 
-## AI Unlimitedに含まれる
+## AI Unlimitedに含まれるもの
 
 - AWS または Azure にデプロイする AI/ML エンジン
 - AI Unlimitedマネージャは、エンジンのデプロイを調整し、セットアップ用のWebベースのユーザーインターフェイスを備えています。
@@ -39,7 +39,7 @@ AI Unlimited を使用すると、データ サイエンティストやデータ
 - JupyterLab。[インストール オプション](../resources/jupyterlab)を参照してください。
 
 :::tip
-[マネージャ](../glossary.md#ai-unlimited-manager)をインストールするときに、クラウドデプロイに必要な詳細情報を提供します。クラウド管理者と貢献して事前に詳細情報を取得する場合は [AWSの詳細](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md#specify-stack-details-and-options) 、または [Azureの詳細](../install-ai-unlimited/prod-azure-portal-deploy-manager.md#specify-instance-details)を参照してください。
+[マネージャ](../glossary.md#ai-unlimited-manager)をインストールするときに、クラウドデプロイに必要な詳細情報を提供します。クラウド管理者と貢献して事前に詳細情報を取得する場合は [AWSの詳細](../install-ai-unlimited/prod-aws-console-deploy-ai-unlimited.md)、または [Azureの詳細](../install-ai-unlimited/prod-azure-portal-deploy-manager.md)を参照してください。
 :::
 
 :::note
@@ -55,9 +55,9 @@ AI Unlimited を使用すると、他のユーザーとプロジェクトで共�
 
 **Azureのみ**: **今すぐ入手**を選択する前に、次の手順を完了してください。
 1.  [ライセンス契約](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1lQlq)をお読みください。
-2. ターミナルウィンドウを開き、このコマンドを実行します。
-    \`\`\` bash
-    az vm image term accept --publisher teradata --offer ai-unlimited-vm --plan ai-unlimited-image
+2. ターミナル ウィンドウを開き、このコマンドを実行します。
+    ``` bash
+    az vm image terms accept --publisher teradata --offer ai-unlimited-vm --plan ai-unlimited-image
 	```
 
 AWS または Azure の場合は、サブスクライブ後、このドキュメント サイトに戻り、 **次のステップ**に進みます。

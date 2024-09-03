@@ -25,8 +25,8 @@ import TabItem from '@theme/TabItem';
 
 オプションで、 `JUPYTER_HOME` 環境変数を、JupyterLab 構成ファイルを保存するディレクトリに設定します。デフォルトの場所は `~/.jupyter`です。
 
-:::tip [AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
-
+:::tip
+[AWS](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) または [Azure](https://github.com/paulbouwer/terraform-azure-quickstarts-samples/blob/master/README.md#azure-authentication) 環境変数について学習します。
 :::
 
 
@@ -45,7 +45,7 @@ Teradata が提供する [AI Unlimited GitHubリポジトリ](https://github.com
 
 1. `jupyter.yaml` があるディレクトリに移動し、JupyterLab を起動します。
 
-   :::note
+    :::note
 	コマンド内の `-d` フラグはオプションです。
 	:::
 

@@ -16,16 +16,16 @@ import TabItem from '@theme/TabItem';
 プロジェクトは、Jupyter ノートブックからデータを探索および分析するための手段です。 
 
 :::note
-各プロジェクトには Git リポジトリがあります。 [理由を学ぶ](../glossary.md#project-repository).
- :::
+各プロジェクトには Git リポジトリがあります。 [理由を学ぶ](../glossary.md#project-repository)。
+:::
 
-プロジェクト所有者は貢献者として [プロジェクトにあなたを追加する](../manage-ai-unlimited/add-collaborators.md) になる場合があります。貢献するには、Jupyter ノートブックからプロジェクトにアクセスする必要があります。
+プロジェクト所有者は貢献者として [プロジェクトにあなたを追加する](../manage-ai-unlimited/add-collaborators.md) 場合があります。貢献するには、Jupyter ノートブックからプロジェクトにアクセスする必要があります。
 
 
 ## 始める前に
 
-- プロジェクト所有者から、次の項目を取得します。
-  - IPアドレスまたは  ホスト名 [AI Unlimitedマネージャ](../glossary.md#ai-unlimited-manager)
+- プロジェクト所有者から次のアイテムを取得します。
+  - [AI Unlimitedマネージャ](../glossary.md#ai-unlimited-manager)のIPアドレスまたはのホスト名
   - プロジェクト名
 
 - あなたのプロフィールから、 [APIキーを取得する](./get-api-key.md)。 
@@ -78,7 +78,7 @@ import TabItem from '@theme/TabItem';
    %project_user_list project=<Project_Name>
    ```
 
-6. ノートブックを含めるには接続を更新してください。
+6. ノートブックを含めるには接続を更新します。
    ```bash 
    %project_connection_add project=<Project_Name>
    ```

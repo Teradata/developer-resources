@@ -1,8 +1,8 @@
 ---
 id: docker-when-you're-done
-title: QuickStart | 完了したら
+title: QuickStart | 使用後
 description: QuickStartの使用が完了したら何をすべきかを学びます。
-sidebar_label: 完了したら
+sidebar_label: 使用後
 sidebar_position: 7
 pagination_prev: null
 pagination_next: null
@@ -10,9 +10,9 @@ pagination_next: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 完了したら
+# 使用後
 
-不要なエンジン リソース [プロジェクトを中断する](../../manage-ai-unlimited/suspend-and-restore-project.md) に対して料金が発生しないようにするには、作業していないリソースをいつでも復元できます。
+不要なエンジン リソースに対する料金が発生しないようにするには、作業していない[プロジェクトを中断する](../../manage-ai-unlimited/suspend-and-restore-project.md)を実行します。いつでもそれらを復元できます。
 
 QuickStartが完了し、コンピューターのリソースを解放したい場合は、このコマンドを実行して、作成されたすべてのコンテナとネットワークを停止して削除します。
 
