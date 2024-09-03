@@ -22,6 +22,7 @@ export default function MatDisclaimer() {
   ];
   
   const currentPath = normalizePath(location.pathname);
+  console.log(currentPath);
   const shouldDisplayAlert = !pathsNoAlert.some(noAlertPath => currentPath.startsWith(noAlertPath)); 
 
   const shouldDisplayAlertForLocale = i18n.currentLocale !== 'en';
