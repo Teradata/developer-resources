@@ -1,0 +1,12 @@
+@media (max-width: 1024px) {
+    .alertWrapper {
+        margin-top: 59px;
+    }
+}
+
+@media (max-width: 996px) {
+    .alertWrapper {
+        margin-top: 109px;
+        margin-bottom: -100px;
+    }
+}
