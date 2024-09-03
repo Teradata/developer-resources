@@ -76,6 +76,10 @@ const config = {
   organizationName: 'teradata', // Usually your GitHub org/user name.
   projectName, // Usually your repo name.
   trailingSlash: true,
+  staticDirectories: [
+    'static',
+    'quickstarts/other-integrations/attachments',
+  ],
 
   headTags: [
     {

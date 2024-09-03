@@ -1,0 +1,13 @@
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="Windows" label="Windows" default>
+ ```bash docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v ${PWD}:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions ``` 
+ </TabItem> 
+ <TabItem value="MacOS" label="MacOS"> 
+ ```bash docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions ``` 
+ </TabItem> 
+ <TabItem value="Linux" label="Linux"> 
+ ```bash docker run -e "accept_license=Y" -p 127.0.0.1:8888:8888 -v $PWD:/home/jovyan/JupyterLabRoot teradata/jupyterlab-extensions ``` 
+ </TabItem> 
+</Tabs>
