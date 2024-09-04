@@ -22,12 +22,8 @@ export default function MatDisclaimer() {
   ];
   
   const currentPath = normalizePath(location.pathname);
-
-    const shouldDisplayAlert = !pathsNoAlert.some(noAlertPath => {
-    const regex = new RegExp(`^(/pr-preview/pr-\\d+)?${noAlertPath}(/?$)`);
-    return regex.test(currentPath);
-  });
-
+  const shouldDisplayAlert = !pathsNoAlert.includes(currentPath);
+  
   const shouldDisplayAlertForLocale = i18n.currentLocale !== 'en';
 
   if (!isVisible || !shouldDisplayAlert || !shouldDisplayAlertForLocale) return null;
