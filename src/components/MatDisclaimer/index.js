@@ -27,7 +27,7 @@ export default function MatDisclaimer() {
     const regex = new RegExp(`^(/pr-preview/pr-\\d+)?${noAlertPath}(/?$)`);
     return regex.test(currentPath);
   });
-  console.log(currentPath);
+
   const shouldDisplayAlertForLocale = i18n.currentLocale !== 'en';
 
   if (!isVisible || !shouldDisplayAlert || !shouldDisplayAlertForLocale) return null;
