@@ -15,8 +15,6 @@ export default function FeedbackComponent() {
             event_value: articleUrl, 
           });
         }
-    
-        console.log('Feedback received:', feedbackType, 'for article:', articleUrl);
       }
 
     return (
