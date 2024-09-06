@@ -6,7 +6,7 @@ export const FeatureList = [
     title: translate({ message: 'developers.getting_started_title' }),
     description: translate({ message: 'developers.getting_started_message' }),
     descriptionLink: translate({ message: 'developers.getting_started_link' }),
-    href: 'https://quickstarts.teradata.com/',
+    href: '/quickstarts/',
   },
   {
     img: 'local_library',
@@ -48,34 +48,34 @@ export const FeatureList2 = [
     img2: '',
     title: translate({ message: 'developers.top-picks-from-teradata-title-card2' }),
     description: translate({ message: 'developers.top-picks-from-teradata-text-card2' }),
-    href: 'https://quickstarts.teradata.com/dbt.html',
+    href: '/quickstarts/manage-data/dbt/',
   },
   {
     img: 'article',
     img2: '',
     title: translate({ message: 'developers.top-picks-from-teradata-title-card3' }),
     description: translate({ message: 'developers.top-picks-from-teradata-text-card3' }),
-    href: 'https://quickstarts.teradata.com/nos.html',
+    href: '/quickstarts/manage-data/nos/',
   },
   {
     img: 'article',
     img2: '',
     title: translate({ message: 'developers.top-picks-from-teradata-title-card4' }),
     description: translate({ message: 'developers.top-picks-from-teradata-text-card4' }),
-    href: 'https://quickstarts.teradata.com/elt/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.html',
+    href: '/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/',
   },
   {
     img: 'article',
     img2: '',
     title: translate({ message: 'developers.top-picks-from-teradata-title-card5' }),
     description: translate({ message: 'developers.top-picks-from-teradata-text-card5' }),
-    href: 'https://quickstarts.teradata.com/modelops/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git.html',
+    href: '/quickstarts/analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git/',
   },
   {
     img: 'article',
     img2: '',
     title: translate({ message: 'developers.top-picks-from-teradata-title-card6' }),
     description: translate({ message: 'developers.top-picks-from-teradata-text-card6' }),
-    href: 'https://quickstarts.teradata.com/jdbc.html',
+    href: '/quickstarts/create-applications/jdbc/',
   }
 ];

@@ -48,7 +48,7 @@ export default function GetStarted() {
                       </React.Fragment>
                     </p>
                     <br/>
-                    <Link to="https://quickstarts.teradata.com/ml.html">
+                    <Link to="/quickstarts/analyze-data/ml/">
                       <Button
                         label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
@@ -72,7 +72,7 @@ export default function GetStarted() {
                       </React.Fragment>
                     </p>
                     <br/>
-                    <Link to="https://quickstarts.teradata.com/dbt.html">
+                    <Link to="/quickstarts/manage-data/dbt/">
                       <Button
                         label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
@@ -96,7 +96,7 @@ export default function GetStarted() {
                       </React.Fragment>
                     </p>
                     <br/>
-                    <Link to="https://quickstarts.teradata.com/jdbc.html">
+                    <Link to="/quickstarts/create-applications/jdbc/">
                       <Button
                         label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
@@ -120,7 +120,7 @@ export default function GetStarted() {
                       </React.Fragment>
                     </p>
                     <br/>
-                    <Link to="https://quickstarts.teradata.com/tools-and-utilities/run-bulkloads-efficiently-with-teradata-parallel-transporter.html">
+                    <Link to="/quickstarts/manage-data/run-bulkloads-efficiently-with-teradata-parallel-transporter/">
                       <Button
                         label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}
@@ -144,7 +144,7 @@ export default function GetStarted() {
                       </React.Fragment>
                     </p>
                     <br/>
-                    <Link to="https://quickstarts.teradata.com/nos.html">
+                    <Link to="/quickstarts/manage-data/nos/">
                       <Button
                         label={translate({ message: 'developers.getting_started_button' })}
                         primary={false}

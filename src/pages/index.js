@@ -20,7 +20,7 @@ function HomepageHeader() {
               <div>
                 <Typography scale="body1">{translate({ message: 'developers.title_description' })}</Typography> 
                 <br/>
-                <Link to="https://quickstarts.teradata.com/">
+                <Link to="/quickstarts/">
                   <Button
                     label={translate({ message: 'developers.learn_more' })}
                     primary={true}

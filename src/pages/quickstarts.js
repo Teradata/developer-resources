@@ -47,7 +47,7 @@ export default function Home() {
         <link rel="preconnect" href="https://teradata.com" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quickstarts.teradata.com/" />
+        <meta property="og:url" content="https://developers.teradata.com/quickstarts" />
         <meta property="og:title" content="Teradata Getting Started" />
         <meta property="og:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="og:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
@@ -55,7 +55,7 @@ export default function Home() {
         <meta property="og:image:height" content="336" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://quickstarts.teradata.com/" />
+        <meta property="twitter:url" content="https://developers.teradata.com/quickstarts" />
         <meta property="twitter:title" content="Teradata Getting Started" />
         <meta property="twitter:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="twitter:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
