@@ -1,11 +1,19 @@
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { useLocation } from 'react-router-dom';
 
 export default function FeedbackComponent() {
-
+    const location = useLocation();
     const handleFeedback = (feedback) => {
-        console.log("Feedback recibido:", feedback);
+      const articleUrl = location.pathname;
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'feedback_click', {
+          event_category: 'Feedback',
+          event_label: `Feedback Type: ${feedback}`, 
+          event_value: articleUrl, 
+        });
+      }
     };
 
     return (
