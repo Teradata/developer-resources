@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 //import { useLocation } from 'react-router-dom';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { Feedback } from '@teradata-web/react-components'; 
 
 export default function FeedbackComponent() {
   //  const location = useLocation();
@@ -21,15 +20,16 @@ export default function FeedbackComponent() {
 
     return (
       <BrowserOnly>
-        {() => (
-          <div className={clsx(styles.feedbackContainer)}>
+        {() => {
+          const Feedback = require('@teradata-web/react-components')?.Feedback;
+          <div  className={clsx(styles.feedbackContainer)}>
             <Feedback 
                 label="Did this page help?"
                 labelForFeedback="Thank you for your feedback!"
                 onFeedBack={us}
             />       
           </div>
-        )}
+        }}
       </BrowserOnly>
     );
 }
