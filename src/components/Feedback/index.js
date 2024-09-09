@@ -6,9 +6,9 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 export default function FeedbackComponent() {
   //  const location = useLocation();
 
-//    function us(feedbackType) {
-  /*    console.log(feedbackType);
-        const articleUrl = location.pathname; 
+    function us(feedbackType) {
+      console.log(feedbackType);
+  /*      const articleUrl = location.pathname; 
         if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'feedback_click', {
             event_category: 'Feedback',
@@ -16,7 +16,7 @@ export default function FeedbackComponent() {
             event_value: articleUrl, 
           });
         }*/
-  //  }
+    }
 
     return (
       <BrowserOnly>
