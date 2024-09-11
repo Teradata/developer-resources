@@ -5,7 +5,7 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
     title: 'header.title',
     navItems: [
       {
-        href: `https://quickstarts.teradata.com/${
+        href: `/quickstarts/${
           ['es', 'ja', 'en'].includes(currentLocale) ? locale : ''
         }`,
         label: 'header.getting_started',
