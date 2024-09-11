@@ -1,15 +1,15 @@
 {
   "header.title": {
-    "message": "Developers"
+    "message": "개발자"
   },
   "header.getting_started": {
-    "message": "Getting started"
+    "message": "시작하기"
   },
   "header.actions.free_demo": {
-    "message": "Try for free"
+    "message": "무료 데모 시작"
   },
   "header.docs": {
-    "message": "Docs"
+    "message": "문서"
   },
   "header.docs.vantagecloud_lake": {
     "message": "VantageCloud Lake"
@@ -18,61 +18,61 @@
     "message": "AI Unlimited"
   },
   "header.docs.all_documentation": {
-    "message": "All documentation"
+    "message": "모든 설명서"
   },
   "header.downloads": {
-    "message": "Downloads"
+    "message": "다운로드"
   },
   "header.community": {
-    "message": "Community"
+    "message": "커뮤니티"
   },
   "header.community.teradata_community": {
-    "message": "Teradata community"
+    "message": "Teradata 커뮤니티"
   },
   "header.community.technical_medium_blogs": {
-    "message": "Technical medium blogs"
+    "message": "기술 매체 블로그"
   },
   "header.community.github": {
-    "message": "Github"
+    "message": "GitHub"
   },
   "header.community.stack_overflow": {
-    "message": "Stack overflow"
+    "message": "스택 오버플로"
   },
   "footer.why_teradata_title": {
-    "message": "Why Teradata"
+    "message": "왜 Teradata인가"
   },
   "footer.why_teradata": {
-    "message": "Why Teradata"
+    "message": "왜 Teradata인가"
   },
   "footer.trusted_ai": {
-    "message": "Trusted AI"
+    "message": "신뢰할 수 있는 AI"
   },
   "footer.industries": {
-    "message": "Industries"
+    "message": "산업"
   },
   "footer.partners": {
-    "message": "Partners"
+    "message": "파트너"
   },
   "footer.partner_registration": {
-    "message": "Partner registration"
+    "message": "파트너 등록"
   },
   "footer.partner_portal_login": {
-    "message": "Partner portal login"
+    "message": "파트너 포털 로그인"
   },
   "footer.services": {
-    "message": "Services"
+    "message": "서비스"
   },
   "footer.solutions": {
-    "message": "Solutions"
+    "message": "솔루션"
   },
   "footer.success_stories": {
-    "message": "Success stories"
+    "message": "성공 사례"
   },
   "footer.our_platform": {
-    "message": "Our platform"
+    "message": "우리의 플랫폼"
   },
   "footer.platform": {
-    "message": "Platform"
+    "message": "플랫폼"
   },
   "footer.vantagecloud": {
     "message": "VantageCloud"
@@ -81,76 +81,76 @@
     "message": "ClearScape Analytics"
   },
   "footer.unleash_ai_innovation": {
-    "message": "Unleash AI Innovation"
+    "message": "AI 혁신 촉진"
   },
   "footer.workloads": {
-    "message": "Workloads"
+    "message": "워크로드"
   },
   "footer.deployment": {
-    "message": "Deployment"
+    "message": "배포"
   },
   "footer.getting_started": {
-    "message": "Getting started"
+    "message": "시작하기"
   },
   "footer.pricing": {
-    "message": "Pricing"
+    "message": "가격"
   },
   "footer.demos": {
-    "message": "Demos"
+    "message": "데모"
   },
   "footer.modernization_workshop": {
-    "message": "Modernization workshop"
+    "message": "현대화 워크숍"
   },
   "footer.executive_briefing_center": {
-    "message": "Executive Briefing Center"
+    "message": "임원 브리핑 센터"
   },
   "footer.events": {
-    "message": "Events"
+    "message": "이벤트"
   },
   "footer.learning": {
-    "message": "Learning"
+    "message": "학습"
   },
   "footer.insights": {
-    "message": "Insights"
+    "message": "인사이트"
   },
   "footer.ai_ml": {
     "message": "AI/ML"
   },
   "footer.cloud_data_analytics": {
-    "message": "Cloud data analytics"
+    "message": "클라우드 데이터 분석"
   },
   "footer.data_architecture": {
-    "message": "Data architecture"
+    "message": "데이터 아키텍처"
   },
   "footer.data_platform": {
-    "message": "Data platform"
+    "message": "데이터 플랫폼"
   },
   "footer.data_security": {
-    "message": "Data security"
+    "message": "데이터 보안"
   },
   "footer.glossary": {
-    "message": "Glossary"
+    "message": "용어집"
   },
   "footer.about_us": {
-    "message": "About us"
+    "message": "회사 소개"
   },
   "footer.who_we_are": {
-    "message": "Who we are"
+    "message": "우리는 누구인가"
   },
   "footer.our_leadership": {
-    "message": "Our leadership"
+    "message": "우리의 리더십"
   },
   "footer.newsroom": {
-    "message": "Newsroom"
+    "message": "뉴스룸"
   },
   "footer.careers": {
-    "message": "Careers"
+    "message": "경력"
   },
   "footer.investors": {
-    "message": "Investors"
+    "message": "투자자"
   },
   "footer.social_media": {
-    "message": "Social media"
+    "message": "소셜 미디어"
   },
   "footer.social_media.linkedin": {
     "message": "LinkedIn"
@@ -171,272 +171,289 @@
     "message": "RSS"
   },
   "footer.privacy": {
-    "message": "Privacy"
+    "message": "개인 정보"
   },
   "footer.do_not_sell_share": {
-    "message": "Don’t Sell/Share My Info"
+    "message": "내 정보 판매/공유 금지"
   },
   "footer.terms_of_use": {
-    "message": "Terms of use"
+    "message": "이용약관"
   },
   "footer.legal": {
-    "message": "Legal"
+    "message": "법률"
   },
   "footer.support_policy": {
-    "message": "Support Policies"
+    "message": "지원 정책"
   },
   "footer.tracking_consent": {
-    "message": "Tracking Consent"
+    "message": "추적 동의"
   },
   "footer.copyright": {
     "message": "Teradata. All rights reserved"
   },
   "footer.also_of_interest": {
-    "message": "Also of interest"
+    "message": "기타 관심 사항"
   },
   "footer.big_data": {
-    "message": "Big data"
+    "message": "빅 데이터"
   },
   "footer.data_security_insights": {
-    "message": "Become an expert at defending your data"
+    "message": "데이터 방어 전문가가 되세요"
   },
   "footer.platform_ai_ml": {
-    "message": "Drive ROI with Trusted AI today"
+    "message": "오늘 신뢰할 수 있는 AI로 ROI를 높이세요"
   },
-
   "feature.title.analytic_functions": {
-    "message": "Analytic functions"
+    "message": "분석 기능"
   },
   "feature.title.explore_data": {
-    "message": "Explore and analyze data"
+    "message": "데이터 탐색 및 분석"
   },
   "feature.title.faq": {
     "message": "FAQ"
   },
   "feature.title.glossary": {
-    "message": "Glossary"
+    "message": "용어집"
   },
   "feature.title.manage_projects": {
-    "message": "Manage projects"
+    "message": "프로젝트 관리"
   },
   "feature.title.other_resources": {
-    "message": "Other resources"
+    "message": "기타 리소스"
   },
   "feature.title.sample_use_cases": {
-    "message": "Sample use cases"
+    "message": "샘플 사용 사례"
   },
   "feature.title.whats_new": {
-    "message": "What's new"
+    "message": "새로운 소식"
   },
   "feature.description.analytic_functions": {
-    "message": "Browse and search ClearScape™ functions to use in projects"
+    "message": "프로젝트에서 사용할 ClearScape™ 기능을 탐색하고 검색하세요"
   },
   "feature.description.explore_data": {
-    "message": "Learn about AI Unlimited projects and create your first one"
+    "message": "AI Unlimited 프로젝트에 대해 알아보고 첫 번째 프로젝트를 만들어보세요"
   },
   "feature.description.faq": {
-    "message": "Get answers to your questions"
+    "message": "질문에 대한 답변을 받으세요"
   },
   "feature.description.get_started": {
-    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos"
+    "message": "AI Unlimited 구성 요소, 필요한 사전 요구 사항 및 설치 방법을 확인하세요"
   },
   "feature.description.glossary": {
-    "message": "Look up AI Unlimited terminology"
+    "message": "AI Unlimited 용어를 찾아보세요"
   },
   "feature.description.manage_projects": {
-    "message": "Learn how to manage projects or change AI Unlimited settings"
+    "message": "프로젝트를 관리하거나 AI Unlimited 설정을 변경하는 방법을 알아보세요"
   },
   "feature.description.other_resources": {
-    "message": "Find additional installation resources, and more"
+    "message": "추가 설치 리소스 등을 찾아보세요"
   },
   "feature.description.sample_use_cases": {
-    "message": "Explore ways to use AI Unlimited to experiment and innovate"
+    "message": "AI Unlimited를 사용하여 실험하고 혁신하는 방법을 살펴보세요"
   },
   "feature.description.whats_new": {
-    "message": "Watch for new features and updates—and see what's coming"
+    "message": "새로운 기능과 업데이트를 살펴보고 앞으로 무엇이 나올지 확인하세요"
   },
   "home_page.hero_img_description": {
-    "message": "A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background."
+    "message": "추상적인 기하학적 모양을 배경으로 현대적인 사무실 환경에서 노트북을 쥔 채 미소를 지으며 서 있는 여성입니다."
   },
   "home_page.categories": {
-    "message": "Categories"
+    "message": "카테고리"
   },
   "home_page.featured_event": {
-    "message": "Featured event"
+    "message": "추천 이벤트"
   },
   "home_page.get_started": {
-    "message": "Get started"
+    "message": "시작하기"
   },
   "home_page.possible_banner_title": {
-    "message": "If you imagine it, envision it, create it... Teradata makes it Possible. Join us."
+    "message": "상상하고, 구상하고, 만든다면... 테라데이터가 그것을 가능하게 합니다. 우리와 함께 하세요."
   },
   "home_page.register_now": {
-    "message": "Register now"
+    "message": "지금 등록하세요"
   },
   "home_page.tagline": {
-    "message": "A scalable, on-demand compute engine in the cloud."
+    "message": "클라우드에서 확장 가능한 주문형 계산 엔진입니다."
   },
   "home_page.title": {
-    "message": "Teradata AI Unlimited Documentation"
+    "message": "Teradata AI Unlimited 설명서"
   },
   "sidenav.title": {
-    "message": "Docs"
+    "message": "문서"
   },
   "sidenav.title_description": {
-    "message": "The title for the sidebar in mobile view"
+    "message": "모바일 보기에서 사이드바의 제목"
   },
   "developer_home_page.title": {
     "message": "Teradata Developers Portal"
   },
   "developer_home_page.tagline": {
-    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+    "message": "모든 Teradata 제품에 대한 빠른 시작, 가이드, 튜토리얼, 코드 샘플, 기술 설명서 및 다운로드를 제공하는 허브입니다."
   },
   "developers.title_description": {
-    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+    "message": "모든 Teradata 제품에 대한 빠른 시작, 가이드, 튜토리얼, 코드 샘플, 기술 설명서 및 다운로드를 제공하는 허브입니다."
   },
   "developers.welcome_message": {
-    "message": "Welcome to the Teradata Developer Portal"
+    "message": "Teradata Developer Portal 시작"
   },
   "developers.learn_more": {
-    "message": "Learn more"
+    "message": "자세히 알아보기"
   },
   "developers.getting_started_title": {
-    "message": "Getting started"
+    "message": "시작하기"
   },
   "developers.getting_started_message": {
-    "message": "Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code."
+    "message": "Teradata Vantage로 빠르게 최신 버전으로 업데이트하세요. 기능에 대해 알아보세요. 일반적인 작업에 대한 방법을 찾아보세요. 샘플 소스 코드를 살펴보세요."
   },
   "developers.getting_started_link": {
-    "message": "View Getting started"
+    "message": "시작하기 보기"
   },
   "developers.documentation_title": {
-    "message": "Documentation"
+    "message": "설명서"
   },
   "developers.documentation_message": {
-    "message": "Access Vantage Documentation for VantageCloud Enterprise, VantageCore VMware and VantageCore IntelliFlex."
+    "message": "VantageCloud Enterprise, VantageCore VMware 및 VantageCore IntelliFlex에 대한 Vantage 설명서에 액세스하세요."
   },
   "developers.documentation_link_1": {
-    "message": "View Lake docs"
+    "message": "Lake 문서 보기"
   },
   "developers.documentation_link_2": {
-    "message": "View all Teradata docs"
+    "message": "모든 Teradata 문서 보기"
   },
   "developers.downloads_title": {
-    "message": "Downloads"
+    "message": "다운로드"
   },
   "developers.downloads_message": {
-    "message": "Find publicly available downloads from Teradata. Browse by category or select one of the popular downloads below."
+    "message": "Teradata에서 공개적으로 사용 가능한 다운로드를 찾아보세요. 카테고리별로 찾아보거나 아래에서 인기 있는 다운로드 중 하나를 선택하세요."
   },
   "developers.downloads_link": {
-    "message": "View Downloads"
+    "message": "다운로드 보기"
   },
   "developers.community_title": {
-    "message": "Community"
+    "message": "커뮤니티"
   },
   "developers.community_message": {
-    "message": "Recent Community Blogs. The best minds from Teradata, our partners, and customers blog about relevant topics and features."
+    "message": "최근 커뮤니티 블로그. Teradata, 파트너, 고객의 최고 인재들이 관련 주제와 기능에 관해 운영하는 블로그입니다."
   },
   "developers.community_link": {
-    "message": "View Community"
+    "message": "커뮤니티 보기"
   },
   "developers.solutions-for-you": {
-    "message": "Solutions for you"
+    "message": "당신을 위한 솔루션"
   },
   "developers.get-started-with-teradata": {
-    "message": "Get started with Teradata"
+    "message": "Teradata를 시작하세요"
   },
   "developers.getting_started_button": {
-    "message": "Get started"
+    "message": "시작하기"
   },
   "developers.data-scientist": {
-    "message": "Data Scientist"
+    "message": "데이터 과학자"
   },
   "developers.data-scientist-title": {
-    "message": "Train ML models in Vantage"
+    "message": "Vantage에서 ML 모델 학습"
   },
   "developers.data-scientist-text": {
-    "message": "There are situations when you want to quickly validate a machine learning model idea. You have a model type in mind. You don’t want to operationalize with an ML pipeline just yet. You just want to test out if the relationship you had in mind exists. Also, sometimes even your production deployment doesn’t require constant relearning with MLops. In such cases, you can use Vantage Analytics Library (VAL) and multiple ML model types it supports."
+    "message": "기계 학습 모델 아이디어를 빠르게 검증해야 하는 상황이 있습니다. 생각 중인 모델 유형이 있습니다. 아직은 ML 파이프라인을 운영에 적용하고 싶지 않습니다. 당신은 당신이 생각했던 관계가 실제로 존재하는지 시험하고 싶을 뿐입니다. 또한 때로는 운영 배포에서도 MLops를 지속적으로 다시 학습할 필요가 없는 경우도 있습니다. 이러한 경우 VAL(Vantage Analytics Library)과 여기서 지원하는 여러 ML 모델 유형을 사용할 수 있습니다."
   },
   "developers.data-engineer": {
-    "message": "Data Engineer"
+    "message": "데이터 엔지니어"
   },
   "developers.data-engineer-title": {
-    "message": "dbt with Teradata Vantage"
+    "message": "Teradata Vantage를 사용한 dbt"
   },
   "developers.data-engineer-text": {
-    "message": "This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantage. It’s based on the original dbt Jaffle Shop tutorial. A couple of models have been adjusted to the SQL dialect supported by Vantage."
+    "message": "이 튜토리얼에서는 Teradata Vantage와 함께 dbt(데이터 빌드 도구)를 사용하는 방법을 보여줍니다. 이는 원래 dbt Jaffle Shop 튜토리얼을 기반으로 합니다. 몇몇 모델은 Vantage가 지원하는 SQL 방언에 맞게 조정되었습니다."
   },
   "developers.developer": {
-    "message": "Developer"
+    "message": "개발자"
   },
   "developers.developer-title": {
-    "message": "Connect to Vantage using JDBC"
+    "message": "JDBC를 사용하여 Vantage에 연결"
   },
   "developers.developer-text": {
-    "message": "This how-to demonstrates how to connect to Teradata Vantage using JDBC using a sample Java application: https://github.com/Teradata/jdbc-sample-app."
+    "message": "이 방법은 샘플 Java 애플리케이션(https://github.com/Teradata/jdbc-sample-app)을 사용하여 JDBC를 통해 Teradata Vantage에 연결하는 방법을 보여줍니다."
   },
   "developers.database-administrator": {
-    "message": "Database Administrator"
+    "message": "데이터베이스 관리자"
   },
   "developers.database-administrator-title": {
-    "message": "Database Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)"
+    "message": "데이터베이스가 TPT(Teradata Parallel Transporter)를 사용하여 대량의 로드를 효율적으로 실행합니다"
   },
   "developers.database-administrator-text": {
-    "message": "We often have a need to move large volumes of data into Vantage. Teradata offers Teradata Parallel Transporter (TPT) utility that can efficiently load large amounts of data into Teradata Vantage. This how-to demonstrates how to use TPT. In this scenario,"
+    "message": "우리는 종종 대량의 데이터를 Vantage로 옮겨야 할 필요가 있습니다. Teradata는 Teradata Vantage에 대량의 데이터를 효율적으로 로드할 수 있는 TPT(Teradata Parallel Transporter) 유틸리티를 제공합니다. 이 안내서에서는 TPT를 사용하는 방법을 보여줍니다. 이 시나리오에서는"
   },
   "developers.it-operations": {
-    "message": "IT Operations"
+    "message": "IT 운영"
   },
-  "developers.it-operations-title": {
-    "message": "Query data stored in object storage"
+  "developers.deit-operations-title": {
+    "message": "개체 스토리지에 저장된 쿼리 데이터"
   },
   "developers.it-operations-text": {
-    "message": "Native Object Storage (NOS) is a Vantage feature that allows you to query data stored in files in object storage such as AWS S3, Google GCS, Azure Blob or on-prem implementations. It’s useful in scenarios where you want to explore data without building a ..."
+    "message": "NOS(네이티브 개체 스토리지)는 AWS S3, Google GCS, Azure Blob 또는 온-프레미스 구현과 같은 개체 스토리지의 파일에 저장된 데이터를 쿼리할 수 있는 Vantage 기능입니다. ...구축 없이 데이터를 탐색하려는 시나리오에서 유용합니다."
   },
   "developers.stay-up-to-date": {
-    "message": "Stay up to date"
+    "message": "최신 소식을 받아보세요"
   },
   "developers.top-picks-from-Teradata": {
-    "message": "Top picks from Teradata"
+    "message": "Teradata의 최상의 선택"
   },
   "developers.top-picks-from-teradata-title-card1": {
-    "message": "Explore Vantage AI/ML features"
+    "message": "Vantage AI/ML 기능 탐색"
   },
   "developers.top-picks-from-teradata-text-card1": {
-    "message": "Get a free hands-on demo environment to explore Teradata VantageCloud’s ClearScape Analytics™"
+    "message": "Teradata VantageCloud의 ClearScape Analytics™를 탐색할 수 있는 무료 실습 데모 환경을 경험해보세요."
   },
   "developers.top-picks-from-teradata-title-card2": {
-    "message": "Use dbt with Teradata Vantage"
+    "message": "Teradata Vantage와 함께 dbt 사용"
   },
   "developers.top-picks-from-teradata-text-card2": {
-    "message": "Learn how to use dbt, a leading ELT tool, with Teradata Vantage."
+    "message": "Teradata Vantage와 함께 선도적인 ELT 도구인 dbt를 사용하는 방법을 알아보세요."
   },
   "developers.top-picks-from-teradata-title-card3": {
-    "message": "Query data in object storage"
+    "message": "개체 스토리지의 데이터 쿼리"
   },
   "developers.top-picks-from-teradata-text-card3": {
-    "message": "Learn how to analyze data stored in object storage using SQL."
+    "message": "SQL을 사용하여 개체 스토리지에 저장된 데이터를 분석하는 방법을 알아보세요."
   },
   "developers.top-picks-from-teradata-title-card4": {
-    "message": "Use Airbyte to load data to Vantage"
+    "message": "Airbyte를 사용하여 Vantage에 데이터 로드"
   },
   "developers.top-picks-from-teradata-text-card4": {
-    "message": "Use Airbyte ELT tool to load data from your applications and databases into VantageCloud."
+    "message": "Airbyte ELT 도구를 사용하여 애플리케이션과 데이터베이스의 데이터를 VantageCloud로 로드합니다."
   },
   "developers.top-picks-from-teradata-title-card5": {
-    "message": "Getting Started with Teradata ModelOps"
+    "message": "Teradata ModelOps 시작하기"
   },
   "developers.top-picks-from-teradata-text-card5": {
-    "message": "In the tutorial, you will be able to create a new project in ModelOps, upload the required data to Vantage, and track the full lifecycle."
+    "message": "이 튜토리얼에서는 ModelOps에서 새 프로젝트를 만들고, 필요한 데이터를 Vantage에 업로드하고, 전체 수명 주기를 추적하는 방법을 알려드립니다."
   },
   "developers.top-picks-from-teradata-title-card6": {
-    "message": "Connect to Vantage using JDBC"
+    "message": "JDBC를 사용하여 Vantage에 연결"
   },
   "developers.top-picks-from-teradata-text-card6": {
-    "message": "The JDBC Driver allows you to connect to the Teradata database from external applications."
+    "message": "JDBC 드라이버를 사용하면 외부 애플리케이션에서 Teradata 데이터베이스에 연결할 수 있습니다."
   },
   "developers.talk-to-developers-where-you-are": {
-    "message": "Talk to Developers where you are"
+    "message": "당신이 있는 곳에서 개발자와 대화하세요"
+  },
+  "apis.title": {
+    "message": "API"
+  },
+  "apis.description": {
+    "message": "Vantage로 워크플로를 자동화할 수 있는 광범위한 최신 REST API 포트폴리오입니다. 이러한 API를 인기 있는 프로그래밍 언어의 REST 호출이나 클라이언트 SDK와 함께 사용하세요."
+  },
+  "apis.query_service": {
+    "message": "쿼리 서비스"
+  },
+  "apis.query_service_description": {
+    "message": "쿼리 서비스 API를 사용하여 SQL 쿼리를 실행하고 Vantage에서 결과를 검색합니다."
+  },
+  "apis.data_labs": {
+    "message": "데이터 랩"
+  },
+  "apis.data_labs_description": {
+    "message": "데이터 랩 API를 사용하여 Vantage에서 데이터 랩을 만들고 관리합니다."
   },
   "quickstarts.tagline": {
     "message": "Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers."
@@ -533,5 +550,5 @@
   },
   "mat.button": {
     "message": "Close"
-  }      
+  }
 }
