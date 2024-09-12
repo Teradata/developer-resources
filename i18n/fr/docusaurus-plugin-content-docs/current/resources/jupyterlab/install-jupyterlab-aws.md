@@ -85,7 +85,7 @@ Vous pouvez demander conseil à un administrateur cloud de votre organisation.
 |AvailabilityZone | La zone de disponibilité dans laquelle vous souhaitez déployer l'instance. | Obligatoire<br/>Par défaut&nbsp;: NA<br/>La valeur doit correspondre au sous-réseau, à la zone de tous les volumes préexistants et le type d'instance doit être disponible dans la zone sélectionnée. |
 |LoadBalancing		|Spécifie si l'instance est accessible via un NLB. | Obligatoire avec la valeur par défaut<br/>Valeur par défaut&nbsp;: NetworkLoadBalancer<br/>Les options prises en charge sont&nbsp;: NetworkLoadBalancer ou Aucun |
 |LoadBalancerScheme	| Si un équilibreur de charge est utilisé, ce champ spécifie si l'instance est accessible depuis Internet ou uniquement depuis le VPC. | Facultatif avec la valeur par défaut<br/>Par défaut&nbsp;: Internet-facing<br/>Le nom DNS d'un équilibreur de charge Internet-facing peut être résolu publiquement par les adresses IP publiques des nœuds. Par conséquent, les équilibreurs de charge Internet-facing peuvent acheminer les demandes des clients via Internet. Les nœuds d'un équilibreur de charge interne n'ont que des adresses IP privées. Le nom DNS d'un équilibreur de charge interne peut être résolu publiquement par les adresses IP personnelles des nœuds. Par conséquent, les équilibreurs de charge internes peuvent acheminer les demandes des clients ayant accès au VPC pour l'équilibreur de charge.|
-|Privé	|Spécifie si le service est déployé dans un réseau privé sans adresses IP publiques.| Obligatoire<br/>Par défaut&nbsp;: faux <br/>Assurez-vous de sélectionner l'option «&nbsp;Activer l'attribution automatique d'adresses IPv4 publiques&nbsp;» dans le sous-réseau où réside le gestionnaire. Si cette option n'est pas sélectionnée, l'installation peut échouer.|
+|Privé	|Spécifie si le service est déployé dans un réseau privé sans adresses IP publiques.| Obligatoire<br/>Par défaut&nbsp;: faux <br/>Assurez-vous de sélectionner l'option `Activer l'attribution automatique d'adresses IPv4 publiques` dans le sous-réseau où réside le gestionnaire. Si cette option n'est pas sélectionnée, l'installation peut échouer.|
 |Session	|Spécifie si vous pouvez utiliser AWS Session Manager pour accéder à l'instance.| Obligatoire<br/>Par défaut&nbsp;: faux |
 |Vpc		|Le réseau sur lequel vous souhaitez déployer l'instance.|Obligatoire<br/>Par défaut&nbsp;: NA|
 |Sous-réseau	|Le sous-réseau sur lequel vous souhaitez déployer l'instance. |Obligatoire<br/>Par défaut&nbsp;: NA<br/>Le sous-réseau doit résider dans la zone de disponibilité sélectionnée.|
@@ -121,15 +121,15 @@ Si le conteneur, le pod ou le nœud tombe en panne ou s'arrête et que les donn�
 
 **Exemple**
 
-1. Déployez JupyterLab et incluez ces paramètres&nbsp;:
-   - «&nbsp;UsePersistentVolume&nbsp;»&nbsp;: **Nouveau**
-   - «&nbsp;PersistentVolumeDeletionPolicy&nbsp;»&nbsp;: **Conserver**
-3. Après avoir créé la pile, dans l'onglet **Sorties**, notez le «&nbsp;volume-id&nbsp;».
+1. Déployez JupyterLab et incluez ces paramètres:
+   - `UsePersistentVolume`: **Nouveau**
+   - `PersistentVolumeDeletionPolicy`: **Conserver**
+3. Après avoir créé la pile, dans l'onglet **Sorties**, notez le `volume-id`.
 4. Utilisez JupyterLab.
-5. Si l'instance JupyterLab est perdue, déployez à nouveau JupyterLab et incluez ces paramètres&nbsp;:
-   - «&nbsp;UsePersistentVolume&nbsp;»&nbsp;: **Nouveau**
-   - «&nbsp;PersistentVolumeDeletionPolicy&nbsp;»&nbsp;: **Conserver** 
-   - «&nbsp;ExistingPersistentVolumeId&nbsp;»&nbsp;: la valeur que vous avez notée à l'étape&nbsp;2
+5. Si l'instance JupyterLab est perdue, déployez à nouveau JupyterLab et incluez ces paramètres:
+   - `UsePersistentVolume`: **Nouveau**
+   - `PersistentVolumeDeletionPolicy`: **Conserver** 
+   - `ExistingPersistentVolumeId`: la valeur que vous avez notée à l'étape&nbsp;2
    
  La nouvelle instance JupyterLab a la même configuration que celle qui a été perdue.
 

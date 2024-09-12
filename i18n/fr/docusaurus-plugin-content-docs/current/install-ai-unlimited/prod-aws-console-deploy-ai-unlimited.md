@@ -38,9 +38,9 @@ Choisissez un modèle en fonction de votre intention d'utiliser un [équilibreur
 :::note
 Vous pouvez demander conseil à un administrateur cloud de votre organisation.
 :::
-    \- `ai-unlimited-with-alb.yaml`&nbsp;: héberge le gestionnaire derrière un [application load balancer](../glossary.md#application-load-balancer)
-    \- `ai-unlimited-with-nlb.yaml`&nbsp;: héberge le gestionnaire derrière un [network load balancer](../glossary.md#network-load-balancer)
-    \- `ai-unlimited-without-lb.yaml`&nbsp;: pas d'équilibreur de charge. Si vous n'êtes pas sûr du modèle à utiliser, nous vous recommandons celui-ci.
+    - `ai-unlimited-with-alb.yaml`: héberge le gestionnaire derrière un [application load balancer](../glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml`: héberge le gestionnaire derrière un [network load balancer](../glossary.md#network-load-balancer)
+    - `ai-unlimited-without-lb.yaml`: pas d'équilibreur de charge. Si vous n'êtes pas sûr du modèle à utiliser, nous vous recommandons celui-ci.
 
 
 ## Charger le modèle	
@@ -86,7 +86,7 @@ Nous vous recommandons de sélectionner la région la plus proche de votre lieu 
 | LoadBalancerSubnetTwo| Le sous-réseau où l'équilibreur de charge est hébergé. |Facultatif. Cette option n'est disponible que dans le modèle avec ALB.<br/>Par défaut&nbsp;: NA<br/>|Ce sous-réseau doit se trouver dans une zone de disponibilité différente de celle du premier sous-réseau que vous avez choisi.|
 |HostedZoneID | L'ID qu'Amazon Route 53 a attribué à la zone hébergée lorsque vous l'avez créée.|Facultatif<br/>Par défaut&nbsp;: NA<br/>Chaque zone hébergée correspond à un nom du domaine ou éventuellement à un sous-domaine. La zone hébergée est le conteneur des enregistrements DNS, où vous configurez la manière dont le monde interagit avec votre domaine, par exemple en le dirigeant vers une adresse IP avec un enregistrement.<br/>Dans la console AWS, accédez à **Route 53** &gt; **Zones hébergées**. Recherchez votre nom du domaine enregistré et l'ID de zone hébergée correspondant.|
 |DnsName| Le nom du domaine. Pour les zones hébergées publiques, il s'agit du nom que vous avez enregistré auprès de votre bureau d'enregistrement DNS. |Facultatif<br/>Par défaut&nbsp;: NA<br/>Pour plus d'informations sur la manière de spécifier des caractères autres que az, 0-9 et - (trait d'union) et sur la manière de spécifier des noms de domaine internationalisés, consultez [Créer une zone hébergée](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html).|
-|Privé	|Spécifie si le service est déployé dans un réseau privé sans adresses IP publiques.|Obligatoire<br/>Par défaut&nbsp;: faux <br/>Assurez-vous de sélectionner l'option «&nbsp;Activer l'attribution automatique d'adresses IPv4 publiques&nbsp;» dans le sous-réseau où réside le gestionnaire. Si cette option n'est pas sélectionnée, l'installation peut échouer.|
+|Privé	|Spécifie si le service est déployé dans un réseau privé sans adresses IP publiques.|Obligatoire<br/>Par défaut&nbsp;: faux <br/>Assurez-vous de sélectionner l'option `Activer l'attribution automatique d'adresses IPv4 publiques` dans le sous-réseau où réside le gestionnaire. Si cette option n'est pas sélectionnée, l'installation peut échouer.|
 |Session	|Spécifie si vous pouvez utiliser AWS Session Manager pour accéder à l'instance.|Obligatoire<br/>Par défaut&nbsp;: faux |
 |Vpc		|Le réseau sur lequel vous souhaitez déployer l'instance.|Obligatoire<br/>Par défaut&nbsp;: NA|
 |Sous-réseau	|Le sous-réseau sur lequel vous souhaitez déployer l'instance.|Obligatoire<br/>Par défaut&nbsp;: NA<br/>Le sous-réseau doit résider dans la zone de disponibilité sélectionnée.|
@@ -145,14 +145,14 @@ Si le conteneur, le pod ou le nœud tombe en panne ou s'arrête et que les donn�
 **Exemple**
 
 1. Déployez le gestionnaire et incluez ces paramètres&nbsp;:
-   - «&nbsp;UsePersistentVolume&nbsp;»&nbsp;: **Nouveau**
-   - «&nbsp;PersistentVolumeDeletionPolicy&nbsp;»&nbsp;: **Conserver**
-2. Après avoir créé la pile, dans l'onglet **Sorties**, notez le «&nbsp;volume-id&nbsp;».
+   - `UsePersistentVolume`: **Nouveau**
+   - `PersistentVolumeDeletionPolicy`: **Conserver**
+2. Après avoir créé la pile, dans l'onglet **Sorties**, notez le `volume-id`.
 3. Utilisez AI Unlimited.
-4. Si l'instance du gestionnaire est perdue, déployez à nouveau le gestionnaire et incluez ces paramètres&nbsp;:
-   - «&nbsp;UsePersistentVolume&nbsp;»&nbsp;: **Nouveau**
-   - «&nbsp;PersistentVolumeDeletionPolicy&nbsp;»&nbsp;: **Conserver** 
-   - «&nbsp;ExistingPersistentVolumeId&nbsp;»&nbsp;: la valeur que vous avez notée à l'étape&nbsp;2
+4. Si l'instance du gestionnaire est perdue, déployez à nouveau le gestionnaire et incluez ces paramètres:
+   - `UsePersistentVolume`: **Nouveau**
+   - `PersistentVolumeDeletionPolicy`: **Conserver** 
+   - `ExistingPersistentVolumeId`: la valeur que vous avez notée à l'étape&nbsp;2
    
  La nouvelle instance du gestionnaire a la même configuration que celle qui a été perdue.
 

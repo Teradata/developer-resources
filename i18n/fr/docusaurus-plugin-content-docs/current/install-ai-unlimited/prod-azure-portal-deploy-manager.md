@@ -69,7 +69,7 @@ Examinez les paramètres. Fournissez des valeurs pour les paramètres obligatoir
 | Région | La région dans laquelle vous souhaitez déployer AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA<br/>Sélectionnez la région Azure la plus proche de votre lieu de travail et les ressources de données à utiliser avec AI Unlimited. |
 | Nom du groupe de ressources | Le nom du conteneur qui regroupe les ressources AI Unlimited associées.| Obligatoire<br/>Par défaut&nbsp;: ai-unlimited-workspace |
 | Nom d'AI Unlimited| Nom unique donné à AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA | 
-| Clé publique | La clé SSH publique que vous pouvez utiliser pour vous connecter à une VM via SSH.| Obligatoire<br/>Par défaut : NA<br/>Cette valeur doit commencer par «&nbsp;ssh-rsa&nbsp;». |
+| Clé publique | La clé SSH publique que vous pouvez utiliser pour vous connecter à une VM via SSH.| Obligatoire<br/>Par défaut : NA<br/>Cette valeur doit commencer par `ssh-rsa`. |
 | Version du système d'exploitation  | Les versions des systèmes d'exploitation disponibles dans l'abonnement actuel. | Facultatif avec la valeur par défaut<br/>Par défaut&nbsp;: Ubuntu-2004 |
 | Type d'instance | Le type d'instance que vous souhaitez utiliser pour AI Unlimited. | Facultatif<br/>Par défaut&nbsp;: STANDARD_D2_V3<br/>Nous vous recommandons d'utiliser le type d'instance par défaut pour réduire les coûts. Le type d'instance par défaut est la série Dv3 standard avec 2&nbsp;vCPU et 8,0&nbsp;Gio de mémoire.|
 | Réseau | Le nom du réseau sur lequel vous souhaitez déployer l'instance AI Unlimited.| <br/>Facultatif<br/>Par défaut&nbsp;: NA | 
@@ -110,12 +110,12 @@ Si le conteneur, le pod ou le nœud tombe en panne ou s'arrête et que les donn�
 
 **Exemple**
 
-1. Déployez le gestionnaire et définissez le paramètre «&nbsp;Utiliser le volume persistant&nbsp;» sur **Nouveau**.
-2. Après avoir créé la pile, sur la page **Sorties**, notez le «&nbsp;volume-id&nbsp;».
+1. Déployez le gestionnaire et définissez le paramètre `Utiliser le volume persistant` sur **Nouveau**.
+2. Après avoir créé la pile, sur la page **Sorties**, notez le `volume-id`.
 3. Utilisez AI Unlimited.
-4. Si l'instance du gestionnaire est perdue, déployez à nouveau le gestionnaire et incluez ces paramètres&nbsp;:
-   - «&nbsp;Utiliser le volume persistant&nbsp;»&nbsp;: **Nouveau**
-   - «&nbsp;Volume persistant existant&nbsp;»&nbsp;: la valeur que vous avez notée à l'étape&nbsp;2
+4. Si l'instance du gestionnaire est perdue, déployez à nouveau le gestionnaire et incluez ces paramètres:
+   - `Utiliser le volume persistant`: **Nouveau**
+   - `Volume persistant existant`: la valeur que vous avez notée à l'étape&nbsp;2
    
 La nouvelle instance du gestionnaire a la même configuration que celle qui a été perdue.
 

@@ -81,9 +81,9 @@ Examinez les paramètres. Fournissez des valeurs pour les paramètres obligatoir
 | Accéder à CIDR | La plage d'adresses IP CIDR autorisée à accéder à l'instance. | Facultatif<br/>Par défaut&nbsp;: 0.0.0.0/0<br/>Nous vous recommandons de définir cette valeur sur une plage d'adresses IP approuvées. Définissez au moins un CIDR d'accès ou un groupe de sécurité pour autoriser le trafic entrant, sauf si vous créez des règles d'entrée de groupe de sécurité personnalisées. |
 | Groupes de sécurité des applications sources (ASG) | Les groupes de sécurité des applications sources autorisés à se connecter à l'instance AI Unlimited. Les ASG vous permettent d'organiser vos machines virtuelles (VM) en fonction de leurs stratégies de sécurité réseau spécifiques. Ces stratégies de sécurité déterminent le trafic autorisé ou non sur votre machine virtuelle. | Facultatif<br/>Par défaut&nbsp;: NA<br/>Sélectionnez un groupe de sécurité des applications dans la même région que l'interface réseau. |
 | Groupes de sécurité des applications de destination | Les groupes de sécurité des applications de destination qui ont l'autorisation de se connecter à l'instance AI Unlimited. | Facultatif<br/>Par défaut&nbsp;: NA<br/>Sélectionnez un groupe de sécurité des applications dans la même région que l'interface réseau. |
-| ID de définition de rôle | L'ID du rôle à utiliser avec AI Unlimited. | Obligatoire<br/>Par défaut&nbsp;: NA<br/>Utilisez la commande Azure CLI&nbsp;-&nbsp;«&nbsp;Get-AzRoleDefinition&nbsp;» pour obtenir votre ID de définition de rôle. |
+| ID de définition de rôle | L'ID du rôle à utiliser avec AI Unlimited. | Obligatoire<br/>Par défaut&nbsp;: NA<br/>Utilisez la commande Azure CLI&nbsp;-&nbsp;`Get-AzRoleDefinition` pour obtenir votre ID de définition de rôle. |
 | Autoriser le SSH public | Spécifie si vous pouvez utiliser des clés Secure Shell (SSH) pour vous connecter aux VM dans Azure. |  Facultatif<br/>Par défaut&nbsp;: vrai |
-| Clé publique | La clé SSH publique que vous pouvez utiliser pour vous connecter à une VM via SSH. | Facultatif<br/>Par défaut&nbsp;: NA<br/>Cette valeur doit commencer par «&nbsp;ssh-rsa&nbsp;». |
+| Clé publique | La clé SSH publique que vous pouvez utiliser pour vous connecter à une VM via SSH. | Facultatif<br/>Par défaut&nbsp;: NA<br/>Cette valeur doit commencer par `ssh-rsa`. |
 | Utiliser le volume persistant | Indique si vous souhaitez utiliser un volume persistant nouveau ou existant pour stocker des données. Consultez *En savoir plus&nbsp;: Utilisation d'un volume persistant* sous la section Paramètres. | Facultatif avec valeur par défaut<br/>Par défaut&nbsp;: Nouveau<br/>Les options prises en charge sont un nouveau volume persistant ou un volume existant, selon votre cas d'utilisation. |
 | Taille du volume persistant | La taille du volume persistant que vous pouvez associer à l'instance, en Go. | Facultatif<br/>Par défaut&nbsp;: 100<br/>Prend en charge les valeurs comprises entre&nbsp;8 et 1&nbsp;000. |
 | Volume persistant existant | L'ID du volume persistant existant que vous pouvez associer à l'instance.| Obligatoire si Utiliser le volume persistant est défini sur Existant<br/>Par défaut&nbsp;: NA<br/>Le volume persistant doit se trouver dans la même zone de disponibilité que l'instance AI Unlimited. |
@@ -111,13 +111,13 @@ Si le conteneur, le pod ou le nœud tombe en panne ou s'arrête et que les donn�
 
 **Exemple**
 
-1. Déployez JupyterLab et incluez ces paramètres&nbsp;:
-   - «&nbsp;UsePersistentVolume&nbsp;»&nbsp;: **Nouveau**
-2. Après avoir créé la pile, dans l'onglet **Sorties**, notez le «&nbsp;volume-id&nbsp;».
+1. Déployez JupyterLab et incluez ces paramètres:
+   - `UsePersistentVolume`: **Nouveau**
+2. Après avoir créé la pile, dans l'onglet **Sorties**, notez le `volume-id`.
 3. Utilisez JupyterLab.
-4. Si l'instance JupyterLab est perdue, déployez à nouveau JupyterLab et incluez ces paramètres&nbsp;:
-   - «&nbsp;UsePersistentVolume&nbsp;»&nbsp;: **Nouveau**
-   - «&nbsp;ExistingPersistentVolumeId&nbsp;»&nbsp;: la valeur que vous avez notée à l'étape&nbsp;2
+4. Si l'instance JupyterLab est perdue, déployez à nouveau JupyterLab et incluez ces paramètres:
+   - `UsePersistentVolume`: **Nouveau**
+   - `ExistingPersistentVolumeId`: la valeur que vous avez notée à l'étape&nbsp;2
    
 La nouvelle instance JupyterLab a la même configuration que celle qui a été perdue.
 
