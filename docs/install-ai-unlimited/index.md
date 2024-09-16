@@ -34,7 +34,7 @@ If AI Unlimited has already been installed and set up by someone at your organiz
 ## Prerequisites
 
 - A pay-as-you-go AWS or Azure account on which to provision compute resources. See the requirements for your [AWS](../resources/aws-requirements.md) or [Azure](../resources/azure-requirements.md) account.
-- A [GitHub](https://github.com) or [GitLab](https://gitlab.com) account to host each project repository for authenticating users and storing project information.
+- A [GitLab](https://gitlab.com) or [GitHub](https://github.com) account to host each project repository for authenticating users and storing project information.
 - Your object storage, where your Amazon or ADLS Gen2 data lake resides.
 - JupyterLab. See [installation options](../resources/jupyterlab).
 
