@@ -14,11 +14,11 @@ Each time you open a new notebook to create or access a project, you'll need you
 
 Your API key, available from your user profile in the manager, stays the same for the lifetime of the AI Unlimited installation.
 
-1. Use the URL provided by your AI Unlimited admin to access the manager.
+1. Use the URL provided by your AI Unlimited owner to access the manager.
 :::note
-Your AI Unlimited admin is the person at your organization who set up AI Unlimited.
+Your AI Unlimited owner is the person at your organization who set up AI Unlimited.
 :::
-2. Sign in to GitHub or GitLab, and authenticate yourself.
+2. Sign in to GitLab or GitHub, and authenticate yourself.
 3. After being routed back to the manager, on your **Profile**, copy your API key.
 
 Keep your API key. Or go back to your **Profile** anytime to get it.
