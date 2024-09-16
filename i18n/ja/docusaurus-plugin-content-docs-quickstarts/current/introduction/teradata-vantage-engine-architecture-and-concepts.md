@@ -7,7 +7,7 @@ author: Krutik Pathak
 email: krutik.pathak@teradata.com
 page_last_update: 2023 年 8 月 7 日
 description: Teradata Vantage のアーキテクチャと概念
-keywords: [data warehouses, テラデータ ヴァンテージ エンジン アーキテクチャ, teradata, vantage, Access Module Processors (AMP), Parsing Engine (PE), Massively Parallel Processing (MPP), Virtual Disk (Vdisks), BYNET]
+keywords: [data warehouses, teradata vantage engine architecture, teradata, vantage, Access Module Processors (AMP), Parsing Engine (PE), Massively Parallel Processing (MPP), Virtual Disk (Vdisks), BYNET]
 ---
 
 # Teradata Vantage エンジンのアーキテクチャと概念

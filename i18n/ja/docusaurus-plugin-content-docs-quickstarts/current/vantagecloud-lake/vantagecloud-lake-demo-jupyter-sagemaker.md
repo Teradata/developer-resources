@@ -56,10 +56,10 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
         ``` bash , id="sagemaker_first_config", role="content-editable emits-gtm-events"
         #!/bin/bash
         
-        セット-e
+        set -e
         
-        # このスクリプトは、ノートブックインスタンスのEBSボリュームにcondaのカスタム永続インストールをインストールし、
-        # これらのカスタム環境は、Jupyter のカーネルとして利用できます。
+        # This script installs a custom, persistent installation of conda on the Notebook Instance's EBS volume, and ensures
+        # that these custom environments are available as kernels in Jupyter.
         
         
         sudo -u ec2-user -i <<'EOF'
@@ -170,15 +170,15 @@ print("My Public IP is:", my_public_ip)
 * 特に次の値を追加する必要があります 
 
 
-        | **Variable** | **Value**|
+        | **変数** | **値**|
         |--------------|----------|
-        |**"host"**|Public IP value from your VantageCloud Lake environment|
-        |**"UES_URI"** |Open Analytics from your VantageCloud Lake environment|
-        |**"dbc"**|The master password of your VantageCloud Lake environment|
+        |**"host"**|VantageCloud Lake 環境からの Public IP値|
+        |**"UES_URI"** |VantageCloud Lake 環境からの Open Analytics|
+        |**"dbc"**|VantageCloud Lake 環境のマスター パスワード|
 
 
     :::info
-    Remember to change all passwords in the vars.json file.
+    vars.json ファイル内のすべてのパスワードを必ず変更してください。
     :::
 
 * サンプル vars.json では、すべてのユーザーのパスワードがデフォルトで「password」に設定されていることがわかります。これは説明を目的としたものであり、これらのパスワード フィールドをすべて強力なパスワードに変更し、必要に応じて保護し、次の手順を実行する必要があります。 その他のパスワード管理のベスト プラクティス。

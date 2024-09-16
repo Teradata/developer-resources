@@ -6,7 +6,7 @@ author: Satish Chinthanippu
 email: satish.chinthanippu@teradata.com
 page_last_update: 2023 年 8 月 14 日
 description: Apple Mac M1/M2 で Teradata Studio を実行します。
-keywords: [Teradata Studio, Teradata Studio Express, teradata, vantage, Mac, Apple Mac, Apple Mac M1, Apple Mac M2, Arm ベースのプロセッサ。]
+keywords: [Teradata Studio, Teradata Studio Express, teradata, vantage, Mac, Apple Mac, Apple Mac M1, Apple Mac M2, Arm based Processor.]
 ---
 
 import CommunityLink from '../_partials/community_link.mdx';
