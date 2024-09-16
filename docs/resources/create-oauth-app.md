@@ -1,4 +1,5 @@
 ---
+draft: true
 id: create-oauth-app
 title: Create an OAuth app
 description: It will allow AI Unlimited to use your Git provider's authentication to manage project repositories.
