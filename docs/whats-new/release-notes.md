@@ -1,4 +1,5 @@
 ---
+draft: true
 id: release-notes
 title: Release notes
 description: See details about the paid public preview's initial launch.
