@@ -56,7 +56,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 
         :::note
-        You can run the above commands with `git bash` in Windows. Please refer to the [Airbyte Local Deployment](https://docs.airbyte.com/deploying-airbyte/local-deployment) for more details. 
+        上記のコマンドは、Windows の `git bash` で実行できます。詳細については、[Airbyte ローカル展開](https://docs.airbyte.com/deploying-airbyte/local-deployment) を参照してください。
         :::
 
 * リポジトリに含まれる `.env` ファイルにあるデフォルトの資格情報を入力して、Web アプリ http://localhost:8000/ にログインします。

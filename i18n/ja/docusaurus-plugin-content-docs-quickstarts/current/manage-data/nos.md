@@ -222,7 +222,7 @@ USING ( LOCATION('/s3/td-usgs-public.s3.amazonaws.com/CSVDATA/') );
 
 ## Vantage からオブジェクト ストレージにデータをエクスポートする
 
-So far, we have talked about reading and importing data from object storage. Wouldn't it be nice if we had a way to use SQL to export data from Vantage to object storage? This is exactly what `WRITE_NOS` function is for. Let's say we want to export data from `riverflow_native` table to object storage. You can do so with the following query:
+これまで、オブジェクト ストレージからのデータの読み取りとインポートについて説明してきました。SQL を使用して Vantage からオブジェクト ストレージにデータをエクスポートする方法があれば便利だと思いませんか? まさにこれが `WRITE_NOS` 関数の目的です。`riverflow_native` テーブルからオブジェクト ストレージにデータをエクスポートするとします。次のクエリでこれを行うことができます。
 
 ```sql
 SELECT * FROM WRITE_NOS (
