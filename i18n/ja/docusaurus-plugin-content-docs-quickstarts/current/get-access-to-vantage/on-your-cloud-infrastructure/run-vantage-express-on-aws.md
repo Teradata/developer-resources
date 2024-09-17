@@ -20,7 +20,7 @@ import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 このハウツーでは、AWS で Vantage Express を実行する方法を説明します。Vantage Express は、完全に機能する Teradata SQL エンジンを含む、フットプリントの小さい構成です。
 
 
-:::important
+:::info
 <b>クラウド料金</b>
 
 Vantage Express は仮想マシン イメージとして配布されます。このハウツーでは、EC2 `c5n.metal` インスタンス タイプを使用します。これは、1 時間あたり 3 ドルを超えるベアメタル インスタンスです。

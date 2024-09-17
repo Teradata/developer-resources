@@ -127,7 +127,7 @@ ML Studioにデータを取得するには、まずTeradata VantageからAzure B
 
 既存の [Azure Machine Learning でデータを分析する](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-get-started-analyze-with-azure-machine-learning) 記事を使用して、Azure Blob Storage のデータに基づく予測機械学習モデルを構築します。顧客が自転車を購入する可能性があるかどうかを予測することで、自転車ショップ Adventure Works 向けのターゲット マーケティング キャンペーンを構築します。
 
-### Import data
+### データのインポート
 
 データは、上のセクションでコピーした `vTargetMail.csv` という Azure Blob Storage ファイルにあります。
 

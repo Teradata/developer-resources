@@ -46,17 +46,17 @@ Airbyte Terraform プロバイダは、Airbyte Cloud、OSS、Self-Managed Enterp
 ```mdx-code-block
 <Tabs>
   <TabItem value="MacOS" label="MacOS" default>
-    First, install the HashiCorp tap, a repository of all [Homebrew](https://brew.sh) packages.
+    まず、すべての [Homebrew](https://brew.sh) パッケージのリポジトリである HashiCorp tap をインストールします。
     ```bash
       brew tap hashicorp/tap
     ```
-    Next, install Terraform with hashicorp/tap/terraform.
+    次に、hashicorp/tap/terraform を使用して Terraform をインストールします。
     ```bash
       brew install hashicorp/tap/terraform
     ```
   </TabItem>
   <TabItem value="Windows" label="Windows">
-    [Chocolatey](https://chocolatey.org) is a free and open-source package management system for Windows. Install the Terraform package from the command-line.
+    [Chocolatey](https://chocolatey.org) は、Windows 用の無料のオープンソース パッケージ管理システムです。コマンドラインから Terraform パッケージをインストールします。
     ```bash
       choco install terraform
     ```

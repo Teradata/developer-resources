@@ -142,10 +142,10 @@ Notebookのインスタンスを開きます。
 
 2. 名前（例： `xgboost-bank`）を入力し、その他はすべてデフォルトを使用します。モデル名とトレーニングジョブは自動的に入力されます。 `Create endpoint configuration`をクリックします。
 
-### エンドポイントを作成
+### エンドポイントの作成
 
 1. 左パネルから `Inference` -> `Models` を選択し、再度モデルを選択し、今度は `Create endpoint` をクリックします。
-![エンドポイントを作成](../cloud-guides/images/sagemaker-with-teradata-vantage/create.endpoint.png)
+![エンドポイントの作成](../cloud-guides/images/sagemaker-with-teradata-vantage/create.endpoint.png)
 
 2. 名前 (例: `xgboost-bank`)を入力し、`Use an existing endpoint configuration`を選択します。
 ![エンドポイント構成を添付する](../cloud-guides/images/sagemaker-with-teradata-vantage/attach.endpoint.configuration.png)

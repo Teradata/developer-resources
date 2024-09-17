@@ -24,7 +24,9 @@
 
 - ターミナルで `pdestate` コマンドを実行すると、Vantage がすでに起動しているかどうかが通知されます。
 
-:::note Gnome ターミナルに貼り付けるには 、<kbd>SHIFT+CTRL+V</kbd>を押します。:::
+:::note
+Gnome ターミナルに貼り付けるには 、<kbd>SHIFT+CTRL+V</kbd>を押します。
+:::
 
 ```bash
 watch pdestate -a
@@ -37,7 +39,33 @@ PDE state is RUN/STARTED.
 DBS state is 5: Logons are enabled - The system is quiescent
 ```
 
-<details>  <summary>] データベースがまだ初期化中の場合に <code>pdestate</code> が返すメッセージの例を参照してください。</summary><pre> PDE state is DOWN/HARDSTOP. PDE state is START/NETCONFIG. PDE state is START/GDOSYNC. PDE state is START/TVSASTART. PDE state is START/READY. PDE state is RUN/STARTED. DBS state is 1/1: DBS Startup - Initializing DBS Vprocs PDE state is RUN/STARTED. DBS state is 1/5: DBS Startup - Voting for Transaction Recovery PDE state is RUN/STARTED. DBS state is 1/4: DBS Startup - Starting PE Partitions PDE state is RUN/STARTED. </pre> </details>
+<details>
+
+<summary>データベースがまだ初期化中の場合に <code>pdestate</code> が返すメッセージの例を参照してください。</summary>
+
+<pre>
+PDE state is DOWN/HARDSTOP.
+
+PDE state is START/NETCONFIG.
+
+PDE state is START/GDOSYNC.
+
+PDE state is START/TVSASTART.
+
+PDE state is START/READY.
+PDE state is RUN/STARTED.
+
+DBS state is 1/1: DBS Startup - Initializing DBS Vprocs
+PDE state is RUN/STARTED.
+
+DBS state is 1/5: DBS Startup - Voting for Transaction Recovery
+PDE state is RUN/STARTED.
+
+DBS state is 1/4: DBS Startup - Starting PE Partitions
+PDE state is RUN/STARTED.
+</pre>
+
+</details>
 
 - データベースが起動したら、仮想デスクトップに戻って起動します。 `Teradata Studio Express`
 

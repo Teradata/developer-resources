@@ -22,7 +22,7 @@ Native Object Storage (NOS) はCSV、JSON、Parquet形式のデータセット�
 
 Teradata Vantage インスタンスにアクセスする必要があります。NOS は、バージョン 17.10 以降、Vantage Express から Developer、DYI、Vantage as a Service までのすべての Vantage エディションで有効になります。
 
-:::important
+:::info
 このチュートリアルは、S3 AWS オブジェクト ストレージに基づいています。チュートリアルを完了するには、書き込み権限を持つ独自の S3 バケットが必要です。
 :::
 
@@ -142,7 +142,7 @@ SELECT col1, col2, col3 FROM db.parquet_table_to_read_file_on_NOS;
 
 ## まとめ
 
-In this tutorial we have learned how to export data from Vantage to a parquet file on object storage using Native Object Storage (NOS). NOS supports reading and importing data stored in CSV, JSON and Parquet formats. NOS can also export data from Vantage to object storage.
+このチュートリアルでは、Native Object Storage (NOS) を使用して、Vantage からオブジェクト ストレージ上の parquet ファイルにデータをエクスポートする方法を学習しました。NOS は、CSV、JSON、および Parquet 形式で保存されたデータの読み取りとインポートをサポートしています。NOS は、Vantage からオブジェクト ストレージにデータをエクスポートすることもできます。
 
 ## さらに詳しく
 * [Teradata Vantage™ - Writing Data to External Object Store](https://docs.teradata.com/r/Teradata-VantageTM-Native-Object-Store-Getting-Started-Guide/June-2022/Writing-Data-to-External-Object-Store)

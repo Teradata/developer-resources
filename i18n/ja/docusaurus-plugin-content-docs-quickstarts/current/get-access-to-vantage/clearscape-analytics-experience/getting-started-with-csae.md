@@ -42,7 +42,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 | **Region**           | ドロップダウンからリージョンを選択します。                                     |
 
 
-:::important
+:::info
 データベースのパスワードを書き留めてください。データベースに接続する際に必要になります。
 :::
 

@@ -52,7 +52,7 @@ cd airbyte-dbt-jaffle
 
 
     :::note
-    You can activate the virtual environment in Windows by executing the corresponding batch file `./myenv/Scripts/activate`.
+    対応するバッチ ファイル `./myenv/Scripts/activate` を実行することで、Windows で仮想環境をアクティブ化できます。
     :::
 
 * `dbt-teradata`モジュールをインストールします。dbtのコアモジュールも依存関係のあるモジュールとして含まれているので、別にインストールする必要はありません。
@@ -69,7 +69,7 @@ cd airbyte-dbt-jaffle
     ```
 
 
-    The dbt project wizard will ask you for a project name and database management system to use in the project. In this demo, we define the project name as `dbt_airbyte_demo`. Since we are using the dbt-teradata connector, the only database management system available is Teradata.
+    dbt プロジェクト ウィザードでは、プロジェクト名とプロジェクトで使用するデータベース管理システムの入力を求められます。このデモでは、プロジェクト名を `dbt_airbyte_demo` と定義します。dbt-teradata コネクタを使用しているため、使用できるデータベース管理システムは Teradata のみです。
 
     ![Project name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_project_name.png)
     

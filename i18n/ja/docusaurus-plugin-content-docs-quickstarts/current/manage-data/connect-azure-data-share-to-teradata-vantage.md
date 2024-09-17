@@ -34,9 +34,9 @@ Vantageは、小規模から始めて、コンピュートやストレージを�
 
 Vantage は、R、Python、Teradata Studio、およびその他の SQL ベースのツールをサポートしています。Vantage は、パブリック クラウド、オンプレミス、最適化されたインフラストラクチャまたはコモディティ インフラストラクチャ、またはサービスとして導入できます。
 
-Teradata Vantage Native Object Store (NOS) can be used to explore data in external object stores, like Azure Blob Storage, using standard SQL. No special object storage-side compute infrastructure is required to use NOS. You can explore data located in an Blob Storage container by simply creating a NOS table definition that points to your container. With NOS, you can quickly import data from Blob Storage or even join it other tables in the database.
+Teradata Vantage Native Object Store (NOS) を使用すると、標準 SQL を使用して、Azure Blob Storage などの外部オブジェクト ストア内のデータを探索できます。NOS を使用するには、特別なオブジェクト ストレージ側のコンピューティング インフラストラクチャは必要ありません。コンテナを指す NOS テーブル定義を作成するだけで、Blob Storage コンテナ内のデータを探索できます。NOS を使用すると、Blob Storage からデータをすばやくインポートしたり、データベース内の他のテーブルに結合したりすることもできます。
 
-Alternatively, the Teradata Parallel Transporter (TPT) utility can be used to import data from Blob Storage to Teradata Vantage in bulk fashion. Once loaded, data can be efficiently queried within Vantage.
+あるいは、Teradata Parallel Transporter (TPT) ユーティリティを使用して、Blob Storage から Teradata Vantage にデータを一括インポートすることもできます。データがロードされると、Vantage 内でデータを効率的にクエリーできます。
 
 詳細については、[*ドキュメント*](https://docs.teradata.com/home)を参照してください。
 
@@ -280,7 +280,7 @@ USING (
 
  _LOCATION_ にはストレージ アカウント名とコンテナ名が必要です。これを独自のストレージ アカウントとコンテナ名に置き換える必要があります。
 
-オブジェクトに標準拡張子 (例えば、「.json」、「.csv」、「.parquet」) がない場合、 _Location…Payload_列定義句も必要であり、LOCATION フェーズにファイル名を含める必要があります。例: LOCATION (`AZ/<storage account name>.blob.core.windows.net/<container>/<filename>`)。
+オブジェクトに標準拡張子 (例えば、「.json」、「.csv」、「.parquet」) がない場合、 _Location…Payload_ 列定義句も必要であり、LOCATION フェーズにファイル名を含める必要があります。例: LOCATION (`AZ/<storage account name>.blob.core.windows.net/<container>/<filename>`)。
 
 外部テーブルは常にNo Primary Index (NoPI)テーブルとして定義される。
 

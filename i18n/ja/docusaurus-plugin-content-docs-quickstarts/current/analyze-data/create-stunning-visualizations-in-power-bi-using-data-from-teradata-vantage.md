@@ -71,19 +71,19 @@ Azure サービス、Teradata Vantage、Power BI Desktop に精通している�
     ![Power BI データ取得メニュー](../business-intelligence/images/connect-power-bi/power.bi.get.data.menu.png)
 
 * 左側の _データベース_ をクリックします。
-* 右側のリストをスクロールして _Teradata database_を見つけます。 _Teradata database_をクリックしてから _Connect_ ボタンをクリックします。
+* 右側のリストをスクロールして _Teradata database_ を見つけます。 _Teradata database_ をクリックしてから _Connect_ ボタンをクリックします。
 
 (今回は、「Teradata database」と「Teradata Vantage」は同義です。)
 
 ![Power BI データベースの選択](../business-intelligence/images/connect-power-bi/power.bi.database.picker.png)
 
-* 表示されるウィンドウで、テキスト ボックスに Vantage システムの名前または IP アドレスを入力します。 _Import_ データを Power BI データ モデルに直接入力するか、 [DirectQuery](https://docs.microsoft.com/en-us/power-bi/desktop-use-directquery) を使用してデータ ソースに直接接続し、 _OK_をクリックするかを選択できます。
+* 表示されるウィンドウで、テキスト ボックスに Vantage システムの名前または IP アドレスを入力します。 _Import_ データを Power BI データ モデルに直接入力するか、 [DirectQuery](https://docs.microsoft.com/en-us/power-bi/desktop-use-directquery) を使用してデータ ソースに直接接続し、 _OK_ をクリックするかを選択できます。
 
 ![Power BI サーバー接続](../business-intelligence/images/connect-power-bi/power.bi.server.connect.png)
 
 (_Advanced_ オプションをクリックして、手作りした SQL文を送信します。)
 
-資格情報には、Vantage で定義されている _Windows_ ログインまたは _データベース_ ユーザー名 (こちらの方が一般的です) を使用して接続するオプションがあります。適切な認証方法を選択し、ユーザー名とパスワードを入力します。 _Connect_をクリックします。
+資格情報には、Vantage で定義されている _Windows_ ログインまたは _データベース_ ユーザー名 (こちらの方が一般的です) を使用して接続するオプションがあります。適切な認証方法を選択し、ユーザー名とパスワードを入力します。 _Connect_ をクリックします。
 
 LDAP サーバーで認証するオプションもあります。このオプションはデフォルトでは非表示になっています。
 
@@ -95,7 +95,7 @@ Power BI サービスに公開されるレポートに使用されるオンプ�
 
 あるいは、Teradata のように [Power BI サービスからオンプレミスのデータ ソースへの Kerberos ベースの SSO を構成する](https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-sso-kerberos) することもできます。
 
-Vantage システムに接続すると、Power BI Desktop はシステムへの今後の接続のために資格情報を記憶します。これらの資格情報は _File > Optionsおよびsettings > Data source setting_に移動して変更できます。
+Vantage システムに接続すると、Power BI Desktop はシステムへの今後の接続のために資格情報を記憶します。これらの資格情報は _File > Optionsおよびsettings > Data source setting_ に移動して変更できます。
 
 接続が成功すると、ナビゲーター ウィンドウが表示されます。Vantage システムで使用可能なデータが表示されます。Power BI Desktop で使用する 1 つ以上の要素を選択できます。
 
@@ -105,7 +105,7 @@ Vantage システムに接続すると、Power BI Desktop はシステムへの�
 
 選択したテーブルを _Load_ すると、そのテーブルが Power BI Desktop に取り込まれます。また、クエリーを _編集_ するとクエリー エディターが開き、読み込むデータ セットをフィルタ処理して絞り込むことができます。
 
-_編集_ は、使用している Power BI Desktop のバージョンに応じて _データの変換_と呼ばれる場合があります。
+_編集_ は、使用している Power BI Desktop のバージョンに応じて _データの変換_ と呼ばれる場合があります。
 
 テーブルの結合の詳細については、 [Power BI Desktop でリレーションシップを作成および管理する](https://docs.microsoft.com/en-us/power-bi/desktop-create-and-manage-relationships) 機能を参照してください。
 
@@ -113,7 +113,7 @@ _編集_ は、使用している Power BI Desktop のバージョンに応じ�
 
 ![Power BI の公開](../business-intelligence/images/connect-power-bi/power.bi.publish.png)
 
-Power BI Desktop でレポートを保存するように求められます。 _My workspace_ を選択し、 _Select_をクリックします。 
+Power BI Desktop でレポートを保存するように求められます。 _My workspace_ を選択し、 _Select_ をクリックします。 
 
 ![Power BI をワークスペースに公開する](../business-intelligence/images/connect-power-bi/power.bi.workspace.png)
 

@@ -89,7 +89,7 @@ su - jupyter -c "git clone https://github.com/Teradata/lake-demos.git"
 * ノートブックを開始するには、[作成] を選択します。ノートブックの作成プロセスが完了するまでに数分かかる場合があります。完了したら、[JUPYTERLAB を開く] をクリックします。 
         ![ノートブックをアクティブ化](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/activenotebook.png)
 
-:::important
+:::info
 接続を許可するには、VantageCloud Lake 環境でこの IP をホワイトリストに登録する必要があります。このソリューションは試用環境に適しています。実稼働環境では、VPC、サブネット、セキュリティ グループの構成を構成してホワイトリストに登録する必要がある場合があります。
 :::
 
@@ -130,7 +130,7 @@ vars.jsonを右クリックして、エディタでファイルを開きます�
 Public IPアドレスとOpen Analyticsエンドポイントを取得するには、次の[手順](vantagecloud-lake-demo-jupyter-docker.md#create-vantagecloud-lake-environment)に従います。
 
 
-:::important
+:::info
 vars.json ファイルのパスワードを変更します。サンプル vars.json では、すべてのユーザーのパスワードがデフォルトで「password」に設定されていることがわかります。これはサンプル ファイルの問題にすぎず、これらのパスワードをすべて変更する必要があります。 フィールドを強力なパスワードに設定し、必要に応じて保護し、他のパスワード管理のベスト プラクティスに従ってください。
 :::
 

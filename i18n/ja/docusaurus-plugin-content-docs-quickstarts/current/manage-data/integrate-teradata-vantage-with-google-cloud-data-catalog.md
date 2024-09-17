@@ -50,7 +50,7 @@ Teradata Vantage の詳細については、 [ドキュメント](https://docs.t
 
 1. Data Catalog APIを有効にする
 2. Teradata Data Catalog コネクタをインストールする
-3. Run
+3. 実行する
 4. Teradata VantageのメタデータをData Catalogで探索する
 
 ### Data Catalog APIを有効にする

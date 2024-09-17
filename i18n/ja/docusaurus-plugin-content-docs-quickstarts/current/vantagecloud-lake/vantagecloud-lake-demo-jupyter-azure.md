@@ -76,8 +76,8 @@ import VantageCloudLakeRequest from './_partials/vantagecloud-lake-request.md';
         | **"WEBSITES_PORT"**  | 8888 |
         | **"JUPYTER_TOKEN"**      | 使用するJupyter Labアクセストークンを定義します。 |
 
-        :::important
-        If you don't include the "JUPYTER_TOKEN" configuration, the container will generate a new token and log it to the console. You will need to retrieve it from the application logs. If you include the "JUPYTER_TOKEN" configuration key but leave the value blank, the system will set the token as an empty string, resulting in an unprotected Jupyter Lab environment without any token security.
+        :::info
+        「JUPYTER_TOKEN」構成を含めない場合、コンテナは新しいトークンを生成し、それをコンソールに記録します。アプリケーション ログからそれを取得する必要があります。「JUPYTER_TOKEN」構成キーを含めて値を空白のままにすると、システムはトークンを空の文字列として設定し、トークン セキュリティのない保護されていない Jupyter Lab 環境になります。
         :::
 
 * 保存をクリックすると、アプリが再起動される
@@ -146,7 +146,7 @@ import VantageCloudLakeRequest from './_partials/vantagecloud-lake-request.md';
     | **"dbc"**      | VantageCloud Lake 環境のマスター パスワード |
 
 * サンプル vars.json では、すべてのユーザーのパスワードがデフォルトで「password」に設定されていることがわかります。これは説明を目的としたものであり、これらのパスワード フィールドをすべて強力なパスワードに変更し、必要に応じて保護し、次の手順を実行する必要があります。 その他のパスワード管理のベスト プラクティス。
-    :::important
+    :::info
     vars.json ファイル内のすべてのパスワードを忘れずに変更してください。
     :::
 

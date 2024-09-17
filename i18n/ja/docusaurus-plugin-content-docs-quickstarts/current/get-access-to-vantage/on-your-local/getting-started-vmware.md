@@ -32,11 +32,11 @@ import CommunityLink from '../../_partials/community_link.mdx';
 * [Vantage Express](https://downloads.teradata.com/download/database/teradata-express-for-vmware-player)の最新版。これまでに Teradata Downloads Web サイトを使用したことがない場合は、登録する必要があります。
 * [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html).
 
-:::important
+:::info
 商用組織では、VMware Workstation Player を使用するために商用ライセンスが必要です。VMware ライセンスを取得したくない場合は、 [VirtualBox](./getting-started-vbox.md)で Vantage Express を実行できます。
 :::
 
-:::important
+:::info
 VMware は、MacOS 用の VMware Workstation Player を提供していません。Mac をお使いの場合は、代わりに [VMware フュージョン](https://www.vmware.com/products/fusion/fusion-evaluation.html) をインストールする必要があります。これは有料製品ですが、VMware では 30 日間の無料試用版を提供しています。または、Vantage Express を [VirtualBox](./getting-started-vbox.md) または [UTM](./getting-started-utm.md)で実行することもできます。
 :::
 * Windowsでは、Vantage Expressを解凍するために [7zip](https://www.7-zip.org/download.html)も必要です。

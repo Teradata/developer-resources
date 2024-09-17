@@ -66,7 +66,7 @@ Vantage Express は x86 アーキテクチャで動作します。M1/2 チップ
 
 10. ドライブをマップします。
     * デフォルトの `IDE Drive` を削除します。
-    * Map the 3 Vantage Express drives by importing the disk files from the downloaded VM zip file. Make sure you map them in the right order, `-disk1`, `-disk2`, `-disk3` \. The first disk is bootable and contains the database itself. Disks 2 and 3 are so called `pdisks` and contain data. As you import the files UTM will automatically convert them fro `vmdk` into `qcow2` format. Make sure that each disk is configured using the `IDE` interface:
+    * ダウンロードした VM の zip ファイルからディスク ファイルをインポートして、3 つの Vantage Express ドライブをマップします。正しい順序 (`-disk1`、 `-disk2`、 `-disk3`) でマップするようにしてください。最初のディスクはブート可能で、データベース自体が含まれています。ディスク 2 と 3 は `pdisks` と呼ばれ、データが含まれています。ファイルをインポートすると、UTM によって自動的に `vmdk` 形式から `qcow2` 形式に変換されます。各ディスクが `IDE` インターフェイスを使用して構成されていることを確認してください。
 
     ![UTMドライブ](../../images/utm.drives.png)
 

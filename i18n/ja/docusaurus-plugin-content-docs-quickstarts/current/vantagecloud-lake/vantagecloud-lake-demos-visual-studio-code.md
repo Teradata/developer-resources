@@ -85,7 +85,7 @@ LAKE_DEMOS
 
 Public IPアドレスとOpen Analyticsエンドポイントを取得するには、次の[手順](getting-started-with-vantagecloud-lake.md#create-an-environment)に従います。
 
-:::important
+:::info
 vars.json ファイルのパスワードを変更します。サンプル vars.json では、すべてのユーザーのパスワードがデフォルトで「password」に設定されていることがわかります。これはサンプル ファイルの問題にすぎず、これらのパスワードをすべて変更する必要があります。 フィールドを強力なパスワードに設定し、必要に応じて保護し、他のパスワード管理のベスト プラクティスに従ってください。
 :::
 

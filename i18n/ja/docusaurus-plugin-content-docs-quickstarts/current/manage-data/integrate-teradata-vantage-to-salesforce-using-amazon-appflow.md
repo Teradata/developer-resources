@@ -36,7 +36,7 @@ Vantage を使用すると、企業は小規模から始めてコンピューテ
 
 Vantageは、記述的分析、予測的分析、処方的分析、自律的意思決定、ML機能、可視化ツールを統合したプラットフォームで、データがどこにあっても、リアルタイムのビジネスインテリジェンスを大規模に発掘することができます。
 
-Teradata Vantage Native Object Store (NOS) can be used to explore data in external object stores, like Amazon S3, using standard SQL. No special object storage-side compute infrastructure is required to use NOS. Users can explore data located in an Amazon S3 bucket by simply creating a NOS table definition that points to your bucket. With NOS, you can quickly import data from Amazon S3 or even join it with other tables in the Vantage database.
+Teradata Vantage Native Object Store (NOS) を使用すると、標準 SQL を使用して、Amazon S3 などの外部オブジェクト ストア内のデータを探索できます。NOS を使用するには、特別なオブジェクト ストレージ側のコンピューティング インフラストラクチャは必要ありません。ユーザーは、バケットを指す NOS テーブル定義を作成するだけで、Amazon S3 バケット内のデータを探索できます。NOS を使用すると、Amazon S3 からデータをすばやくインポートしたり、Vantage データベース内の他のテーブルと結合したりすることもできます。
 
 ### 前提条件
 
@@ -57,7 +57,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
   * Salesforce アカウントでは、接続されたアプリケーションのインストールが許可されている必要があります。これが無効になっている場合は、Salesforce 管理者に問い合わせてください。Amazon AppFlow で Salesforce 接続を作成した後、「Amazon AppFlow Embedded Login App」という名前の接続されたアプリケーションが Salesforce アカウントにインストールされていることを確認します。
   * 「Amazon AppFlow Embedded Login App」のリフレッシュ トークン ポリシーは、「リフレッシュ トークンは取り消されるまで有効」に設定する必要があります。そうしないと、リフレッシュ トークンの有効期限が切れたときにフローが失敗します。
   * イベント駆動型フロートリガーを使用するには、Salesforce で変更データキャプチャを有効にする必要があります。[設定] から、[クイック検索] に「変更データキャプチャ」と入力します。
-  * Salesforce アプリが IP アドレスの制限を実施している場合、Amazon AppFlow で使用するアドレスをホワイトリストに登録する必要があります。詳細については、_Amazon Web Services 全般リファレンス_の[AWS IP アドレス範囲](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html)を参照してください。
+  * Salesforce アプリが IP アドレスの制限を実施している場合、Amazon AppFlow で使用するアドレスをホワイトリストに登録する必要があります。詳細については、_Amazon Web Services 全般リファレンス_ の[AWS IP アドレス範囲](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html)を参照してください。
   * 100 万件を超える Salesforce レコードを転送する場合、Salesforce 複合フィールドを選択することはできません。Amazon AppFlow は転送に Salesforce Bulk API を使用しますが、複合フィールドの転送は許可されません。
   * AWS PrivateLink を使用してプライベート接続を作成するには、Salesforce アカウントで「メタデータの管理者」と「外部接続の管理」の両方のユーザー権限を有効にする必要があります。プライベート接続は現在、us-east-1 および us-west-2 AWS リージョンで利用できます。
   * 履歴オブジェクトなど、一部の Salesforce オブジェクトは更新できません。これらのオブジェクトの場合、Amazon AppFlow はスケジュールトリガーフローの増分エクスポート ([新しいデータのみを転送] オプション) をサポートしていません。代わりに、[すべてのデータを転送] オプションを選択し、適切なフィルタを選択して転送するレコードを制限できます。
@@ -106,10 +106,10 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 ![携帯電話のスクリーンショット 自動生成された説明](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image8.png)
 ![携帯電話のスクリーンショット 自動生成された説明](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image9.png)
 
-* _Amazon S3_を**Destination name**として使用します。データを保存する、作成したバケット（[以前](#prerequisites)）を選択します（つまり、_ptctsoutput_）。
+* _Amazon S3_ を**Destination name**として使用します。データを保存する、作成したバケット（[以前](#prerequisites)）を選択します（つまり、_ptctsoutput_）。
 ![携帯電話のスクリーンショット 自動生成された説明](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image10.png)
 
-* **Flow trigger** は _Run on demand_です。 **Next**をクリックします。
+* **Flow trigger** は _Run on demand_ です。 **Next**をクリックします。
 ![携帯電話のスクリーンショット 自動生成された説明](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image11.png)
 
 #### ステップ3：データフィールドのマッピング
@@ -120,7 +120,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 * 簡単のため、 **送信元から送信先へのマッピング** には _Map all fields directly_ を選択します。
 ![携帯電話のスクリーンショット 自動生成された説明](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image12.png)
 
-「_Map all fields directly_」をクリックすると、すべてのフィールドが **Mapped fields**の下に表示されます。 **Add formula (concatenates)**、 **Modify values (mask or truncate field values)**、または **Remove selected mappings**するフィールドのチェックボックスをクリックします。
+「 _Map all fields directly_ 」をクリックすると、すべてのフィールドが **Mapped fields**の下に表示されます。 **Add formula (concatenates)**、 **Modify values (mask or truncate field values)**、または **Remove selected mappings**するフィールドのチェックボックスをクリックします。
 
 この例では、チェックボックスはオンになりません。
 
@@ -634,9 +634,9 @@ USING
 このステップでは、フローのソースと宛先に関する情報を提供します。この例では、ソースとして *_Amazon S3_* を使用し、宛先として *_Salesforce_* を使用します。
 
 *  *Source details* は、 _Amazon S3_ を選択し、CSVファイルを書き込んだバケットを選択します（例：vantagecsv）。
-* *Destination details* は、_Salesforce_ を選択し、*Choose Salesforce connection* のドロップダウンリストでStep1で作成した接続を使用し、*Choose Salesforce object* として_Lead_ を選択します。
+* *Destination details* は、_Salesforce_ を選択し、*Choose Salesforce connection* のドロップダウンリストでStep1で作成した接続を使用し、*Choose Salesforce object* として _Lead_ を選択します。
 * *Error handling* の場合は、デフォルトの _Stop the current flow run_ を使用する。 
-* *Flow trigger* は _Run on demand_です。 *Next*をクリックしてください。
+* *Flow trigger* は _Run on demand_ です。 *Next*をクリックしてください。
 
 #### ステップ3. データフィールドをマッピングする
 

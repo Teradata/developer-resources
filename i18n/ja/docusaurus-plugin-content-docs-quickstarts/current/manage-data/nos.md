@@ -242,8 +242,7 @@ SELECT * FROM WRITE_NOS (
 
 ## まとめ
 
-In this quick start we have learned how to read data from object storage using Native Object Storage (NOS) functionality in Vantage. NOS supports reading and importing data stored in CSV, JSON and Parquet formats. NOS can also export data from Vantage to object storage.
-
+このクイック スタートでは、Vantage の Native Object Storage (NOS) 機能を使用してオブジェクト ストレージからデータを読み取る方法を学習しました。NOS は、CSV、JSON、Parquet 形式で保存されたデータの読み取りとインポートをサポートしています。NOS は、Vantage からオブジェクト ストレージにデータをエクスポートすることもできます。
 # さらに詳しく
 * [Teradata Vantage™- Native Object Store 入門ガイド](https://docs.teradata.com/r/2mw8ooFr~xX0EaaGFaDW8A/root)
 

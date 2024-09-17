@@ -21,7 +21,7 @@ VantageCloud Lake は、クラウド ソリューションに期待されるす�
 
 ## VantageCloud Lake へのサインオン
 
-:::important
+:::info
 VantageCloud Lake のサインオン リンクと資格情報を取得するには、[お問い合わせフォーム](https://www.teradata.com/about-us/contact)に記入して Teradata チームに連絡してください。   
 :::
 
@@ -67,7 +67,7 @@ Teradataが提供するURL(**_ourcompany.innovationlabs.teradata.com_**など)�
 | **アイテム**           | **説明**                                                                 |
 |--------------------|---------------------------------------------------------------------------------|
 | *環境名* | 新しい環境の文脈名                                           |
-| *Region*           | 利用可能なリージョン リストは、販売プロセス中に事前に決定されます。            |
+| *リージョン*           | 利用可能なリージョン リストは、販売プロセス中に事前に決定されます。            |
 | *パッケージ*          | 選択可能な DOS サービス パッケージは次のとおりです。                         |
 |                    | - Lake: プレミア 24x7 クラウドサポート                                                |
 |                    | - Lake: プレミア 24x7 優先クラウドサポート + 業界データモデル               |
@@ -76,7 +76,7 @@ Teradataが提供するURL(**_ourcompany.innovationlabs.teradata.com_**など)�
 
 ![環境の構成](../images/lake_environment_configuration.png)
 
-:::important
+:::info
 **推定消費量** (右側)は、環境作成のためのガイダンスを提供します。詳細については、[消費量推定値の使用](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Managing-Consumption/Using-the-Consumption-Estimates)を参照してください。   
 :::
 
@@ -90,21 +90,21 @@ Teradataが提供するURL(**_ourcompany.innovationlabs.teradata.com_**など)�
 <table>
   <thead>
     <tr>
-      <th>Item</th>
-      <th>Description</th>
+      <th>アイテム</th>
+      <th>説明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><em>Instance size</em></td>
+      <td><em>インスタンスサイズ</em></td>
       <td>
-        Select an instance size suitable for your use-case:<br />
+        ユースケースに適したインスタンス サイズを選択します。<br />
         <strong>Lake</strong>
         <table>
           <thead>
             <tr>
-              <th>Size</th>
-              <th>Value (in units)</th>
+              <th>サイズ</th>
+              <th>値（単位）</th>
             </tr>
           </thead>
           <tbody>
@@ -142,8 +142,8 @@ Teradataが提供するURL(**_ourcompany.innovationlabs.teradata.com_**など)�
         <table>
           <thead>
             <tr>
-              <th>Size</th>
-              <th>Value (in units)</th>
+              <th>サイズ</th>
+              <th>値（単位）</th>
             </tr>
           </thead>
           <tbody>
@@ -180,12 +180,12 @@ Teradataが提供するURL(**_ourcompany.innovationlabs.teradata.com_**など)�
       </td>
     </tr>
     <tr>
-      <td><em>Instance count</em></td>
-      <td>2 to 64<br />Number of nodes in the primary clusters</td>
+      <td><em>インスタンス数</em></td>
+      <td>2 ~ 64<br />プライマリクラスタ内のノード数</td>
     </tr>
     <tr>
-      <td><em>Instance storage</em></td>
-      <td>1 to 72TB per instance</td>
+      <td><em>インスタンスストレージ</em></td>
+      <td>インスタンスあたり1～72TB</td>
     </tr>
   </tbody>
 </table>
@@ -222,10 +222,10 @@ dbc のパスワードを設定します。
 
 
 ```mdx-code-block
-| *Item*           |Description*                                                                                   |
+| *アイテム*           |説明*                                                                                   |
 |-------------|---------------------------------------------------------------------------------------------------|
-| AMPs per instance       | Workload management + Select the number of AMPs per instance for the instance size you selected. |
-| AWS: Storage encryption | Configure encryption for customer data. See [Finding the key ID and key ARN](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) <br/> <ul><li>Managed by Teradata</li><li>Customer managed</li><li>Key Alias ARN</li></ul>  |
+| インスタンスあたりのAMP数       | ワークロード管理 + 選択したインスタンス サイズに対して、インスタンスあたりの AMP の数を選択します。|
+| AWS: ストレージ暗号化 | 顧客データの暗号化を設定します。[キー ID とキー ARN を検索する](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html)を参照してください。 <br/> <ul><li>Teradataによる管理</li><li>顧客管理</li><li>キーエイリアス ARN</li></ul>  |
 
 ```
 
