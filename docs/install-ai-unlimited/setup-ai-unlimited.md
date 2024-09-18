@@ -88,9 +88,13 @@ Some of these fields are for default values. Later, when you deploy the engine f
 
 If AI Unlimited creates the IAM role for the engine, it creates it for the AWS [cluster](../glossary.md#cluster) that deploys the engine&mdash;each time you deploy the engine. If [your organization creates the role](../resources/aws-requirements.md#provide-roles-created-by-your-organization) for the engine, it must be broad enough to include all the clusters that might deploy the engine.
 
-**Inbound security: Security group names**
+**Inbound security: Security groups**
 
 If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group to ensure that AI Unlimited can communicate with the engine.
+
+**Inbound security: Permissions boundary ARNs**
+
+For example, arn:aws:iam::123456789012:policy/ExamplePermissionsBoundary.
 
 </TabItem>
 
