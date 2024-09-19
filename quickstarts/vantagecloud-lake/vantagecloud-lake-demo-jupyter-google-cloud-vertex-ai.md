@@ -89,7 +89,7 @@ su - jupyter -c "git clone https://github.com/Teradata/lake-demos.git"
 * Select Create to initiate the notebook. It may take a few minutes for the notebook creation process to complete. When it is done, click on OPEN JUPYTERLAB. 
         ![active notebook](./images/vantage-lake-demo-jupyter-google-cloud-vertex-ai/activenotebook.png)
 
-:::important
+:::info
 You will have to whitelist this IP in your VantageCloud Lake environment to allow the connection. This solution is appropriate in a trial environment. For production environments, a configuration of VPCs, Subnets, and Security Groups might need to be configured and whitelisted.
 :::
 
@@ -130,7 +130,7 @@ Edit the *[vars.json file](https://github.com/Teradata/lake-demos/blob/main/vars
 To retrieve a Public IP address and Open Analytics Endpoint follow these [instructions](vantagecloud-lake-demo-jupyter-docker.md#create-vantagecloud-lake-environment).
 
 
-:::important
+:::info
 Change passwords in the vars.json file.You'll see that in the sample vars.json, the passwords of all users are defaulted to "password", this is just for matters of the sample file, you should change all of these password fields to strong passwords, secure them as necessary and follow other password management best practices
 :::
 

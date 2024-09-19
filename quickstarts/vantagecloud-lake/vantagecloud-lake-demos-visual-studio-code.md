@@ -85,7 +85,7 @@ Edit the [**vars.json**](https://github.com/Teradata/lake-demos/blob/main/vars.j
 
 To retrieve a Public IP address and Open Analytics Endpoint follow these [instructions](getting-started-with-vantagecloud-lake.md#create-an-environment)
 
-:::important
+:::info
 Change passwords in the vars.json file. You'll see that in the sample vars.json, the passwords of all users are defaulted to "password", this is just for matters of the sample file, you should change all of these password fields to strong passwords, secure them as necessary and follow other password management best practices.
 :::
 

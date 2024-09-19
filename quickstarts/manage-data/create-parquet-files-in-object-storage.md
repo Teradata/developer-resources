@@ -22,7 +22,7 @@ It's useful in scenarios where you want to explore data without building a data 
 
 You need access to a Teradata Vantage instance. NOS is enabled in all Vantage editions from Vantage Express through Developer, DYI to Vantage as a Service starting from version 17.10.
 
-:::important
+:::info
 This tutorial is based on s3 aws object storage. You will need your own s3 bucket with write permissions to complete the tutorial.
 :::
 
