@@ -99,7 +99,7 @@ OAuth 앱을 사용하면 사용자는 비밀번호를 공유하지 않고도 �
 귀하 또는 귀하 조직의 누군가가 만든 OAuth 앱을 사용하면 AI Unlimited가 GitHub 또는 GitLab 인증을 사용하여 각 [프로젝트 저장소](#project-repository)를 관리하고 엔진이 배포될 때마다 저장소에 추가된 공동 작업자로부터 엔진 사용자를 파생할 수 있습니다.
 
 ### object storage
-클라우드에서 대량의 구조화, 반구조화 또는 비구조화 데이터를 저장하는 확장 가능하고 매우 효과적인 방법입니다. Amazon S3는 AWS의 개체 스토리지입니다. Azure Blob Storage는 Azure의 개체 스토리지입니다. 개체 스토리지는 [데이터 레이크](#data-lake)의 기반입니다.
+클라우드에서 대량의 구조화, 반구조화 또는 비구조화 데이터를 저장하는 확장 가능하고 매우 효과적인 방법입니다. Amazon S3는 AWS의 개체 스토리지입니다. Azure Blob Storage는 Azure의 개체 스토리지입니다. 개체 스토리지는 [data lake](#data-lake)의 기반입니다.
 
 
 ## P

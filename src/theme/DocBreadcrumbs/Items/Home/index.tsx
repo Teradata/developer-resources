@@ -8,13 +8,12 @@ export default function HomeBreadcrumbItem() {
   const homeHref = useBaseUrl('/');
   const activePlugin = useActivePlugin(undefined);
   const homeLabel = translate({
-    id: 'theme.docs.breadcrumbs.home',
-    message: 'Home',
+    message: 'docs.home_page',
   });
   const docsLabel = translate({
     id: `theme.docs.breadcrumbs.${activePlugin?.pluginId}`,
     message: 'AI Unlimited',
-  });  
+  });
   return (
     <>
       <li className="breadcrumbs__item">
@@ -22,7 +21,9 @@ export default function HomeBreadcrumbItem() {
           aria-label={homeLabel}
           className="breadcrumbs__link"
           href={homeHref}
-        >{homeLabel}</Link>
+        >
+          {homeLabel}
+        </Link>
       </li>
       <li className="breadcrumbs__item">
         <Link

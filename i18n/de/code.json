@@ -550,5 +550,20 @@
   },
   "mat.button": {
     "message": "Close"
+  },
+  "feedback.did_page_help": {
+    "message": "War diese Seite hilfreich?"
+  },
+  "feedback.thank_you": {
+    "message": "Thank you for your feedback!"
+  },
+  "docs.home_page": {
+    "message": "Startseite"
+  },
+  "docs.note": {
+    "message": "Hinweis"
+  },
+  "docs.tip": {
+    "message": "Tipp"
   }
 }

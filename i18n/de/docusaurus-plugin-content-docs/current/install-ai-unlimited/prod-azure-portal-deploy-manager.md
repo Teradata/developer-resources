@@ -38,9 +38,9 @@ Wählen Sie eine Vorlage basierend darauf aus, ob und welchen Typ Sie einen [Las
 :::note
 Möglicherweise möchten Sie einen Cloud-Administrator in Ihrer Organisation um Rat fragen.
 :::
-    \- `ai-unlimited-with-alb.json` – Hostet den Manager hinter einem [Anwendungslastausgleich](../glossary.md#application-load-balancer)
-    \- `ai-unlimited-with-nlb.json` – Hostet den Manager hinter einem [Netzwerk-Lastausgleich](../glossary.md#network-load-balancer)
-    \- `ai-unlimited-without-lb.json` – Kein Lastausgleich. Wenn Sie sich nicht sicher sind, welche Vorlage Sie verwenden sollen, empfehlen wir diese.
+    - `ai-unlimited-with-alb.json` – Hostet den Manager hinter einem [application load balancer](../glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.json` – Hostet den Manager hinter einem [network load balancer](../glossary.md#network-load-balancer)
+    - `ai-unlimited-without-lb.json` – Kein Lastausgleich. Wenn Sie sich nicht sicher sind, welche Vorlage Sie verwenden sollen, empfehlen wir diese.
 
 
 ## Laden Sie die Vorlage
@@ -65,29 +65,29 @@ Möglicherweise möchten Sie einen Cloud-Administrator in Ihrer Organisation um 
 
 | Parameter | Beschreibung | Hinweise |
 |---------|-------------|-----------|
-| Abonnement | Das Azure-Abonnement, das Sie für die Bereitstellung von AI Unlimited verwenden möchten.| Erforderlich<br/>Standard: NA <br/>Dies muss ein Prepaid-Konto sein.  |
+| Subscription | Das Azure-Abonnement, das Sie für die Bereitstellung von AI Unlimited verwenden möchten.| Erforderlich<br/>Standard: NA <br/>Dies muss ein Prepaid-Konto sein.  |
 | Region | Die Region, in der Sie AI Unlimited bereitstellen möchten.| Erforderlich<br/>Standard: NA<br/>Wählen Sie die Azure-Region aus, die Ihrem Arbeitsort am nächsten liegt, und die Datenressourcen, die mit AI Unlimited verwendet werden sollen. |
-| Name der Ressourcengruppe | Der Name des Containers, der verwandte AI Unlimited-Ressourcen zusammenfasst.| Erforderlich<br/>Standard: ai-unlimited-workspace |
-| Name für AI Unlimited| Eindeutiger Name für AI Unlimited.| Erforderlich<br/>Standard: NA | 
-| Öffentlicher Schlüssel | Der öffentliche SSH-Schlüssel, den Sie verwenden können, um über SSH eine Verbindung zu einer VM herzustellen.| Erforderlich<br/>Standard: NA<br/>Dieser Wert muss mit „ssh-rsa“ beginnen. |
-| Betriebssystemversion  | Die Versionen der Betriebssysteme, die im aktuellen Abonnement verfügbar sind. | Optional mit Standard<br/>Standard: Ubuntu-2004 |
-| Instanztyp | Der Instanztyp, den Sie für AI Unlimited verwenden möchten. | Optional<br/>Standard: STANDARD_D2_V3<br/>Wir empfehlen, den Standardinstanztyp zu verwenden, um Kosten zu sparen. Der Standardinstanztyp ist die Standard-Dv3-Serie mit 2 vCPUs und 8,0 GiB Speicher.|
-| Netzwerk | Der Name des Netzwerks, in dem Sie die AI Unlimited-Instanz bereitstellen möchten.| <br/>Optional<br/>Standard: NA | 
-| Subnetz | Das Subnetzwerk, in dem Sie die AI Unlimited-Instanz bereitstellen möchten. | Erforderlich<br/>Standard: NA<br/>Das Subnetz muss sich in der ausgewählten Verfügbarkeitszone befinden. |
-| Sicherheitsgruppe | Die virtuelle Firewall, die den ein- und ausgehenden Datenverkehr zur Instanz kontrolliert. | Optional<br/>Standard: AiUnlimitedSecurityGroup<br/>Die Sicherheitsgruppe wird als Regelsatz implementiert, der angibt, welche Protokolle, Ports und IP-Adressen oder CIDR-Blöcke auf die Instanz zugreifen dürfen. Definieren Sie mindestens eine der Zugriffs-CIDR- oder Sicherheitsgruppen, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen. |
-| Zugriff auf CIDR | Der CIDR-IP-Adressbereich, der auf die Instanz zugreifen darf. | Optional<br/>Standard: 0.0.0.0/0<br/>Wir empfehlen, diesen Wert auf einen vertrauenswürdigen IP-Bereich festzulegen. Definieren Sie mindestens eine der Zugriffs-CIDR oder Sicherheitsgruppen, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen. |
-| AI Unlimited HTTP-Port | Der Port für den Zugriff auf die AI Unlimited-Benutzeroberfläche.| Erforderlich mit Standard<br/>Standard: 3000 |
-| AI Unlimited GRPC-Port | Der Port für den Zugriff auf die AI Unlimited API. | Erforderlich mit Standard<br/>Standard: 3282 | 
-| Quell-App-Sicherheitsgruppen | Die Quellanwendungssicherheitsgruppen (Application Security Groups, ASG), die die Berechtigung haben, eine Verbindung mit der AI Unlimited-Instanz herzustellen. Mit ASGs können Sie Ihre virtuellen Maschinen (VMs) basierend auf ihren spezifischen Netzwerksicherheitsrichtlinien organisieren. Diese Sicherheitsrichtlinien bestimmen, welcher Datenverkehr auf Ihrer virtuellen Maschine zulässig ist und welcher nicht. |Optional<br/>Standard: NA<br/> Wählen Sie eine Anwendungssicherheitsgruppe in derselben Region wie die Netzwerkschnittstelle. |
-| Zielanwendungssicherheitsgruppen | Die Zielanwendungssicherheitsgruppen, die über die Berechtigung verfügen, eine Verbindung mit der AI Unlimited-Instanz herzustellen. | Optional<br/>Standard: NA<br/>Wählen Sie eine Anwendungssicherheitsgruppe in derselben Region wie die Netzwerkschnittstelle. |
-| Rollendefinitions-ID | Die ID der mit AI Unlimited zu verwendenden Rolle.| Erforderlich<br/>Standard: NA<br/>Verwenden Sie den Azure CLI-Befehl Get-AzRoleDefinition, um Ihre Rollendefinitions-ID abzurufen. |
-| Öffentliches SSH zulassen | Gibt an, ob Sie Secure Shell-Schlüssel (SSH) zum Herstellen einer Verbindung mit VMs in Azure verwenden können.|  Optional<br/>Standardmäßig: true |
-| Key Vault verwenden | Gibt an, ob Key Vault zum Abrufen des sicheren Passworts während einer Bereitstellung verwendet werden soll. | Optional<br/>Standard: New |
-| Persistentes Volume verwenden | Gibt an, ob Sie zum Speichern von Daten ein neues oder vorhandenes persistentes Volume verwenden möchten. Weitere Informationen finden Sie unter *Mehr erfahren: Persistentes Volume verwenden* unter dem Parameterabschnitt. | Optional mit Standard<br/>Standard: New <br/>Unterstützte Optionen: „Neu“ oder „Vorhanden“, abhängig von Ihrem Anwendungsfall. |
-| Größe des persistenten Datenträgers | Die Größe des persistenten Datenträgers in GB, den Sie an die Instanz anhängen können. | Optional<br/>Standard: 100 |
-| Vorhandenes persistentes Volume | <br/>Die ID des vorhandenen persistenten Datenträgers, den Sie an die Instanz anhängen können.| Erforderlich, wenn UsePersistentVolume auf Vorhanden gesetzt ist.<br/>Standard: None<br/>Das persistente Volume muss sich in derselben Verfügbarkeitszone wie die AI Unlimited-Instanz befinden. |
+| Resource Group Name | Der Name des Containers, der verwandte AI Unlimited-Ressourcen zusammenfasst.| Erforderlich<br/>Standard: ai-unlimited-workspace |
+| AI Unlimited Name| Eindeutiger Name für AI Unlimited.| Erforderlich<br/>Standard: NA | 
+| Public Key | Der öffentliche SSH-Schlüssel, den Sie verwenden können, um über SSH eine Verbindung zu einer VM herzustellen.| Erforderlich<br/>Standard: NA<br/>Dieser Wert muss mit „ssh-rsa“ beginnen. |
+| OS Version  | Die Versionen der Betriebssysteme, die im aktuellen Abonnement verfügbar sind. | Optional mit Standard<br/>Standard: Ubuntu-2004 |
+| Instance Type | Der Instanztyp, den Sie für AI Unlimited verwenden möchten. | Optional<br/>Standard: STANDARD_D2_V3<br/>Wir empfehlen, den Standardinstanztyp zu verwenden, um Kosten zu sparen. Der Standardinstanztyp ist die Standard-Dv3-Serie mit 2 vCPUs und 8,0 GiB Speicher.|
+| Network | Der Name des Netzwerks, in dem Sie die AI Unlimited-Instanz bereitstellen möchten.| <br/>Optional<br/>Standard: NA | 
+| Subnet | Das Subnetzwerk, in dem Sie die AI Unlimited-Instanz bereitstellen möchten. | Erforderlich<br/>Standard: NA<br/>Das Subnetz muss sich in der ausgewählten Verfügbarkeitszone befinden. |
+| Security Group | Die virtuelle Firewall, die den ein- und ausgehenden Datenverkehr zur Instanz kontrolliert. | Optional<br/>Standard: AiUnlimitedSecurityGroup<br/>Die Sicherheitsgruppe wird als Regelsatz implementiert, der angibt, welche Protokolle, Ports und IP-Adressen oder CIDR-Blöcke auf die Instanz zugreifen dürfen. Definieren Sie mindestens eine der Zugriffs-CIDR- oder Sicherheitsgruppen, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen. |
+| Access CIDR | Der CIDR-IP-Adressbereich, der auf die Instanz zugreifen darf. | Optional<br/>Standard: 0.0.0.0/0<br/>Wir empfehlen, diesen Wert auf einen vertrauenswürdigen IP-Bereich festzulegen. Definieren Sie mindestens eine der Zugriffs-CIDR oder Sicherheitsgruppen, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen. |
+| AI Unlimited HTTP Port | Der Port für den Zugriff auf die AI Unlimited-Benutzeroberfläche.| Erforderlich mit Standard<br/>Standard: 3000 |
+| AI Unlimited GRPC Port | Der Port für den Zugriff auf die AI Unlimited API. | Erforderlich mit Standard<br/>Standard: 3282 | 
+| Source App Sec Groups | Die Quellanwendungssicherheitsgruppen (Application Security Groups, ASG), die die Berechtigung haben, eine Verbindung mit der AI Unlimited-Instanz herzustellen. Mit ASGs können Sie Ihre virtuellen Maschinen (VMs) basierend auf ihren spezifischen Netzwerksicherheitsrichtlinien organisieren. Diese Sicherheitsrichtlinien bestimmen, welcher Datenverkehr auf Ihrer virtuellen Maschine zulässig ist und welcher nicht. |Optional<br/>Standard: NA<br/> Wählen Sie eine Anwendungssicherheitsgruppe in derselben Region wie die Netzwerkschnittstelle. |
+| Destination App Sec Groups | Die Zielanwendungssicherheitsgruppen, die über die Berechtigung verfügen, eine Verbindung mit der AI Unlimited-Instanz herzustellen. | Optional<br/>Standard: NA<br/>Wählen Sie eine Anwendungssicherheitsgruppe in derselben Region wie die Netzwerkschnittstelle. |
+| Role Definition ID | Die ID der mit AI Unlimited zu verwendenden Rolle.| Erforderlich<br/>Standard: NA<br/>Verwenden Sie den Azure CLI-Befehl Get-AzRoleDefinition, um Ihre Rollendefinitions-ID abzurufen. |
+| Allow Public SSH | Gibt an, ob Sie Secure Shell-Schlüssel (SSH) zum Herstellen einer Verbindung mit VMs in Azure verwenden können.|  Optional<br/>Standardmäßig: true |
+| Use Key Vault | Gibt an, ob Key Vault zum Abrufen des sicheren Passworts während einer Bereitstellung verwendet werden soll. | Optional<br/>Standard: New |
+| Use Persistent Volume | Gibt an, ob Sie zum Speichern von Daten ein neues oder vorhandenes persistentes Volume verwenden möchten. Weitere Informationen finden Sie unter *Mehr erfahren: Persistentes Volume verwenden* unter dem Parameterabschnitt. | Optional mit Standard<br/>Standard: New <br/>Unterstützte Optionen: „Neu“ oder „Vorhanden“, abhängig von Ihrem Anwendungsfall. |
+| Persistent Volume Size | Die Größe des persistenten Datenträgers in GB, den Sie an die Instanz anhängen können. | Optional<br/>Standard: 100 |
+| Existing Persistent Volume | <br/>Die ID des vorhandenen persistenten Datenträgers, den Sie an die Instanz anhängen können.| Erforderlich, wenn UsePersistentVolume auf Vorhanden gesetzt ist.<br/>Standard: None<br/>Das persistente Volume muss sich in derselben Verfügbarkeitszone wie die AI Unlimited-Instanz befinden. |
 | AI Unlimited Version | Die Version von AI Unlimited, die Sie bereitstellen möchten. | Erforderlich mit Standard<br/>Standard: latest<br/>Der Wert ist ein Container-Versionstag. |
-|NLB verwenden| Gibt an, ob auf die Instanz über einen Netzwerk-Lastausgleich zugegriffen wird.|Erforderlich mit Standard<br/>Standard: false|
+|Use NLB| Gibt an, ob auf die Instanz über einen Network Load Balancer zugegriffen wird.|Erforderlich mit Standard<br/>Standard: false|
 | Tags | Die Schlüssel-Wert-Paare, die den Ressourcen zur schnellen Identifizierung zugewiesen werden.| Optional<br/>Standard:NA |   
 
 </details>

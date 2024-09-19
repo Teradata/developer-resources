@@ -105,7 +105,7 @@ Wählen Sie **Aktualisieren**.
 
 **Standardregion** – Die Azure-Region, in der die Engine bereitgestellt werden soll. Wir empfehlen, die Region auszuwählen, die Ihrem Data Lake am nächsten liegt.
 
-Erfahren Sie mehr über [virtuelle Azure-Netzwerke](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices).
+Erfahren Sie mehr über [Azure virtual networks](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices).
 
 
 **Standard-Netzwerkressourcengruppe** – Die Ressourcengruppe, die das Netzwerk enthält.

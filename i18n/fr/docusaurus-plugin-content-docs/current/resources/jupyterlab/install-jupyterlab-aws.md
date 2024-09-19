@@ -121,12 +121,12 @@ Si le conteneur, le pod ou le nœud tombe en panne ou s'arrête et que les donn�
 
 **Exemple**
 
-1. Déployez JupyterLab et incluez ces paramètres:
+1. Déployez JupyterLab et incluez ces paramètres&nbsp;:
    - `UsePersistentVolume`: **Nouveau**
    - `PersistentVolumeDeletionPolicy`: **Conserver**
 3. Après avoir créé la pile, dans l'onglet **Sorties**, notez le `volume-id`.
 4. Utilisez JupyterLab.
-5. Si l'instance JupyterLab est perdue, déployez à nouveau JupyterLab et incluez ces paramètres:
+5. Si l'instance JupyterLab est perdue, déployez à nouveau JupyterLab et incluez ces paramètres&nbsp;:
    - `UsePersistentVolume`: **Nouveau**
    - `PersistentVolumeDeletionPolicy`: **Conserver** 
    - `ExistingPersistentVolumeId`: la valeur que vous avez notée à l'étape&nbsp;2

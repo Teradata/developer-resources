@@ -30,7 +30,7 @@ Lastausgleichsmodule verteilen eingehenden Datenverkehr auf Server. Ein Anwendun
 
 ### Classless Inter-domain Routing
 
-Klassenloses Inter-Domain-Routing (Classless Inter-domain Routing, CIDR) ist eine Methode zur IP-Adresszuweisung für effizientes Datenrouting im Internet. Jeder Computer, der mit dem Internet verbunden ist, hat eine eindeutige Nummer, die als IP-Adresse bezeichnet wird. IP-Adressen ermöglichen es Computern, einander zu finden und zu kommunizieren. Ein CIDR-Block ist ein Bereich von IP-Adressen.
+Classless Inter-domain Routing (CIDR) ist eine Methode zur IP-Adresszuweisung für effizientes Datenrouting im Internet. Jeder Computer, der mit dem Internet verbunden ist, hat eine eindeutige Nummer, die als IP-Adresse bezeichnet wird. IP-Adressen ermöglichen es Computern, einander zu finden und zu kommunizieren. Ein CIDR-Block ist ein Bereich von IP-Adressen.
 
 ### cloud service provider
 
@@ -59,7 +59,7 @@ Beim Cloud-Computing ist eine Compute-Engine ein Beispiel für Infrastructure as
 
 ### IAM role
 
-Eine [2Identity and Access Management (IAM)-Rolle](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) ist eine Rolle, die Sie oder ein Cloud-Administrator in Ihrer Organisation im AWS-Konto Ihrer Organisation erstellen können. Es sind eine oder mehrere Berechtigungsrichtlinien angehängt, die bestimmen, was eine Entität mit dieser Rolle in AWS tun kann und was nicht.
+Eine [Identity and Access Management (IAM)-Rolle](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) ist eine Rolle, die Sie oder ein Cloud-Administrator in Ihrer Organisation im AWS-Konto Ihrer Organisation erstellen können. Es sind eine oder mehrere Berechtigungsrichtlinien angehängt, die bestimmen, was eine Entität mit dieser Rolle in AWS tun kann und was nicht.
 
 
 ## K

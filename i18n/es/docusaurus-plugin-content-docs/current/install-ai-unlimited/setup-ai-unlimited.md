@@ -105,7 +105,7 @@ Seleccione **Actualizar**.
 
 **Región predeterminada**: la región de Azure en la que se implementará el motor. Recomendamos elegir la región más cercana a su data lake.
 
-Obtenga más información sobre [redes virtuales de Azure](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices).
+Obtenga más información sobre [Azure virtual networks](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices).
 
 
 **Grupo de recursos de red predeterminado**: el grupo de recursos que contiene la red.

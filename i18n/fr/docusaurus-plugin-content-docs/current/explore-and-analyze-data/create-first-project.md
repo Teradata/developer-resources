@@ -36,11 +36,11 @@ Pour votre premier projet, en utilisant les données que nous fournissons, vous 
   - Ces variables d'environnement :   
     <Tabs>
     <TabItem value="aws" label="AWS" default>
-    `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` et `AWS_SESSION_TOKEN`
+    `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, et `AWS_SESSION_TOKEN`
 
     </TabItem>
     <TabItem value="azure" label="Azure">
-    `ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID` et `ARM_CLIENT_SECRET`
+    `ARM_SUBSCRIPTION_ID`, `ARM_CLIENT_ID`, et `ARM_CLIENT_SECRET`
 
     </TabItem>
     </Tabs> 

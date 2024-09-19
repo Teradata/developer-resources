@@ -53,7 +53,7 @@ Nous vous recommandons d'utiliser [Transport Layer Security (TLS)](../glossary.m
 
 - Si vous utilisez un [application load balancer (ALB)](../glossary.md#application-load-balancer), avec la terminaison de certification activée, sélectionnez **Faux**.
 
-- Si vous utilisez un [network load balancer (NLB)](../glossary.md#network-load-balancer) ou aucun équilibreur de charge, sélectionnez **Vrai.**
+- Si vous utilisez un [network load balancer (NLB)](../glossary.md#network-load-balancer) ou aucun équilibreur de charge, sélectionnez **Vrai**
 ..
 	- **Certificat TLS AI Unlimited** et **Clé de certificat TLS AI Unlimited**&nbsp;: si vous disposez d'un certificat émis par une autorité de certification (CA) de confiance, vous pouvez le fournir ainsi que sa clé. Vous serez responsable de la gestion du cycle de vie du certificat, y compris du renouvellement et de la validation. Si vous avez des exigences spécifiques ou si vous avez besoin de plus de contrôle sur vos certificats, apporter le vôtre est une bonne option.
 

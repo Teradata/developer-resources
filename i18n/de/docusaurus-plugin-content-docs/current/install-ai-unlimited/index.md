@@ -60,7 +60,7 @@ Abonnieren Sie AI Unlimited im [AWS Marketplace](http://aws.amazon.com/marketpla
     az vm image terms accept --publisher teradata --offer ai-unlimited-vm --plan ai-unlimited-image
 	```
 
-Kehren Sie für AWS oder Azure nach dem Abonnieren zu dieser Dokumentationsseite zurück und fahren Sie mit **Wie geht es weiter?** fort.
+Kehren Sie für AWS oder Azure nach dem Abonnieren zu dieser Dokumentationsseite zurück und fahren Sie mit **Wie geht es weiter** fort.
 
 
 ## Wie geht es weiter?

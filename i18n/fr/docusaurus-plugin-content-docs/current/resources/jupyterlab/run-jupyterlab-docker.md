@@ -62,7 +62,7 @@ Clonez le référentiel.
 
 	Et identifiez le nom du conteneur JupyterLab.
 
-	Ensuite, recherchez les occurrences de la chaîne « Jeton » dans les journaux du conteneur.
+	Ensuite, recherchez les occurrences de la chaîne 'Jeton' dans les journaux du conteneur.
 
 	```bash
 	docker logs <container_name> | grep 'Token'

@@ -550,5 +550,20 @@
   },
   "mat.button": {
     "message": "閉じる"
-  } 
+  },
+  "feedback.did_page_help": {
+    "message": "Did this page help?"
+  },
+  "feedback.thank_you": {
+    "message": "Thank you for your feedback!"
+  },
+  "docs.home_page": {
+    "message": "ホームページ"
+  },
+  "docs.note": {
+    "message": "注記"
+  },
+  "docs.tip": {
+    "message": "ヒント"
+  }
 }

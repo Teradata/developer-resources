@@ -550,5 +550,20 @@
   },
   "mat.button": {
     "message": "Close"
+  },
+  "feedback.did_page_help": {
+    "message": "이 페이지가 도움이 되셨습니까?"
+  },
+  "feedback.thank_you": {
+    "message": "Thank you for your feedback!"
+  },
+  "docs.home_page": {
+    "message": "홈"
+  },
+  "docs.note": {
+    "message": "노트"
+  },
+  "docs.tip": {
+    "message": "팁"
   }
 }

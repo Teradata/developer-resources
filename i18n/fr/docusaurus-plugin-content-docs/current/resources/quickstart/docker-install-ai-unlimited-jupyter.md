@@ -117,7 +117,7 @@ Ce Guide de démarrage rapide utilise la première méthode.
 	```
 	Et identifiez le nom du conteneur JupyterLab.
 
-	Recherchez ensuite les occurrences de la chaîne « Jeton » dans les journaux du conteneur.
+	Recherchez ensuite les occurrences de la chaîne 'Jeton' dans les journaux du conteneur.
 
 	```bash
 	docker logs <container_name> | grep 'Token'

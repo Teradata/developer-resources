@@ -65,30 +65,30 @@ Examinez les paramètres. Fournissez des valeurs pour les paramètres obligatoir
 
 | Paramètre | Description | Notes |
 |---------|-------------|-----------|
-| Abonnement | L'abonnement Azure que vous souhaitez utiliser pour déployer AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA <br/>Il doit s'agir d'un compte de paiement à l'utilisation.  |
-| Région | La région dans laquelle vous souhaitez déployer AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA<br/>Sélectionnez la région Azure la plus proche de votre lieu de travail et les ressources de données à utiliser avec AI Unlimited. |
-| Nom du groupe de ressources | Le nom du conteneur qui regroupe les ressources AI Unlimited associées.| Obligatoire<br/>Par défaut&nbsp;: ai-unlimited-workspace |
-| Nom d'AI Unlimited| Nom unique donné à AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA | 
-| Clé publique | La clé SSH publique que vous pouvez utiliser pour vous connecter à une VM via SSH.| Obligatoire<br/>Par défaut : NA<br/>Cette valeur doit commencer par `ssh-rsa`. |
-| Version du système d'exploitation  | Les versions des systèmes d'exploitation disponibles dans l'abonnement actuel. | Facultatif avec la valeur par défaut<br/>Par défaut&nbsp;: Ubuntu-2004 |
-| Type d'instance | Le type d'instance que vous souhaitez utiliser pour AI Unlimited. | Facultatif<br/>Par défaut&nbsp;: STANDARD_D2_V3<br/>Nous vous recommandons d'utiliser le type d'instance par défaut pour réduire les coûts. Le type d'instance par défaut est la série Dv3 standard avec 2&nbsp;vCPU et 8,0&nbsp;Gio de mémoire.|
-| Réseau | Le nom du réseau sur lequel vous souhaitez déployer l'instance AI Unlimited.| <br/>Facultatif<br/>Par défaut&nbsp;: NA | 
-| Sous-réseau | Le sous-réseau sur lequel vous souhaitez déployer l'instance AI Unlimited. | Obligatoire<br/>Par défaut&nbsp;: NA<br/>Le sous-réseau doit résider dans la zone de disponibilité sélectionnée. |
-| Groupe de sécurité | Le pare-feu virtuel qui contrôle le trafic entrant et sortant vers l'instance. | Facultatif<br/>Par défaut&nbsp;: AiUnlimitedSecurityGroup<br/>Le groupe de sécurité est implémenté sous la forme d'un ensemble de règles qui spécifient les protocoles, les ports et les adresses IP ou les blocs CIDR autorisés à accéder à l'instance. Définissez au moins un accès CIDR ou un groupe de sécurité pour autoriser le trafic entrant, sauf si vous créez des règles d'entrée de groupe de sécurité personnalisées. |
-| Accéder à CIDR | La plage d'adresses IP CIDR autorisée à accéder à l'instance. | Facultatif<br/>Par défaut&nbsp;: 0.0.0.0/0<br/>Nous vous recommandons de définir cette valeur sur une plage d'adresses IP approuvées. Définissez au moins un CIDR d'accès ou un groupe de sécurité pour autoriser le trafic entrant, sauf si vous créez des règles d'entrée de groupe de sécurité personnalisées. |
-| Port HTTP d'AI Unlimited | Le port pour accéder à l'interface utilisateur AI Unlimited.| Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: 3&nbsp;000 |
-| Port GRPC d'AI Unlimited | Le port pour accéder à l'API AI Unlimited. | Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: 3&nbsp;282 | 
-| Groupes de sécurité des applications sources | Les groupes de sécurité des applications sources (ASG) qui ont l'autorisation de se connecter à l'instance AI Unlimited. Les ASG vous permettent d'organiser vos machines virtuelles (VM) en fonction de leurs stratégies de sécurité réseau spécifiques. Ces stratégies de sécurité déterminent le trafic autorisé ou non sur votre machine virtuelle. |Facultatif<br/>Par défaut&nbsp;: NA<br/> Sélectionnez un groupe de sécurité des applications dans la même région que l'interface réseau. |
-| Groupes de sécurité des applications de destination | Les groupes de sécurité des applications de destination qui ont l'autorisation de se connecter à l'instance AI Unlimited. | Facultatif<br/>Par défaut&nbsp;: NA<br/>Sélectionnez un groupe de sécurité des applications dans la même région que l'interface réseau. |
-| ID de définition de rôle | L'ID du rôle à utiliser avec AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA<br/>Utilisez la commande Azure CLI&nbsp;- Get-AzRoleDefinition pour obtenir votre ID de définition de rôle. |
-| Autoriser le SSH public | Spécifie si vous pouvez utiliser des clés Secure Shell (SSH) pour vous connecter aux VM dans Azure.|  Facultatif<br/>Par défaut&nbsp;: vrai |
-| Utiliser le coffre de clés | Spécifie s'il faut utiliser le coffre de clés pour récupérer le mot de passe sécurisé lors d'un déploiement. | Facultatif<br/>Par défaut&nbsp;: Nouveau |
-| Utiliser le volume persistant | Indique si vous souhaitez utiliser un volume persistant nouveau ou existant pour stocker des données. Consultez *En savoir plus&nbsp;: Utilisation d'un volume persistant* sous la section Paramètres. | Facultatif avec valeur par défaut<br/>Par défaut&nbsp;: Nouveau <br/>Options prises en charge&nbsp;: Nouveau ou Existant, selon votre cas d'utilisation. |
-| Taille du volume persistant | La taille du volume persistant que vous pouvez associer à l'instance, en Go. | Facultatif<br/>Par défaut&nbsp;: 100 |
-| Volume persistant existant | <br/>L'ID du volume persistant existant que vous pouvez associer à l'instance.| Obligatoire si UsePersistentVolume est défini sur Existant.<br/>Par défaut&nbsp;: Aucun<br/>Le volume persistant doit se trouver dans la même zone de disponibilité que l'instance AI Unlimited. |
-| Version d'AI Unlimited | La version d'AI Unlimited que vous souhaitez déployer. | Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: dernière<br/>La valeur est une balise de version de conteneur. |
-|Utiliser NLB| Spécifie si l'instance est accessible à l'aide d'un Network Load Balancer.|Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: faux|
-| Balises | Les paires clé-valeur attribuées aux ressources pour une identification rapide.| Facultatif<br/>Par défaut&nbsp;:&nbsp;NA |   
+| Subscription | L'abonnement Azure que vous souhaitez utiliser pour déployer AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA <br/>Il doit s'agir d'un compte de paiement à l'utilisation.  |
+| Region | La région dans laquelle vous souhaitez déployer AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA<br/>Sélectionnez la région Azure la plus proche de votre lieu de travail et les ressources de données à utiliser avec AI Unlimited. |
+| Resource Group Name | Le nom du conteneur qui regroupe les ressources AI Unlimited associées.| Obligatoire<br/>Par défaut&nbsp;: ai-unlimited-workspace |
+| AI Unlimited Name| Nom unique donné à AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA | 
+| Public Key | La clé SSH publique que vous pouvez utiliser pour vous connecter à une VM via SSH.| Obligatoire<br/>Par défaut : NA<br/>Cette valeur doit commencer par “ssh-rsa”. |
+| OS Version  | Les versions des systèmes d'exploitation disponibles dans l'abonnement actuel. | Facultatif avec la valeur par défaut<br/>Par défaut&nbsp;: Ubuntu-2004 |
+| Instance Type | Le type d'instance que vous souhaitez utiliser pour AI Unlimited. | Facultatif<br/>Par défaut&nbsp;: STANDARD_D2_V3<br/>Nous vous recommandons d'utiliser le type d'instance par défaut pour réduire les coûts. Le type d'instance par défaut est la série Dv3 standard avec 2&nbsp;vCPU et 8,0&nbsp;Gio de mémoire.|
+| Network | Le nom du réseau sur lequel vous souhaitez déployer l'instance AI Unlimited.| <br/>Facultatif<br/>Par défaut&nbsp;: NA | 
+| Subnet | Le sous-réseau sur lequel vous souhaitez déployer l'instance AI Unlimited. | Obligatoire<br/>Par défaut&nbsp;: NA<br/>Le sous-réseau doit résider dans la zone de disponibilité sélectionnée. |
+| Security Group | Le pare-feu virtuel qui contrôle le trafic entrant et sortant vers l'instance. | Facultatif<br/>Par défaut&nbsp;: AiUnlimitedSecurityGroup<br/>Le groupe de sécurité est implémenté sous la forme d'un ensemble de règles qui spécifient les protocoles, les ports et les adresses IP ou les blocs CIDR autorisés à accéder à l'instance. Définissez au moins un accès CIDR ou un groupe de sécurité pour autoriser le trafic entrant, sauf si vous créez des règles d'entrée de groupe de sécurité personnalisées. |
+| Access CIDR | La plage d'adresses IP CIDR autorisée à accéder à l'instance. | Facultatif<br/>Par défaut&nbsp;: 0.0.0.0/0<br/>Nous vous recommandons de définir cette valeur sur une plage d'adresses IP approuvées. Définissez au moins un CIDR d'accès ou un groupe de sécurité pour autoriser le trafic entrant, sauf si vous créez des règles d'entrée de groupe de sécurité personnalisées. |
+| AI Unlimited HTTP Port | Le port pour accéder à l'interface utilisateur AI Unlimited.| Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: 3&nbsp;000 |
+| AI Unlimited GRPC Port | Le port pour accéder à l'API AI Unlimited. | Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: 3&nbsp;282 | 
+| Source App Sec Groups | Les groupes de sécurité des applications sources (ASG) qui ont l'autorisation de se connecter à l'instance AI Unlimited. Les ASG vous permettent d'organiser vos machines virtuelles (VM) en fonction de leurs stratégies de sécurité réseau spécifiques. Ces stratégies de sécurité déterminent le trafic autorisé ou non sur votre machine virtuelle. |Facultatif<br/>Par défaut&nbsp;: NA<br/> Sélectionnez un groupe de sécurité des applications dans la même région que l'interface réseau. |
+| Destination App Sec Groups | Les groupes de sécurité des applications de destination qui ont l'autorisation de se connecter à l'instance AI Unlimited. | Facultatif<br/>Par défaut&nbsp;: NA<br/>Sélectionnez un groupe de sécurité des applications dans la même région que l'interface réseau. |
+| Role Definition ID | L'ID du rôle à utiliser avec AI Unlimited.| Obligatoire<br/>Par défaut&nbsp;: NA<br/>Utilisez la commande Azure CLI&nbsp;- Get-AzRoleDefinition pour obtenir votre ID de définition de rôle. |
+| Allow Public SSH | Spécifie si vous pouvez utiliser des clés Secure Shell (SSH) pour vous connecter aux VM dans Azure.|  Facultatif<br/>Par défaut&nbsp;: vrai |
+| Use Key Vault | Spécifie s'il faut utiliser le coffre de clés pour récupérer le mot de passe sécurisé lors d'un déploiement. | Facultatif<br/>Par défaut&nbsp;: Nouveau |
+| Use Persistent Volume | Indique si vous souhaitez utiliser un volume persistant nouveau ou existant pour stocker des données. Consultez *En savoir plus&nbsp;: Utilisation d'un volume persistant* sous la section Paramètres. | Facultatif avec valeur par défaut<br/>Par défaut&nbsp;: Nouveau <br/>Options prises en charge&nbsp;: Nouveau ou Existant, selon votre cas d'utilisation. |
+| Persistent Volume Size | La taille du volume persistant que vous pouvez associer à l'instance, en Go. | Facultatif<br/>Par défaut&nbsp;: 100 |
+| Existing Persistent Volume | <br/>L'ID du volume persistant existant que vous pouvez associer à l'instance.| Obligatoire si UsePersistentVolume est défini sur Existant.<br/>Par défaut&nbsp;: Aucun<br/>Le volume persistant doit se trouver dans la même zone de disponibilité que l'instance AI Unlimited. |
+| AI Unlimited Version | La version d'AI Unlimited que vous souhaitez déployer. | Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: dernière<br/>La valeur est une balise de version de conteneur. |
+|Use NLB| Spécifie si l'instance est accessible à l'aide d'un Network Load Balancer.|Obligatoire avec la valeur par défaut<br/>Par défaut&nbsp;: faux|
+| Tags | Les paires clé-valeur attribuées aux ressources pour une identification rapide.| Facultatif<br/>Par défaut&nbsp;:&nbsp;NA |   
 
 </details>
 
@@ -110,12 +110,12 @@ Si le conteneur, le pod ou le nœud tombe en panne ou s'arrête et que les donn�
 
 **Exemple**
 
-1. Déployez le gestionnaire et définissez le paramètre `Utiliser le volume persistant` sur **Nouveau**.
+1. Déployez le gestionnaire et définissez le paramètre `Use Persistent Volume` sur **Nouveau**.
 2. Après avoir créé la pile, sur la page **Sorties**, notez le `volume-id`.
 3. Utilisez AI Unlimited.
-4. Si l'instance du gestionnaire est perdue, déployez à nouveau le gestionnaire et incluez ces paramètres:
-   - `Utiliser le volume persistant`: **Nouveau**
-   - `Volume persistant existant`: la valeur que vous avez notée à l'étape&nbsp;2
+4. Si l'instance du gestionnaire est perdue, déployez à nouveau le gestionnaire et incluez ces paramètres&nbsp;:
+   - `Use Persistent Volume`: **Nouveau**
+   - `Existing Persistent Volume`: la valeur que vous avez notée à l'étape&nbsp;2
    
 La nouvelle instance du gestionnaire a la même configuration que celle qui a été perdue.
 

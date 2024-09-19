@@ -46,9 +46,9 @@ Wählen Sie eine Vorlage basierend darauf aus, ob und welchen Typ Sie einen [Las
 :::note
 Möglicherweise möchten Sie einen Cloud-Administrator in Ihrer Organisation um Rat fragen.
 :::
-    \- `jupyter-alb.yaml` – Hostet JupyterLab hinter einem [Anwendungslastausgleich](../../glossary.md#application-load-balancer)
-    \- `jupyter-with-nlb.yaml` – Hostet JupyterLab hinter einem [Netzwerk-Lastausgleich](../../glossary.md#network-load-balancer)
-    \- `jupyter-without-lb.yaml` – Kein Lastausgleich
+    - `jupyter-alb.yaml` – Hostet JupyterLab hinter einem [application load balancer](../../glossary.md#application-load-balancer)
+    - `jupyter-with-nlb.yaml` – Hostet JupyterLab hinter einem [network load balancer](../../glossary.md#network-load-balancer)
+    - `jupyter-without-lb.yaml` – Kein Lastausgleich
 
 
 ## Laden Sie die Vorlage	
@@ -88,7 +88,7 @@ Möglicherweise möchten Sie einen Cloud-Administrator in Ihrer Organisation um 
 |Private	|Gibt an, ob der Dienst in einem privaten Netzwerk ohne öffentliche IPs bereitgestellt wird.| Erforderlich<br/>Standard: false<br/>Stellen Sie sicher, dass Sie die Option „Automatische Zuweisung öffentlicher IPv4-Adressen aktivieren“ im Subnetz auswählen, in dem sich der Manager befindet. Wenn diese Option nicht ausgewählt ist, kann die Installation fehlschlagen.|
 |Session	|Gibt an, ob Sie den AWS Session Manager für den Zugriff auf die Instanz verwenden können.| Erforderlich<br/>Standard: false |
 |Vpc		|Das Netzwerk, in dem Sie die Instanz bereitstellen möchten.|Erforderlich<br/>Standard: NA|
-|Subnetz	|Das Subnetz, in dem Sie die Instanz bereitstellen möchten. |Erforderlich<br/>Standard: NA<br/>Das Subnetz muss sich in der ausgewählten Verfügbarkeitszone befinden.|
+|Subnet	|Das Subnetz, in dem Sie die Instanz bereitstellen möchten. |Erforderlich<br/>Standard: NA<br/>Das Subnetz muss sich in der ausgewählten Verfügbarkeitszone befinden.|
 |KeyName		|Das öffentliche/private Schlüsselpaar, mit dem Sie nach dem Start eine sichere Verbindung zu Ihrer Instanz herstellen können. Wenn Sie ein AWS-Konto erstellen, ist dies das Schlüsselpaar, das Sie in Ihrer bevorzugten Region erstellen.| Optional<br/>Standard: NA<br/>Lassen Sie dieses Feld leer, wenn Sie die SSH-Schlüssel nicht einschließen möchten.|
 |AccessCIDR	|Der CIDR-IP-Adressbereich, der auf die Instanz zugreifen darf.| Optional<br/>Standard: NA<br/>Wir empfehlen, diesen Wert auf einen vertrauenswürdigen IP-Bereich festzulegen. Definieren Sie mindestens eine der Optionen „AccessCIDR“, „PrefixList“ oder „SecurityGroup“, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen.|
 |PrefixList			| Die PrefixList, die Sie zur Kommunikation mit der Instanz verwenden können. Es handelt sich um eine Sammlung von CIDR-Blöcken, die eine Reihe von IP-Adressbereichen definieren, für die dieselbe Richtliniendurchsetzung erforderlich ist. | Optional<br/>Standard: NA<br/>Definieren Sie mindestens eine der Optionen „AccessCIDR“, „PrefixList“ oder „SecurityGroup“, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen.|

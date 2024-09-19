@@ -38,9 +38,9 @@ Wählen Sie eine Vorlage basierend darauf aus, ob und welchen Typ Sie einen [Las
 :::note
 Möglicherweise möchten Sie einen Cloud-Administrator in Ihrer Organisation um Rat fragen.
 :::
-    \- `ai-unlimited-with-alb.yaml` – Hostet den Manager hinter einem [Anwendungslastausgleich](../glossary.md#application-load-balancer)
-    \- `ai-unlimited-with-nlb.yaml` – Hostet den Manager hinter einem [Netzwerk-Lastausgleich](../glossary.md#network-load-balancer)
-    \- `ai-unlimited-without-lb.yaml` – Kein Lastausgleich. Wenn Sie sich nicht sicher sind, welche Vorlage Sie verwenden sollen, empfehlen wir diese.
+    - `ai-unlimited-with-alb.yaml` – Hostet den Manager hinter einem [application load balancer](../glossary.md#application-load-balancer)
+    - `ai-unlimited-with-nlb.yaml` – Hostet den Manager hinter einem [network load balancer](../glossary.md#network-load-balancer)
+    - `ai-unlimited-without-lb.yaml` – Kein Lastausgleich. Wenn Sie sich nicht sicher sind, welche Vorlage Sie verwenden sollen, empfehlen wir diese.
 
 
 ## Laden Sie die Vorlage	
@@ -72,7 +72,7 @@ Wir empfehlen, die Region auszuwählen, die Ihrem primären Arbeitsort am nächs
  
 | Parameter | Beschreibung | Hinweise | 
 |---------|-------------|-----------|
-| Stapelname	| Die Kennung, mit der Sie den AI Unlimited-Stapel in einer Stapelliste finden können. |Erforderlich<br/>Standard: NA<br/> Der Name darf nur alphanumerische Zeichen (Groß-/Kleinschreibung beachten) und Bindestriche enthalten. Er muss mit einem alphabetischen Zeichen beginnen und darf nicht länger als 128 Zeichen sein.| | Der Name darf nur alphanumerische Zeichen (Groß-/Kleinschreibung beachten) und Bindestriche enthalten. Er muss mit einem alphabetischen Zeichen beginnen und darf nicht länger als 128 Zeichen sein.|
+| Stack name	| Die Kennung, mit der Sie den AI Unlimited-Stapel in einer Stapelliste finden können. |Erforderlich<br/>Standard: NA<br/> Der Name darf nur alphanumerische Zeichen (Groß-/Kleinschreibung beachten) und Bindestriche enthalten. Er muss mit einem alphabetischen Zeichen beginnen und darf nicht länger als 128 Zeichen sein.| | Der Name darf nur alphanumerische Zeichen (Groß-/Kleinschreibung beachten) und Bindestriche enthalten. Er muss mit einem alphabetischen Zeichen beginnen und darf nicht länger als 128 Zeichen sein.|
 |AiUnlimitedName| Der Name der AI Unlimited-Instanz. |Erforderlich mit Standard<br/>Standard: ai-unlimited<br/>Der Name darf nur alphanumerische Zeichen (Groß-/Kleinschreibung beachten) und Bindestriche enthalten. Er muss mit einem alphabetischen Zeichen beginnen und darf nicht länger als 20 Zeichen sein.|
 | InstanceType | Der EC2-Instanztyp für den Manager. |Erforderlich mit Standard<br/>Standard: t3.micro<br/> **WICHTIG**: Wenn die Instanz nicht die richtige Größe hat, können Fehler beim Bereitstellen und Anhalten der Engine auftreten und Sie müssen den Manager auf einer größeren Instanz neu installieren.  Siehe *Mehr erfahren: Empfehlungen zum Manager-Instanztyp (Größe)* unter dem Abschnitt „Parameter“. |
 | RootVolumeSize | Die Größe der Root-Festplatte in GB, die Sie an die Instanz anhängen möchten. | Erforderlich mit Standard<br/>Standard: 20<br/>Unterstützt Werte zwischen 8 und 1000. |
@@ -89,7 +89,7 @@ Wir empfehlen, die Region auszuwählen, die Ihrem primären Arbeitsort am nächs
 |Private	|Gibt an, ob der Dienst in einem privaten Netzwerk ohne öffentliche IPs bereitgestellt wird.|Erforderlich<br/>Standard: false <br/>Stellen Sie sicher, dass Sie die Option „Automatische Zuweisung öffentlicher IPv4-Adressen aktivieren“ im Subnetz auswählen, in dem sich der Manager befindet. Wenn diese Option nicht ausgewählt ist, kann die Installation fehlschlagen.|
 |Session	|Gibt an, ob Sie den AWS Session Manager für den Zugriff auf die Instanz verwenden können.|Erforderlich<br/>Standard: false |
 |Vpc		|Das Netzwerk, in dem Sie die Instanz bereitstellen möchten.|Erforderlich<br/>Standard: NA|
-|Subnetz	|Das Subnetz, in dem Sie die Instanz bereitstellen möchten.|Erforderlich<br/>Standard: NA<br/>Das Subnetz muss sich in der ausgewählten Verfügbarkeitszone befinden.|
+|Subnet	|Das Subnetz, in dem Sie die Instanz bereitstellen möchten.|Erforderlich<br/>Standard: NA<br/>Das Subnetz muss sich in der ausgewählten Verfügbarkeitszone befinden.|
 |KeyName		|Das öffentliche/private Schlüsselpaar, mit dem Sie nach dem Start eine sichere Verbindung zu Ihrer Instanz herstellen können. Wenn Sie ein AWS-Konto erstellen, ist dies das Schlüsselpaar, das Sie in Ihrer bevorzugten Region erstellen.|Optional<br/>Standard: NA<br/>Lassen Sie dieses Feld leer, wenn Sie die SSH-Schlüssel nicht einschließen möchten.|
 |AccessCIDR	|Der CIDR-IP-Adressbereich, der auf die Instanz zugreifen darf. |Optional<br/>Standard: NA<br/>Wir empfehlen, diesen Wert auf einen vertrauenswürdigen IP-Bereich festzulegen. Definieren Sie mindestens eine der Optionen „AccessCIDR“, „PrefixList“ oder „SecurityGroup“, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Eingangsregeln für Sicherheitsgruppen erstellen.|
 |PrefixList	|Die PrefixList, die Sie zur Kommunikation mit der Instanz verwenden können. Es handelt sich um eine Sammlung von CIDR-Blöcken, die eine Reihe von IP-Adressbereichen definieren, für die dieselbe Richtliniendurchsetzung erforderlich ist.|Optional<br/>Standard: NA<br/>Definieren Sie mindestens eine der Optionen AccessCIDR, PrefixList oder SecurityGroup, um eingehenden Datenverkehr zuzulassen, sofern Sie keine benutzerdefinierten Regeln für den eingehenden Datenverkehr für Sicherheitsgruppen erstellen. Achten Sie darauf, den Namen der PrefixList und nicht die ID einzugeben.|
