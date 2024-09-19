@@ -100,6 +100,26 @@ For example, arn:aws:iam::123456789012:policy/ExamplePermissionsBoundary.
 
 <TabItem value="azure" label="Azure">
 
+**Network resource group**
+
+The name can include only alphanumeric, underscore, parentheses, hyphen, and period (except at the end) characters, and Unicode for those characters.
+
+**Virtual network**
+
+The name must begin with a letter or number, and end with a letter, number, or underscore. It can contain only letters, numbers, underscores, periods, and hyphens.
+
+**Subnet**
+
+The name must begin with a letter or number, and end with a letter, number, or underscore. It can contain only letters, numbers, underscores, periods, and hyphens.
+
+**Key vault resource group**
+
+The name can include only alphanumeric, underscore, parentheses, hyphen, and period (except at the end) characters, and Unicode for those characters.
+
+**Key vault**
+
+The name must have 3-24 alphanumeric characters. It must begin with a letter, end with a letter or number, and not contain consecutive hyphens.
+
 **Inbound security: Application security group names**
 
 If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group to ensure that AI Unlimited can communicate with the engine.
