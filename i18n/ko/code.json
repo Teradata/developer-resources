@@ -557,13 +557,13 @@
   "feedback.thank_you": {
     "message": "피드백을 주셔서 감사합니다."
   },
-  "docs.home_page": {
-    "message": "홈"
-  },
   "theme.admonition.note": {
     "message": "노트"
   },
   "theme.admonition.tip": {
     "message": "팁"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "홈"
   }
 }

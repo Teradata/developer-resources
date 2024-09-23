@@ -557,13 +557,13 @@
   "feedback.thank_you": {
     "message": "ご意見ありがとうございます。"
   },
-  "docs.home_page": {
-    "message": "ホームページ"
-  },
   "theme.admonition.note": {
     "message": "注記"
   },
   "theme.admonition.tip": {
     "message": "ヒント"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "ホームページ"
   }
 }

@@ -8,7 +8,8 @@ export default function HomeBreadcrumbItem() {
   const homeHref = useBaseUrl('/');
   const activePlugin = useActivePlugin(undefined);
   const homeLabel = translate({
-    message: 'docs.home_page',
+    id: 'theme.docs.breadcrumbs.home',
+    message: 'Home',
   });
   const docsLabel = translate({
     id: `theme.docs.breadcrumbs.${activePlugin?.pluginId}`,

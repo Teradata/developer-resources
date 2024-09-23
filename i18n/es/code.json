@@ -557,13 +557,13 @@
   "feedback.thank_you": {
     "message": "¡Gracias por sus comentarios!"
   },
-  "docs.home_page": {
-    "message": "Página de Inicio"
-  },
   "theme.admonition.note": {
     "message": "Nota"
   },
   "theme.admonition.tip": {
     "message": "Sugerencia"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Página de Inicio"
   }
 }

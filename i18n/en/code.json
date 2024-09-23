@@ -558,13 +558,13 @@
   "feedback.thank_you": {
     "message": "Thank you for your feedback!"
   },
-  "docs.home_page": {
-    "message": "Home page"
-  },
   "theme.admonition.note": {
     "message": "Note"
   },
   "theme.admonition.tip": {
     "message": "Tip"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page"
   }
 }
