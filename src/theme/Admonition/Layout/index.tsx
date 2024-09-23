@@ -1,4 +1,4 @@
-import React, { ReactElement, type ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import { ThemeClassNames } from '@docusaurus/theme-common';
 

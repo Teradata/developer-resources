@@ -6,6 +6,10 @@ import { translate } from '@docusaurus/Translate';
 
 export default function FeedbackComponent() {
   const location = useLocation();
+
+  const feedbackLabel = translate({ message: 'feedback.did_page_help' });
+  const thankYouLabel = translate({ message: 'feedback.thank_you' });
+
   const handleFeedback = (feedback) => {
     const articleUrl = location.pathname;
     if (typeof window !== 'undefined' && window.gtag) {
@@ -25,8 +29,8 @@ export default function FeedbackComponent() {
         return (
           <div className={clsx(styles.feedbackContainer)}>
             <Feedback
-              label={translate({ message: 'feedback.did_page_help' })}
-              labelForFeedback={translate({ message: 'feedback.thank_you' })}
+              label={feedbackLabel}
+              labelForFeedback={thankYouLabel}
               onFeedBack={handleFeedback}
             />
           </div>
