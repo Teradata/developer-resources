@@ -555,15 +555,15 @@
     "message": "Did this page help?"
   },
   "feedback.thank_you": {
-    "message": "Thank you for your feedback!"
+    "message": "ご意見ありがとうございます。"
   },
   "docs.home_page": {
     "message": "ホームページ"
   },
-  "docs.note": {
+  "theme.admonition.note": {
     "message": "注記"
   },
-  "docs.tip": {
+  "theme.admonition.tip": {
     "message": "ヒント"
   }
 }

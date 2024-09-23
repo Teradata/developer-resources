@@ -561,10 +561,10 @@
   "docs.home_page": {
     "message": "Home page"
   },
-  "docs.note": {
+  "theme.admonition.note": {
     "message": "Note"
   },
-  "docs.tip": {
+  "theme.admonition.tip": {
     "message": "Tip"
   }
 }

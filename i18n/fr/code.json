@@ -555,15 +555,15 @@
     "message": "Cette page vous a-t-elle été utile?"
   },
   "feedback.thank_you": {
-    "message": "Thank you for your feedback!"
+    "message": "Nous vous remercions de vos commentaires !"
   },
   "docs.home_page": {
     "message": "Page d'accueil"
   },
-  "docs.note": {
+  "theme.admonition.note": {
     "message": "Remarque"
   },
-  "docs.tip": {
+  "theme.admonition.tip": {
     "message": "Astuce"
   }
 }

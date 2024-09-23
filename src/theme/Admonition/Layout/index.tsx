@@ -5,7 +5,6 @@ import { ThemeClassNames } from '@docusaurus/theme-common';
 import type { Props } from '@theme/Admonition/Layout';
 
 import styles from './styles.module.css';
-import Translate from '@docusaurus/Translate';
 
 function AdmonitionContainer({
   type,
@@ -43,8 +42,6 @@ function AdmonitionContent({ children }: Pick<Props, 'children'>) {
 
 export default function AdmonitionLayout(props: Props): JSX.Element {
   const { type, icon, title, children, className } = props;
-  const { props: titleProps } = title as ReactElement;
-  const translatedTitle = <Translate id={`docs.${titleProps.children}`} />;
 
   return (
     <AdmonitionContainer
@@ -53,7 +50,7 @@ export default function AdmonitionLayout(props: Props): JSX.Element {
     >
       <span className={styles.admonitionIcon}>{icon}</span>
       <span className={styles.admonitionContentWrapper}>
-        <AdmonitionHeading title={translatedTitle} />
+        <AdmonitionHeading title={title} />
         <AdmonitionContent>{children}</AdmonitionContent>
       </span>
     </AdmonitionContainer>
