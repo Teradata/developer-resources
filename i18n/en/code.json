@@ -551,5 +551,20 @@
   },
   "mat.button": {
     "message": "Close"
-  }      
+  },
+  "feedback.did_page_help": {
+    "message": "Did this page help?"
+  },
+  "feedback.thank_you": {
+    "message": "Thank you for your feedback!"
+  },
+  "theme.admonition.note": {
+    "message": "Note"
+  },
+  "theme.admonition.tip": {
+    "message": "Tip"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page"
+  }
 }

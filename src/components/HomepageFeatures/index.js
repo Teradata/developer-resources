@@ -32,7 +32,7 @@ const FeatureList = [
   {
     title: 'feature.title.analytic_functions',
     description: 'feature.description.analytic_functions',
-    href: 'https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita',
+    href: 'https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Analyzing-Your-Data',
   },
   {
     title: 'feature.title.manage_projects',
