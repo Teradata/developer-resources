@@ -4,6 +4,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { translate } from '@docusaurus/Translate';
 import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
 
+const getBreadcrumbTranslationId = (activePluginId = ''): string => {
+  switch (activePluginId) {
+    case 'quickstarts':
+      return 'header.getting_started';
+    case 'default':
+    default:
+      return 'header.docs.ai_unlimited';
+  }
+};
+
 export default function HomeBreadcrumbItem() {
   const homeHref = useBaseUrl('/');
   const activePlugin = useActivePlugin(undefined);
@@ -11,10 +21,12 @@ export default function HomeBreadcrumbItem() {
     id: 'theme.docs.breadcrumbs.home',
     message: 'Home',
   });
+
   const docsLabel = translate({
-    id: `theme.docs.breadcrumbs.${activePlugin?.pluginId}`,
+    id: getBreadcrumbTranslationId(activePlugin?.pluginId),
     message: 'AI Unlimited',
-  });  
+  });
+
   return (
     <>
       <li className="breadcrumbs__item">
@@ -22,7 +34,9 @@ export default function HomeBreadcrumbItem() {
           aria-label={homeLabel}
           className="breadcrumbs__link"
           href={homeHref}
-        >{homeLabel}</Link>
+        >
+          {homeLabel}
+        </Link>
       </li>
       <li className="breadcrumbs__item">
         <Link
