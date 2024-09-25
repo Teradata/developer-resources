@@ -1,6 +1,6 @@
 ---
 id: dbt
-sidebar_position: 4
+sidebar_position: 4.5
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 page_last_update: July 12th, 2023
