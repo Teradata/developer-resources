@@ -1,6 +1,5 @@
 ---
 sidebar_position: 3.5
-id: Apache Airflow using Astronomer Cosmos
 title: Apache Airflow using Astronomer Cosmos
 author: Satish Chinthanippu
 email: satish.chinthanippu@teradata.com
