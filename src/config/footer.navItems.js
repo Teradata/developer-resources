@@ -10,7 +10,7 @@ export default function footerItems(currentLocale = 'en') {
   const isSpecialLocale = currentLocale === 'ko';
 
   const footerBaseUrl =
-    currentLocale === 'en'
+    currentLocale === 'en' || currentLocale === 'es'
       ? 'www.teradata.com'
       : isSpecialLocale
       ? `${footerLocale}.teradata.com`
