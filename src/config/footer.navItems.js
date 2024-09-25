@@ -9,11 +9,12 @@ export default function footerItems(currentLocale = 'en') {
   // Korean locale is a special case where the local is prepended to the url
   const isSpecialLocale = currentLocale === 'ko';
 
-  const footerBaseUrl = ['en', 'es'].includes(currentLocale)
-    ? 'www.teradata.com'
-    : isSpecialLocale
-    ? `${footerLocale}.teradata.com`
-    : `www.teradata.${footerLocale}`;
+  const footerBaseUrl =
+    currentLocale === 'en' || currentLocale === 'es'
+      ? 'www.teradata.com'
+      : isSpecialLocale
+      ? `${footerLocale}.teradata.com`
+      : `www.teradata.${footerLocale}`;
 
   return {
     links: [
