@@ -64,7 +64,7 @@ Para crear un entorno de clúster primario, haga clic en "Entornos" en el menú 
 Complete los campos de configuración del entorno:
 
 
-| **Artículo**           | **Description**                                                                 |
+| **Artículo**           | **Descripción**                                                                 |
 |--------------------|---------------------------------------------------------------------------------|
 | *Environment name* | Un nombre contextual para el nuevo entorno                                           |
 | *Region*           | La lista de regiones disponibles fue predeterminada durante el proceso de venta.            |
@@ -90,21 +90,21 @@ Complete los campos de configuración del clúster primario:
 <table>
   <thead>
     <tr>
-      <th>Item</th>
-      <th>Description</th>
+      <th>Artículo</th>
+      <th>Descripción</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><em>Instance size</em></td>
       <td>
-        Select an instance size suitable for your use-case:<br />
+        Seleccione un tamaño de instancia adecuado para su caso de uso:<br />
         <strong>Lake</strong>
         <table>
           <thead>
             <tr>
-              <th>Size</th>
-              <th>Value (in units)</th>
+              <th>Tamaño</th>
+              <th>Valor (en unidades)</th>
             </tr>
           </thead>
           <tbody>
@@ -142,8 +142,8 @@ Complete los campos de configuración del clúster primario:
         <table>
           <thead>
             <tr>
-              <th>Size</th>
-              <th>Value (in units)</th>
+              <th>Tamaño</th>
+              <th>Valor (en unidades)</th>
             </tr>
           </thead>
           <tbody>
@@ -181,11 +181,11 @@ Complete los campos de configuración del clúster primario:
     </tr>
     <tr>
       <td><em>Instance count</em></td>
-      <td>2 to 64<br />Number of nodes in the primary clusters</td>
+      <td>2-64<br />Número de nodos en los clústeres primarios</td>
     </tr>
     <tr>
       <td><em>Instance storage</em></td>
-      <td>1 to 72TB per instance</td>
+      <td>De 1 a 72 TB por instancia</td>
     </tr>
   </tbody>
 </table>
@@ -201,9 +201,9 @@ Complete los campos de configuración del clúster primario:
 
 Complete los campos de credenciales de la base de datos:
 
-| **Artículo**           | **Description**                                                                 |
+| **Artículo**           | **Descripción**                                                                 |
 |--------------------|---------------------------------------------------------------------------------|
-| Contraseña de DBC | La cuenta administrativa principal en un entorno Teradata Vantage se conoce como "dbc". Al igual que el usuario root en Linux, la cuenta dbc tiene privilegios administrativos completos. Se recomienda establecer usuarios administrativos adicionales para tareas rutinarias, después de crear el entorno, y abstenerse de compartir o utilizar las credenciales de dbc. |
+| DBC password | La cuenta administrativa principal en un entorno Teradata Vantage se conoce como "dbc". Al igual que el usuario root en Linux, la cuenta dbc tiene privilegios administrativos completos. Se recomienda establecer usuarios administrativos adicionales para tareas rutinarias, después de crear el entorno, y abstenerse de compartir o utilizar las credenciales de dbc. |
 
 Establezca la contraseña para dbc: 
 * Entre 8 y 64 caracteres 
@@ -222,10 +222,10 @@ Para comenzar rápidamente, puede seleccionar **Usar valores predeterminados** o
 
 
 ```mdx-code-block
-| *Item*           |Description*                                                                                   |
+| *Artículo*           |Descripción*                                                                                   |
 |-------------|---------------------------------------------------------------------------------------------------|
-| AMPs per instance       | Workload management + Select the number of AMPs per instance for the instance size you selected. |
-| AWS: Storage encryption | Configure encryption for customer data. See [Finding the key ID and key ARN](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) <br/> <ul><li>Managed by Teradata</li><li>Customer managed</li><li>Key Alias ARN</li></ul>  |
+| AMPs per instance       | Gestión de la carga de trabajo + Seleccione la cantidad de AMP por instancia para el tamaño de instancia que seleccionó. |
+| AWS: Storage encryption | Configure el cifrado de los datos del cliente. Consulte [Cómo encontrar el ID de la clave y el ARN de la clave] (https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) <br/> <ul><li>Gestionado por Teradata</li><li>Gestionado por el cliente</li><li>ARN de alias clave</li></ul>  |
 
 ```
 

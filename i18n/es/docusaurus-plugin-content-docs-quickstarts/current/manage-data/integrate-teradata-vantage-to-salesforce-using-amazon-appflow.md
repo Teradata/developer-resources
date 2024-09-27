@@ -36,7 +36,7 @@ Vantage permite a las empresas iniciar computación o almacenamiento a pequeña 
 
 Vantage combina análisis descriptivos, predictivos y prescriptivos, toma de decisiones autónoma, funciones de aprendizaje automático y herramientas de visualización en una plataforma unificada e integrada que descubre inteligencia empresarial en tiempo real a escala, sin importar dónde residan los datos.
 
-Teradata Vantage Native Object Store (NOS) can be used to explore data in external object stores, like Amazon S3, using standard SQL. No special object storage-side compute infrastructure is required to use NOS. Users can explore data located in an Amazon S3 bucket by simply creating a NOS table definition that points to your bucket. With NOS, you can quickly import data from Amazon S3 or even join it with other tables in the Vantage database.
+Teradata Vantage Native Object Store (NOS) se puede utilizar para explorar datos en almacenes de objetos externos, como Amazon S3, mediante SQL estándar. No se requiere ninguna infraestructura informática especial del lado del almacenamiento de objetos para utilizar NOS. Los usuarios pueden explorar datos ubicados en un depósito de Amazon S3 simplemente creando una definición de tabla NOS que apunte a su depósito. Con NOS, puede importar datos rápidamente desde Amazon S3 o incluso unirlos con otras tablas en la base de datos Vantage.
 
 ### Prerrequisitos
 
@@ -96,7 +96,7 @@ Este paso proporciona información sobre el origen y el destino de su flujo. En 
 * Utilice los valores predeterminados para **Entorno de Salesforce** y **Cifrado de datos**. Asigne un nombre a su conexión (por ejemplo, _salesforce_) y haga clic en **Continuar**.
 ![Una captura de pantalla de un teléfono móvil Descripción generada automáticamente](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image5.png)
 
-* En la ventana de inicio de sesión de Salesforce, introduzca su **Nombre de usuario** y **Password**. Haga clic en **Iniciar sesión**
+* En la ventana de inicio de sesión de Salesforce, introduzca su **Nombre de usuario** y **Contraseña**. Haga clic en **Iniciar sesión**
 ![Una captura de pantalla de un teléfono móvil Descripción generada automáticamente](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image6.png)
 
 * Haga clic en **Permitir** para permitir que AppFlow acceda a sus datos e información de Salesforce.
@@ -161,7 +161,7 @@ Haga clic en el archivo de datos en su depósito de Amazon S3 y, posteriormente,
 
 ![Una captura de pantalla de una publicación en las redes sociales Descripción generada automáticamente](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image17.png)
 
-Haga clic en _AWS-KMS_ desde **Cifrado** y cambie el cifrado de _AWS-KMS_ a _None_. Haga clic en **Save**.
+Haga clic en _AWS-KMS_ desde **Cifrado** y cambie el cifrado de _AWS-KMS_ a _None_. Haga clic en **Guardar**.
 
 ![Una captura de pantalla de una publicación en las redes sociales Descripción generada automáticamente](../cloud-guides/images/integrate-teradata-vantage-to-salesforce-using-amazon-appflow/image18.png)
 

@@ -401,7 +401,7 @@ Utilice consultas asincrónicas cuando el rendimiento de un sistema o red se vea
     \* `'format': 'OBJECT'`: el formato de respuesta.
     \* `'spooled_result_set': True`: la indicación de que la solicitud es asincrónica.
   
-    **Request**
+    **Solicitud**
     ``` python
     ## Run async query .
 
@@ -419,7 +419,7 @@ Utilice consultas asincrónicas cuando el rendimiento de un sistema o red se vea
     print(response.text)
     ```
 
-    **Response**
+    **Respuesta**
     ```
     {"id":1366025}
     ```

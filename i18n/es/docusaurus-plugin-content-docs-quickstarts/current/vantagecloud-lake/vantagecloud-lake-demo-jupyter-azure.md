@@ -77,7 +77,7 @@ En esta sección cubriremos en detalle cada uno de los pasos a continuación:
         | **"JUPYTER_TOKEN"**      | Defina el token de acceso de Jupyter Lab que le gustaría usar. |
 
         :::important
-        If you don't include the "JUPYTER_TOKEN" configuration, the container will generate a new token and log it to the console. You will need to retrieve it from the application logs. If you include the "JUPYTER_TOKEN" configuration key but leave the value blank, the system will set the token as an empty string, resulting in an unprotected Jupyter Lab environment without any token security.
+        Si no incluye la configuración "JUPYTER_TOKEN", el contenedor generará un nuevo token y lo registrará en la consola. Deberá recuperarlo de los registros de la aplicación. Si incluye la clave de configuración "JUPYTER_TOKEN" pero deja el valor en blanco, el sistema configurará el token como una cadena vacía, lo que dará como resultado un entorno de Jupyter Lab desprotegido y sin ningún token de seguridad.
         :::
 
 * Haga clic en Guardar, su aplicación se reiniciará
@@ -151,7 +151,7 @@ En esta sección cubriremos en detalle cada uno de los pasos a continuación:
     :::
 
 ## Ejecutar demostraciones
-Abra y ejecute todas las celdas de *0_Configuración del entorno de demostración.ipynb* para configurar su entorno. Seguido de *1_Configuración de demostración de datos base.ipynb* para cargar los datos base necesarios para las demostracion.
+Abra y ejecute todas las celdas de *0_Demo_Environment_Setup.ipynb* para configurar su entorno. Seguido de *1_Demo_Setup_Base_Data.ipynb* para cargar los datos base necesarios para las demostracion.
 
 Para obtener más información sobre los cuadernos de demostración, vaya a la página [Demostraciones de Teradata Lake](https://github.com/Teradata/lake-demos) en GitHub.
 

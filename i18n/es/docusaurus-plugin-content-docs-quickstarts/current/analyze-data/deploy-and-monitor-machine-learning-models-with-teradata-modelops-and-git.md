@@ -196,7 +196,7 @@ Utilice su conexión y seleccione una base de datos. por ejemplo, "aoa_byom_mode
 En este inicio rápido, hemos aprendido cómo seguir un ciclo de vida completo de modelos GIT en ModelOps y cómo implementarlo en Vantage o en contenedores Docker para implementaciones Edge. Entonces, ¿cómo podemos programar una puntuación por lotes o probar puntuaciones de restful o bajo demanda y comenzar a supervisar las métricas de desfase de datos y calidad del modelo?
 
 ## Lectura adicional
-* [ModelOps documentation](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).
+* [Documentación de ModelOps](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 

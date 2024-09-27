@@ -142,7 +142,7 @@ Los datos devueltos por la consulta deberían verse así:
 
 ## Resumen
 
-In this tutorial we have learned how to export data from Vantage to a parquet file on object storage using Native Object Storage (NOS). NOS supports reading and importing data stored in CSV, JSON and Parquet formats. NOS can also export data from Vantage to object storage.
+En este tutorial, hemos aprendido cómo exportar datos de Vantage a un archivo parquet en el almacenamiento de objetos utilizando Native Object Storage (NOS). NOS admite la lectura e importación de datos almacenados en formatos CSV, JSON y Parquet. NOS también puede exportar datos desde Vantage al almacenamiento de objetos.
 
 ## Lectura adicional
 * [Teradata Vantage™: escritura de datos en un almacén de objetos externo](https://docs.teradata.com/r/Teradata-VantageTM-Native-Object-Store-Getting-Started-Guide/June-2022/Writing-Data-to-External-Object-Store)

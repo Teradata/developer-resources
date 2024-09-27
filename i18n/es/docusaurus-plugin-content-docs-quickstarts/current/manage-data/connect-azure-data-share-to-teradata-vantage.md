@@ -34,9 +34,9 @@ Vantage permite a las empresas iniciar computación o almacenamiento a pequeña 
 
 Vantage es compatible con R, Python, Teradata Studio y cualquier otra herramienta basada en SQL. Puede implementar Vantage en nubes públicas, en las instalaciones, en una infraestructura optimizada o básica, o como servicio.
 
-Teradata Vantage Native Object Store (NOS) can be used to explore data in external object stores, like Azure Blob Storage, using standard SQL. No special object storage-side compute infrastructure is required to use NOS. You can explore data located in an Blob Storage container by simply creating a NOS table definition that points to your container. With NOS, you can quickly import data from Blob Storage or even join it other tables in the database.
+Teradata Vantage Native Object Store (NOS) se puede utilizar para explorar datos en almacenes de objetos externos, como Azure Blob Storage, mediante SQL estándar. No se requiere ninguna infraestructura informática especial del lado del almacenamiento de objetos para utilizar NOS. Puede explorar los datos ubicados en un contenedor de Blob Storage simplemente creando una definición de tabla NOS que apunte a su contenedor. Con NOS, puede importar rápidamente datos desde Blob Storage o incluso unirlos a otras tablas de la base de datos.
 
-Alternatively, the Teradata Parallel Transporter (TPT) utility can be used to import data from Blob Storage to Teradata Vantage in bulk fashion. Once loaded, data can be efficiently queried within Vantage.
+Alternativamente, la utilidad Teradata Parallel Transporter (TPT) se puede utilizar para importar datos de Blob Storage a Teradata Vantage de forma masiva. Una vez cargados, los datos se pueden consultar de manera eficiente dentro de Vantage.
 
 Para más información, consulte la [*documentación*](https://docs.teradata.com/home).
 

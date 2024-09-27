@@ -135,7 +135,7 @@ Cambie las contraseñas en el archivo vars.json. Verá que en el archivo vars.js
 :::
 
 ## Ejecutar demostraciones
-Ejecute todas las celdas de *0_Configuración del entorno de demostración.ipynb* para configurar su entorno. Seguido de **1_Configuración de demostración de datos base.ipynb** para cargar los datos base necesarios para la demostración.
+Ejecute todas las celdas de *0_Demo_Environment_Setup.ipynb* para configurar su entorno. Seguido de **1_Demo_Setup_Base_Data.ipynb** para cargar los datos base necesarios para la demostración.
 
 Para obtener más información sobre los cuadernos de demostración, vaya a la página [Demostraciones de Teradata Lake](https://github.com/Teradata/lake-demos) en GitHub.
 

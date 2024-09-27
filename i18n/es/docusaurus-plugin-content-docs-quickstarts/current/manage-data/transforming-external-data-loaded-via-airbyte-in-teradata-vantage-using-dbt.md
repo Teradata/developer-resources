@@ -69,7 +69,7 @@ cd airbyte-dbt-jaffle
     ```
 
 
-    The dbt project wizard will ask you for a project name and database management system to use in the project. In this demo, we define the project name as `dbt_airbyte_demo`. Since we are using the dbt-teradata connector, the only database management system available is Teradata.
+    El asistente del proyecto dbt le pedirá un nombre de proyecto y un sistema de gestión de base de datos para utilizar en el proyecto. En esta demostración, definimos el nombre del proyecto como "dbt_airbyte_demo". Dado que utilizamos el conector dbt-teradata, el único sistema de gestión de bases de datos disponible es Teradata.
 
     ![Project name prompt](../elt/images/getting-started-with-airbyte-dbt/dbt_init_project_name.png)
     

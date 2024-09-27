@@ -57,7 +57,7 @@ cd lake-demos
 El repositorio contiene diferentes archivos y carpetas, los importantes son:
 
 * Jupyter Notebooks
-    * [0_Configuración del entorno de demostración.ipynb](https://github.com/Teradata/lake-demos/blob/main/0_Demo_Environment_Setup.ipynb)
+    * [0_Demo_Environment_Setup.ipynb](https://github.com/Teradata/lake-demos/blob/main/0_Demo_Environment_Setup.ipynb)
     * [1_Load_Base_Demo_Data.ipynb](https://github.com/Teradata/lake-demos/blob/main/1_Load_Base_Demo_Data.ipynb)
     * [Data_Engineering_Exploration.ipynb](https://github.com/Teradata/lake-demos/blob/main/Data_Engineering_Exploration.ipynb)
     * [Data_Science_OAF.ipynb](https://github.com/Teradata/lake-demos/blob/main/Data_Science_OAF.ipynb)
@@ -97,12 +97,12 @@ Para Windows, ejecute el comando docker en PowerShell.
 
 ![registros de Docker](./images/vantagecloud-lake-demo-jupyter-docker/lake_docker_url.png)
 
-Click on the URL in docker logs to open Jupyter notebook in your browser.
+Haga clic en la URL en los registros de Docker para abrir el Jupyter Notebook en su navegador.
 
 ![Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_jupyter_notebook.png)
 
 ## Ejecutar demostraciones
-Abra y ejecute todas las celdas de **0_Configuración del entorno de demostración.ipynb** para configurar su entorno, seguido de **1_Configuración de demostración de datos base.ipynb** para cargar los datos base necesarios para las demostraciones. +
+Abra y ejecute todas las celdas de **0_Demo_Environment_Setup.ipynb** para configurar su entorno, seguido de **1_Demo_Setup_Base_Data.ipynb** para cargar los datos base necesarios para las demostraciones. +
 
 ![Configuración del entorno de Jupyter Notebook](./images/vantagecloud-lake-demo-jupyter-docker/lake_0_setup.png)
 

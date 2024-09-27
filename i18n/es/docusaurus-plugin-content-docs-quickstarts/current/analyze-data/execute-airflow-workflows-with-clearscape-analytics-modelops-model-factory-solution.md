@@ -38,7 +38,7 @@ Para ejecutar comandos de shell, puede instalar la extensión de VS Code **"Remo
 
 * Abra Visual Studio Code y seleccione la opción Abrir una ventana remota. Luego seleccione Conectarse a WSL-Ubuntu
 
-* Seleccione Archivo > Abrir carpeta. A continuación, seleccione la carpeta elegida o cree una nueva con este comando: mkdir [nombre_carpeta]
+* Seleccione Archivo > Abrir carpeta. A continuación, seleccione la carpeta elegida o cree una nueva con este comando: mkdir [folder_name]
 
 * Configure la variable de entorno AIRFLOW_HOME. Airflow requiere un directorio de inicio y usa ~/airflow de forma predeterminada, pero puede establecer una ubicación diferente si lo prefiere. La variable de entorno AIRFLOW_HOME se utiliza para informar a Airflow de la ubicación deseada.
 
@@ -614,4 +614,4 @@ docker-compose up -d
 Este tutorial tiene como objetivo proporcionar un ejercicio práctico sobre cómo instalar un entorno Airflow en un servidor Linux y cómo utilizar Airflow para interactuar con una base de datos Teradata Vantage. Se proporciona un ejemplo adicional sobre cómo integrar Airflow y la herramienta de modelado y mantenimiento de datos dbt para crear y cargar una base de datos Teradata Vantage.
 
 ## Lectura adicional
-* [ModelOps documentatioN](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).
+* [Documentación de ModelOps](https://docs.teradata.com/search/documents?query=ModelOps&sort=last_update&virtual-field=title_only&content-lang=).

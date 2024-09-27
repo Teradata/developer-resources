@@ -222,7 +222,7 @@ USING ( LOCATION('/s3/td-usgs-public.s3.amazonaws.com/CSVDATA/') );
 
 ## Exportar datos de Vantage al almacenamiento de objetos
 
-So far, we have talked about reading and importing data from object storage. Wouldn't it be nice if we had a way to use SQL to export data from Vantage to object storage? This is exactly what `WRITE_NOS` function is for. Let's say we want to export data from `riverflow_native` table to object storage. You can do so with the following query:
+Hasta ahora hemos hablado de leer e importar datos desde el almacenamiento de objetos. ¿No estaría bien si tuviéramos una manera de usar SQL para exportar datos desde Vantage al almacenamiento de objetos? Esto es exactamente para lo que sirve la función "WRITE_NOS". Digamos que queremos exportar datos de la tabla "riverflow_native" al almacenamiento de objetos. Puede hacerlo con la siguiente consulta:
 
 ```sql
 SELECT * FROM WRITE_NOS (
@@ -242,7 +242,7 @@ Aquí, le indicamos a Vantage que tome datos de `riverflow_native` y los guarde 
 
 ## Resumen
 
-In this quick start we have learned how to read data from object storage using Native Object Storage (NOS) functionality in Vantage. NOS supports reading and importing data stored in CSV, JSON and Parquet formats. NOS can also export data from Vantage to object storage.
+En este inicio rápido, hemos aprendido cómo leer datos del almacenamiento de objetos utilizando la funcionalidad Native Object Storage (NOS) en Vantage. NOS admite la lectura e importación de datos almacenados en formatos CSV, JSON y Parquet. NOS también puede exportar datos desde Vantage al almacenamiento de objetos.
 
 # Lectura adicional
 * [Teradata Vantage™: Guía de introducción a Native Object Storage](https://docs.teradata.com/r/2mw8ooFr~xX0EaaGFaDW8A/root)

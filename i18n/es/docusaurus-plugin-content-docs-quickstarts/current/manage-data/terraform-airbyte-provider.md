@@ -46,17 +46,17 @@ Airbyte, la plataforma de integración de datos, tiene un proveedor de Terraform
 ```mdx-code-block
 <Tabs>
   <TabItem value="MacOS" label="MacOS" default>
-    First, install the HashiCorp tap, a repository of all [Homebrew](https://brew.sh) packages.
+    Primero, instale el "tap" de HashiCorp, un repositorio de todos los paquetes [Homebrew] (https://brew.sh).
     ```bash
       brew tap hashicorp/tap
     ```
-    Next, install Terraform with hashicorp/tap/terraform.
+    A continuación, instale Terraform con hashicorp/tap/terraform.
     ```bash
       brew install hashicorp/tap/terraform
     ```
   </TabItem>
   <TabItem value="Windows" label="Windows">
-    [Chocolatey](https://chocolatey.org) is a free and open-source package management system for Windows. Install the Terraform package from the command-line.
+    [Chocolatey](https://chocolatey.org) es un sistema de gestión de paquetes gratuito y de código abierto para Windows. Instale el paquete Terraform desde la línea de comandos.
     ```bash
       choco install terraform
     ```

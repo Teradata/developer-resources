@@ -61,7 +61,7 @@ Abra el directorio del proyecto `lake-demos` en Visual Studio Code. El repositor
 LAKE_DEMOS
 
 * [UseCases](https://github.com/Teradata/lake-demos/tree/main/UseCases)
-  * [0_Configuración del entorno de demostración.ipynb](https://github.com/Teradata/lake-demos/blob/main/0_Demo_Environment_Setup.ipynb)
+  * [0_Demo_Environment_Setup.ipynb](https://github.com/Teradata/lake-demos/blob/main/0_Demo_Environment_Setup.ipynb)
   * [1_Load_Base_Demo_Data.ipynb](https://github.com/Teradata/lake-demos/blob/main/1_Load_Base_Demo_Data.ipynb)
   * [Data_Engineering_Exploration.ipynb](https://github.com/Teradata/lake-demos/blob/main/Data_Engineering_Exploration.ipynb)
   * [Data_Science_OAF.ipynb](https://github.com/Teradata/lake-demos/blob/main/Data_Science_OAF.ipynb)
@@ -110,7 +110,7 @@ y reemplácelo con:
 ![reemplazar](./images/vantagecloud-lake-demos-visual-studio-code/replace.png)
 
 ### Configuración de kernels de Jupyter
-Abra **0_Configuración del entorno de demostración.ipynb** y haga clic en Seleccionar kernel en la esquina superior derecha de Visual Studio Code. 
+Abra **0_Demo_Environment_Setup.ipynb** y haga clic en Seleccionar kernel en la esquina superior derecha de Visual Studio Code. 
 
 Si no ha instalado las extensiones de Jupyter y Python, Visual Studio Code le pedirá que las instale. Estas extensiones son necesarias para que Visual Studio Code detecte kernels. Para instalarlas, seleccione 'Instalar/Habilitar extensiones sugeridas para Python y Jupyter'.
 
@@ -139,7 +139,7 @@ Ahora tiene acceso a todos los kernels de extensión de Teradata Vantage. Selecc
 ![python.kernel.png](./images/vantagecloud-lake-demos-visual-studio-code/python.kernel.png)
 
 ### Ejecutar demostraciones
-Ejecute todas las celdas de *0_Configuración del entorno de demostración.ipynb* para configurar su entorno. Seguido de *1_Configuración de demostración de datos base.ipynb* para cargar los datos base necesarios para la demostración.
+Ejecute todas las celdas de *0_Demo_Environment_Setup.ipynb* para configurar su entorno. Seguido de *1_Demo_Setup_Base_Data.ipynb* para cargar los datos base necesarios para la demostración.
 Para obtener más información sobre los cuadernos de demostración, vaya a la página [Demostraciones de Teradata Lake](https://github.com/Teradata/lake-demos) en GitHub.
 
 ![demoenvsetup.png](./images/vantagecloud-lake-demos-visual-studio-code/demoenvsetup.png)

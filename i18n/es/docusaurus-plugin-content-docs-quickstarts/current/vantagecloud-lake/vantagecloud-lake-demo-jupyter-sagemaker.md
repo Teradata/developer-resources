@@ -170,21 +170,21 @@ print("My Public IP is:", my_public_ip)
 * Específicamente se deben agregar los siguientes valores 
 
 
-        | **Variable** | **Value**|
+        | **Variable** | **Valor**|
         |--------------|----------|
-        |**"host"**|Public IP value from your VantageCloud Lake environment|
-        |**"UES_URI"** |Open Analytics from your VantageCloud Lake environment|
-        |**"dbc"**|The master password of your VantageCloud Lake environment|
+        |**"host"**|Valor de IP pública de su entorno VantageCloud Lake|
+        |**"UES_URI"** |Análisis abierto desde su entorno VantageCloud Lake|
+        |**"dbc"**|La contraseña maestra de su entorno VantageCloud Lake|
 
 
     :::info
-    Remember to change all passwords in the vars.json file.
+    Recuerde cambiar todas las contraseñas en el archivo vars.json.
     :::
 
 * Verá que en el archivo vars.json de muestra, las contraseñas de todos los usuarios están predeterminadas en "password", esto es solo para fines ilustrativos, debe cambiar todos estos campos de contraseña a contraseñas seguras, protegerlas según sea necesario y seguir otras prácticas recomendadas de gestión de contraseñas.
 
 ## Ejecutar demostraciones
-Abra y ejecute todas las celdas de **0_Configuración del entorno de demostración.ipynb** para configurar su entorno. Seguido de **1_Configuración de demostración de datos base.ipynb** para cargar los datos base necesarios para las demostracion.
+Abra y ejecute todas las celdas de **0_Demo_Environment_Setup.ipynb** para configurar su entorno. Seguido de **1_Demo_Setup_Base_Data.ipynb** para cargar los datos base necesarios para las demostracion.
 
 Para obtener más información sobre los cuadernos de demostración, vaya a la página [Demostraciones de Teradata Lake](https://github.com/Teradata/lake-demos) en GitHub.
 

@@ -124,7 +124,7 @@ Es posible que también necesite agregar vpc, subred y grupo de seguridad en la 
     ![Open notebook](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.notebook.inservice.png)
 
 
-    Access the demo notebooks to get usage tips
+    Acceda a los cuadernos de demostración para obtener consejos de uso
     ![access demo notebooks](../cloud-guides/images/integrate-teradata-jupyter-extensions-with-sagemaker/sagemaker.notebook.start.png)
 
 
