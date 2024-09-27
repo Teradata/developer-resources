@@ -5,9 +5,7 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
     title: 'header.title',
     navItems: [
       {
-        href: `/quickstarts/${
-          ['es', 'ja', 'en'].includes(currentLocale) ? locale : ''
-        }`,
+        href: `${baseUrl ?? ''}${locale ?? ''}/quickstarts`,
         label: 'header.getting_started',
       },
       {

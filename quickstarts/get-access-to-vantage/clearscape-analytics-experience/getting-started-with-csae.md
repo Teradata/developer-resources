@@ -42,7 +42,7 @@ You will need to provide:
 | **Region**           | Select a region from the dropdown                                     |
 
 
-:::important
+:::info
 Note down the database password. You will need it to connect to the database.
 :::
 

@@ -20,7 +20,7 @@ import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 This how-to demonstrates how to run Vantage Express on AWS. Vantage Express is a small footprint configuration that contains a fully functional Teradata SQL Engine.
 
 
-:::important
+:::info
 <b>Cloud charges</b>
 
 Vantage Express is distributed as a virtual machine image. This how-to uses the EC2 `c5n.metal` instance type. It's a bare metal instance that costs over $3/h.
