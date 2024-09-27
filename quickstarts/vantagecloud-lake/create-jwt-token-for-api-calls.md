@@ -27,10 +27,7 @@ The process has the following steps:
 To get a VantageCloud Lake sign-on link and credentials, submit the [contact form](https://www.teradata.com/about-us/contact) to reach out to Teradata team.   
 :::
 
-1. Go to the URL provided by Teradata, for example, mycompany.innovationlabs.teradata.com and sign on:
-
-    * Existing customers can use their organization admin username(email address) and password to sign on.
-    * New customer can sign on with their organization admin username (from welcome letter: email address) and the password you created. 
+1. Go to the URL provided by Teradata, for example, mycompany.innovationlabs.teradata.com and sign on as a database user who has Console access rights.
 
     :::note
     Click [here](https://login.customer.teradata.com/ext/pwdreset/Identify?AdapterId=CDSCustomer) to reset the organization admin password.
