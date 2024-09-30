@@ -63,6 +63,7 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
         label: 'Deutschland',
         value: 'de',
       },
+      { label: 'Español', value: 'es' },
       {
         label: 'France',
         value: 'fr',
