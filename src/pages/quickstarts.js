@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import QuickstartsPages from '@site/src/components/QuickstartsPages';
-import HeroImageUrl from '@site/static/img/quickstarts-hero.png';
+import HeroImageUrl from '@site/static/img/quickstarts-hero.webp';
 import { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import { Typography } from '@teradata-web/react-components';
