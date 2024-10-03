@@ -1,0 +1,539 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="Python" label="Python" default>
+    ```python
+    import base64
+    import json
+    import time
+    import requests
+    import datetime
+
+    from cryptography.hazmat.primitives import hashes
+    from cryptography.hazmat.primitives.asymmetric import padding
+    from cryptography.hazmat.primitives.serialization import load_pem_private_key
+
+    def base64_url_encode(data):
+        return base64.urlsafe_b64encode(data).rstrip(b'=').decode('utf-8')
+
+    def create_jwt():
+        # Define the header
+        header = {
+            "alg": "RS256",
+            "kid": "primary",
+            "typ": "JWT"
+        }
+        header_json = json.dumps(header)
+        header_encoded = base64_url_encode(header_json.encode('utf-8'))
+
+        # Define the payload
+        payload = {
+            "aud": ["td:service:authentication"],
+            "exp": int(datetime.datetime.now().timestamp()) + 3600,
+            "iat": int(datetime.datetime.now().timestamp()),
+            "iss": "wiki",
+            "org_id": "38b6*****-****-****-****-********5df7",
+            "multi-use": True,
+            "pat": "gwxh******************n4yco",
+            "sub": "data_engineer"
+        }
+        payload_json = json.dumps(payload)
+        payload_encoded = base64_url_encode(payload_json.encode('utf-8'))
+
+        # Load the private key
+        with open('primary.pem', 'rb') as key_file:
+            private_key = load_pem_private_key(key_file.read(), password=None)
+
+        # Create the signature
+        data = f"{header_encoded}.{payload_encoded}".encode('utf-8')
+        signature = private_key.sign(
+            data,
+            padding.PKCS1v15(),
+            hashes.SHA256()
+        )
+        signature_encoded = base64_url_encode(signature)
+
+        # Construct the JWT
+        jwt = f"{header_encoded}.{payload_encoded}.{signature_encoded}"
+
+        # Make the HTTP request
+        url = 'https://tddemos.innovationlabs.teradata.com/api/tdrest/systems/shared_demo/queries'
+        headers = {
+            'Accept': 'application/json',
+            'Authorization': f'Bearer {jwt}',
+            'Content-Type': 'application/json'
+        }
+        req_body = json.dumps({"query": "SEL * FROM dbc.dbcinfo", "logMech": "JWT"})
+
+        response = requests.post(url, headers=headers, data=req_body)
+        print("Response Code:", response.status_code)
+        print("Response Body:", response.text)
+
+    create_jwt()
+    ```
+  </TabItem>
+  <TabItem value="Java" label="Java">
+    ```Java
+    import java.util.Base64;
+    import java.util.List;
+    import java.util.Map;
+    import java.util.HashMap;
+    import java.nio.charset.StandardCharsets;
+    import java.nio.file.Files;
+    import java.nio.file.Paths;
+    import java.security.KeyFactory;
+    import java.security.PrivateKey;
+    import java.security.Signature;
+    import java.security.spec.PKCS8EncodedKeySpec;
+    import javax.net.ssl.HttpsURLConnection;
+    import java.net.URL;
+    import java.io.OutputStream;
+
+    public class CreateJWT {
+        public static void main(String[] args) throws Exception {
+            // Define the header
+            String headerJson = "{\"alg\":\"RS256\", \"kid\":\"primary\", \"typ\":\"JWT\"}";
+            String header = Base64.getUrlEncoder().withoutPadding().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
+
+            // Define the payload
+            String payloadJson = "{"
+                    + "\"aud\": [\"td:service:authentication\"],"
+                    + `"exp": ${Math.floor(Date.now() / 1000) + 3600},`
+                    + `"iat": ${Math.floor(Date.now() / 1000)},`
+                    + "\"iss\": \"wiki\","
+                    + "\"org_id\": \"38b6*****-****-****-****-********5df7\","
+                    + "\"multi-use\": true,"
+                    + "\"pat\": \"gwxh******************n4yco\","
+                    + "\"sub\": \"data_engineer\""
+                    + "}";
+            String payload = Base64.getUrlEncoder().withoutPadding().encodeToString(payloadJson.getBytes(StandardCharsets.UTF_8));
+
+            // Load the private key
+            byte[] keyBytes = Files.readAllBytes(Paths.get("primary.pem"));
+            String privateKeyPEM = new String(keyBytes, StandardCharsets.UTF_8)
+                    .replace("-----BEGIN PRIVATE KEY-----", "")
+                    .replace("-----END PRIVATE KEY-----", "")
+                    .replaceAll("\\s", "");
+            byte[] decodedKey = Base64.getDecoder().decode(privateKeyPEM);
+            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(decodedKey);
+            KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+            PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
+
+            // Create the signature
+            String data = header + "." + payload;
+            Signature signature = Signature.getInstance("SHA256withRSA");
+            signature.initSign(privateKey);
+            signature.update(data.getBytes(StandardCharsets.UTF_8));
+            String signatureStr = Base64.getUrlEncoder().withoutPadding().encodeToString(signature.sign());
+
+            // Construct the JWT
+            String jwt = data + "." + signatureStr;
+
+            // Make the HTTP request
+            URL url = new URL("https://tddemos.innovationlabs.teradata.com/api/tdrest/systems/shared_demo/queries");
+            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Accept", "application/json");
+            conn.setRequestProperty("Authorization", "Bearer " + jwt);
+            conn.setDoOutput(true);
+
+            String jsonInputString = "{\"query\":\"SEL * FROM dbc.dbcinfo\",\"logMech\":\"JWT\"}";
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+                os.write(input, 0, input.length);
+            }
+
+            int responseCode = conn.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
+        }
+    }
+    ```
+  </TabItem>
+  <TabItem value="Golang" label="Golang">
+    ```golang
+    package main
+
+    import (
+        "bytes"
+        "crypto"
+        "crypto/rand"
+        "crypto/rsa"
+        "crypto/sha256"
+        "crypto/x509"
+        "encoding/base64"
+        "encoding/json"
+        "encoding/pem"
+        "fmt"
+        "io/ioutil"
+        "net/http"
+        "strings"
+        "time"
+    )
+
+    func main() {
+        // Define the header
+        header := map[string]string{
+            "alg": "RS256",
+            "kid": "primary",
+            "typ": "JWT",
+        }
+        headerJson, _ := json.Marshal(header)
+        headerEncoded := base64.RawURLEncoding.EncodeToString(headerJson)
+
+        // Define the payload
+        payload := map[string]interface{}{
+            "aud":      []string{"td:service:authentication"},
+            "exp":      time.Now().Add(time.Hour).Unix(),
+            "iat":      time.Now().Unix(),
+            "iss":      "wiki",
+            "org_id":   "38b6*****-****-****-****-********5df7",
+            "multi-use": true,
+            "pat":      "gwxh******************n4yco",
+            "sub":      "data_engineer",
+        }
+        payloadJson, _ := json.Marshal(payload)
+        payloadEncoded := base64.RawURLEncoding.EncodeToString(payloadJson)
+
+        // Load the private key
+        keyBytes, err := ioutil.ReadFile("primary.pem")
+        if err != nil {
+            panic(err)
+        }
+        block, _ := pem.Decode(keyBytes)
+        privateKey, err := x509.ParsePKCS8PrivateKey(block.Bytes)
+        if err != nil {
+            panic(err)
+        }
+
+        // Create the signature
+        data := headerEncoded + "." + payloadEncoded
+        hashed := sha256.Sum256([]byte(data))
+        signature, err := rsa.SignPKCS1v15(rand.Reader, privateKey.(*rsa.PrivateKey), crypto.SHA256, hashed[:])
+        if err != nil {
+            panic(err)
+        }
+        signatureEncoded := base64.RawURLEncoding.EncodeToString(signature)
+
+        // Construct the JWT
+        jwt := data + "." + signatureEncoded
+
+        // Make the HTTP request
+        url := "https://tddemos.innovationlabs.teradata.com/api/tdrest/systems/shared_demo/queries"
+        reqBody := `{"query":"SEL * FROM dbc.dbcinfo","logMech":"JWT"}`
+        req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(reqBody)))
+        if err != nil {
+            panic(err)
+        }
+        req.Header.Set("Accept", "application/json")
+        req.Header.Set("Authorization", "Bearer "+jwt)
+
+        client := &http.Client{}
+        resp, err := client.Do(req)
+        if err != nil {
+            panic(err)
+        }
+        defer resp.Body.Close()
+
+        body, _ := ioutil.ReadAll(resp.Body)
+        fmt.Println("Response Code:", resp.StatusCode)
+        fmt.Println("Response Body:", string(body))
+    }
+    ```
+  </TabItem>
+  <TabItem value="C#" label="C#">
+    ```c#
+    using System;
+    using System.Collections.Generic;
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Text.Json;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Threading.Tasks;
+
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            // Define the header
+            var header = new Dictionary<string, string>
+            {
+                { "alg", "RS256" },
+                { "kid", "primary" },
+                { "typ", "JWT" }
+            };
+            string headerJson = JsonSerializer.Serialize(header);
+            string headerEncoded = Base64UrlEncode(Encoding.UTF8.GetBytes(headerJson));
+
+            // Define the payload
+            var payload = new Dictionary<string, object>
+            {
+                { "aud", new string[] { "td:service:authentication" } },
+                { "exp", DateTimeOffset.UtcNow.ToUnixTimeSeconds() + 3600 },  // Current timestamp + 1 hour
+                { "iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds() },  // Current timestamp
+                { "iss", "wiki" },
+                { "org_id", "38b6*****-****-****-****-********5df7" },
+                { "multi-use", true },
+                { "pat", "gwxh******************n4yco" },
+                { "sub", "data_engineer" }
+            };
+            string payloadJson = JsonSerializer.Serialize(payload);
+            string payloadEncoded = Base64UrlEncode(Encoding.UTF8.GetBytes(payloadJson));
+
+            // Load the private key
+            string privateKeyPath = "primary.pem";
+            RSA privateKey = LoadPrivateKey(privateKeyPath);
+
+            // Create the signature
+            string data = $"{headerEncoded}.{payloadEncoded}";
+            byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+            byte[] signatureBytes = privateKey.SignData(dataBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+            string signatureEncoded = Base64UrlEncode(signatureBytes);
+
+            // Construct the JWT
+            string jwt = $"{data}.{signatureEncoded}";
+
+            // Make the HTTP request
+            string url = "https://tddemos.innovationlabs.teradata.com/api/tdrest/systems/shared_demo/queries";
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
+
+            var requestBody = new StringContent("{\"query\":\"SEL * FROM dbc.dbcinfo\",\"logMech\":\"JWT\"}", Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(url, requestBody);
+
+            Console.WriteLine("Response Code: " + (int)response.StatusCode);
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine("Response Body: " + responseBody);
+        }
+
+        static string Base64UrlEncode(byte[] input)
+        {
+            return Convert.ToBase64String(input).TrimEnd('=').Replace('+', '-').Replace('/', '_');
+        }
+
+        static RSA LoadPrivateKey(string path)
+        {
+            string pem = System.IO.File.ReadAllText(path);
+            pem = pem.Replace("-----BEGIN PRIVATE KEY-----", "").Replace("-----END PRIVATE KEY-----", "").Replace("\n", "").Replace("\r", "");
+            byte[] keyBytes = Convert.FromBase64String(pem);
+
+            RSA rsa = RSA.Create();
+            rsa.ImportPkcs8PrivateKey(keyBytes, out _);
+            return rsa;
+        }
+    }
+    ```
+  </TabItem>
+  <TabItem value="Typescript" label="Typescript">
+    ```typescript
+    import * as crypto from 'crypto';
+    import * as fs from 'fs';
+    import * as https from 'https';
+
+    function base64UrlEncode(input: Buffer): string {
+        return input.toString('base64').replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+    }
+
+    async function createJWT() {
+        // Define the header
+        const header = {
+            alg: "RS256",
+            kid: "primary",
+            typ: "JWT"
+        };
+        const headerJson = JSON.stringify(header);
+        const headerEncoded = base64UrlEncode(Buffer.from(headerJson, 'utf8'));
+
+        // Define the payload
+        const payload = {
+            aud: ["td:service:authentication"],
+            exp: Math.floor(Date.now() / 1000) + 3600,
+            iat: Math.floor(Date.now() / 1000),
+            iss: "wiki",
+            org_id: "38b6*****-****-****-****-********5df7",
+            "multi-use": true,
+            pat: "gwxh******************n4yco",
+            sub: "data_engineer"
+        };
+        const payloadJson = JSON.stringify(payload);
+        const payloadEncoded = base64UrlEncode(Buffer.from(payloadJson, 'utf8'));
+
+        // Load the private key
+        const privateKeyPath = 'primary.pem';
+        const privateKey = fs.readFileSync(privateKeyPath, 'utf8');
+
+        // Create the signature
+        const data = `${headerEncoded}.${payloadEncoded}`;
+        const sign = crypto.createSign('RSA-SHA256');
+        sign.update(data);
+        const signature = sign.sign(privateKey);
+        const signatureEncoded = base64UrlEncode(signature);
+
+        // Construct the JWT
+        const jwt = `${data}.${signatureEncoded}`;
+
+        // Make the HTTP request
+        const options = {
+            hostname: 'tddemos.innovationlabs.teradata.com',
+            path: '/api/tdrest/systems/shared_demo/queries',
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${jwt}`,
+                'Content-Type': 'application/json'
+            }
+        };
+
+        const reqBody = JSON.stringify({ query: "SEL * FROM dbc.dbcinfo", logMech: "JWT" });
+
+        const req = https.request(options, (res) => {
+            let data = '';
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            res.on('end', () => {
+                console.log('Response Code:', res.statusCode);
+                console.log('Response Body:', data);
+            });
+        });
+
+        req.on('error', (e) => {
+            console.error(e);
+        });
+
+        req.write(reqBody);
+        req.end();
+    }
+
+    createJWT();
+    ```
+  </TabItem>
+  <TabItem value="Javascript" label="Javascript">
+    ```javascript
+    const crypto = require('crypto');
+    const fs = require('fs');
+    const https = require('https');
+
+    function base64UrlEncode(input) {
+        return input.toString('base64').replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+    }
+
+    async function createJWT() {
+        // Define the header
+        const header = {
+            alg: "RS256",
+            kid: "primary",
+            typ: "JWT"
+        };
+        const headerJson = JSON.stringify(header);
+        const headerEncoded = base64UrlEncode(Buffer.from(headerJson, 'utf8'));
+
+        // Define the payload
+        const payload = {
+            aud: ["td:service:authentication"],
+            exp: Math.floor(Date.now() / 1000) + 3600,
+            iat: Math.floor(Date.now() / 1000),
+            iss: "wiki",
+            org_id: "38b6*****-****-****-****-********5df7",
+            "multi-use": true,
+            pat: "gwxh******************n4yco",
+            sub: "data_engineer"
+        };
+        const payloadJson = JSON.stringify(payload);
+        const payloadEncoded = base64UrlEncode(Buffer.from(payloadJson, 'utf8'));
+
+        // Load the private key
+        const privateKeyPath = 'primary.pem';
+        const privateKey = fs.readFileSync(privateKeyPath, 'utf8');
+
+        // Create the signature
+        const data = `${headerEncoded}.${payloadEncoded}`;
+        const sign = crypto.createSign('RSA-SHA256');
+        sign.update(data);
+        const signature = sign.sign(privateKey);
+        const signatureEncoded = base64UrlEncode(signature);
+
+        // Construct the JWT
+        const jwt = `${data}.${signatureEncoded}`;
+
+        // Make the HTTP request
+        const options = {
+            hostname: 'tddemos.innovationlabs.teradata.com',
+            path: '/api/tdrest/systems/shared_demo/queries',
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${jwt}`,
+                'Content-Type': 'application/json'
+            }
+        };
+
+        const reqBody = JSON.stringify({ query: "SEL * FROM dbc.dbcinfo", logMech: "JWT" });
+
+        const req = https.request(options, (res) => {
+            let data = '';
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            res.on('end', () => {
+                console.log('Response Code:', res.statusCode);
+                console.log('Response Body:', data);
+            });
+        });
+
+        req.on('error', (e) => {
+            console.error(e);
+        });
+
+        req.write(reqBody);
+        req.end();
+    }
+
+    createJWT();
+    ```
+  </TabItem>
+  <TabItem value="Bash (MacOS)" label="Bash">
+    ```bash
+    # define the header, the kid needs to be the same as the key name defined in the console, i.e. `primary`
+    header=$(echo -n '{"alg":"RS256", "kid":"primary", "typ":"JWT"}')
+
+    # define the payload, here is the description of different params from the wiki
+    # exp       - Expiration claim. This is a UTC epoch and recommended to be at 
+    #             least 30 seconds into the future. You can use Epoch Converter 
+    #             website: https://www.epochconverter.com/
+    # iat       - Issued At claim. This is a UTC epoch. Set to the current time
+    # iss       - The issuer. Can be anything and will be recorded in the logs
+    # multi-use - Determines if the token can be used more than once.
+    # org_id    - org_id (you can get it from the console in dev mode)
+    # pat       - The pat to be exchanged (retrieved from the console)
+    # sub       - The owner of the PAT. This must match the owner specified when 
+    #             creating the pat. (the name of the user that you used to log in 
+    #             to the console)
+
+    payload=$(echo -n '{
+      "aud": [
+        "td:service:authentication"
+      ],
+      "exp": $(($(date +%s) + 3600)),
+      "iat": $(date +%s),
+      "iss": "wiki",
+      "org_id": "38b6*****-****-****-****-********5df7",
+      "multi-use": true,
+      "pat": "gwxh******************n4yco",
+      "sub": "data_engineer"
+    }')
+    
+    export header=$(echo -n "$header" | base64)
+    export payload=$(echo -n "$payload" | base64)
+    export signature=$(echo -n "$header.$payload" | openssl dgst -sha256 -binary -sign primary.pem | openssl enc -base64 | tr -d '\n=' | tr -- '+/' '-_')
+    export jwt=$(echo -n "$header.$payload.$signature")
+
+    curl 'https://tddemos.innovationlabs.teradata.com/api/tdrest/systems/shared_demo/queries' \
+      --header 'Accept: application/json' \
+      --header "Authorization: Bearer $jwt" \
+      --data-raw '{"query":"SEL * FROM dbc.dbcinfo","logMech":"JWT"}'
+    ```
+  </TabItem>  
+</Tabs>
