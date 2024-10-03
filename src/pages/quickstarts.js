@@ -30,6 +30,8 @@ function HomepageHeader() {
             src={HeroImageUrl} 
             alt= {translate({ message: 'quickstarts.alt-img-banner' })} 
             className={styles.imgW}
+            width=""
+            height=""
           />
           <div className={styles.heroBlur}></div>
         </div>
