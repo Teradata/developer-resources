@@ -111,14 +111,6 @@ const config = {
         src: 'https://www.teradata.com/js/Celebrus/bsci.js',
       },
     },
-    {
-      // Meta tag for robots
-      tagName: 'meta',
-      attributes: {
-        name: 'robots',
-        content: 'index, follow', 
-      },
-    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set
