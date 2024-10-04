@@ -44,32 +44,20 @@ This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantag
   <TabItem value="Windows" label="Windows" default>
     Run in Powershell:
     ```bash
-    gcloud compute instances create teradata-vantage-express `
-    --zone=us-central1-a `
-    --machine-type=n2-custom-4-8192 `
-    --create-disk=boot=yes,device-name=ve-disk,image-project=ubuntu-os-cloud,image-family=ubuntu-2004-lts,size=70,type=pd-balanced `
-    --enable-nested-virtualization `
-    --tags=ve
+    python -m venv env
+    .\env\Scripts\activate
     ```
   </TabItem>
   <TabItem value="MacOS" label="MacOS">
     ```bash
-    gcloud compute instances create teradata-vantage-express \
-  --zone=us-central1-a \
-  --machine-type=n2-custom-4-8192 \
-  --create-disk=boot=yes,device-name=ve-disk,image-project=ubuntu-os-cloud,image-family=ubuntu-2004-lts,size=70,type=pd-balanced \
-  --enable-nested-virtualization \
-  --tags=ve
+    python3 -m venv env
+    source env/bin/activate
     ```
   </TabItem>
   <TabItem value="Linux" label="Linux">
     ```bash
-    gcloud compute instances create teradata-vantage-express \
-  --zone=us-central1-a \
-  --machine-type=n2-custom-4-8192 \
-  --create-disk=boot=yes,device-name=ve-disk,image-project=ubuntu-os-cloud,image-family=ubuntu-2004-lts,size=70,type=pd-balanced \
-  --enable-nested-virtualization \
-  --tags=ve
+    python3 -m venv env
+    source env/bin/activate
     ```
   </TabItem>
 </Tabs>
