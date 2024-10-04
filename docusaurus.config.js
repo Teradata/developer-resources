@@ -109,7 +109,7 @@ const config = {
       attributes: {
         defer: 'true',
         src: 'https://www.teradata.com/js/Celebrus/bsci.js',
-        async: true,
+        async: 'true',
       },
     },
   ],
