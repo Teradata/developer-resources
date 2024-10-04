@@ -1,5 +1,5 @@
 ---
-id: dbt
+id: use-dbt-cloud-with-teradata-vantage
 sidebar_position: 4.4
 author: Mohan Talla
 email: mohan.talla@teradata.com
@@ -11,7 +11,7 @@ import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 
 # dbt Cloud with Teradata Vantage
 
-This tutorial demonstrates how to use dbt Cloud with Teradata Vantage. It's based on the original [dbt Jaffle Shop tutorial](https://github.com/dbt-labs/jaffle_shop-dev). A couple of models have been adjusted to the SQL dialect supported by Vantage.
+This tutorial demonstrates how to use dbt Cloud with Teradata Vantage. It's based on the original [dbt Jaffle Shop tutorial](https://github.com/Teradata/jaffle_shop-dev). A couple of models have been adjusted to the SQL dialect supported by Vantage.
 
 ## Prerequisites
 
@@ -34,44 +34,47 @@ dbt takes these raw data table and builds the following dimensional model, which
 
 ## Creating a project in dbt Cloud and connect to a Teradata environment
 1.	Create a new project in dbt Cloud. 
-   * Click on your account 
-   * On ‘Settings’ select ‘Projects’ 
-   * Click ‘+ New Project’.
+    * Click on your account 
+    * On ‘Settings’ select ‘Projects’ 
+    * Click ‘+ New Project’.
 
-![](../images/dbt-cloud/dbt-cloud1.png)
+    ![](../images/dbt-cloud/dbt-cloud1.png)
 
 2. Enter a project name and click ‘Continue’.
 
-![](../images/dbt-cloud/dbt-cloud2.png)
+    ![](../images/dbt-cloud/dbt-cloud2.png)
 
 3.	In ‘Configure your development environment’, click “Add new connection”
 
-![](../images/dbt-cloud/dbt-cloud3.png)
+    ![](../images/dbt-cloud/dbt-cloud3.png)
 
 4.	Select "Teradata," fill in all the required details in the "Settings" section and test the connection.
 
-![](../images/dbt-cloud/dbt-cloud4.png)
-![](../images/dbt-cloud/dbt-cloud5.png)
+    ![](../images/dbt-cloud/dbt-cloud4.png)
+    ![](../images/dbt-cloud/dbt-cloud5.png)
 
 5.	Once the Teradata connection is ready, provide “Development Credentials” in the project setup page
 
-![](../images/dbt-cloud/dbt-cloud6.png)
+    ![](../images/dbt-cloud/dbt-cloud6.png)
 
 6.	Click Test Connection. This verifies that dbt Cloud can access your Teradata database. If the connection test succeeds, click Next. If it fails, you may need to check your Teradata settings and credentials. If the connection fails, verify your Teradata settings and credentials. If the issue persists, reach out to Teradata support at support.teradata.com. For dbt-teradata related issues, start a discussion on the dbt-teradata GitHub at https://github.com/Teradata/dbt-teradata.
 
 ## Import a sample dbt project to dbt Cloud
 
-You can import a Git repository into dbt Cloud using Git Clone. 
+Use Git Clone to import tha sample project repo: 
+```
+git@github.com:Teradata/jaffle_shop-dev.git
+```
 
 ![](../images/dbt-cloud/dbt-cloud7.png)
 
-This will generate a deploy key that needs to be added to GitHub. Once the keys are deployed, the project will be ready for further development
+This will generate a deploy key that needs to be added to GitHub. Once the keys are deployed, the project will be ready for further development.
 
 ![img.png](../images/dbt-cloud/dbt-cloud8.png)
 
 ## Visualize the project on dbt Cloud IDE
 
-Select 'Start developing in the IDE'. You will be redirected to the development page of the dbt Cloud IDE
+Select 'Start developing in the IDE'. You will be redirected to the development page of the dbt Cloud IDE.
 
 ![](../images/dbt-cloud/dbt-cloud9.png)
 In the “File explorer” section, you can browse through the project.
@@ -88,7 +91,7 @@ Before deploying the project, an environment must be created.
 ![](../images/dbt-cloud/dbt-cloud10.png)
 
 Provide the Deployment credentials for the connection and test the connection.
-Once the connection is successfull, save this environment.
+Once the connection is successful, save this environment.
 
 ![](../images/dbt-cloud/dbt-cloud11.png)
 
