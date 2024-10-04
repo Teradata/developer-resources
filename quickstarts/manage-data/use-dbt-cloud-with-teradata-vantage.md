@@ -124,9 +124,4 @@ This tutorial demonstrates how to use dbt Cloud with Teradata Vantage, adapting 
 ## Further reading
 - Learn more with [dbt Learn courses](https://learn.getdbt.com)
 - [How we provision Teradata Clearscape Vantage instance](https://developers.teradata.com/quickstarts/get-access-to-vantage/clearscape-analytics-experience/getting-started-with-csae/)
-- [CI jobs](/docs/deploy/continuous-integration)
-- [Deploy jobs](/docs/deploy/deploy-jobs)
-- [Job notifications](/docs/deploy/job-notifications)
-- [Source freshness](/docs/deploy/source-freshness)
-  
   
