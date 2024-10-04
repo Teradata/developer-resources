@@ -11,7 +11,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import InstallTabs from '../_partials/tabsDBT.mdx'
-import ProfileTabs from '../_partials/tabsDbtProfiles.mdx'
+import ProfileTabs from '../_partials/tabsDBTProfiles.mdx'
 
 # dbt with Teradata Vantage
 
