@@ -10,8 +10,8 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import InstallTabs from '../_partials/tabsDBT.mdx'
+import ProfileTabs from '../_partials/tabsDbtProfiles.mdx'
 
 # dbt with Teradata Vantage
 
@@ -39,29 +39,7 @@ This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantag
     
     Activate the environment:
     
-```mdx-code-block
-<Tabs>
-  <TabItem value="Windows" label="Windows" default>
-    Run in Powershell:
-    ```bash
-    python -m venv env
-    .\env\Scripts\activate
-    ```
-  </TabItem>
-  <TabItem value="MacOS" label="MacOS">
-    ```bash
-    python3 -m venv env
-    source env/bin/activate
-    ```
-  </TabItem>
-  <TabItem value="Linux" label="Linux">
-    ```bash
-    python3 -m venv env
-    source env/bin/activate
-    ```
-  </TabItem>
-</Tabs>
-```
+      <InstallTabs/>
 
 3. Install `dbt-teradata` module and its dependencies. The core dbt module is included as a dependency so you don't have to install it separately:
     :::note
@@ -76,26 +54,8 @@ This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantag
 
 ## Configure dbt
 Configure dbt to connect to your Vantage database. Create `profiles.yml` file in the location show below.
-```mdx-code-block
-<Tabs>
-  <TabItem value="Windows" label="Windows" default>
-    Run in Powershell:
-    ```bash
-    c:\Users\<user name>\.dbt\profiles.yml
-    ```
-  </TabItem>
-  <TabItem value="MacOS" label="MacOS">
-    ```bash
-    ~/.dbt/profiles.yml
-    ```
-  </TabItem>
-  <TabItem value="Linux" label="Linux">
-    ```bash
-    ~/.dbt/profiles.yml
-    ```
-  </TabItem>
-</Tabs>
-```
+
+  <ProfileTabs/>
 
 Add the following config to `profile.yml` file. Adjust `<host>`, `<user>`, `<password>` to match your Teradata Vantage instance.
 
