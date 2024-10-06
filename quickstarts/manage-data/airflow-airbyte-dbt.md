@@ -16,7 +16,7 @@ import ProfileTabs from '../_partials/tabsDBTProfiles.mdx'
 
 ## Overview
 
-This tutorial demonstrates how to leverage Apache Airflow as orchestration tool to automate the movement of data from a source to Teradata using Airbyte. Once the data is in Teradata, trigger dbt to perform transformations, ensuring the data is clean, reliable and ready for analysis.
+This tutorial demonstrates how to leverage Apache Airflow as orchestration tool to automate the movement of data to Teradata using Airbyte. Once the data is in Teradata, trigger dbt to perform transformations, ensuring the data is clean, reliable and ready for analysis.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This tutorial demonstrates how to leverage Apache Airflow as orchestration tool 
 
     <ClearscapeDocsNote />
 
-* Python **3.10** or later installed.
+* [Python](https://www.python.org/downloads/) **3.10** or later installed.
 
 * [Docker and Docker Compose (Docker Desktop)](https://docs.docker.com/get-started/get-docker/)
 
@@ -32,15 +32,14 @@ This tutorial demonstrates how to leverage Apache Airflow as orchestration tool 
 
 ## Demo project setup
 
-1. Clone the tutorial repository and cd into the project directory:
+1. Clone the tutorial repository:
 ```bash
-git clone https://github.com/teradata/quickstarts.git
-cd quickstarts
+git clone https://github.com/Teradata/airflow-demos.git
 ```
 
 2. Navigate to the directory:
 ```bash
-cd airbyte_dbt_airflow_teradata
+cd airflow-demos/airbyte_dbt_airflow_teradata
 ```
 Open the code in your preferred IDE.
 
@@ -54,32 +53,49 @@ Follow the instructions from [Getting started with ClearScape Analytics Experien
 
 Jot it down, it will be needed in next step.
 
-## Edit `profiles.yml` file
-Navigate to `dbt_project` folder, open `profiles.yml` file, it contains configuration for dbt to connect with your data platform. Update this file with your Teradata connection details:
-* Host (from previous step)
-* username (from previous step)
-* password (from previous step)
-* schema: `airbyte_td`
+## dbt setup
 
-And move the file in location shown below:
+The dbt project is already present in the `dbt_project` folder. You need to configure dbt to connect to your Vantage database. 
+
+1. Create a `profiles.yml` file in the location mentioned below.
 
 <ProfileTabs/>
 
-## Airbyte setup
+2. Copy the code from below, paste it in `profiles.yml` and adjust `<host>`, `<user>`, `<password>` to match your Teradata Vantage instance:
 
-1. After you install Airbyte OSS locally using `abctl`:
-
-```bash
-abctl local install
+```yaml
+dbt_project:
+  outputs:
+    dev:
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      threads: 1
+      type: teradata
+      host: <host> # Update this field with your teradata instance hostname
+      schema: ecommerce
+      tmode: ANSI
+      logmech: TD2
+      user: <user> # Update this field with your teradata instance database name
+      password: <password> # Update this field with your teradata instance password
+  target: dev
 ```
 
-2. Generate and copy the credentials:
+## Airbyte setup
+
+1. After you install Airbyte OSS locally using `abctl`, generate and copy the credentials:
 
 ```bash
 abctl local credentials
 ```
 
+![Airbyte Credentials](../images/airbyte_creds.png)
+
 You can learn more about it from [here](https://docs.airbyte.com/using-airbyte/getting-started/oss-quickstart)
+
+2. Launch Airbyte UI by opening [http://localhost:8000/](http://localhost:8000/ ) in your preferred browser and login with credentials from previous step.
+
+![Airbyte UI](../images/airbyte_ui.png)
+
 
 3. Create a source
     * Go to the Sources tab and click on `+ New source`.
@@ -92,7 +108,12 @@ You can learn more about it from [here](https://docs.airbyte.com/using-airbyte/g
     * Go to the Destinations tab and click on `+ New destination`.
     * Search for “teradata” using the search bar and select `Teradata Vantage`.
     * Enter the connection details as needed.
+        * Host (your Teradata instance hostname)
+        * Password (your Teradata instance password)
+        * Default Schema (ecommerce)
     * Click on `Set up destination`.
+
+    ![Airbyte Teradata Connection](../images/airbyte_teradata_connection.png)
 
 5. Create a connection
 
@@ -101,86 +122,27 @@ You can learn more about it from [here](https://docs.airbyte.com/using-airbyte/g
     * Enter the connection details as needed.
     * Click on `Set up connection`.
 
-![Airbyte Connection](../images/airbyte_connection.png)
-
-6.Airbyte `connection id`
-
-On the connection page,  from the URL, copy the value between `connections` and `status` 
-
-![Airbyte Connection id](../images/airbyte_connection_id.png)
-
-This will be needed later in the Airflow setup.
-
-## dbt setup
-
-The dbt project is already present in the `dbt_project` folder. 
-
-1. Navigate to the folder.
-
-```bash
-cd dbt_project
-```
-
-2. Create a Python virtual environment
-
-```bash
-python -m venv env
-```
-
-3. Activate the environment
-
-```bash
-source env/bin/activate
-```
-
-for Mac, Linux, or
-
-```bash
-env\Scripts\activate
-```
-
-for Windows
-
-4. Install `dbt-teradata` and `dbt-core` modules
-
-```bash
-pip install dbt-teradata
-```
-
-```bash
-pip install dbt-core>=1.8.0
-```
-
-5. Test the connection
-
-```bash
-dbt debug
-```
-
-If the output of above command is `All checks passed!` then we are good to move forward, else, check the values entered in `profiles.yml` and also make sure all the modules are installed correctly.
+    ![Airbyte Connection](../images/airbyte_connection.png)
 
 ## Airflow setup
 
-Airflow is at the center of the whole tutorial. It is responsible for making Airbyte move data to Teradata and triggering dbt to transform the data.
+Airflow is at the center of the whole tutorial. It is responsible for making Airbyte move data to Teradata and trigger dbt to transform the data.
 
 1. Navigate to `orchestration` directory
 
 ```bash
-cd ..
 cd orchestration
 ```
 
-The directory contains environment file, if it is named as `.env.example`, then change it to `.env`.
+2. Change the environment file name from `.env.example` to `.env`.
 
-Make sure that your docker is running, it is imperative for next steps.
-
-2. Build custom Airflow image
+3. Build custom Airflow image
 
 ```bash
 docker compose build
 ```
 
-3. Launch Airflow container
+4. Launch Airflow container
 
 ```bash
 docker compose up
@@ -188,17 +150,15 @@ docker compose up
 
 This might take a few minutes initially as it sets up necessary databases and metadata.
 
-4. Airflow UI
+5. Open Airflow UI
 
     * Open Airflow UI by pasting `http://localhost:8080` to browser of your choice.
     * Default username and password is `airflow` (unless you changed it in `.env` file)
 
 
-5. Airflow connection with Airbyte
+6. Create Airflow connection with Airbyte
 
-Setting up connection in Airflow is necessary for using Airbyte and dbt both.
-
-    * Go to the "Admin" > "Connections" tab
+    * Go to the `Admin` > `Connections` tab
     * Click on the + button to create a new connection     
     * Edit the page with following values
         * `Connection id`:airbyte_connection
@@ -209,15 +169,28 @@ Setting up connection in Airflow is necessary for using Airbyte and dbt both.
         * `Password`:Your airbyte password (you can get it by running `abctl local credentials` command in terminal)
     * Click on the `Test` button, and make sure you get a `Connection successfully tested` message at the top. Then, you can `Save` the connection.
 
-![Airflow Connection](../images/airbyte_airflow.png)
+    ![Airflow Airbyte Connection](../images/airbyte_airflow.png)
 
-6. Link Airbyte connection to the Airflow DAG
+7. Create Airflow connection with Teradata
 
-To execute the DAG in Airflow to trigger Airbyte, `connection_id` needs to be edited in `elt_dag.py` file
+ * Go to the `Admin` > `Connections` tab
+    * Click on the + button to create a new connection     
+    * Edit the page with following values
+        * `Connection id`:teradata_connection
+        * `Connection Type`:Teradata
+        * `Database Server URL`:Your Teradata instance hostname
+        * `Username`:demo_user 
+        * `Password`:Your Teradata instance password
+    * Click on the `Test` button, and make sure you get a `Connection successfully tested` message at the top. Then, you can `Save` the connection.
 
-    * On the connection page,  from the URL, copy the value between `connections` and `status`. This will be `connection_id`'s value 
+    ![Airflow Teradata Connection](../images/teradata_airflow.png)
 
-![Airbyte Connection id](../images/airbyte_connection_id.png)
+8. Link Airbyte connection to the Airflow DAG
+
+    * To execute the DAG in Airflow to trigger Airbyte, `connection_id` needs to be edited in `elt_dag.py` file
+    * On the connection page,  from the URL, copy the part between `connections` and `status`. It is the value of `connection_id` variable. 
+
+    ![Airbyte Connection id](../images/airbyte_connection_id.png)
 
     * Open `elt_dag.py` file inside the `airflow/dags` directory and add your Airbyte connection id on `line 28`
 
@@ -226,17 +199,32 @@ To execute the DAG in Airflow to trigger Airbyte, `connection_id` needs to be ed
 
 After making sure all the steps till now is working fine, it is time to run your data pipeline.
 
-1. In Airflow UI, go to `DAGs` section, locate `elt_dag` and click on "Trigger DAG" under the "Action" column.
+1. Relaunch Airflow container
+
+```bash
+docker compose up
+``` 
+
+2. In Airflow UI, go to `DAGs` section, locate `elt_dag` and click on "Trigger DAG" under the "Action" column.
+    * This will initiate the complete data pipeline, starting with the Airbyte sync from Faker to Teradata, followed by dbt transforming the raw data into `staging` and `marts` models.
+    * The status of `elt_dag` can be check by clicking on `elt_dag` and then on `Graph`.
 
 ![DAGs](../images/dags.png)
 
-This will initiate the complete data pipeline, starting with the Airbyte sync from Faker to Teradata, followed by dbt transforming the raw data into `staging` and `marts` models.
 
-![DAGs two](../images/elt_dag.png)
+![DAGs two running](../images/dag_second_running.png)
 
-2. Confirm the sync status in the Airbyte UI.
+3. Confirm the sync status in the Airbyte UI.
 
-3. After dbt jobs completion, check the Teradata to see the newly created views in the `transformed_data` dataset. This can be done by using Teradata Studio or other database client UI tools.
+![Airbyte Sync Status](../images/airbyte_sync.png)
+
+4. After the  completion of both the DAGs, check the `dbt_dag` graph.
+
+![DAGs two complete](../images/dag_second_complete.png)
+
+![dbt transformation](../images/dbt_transformation.png)
+
+5. You can check the newly created views in the `transformed_data` dataset on Teradata Vantage. This can be done by using Teradata Studio or other database client UI tools like [DBeaver](https://dbeaver.io/download/).
 
 ## Conclusion
 
