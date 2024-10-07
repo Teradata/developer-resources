@@ -62,7 +62,7 @@ abctl local credentials
 ```
 
 :::note 
-At the moment of writing this quickstart, Airbyte installed with `abctl` performs unauthenticated pulls even if you pass in Docker credentials: https://github.com/airbytehq/airbyte/issues/46309. Since Docker limits unauthenticated pulls you may encounter `429 Too Many Requests` error. If you run into this error, launch Airbyte using `run-ab-platform.sh` scruot as described in [the Airbyte quickstart](https://developers.teradata.com/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/#airbyte-open-source).
+At the moment of writing this quickstart, Airbyte installed with `abctl` performs unauthenticated pulls even if you pass in Docker credentials: https://github.com/airbytehq/airbyte/issues/46309. Since Docker limits unauthenticated pulls you may encounter `429 Too Many Requests` error. If you run into this error, launch Airbyte using `run-ab-platform.sh` script as described in [the Airbyte quickstart](https://developers.teradata.com/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/#airbyte-open-source).
 :::
 
 ![Airbyte Credentials](../images/airbyte_creds.png)
