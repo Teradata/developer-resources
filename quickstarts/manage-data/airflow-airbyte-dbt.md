@@ -62,7 +62,7 @@ abctl local credentials
 ```
 
 :::note 
-If you encounter `429 Too Many Requests` error with `abctl local install` command, check Docker and run it again.
+At the moment of writing this quickstart, Airbyte installed with `abctl` performs unauthenticated pulls even if you pass in Docker credentials: https://github.com/airbytehq/airbyte/issues/46309. Since Docker limits unauthenticated pulls you may encounter `429 Too Many Requests` error. If you run into this error, launch Airbyte using `run-ab-platform.sh` scruot as described in [the Airbyte quickstart](https://developers.teradata.com/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/#airbyte-open-source).
 :::
 
 ![Airbyte Credentials](../images/airbyte_creds.png)
@@ -87,7 +87,7 @@ You can learn more about it from [here](https://docs.airbyte.com/using-airbyte/g
     * Enter the connection details as needed.
         * Host (your Teradata instance hostname)
         * Password (your Teradata instance password)
-        * Default Schema (ecommerce)
+        * Default Schema ('ecommerce')
     * Click on `Set up destination`.
 
     ![Airbyte Teradata Connection](../images/airbyte_teradata_connection.png)
