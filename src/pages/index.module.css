@@ -174,6 +174,8 @@
 /* Default for large screens */
 .imgW {
   max-width: 398px;
+  width: 398px;
+  height: auto;
 }
 .headline{
   font-family: var(--td-web-typography-headline1-font-family);
@@ -187,6 +189,8 @@
   .imgW {
       max-width: 248px;
       margin-left: 80px;
+      width: 248px;
+      height: auto;
   }
   .headline_size{
     width: 360px;
@@ -199,6 +203,7 @@
     /*
       max-width: 243px;
       */width: 100%;
+      height: auto;
   }
   .heroBanner {
     padding: 6rem 0 0 0 !important;
