@@ -57,9 +57,6 @@ const allowedUrls = [
   'https://td.doubleclick.net/',
   'https://www.youtube.com/',
   'https://*.algolia.net/',
-  'https://img04.en25.com',          
-  'https://j.6sc.co',              
-  'https://www.google.com.mx/ads/',
 ];
 
 /** @type {import('@docusaurus/types').Config} */
