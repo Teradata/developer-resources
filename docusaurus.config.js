@@ -109,6 +109,33 @@ const config = {
         async: 'true',
       },
     },
+    {
+      tagName: 'script',
+      attributes: {
+        src: '/~partytown/partytown.js',
+        async: 'true',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'text/partytown',
+        src: 'https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID',
+        async: 'true',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'text/partytown',
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'GA_TRACKING_ID');
+        `,
+      },
+    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set
