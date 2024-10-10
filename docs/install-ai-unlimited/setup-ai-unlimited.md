@@ -3,7 +3,7 @@ id: setup-ai-unlimited
 title: Set up AI Unlimited
 description: Learn about the setup details.
 sidebar_label: Set up AI Unlimited
-sidebar_position: 3
+sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 After you install the [manager](../glossary.md#ai-unlimited-manager), access the AI Unlimited setup using the URL you received at the end of the installation process: `http://[ip_or_hostname]:[port]`. 
 
 :::note
-By setting up AI Unlimited, you become the AI Unlimited admin at your organization.
+By setting up AI Unlimited, you become the AI Unlimited owner at your organization.
 :::
 
 :::tip
@@ -24,172 +24,129 @@ For setup help, email the <a href="mailto:aiunlimited.support@Teradata.com">supp
 :::
 
 <a id="setup-fields"></a>	
-## Complete the fields
+## Complete steps 1-3 in the manager
 
-Find information about each group of fields here.
+Find additional information here.
 
 <details>
 
-<summary>Basic setup</summary>
+<summary>Step 1: Git integration</summary>
 
-<br />
+**OAuth app**
 
-**AI Unlimited base URL**&mdash;The URL you used to access the setup. You received it when you installed the manager.
+An OAuth app allows a user to grant access to their account on one website or service to their account on another, without sharing their password. 
 
+AI Unlimited uses your [OAuth app](./create-oauth-app.md) to authorize access to your GitLab or GitHub account. This allows AI Unlimited to store user and project information there. 
 
-**Git provider**&mdash;GitHub or GitLab.
+GitLab or GitHub uses the authorization callback URL, after authenticating a user, to redirect back to the manager. 
 
-**AI Unlimited log level**&mdash;The level of detail to see in AI Unlimited logs.
+Selecting **Authenticate**, and signing in, establishes this access and returns you to the setup. 
 
-**Engine IP network type**
+:::warning
+To allow the authentication window to appear, make sure that in your browser settings popups are enabled for the manager site.
+:::
 
-Select **Private** if you deploy the engine in the same Virtual Private Cloud as AI Unlimited.
+<Tabs>
+<TabItem value="gitlab" label="GitLab">
 
-**Public** or **Private** refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
+**Group access**
 
-**Use TLS**
+Two groups in your GitLab account can help with access control and project repository management. 
 
-We recommend that you use [Transport Layer Security (TLS)](../glossary.md#transport-layer-security) to secure connections to AI Unlimited and safeguard your data in transit.
+Members of the **Authorizing group** can sign in to the AI Unlimited manager with their GitLab credentials and authenticate themselves. If you leave this field blank, only you, the admin user, can sign in and authenticate yourself. No other user will be able to sign in to the manager.
 
-- If you are using an [application load balancer (ALB)](../glossary.md#application-load-balancer), with certification termination enabled, select **False**.
+The **Repository group** is the group in which all AI Unlimited project repositories are stored. If you leave this field blank, projects are stored in your personal GitLab space.
 
-- If you are using a [network load balancer (NLB)](../glossary.md#network-load-balancer) or no load balancer, select **True.**
-..
-	- **AI Unlimited TLS certificate** and **AI Unlimited TLS certificate key**&mdash;If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
+</TabItem>
 
-	- Or select **Generate Certs** to use a Teradata system-generated certificate. It automatically renews before it expires.
+<TabItem value="github" label="GitHub">
 
-Select **Update**.
+**Organization access**
+
+Two organizations in your GitHub account can help with access control and project repository management. 
+
+Members of the **Authorizing organization** can sign in to the AI Unlimited manager with their GitHub credentials and authenticate themselves. If you leave this field blank, only you, the admin user, can sign in and authenticate yourself. No other user will be able to sign in to the manager.
+
+The **Repository organization** is the organization in which all AI Unlimited project repositories are stored. If you leave this field blank, projects are stored in your personal GitHub space.
+
+</TabItem>
+</Tabs>
 
 </details>
 
 
 <details>
 
-<summary>Cloud integration</summary>
-<br />
+<summary>Step 2: Cloud setup</summary>
+
 Some of these fields are for default values. Later, when you deploy the engine from a Jupyter notebook, you can specify values, different from the defaults, for that deployment.
 
 <Tabs>
 <TabItem value="aws1" label="AWS">
-<br />
-**Default region**&mdash;The AWS region in which to deploy the engine. We recommend choosing the region closest to your data lake.
 
-**Default subnet**&mdash;The [AWS subnet](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) to which to deploy the engine. The AWS console shows the subnets in the region.
+**IAM role**
 
-**Default IAM role**
+If AI Unlimited creates the IAM role for the engine, it creates it for the AWS [cluster](../glossary.md#cluster) that deploys the engine&mdash;each time you deploy the engine. If [your organization creates the role](../resources/aws-requirements.md#provide-roles-created-by-your-organization) for the engine, it must be broad enough to include all the clusters that might deploy the engine.
 
-- The [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) for the engine. Leave blank to let AI Unlimited create the role&mdash;if your security allows this. Otherwise, create a role using this policy: [ai-unlimited-engine.json](https://github.com/Teradata/ai-unlimited/blob/develop/deployments/aws/policies/ai-unlimited-engine.json).
-- If AI Unlimited creates the role, it creates it for the AWS [cluster](../glossary.md#cluster) that deploys the engine&mdash;each time you deploy the engine. If your organization creates the role, it must accommodate any cluster that might deploy the engine.
-		
-**Resource tags**&mdash;You can [tag](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) the AWS resources that deploy the engine to make them easier to manage.
+**Inbound security: Security groups**
 
-**Inbound security**
+If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group to ensure that AI Unlimited can communicate with the engine.
 
-Use these fields to allow source traffic to reach the engine:
-- **Default [CIDRs](../glossary.md#classless-inter-domain-routing)**
-- **Default [security group](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-groups.html) IDs**&mdash;If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited security group in this field to ensure that AI Unlimited can communicate with the engine.
-- **Default [prefix list](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html) names**
+**Inbound security: Permissions boundary ARNs**
 
-**Role prefix**&mdash;If AI Unlimited creates the role, this prefix is added to the role name.
-
-**[Permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) ARN**&mdash;If your IAM entities require a boundary, you can provide one here.   
-
-Select **Update**.
+For example, arn:aws:iam::123456789012:policy/ExamplePermissionsBoundary.
 
 </TabItem>
 
-<TabItem value="azure" label="Azure"> 
+<TabItem value="azure" label="Azure">
 
-<br />
+**Network resource group**
 
-**Default region**&mdash;The Azure region in which to deploy the engine. We recommend choosing the region closest to your data lake.
+The name can include only alphanumeric, underscore, parentheses, hyphen, and period (except at the end) characters, and Unicode for those characters.
 
-Learn more about [Azure virtual networks](https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices).
+**Virtual network**
 
+The name must begin with a letter or number, and end with a letter, number, or underscore. It can contain only letters, numbers, underscores, periods, and hyphens.
 
-**Default network resource group**&mdash;The resource group that contains the network.
+**Subnet**
 
-**Default network**&mdash;The network to which to deploy the engine.
+The name must begin with a letter or number, and end with a letter, number, or underscore. It can contain only letters, numbers, underscores, periods, and hyphens.
 
-**Default subnet**&mdash;The subnet to which to deploy the engine.
+**Key vault resource group**
 
-**Default key vault**&mdash;The key vault, used by the engine, in which sensitive information such as passwords can be securely stored.
+The name can include only alphanumeric, underscore, parentheses, hyphen, and period (except at the end) characters, and Unicode for those characters.
 
-**Default key vault resource group**&mdash;The resource group that contains the key vault.
+**Key vault**
 
-**Inbound security**
+The name must have 3-24 alphanumeric characters. It must begin with a letter, end with a letter or number, and not contain consecutive hyphens.
 
-Use these fields to allow source traffic to reach the engine:
+**Inbound security: Application security group names**
 
-- **Default [CIDRs](../glossary.md#classless-inter-domain-routing)**
- 
-- **Default [security group](https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups) names**&mdash; If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group in this field to ensure that AI Unlimited can communicate with the engine.
-
-**Resource tags**&mdash;You can [tag](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) the Azure resources that deploy the engine to make them easier to manage.
-
-Select **Update**.
+If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, include the AI Unlimited application security group to ensure that AI Unlimited can communicate with the engine.
 
 </TabItem>
 </Tabs>
+
+**Network type: Public** or **Private** 
+
+This refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
 
 </details>
 
 
 <details>
 
-<summary>Git integration</summary>
+<summary>Step 3: Application settings</summary>
 
-<Tabs>
+**TLS**
 
-<TabItem value="github" label="GitHub">
+Use [Transport Layer Security (TLS)](../glossary.md#transport-layer-security) to secure connections to the AI Unlimited service and safeguard your data in transit.
 
-<br />
+**Certificates**
 
-**GitHub callback URL**&mdash;After authenticating a user, GitHub uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](../resources/create-oauth-app.md).
+If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
 
-**GitHub base URL**&mdash;The URL for your GitHub instance.
-
-**GitHub client ID** and **GitHub client secret**&mdash;The credentials received from GitHub when your [OAuth app was created](../resources/create-oauth-app.md).
-
-**Organization access**
-
-Two organizations in your GitHub account can help with access control and repository management:
-
-- Members of the **Authorizing organization** are able to sign in and authenticate themselves in AI Unlimited. If you don't specify an organization, any GitHub account user can sign in and authenticate.
-
-- Project repositories are created in the **Repository organization**. If you don't specify an organization, projects will be in your personal GitHub space.
-
-Select **Update**.
-
-Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
-
-</TabItem>
-
-<TabItem value="gitlab" label="GitLab">
-
-<br />
-
-**GitLab callback URL**&mdash;After authenticating a user, GitLab uses this URL to redirect to the manager. This was provided to the OAuth app [when it was created](../resources/create-oauth-app.md).
-
-**GitLab base URL**&mdash;The URL for your GitLab instance.
-
-**GitLab client ID** and **GitLab client secret**&mdash;The credentials received from GitLab when your [OAuth app was created](../resources/create-oauth-app.md).
-
-**Group access**
-
-Two groups in your GitLab account can help with access control and repository management:
-
-- Members of the **Authorizing group** are able to sign in and authenticate themselves in AI Unlimited. If you don't specify a group, any GitLab account user can sign in and authenticate.
-
-- All project repositories are created in the **Repository group**. If you don't specify a group, projects will be in your personal GitLab space.
-
-Select **Update**.
-
-Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
-
-</TabItem>
-</Tabs>
+Or use a Teradata system-generated certificate. It automatically renews before it expires.
 
 </details>
 
@@ -199,17 +156,41 @@ Select **Sign In**. Then, sign in (if prompted), and authenticate yourself.
 1. On your **Profile**, copy your API key.
     You'll use it when you connect to the engine from a Jupyter notebook.
 
-2. If you enabled TLS, select **Restart**. This restarts the AI Unlimited service with TLS in place.
+2. If you enabled TLS, you'll see a restart message. Select **Restart now**. This restarts the AI Unlimited service with TLS in place. 
+
+:::note
+If you return to the setup and change any TLS setting (enable TLS, disable TLS, or change the certificate), you'll need to restart AI Unlimited again.
+:::
 
 Congratulations! AI Unlimited setup is now complete.
 
 
 :::note
-Because you are the AI Unlimited admin, you can return to the setup anytime to [change any settings](../manage-ai-unlimited/change-settings.md). 
+Because you are the AI Unlimited owner you can return to the setup anytime to [change any settings](../manage-ai-unlimited/change-settings.md). 
 :::
 
 
 ## What's next
 
 In a Jupyter notebook, start [exploring and analyzing data](../explore-and-analyze-data/index.md).
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
 
