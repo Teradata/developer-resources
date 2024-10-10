@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build && partytown copylib build",
+    "build": "docusaurus build && npm run partytown",
     "partytown": "partytown copylib build/~partytown",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
