@@ -96,6 +96,7 @@ const config = {
       tagName: 'script',
       attributes: {
         defer: 'true',
+        type: 'text/partytown',
         src: 'https://kit.fontawesome.com/17a35e44e3.js',
         crossorigin: 'anonymous',
       },
@@ -113,14 +114,6 @@ const config = {
     {
       tagName: 'script',
       attributes: {
-        src: '~partytown/debug/partytown.js',
-        async: 'true',
-      },
-    },
-    {
-      tagName: 'script',
-      attributes: {
-        type: 'text/partytown',
         src: 'https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B',
         async: 'true',
       },
