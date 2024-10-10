@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Header,
@@ -9,11 +9,13 @@ import {
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
-import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Partytown } from '@builder.io/partytown/react';
+import SearchBar from '../SearchBar';
 import MatDisclaimer from '../../components/MatDisclaimer';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
@@ -49,6 +51,7 @@ export default function Navbar() {
   };
 
   const basePath = useBaseUrl('');
+  const partytownPath = basePath ? `${basePath}/~partytown/`: '/~partytown/';
   const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
 
@@ -124,7 +127,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <><Header
+    <>
+    <Partytown lib={`${basePath}/~partytown/`} />
+    <Header
       key={defaultLang}
       navItems={translatedNavItems}
       title={translatedTitle}
