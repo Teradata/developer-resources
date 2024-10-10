@@ -105,6 +105,7 @@ const config = {
       tagName: 'script',
       attributes: {
         defer: 'true',
+        type: 'text/partytown',
         src: 'https://www.teradata.com/js/Celebrus/bsci.js',
         async: 'true',
       },
@@ -112,7 +113,7 @@ const config = {
     {
       tagName: 'script',
       attributes: {
-        src: '/~partytown/partytown.js',
+        src: '~partytown/partytown.js',
         async: 'true',
       },
     },
@@ -120,7 +121,7 @@ const config = {
       tagName: 'script',
       attributes: {
         type: 'text/partytown',
-        src: 'https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B',
         async: 'true',
       },
     },
@@ -132,7 +133,7 @@ const config = {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'GA_TRACKING_ID');
+          gtag('config', 'G-928NX0S21B');
         `,
       },
     },
