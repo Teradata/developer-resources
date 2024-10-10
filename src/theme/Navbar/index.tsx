@@ -50,8 +50,8 @@ export default function Navbar() {
     languages: Language[];
   };
 
-  const basePath = useBaseUrl('');
-  const partytownPath = basePath ? `${basePath}/~partytown/`: '/~partytown/';
+  const basePath = useBaseUrl('/');
+  const partytownPath = basePath ? `${basePath}~partytown/`: '/~partytown/';
   const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
 
