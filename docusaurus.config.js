@@ -96,6 +96,7 @@ const config = {
       tagName: 'script',
       attributes: {
         defer: 'true',
+        type: 'text/partytown',
         src: 'https://kit.fontawesome.com/17a35e44e3.js',
         crossorigin: 'anonymous',
       },
@@ -105,8 +106,28 @@ const config = {
       tagName: 'script',
       attributes: {
         defer: 'true',
+        type: 'text/partytown',
         src: 'https://www.teradata.com/js/Celebrus/bsci.js',
         async: 'true',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B',
+        async: 'true',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'text/partytown',
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-928NX0S21B');
+        `,
       },
     },
   ],
