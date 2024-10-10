@@ -128,7 +128,7 @@ export default function Navbar() {
 
   return (
     <>
-    <Partytown lib={`${basePath}/~partytown/`} />
+    <Partytown lib={partytownPath} />
     <Header
       key={defaultLang}
       navItems={translatedNavItems}
