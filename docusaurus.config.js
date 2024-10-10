@@ -113,7 +113,7 @@ const config = {
     {
       tagName: 'script',
       attributes: {
-        src: 'debug/partytown.js',
+        src: '~partytown/debug/partytown.js',
         async: 'true',
       },
     },
