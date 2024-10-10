@@ -220,6 +220,7 @@ function DocSearch({
         and allows it to preconnect to the DocSearch cluster. It makes the first
         query faster, especially on mobile. */}
         <link
+          rel="preconnect"
           href={`https://${props.appId}-dsn.algolia.net`}
           crossOrigin="anonymous"
         />
