@@ -4,8 +4,8 @@
   <ShortName>Teradata Developers Portal</ShortName>
   <Description>Search Teradata Developers Portal</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://developers.teradata.com/pr-preview/pr-150/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://developers.teradata.com/pr-preview/pr-150/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://developers.teradata.com/pr-preview/pr-150/opensearch.xml" />
-  <moz:SearchForm>https://developers.teradata.com/pr-preview/pr-150/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://developers.teradata.com/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://developers.teradata.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://developers.teradata.com/opensearch.xml" />
+  <moz:SearchForm>https://developers.teradata.com/</moz:SearchForm>
 </OpenSearchDescription>
