@@ -261,5 +261,4 @@ if (config.themeConfig) {
   config.themeConfig.footerItems = footerItems(getCurrentLocale());
 }
 
-export { baseHeadTags };
 export default config;
