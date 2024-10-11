@@ -127,19 +127,29 @@ export default function Navbar() {
 
   return (
     <>
-    <Partytown lib={partytownPath} forward={['dataLayer.push']} />
-    <Header
-      key={defaultLang}
-      navItems={translatedNavItems}
-      title={translatedTitle}
-      titleLink={`https://developers.teradata.com/${defaultLang}`}
-      headerActions={headerActions}
-      languages={languages}
-      onLanguageChange={handleLanguageChange}
-      selectedLanguage={defaultLang}
-      secondaryMenu={secondaryMenuDetails}
-    ></Header>
-    <MatDisclaimer/>
+      <Partytown
+        lib={partytownPath}
+        forward={[
+          "dataLayer.push",
+          "ctrack",
+          "ctrack.cl",
+          "ctrack.envtd",
+          "ctrack.gdpr",
+        ]}
+      />
+      <Header
+        key={defaultLang}
+        navItems={translatedNavItems}
+        title={translatedTitle}
+        titleLink={`https://developers.teradata.com/${defaultLang}`}
+        headerActions={headerActions}
+        languages={languages}
+        onLanguageChange={handleLanguageChange}
+        selectedLanguage={defaultLang}
+        secondaryMenu={secondaryMenuDetails}
+      ></Header>
+      <MatDisclaimer />
     </>
   );
 }
+

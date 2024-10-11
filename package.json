@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "prestart": "partytown copylib static/~partytown",
     "build": "docusaurus build",
     "postbuild": "partytown copylib build/~partytown",
     "swizzle": "docusaurus swizzle",

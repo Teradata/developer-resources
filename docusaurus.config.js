@@ -12,7 +12,7 @@ import footerItems from './src/config/footer.navItems.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
-
+const gtTagId = 'G-928NX0S21B';
 const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
 
 /**
@@ -87,6 +87,7 @@ const trackingScripts = [
     tagName: 'script',
     attributes: {
       defer: 'true',
+      type: 'text/partytown',
       src: 'https://www.teradata.com/js/Celebrus/bsci.js',
       async: 'true',
     },
@@ -94,7 +95,8 @@ const trackingScripts = [
   {
     tagName: 'script',
     attributes: {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B',
+      type: 'text/partytown',
+      src: `https://www.googletagmanager.com/gtag/js?id=${gtTagId}`,
       async: 'true',
     },
   },
@@ -102,13 +104,13 @@ const trackingScripts = [
     tagName: 'script',
     attributes: {
       type: 'text/partytown',
-      innerHTML: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-928NX0S21B');
-      `,
     },
+    innerHTML: `
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${gtTagId}');
+    `,
   },
 ];
 
