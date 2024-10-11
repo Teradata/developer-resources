@@ -92,8 +92,8 @@ export default function Navbar() {
     // Insert new language into path
     if (getCurrentLanguage() === '' && language !== '') {
       window.location = window.location.pathname.replace(
-        `${basePath}/`,
-        `${basePath}/${language}/`
+        basePath,
+        `${basePath}${language}/`
       ) as Location & string;
     }
     // Remove language from path
@@ -127,7 +127,7 @@ export default function Navbar() {
 
   return (
     <>
-    <Partytown lib={partytownPath} forward={['ctrack', 'dataLayer.push']} loadScriptsOnMainThread={['https://www.teradata.com/js/Celebrus/062424.js']}  />
+    <Partytown lib={partytownPath} forward={['dataLayer.push']} />
     <Header
       key={defaultLang}
       navItems={translatedNavItems}

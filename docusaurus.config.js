@@ -59,6 +59,59 @@ const allowedUrls = [
   'https://*.algolia.net/',
 ];
 
+const baseHeadTags = [
+  {
+    tagName: 'meta',
+    attributes: {
+      'http-equiv': 'Content-Security-Policy',
+      content: `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${allowedUrls.join(
+        ' '
+      )};`,
+    },
+  },
+  {
+    // Load font awesome icons
+    tagName: 'script',
+    attributes: {
+      defer: 'true',
+      type: 'text/partytown',
+      src: 'https://kit.fontawesome.com/17a35e44e3.js',
+      crossorigin: 'anonymous',
+    },
+  },
+]
+
+const trackingScripts = [
+  {
+    // Add Celebrus script
+    tagName: 'script',
+    attributes: {
+      defer: 'true',
+      src: 'https://www.teradata.com/js/Celebrus/bsci.js',
+      async: 'true',
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B',
+      async: 'true',
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      type: 'text/partytown',
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-928NX0S21B');
+      `,
+    },
+  },
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: getLocalizedTranslation('developer_home_page.title'),
@@ -82,54 +135,8 @@ const config = {
   ],
 
   headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        'http-equiv': 'Content-Security-Policy',
-        content: `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${allowedUrls.join(
-          ' '
-        )};`,
-      },
-    },
-    {
-      // Load font awesome icons
-      tagName: 'script',
-      attributes: {
-        defer: 'true',
-        type: 'text/partytown',
-        src: 'https://kit.fontawesome.com/17a35e44e3.js',
-        crossorigin: 'anonymous',
-      },
-    },
-    {
-      // Add Celebrus script
-      tagName: 'script',
-      attributes: {
-        defer: 'true',
-        type: 'text/partytown',
-        src: 'https://www.teradata.com/js/Celebrus/bsci.js',
-        async: 'true',
-      },
-    },
-    {
-      tagName: 'script',
-      attributes: {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-928NX0S21B',
-        async: 'true',
-      },
-    },
-    {
-      tagName: 'script',
-      attributes: {
-        type: 'text/partytown',
-        innerHTML: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-928NX0S21B');
-        `,
-      },
-    },
+    ...baseHeadTags,
+    ...trackingScripts,
   ],
 
   // Even if you don't use internationalization, you can use this field to set
@@ -204,9 +211,6 @@ const config = {
             './src/css/custom.css',
           ],
         },
-        gtag: {
-          trackingID: 'G-928NX0S21B',
-        },
       }),
     ],
     // Redocusaurus config
@@ -257,4 +261,5 @@ if (config.themeConfig) {
   config.themeConfig.footerItems = footerItems(getCurrentLocale());
 }
 
+export { baseHeadTags };
 export default config;
