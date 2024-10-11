@@ -128,7 +128,7 @@ export default function Navbar() {
 
   return (
     <>
-    <Partytown lib={partytownPath} forward={['DOMParser', 'dataLayer.push']} />
+    <Partytown lib={partytownPath} forward={['tdv9Logger', 'dataLayer.push']} />
     <Header
       key={defaultLang}
       navItems={translatedNavItems}
