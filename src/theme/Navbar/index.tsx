@@ -11,7 +11,6 @@ import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import { ThemeConfig } from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router';
-import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Partytown } from '@builder.io/partytown/react';
@@ -128,7 +127,7 @@ export default function Navbar() {
 
   return (
     <>
-    <Partytown lib={partytownPath} forward={['tdv9Logger', 'dataLayer.push']} />
+    <Partytown lib={partytownPath} forward={['ctrack', 'dataLayer.push']} loadScriptsOnMainThread={['https://www.teradata.com/js/Celebrus/062424.js']}  />
     <Header
       key={defaultLang}
       navItems={translatedNavItems}
