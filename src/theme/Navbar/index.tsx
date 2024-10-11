@@ -51,7 +51,7 @@ export default function Navbar() {
   };
 
   const basePath = useBaseUrl('/');
-  const partytownPath = basePath ? `${basePath}~partytown/`: '/~partytown/';
+  const partytownPath = useBaseUrl('/~partytown/');
   const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
 
@@ -128,7 +128,7 @@ export default function Navbar() {
 
   return (
     <>
-    <Partytown lib={partytownPath} />
+    <Partytown lib={partytownPath} forward={['DOMParser', 'dataLayer.push']} />
     <Header
       key={defaultLang}
       navItems={translatedNavItems}

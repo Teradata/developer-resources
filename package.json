@@ -5,8 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build && npm run partytown",
-    "partytown": "partytown copylib build/~partytown",
+    "build": "docusaurus build",
+    "postbuild": "partytown copylib build/~partytown",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
