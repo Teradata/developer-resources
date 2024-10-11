@@ -136,6 +136,7 @@ export default function Navbar() {
           "ctrack.envtd",
           "ctrack.gdpr",
         ]}
+        loadScriptsOnMainThread={['https://www.teradata.com/js/Celebrus/062424.js']}
       />
       <Header
         key={defaultLang}
