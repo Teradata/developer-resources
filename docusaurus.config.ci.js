@@ -6,6 +6,7 @@ const prConfig = {
   ...config,
   noIndex: true,
   baseUrl: `${config.baseUrl}/pr-preview/pr-${process.env.GH_PR_NUMBER}`,
+  headTags: [],
 };
 
 // Modify the header items to include the PR number
