@@ -120,7 +120,6 @@ function Feature({ title, description, href }) {
 export default function HomepageFeatures() {
   return (
     <>
-      <PossibleBanner />
       <section className={styles.features}>
         <div className={clsx('container', styles.container)}>
           <h2>{translate({ message: FeatureTitle })}</h2>
