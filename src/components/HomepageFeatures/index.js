@@ -119,17 +119,15 @@ function Feature({ title, description, href }) {
 
 export default function HomepageFeatures() {
   return (
-    <>
-      <section className={styles.features}>
-        <div className={clsx('container', styles.container)}>
-          <h2>{translate({ message: FeatureTitle })}</h2>
-          <div className={clsx('row', styles.row)}>
-            {FeatureList.map((props, idx) => (
-              <Feature key={idx} {...props} />
-            ))}
-          </div>
+    <section className={styles.features}>
+      <div className={clsx('container', styles.container)}>
+        <h2>{translate({ message: FeatureTitle })}</h2>
+        <div className={clsx('row', styles.row)}>
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
