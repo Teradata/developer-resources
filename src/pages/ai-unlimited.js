@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import HeroImageUrl from '@site/static/img/hero.webp';
@@ -45,6 +46,13 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout description={translate({ message: 'home_page.tagline' })}>
+      <Head>
+        <title>{translate({ message: 'home_page.ai_unlimited.title' })}</title>
+        <meta
+          property="og:title"
+          content={translate({ message: 'home_page.ai_unlimited.title' })}
+        />
+      </Head>
       <HomepageHeader />
       <main className={styles.features}>
         <HomepageFeatures />

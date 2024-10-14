@@ -278,6 +278,9 @@
   "home_page.title": {
     "message": "Documentación de Teradata AI Unlimited"
   },
+  "home_page.ai_unlimited.title": {
+    "message": "AI Unlimited Documentation | Teradata Developers Portal"
+  },
   "sidenav.title": {
     "message": "Documentos"
   },

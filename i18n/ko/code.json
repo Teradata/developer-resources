@@ -278,6 +278,9 @@
   "home_page.title": {
     "message": "Teradata AI Unlimited 설명서"
   },
+  "home_page.ai_unlimited.title": {
+    "message": "AI Unlimited Documentation | Teradata Developers Portal"
+  },
   "sidenav.title": {
     "message": "문서"
   },
