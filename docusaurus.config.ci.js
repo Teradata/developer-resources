@@ -6,7 +6,18 @@ const prConfig = {
   ...config,
   noIndex: true,
   baseUrl: `${config.baseUrl}/pr-preview/pr-${process.env.GH_PR_NUMBER}`,
-  headTags: [],
+  headTags: [
+    {
+      // Load font awesome icons
+      tagName: 'script',
+      attributes: {
+        defer: 'true',
+        type: 'text/partytown',
+        src: 'https://kit.fontawesome.com/17a35e44e3.js',
+        crossorigin: 'anonymous',
+      },
+    },
+  ],
 };
 
 // Modify the header items to include the PR number
