@@ -14,7 +14,7 @@ const allowedUrls = [
     'https://www.youtube.com/',
     'https://*.algolia.net/',
   ];
-  
+
 const baseHeadTags = [
     {
       tagName: 'meta',
@@ -35,4 +35,4 @@ const baseHeadTags = [
     },
   ];
 
-  export { baseHeadTags };
+  export default baseHeadTags ;

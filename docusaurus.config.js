@@ -9,7 +9,7 @@ import tailwindPlugin from './plugins/tailwind-config.cjs';
 import headerItems from './src/config/header.navitems.js';
 import fs from 'fs';
 import footerItems from './src/config/footer.navItems.js';
-import { baseHeadTags } from './src/config/baseHeadTags.js';
+import baseHeadTags from './src/config/baseHeadTags.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';

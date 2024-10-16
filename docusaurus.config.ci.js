@@ -1,5 +1,6 @@
 import config from './docusaurus.config.js';
 import headerItems from './src/config/header.navitems.js';
+import baseHeadTags from './src/config/baseHeadTags.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {
@@ -7,16 +8,7 @@ const prConfig = {
   noIndex: true,
   baseUrl: `${config.baseUrl}/pr-preview/pr-${process.env.GH_PR_NUMBER}`,
   headTags: [
-    {
-      // Load font awesome icons
-      tagName: 'script',
-      attributes: {
-        defer: 'true',
-        type: 'text/partytown',
-        src: 'https://kit.fontawesome.com/17a35e44e3.js',
-        crossorigin: 'anonymous',
-      },
-    },
+    ...baseHeadTags,
   ],
 };
 
