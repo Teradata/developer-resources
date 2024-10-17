@@ -3,7 +3,6 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { Typography } from '@teradata-web/react-components';
-import { PossibleBanner } from '../HomepageFeatures';
 import { translate } from '@docusaurus/Translate';
 
 const FeatureTitle = translate({ message: 'home_page.categories' });
