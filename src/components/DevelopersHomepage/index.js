@@ -9,7 +9,6 @@ export default function DevelopersHomepage() {
   return (
     <>
     <JumpIn />
-    <PossibleBanner />
     <GetStarted />
     <TopPicks />
     <LinksImages />

@@ -97,7 +97,6 @@ function Feature2({ title, description, href }) {
 export default function Categories() {
   return (
     <>
-    <PossibleBanner />
       <section className={clsx(styles.features, styles.fGuides)}>
         <div className={clsx('container', styles.container)}>
             <br/>
