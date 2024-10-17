@@ -1,14 +1,15 @@
 import config from './docusaurus.config.js';
 import headerItems from './src/config/header.navitems.js';
-
-// Remove the Google Analytics tracking ID from the PR preview
-delete config.presets[0][1].gtag
+import baseHeadTags from './src/config/baseHeadTags.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const prConfig = {
   ...config,
   noIndex: true,
   baseUrl: `${config.baseUrl}/pr-preview/pr-${process.env.GH_PR_NUMBER}`,
+  headTags: [
+    ...baseHeadTags,
+  ],
 };
 
 // Modify the header items to include the PR number

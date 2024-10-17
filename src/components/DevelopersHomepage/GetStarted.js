@@ -1,11 +1,11 @@
 
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import DataScientist from '@site/static/img/developers/DataScientist.png'
-import businessLeader from '@site/static/img/developers/businessLeader.png'
-import DataLeader from '@site/static/img/developers/DataLeader.png'
-import Developer from '@site/static/img/developers/Developer.png'
-import dataEngineer from  '@site/static/img/developers/dataEngineer.png'
+import DataScientist from '@site/static/img/developers/DataScientist.webp'
+import businessLeader from '@site/static/img/developers/businessLeader.webp'
+import DataLeader from '@site/static/img/developers/DataLeader.webp'
+import Developer from '@site/static/img/developers/Developer.webp'
+import dataEngineer from  '@site/static/img/developers/dataEngineer.webp'
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { Typography, TabBar, Tab, Banner, Button } from '@teradata-web/react-components';

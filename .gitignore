@@ -4,6 +4,9 @@
 # Production
 /build
 
+# Local environment
+static/~partytown
+
 # Generated files
 .docusaurus
 .cache-loader

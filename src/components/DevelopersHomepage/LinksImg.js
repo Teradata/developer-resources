@@ -1,10 +1,10 @@
 
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import teradataCommunityUrl from '@site/static/img/developers/Community-icon.png';
-import githubUrl from '@site/static/img/developers/Github-icon.png';
-import stackoverflowUrl from '@site/static/img/developers/Stackoverflow-icon.png';
-import mediumUrl from '@site/static/img/developers/Medium-icon.png';
+import teradataCommunityUrl from '@site/static/img/developers/Community-icon.webp';
+import githubUrl from '@site/static/img/developers/Github-icon.webp';
+import stackoverflowUrl from '@site/static/img/developers/Stackoverflow-icon.webp';
+import mediumUrl from '@site/static/img/developers/Medium-icon.webp';
 import { Typography } from '@teradata-web/react-components';
 import { translate } from '@docusaurus/Translate';
 
