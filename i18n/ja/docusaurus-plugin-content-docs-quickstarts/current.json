@@ -1,0 +1,35 @@
+{
+  "sidebar.tutorialSidebar.category.Introduction": {
+    "message": "はじめに"
+  },
+  "sidebar.tutorialSidebar.category.Get access to Vantage": {
+    "message": "Vantageにアクセスする"
+  },
+  "sidebar.tutorialSidebar.category.On your local": {
+    "message": "ローカル"
+  },
+  "sidebar.tutorialSidebar.category.On your cloud infrastructure": {
+    "message": "クラウド インフラストラクチャ"
+  },
+  "sidebar.tutorialSidebar.category.ClearScape Analytics Experience": {
+    "message": "ClearScape Analyticsエクスペリエンス"
+  },
+  "sidebar.tutorialSidebar.category.Connect to Vantage": {
+    "message": "Vantage へ接続する"
+  },
+  "sidebar.tutorialSidebar.category.Configure ODBC": {
+    "message": "ODBC を構成する"
+  },
+  "sidebar.tutorialSidebar.category.Manage data": {
+    "message": "データを管理する"
+  },
+  "sidebar.tutorialSidebar.category.Create applications": {
+    "message": "アプリケーションを作成する"
+  },
+  "sidebar.tutorialSidebar.category.Analyze data": {
+    "message": "データを分析する"
+  },
+  "sidebar.tutorialSidebar.category.VantageCloud Lake": {
+    "message": "VantageCloud Lake"
+  }
+}

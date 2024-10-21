@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Header,
@@ -9,11 +9,13 @@ import {
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarSecondaryMenu } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
-import SearchBar from '../SearchBar';
 import { ThemeConfig } from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Partytown } from '@builder.io/partytown/react';
+import SearchBar from '../SearchBar';
+import MatDisclaimer from '../../components/MatDisclaimer';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   const location = useLocation();
@@ -47,7 +49,8 @@ export default function Navbar() {
     languages: Language[];
   };
 
-  const basePath = useBaseUrl('');
+  const basePath = useBaseUrl('/');
+  const partytownPath = useBaseUrl('/~partytown/');
   const translatedTitle = translate({ message: title });
   const translatedNavItems = translateNavItems(nestedNavItems);
 
@@ -60,6 +63,7 @@ export default function Navbar() {
             label={translate({ message: 'header.actions.free_demo' })}
             icon="fa-solid fa-arrow-right-long"
             trailingIcon={true}
+            variant=''
           />
         </Link>
       ),
@@ -88,8 +92,8 @@ export default function Navbar() {
     // Insert new language into path
     if (getCurrentLanguage() === '' && language !== '') {
       window.location = window.location.pathname.replace(
-        `${basePath}/`,
-        `${basePath}/${language}/`
+        basePath,
+        `${basePath}${language}/`
       ) as Location & string;
     }
     // Remove language from path
@@ -122,16 +126,31 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Header
-      key={defaultLang}
-      navItems={translatedNavItems}
-      title={translatedTitle}
-      titleLink={`https://developers.teradata.com/${defaultLang}`}
-      headerActions={headerActions}
-      languages={languages}
-      onLanguageChange={handleLanguageChange}
-      selectedLanguage={defaultLang}
-      secondaryMenu={secondaryMenuDetails}
-    ></Header>
+    <>
+      <Partytown
+        lib={partytownPath}
+        forward={[
+          "dataLayer.push",
+          "ctrack",
+          "ctrack.cl",
+          "ctrack.envtd",
+          "ctrack.gdpr",
+        ]}
+        loadScriptsOnMainThread={['https://www.teradata.com/js/Celebrus/062424.js']}
+      />
+      <Header
+        key={defaultLang}
+        navItems={translatedNavItems}
+        title={translatedTitle}
+        titleLink={`https://developers.teradata.com/${defaultLang}`}
+        headerActions={headerActions}
+        languages={languages}
+        onLanguageChange={handleLanguageChange}
+        selectedLanguage={defaultLang}
+        secondaryMenu={secondaryMenuDetails}
+      ></Header>
+      <MatDisclaimer />
+    </>
   );
 }
+

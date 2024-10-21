@@ -76,7 +76,7 @@ In this section we will cover in detail each of the steps below:
         | **"WEBSITES_PORT"**  | 8888 |
         | **"JUPYTER_TOKEN"**      | Define the Jupyter Lab access token that you would like to use. |
 
-        :::important
+        :::info
         If you don't include the "JUPYTER_TOKEN" configuration, the container will generate a new token and log it to the console. You will need to retrieve it from the application logs. If you include the "JUPYTER_TOKEN" configuration key but leave the value blank, the system will set the token as an empty string, resulting in an unprotected Jupyter Lab environment without any token security.
         :::
 
@@ -146,7 +146,7 @@ In this section we will cover in detail each of the steps below:
     | **"dbc"**      | The master password of your VantageCloud Lake environment. |
 
 * You'll see that in the sample vars.json, the passwords of all users are defaulted to "password", this is just for illustration purposes, you should change all of these password fields to strong passwords, secure them as necessary, and follow other password management best practices.
-    :::important
+    :::info
     Remember to change all passwords in the vars.json file.
     :::
 

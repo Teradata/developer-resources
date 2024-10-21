@@ -279,6 +279,9 @@
   "home_page.title": {
     "message": "Teradata AI Unlimited Documentation"
   },
+  "home_page.ai_unlimited.title": {
+    "message": "AI Unlimited Documentation | Teradata Developers Portal"
+  },
   "sidenav.title": {
     "message": "Docs"
   },
@@ -286,7 +289,7 @@
     "message": "The title for the sidebar in mobile view"
   },
   "developer_home_page.title": {
-    "message": "Teradata developers portal"
+    "message": "Teradata Developers Portal"
   },
   "developer_home_page.tagline": {
     "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
@@ -536,5 +539,35 @@
   },
   "quickstarts.teradata_university": {
     "message": " Teradata University"
+  },
+  "mat.alert-message": {
+    "message": "This website uses Machine-Assisted Translation (MAT)"
+  },
+  "mat.link": {
+    "message": "Learn more"
+  },
+  "mat.heading": {
+    "message": "Machine-Assisted Translation (MAT)"
+  },
+  "mat.content": {
+    "message": "Machine-assisted translations of any materials into languages other than English are intended solely as a convenience to the non-English-reading users and are not legally binding. Anybody relying on such information does so at his or her own risk. No automated translation is perfect nor is it intended to replace human translators. Teradata does not make any promises, assurances, or guarantees as to the accuracy of the machine-assisted translations provided. Teradata accepts no responsibility and shall not be liable for any damage or issues that may result from using such translations. Users are reminded to use the English contents."
+  },
+  "mat.button": {
+    "message": "Close"
+  },
+  "feedback.did_page_help": {
+    "message": "Did this page help?"
+  },
+  "feedback.thank_you": {
+    "message": "Thank you for your feedback!"
+  },
+  "theme.admonition.note": {
+    "message": "Note"
+  },
+  "theme.admonition.tip": {
+    "message": "Tip"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page"
   }
 }

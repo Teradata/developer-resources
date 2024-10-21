@@ -1,0 +1,49 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="Windows" label="Windows" default>
+  ```bash 
+    az disk create -n teradata-vantage-express --size-gb 60 
+    az vm create ` 
+      --name teradata-vantage-express ` 
+      --image UbuntuLTS ` 
+      --admin-username azureuser ` 
+      --ssh-key-name vantage-ssh-key ` 
+      --size Standard_F4s_v2 `
+      --public-ip-sku Standard 
+
+    $diskId = (az disk show -n teradata-vantage-express --query 'id' -o tsv) | Out-String 
+    az vm disk attach --vm-name teradata-vantage-express --name $diskId 
+    ```
+  </TabItem>
+  <TabItem value="MacOS" label="MacOS">
+  ```bash 
+    az disk create -n teradata-vantage-express --size-gb 60 
+    az vm create \ 
+      --name teradata-vantage-express \ 
+      --image UbuntuLTS \ 
+      --admin-username azureuser \ 
+      --ssh-key-name vantage-ssh-key \ 
+      --size Standard_F4s_v2 \
+      --public-ip-sku Standard 
+    
+    DISK_ID=$(az disk show -n teradata-vantage-express --query 'id' -o tsv) 
+    az vm disk attach --vm-name teradata-vantage-express --name $DISK_ID 
+    ```
+  </TabItem>
+  <TabItem value="Linux" label="Linux">
+  ```bash 
+    az disk create -n teradata-vantage-express --size-gb 60 
+    az vm create \ 
+      --name teradata-vantage-express \ 
+      --image UbuntuLTS \ 
+      --admin-username azureuser \ 
+      --ssh-key-name vantage-ssh-key \ 
+      --size Standard_F4s_v2 \
+      --public-ip-sku Standard 
+      DISK_ID=$(az disk show -n teradata-vantage-express --query 'id' -o tsv) 
+      az vm disk attach --vm-name teradata-vantage-express --name $DISK_ID 
+      ```
+  </TabItem>
+</Tabs>

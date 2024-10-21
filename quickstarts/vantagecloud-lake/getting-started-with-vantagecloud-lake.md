@@ -21,7 +21,7 @@ VantageCloud Lake provides all the benefits you’d expect in a cloud solution p
 
 ## Sign-on to VantageCloud Lake
 
-:::important
+:::info
 To get a VantageCloud Lake sign-on link and credentials, fill the [contact form](https://www.teradata.com/about-us/contact) to reach out to Teradata team.   
 :::
 
@@ -76,7 +76,7 @@ Fill out the Environment configuration fields:
 
 ![Environment configuration](../images/lake_environment_configuration.png)
 
-:::important
+:::info
 The **Consumption estimates**, to your right, provide guidance for configuring the environment. See [Using the Consumption Estimates](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Managing-Consumption/Using-the-Consumption-Estimates) for more detail.   
 :::
 

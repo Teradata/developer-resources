@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import QuickstartsPages from '@site/src/components/QuickstartsPages';
-import HeroImageUrl from '@site/static/img/quickstarts-hero.png';
+import HeroImageUrl from '@site/static/img/quickstarts-hero.webp';
 import { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import { Typography } from '@teradata-web/react-components';
@@ -47,7 +47,7 @@ export default function Home() {
         <link rel="preconnect" href="https://teradata.com" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quickstarts.teradata.com/" />
+        <meta property="og:url" content="https://developers.teradata.com/quickstarts" />
         <meta property="og:title" content="Teradata Getting Started" />
         <meta property="og:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="og:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
@@ -55,7 +55,7 @@ export default function Home() {
         <meta property="og:image:height" content="336" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://quickstarts.teradata.com/" />
+        <meta property="twitter:url" content="https://developers.teradata.com/quickstarts" />
         <meta property="twitter:title" content="Teradata Getting Started" />
         <meta property="twitter:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="twitter:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />

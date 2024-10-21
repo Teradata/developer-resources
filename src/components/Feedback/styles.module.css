@@ -1,0 +1,33 @@
+.feedbackContainer {
+  width: 100%;          
+  max-width: 664px;       
+  padding: 10px 0;       
+  box-sizing: border-box;  
+}
+
+@media screen and (min-width: 997px) and (max-width: 1454px) {
+  .feedbackContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .feedbackContainer {
+    max-width: 100%;      
+    padding: 10px 0 10px 0;  
+  }
+}
+
+
+@media screen and (max-width: 664px) {
+  .feedbackContainer {
+    padding: 0 15px 10px 15px;  
+  }
+}
+
+@media screen and (max-width: 663px) {
+  .feedbackContainer {
+    padding: 10px 0px;
+  }
+}
+ 

@@ -1,15 +1,15 @@
 {
   "header.title": {
-    "message": "Developers"
+    "message": "Développeurs"
   },
   "header.getting_started": {
-    "message": "Getting started"
+    "message": "Prise en main"
   },
   "header.actions.free_demo": {
-    "message": "Try for free"
+    "message": "Démarrer une démo gratuite"
   },
   "header.docs": {
-    "message": "Docs"
+    "message": "Documents"
   },
   "header.docs.vantagecloud_lake": {
     "message": "VantageCloud Lake"
@@ -18,31 +18,31 @@
     "message": "AI Unlimited"
   },
   "header.docs.all_documentation": {
-    "message": "All documentation"
+    "message": "Toute la documentation"
   },
   "header.downloads": {
-    "message": "Downloads"
+    "message": "Téléchargements"
   },
   "header.community": {
-    "message": "Community"
+    "message": "Communauté"
   },
   "header.community.teradata_community": {
-    "message": "Teradata community"
+    "message": "Communauté Teradata"
   },
   "header.community.technical_medium_blogs": {
-    "message": "Technical medium blogs"
+    "message": "Blogs sur les supports techniques"
   },
   "header.community.github": {
-    "message": "Github"
+    "message": "GitHub"
   },
   "header.community.stack_overflow": {
-    "message": "Stack overflow"
+    "message": "Débordement de pile"
   },
   "footer.why_teradata_title": {
-    "message": "Why Teradata"
+    "message": "Pourquoi Teradata"
   },
   "footer.why_teradata": {
-    "message": "Why Teradata"
+    "message": "Pourquoi Teradata"
   },
   "footer.trusted_ai": {
     "message": "Trusted AI"
@@ -51,13 +51,13 @@
     "message": "Industries"
   },
   "footer.partners": {
-    "message": "Partners"
+    "message": "Partenaires"
   },
   "footer.partner_registration": {
-    "message": "Partner registration"
+    "message": "Inscription des partenaires"
   },
   "footer.partner_portal_login": {
-    "message": "Partner portal login"
+    "message": "Connexion au portail des partenaires"
   },
   "footer.services": {
     "message": "Services"
@@ -66,13 +66,13 @@
     "message": "Solutions"
   },
   "footer.success_stories": {
-    "message": "Success stories"
+    "message": "Modèles de réussite"
   },
   "footer.our_platform": {
-    "message": "Our platform"
+    "message": "Notre plateforme"
   },
   "footer.platform": {
-    "message": "Platform"
+    "message": "Plateforme"
   },
   "footer.vantagecloud": {
     "message": "VantageCloud"
@@ -81,76 +81,76 @@
     "message": "ClearScape Analytics"
   },
   "footer.unleash_ai_innovation": {
-    "message": "Unleash AI Innovation"
+    "message": "Libérer l'innovation en matière d'IA"
   },
   "footer.workloads": {
-    "message": "Workloads"
+    "message": "Charges de travail"
   },
   "footer.deployment": {
-    "message": "Deployment"
+    "message": "Déploiement"
   },
   "footer.getting_started": {
-    "message": "Getting started"
+    "message": "Prise en main"
   },
   "footer.pricing": {
-    "message": "Pricing"
+    "message": "Tarifs"
   },
   "footer.demos": {
-    "message": "Demos"
+    "message": "Démos"
   },
   "footer.modernization_workshop": {
-    "message": "Modernization workshop"
+    "message": "Atelier de modernisation"
   },
   "footer.executive_briefing_center": {
     "message": "Executive Briefing Center"
   },
   "footer.events": {
-    "message": "Events"
+    "message": "Événements"
   },
   "footer.learning": {
-    "message": "Learning"
+    "message": "Apprentissage"
   },
   "footer.insights": {
-    "message": "Insights"
+    "message": "Informations"
   },
   "footer.ai_ml": {
     "message": "AI/ML"
   },
   "footer.cloud_data_analytics": {
-    "message": "Cloud data analytics"
+    "message": "Analyses de données dans le cloud"
   },
   "footer.data_architecture": {
-    "message": "Data architecture"
+    "message": "Architecture des données"
   },
   "footer.data_platform": {
-    "message": "Data platform"
+    "message": "Plateforme de données"
   },
   "footer.data_security": {
-    "message": "Data security"
+    "message": "Sécurité des données"
   },
   "footer.glossary": {
-    "message": "Glossary"
+    "message": "Glossaire"
   },
   "footer.about_us": {
-    "message": "About us"
+    "message": "À propos de nous"
   },
   "footer.who_we_are": {
-    "message": "Who we are"
+    "message": "Qui sommes-nous"
   },
   "footer.our_leadership": {
-    "message": "Our leadership"
+    "message": "Notre direction"
   },
   "footer.newsroom": {
-    "message": "Newsroom"
+    "message": "Rédaction"
   },
   "footer.careers": {
-    "message": "Careers"
+    "message": "Carrières"
   },
   "footer.investors": {
-    "message": "Investors"
+    "message": "Investisseurs"
   },
   "footer.social_media": {
-    "message": "Social media"
+    "message": "Réseaux sociaux"
   },
   "footer.social_media.linkedin": {
     "message": "LinkedIn"
@@ -165,278 +165,298 @@
     "message": "Instagram"
   },
   "footer.social_media.youtube": {
-    "message": "Youtube"
+    "message": "YouTube"
   },
   "footer.social_media.rss": {
     "message": "RSS"
   },
   "footer.privacy": {
-    "message": "Privacy"
+    "message": "Confidentialité"
   },
   "footer.do_not_sell_share": {
-    "message": "Don’t Sell/Share My Info"
+    "message": "Ne pas vendre/partager mes infos"
   },
   "footer.terms_of_use": {
-    "message": "Terms of use"
+    "message": "Conditions d'utilisation"
   },
   "footer.legal": {
-    "message": "Legal"
+    "message": "Légal"
   },
   "footer.support_policy": {
-    "message": "Support Policies"
+    "message": "Politiques d'assistance"
   },
   "footer.tracking_consent": {
-    "message": "Tracking Consent"
+    "message": "Consentement au suivi"
   },
   "footer.copyright": {
-    "message": "Teradata. All rights reserved"
+    "message": "Teradata. Tous droits réservés"
   },
   "footer.also_of_interest": {
-    "message": "Also of interest"
+    "message": "Également intéressant"
   },
   "footer.big_data": {
-    "message": "Big data"
+    "message": "Big Data"
   },
   "footer.data_security_insights": {
-    "message": "Become an expert at defending your data"
+    "message": "Devenez un expert dans la défense de vos données"
   },
   "footer.platform_ai_ml": {
-    "message": "Drive ROI with Trusted AI today"
+    "message": "Augmentez votre retour sur investissement dès aujourd'hui avec Trusted AI"
   },
-
   "feature.title.analytic_functions": {
-    "message": "Analytic functions"
+    "message": "Fonctions d'analyse"
   },
   "feature.title.explore_data": {
-    "message": "Explore and analyze data"
+    "message": "Explorer et analyser les données"
   },
   "feature.title.faq": {
     "message": "FAQ"
   },
   "feature.title.glossary": {
-    "message": "Glossary"
+    "message": "Glossaire"
   },
   "feature.title.manage_projects": {
-    "message": "Manage projects"
+    "message": "Gérer des projets"
   },
   "feature.title.other_resources": {
-    "message": "Other resources"
+    "message": "Autres ressources"
   },
   "feature.title.sample_use_cases": {
-    "message": "Sample use cases"
+    "message": "Exemples de cas d'utilisation"
   },
   "feature.title.whats_new": {
-    "message": "What's new"
+    "message": "Nouveautés"
   },
   "feature.description.analytic_functions": {
-    "message": "Browse and search ClearScape™ functions to use in projects"
+    "message": "Parcourez et recherchez les fonctions ClearScape™ à utiliser dans les projets"
   },
   "feature.description.explore_data": {
-    "message": "Learn about AI Unlimited projects and create your first one"
+    "message": "Découvrez les projets AI Unlimited et créez votre premier projet"
   },
   "feature.description.faq": {
-    "message": "Get answers to your questions"
+    "message": "Obtenez des réponses à vos questions"
   },
   "feature.description.get_started": {
-    "message": "See what AI Unlimited includes, prerequisites you need, and installation how-tos"
+    "message": "Découvrez le contenu d'AI Unlimited, les prérequis dont vous avez besoin et les procédures d'installation"
   },
   "feature.description.glossary": {
-    "message": "Look up AI Unlimited terminology"
+    "message": "Rechercher la terminologie d'AI Unlimited"
   },
   "feature.description.manage_projects": {
-    "message": "Learn how to manage projects or change AI Unlimited settings"
+    "message": "Apprenez à gérer des projets ou à modifier les paramètres d'AI Unlimited"
   },
   "feature.description.other_resources": {
-    "message": "Find additional installation resources, and more"
+    "message": "Trouvez des ressources d'installation supplémentaires et bien plus encore"
   },
   "feature.description.sample_use_cases": {
-    "message": "Explore ways to use AI Unlimited to experiment and innovate"
+    "message": "Découvrez les différentes façons d'utiliser AI Unlimited pour expérimenter et innover"
   },
   "feature.description.whats_new": {
-    "message": "Watch for new features and updates—and see what's coming"
+    "message": "Soyez attentif aux nouvelles fonctionnalités et mises à jour et découvrez ce qui arrive"
   },
   "home_page.hero_img_description": {
-    "message": "A woman smiling and holding a laptop, standing in a modern office environment with abstract geometric shapes in the background."
+    "message": "Une femme souriante et tenant un ordinateur portable, debout dans un environnement de bureau moderne avec des formes géométriques abstraites en arrière-plan."
   },
   "home_page.categories": {
-    "message": "Categories"
+    "message": "Catégories"
   },
   "home_page.featured_event": {
-    "message": "Featured event"
+    "message": "Événement en vedette"
   },
   "home_page.get_started": {
-    "message": "Get started"
+    "message": "Commencer"
   },
   "home_page.possible_banner_title": {
-    "message": "If you imagine it, envision it, create it... Teradata makes it Possible. Join us."
+    "message": "Si vous l'imaginez, le visualisez, le créez... Teradata le rend possible. Rejoignez-nous."
   },
   "home_page.register_now": {
-    "message": "Register now"
+    "message": "Inscrivez-vous maintenant"
   },
   "home_page.tagline": {
-    "message": "A scalable, on-demand compute engine in the cloud."
+    "message": "Un moteur de calcul évolutif et à la demande dans le cloud."
   },
   "home_page.title": {
-    "message": "Teradata AI Unlimited Documentation"
+    "message": "Documentation sur Teradata AI Unlimited"
+  },
+  "home_page.ai_unlimited.title": {
+    "message": "AI Unlimited Documentation | Teradata Developers Portal"
   },
   "sidenav.title": {
-    "message": "Docs"
+    "message": "Documents"
   },
   "sidenav.title_description": {
-    "message": "The title for the sidebar in mobile view"
+    "message": "Le titre de la barre latérale dans la vue mobile"
   },
   "developer_home_page.title": {
-    "message": "Teradata developers portal"
+    "message": "Teradata Developers Portal"
   },
   "developer_home_page.tagline": {
-    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+    "message": "Votre centre de référence pour les démarrages rapides, les guides, les didacticiels, les exemples de code, la documentation technique et les téléchargements pour tous les produits Teradata."
   },
   "developers.title_description": {
-    "message": "Your go-to hub for quickstarts, guides, tutorials, code samples, technical documentation, and downloads for all Teradata products."
+    "message": "Votre centre de référence pour les démarrages rapides, les guides, les didacticiels, les exemples de code, la documentation technique et les téléchargements pour tous les produits Teradata."
   },
   "developers.welcome_message": {
-    "message": "Welcome to the Teradata Developer Portal"
+    "message": "Bienvenue sur le portail des développeurs Teradata"
   },
   "developers.learn_more": {
-    "message": "Learn more"
+    "message": "En savoir plus"
   },
   "developers.getting_started_title": {
-    "message": "Getting started"
+    "message": "Prise en main"
   },
   "developers.getting_started_message": {
-    "message": "Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code."
+    "message": "Soyez rapidement opérationnel avec Teradata Vantage. En savoir plus sur les fonctionnalités. Recherchez des guides pratiques pour les tâches courantes. Découvrez un exemple de code source."
   },
   "developers.getting_started_link": {
-    "message": "View Getting started"
+    "message": "Voir la prise en main"
   },
   "developers.documentation_title": {
     "message": "Documentation"
   },
   "developers.documentation_message": {
-    "message": "Access Vantage Documentation for VantageCloud Enterprise, VantageCore VMware and VantageCore IntelliFlex."
+    "message": "Accédez à la documentation Vantage pour VantageCloud Enterprise, VantageCore VMware et VantageCore IntelliFlex."
   },
   "developers.documentation_link_1": {
-    "message": "View Lake docs"
+    "message": "Voir les documents sur Lake"
   },
   "developers.documentation_link_2": {
-    "message": "View all Teradata docs"
+    "message": "Voir tous les documents Teradata"
   },
   "developers.downloads_title": {
-    "message": "Downloads"
+    "message": "Téléchargements"
   },
   "developers.downloads_message": {
-    "message": "Find publicly available downloads from Teradata. Browse by category or select one of the popular downloads below."
+    "message": "Recherchez les téléchargements accessibles au public sur Teradata. Parcourez par catégorie ou sélectionnez l'un des téléchargements populaires ci-dessous."
   },
   "developers.downloads_link": {
-    "message": "View Downloads"
+    "message": "Voir les téléchargements"
   },
   "developers.community_title": {
-    "message": "Community"
+    "message": "Communauté"
   },
   "developers.community_message": {
-    "message": "Recent Community Blogs. The best minds from Teradata, our partners, and customers blog about relevant topics and features."
+    "message": "Blogs communautaires récents. Les meilleurs esprits de Teradata, nos partenaires et nos clients bloguent sur des sujets et des fonctionnalités pertinents."
   },
   "developers.community_link": {
-    "message": "View Community"
+    "message": "Voir la communauté"
   },
   "developers.solutions-for-you": {
-    "message": "Solutions for you"
+    "message": "Des solutions pour vous"
   },
   "developers.get-started-with-teradata": {
-    "message": "Get started with Teradata"
+    "message": "Démarrer avec Teradata"
   },
   "developers.getting_started_button": {
-    "message": "Get started"
+    "message": "Commencer"
   },
   "developers.data-scientist": {
-    "message": "Data Scientist"
+    "message": "Scientifique des données"
   },
   "developers.data-scientist-title": {
-    "message": "Train ML models in Vantage"
+    "message": "Entraîner des modèles ML dans Vantage"
   },
   "developers.data-scientist-text": {
-    "message": "There are situations when you want to quickly validate a machine learning model idea. You have a model type in mind. You don’t want to operationalize with an ML pipeline just yet. You just want to test out if the relationship you had in mind exists. Also, sometimes even your production deployment doesn’t require constant relearning with MLops. In such cases, you can use Vantage Analytics Library (VAL) and multiple ML model types it supports."
+    "message": "Il existe des situations dans lesquelles vous souhaitez valider rapidement une idée de modèle d'apprentissage automatique. Vous avez un type de modèle en tête. Vous ne souhaitez pas encore mettre en œuvre un pipeline ML. Vous voulez simplement tester si la relation que vous aviez en tête existe. De plus, parfois, même votre déploiement de production ne nécessite pas de réapprentissage constant avec MLops. Dans de tels cas, vous pouvez utiliser Vantage Analytics Library (VAL) et plusieurs types de modèles ML qu'elle prend en charge."
   },
   "developers.data-engineer": {
-    "message": "Data Engineer"
+    "message": "Ingénieur de données"
   },
   "developers.data-engineer-title": {
-    "message": "dbt with Teradata Vantage"
+    "message": "dbt avec Teradata Vantage"
   },
   "developers.data-engineer-text": {
-    "message": "This tutorial demonstrates how to use dbt (Data Build Tool) with Teradata Vantage. It’s based on the original dbt Jaffle Shop tutorial. A couple of models have been adjusted to the SQL dialect supported by Vantage."
+    "message": "Ce didacticiel montre comment utiliser dbt (Data Build Tool) avec Teradata Vantage. Il est basé sur le didacticiel original dbt Jaffle Shop. Quelques modèles ont été ajustés au dialecte SQL pris en charge par Vantage."
   },
   "developers.developer": {
-    "message": "Developer"
+    "message": "Développeur"
   },
   "developers.developer-title": {
-    "message": "Connect to Vantage using JDBC"
+    "message": "Se connecter à Vantage à l'aide de JDBC"
   },
   "developers.developer-text": {
-    "message": "This how-to demonstrates how to connect to Teradata Vantage using JDBC using a sample Java application: https://github.com/Teradata/jdbc-sample-app."
+    "message": "Ce guide pratique montre comment se connecter à Teradata Vantage à l'aide de JDBC à l'aide d'un exemple d'application Java : https://github.com/Teradata/jdbc-sample-app."
   },
   "developers.database-administrator": {
-    "message": "Database Administrator"
+    "message": "Administrateur de base de données"
   },
   "developers.database-administrator-title": {
-    "message": "Database Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)"
+    "message": "Exécutez efficacement des charges massives volumineuses dans la base de données avec Teradata Parallel Transporter (TPT)"
   },
   "developers.database-administrator-text": {
-    "message": "We often have a need to move large volumes of data into Vantage. Teradata offers Teradata Parallel Transporter (TPT) utility that can efficiently load large amounts of data into Teradata Vantage. This how-to demonstrates how to use TPT. In this scenario,"
+    "message": "Nous avons souvent besoin de déplacer de gros volumes de données vers Vantage. Teradata propose l'utilitaire Teradata Parallel Transporter (TPT) qui peut charger efficacement de grandes quantités de données dans Teradata Vantage. Ce guide pratique montre comment utiliser TPT. Dans ce scénario,"
   },
   "developers.it-operations": {
-    "message": "IT Operations"
+    "message": "Opérations informatiques"
   },
-  "developers.it-operations-title": {
-    "message": "Query data stored in object storage"
+  "developers.deit-operations-title": {
+    "message": "Interroger les données conservées dans le stockage d'objets"
   },
   "developers.it-operations-text": {
-    "message": "Native Object Storage (NOS) is a Vantage feature that allows you to query data stored in files in object storage such as AWS S3, Google GCS, Azure Blob or on-prem implementations. It’s useful in scenarios where you want to explore data without building a ..."
+    "message": "Native Object Storage (NOS) est une fonctionnalité Vantage qui vous permet d'interroger les données stockées dans des fichiers dans un stockage d'objets tel qu'AWS S3, Google GCS, Azure Blob ou des implémentations sur site. Il est utile dans les scénarios où vous souhaitez explorer des données sans créer de ..."
   },
   "developers.stay-up-to-date": {
-    "message": "Stay up to date"
+    "message": "Restez à jour"
   },
   "developers.top-picks-from-Teradata": {
-    "message": "Top picks from Teradata"
+    "message": "Les meilleurs choix de Teradata"
   },
   "developers.top-picks-from-teradata-title-card1": {
-    "message": "Explore Vantage AI/ML features"
+    "message": "Découvrez les fonctionnalités de Vantage AI/ML"
   },
   "developers.top-picks-from-teradata-text-card1": {
-    "message": "Get a free hands-on demo environment to explore Teradata VantageCloud’s ClearScape Analytics™"
+    "message": "Obtenez un environnement de démonstration pratique gratuit pour explorer ClearScape Analytics™ de Teradata VantageCloud"
   },
   "developers.top-picks-from-teradata-title-card2": {
-    "message": "Use dbt with Teradata Vantage"
+    "message": "Utiliser dbt avec Teradata Vantage"
   },
   "developers.top-picks-from-teradata-text-card2": {
-    "message": "Learn how to use dbt, a leading ELT tool, with Teradata Vantage."
+    "message": "Découvrez comment utiliser dbt, un outil ELT de premier plan, avec Teradata Vantage."
   },
   "developers.top-picks-from-teradata-title-card3": {
-    "message": "Query data in object storage"
+    "message": "Interroger les données dans le stockage d'objets"
   },
   "developers.top-picks-from-teradata-text-card3": {
-    "message": "Learn how to analyze data stored in object storage using SQL."
+    "message": "Découvrez comment analyser les données stockées dans le stockage d'objets à l'aide de SQL."
   },
   "developers.top-picks-from-teradata-title-card4": {
-    "message": "Use Airbyte to load data to Vantage"
+    "message": "Utilisez Airbyte pour charger des données sur Vantage"
   },
   "developers.top-picks-from-teradata-text-card4": {
-    "message": "Use Airbyte ELT tool to load data from your applications and databases into VantageCloud."
+    "message": "Utilisez l'outil Airbyte ELT pour charger les données de vos applications et bases de données dans VantageCloud."
   },
   "developers.top-picks-from-teradata-title-card5": {
-    "message": "Getting Started with Teradata ModelOps"
+    "message": "Prise en main de Teradata ModelOps"
   },
   "developers.top-picks-from-teradata-text-card5": {
-    "message": "In the tutorial, you will be able to create a new project in ModelOps, upload the required data to Vantage, and track the full lifecycle."
+    "message": "Dans ce didacticiel, vous pourrez créer un projet dans ModelOps, charger les données requises dans Vantage et suivre le cycle de vie complet."
   },
   "developers.top-picks-from-teradata-title-card6": {
-    "message": "Connect to Vantage using JDBC"
+    "message": "Se connecter à Vantage à l'aide de JDBC"
   },
   "developers.top-picks-from-teradata-text-card6": {
-    "message": "The JDBC Driver allows you to connect to the Teradata database from external applications."
+    "message": "Le pilote JDBC vous permet de vous connecter à la base de données Teradata à partir d'applications externes."
   },
   "developers.talk-to-developers-where-you-are": {
-    "message": "Talk to Developers where you are"
+    "message": "Discutez avec les développeurs là où vous êtes"
+  },
+  "apis.title": {
+    "message": "API"
+  },
+  "apis.description": {
+    "message": "Un vaste portefeuille d'API REST modernes pour automatiser vos flux de travail avec Vantage. Utilisez ces API avec les appels REST ou les SDK clients dans les langages de programmation courants."
+  },
+  "apis.query_service": {
+    "message": "Service de requêtes"
+  },
+  "apis.query_service_description": {
+    "message": "Exécutez des requêtes SQL et récupérez les résultats de Vantage à l'aide de l'API Service de requêtes."
+  },
+  "apis.data_labs": {
+    "message": "Laboratoires de données"
+  },
+  "apis.data_labs_description": {
+    "message": "Créez et gérez des laboratoires de données dans Vantage à l'aide de l'API Laboratoires de données."
   },
   "quickstarts.tagline": {
     "message": "Discover in-depth tutorials and guides about how to use Teradata Vantage from all members of the Teradata community, including employees, partners, customers."
@@ -518,5 +538,35 @@
   },
   "quickstarts.teradata_university": {
     "message": "Teradata University"
+  },
+  "mat.alert-message": {
+    "message": "This website uses Machine-Assisted Translation (MAT)"
+  },
+  "mat.link": {
+    "message": "Learn more"
+  },
+  "mat.heading": {
+    "message": "Machine-Assisted Translation (MAT)"
+  },
+  "mat.content": {
+    "message": "Machine-assisted translations of any materials into languages other than English are intended solely as a convenience to the non-English-reading users and are not legally binding. Anybody relying on such information does so at his or her own risk. No automated translation is perfect nor is it intended to replace human translators. Teradata does not make any promises, assurances, or guarantees as to the accuracy of the machine-assisted translations provided. Teradata accepts no responsibility and shall not be liable for any damage or issues that may result from using such translations. Users are reminded to use the English contents."
+  },
+  "mat.button": {
+    "message": "Close"
+  },
+  "feedback.did_page_help": {
+    "message": "Cette page vous a-t-elle été utile?"
+  },
+  "feedback.thank_you": {
+    "message": "Nous vous remercions de vos commentaires !"
+  },
+  "theme.admonition.note": {
+    "message": "Remarque"
+  },
+  "theme.admonition.tip": {
+    "message": "Astuce"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Page d'accueil"
   }
 }

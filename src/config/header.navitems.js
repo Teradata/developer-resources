@@ -5,9 +5,7 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
     title: 'header.title',
     navItems: [
       {
-        href: `https://quickstarts.teradata.com/${
-          ['es', 'ja', 'en'].includes(currentLocale) ? locale : ''
-        }`,
+        href: `${baseUrl ?? ''}${locale ?? ''}/quickstarts`,
         label: 'header.getting_started',
       },
       {
@@ -65,6 +63,7 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
         label: 'Deutschland',
         value: 'de',
       },
+      { label: 'Español', value: 'es' },
       {
         label: 'France',
         value: 'fr',
