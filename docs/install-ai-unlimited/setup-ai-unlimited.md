@@ -30,7 +30,21 @@ Find additional information here.
 
 <details>
 
-<summary>Step 1: Git integration</summary>
+<summary>Step 1: Application settings</summary>
+
+**TLS**
+
+Use [Transport Layer Security (TLS)](../glossary.md#transport-layer-security) to secure connections to the AI Unlimited service and safeguard your data in transit.
+
+**Certificates**
+
+Provide a certificate issued by a trusted Certificate Authority (CA), and the key.
+
+</details>
+
+<details>
+
+<summary>Step 2: Git integration</summary>
 
 **OAuth app**
 
@@ -77,7 +91,7 @@ The **Repository organization** is the organization in which all AI Unlimited pr
 
 <details>
 
-<summary>Step 2: Cloud setup</summary>
+<summary>Step 3: Cloud setup</summary>
 
 Some of these fields are for default values. Later, when you deploy the engine from a Jupyter notebook, you can specify values, different from the defaults, for that deployment.
 
@@ -130,23 +144,6 @@ If you deploy the engine in the same Virtual Private Cloud as AI Unlimited, incl
 **Network type: Public** or **Private** 
 
 This refers to how AI Unlimited should communicate with the engine. The engine might have a public IP address, a private IP address, or both. Indicate the type of IP address to which AI Unlimited should connect.
-
-</details>
-
-
-<details>
-
-<summary>Step 3: Application settings</summary>
-
-**TLS**
-
-Use [Transport Layer Security (TLS)](../glossary.md#transport-layer-security) to secure connections to the AI Unlimited service and safeguard your data in transit.
-
-**Certificates**
-
-If you have a certificate issued by a trusted Certificate Authority (CA), you can provide it and its key. You'll be responsible for managing the certificate lifecycle, including renewal and validation. If you have specific requirements or need more control over your certificates, bringing your own is a good option.
-
-Or use a Teradata system-generated certificate. It automatically renews before it expires.
 
 </details>
 
