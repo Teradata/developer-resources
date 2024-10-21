@@ -3,7 +3,7 @@ id: may-2024-fe
 title: May 2024 features
 description: Find out what's in the initial release of AI Unlimited paid public preview.
 sidebar_label: May 2024 features
-sidebar_position: 3
+sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 ---

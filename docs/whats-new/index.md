@@ -16,14 +16,13 @@ Discover the latest features and enhancements. Also see detailed release notes.
 
 See what's new in each release&mdash;and what's coming.
 
-- [August 2024](./august-2024-fe.md)
+- [October 2024](./october-2024-fe.md)
 - [May 2024](./may-2024-fe.md)
 
 ## Release notes
 
 As we continue to enhance AI Unlimited, please be aware of features not currently supported and known issues. 
 
-- [August 2024](./august-2024-rn.md)
 - [May 2024](./may-2024-rn.md)
 
 

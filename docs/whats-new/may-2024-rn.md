@@ -3,7 +3,7 @@ id: may-2024-rn
 title: May 2024 release notes
 description: See details about the initial release of the paid public preview.
 sidebar_label: May 2024 release notes
-sidebar_position: 4
+sidebar_position: 3
 pagination_prev: null
 pagination_next: null
 ---

@@ -6,7 +6,7 @@ sidebar_label: October 2024 features and enhancements
 sidebar_position: 1
 pagination_prev: null
 pagination_next: null
----
+--
 
 # October 2024 | Features and enhancements
 
