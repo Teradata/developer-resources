@@ -16,7 +16,7 @@ Discover the latest features and enhancements. Also see detailed release notes.
 
 See what's new in each release&mdash;and what's coming.
 
-- [October 2024](./october-2024-fe.md)
+- [November 2024](./november-2024-fe.md)
 - [May 2024](./may-2024-fe.md)
 
 ## Release notes

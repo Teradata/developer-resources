@@ -8,7 +8,7 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# May 2024 | Features
+# May 2024 features
 
 See what's in the initial release of the AI Unlimited paid public preview, and find out what's coming.
 

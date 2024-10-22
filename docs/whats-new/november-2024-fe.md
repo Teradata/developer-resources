@@ -1,14 +1,14 @@
 ---
-id: october-2024-fe
-title: October 2024 features and enhancements
+id: november-2024-fe
+title: November 2024 features and enhancements
 description: Find out what's in the latest release of the AI Unlimited paid public preview.
-sidebar_label: October 2024 features and enhancements
+sidebar_label: November 2024 features and enhancements
 sidebar_position: 1
 pagination_prev: null
 pagination_next: null
 ---
 
-# October 2024 | Features and enhancements
+# November 2024 features and enhancements
 
 See what's in this release of the AI Unlimited paid public preview, and find out what's coming.
 

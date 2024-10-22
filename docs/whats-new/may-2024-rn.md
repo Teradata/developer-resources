@@ -8,7 +8,7 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# May 2024 | Release notes
+# May 2024 release notes
 
 See what's not currently supported and learn about known issues.
 
