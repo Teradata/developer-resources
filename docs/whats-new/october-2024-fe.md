@@ -42,4 +42,4 @@ See what's in this release of the AI Unlimited paid public preview, and find out
 
 ## What's coming
 
-- [any items to add here?]
+- [items to add here?]
