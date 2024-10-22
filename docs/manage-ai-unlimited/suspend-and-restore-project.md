@@ -2,7 +2,7 @@
 id: suspend-and-restore-project
 title: Suspend and restore a project
 description: How to suspend and restore projects to manage costs.
-sidebar_position: 2
+sidebar_position: 3
 sidebar_label: Suspend and restore a project
 pagination_prev: null
 pagination_next: null

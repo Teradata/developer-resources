@@ -16,7 +16,6 @@ Find resources here for installation-related topics:
 
   - [AWS account requirements](./aws-requirements.md)
   - [Azure account requirements](./azure-requirements.md)
-  - [Create an OAuth app](./create-oauth-app.md)
 
 - The ways to [install JupyterLab](./jupyterlab/)
 
