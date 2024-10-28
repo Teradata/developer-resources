@@ -512,18 +512,18 @@ import TabItem from '@theme/TabItem';
     #             creating the pat. (the name of the user that you used to log in 
     #             to the console)
 
-    payload=$(echo -n '{
+    payload=$(echo -n "{
       "aud": [
         "td:service:authentication"
       ],
-      "exp": $(($(date +%s) + 3600)),
-      "iat": $(date +%s),
-      "iss": "wiki",
-      "org_id": "38b6*****-****-****-****-********5df7",
-      "multi-use": true,
-      "pat": "gwxh******************n4yco",
-      "sub": "data_engineer"
-    }')
+      \"exp\": $(($(date +%s) + 3600)),
+      \"iat\": $(date +%s),
+      \"iss\": "wiki",
+      \"org_id\": "38b6*****-****-****-****-********5df7",
+      \"multi-use\": true,
+      \"pat\": "gwxh******************n4yco",
+      \"sub\": "data_engineer"
+    }")
     
     export header=$(echo -n "$header" | base64)
     export payload=$(echo -n "$payload" | base64)
