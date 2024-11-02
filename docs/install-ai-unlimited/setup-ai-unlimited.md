@@ -40,6 +40,12 @@ Use [Transport Layer Security (TLS)](../glossary.md#transport-layer-security) to
 
 Provide a certificate issued by a trusted Certificate Authority (CA), and the key.
 
+If you enable TLS and provide the certificate information, you'll see a restart message. Select **Restart now**. This restarts the AI Unlimited service with TLS in place. 
+
+:::note
+If you return to the setup and change any TLS setting (enable TLS, disable TLS, or change the certificate), you'll need to restart AI Unlimited again.
+:::
+
 </details>
 
 <details>
@@ -150,17 +156,9 @@ This refers to how AI Unlimited should communicate with the engine. The engine m
 
 ## Before you leave
 
-1. On your **Profile**, copy your API key.
-    You'll use it when you connect to the engine from a Jupyter notebook.
-
-2. If you enabled TLS, you'll see a restart message. Select **Restart now**. This restarts the AI Unlimited service with TLS in place. 
-
-:::note
-If you return to the setup and change any TLS setting (enable TLS, disable TLS, or change the certificate), you'll need to restart AI Unlimited again.
-:::
+On your **Profile**, copy your API key. You'll use it when you connect to the engine from a Jupyter notebook.
 
 Congratulations! AI Unlimited setup is now complete.
-
 
 :::note
 Because you are the AI Unlimited owner you can return to the setup anytime to [change any settings](../manage-ai-unlimited/change-settings.md). 
