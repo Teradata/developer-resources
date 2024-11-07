@@ -1,14 +1,22 @@
 ---
-id: fabric
-title: Fabric
-description: Find out what's in the latest AI Unlimited release.
-sidebar_label: Fabric What's new
+id: get-started-fabric
+title: Get started from Fabric
+description: Get started using the AI Unlimited Fabric Workload.
+sidebar_label: Get started
 sidebar_position: 1
 pagination_prev: null
 pagination_next: null
 displayed_sidebar: fabricSidebar
 ---
 
-# What's new
+# Get started
 
-See what's in this release and what's coming.
+What it is... 
+
+Define the preview... Some users might learn of it from the doc, not from Fabric...
+
+## Find the AI Unlimited Fabric Workload
+
+From Fabric... how to find it...
+
+
