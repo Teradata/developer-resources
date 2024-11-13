@@ -474,6 +474,27 @@ function SearchPageContent(): JSX.Element {
                         dangerouslySetInnerHTML={{ __html: title }}
                       ></Heading>
 
+                      {breadcrumbs.length > 0 && (
+                        <nav aria-label="breadcrumbs">
+                          <ul
+                            className={clsx(
+                              'breadcrumbs',
+                              styles.searchResultItemPath
+                            )}
+                          >
+                            {breadcrumbs.map((html, index) => (
+                              <li
+                                key={index}
+                                className="breadcrumbs__item"
+                                // Developer provided the HTML, so assume it's safe.
+                                // eslint-disable-next-line react/no-danger
+                                dangerouslySetInnerHTML={{ __html: html }}
+                              />
+                            ))}
+                          </ul>
+                        </nav>
+                      )}
+
                       {summary && (
                         <p
                           className={styles.searchResultItemSummary}

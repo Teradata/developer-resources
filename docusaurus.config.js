@@ -210,7 +210,7 @@ const config = {
       algolia: {
         appId: 'FKCGWXPUTX',
         apiKey: '72dfc486e67f40cf44879ef55fcdd88d',
-        indexName: 'teradataio',
+        indexName: 'teradataio-dev-test',
       },
       prism: {
         theme: prismThemes.github,

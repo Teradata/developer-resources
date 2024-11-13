@@ -40,13 +40,11 @@
 
 .DocSearch-Form {
   --docsearch-spacing: 1rem;
-  --docsearch-highlight-color: var(--cv-theme-tertiary);
   border-radius: 0;
   border-bottom: 1px solid #ebedee;
 }
 
 .DocSearch-Hit a {
-  --docsearch-highlight-color: var(--cv-theme-tertiary);
   box-shadow: none;
   padding-left: 0;
 }
@@ -128,6 +126,11 @@
   pointer-events: none;
   position: relative;
   top: 1px;
+}
+
+.DocSearch-Hits mark {
+  background: rgb(243 116 64 / 20%);
+  color: var(--docsearch-hit-color);
 }
 
 .DocSearch-Button {
