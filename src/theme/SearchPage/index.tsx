@@ -228,7 +228,7 @@ function SearchPageContent(): JSX.Element {
           /algolia-docsearch-suggestion--highlight/g,
           'search-result-match'
         );
-
+      console.log("hits:",hits)
       const items = hits.reduce((filteredItems, { url, _highlightResult: { hierarchy }, _snippetResult: snippet = {} }) => {
         if (snippet.content) {
           const titles = Object.keys(hierarchy).map((key) =>
@@ -245,6 +245,7 @@ function SearchPageContent(): JSX.Element {
         return filteredItems;
       }, []);
        
+      console.log("items:",items)
       searchResultStateDispatcher({
         type: 'update',
         value: {
@@ -465,14 +466,24 @@ function SearchPageContent(): JSX.Element {
                         className={styles.searchResultItemHeading}
                         dangerouslySetInnerHTML={{ __html: title }}
                       ></Heading>
-                      {breadcrumbs && breadcrumbs.length > 0 && (
-                        <nav className={styles.breadcrumbs}>
-                          {breadcrumbs.map((breadcrumb, index) => (
-                            <span key={index}>
-                              {breadcrumb}
-                              {index < breadcrumbs.length - 1 && ' > '}
-                            </span>
-                          ))}
+                       {breadcrumbs.length > 0 && (
+                        <nav aria-label="breadcrumbs">
+                          <ul
+                            className={clsx(
+                              'breadcrumbs',
+                              styles.searchResultItemPath
+                            )}
+                          >
+                            {breadcrumbs.map((html, index) => (
+                              <li
+                                key={index}
+                                className="breadcrumbs__item"
+                                // Developer provided the HTML, so assume it's safe.
+                                // eslint-disable-next-line react/no-danger
+                                dangerouslySetInnerHTML={{ __html: html }}
+                              />
+                            ))}
+                          </ul>
                         </nav>
                       )}
                       {summary && (
