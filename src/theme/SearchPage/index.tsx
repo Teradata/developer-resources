@@ -229,30 +229,22 @@ function SearchPageContent(): JSX.Element {
           'search-result-match'
         );
 
-      const items = hits.map(
-        ({
-          url,
-          _highlightResult: { hierarchy },
-          _snippetResult: snippet = {},
-        }: {
-          url: string;
-          _highlightResult: { hierarchy: { [key: string]: { value: string } } };
-          _snippetResult: { content?: { value: string } };
-        }) => {
+      const items = hits.reduce((filteredItems, { url, _highlightResult: { hierarchy }, _snippetResult: snippet = {} }) => {
+        if (snippet.content) {
           const titles = Object.keys(hierarchy).map((key) =>
             sanitizeValue(hierarchy[key]!.value)
           );
-          return {
+  
+          filteredItems.push({
             title: titles.pop()!,
             url: processSearchResultUrl(url),
-            summary: snippet.content
-              ? `${sanitizeValue(snippet.content.value)}...`
-              : '',
+            summary: `${sanitizeValue(snippet.content.value)}...`,
             breadcrumbs: titles,
-          };
+          });
         }
-      );
-
+        return filteredItems;
+      }, []);
+       
       searchResultStateDispatcher({
         type: 'update',
         value: {
@@ -473,7 +465,16 @@ function SearchPageContent(): JSX.Element {
                         className={styles.searchResultItemHeading}
                         dangerouslySetInnerHTML={{ __html: title }}
                       ></Heading>
-
+                      {breadcrumbs && breadcrumbs.length > 0 && (
+                        <nav className={styles.breadcrumbs}>
+                          {breadcrumbs.map((breadcrumb, index) => (
+                            <span key={index}>
+                              {breadcrumb}
+                              {index < breadcrumbs.length - 1 && ' > '}
+                            </span>
+                          ))}
+                        </nav>
+                      )}
                       {summary && (
                         <p
                           className={styles.searchResultItemSummary}
