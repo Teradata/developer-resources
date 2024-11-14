@@ -3,7 +3,7 @@ id: first-use-case
 title: Try out the use case
 description: Now that your notebook is ready, try out the data preparation use case.
 sidebar_label: Try out the use case
-sidebar_position: 5
+sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 displayed_sidebar: fabricSidebar
@@ -14,14 +14,18 @@ import TabItem from '@theme/TabItem';
 
 # Try out the use case
 
-The sample notebook has information about applying the AI Unlimited in-database functions to different stages of data preparation for a hypothetical use case. The other sample notebooks, financial customer journey and user segmentation, do the same thing. We will not cover those details here and will instead let you discover that through the notebook itself.  By default, the sample notebooks create tables in memory that are destroyed when the notebook is closed or disconnected. In this section we will look at how to:
+The sample notebook has information about applying the AI Unlimited in-database functions to different stages of data preparation for a hypothetical use case. The other sample notebooks, financial customer journey and user segmentation, do the same thing. We will not cover those details here and will instead let you discover that through the notebook itself.  
+
+By default, the sample notebooks create tables in memory that are destroyed when the notebook is closed or disconnected. 
+
+In this section we will look at how to:
 - Select tables from the Lakehouse explorer as an easy, optional way to find data
 - Write to the lakehouse 
 - Find data between sessions
 
 ## Evaluate a table in the notebook
 
-Scroll down to section 2.1
+Scroll down to section 2.1.
 
 In this section, the sample notebook demonstrates modifying a dataset that is unique in one dimension (“invoiceno”) to be unique by the desired dimension for analysis (“customerid”). 
 
@@ -53,7 +57,7 @@ In the next cell with “SUM(quantity)” you can see an expression to modify th
 
 To write the created table to OneLake, we will append the target lakehouse name to the front of the table.
 
-Add the destination lakehouse followed by a period, “AIUnlimited_Demo.”, to the front of “Customer_ID_Group,” the table being created.  The “CREATE OTF TABLE” expression is used by AI Unlimited to write a delta lake or Iceberg table and is necessary when writing to OneLake. 
+Add the destination lakehouse followed by a period, “AIUnlimited_Demo.”, to the front of “Customer_ID_Group,” the table being created.  The “CREATE OTF TABLE” expression is used by AI Unlimited to write a Delta lake or Iceberg table and is necessary when writing to OneLake. 
 
 ![ImgNewTable](./new-table.svg)
 
@@ -69,13 +73,13 @@ Now let’s save the notebook. Any changes we made in code or markdown will pers
 
 ![ImgCloseNotebook](./close-nb.svg)
 
-We can close the notebook by simply clicking the “x” button in the tab on the sidebar. This automatically disconnects the session if and releases the engine and destroys any data that was not written to OneLake.
+We can close the notebook by simply clicking the “x” button in the tab on the sidebar. This automatically disconnects the session and releases the engine and destroys any data that was not written to OneLake.
 
 ## Pick up where we left off
 
-Find and reopen the “data_prep” table in your workspace. Connect to the AIUnlimited_demos lakehouse in the Lakehouse explorer.
+Find and reopen the “data_prep” table in your workspace. Connect to the AIUnlimited_Demos lakehouse in the Lakehouse explorer.
 
-Go back to section 2.1. See the Top 10 results for UK_retail_data.
+Go back to section 2.1. See the Top 10 results for uk_retail_data.
 
 Beneath the cell with “CREATE OTF TABLE” that we edited to write to OneLake, create another code cell.
 

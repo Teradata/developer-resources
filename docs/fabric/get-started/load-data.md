@@ -3,7 +3,7 @@ id: load-data
 title: Load sample data
 description: Load sample data to your workspace.
 sidebar_label: Load sample data
-sidebar_position: 3
+sidebar_position: 2
 pagination_prev: null
 pagination_next: null
 displayed_sidebar: fabricSidebar
@@ -23,5 +23,5 @@ Then, select the “Data preparation” dataset.  The first time you load a data
 ![ImgTopCell](./top-cell.svg)
 
 :::note
-If you do want to change the name of the lakehouse, take special note of the cell at the very top of the notebook. Changing “AIUnlimited_Demo” here to your chosen name will allow you to easily run all of the cells in the notebook.
+If you change the name of the lakehouse, take special note of the cell at the very top of the notebook. Changing “AIUnlimited_Demo” here to your chosen name will allow you to easily run all of the cells in the notebook.
 :::
