@@ -7,7 +7,7 @@ function enhanceSidebarItems(items, dirName) {
     items = items.filter(
       (item) =>
         (item.type === 'doc' && item.id.split('/')[0] !== 'fabric') ||
-        (item.type === 'category' && item.link.id.split('/')[0] !== 'fabric')
+        (item.type === 'category' && item.link?.id.split('/')[0] !== 'fabric')
     );
   }
   return items;
