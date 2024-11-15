@@ -1,8 +1,8 @@
 ---
 id: first-use-case
-title: Try out the use case
+title: Try the use case
 description: Now that your notebook is ready, try out the data preparation use case.
-sidebar_label: Try out the use case
+sidebar_label: Try the use case
 sidebar_position: 2
 pagination_prev: null
 pagination_next: null
@@ -12,7 +12,7 @@ displayed_sidebar: fabricSidebar
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Try out the use case
+# Try the use case
 
 The sample notebook has information about applying the AI Unlimited in-database functions to different stages of data preparation for a hypothetical use case. The other sample notebooks, financial customer journey and user segmentation, do the same thing. We will not cover those details here and will instead let you discover that through the notebook itself.  
 
