@@ -22,40 +22,13 @@ Follow the link in the function name to find usage notes.
 Usage instructions often reference “CREATE TABLE.” To write to OneLake, you must use “CREATE OTF TABLE.”
 :::
 
-## Data cleaning functions
+## Data exploration functions
 
 [TD_GetFutileColumns](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/b_Z5zq5my16EFYd__Mayaw)<br/>
-Returns the futile column names.
-
-[TD_OutlierFilterFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/Me35Rpf4QecJVgPQOon5bw)<br/>
-Calculates the lower_percentile, upper_percentile, count of rows, and median for the specified input table columns.
-
-[TD_OutlierFilterTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/JiI~9xlKZMt5d7R3U1P4OA)<br/>
-Filters outliers from the input table.
+Returns the futile column names. Futile columns are those columns that typically aren’t useful for analytics or modeling. This can include columns that have all the same value, represent a unique identifier, or contain redundant data.
 
 [TD_GetRowsWithoutMissingValues](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/GoJR2x7XPyNAO~OpMpnHiQ)<br/>
 Displays the rows that have non-NULL values in the specified input table columns.
-
-[TD_SimpleImputeFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/8VbPxd8w8YvFtOxl9Dxmxg)<br/>
-Outputs a table of values to substitute for missing values in the input table.
-
-[TD_SimpleImputeTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/V0j0YA~DeCfLhAcp6Dz1jA)<br/>
-Substitutes specified values for missing values in the input table.
-
-[TD_ConvertTo](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/XjsuBA5Z8TjgwGDJu9dWqg)<br/>
-Converts the specified input table columns to specified data types.
-
-[Pack](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/uxfV8EfA9z1Y7acrFojeAg)<br/>
-Compresses data in multiple columns into a single packed data column.
-
-[Unpack](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/UOs8cnN~KQW3cdaBIgCZOA)<br/>
-Expands data from a single packed column to multiple unpacked columns.
-
-[StringSimilarity](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/mwjPJSrMzfFbWFDI6VNvLw)<br/>
-Calculates the similarity between two strings, using the specified comparison method.
-
-
-## Data exploration functions
 
 [MovingAverage](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/02_sA3cQLj4mcJHnyifpEA)<br/>
 Computes average values in a series.
@@ -84,28 +57,49 @@ Displays all rows that have the maximum value in a specified input table column.
 [TD_WhichMin](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/IAf_QQwQK0eE2bICuaLoNg)<br/>
 Displays all rows that have the minimum value in specified input table column.
 
+## Data cleaning functions
+
+[Antiselect](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/lqQt2cDc0sIz0n09sqRhIw)<br/>
+Returns all columns except those specified.
+
+[TD_OutlierFilterFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/Me35Rpf4QecJVgPQOon5bw)<br/>
+Calculates the lower_percentile, upper_percentile, count of rows, and median for the specified input table columns. This calculation can then be used to filter out statistical outliers in the training data, and can be reused for new data that needs to be scored.
+
+[TD_OutlierFilterTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/JiI~9xlKZMt5d7R3U1P4OA)<br/>
+Filters outliers from the input table. Performs the transformation based on the calculations performed in the Fit function.
+
+[TD_SimpleImputeFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/8VbPxd8w8YvFtOxl9Dxmxg)<br/>
+Outputs a table of values to substitute for missing values in the input table. You can define how the values are to be filled, either statistically or with a literal value.
+
+[TD_SimpleImputeTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/V0j0YA~DeCfLhAcp6Dz1jA)<br/>
+Substitutes specified values for missing values in the input table.
+
+[TD_ConvertTo](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/XjsuBA5Z8TjgwGDJu9dWqg)<br/>
+Converts the specified input table columns to specified data types.
+
+[Pack](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/uxfV8EfA9z1Y7acrFojeAg)<br/>
+Concatenates data from multiple columns into a single column with a delimiter.
+
+[Unpack](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/UOs8cnN~KQW3cdaBIgCZOA)<br/>
+Splits the data based on a delimiter. This can be used with any column that can be split with a delimiter, not just packed columns.
 
 ## Feature engineering transform functions
 
-[Antiselect](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/lqQt2cDc0sIz0n09sqRhIw)<br/>
-AntiSelect returns all columns except those specified.
-
 [TD_BinCodeFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/0OM9MT3XHQiVLgjCSx3WoQ)<br/>
-Converts numeric data to categorical data by binning the numeric data into multiple 
-numeric bins (intervals).
+Analyzes columns that contain continuous numeric values in order to calculate how to create categoric values with either automatic or custom bin values.
 
 [TD_BinCodeTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/psM7B139os8IyiDoYXcPiA)<br/>
-Transforms input table columns from the BinCodeFit function output.
+Creates a NEW column that contains the categoric values based on the output of the BinCodeFit function.
 
 [TD_ColumnTransformer](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/41nrc50qnYn0txn3dG9XMw)<br/>
-Transforms the input table columns in a single operation.
+Performs multiple data transformations in parallel by passing multiple fit objects to the function.
 
 [TD_FunctionFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/uImNsecSd6NpsEMG1mQcWg)<br/>
 Determines whether specified numeric transformations can be applied to specified input 
 columns.
 
 [TD_FunctionTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/NpkHhyz~Gw2vIxjoFo0FdA)<br/>
-Applies numeric transformations to input columns.
+Applies numeric transformations to input columns, creating a new column with the function output.
 
 [TD_NonLinearCombineFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/XIF8637UisNuzSCGZ2v6Tg)<br/>
 Returns the target columns and a specified formula which uses the non-linear combination of existing features.
@@ -114,13 +108,13 @@ Returns the target columns and a specified formula which uses the non-linear com
 Generates the values of the new feature using the specified formula from the TD_NonLinearCombineFit function output.
 
 [TD_OneHotEncodingFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/P2SFhFE~x_yq3v4BpUkqSw)<br/>
-Outputs a table of attributes and categorical values to the TD_OneHotEncodingTransform function.
+Converts all possible categoric values to individual columns that contain a binary vector (0 or 1) representing whether that observation features that value (1 for True, 0 for False). 
 
 [TD_OneHotEncodingTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/GnPtPgVTeoLOO4Tja1Y9Kg)<br/>
 Encodes specified attributes and categorical values as one-hot numeric vectors using the output from the TD_OneHotEncodingFit function.
 
 [TD_OrdinalEncodingFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/ZfMXll0ZIYfso0_UCAr6GA)<br/>
-Encodes specified attributes and categorical values as one-hot numeric vectors using the output from the TD_OneHotEncodingFit function.
+Encodes a specified or generated numeric value for each categoric value in a specified set of columns in the data set.
 
 [TD_OrdinalEncodingTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/Lj_DoH6ARRYeN~kKLHfk7A)<br/>
 Maps the categorical value to a specified ordinal value using the TD_OrdinalEncodingFit output.
@@ -129,13 +123,13 @@ Maps the categorical value to a specified ordinal value using the TD_OrdinalEnco
 Pivots the data, that is, changes the data from sparse to dense format.
 
 [TD_PolynomialFeaturesFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/_K1ekns0IDbGDTM1HQxspA)<br/>
-Stores all the specified values in the argument in a tabular format.
+Stores all the specified values in the argument in a tabular format. These arguments include the target columns and the degree of polynomial combinations to generate in the transformation function.
 
 [TD_PolynomialFeaturesTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/1OQ4eudbSSDT1erG0Y_s0g)<br/>
 Extracts values of arguments from the output of the TD_PolynomialFeaturesFit function and generates a feature matrix of all polynomial combinations of the features.
 
 [TD_RandomProjectionFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/0AXI82g0cy6L0rznmznOAg)<br/>
-Returns a random projection matrix based on the specified arguments.
+Reduces the dimensionality of the dataset while maintaining a maximum distortion value. Returns a random projection matrix based on the specified arguments.
 
 [TD_RandomProjectionMinComponents](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/xbK4DmHKMiWOnzl6dsdVYw)<br/>
 Calculates the minimum number of components required for applying RandomProjection on the given dataset for the specified epsilon(distortion) parameter value.
@@ -159,7 +153,7 @@ Scales the specified input table columns using the output of the TD_ScaleFit fun
 Implements SMOTE and three variations (ADASYN, Borderline, and SMOTE-NC) to sample from datasets, border groups, or mixed datasets.
 
 [TD_TargetEncodingFit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/47NXz1JZpW~3BDiKZn~ILA)<br/>
-Takes the InputTable and a CategoricalTable as input and generates the required hyperparameters to be used by the TD_TargetEncodingTransform function for encoding the categorical values.
+Assigns the likelihood or expected value (classification or regression) for each categoric value, and encodes the category with that value. Calculates these values based on selected encoding methods and input parameters.
 
 [TD_TargetEncodingTransform](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/lzO3HO3qILxP1vuIqAcFHw)<br/>
 Takes the InputTable and a FitTable generated by TD_TargetEncodingFit for encoding the categorical values.
@@ -215,7 +209,7 @@ Runs the predictive algorithm based on the model generated by TD_XGBoost.
 Computes the contribution of each feature in a prediction as as average marginal contribution of the feature value across all possible coalitions.
 
 [TD_Silhouette](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/YPTk8aenMiwfegEUa_nKvA)<br/>
-Determines how well the data is clustered among clusters.
+Determines how well the data is clustered among clusters, meaning how similar the data is to its assigned cluster as compared to other clusters.
 
 [TD_ClassificationEvaluator](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/Bq0ih5D1m9Xpbf1Ov2FAVw)<br/>
 Computes the Confusion matrix, precision, recall, and F1-score based on the observed labels (true labels) and the predicted labels.
@@ -227,16 +221,19 @@ Computes metrics to evaluate and compare multiple models and summarizes how clos
 Accepts a set of prediction-actual pairs for a binary classification model and calculates the True-positive rate (TPR), False-positive rate (FPR), The area under the ROC curve (AUC), and Gini coefficient values for a range of discrimination thresholds.
 
 [TD_TrainTestSplit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/eOjc7zSRjbOhrFdTkQocKw)<br/>
-Simulates model performance on new data.
+Simulates model performance on new data. Randomly splits the data based on defined percentages with optional column stratification and random seeding.
 
 
 ## Text analytic functions
+
+[StringSimilarity](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/mwjPJSrMzfFbWFDI6VNvLw)<br/>
+Calculates the similarity between two strings, using the specified comparison method.
 
 [TD_Ngramsplitter](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/FUqhrm_wiF9qTGOTT1ZmAg)<br/>
 Tokenizes (splits) an input stream and emits n multigrams, based on specified delimiter and reset parameters. Useful for sentiment analysis, topic identification, and document classification.
 
 [TD_NaiveBayesTextClassifierPredict](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/SsWEjUjuSklxyWBkbLydiQ)<br/>
-Uses the model output by TD_NaiveBayesTextClassifierTrainer function to analyze the input data and make predictions.
+Uses the model output by TD_NaiveBayesTextClassifierTrainer function to analyze the input data and make classification predictions on text.
 
 [TD_NaiveBayesTextClassifierTrainer](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/5HX2TpMrN8pb6PB~SKyIRw)<br/>
 Calculates the conditional probabilities for token-category pairs, the prior probabilities, and the missing token probabilities for all categories.
@@ -245,13 +242,13 @@ Calculates the conditional probabilities for token-category pairs, the prior pro
 Uses a dictionary model to extract the sentiment (positive, negative, or neutral) of each input document or sentence.
 
 [TD_TextParser](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/kNMslBJeVbMvfmJNknBflQ)<br/>
-Tokenizes an input stream of words and creates a row for each word in the output table.
+Tokenizes an input stream of words and creates a row for each token in the output table.
 
 [TD_TFIDF](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/RmYZugC7L2kfKG9VujTR9A)<br/>
 Takes any document set and outputs the Term Frequency, Inverse Document Frequency, and Term Frequency - Inverse Document Frequency scores for each term.
 
 [TD_WordEmbeddings](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/UqTgITMWNTtcs2voWr5tRQ)<br/>
-Uses training and prediction to determine the similarity between words and phrases.
+Performs vector embeddings of tokens or documents, and can calculate document or token similarity based on an input model.
 
 
 ## Hypothesis testing functions
@@ -276,8 +273,7 @@ Performs a Z-test, for which the distribution of the test statistic under the nu
 Calculates attributions with a wide range of distribution models. Often used in web-page analysis.
 
 [nPath](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/TKfX4k2uBD5vH1B~ROrV2w)<br/>
-Performs regular pattern matching over a sequence of rows from one or more inputs.
+Performs regular pattern matching over a sequence of rows from one or more inputs, and returns a single row per match. nPath is extremely powerful for user journeys or other time-ordered events such as manufacturing, sensor data, and the like.
 
 [Sessionize](https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Analyzing-Your-Data/Analytics-Database-Analytic-Functions/Path-and-Pattern-Analysis-Functions/Sessionize)<br/>
-Maps each click in a clickstream to a unique session identifier.
-
+Maps events in a time series (such as clicks in a clickstream) into a unique session identifier. It can also filter events based on a minimum event separation threshold.
