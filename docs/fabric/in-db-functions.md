@@ -218,7 +218,7 @@ Computes the Confusion matrix, precision, recall, and F1-score based on the obse
 Computes metrics to evaluate and compare multiple models and summarizes how close predictions are to their expected values.
 
 [TD_ROC](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/T4Zyh~463ovMUve7feUxDA)<br/>
-Accepts a set of prediction-actual pairs for a binary classification model and calculates the True-positive rate (TPR), False-positive rate (FPR), The area under the ROC curve (AUC), and Gini coefficient values for a range of discrimination thresholds.
+Accepts a set of prediction-actual pairs for a binary classification model and calculates the True-positive rate (TPR), False-positive rate (FPR), the area under the ROC curve (AUC), and Gini coefficient values for a range of discrimination thresholds.
 
 [TD_TrainTestSplit](https://docs.teradata.com/r/MjnRKOtqrhz~R18YsbqM8Q/eOjc7zSRjbOhrFdTkQocKw)<br/>
 Simulates model performance on new data. Randomly splits the data based on defined percentages with optional column stratification and random seeding.
