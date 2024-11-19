@@ -69,6 +69,8 @@ To limit your consumption of compute while staying in the notebook, you can disc
 
 ## Save your work
 
+![ImgSaveWork](./save-work.svg)
+
 Now let’s save the notebook. Any changes we made in code or markdown will persist when we reopen the notebook. 
 
 ![ImgCloseNotebook](./close-nb.svg)
