@@ -10,6 +10,7 @@ import headerItems from './src/config/header.navitems.js';
 import fs from 'fs';
 import footerItems from './src/config/footer.navItems.js';
 import baseHeadTags from './src/config/baseHeadTags.js';
+import { sidebarItemsGenerator } from './custom-sidebar.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
@@ -160,7 +161,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // Use a custom sidebar generator which is built on top of the default generator
+          sidebarItemsGenerator,
           routeBasePath: 'ai-unlimited',
+          path: 'docs',
           sidebarPath: './sidebars.js',
         },
         blog: {
