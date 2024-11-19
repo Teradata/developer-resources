@@ -228,8 +228,12 @@ function SearchPageContent(): JSX.Element {
           /algolia-docsearch-suggestion--highlight/g,
           'search-result-match'
         );
-      console.log("hits:",hits)
-      const items = hits.reduce((filteredItems, { url, _highlightResult: { hierarchy }, _snippetResult: snippet = {} }) => {
+
+      const items = hits.reduce((filteredItems, { url, _highlightResult: { hierarchy }, _snippetResult: snippet = {}, anchor }) => {
+        if (anchor === "site-header") {
+          return filteredItems;  
+        }
+        
         if (snippet.content) {
           const titles = Object.keys(hierarchy).map((key) =>
             sanitizeValue(hierarchy[key]!.value)
@@ -245,7 +249,7 @@ function SearchPageContent(): JSX.Element {
         return filteredItems;
       }, []);
        
-      console.log("items:",items)
+   
       searchResultStateDispatcher({
         type: 'update',
         value: {
