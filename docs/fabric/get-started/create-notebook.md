@@ -2,7 +2,7 @@
 id: create-notebook
 title: Create your notebook
 description: From your workspace, create and prepare an AI Unlimited notebook.
-sidebar_label: Create your notebook
+sidebar_label: Create a lakehouse and notebook
 sidebar_position: 1
 pagination_prev: null
 pagination_next: null
@@ -12,7 +12,23 @@ displayed_sidebar: fabricSidebar
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create an AI Unlimited notebook from your workspace
+
+# Create a lakehouse and notebook
+
+First you'll create a lakehouse. Then you'll create a notebook and populate it with the data preparation use case.
+
+## Create a lakehouse to use with sample notebooks
+
+![ImgCreateLakehouse](./create-lakehouse.svg)
+
+The simplest way to use sample data is to create a new lakehouse item in your workspace named “AIUnlimited_Demo.” This way, when you're done with the sample, you can simply delete the lakehouse. To create a new lakehouse, in your workspace select “+ New item,” scroll down to “Store data,” and select the lakehouse item. Name the lakehouse “AIUnlimited_Demo” so that it works with the sample notebook's configuration.
+
+:::note
+Later in these instructions we'll say how to use an existing lakehouse, if that's what you prefer to do.
+::: 
+
+
+## Create an AI Unlimited notebook from your workspace
 
 ![ImgCreateNotebook](./create-notebook.svg)
 

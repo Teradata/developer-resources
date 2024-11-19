@@ -14,14 +14,12 @@ import TabItem from '@theme/TabItem';
 
 ![ImgSampleData](./sample-data.svg)
 
-Before using the sample notebook, you will need to load the sample data to your workspace. You do this by selecting “Sample data” from the toolbar along the top of the notebook. 
+Before using the sample notebook, you'll need to load the sample data to your workspace. You do this by selecting “Sample data” from the toolbar along the top of the notebook. 
 
-![ImgDataPreparation](./data-preparation.svg)
+![ImgDataPreparationRev](./data-preparation.svg)
 
-Then, select the “Data preparation” dataset.  The first time you load a dataset it will create a lakehouse item in Fabric named AIUnlimited_Demo. Future sample data sets will be added to that same lakehouse. 
+Select the “Data preparation” dataset. This is tied to the data preparation sample notebook. Then select the “AIUnlimited_Demo” lakehouse you created in the earlier step. If you chose not to create a new lakehouse, select the name of the lakehouse you want to use.  
 
 ![ImgTopCell](./top-cell.svg)
 
-:::note
-If you change the name of the lakehouse, take special note of the cell at the very top of the notebook. Changing “AIUnlimited_Demo” here to your chosen name will allow you to easily run all of the cells in the notebook.
-:::
+If you are using a pre-existing lakehouse, look at the cell at the very top of the notebook. Change “AIUnlimited_Demo” to the name of your chosen lakehouse to allow you to easily run all the cells in the notebook.
