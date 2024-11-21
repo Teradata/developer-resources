@@ -14,7 +14,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 # Use Apache Airflow with Teradata Vantage
 
 ## Overview
-This tutorial demonstrates how to use airflow with Teradata Vantage. Airflow will be installed on Ubuntu System.
+This quickstart demonstrates how to use airflow with Teradata Vantage. Airflow will be installed on a Ubuntu System.
 
 ## Prerequisites
 * Ubuntu 22.x
@@ -27,12 +27,12 @@ This tutorial demonstrates how to use airflow with Teradata Vantage. Airflow wil
 
 ## Install Apache Airflow
 
-1. Set the AIRFLOW_HOME environment variable. Airflow requires a home directory and uses ~/airflow by default, but you can set a different location if you prefer. The AIRFLOW_HOME environment variable is used to inform Airflow of the desired location.
+1. Set the `AIRFLOW_HOME` environment variable. Airflow requires a home directory and uses `~/airflow` by default, but you can set a different location if you prefer. The `AIRFLOW_HOME` environment variable is used to inform Airflow of the desired location.
     ```bash
     export AIRFLOW_HOME=~/airflow
     ```
 
-2. Install `apache-airflow` stable version 2.8.1 from PyPI repository.:
+2. Install `apache-airflow` stable version 2.8.2 from PyPI repository:
     ```bash
     AIRFLOW_VERSION=2.8.2
     PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
@@ -40,15 +40,17 @@ This tutorial demonstrates how to use airflow with Teradata Vantage. Airflow wil
     pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
     ```
 
-3. Install the Airflow Teradata provider stable version from PyPI repository.
+3. Install the Airflow Teradata provider stable version from PyPI repository:
     ```bash
     pip install "apache-airflow-providers-teradata"
     ```
 
     :::note
     For security reasons, the test connection functionality is disabled by default across Airflow UI, API and CLI.
-    The availability of the functionality can be controlled by the test_connection flag in the core section of the Airflow configuration ($AIRFLOW_HOME/airflow.cfg) or Define below environment variable before starting airflow server.
-    export AIRFLOW__CORE__TEST_CONNECTION=Enabled
+    The availability of the functionality can be controlled by the test_connection flag in the core section of the Airflow configuration (`$AIRFLOW_HOME/airflow.cfg`) or define below environment variable before starting airflow server:
+        ```bash
+        export AIRFLOW__CORE__TEST_CONNECTION=Enabled
+        ```
     :::    
 
 ## Start Airflow Standalone
@@ -119,8 +121,7 @@ Refer [Teradata Hook](https://airflow.apache.org/docs/apache-airflow-providers-t
 
 ## Define a DAG in Airflow
 
-1. In Airflow, DAGs are defined as Python code.
-2. Create a DAG as a python file like sample.py under DAG_FOLDER - $AIRFLOW_HOME/files/dags directory.
+Create a DAG as a python file like sample.py under `DAG_FOLDER` - `$AIRFLOW_HOME/files/dags` directory.
 
 ```sql
 from datetime import datetime
@@ -154,14 +155,14 @@ with DAG(
 
 ## Load DAG
 
-Airflow loads DAGs from Python source files, which it looks for inside its configured DAG_FOLDER - $AIRFLOW_HOME/files/dags directory.
+Airflow loads DAGs from Python source files, which it looks for inside its configured `DAG_FOLDER` - `$AIRFLOW_HOME/files/dags` directory.
 
 ## Run DAG
 DAGs will run in one of two ways:
 
 1. When they are triggered either manually or via the API
 2. On a defined schedule, which is defined as part of the DAG
-`example_teradata_operator` is defined to trigger as manually. To define a schedule, any valid [Crontab](https://en.wikipedia.org/wiki/Cron) schedule value can be passed to the schedule argument.
+`example_teradata_operator` is defined to trigger as manually. To define a schedule, any valid [crontab](https://en.wikipedia.org/wiki/Cron) schedule value can be passed to the schedule argument.
  
 ```python
 with DAG(
@@ -172,7 +173,7 @@ with DAG(
 
 ## Summary
 
-This tutorial demonstrated how to use Airflow and the Airflow Teradata provider with a Teradata Vantage instance. The example DAG provided creates `my_users` table in the Teradata Vantage instance defined in Connection UI.
+This quickstart demonstrated how to use Airflow and the Airflow Teradata provider with a Teradata Vantage instance. The example DAG provided creates `my_users` table in the Teradata Vantage instance defined in Connection UI.
 
 ## Further reading
 * [airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
