@@ -539,6 +539,12 @@
   "quickstarts.teradata_university": {
     "message": "Teradata University"
   },
+  "quickstarts.open_table_formats_title": {
+    "message": "Getting started with Open Table Formats"
+  },
+  "quickstarts.open_table_formats_decription": {
+    "message": "How to set up, query, and update Apache Iceberg and Delta Lake Open Table Format tables in Teradata VantageCloud Lake."
+  },
   "mat.alert-message": {
     "message": "This website uses Machine-Assisted Translation (MAT)"
   },
