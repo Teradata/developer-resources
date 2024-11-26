@@ -11,7 +11,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-160/de/assets/css/styles.8fb349a9.css">
-<script src="/pr-preview/pr-160/de/assets/js/runtime~main.9462a67e.js" defer="defer"></script>
+<script src="/pr-preview/pr-160/de/assets/js/runtime~main.8b183003.js" defer="defer"></script>
 <script src="/pr-preview/pr-160/de/assets/js/main.c8850666.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -99,14 +99,14 @@
 <li>In the terminal execute <code>pdestate</code> command that will inform you if Vantage has already started:</li>
 </ul>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Hinweis</div><div class="admonitionContent_UjKb"><p>To paste into Gnome Terminal press <kbd>SHIFT+CTRL+V</kbd>.</p></div></span></div>
-<!-- -->
+<div class="emits-gtm-events" id="pdestate"></div>
 <p>You want to wait till you see the following message:</p>
-<!-- -->
-<details id="pde-details" class="emits-gtm-events" class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>See examples of messages that <code>pdestate</code> returns when the database is still initializing.</summary><div><div class="collapsibleContent_i85q"><pre class="hljs"><p>PDE state is DOWN/HARDSTOP.</p><p>PDE state is START/NETCONFIG.</p><p>PDE state is START/GDOSYNC.</p><p>PDE state is START/TVSASTART.</p><p>PDE state is START/READY.
+<div class="emits-gtm-events" id="pdestaterun"></div>
+<div class="emits-gtm-events" id="pde-details"><details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>See examples of messages that <code>pdestate</code> returns when the database is still initializing.</summary><div><div class="collapsibleContent_i85q"><pre><p>PDE state is DOWN/HARDSTOP.</p><p>PDE state is START/NETCONFIG.</p><p>PDE state is START/GDOSYNC.</p><p>PDE state is START/TVSASTART.</p><p>PDE state is START/READY.
 PDE state is RUN/STARTED.</p><p>DBS state is 1/1: DBS Startup - Initializing DBS Vprocs
 PDE state is RUN/STARTED.</p><p>DBS state is 1/5: DBS Startup - Voting for Transaction Recovery
 PDE state is RUN/STARTED.</p><p>DBS state is 1/4: DBS Startup - Starting PE Partitions
-PDE state is RUN/STARTED.</p></pre></div></div></details>
+PDE state is RUN/STARTED.</p></pre></div></div></details></div>
 <ul>
 <li>Now that the database is up, go back to the virtual desktop and launch <code>Teradata Studio Express</code></li>
 </ul>
