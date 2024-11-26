@@ -28,22 +28,27 @@
 To paste into Gnome Terminal press <kbd>SHIFT+CTRL+V</kbd>.
 :::
 
+<div className="emits-gtm-events" id="pdestate">
 ```bash
 watch pdestate -a
 ```
+</div>
 
 You want to wait till you see the following message:
 
+<div className="emits-gtm-events" id="pdestaterun">
 ```bash
 PDE state is RUN/STARTED.
 DBS state is 5: Logons are enabled - The system is quiescent
 ```
+</div>
 
-<details id="pde-details" class="emits-gtm-events">
+<div className="emits-gtm-events" id="pde-details">
+<details>
 
 <summary>See examples of messages that <code>pdestate</code> returns when the database is still initializing.</summary>
 
-<pre class="hljs">
+<pre>
 PDE state is DOWN/HARDSTOP.
 
 PDE state is START/NETCONFIG.
@@ -66,7 +71,7 @@ PDE state is RUN/STARTED.
 </pre>
 
 </details>
-
+</div>
 - Now that the database is up, go back to the virtual desktop and launch `Teradata Studio Express`
 
 ![Start Teradata Studio Express](../images/run-vantage/start-teradata-studio-express.png)
