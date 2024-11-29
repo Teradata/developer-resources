@@ -24,6 +24,12 @@ const Guides = [
     title: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_title' }),
     description: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_text' }),
     href: '/ai-unlimited/install-ai-unlimited/deploy-manager-aws-console/',
+  },
+  {
+    img: 'memory',
+    title: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_title' }),
+    description: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_text' }),
+    href: '/ai-unlimited/install-ai-unlimited/deploy-manager-aws-console/',
   }
 ];
 const FeatureList = [
