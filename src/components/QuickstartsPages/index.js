@@ -27,9 +27,9 @@ const Guides = [
   },
   {
     img: 'memory',
-    title: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_title' }),
-    description: translate({ message: 'quickstarts.deploy_ai_unlimited_aws_text' }),
-    href: '/ai-unlimited/install-ai-unlimited/deploy-manager-aws-console/',
+    title: translate({ message: 'quickstarts.open_table_formats_title' }),
+    description: translate({ message: 'quickstarts.open_table_formats_decription' }),
+    href: 'https://docs.teradata.com/access/sources/dita/map?dita:mapPath=bsr1702324250454.ditamap',
   }
 ];
 const FeatureList = [
