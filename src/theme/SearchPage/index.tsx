@@ -228,31 +228,28 @@ function SearchPageContent(): JSX.Element {
           /algolia-docsearch-suggestion--highlight/g,
           'search-result-match'
         );
-
-      const items = hits.map(
-        ({
-          url,
-          _highlightResult: { hierarchy },
-          _snippetResult: snippet = {},
-        }: {
-          url: string;
-          _highlightResult: { hierarchy: { [key: string]: { value: string } } };
-          _snippetResult: { content?: { value: string } };
-        }) => {
+   
+      const items = hits.reduce((filteredItems, { url, _highlightResult: { hierarchy }, _snippetResult: snippet = {}, anchor }) => {
+        if (anchor === "site-header" || !anchor) {
+          return filteredItems;  
+        }
+        
+        if (snippet.content) {
           const titles = Object.keys(hierarchy).map((key) =>
             sanitizeValue(hierarchy[key]!.value)
           );
-          return {
+  
+          filteredItems.push({
             title: titles.pop()!,
             url: processSearchResultUrl(url),
-            summary: snippet.content
-              ? `${sanitizeValue(snippet.content.value)}...`
-              : '',
+            summary: `${sanitizeValue(snippet.content.value)}...`,
             breadcrumbs: titles,
-          };
+          });
         }
-      );
-
+        return filteredItems;
+      }, []);
+       
+     
       searchResultStateDispatcher({
         type: 'update',
         value: {
@@ -473,7 +470,26 @@ function SearchPageContent(): JSX.Element {
                         className={styles.searchResultItemHeading}
                         dangerouslySetInnerHTML={{ __html: title }}
                       ></Heading>
-
+                       {breadcrumbs.length > 0 && (
+                        <nav aria-label="breadcrumbs">
+                          <ul
+                            className={clsx(
+                              'breadcrumbs',
+                              styles.searchResultItemPath
+                            )}
+                          >
+                            {breadcrumbs.map((html, index) => (
+                              <li
+                                key={index}
+                                className="breadcrumbs__item"
+                                // Developer provided the HTML, so assume it's safe.
+                                // eslint-disable-next-line react/no-danger
+                                dangerouslySetInnerHTML={{ __html: html }}
+                              />
+                            ))}
+                          </ul>
+                        </nav>
+                      )}
                       {summary && (
                         <p
                           className={styles.searchResultItemSummary}
