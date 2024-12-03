@@ -42,13 +42,13 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-      <title>Getting Started | Teradata Developers Portal</title>
+      <title>Teradata Getting Started</title>
         <meta name="description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <link rel="preconnect" href="https://teradata.com" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://developers.teradata.com/quickstarts" />
-        <meta property="og:title" content="Getting Started | Teradata Developers Portal" />
+        <meta property="og:title" content="Teradata Getting Started" />
         <meta property="og:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="og:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
         <meta property="og:image:width" content="640" />
