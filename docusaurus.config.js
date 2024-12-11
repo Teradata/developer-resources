@@ -14,7 +14,6 @@ import { sidebarItemsGenerator } from './custom-sidebar.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
-const gtTagId = 'GTM-PPXTTZ2';
 const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
 
 /**
@@ -55,26 +54,6 @@ const trackingScripts = [
       src: 'https://www.teradata.com/js/Celebrus/bsci.js',
       async: 'true',
     },
-  },
-  {
-    tagName: 'script',
-    attributes: {
-      type: 'text/partytown',
-      src: `https://www.googletagmanager.com/gtag/js?id=${gtTagId}`,
-      async: 'true',
-    },
-  },
-  {
-    tagName: 'script',
-    attributes: {
-      type: 'text/partytown',
-    },
-    innerHTML: `
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${gtTagId}');
-    `,
   },
 ];
 
@@ -179,6 +158,9 @@ const config = {
             './node_modules/@covalent/tokens/index.css',
             './src/css/custom.css',
           ],
+        },
+        googleTagManager: {
+          containerId: 'GTM-PPXTTZ2',
         },
       }),
     ],
