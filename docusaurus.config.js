@@ -14,7 +14,7 @@ import { sidebarItemsGenerator } from './custom-sidebar.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
-const gtTagId = 'G-928NX0S21B';
+const gtTagId = 'GTM-PPXTTZ2';
 const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
 
 /**
