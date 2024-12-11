@@ -8,7 +8,7 @@
 
 .features h2 {
   color: hsl(205, 100%, 12%);
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 
   /* Desktop/H2 */
   font-family: "Inter", sans-serif;
@@ -151,4 +151,9 @@ a.col {
   .container {
     max-width: 1440px;
   }
+}
+
+.m{
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
