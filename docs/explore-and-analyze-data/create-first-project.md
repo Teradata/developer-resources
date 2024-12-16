@@ -29,7 +29,7 @@ For your first project, using data we provide, you'll complete this simple workf
 
 ## Before you begin
 
-- Your AI Unlimited admin is the person at your organization who set up AI Unlimited. From your admin, get these items:
+- Your AI Unlimited owner is the person at your organization who set up AI Unlimited. From your admin, get these items:
 
   - The IP address or  hostname of the [AI Unlimited manager](../glossary.md#ai-unlimited-manager).
 
