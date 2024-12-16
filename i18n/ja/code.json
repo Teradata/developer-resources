@@ -278,6 +278,9 @@
   "home_page.title": {
     "message": "Teradata AI Unlimited ドキュメント"
   },
+  "home_page.ai_unlimited.title": {
+    "message": "AI Unlimited Documentation | Teradata Developers Portal"
+  },
   "sidenav.title": {
     "message": "ドキュメント"
   },
@@ -550,5 +553,20 @@
   },
   "mat.button": {
     "message": "閉じる"
-  } 
+  },
+  "feedback.did_page_help": {
+    "message": "このページは役に立ちましたか？"
+  },
+  "feedback.thank_you": {
+    "message": "ご意見ありがとうございます。"
+  },
+  "theme.admonition.note": {
+    "message": "注記"
+  },
+  "theme.admonition.tip": {
+    "message": "ヒント"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "ホームページ"
+  }
 }

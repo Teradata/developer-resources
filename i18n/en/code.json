@@ -279,6 +279,9 @@
   "home_page.title": {
     "message": "Teradata AI Unlimited Documentation"
   },
+  "home_page.ai_unlimited.title": {
+    "message": "AI Unlimited Documentation | Teradata Developers Portal"
+  },
   "sidenav.title": {
     "message": "Docs"
   },
@@ -551,5 +554,20 @@
   },
   "mat.button": {
     "message": "Close"
-  }      
+  },
+  "feedback.did_page_help": {
+    "message": "Did this page help?"
+  },
+  "feedback.thank_you": {
+    "message": "Thank you for your feedback!"
+  },
+  "theme.admonition.note": {
+    "message": "Note"
+  },
+  "theme.admonition.tip": {
+    "message": "Tip"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page"
+  }
 }

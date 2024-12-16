@@ -32,11 +32,11 @@ import CommunityLink from '../../_partials/community_link.mdx';
 * The latest version of [Vantage Express](https://downloads.teradata.com/download/database/teradata-express-for-vmware-player). If you have not used the Teradata downloads website before, you will need to register.
 * [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html).
 
-:::important 
+:::info 
 Commercial organizations require commercial licenses to use VMware Workstation Player. If you don't want to acquire VMware licenses you can run Vantage Express on [VirtualBox](./getting-started-vbox.md).
 :::
 
-:::important 
+:::info 
 VMware doesn't offer VMware Workstation Player for MacOS. If you are on a Mac, you will need to install [VMware Fusion](https://www.vmware.com/products/fusion/fusion-evaluation.html) instead. It's a paid product but VMware offers a free 30-day trial. Alternatively, you can run Vantage Express on [VirtualBox](./getting-started-vbox.md) or [UTM](./getting-started-utm.md).
 :::
 * On Windows, you will also need [7zip](https://www.7-zip.org/download.html) to unzip Vantage Express.

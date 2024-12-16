@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import QuickstartsPages from '@site/src/components/QuickstartsPages';
-import HeroImageUrl from '@site/static/img/quickstarts-hero.png';
+import HeroImageUrl from '@site/static/img/quickstarts-hero.webp';
 import { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import { Typography } from '@teradata-web/react-components';
@@ -42,13 +42,13 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-      <title>Teradata Getting Started</title>
+      <title>Getting Started | Teradata Developers Portal</title>
         <meta name="description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <link rel="preconnect" href="https://teradata.com" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://developers.teradata.com/quickstarts" />
-        <meta property="og:title" content="Teradata Getting Started" />
+        <meta property="og:title" content="Getting Started | Teradata Developers Portal" />
         <meta property="og:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="og:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
         <meta property="og:image:width" content="640" />
@@ -56,7 +56,7 @@ export default function Home() {
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://developers.teradata.com/quickstarts" />
-        <meta property="twitter:title" content="Teradata Getting Started" />
+        <meta property="twitter:title" content="Getting Started | Teradata Developers Portal" />
         <meta property="twitter:description" content="Get quickly up to speed with Teradata Vantage. Learn about features. Find how-tos for common tasks. Explore sample source code." />
         <meta property="twitter:image" content="https://www.teradata.com/Content/Assets/default/teradata-logo-social.png" />
 

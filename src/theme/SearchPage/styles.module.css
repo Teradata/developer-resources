@@ -160,6 +160,6 @@
 
 :global(.search-result-match) {
   color: var(--docsearch-hit-color);
-  background: rgb(255 215 142 / 25%);
+  background: rgb(243 116 64 / 20%);
   padding: 0.09em 0;
 }

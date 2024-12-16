@@ -32,7 +32,7 @@ const FeatureList = [
   {
     title: 'feature.title.analytic_functions',
     description: 'feature.description.analytic_functions',
-    href: 'https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita',
+    href: 'https://docs.teradata.com/r/Teradata-VantageCloud-Lake/Analyzing-Your-Data',
   },
   {
     title: 'feature.title.manage_projects',
@@ -119,18 +119,15 @@ function Feature({ title, description, href }) {
 
 export default function HomepageFeatures() {
   return (
-    <>
-      <PossibleBanner />
-      <section className={styles.features}>
-        <div className={clsx('container', styles.container)}>
-          <h2>{translate({ message: FeatureTitle })}</h2>
-          <div className={clsx('row', styles.row)}>
-            {FeatureList.map((props, idx) => (
-              <Feature key={idx} {...props} />
-            ))}
-          </div>
+    <section className={styles.features}>
+      <div className={clsx('container', styles.container)}>
+        <h2>{translate({ message: FeatureTitle })}</h2>
+        <div className={clsx('row', styles.row)}>
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
