@@ -1,0 +1,2434 @@
+swagger: '2.0'
+info:
+  title: Teradata Query Service
+  version: '@projectVersion@'
+  description: >
+
+    The Query Service is a RESTful web service for Teradata-supported databases
+    that allows web pages, mobile devices,
+
+    and scripting languages to query a Teradata-supported database using HTTP as
+    the wire protocol and JSON as the data
+
+    interchange format. Since support for HTTP and JSON is available in most
+    programming languages, applications can use
+
+    this service to access a Teradata-supported database without requiring a
+    driver.
+
+
+    This service offers a large number of API's, but most applications will only
+    need to use the
+
+    `POST /system/[systemName]/queries` API. This API enables you to submit a
+    query and get back the response in a
+
+    single API call. Several examples of this API are presented below, but first
+    let's cover some information common
+
+    to all Query Service REST API endpoints.
+
+
+    ### HTTP Headers
+
+
+    There are several HTTP headers that must be submitted along with each
+    request and some that are optional.
+
+
+    | Header  | Value | Description | Required |
+
+    | ------- | ----- | ----------- | -------- |
+
+    | Authorization | Bearer TOKEN | Contains an access token issued by the
+    Query Service | One of these two is required
+
+    | Authorization | Basic _\[Base64 encoded "username:password"\]_ | Contains
+    the credentials used to access the Teradata Database. The Authorization
+    header is constructed as follows: 1.  Username and password are combined
+    into a string "username:password" 2.  The resulting string is then encoded
+    using the RFC2045-MIME variant of Base64, except not limited to 76 char/line
+    3.  The authorization method and a space i.e. "Basic " is then put before
+    the encoded string. | One of these two is required
+
+    | Accept | application/[vnd.com](http://vnd.com).teradata.rest-v1.0+json |
+    Instructs the web service that the client wants to use the 1.0 version of
+    the REST API for Teradata Database. Ensures backwards compatibility if the
+    REST API ever changes. | Yes |
+
+    | Accept-Encoding | gzip | Instructs the web service to GZIP compress the
+    response. If omitted, the response will be returned without compression. |
+    No |
+
+    | Content-Type | application/json | Instructs the web service that the
+    request contains JSON data. | Yes |
+
+
+    ### Status Codes
+
+
+    Each HTTP Response will contain a status code as listed in the table below.
+
+
+    | Code | Definition | Description |
+
+    | ---- | ---------- | ----------- |
+
+    | 200 | OK | The request was successful. |
+
+    | 201 | Created | The request was successful and the response contains the
+    created object info |
+
+    | 400 | Bad Request | The request could not be understood by the service due
+    to malformed syntax. The client SHOULD NOT repeat the request without
+    modifications. |
+
+    | 401 | Unauthorized | The request requires user authentication. |
+
+    | 404 | Not Found | The resource referenced by the specified URI was not
+    found. |
+
+    | 412 | Precondition Failed | The specified session is currently in use or
+    there are no available threads to execute the request and the queue timeout
+    is exceeded. |
+
+    | 420 | Database Error | The target Teradata Database returned an error. |
+
+    | 429 | Too Many Sessions | The user has already reached the session limit.
+    |
+
+    | 500 | Internal Server Error | The service encountered an unexpected
+    condition which prevented it from fulfilling the request. |
+
+
+    When the status code is not `200 OK` or `201 Created` the response body will
+    contain a JSON response containing an error message and possibly an error
+    code returned by the target database.
+
+
+    ```json
+
+    {
+      "error":"3802",
+      "message":"Database 'MyDatabase' does not exist.",
+    }
+
+    ```
+
+
+    ## Submitting SQL statements
+
+
+    To submit an SQL request to a Teradata Database using this web service, you
+    send a POST request
+
+    to the `/system/[systemName]/queries` API endpoint, replacing `[systemName]`
+    with the nickname
+
+    of a system that has been defined by an administrator using the System
+    Service.
+
+
+    ### Result Set Formats
+
+
+    The format of the response to an SQL request depends on the requested
+    format.
+
+    Three formats are supported: **_object_**, **_array_**, and **_csv_**.
+
+    Both **_object_** and **_array_** options generate JSON responses, while
+
+    the **_csv_** option generates a comma separated value response.
+
+
+    #### JSON Object
+
+
+    JSON Object is the default result format. This format creates a JSON object
+
+    per row with the column names as the field names and the column values as
+
+    the field values.
+
+
+    ```bash
+
+    curl --insecure -X POST \
+
+    "$HOST:1443/api/query/systems/prod/queries" \
+
+    -H 'Accept: application/vnd.com.teradata.rest-v1.0+json, */*; q=0.01' \
+
+    -H 'Content-Type: application/json' \
+
+    -H "Authorization: Basic ZGJjOmRiYw==' \
+
+    -d '{"query": "SELECT * FROM dbc.dbcinfo"}'
+
+    ```
+
+
+    In the example above, we are submitting a `SELECT * FROM DBC.DBCInfo` query
+
+    to the system nicknamed "prod" and using TD2 authentication with the
+    username
+
+    and password "dbc" ("ZGJjOmRiYw==" is "dbc:dbc" Base64 encoded). The results
+    will be
+
+    returned in the default `JSON Object` format:
+
+
+    ```json
+
+    {
+      "queryDuration": 45,
+      "queueDuration": 3,
+      "results": [
+      {
+        "data": [
+        {
+          "InfoData": "16.20.00.00",
+          "InfoKey": "VERSION"
+        },
+        {
+          "InfoData": "Japanese",
+          "InfoKey": "LANGUAGE SUPPORT MODE"
+        },
+        {
+          "InfoData": "16.20.00.00",
+          "InfoKey": "RELEASE"
+        }
+        ],
+        "resultSet": true,
+        "rowCount": 3,
+        "rowLimitExceeded": false
+      }
+      ]
+    }
+
+    ```
+
+
+    The JSON object response contains the following fields:
+
+
+    * **queueDuration**
+      How long the request was queued in milliseconds.
+    * **queryDuration**
+      How long the request ran once submitted in milliseconds.
+    * **results**
+      An array of the result sets, update counts produced by the submitted SQL.
+      The array will have more than one element if the submitted SQL contains
+      more than one statement or if a stored procedure was called that
+      returns more than one result set. The following fields may be present
+      inside of a result array element.
+      *   resultSet - Indicates if the result is a result set (true) or an update count (false).
+      *   columns - Contains an array of the columns comprising the result set. Each column contains a name and type field containing the column's name and SQL type respectively (only present if resultSet is true and include_columns was true when the request was submitted).
+      *   outParams - An object of key value pairs representing the output parameters from a stored procedure.
+      *   data - Contains the data produced by the query. The format depends on the value of the format attribute specified with the request (e.g. an array of arrays, or an array of objects). The data field is only present when resultSet is true.
+      *   rowCount - If a result set, the number of rows returned up to the row limit if set, else the update count.
+      *   rowLimitExceeded - Flags if the number of rows in the result exceeded the number of rows specified in the rowLimit.
+
+    * **responseError**
+      This field will typically not be present. It is only present if an error occurs while the query is in the RESPONDING state. In this case, a successful status would have already been sent to the client, which is why any responseErrors are included as the last field in the JSON response.
+
+    #### JSON Array
+
+
+    The JSON Array format is similar to JSON object format except instead of a
+    JSON object per row, there is a JSON
+
+    array per row where each column value is an element in the array.
+
+
+    ```bash
+
+    curl --insecure -X POST \
+
+    "$HOST:1443/api/query/systems/prod/queries" \
+
+    -H 'Accept: application/vnd.com.teradata.rest-v1.0+json, */*; q=0.01' \
+
+    -H 'Content-Type: application/json' \
+
+    -H "Authorization: Basic ZGJjOmRiYw==' \
+
+    -d '{"query": "SELECT * FROM dbc.dbcinfo", "format": "array",
+    "include_columns": true }'
+
+    ```
+
+    The request above demonstrates several availble options:
+
+
+    * The response will be in JSON array format ("format": "array") .
+
+    * The response will include column information ("include_columns": true).
+
+
+    Here are sample results:
+
+    ```json
+
+    {
+      "queryDuration": 11,
+      "queueDuration": 3,
+      "results": [
+      {
+        "columns": [
+        {
+          "name": "InfoKey",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "InfoData",
+          "type": "VARCHAR"
+        }
+        ],
+        "data": [
+          [
+          "VERSION",
+          "16.20.00.00"
+          ],
+          [
+            "LANGUAGE SUPPORT MODE",
+            "Japanese"
+            ],
+          [
+            "RELEASE",
+            "16.20.00.00"
+            ]
+          ],
+        "resultSet": true,
+        "rowCount": 3,
+        "rowLimitExceeded": false
+      }
+      ]
+    }
+
+    ```
+
+
+    #### Comma Separated Value (CSV)
+
+
+    CSV format does not contain any meta data about the response and simply
+    contains the query results. The
+
+    response contains a line for each row where each line contains the row's
+    column values separated by a comma.
+
+
+    ```bash
+
+    curl --insecure -X POST \
+
+    "$HOST:1443/systems/prod/queries" \
+
+    -H 'Accept: application/vnd.com.teradata.rest-v1.0+json, */*; q=0.01' \
+
+    -H 'Content-Type: application/json' \
+
+    -H "Authorization: Basic ZGJjOmRiYw==' \
+
+    -d '{"query": "SELECT * FROM dbc.dbcinfo", "format": "csv",
+    "include_columns": true}'
+
+    ```
+
+
+    The output for CSV format will look like this:
+
+    ```
+
+    InfoKey,InfoData
+
+    VERSION,16.20.00.00
+
+    LANGUAGE SUPPORT MODE,Japanese
+
+    RELEASE,16.20.00.00
+
+    ```
+
+    The first row contains the column names (because we requested
+    `include_columns`).
+
+
+    ### Managing Database Sessions
+
+
+    There are two ways that database sessions are created by the Query Service.
+    The first way is when a client
+
+    submits a query without referencing a session ID. If an idle session does
+    not already exist for the
+
+    specified credentials, a new session is created based on the default
+    settings configured for the target
+
+    system. This type of session is called an **_implicit_** session. The second
+    way a session is created is if
+
+    a client calls `POST /system/[systemName]/sessions` to open a session. This
+    type of session is called
+
+    an **_explicit_** session.
+
+
+    Each session remains open until the session is idle for the configured
+    maxIdleTime or until closed by
+
+    calling `DELETE /system/[systemName]/sessions/[sessionId]`. Implicit
+    sessions are reused if they are
+
+    idle and if the credentials specified by the client are the same as when the
+    session was created. If
+
+    there are no sessions that match that criteria, then a new implicit session
+    can be created, up to the
+
+    maximum number of implicit sessions allowed per user. If the maximum number
+    of implicit sessions are
+
+    reached and none are idle, then the request will be queued.
+
+
+    Explicit sessions are only used if a client references them in a query
+    request. If a request references
+
+    an explicit session that is already in use, the request will be queued.
+    Explicit sessions should be used
+
+    when a transaction needs to span multiple requests or when using volatile
+    tables
+paths:
+  /general:
+    get:
+      tags:
+        - General
+      summary: Get General service Configuration
+      description: Get General service Configuration.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: true
+      responses:
+        '200':
+          description: General service Configuration will be present in the response body.
+          schema:
+            $ref: '#/definitions/GeneralConfig'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to retrieve general
+            config.
+      security:
+        - basicAuth: []
+    put:
+      tags:
+        - General
+      summary: Updates General service Configuration
+      description: Updates General service Configuration.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service adminuser account.
+          required: false
+        - name: system
+          in: body
+          description: The details of the system to create or update.
+          required: true
+          schema:
+            $ref: '#/definitions/GeneralConfig'
+      responses:
+        '200':
+          description: General config will be created or updated.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: An error was encountered while attempting to update general config.
+      security:
+        - basicAuth: []
+  /general/export:
+    post:
+      tags:
+        - General
+      summary: Update Teradata database configuraton.
+      description: Update Teradata database configuraton.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service adminuser account.
+          required: false
+        - name: system
+          in: body
+          description: The details of the system to create or update.
+          required: true
+          schema:
+            $ref: '#/definitions/GeneralConfig'
+      responses:
+        '200':
+          description: The details of the Teradata system will be exported.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to update system
+            configuration.
+      security:
+        - basicAuth: []
+  /adminusers:
+    get:
+      tags:
+        - Admin
+      summary: Get a list of all admin users.
+      description: Get a list of all admin users.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+      responses:
+        '200':
+          description: List of Adminusers will be present in the response body.
+          schema:
+            $ref: '#/definitions/RestUser'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: An error was encountered while attempting to retrieve admin users.
+      security:
+        - basicAuth: []
+  adminusers/{userId}:
+    put:
+      tags:
+        - Admin
+      summary: Updates password for an admin user
+      description: Updates password for an admin user
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service adminuser account.
+          required: false
+        - type: string
+          name: userId
+          in: path
+          description: The userId of the admin user
+          required: true
+        - name: passwordChangeRequest
+          in: body
+          description: The details of the system to create or update.
+          required: true
+          schema:
+            $ref: '#/definitions/AdminPassword'
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to update admin user
+            password.
+      security:
+        - basicAuth: []
+  /certificates:
+    get:
+      tags:
+        - Certificates
+      summary: Get a certificate
+      description: Get the certificate with the specified name.
+      responses:
+        '200':
+          description: The requested certificate will be present in the response body.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CertificateInfo'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to retrieve the specified
+            certificate.
+      security:
+        - basicAuth: []
+    post:
+      tags:
+        - Certificates
+      summary: Install a HTTPS certificate.
+      description: >-
+        Install a HTTPS certificate.The customer needs to generate the
+        certificate from the already created CSR from this query-service
+        instance.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - in: formData
+          name: certificate
+          required: true
+          type: file
+          description: The file to upload.
+      responses:
+        '200':
+          description: >-
+            A new certificate was created or the existing certificate was
+            updated.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to install HTTPS
+            certificate.
+      security:
+        - basicAuth: []
+    delete:
+      tags:
+        - Certificates
+      summary: Delete a certificate.
+      description: Delete the certificates with the specified name.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+      responses:
+        '200':
+          description: The specified certificate will be deleted.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: An error was encountered while attempting to delete the certificate.
+      security:
+        - basicAuth: []
+  /certificates/authorities:
+    get:
+      tags:
+        - Certificates
+      summary: Get certificate authorities
+      description: Get the certificate authorities.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+      responses:
+        '200':
+          description: >-
+            The requested certificate authorities will be present in the
+            response body.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CertificateInfo'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to retrieve the
+            certificate authorities.
+      security:
+        - basicAuth: []
+    post:
+      tags:
+        - Certificates
+      summary: Install a trusted signed certificate.
+      description: >-
+        Install a trusted signed certificate.The customer needs to generate the
+        certificate from the already created CSR from this query-service
+        instance.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - type: string
+          name: certificateAlias
+          in: query
+          example: teradata
+          required: true
+        - type: string
+          name: alias
+          in: query
+          example: teradata
+          required: true
+        - in: formData
+          name: certificate
+          required: true
+          type: file
+          description: The file to upload.
+      responses:
+        '200':
+          description: A new trusted signed certificate was installed.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to install the trusted
+            signed certificate.
+      security:
+        - basicAuth: []
+  /certificates/config:
+    get:
+      tags:
+        - Certificates
+      summary: Get a certificate config
+      description: Get the certificate config with the specified name.
+      parameters:
+        - type: string
+          name: certificate
+          in: path
+          description: The name of the certificate to retrieve.
+          required: true
+      responses:
+        '200':
+          description: The requested certificate will be present in the response body.
+          schema:
+            $ref: '#/definitions/GeneralConfig'
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: A system with the specified certificate was not found.
+        '500':
+          description: >-
+            An error was encountered while attempting to retrieve the specified
+            certificate.
+      security:
+        - basicAuth: []
+    put:
+      tags:
+        - Certificates
+      summary: Create or update certificate config
+      description: Create or update certificate config
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - name: config
+          in: body
+          description: The details of the system to create or update.
+          required: true
+          schema:
+            $ref: '#/definitions/GeneralConfig'
+      responses:
+        '200':
+          description: Certificate config  was created or updated.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to create or update the
+            certificate conig.
+      security:
+        - basicAuth: []
+  /certificates/selfsigned:
+    post:
+      tags:
+        - Certificates
+      summary: Create or update a self signed certificate.
+      description: Create or update a self signed certificate.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - type: string
+          name: commonName
+          in: query
+          required: true
+          example: sdl67589
+          description: Common Name
+        - type: string
+          name: organizationalUnit
+          in: query
+          required: true
+          example: UDA
+          description: Organizational Unit
+        - type: string
+          name: organization
+          in: query
+          required: true
+          example: Teradata Corporation
+          description: Organization
+        - type: string
+          name: city
+          in: query
+          required: true
+          example: San Diego
+          description: City or locality
+        - type: string
+          name: state
+          in: query
+          required: true
+          example: California
+          description: State or Povince
+        - type: string
+          name: country
+          in: query
+          required: true
+          example: US
+          description: Country
+        - type: string
+          name: email
+          in: query
+          example: john.doe@teradata.com
+          description: Email
+        - type: string
+          name: expiration
+          in: query
+          example: 12
+          description: Expiration in months
+        - type: string
+          name: san1
+          in: query
+          example: sdl67589
+        - type: string
+          name: san2
+          in: query
+          example: sdl67589
+        - type: string
+          name: san3
+          in: query
+          example: sdl67589
+      responses:
+        '200':
+          description: >-
+            A new certificate was created or the existing certificate was
+            updated.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to create or update the
+            system.
+      security:
+        - basicAuth: []
+  /certificates/signingrequest:
+    post:
+      tags:
+        - Certificates
+      summary: Create CSR
+      description: Create CSR.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - type: string
+          name: commonName
+          in: query
+          required: true
+        - type: string
+          name: organizationalUnit
+          in: query
+          required: true
+        - type: string
+          name: organization
+          in: query
+          required: true
+        - type: string
+          name: country
+          in: query
+          required: true
+        - type: string
+          name: city
+          in: query
+          required: true
+        - type: string
+          name: state
+          in: query
+          required: true
+      responses:
+        '200':
+          description: >-
+            A new certificate was created or the existing certificate was
+            updated.
+          schema:
+            $ref: '#/definitions/Certificate'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to create or update the
+            system.
+      security:
+        - basicAuth: []
+  /certificates/pkcs:
+    post:
+      tags:
+        - Certificates
+      summary: Create or update a PKCS certificate.
+      description: Create or update a PKCS certificate.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - type: string
+          name: password
+          description: Password for the pkcs file
+          in: query
+          required: true
+        - in: formData
+          name: certificate
+          required: true
+          type: file
+          description: The PKCS file to upload.
+      responses:
+        '200':
+          description: A new PKCS certificate was installed.
+          schema:
+            $ref: '#/definitions/Successful'
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to create or update the
+            system.
+      security:
+        - basicAuth: []
+  /systems:
+    get:
+      tags:
+        - System
+      summary: Get a list of the configured target systems.
+      description: Get a list of the configured target systems.
+      responses:
+        '200':
+          description: The list of all systems will be present in the response body.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TeradataSystem'
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to retrieve the list of
+            all systems.
+      security:
+        - basicAuth: []
+  /systems/{systemName}:
+    delete:
+      tags:
+        - System
+      summary: Delete the target system with the specified name.
+      description: Delete the system with the specified name.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system to delete.
+          required: true
+      responses:
+        '200':
+          description: The specified system was deleted.
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '404':
+          description: A system with the specified name was not found.
+        '500':
+          description: >-
+            An error was encountered while attempting to delete the specified
+            system.
+      security:
+        - basicAuth: []
+    get:
+      tags:
+        - System
+      summary: Get the target system with a specific name
+      description: Get the target system with a specific name.
+      parameters:
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system to retrieve.
+          required: true
+      responses:
+        '200':
+          description: The requested system will be present in the response body.
+          schema:
+            $ref: '#/definitions/TeradataSystem'
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: A system with the specified name was not found.
+        '500':
+          description: >-
+            An error was encountered while attempting to retrieve the specified
+            system.
+      security:
+        - basicAuth: []
+    put:
+      tags:
+        - System
+      summary: Create or update the target system.
+      description: Create or update the target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: Basic Authorization of query service admin account.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system to create or update.
+          required: true
+        - name: system
+          in: body
+          description: The details of the system to create or update.
+          required: true
+          schema:
+            $ref: '#/definitions/TeradataSystem'
+      responses:
+        '200':
+          description: A new system was created or the existing system was updated.
+        '401':
+          description: Missing, invalid or non-admin authorization header.
+        '500':
+          description: >-
+            An error was encountered while attempting to create or update the
+            system.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases:
+    get:
+      tags:
+        - Database
+      summary: Get a list of the databases on a specific target system.
+      description: Get a list of the databases on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system for which all databases should be retrieved
+          required: true
+      responses:
+        '200':
+          description: >-
+            The list of all databases on the specified system will be present in
+            the response body.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Database'
+        '400':
+          description: The system name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve all databases for
+            the specified system.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}:
+    get:
+      tags:
+        - Database
+      summary: Get a database on a specific target system.
+      description: Get a database on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system for which all databases should be retrieved.
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: The name of the database to retrieve.
+          required: true
+      responses:
+        '200':
+          description: >-
+            Information about the requested database will be present in the
+            response body.
+          schema:
+            $ref: '#/definitions/Database'
+        '400':
+          description: The system or database name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: An error was encountered while trying to retrieve the database.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/functions:
+    get:
+      tags:
+        - Database
+      summary: Get all functions of a database on a specific target system.
+      description: Get all functions of a database on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the database resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: >-
+            The name of the database on the specified system for which all
+            functions should be retrieved
+          required: true
+      responses:
+        '200':
+          description: >-
+            The list of all functions in the specified database will be present
+            in the response body.
+        '400':
+          description: The database name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve all functions for
+            the specified database.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/macros:
+    get:
+      tags:
+        - Database
+      summary: Get all macros of a database on a specific target system.
+      description: Get all macros of a database on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the database resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: >-
+            The name of the database on the specified system for which all
+            macros should be retrieved
+          required: true
+      responses:
+        '200':
+          description: >-
+            The list of all macros in the specified database will be present in
+            the response body.
+        '400':
+          description: The database name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve all macros for the
+            specified database.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/procedures:
+    get:
+      tags:
+        - Database
+      summary: Get all procedures of a database on a specific target system.
+      description: Get all procedures of a database on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the database resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: >-
+            The name of the database on the specified system for which all
+            procedures should be retrieved
+          required: true
+      responses:
+        '200':
+          description: >-
+            The list of all procedures in the specified database will be present
+            in the response body.
+        '400':
+          description: The database name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve all procedures for
+            the specified database.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/tables:
+    get:
+      tags:
+        - Database
+      summary: Get all tables of a single database.
+      description: Get all tables of a single database on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the database resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: >-
+            The name of the database on the specified system for which all
+            tables should be retrieved
+          required: true
+      responses:
+        '200':
+          description: >-
+            The list of all tables in the specified database will be present in
+            the response body.
+        '400':
+          description: The database name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve all tables for the
+            specified database.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/tables/{tableName}:
+    get:
+      tags:
+        - Database
+      summary: Get a specific table of a  database.
+      description: Get a specific table of a database on the specified target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the table resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: >-
+            The name of the database on the specified system for which the
+            specified table should be retrieved
+          required: true
+        - type: string
+          name: tableName
+          in: path
+          description: The name of the table to retrieve.
+          required: true
+      responses:
+        '200':
+          description: The requested table will be present in the response body.
+        '400':
+          description: The table name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve the specified
+            table.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/views:
+    get:
+      tags:
+        - Database
+      summary: Get All Views of a database.
+      description: Get all views of a database on the specified target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the database resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: >-
+            The name of the database on the specified system for which all views
+            should be retrieved
+          required: true
+      responses:
+        '200':
+          description: >-
+            The list of all views in the specified database will be present in
+            the response body.
+        '400':
+          description: The database name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: >-
+            An error was encountered while trying to retrieve all views for the
+            specified database.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/databases/{databaseName}/views/{viewName}:
+    get:
+      tags:
+        - Database
+      summary: Get a specific view of a database.
+      description: Get a specific view of a database on the specified target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the view resides
+          required: true
+        - type: string
+          name: databaseName
+          in: path
+          description: Name of the database to retrieve the view.
+          required: true
+        - type: string
+          name: viewName
+          in: path
+          description: The name of the view to retrieve.
+          required: true
+      responses:
+        '200':
+          description: The requested view will be present in the response body.
+        '400':
+          description: The view name is null or empty.
+        '401':
+          description: Missing or invalid authorization header.
+        '500':
+          description: An error was encountered while trying to retrieve the specified view
+      security:
+        - basicAuth: []
+  /systems/{systemName}/queries:
+    get:
+      tags:
+        - Query
+      summary: Get all the queries for a specified system.
+      description: Get all the queries for a specified system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system for which all queries should be retrieved.
+          required: true
+        - type: number
+          name: session
+          in: query
+          description: The session number for which all queries should be retrieved.
+          required: false
+        - type: string
+          name: state
+          in: query
+          description: A QueryState value that will be used to filter the results.
+          required: false
+          enum:
+            - QUEUED
+            - PENDING
+            - SUBMITTED
+            - RESPONDING
+            - SPOOLING
+            - RESULT_SET_READY
+        - type: string
+          name: clientId
+          in: query
+          description: A client ID that will be used to filter the results.
+          required: false
+      responses:
+        '200':
+          description: >-
+            The active queries submitted on behalf of the current user to the
+            specified system will be present in the response body. If the admin
+            identity is provided, the queries for all users will be returned.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/QueryDetails'
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: A system with the specified name was not found.
+      security:
+        - basicAuth: []
+    post:
+      tags:
+        - Query
+      summary: Submit a Query to the target system.
+      description: Submit a Query to the target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system to which the query should be submitted.
+          required: true
+        - name: queryRequest
+          in: body
+          description: The details of the query to submit to the database.
+          required: true
+          schema:
+            $ref: '#/definitions/QueryRequest'
+      responses:
+        '200':
+          description: The query was submitted for asynchronous execution.
+        '400':
+          description: Missing or invalid query request.
+        '401':
+          description: Missing or invalid authorization header.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/queries/{id}:
+    delete:
+      tags:
+        - Query
+      summary: Delete a query by ID.
+      description: Delete the query with the specified ID.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: >-
+            The name of the system for which the query with the specified ID
+            should be deleted.
+          required: true
+        - type: number
+          name: id
+          in: path
+          description: The ID of the query to delete.
+          required: true
+      responses:
+        '200':
+          description: >-
+            If the query was still queued, it has been removed from the queue;
+            if it was running, then it has been aborted.
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: A query with the specified ID was not found.
+      security:
+        - basicAuth: []
+    get:
+      tags:
+        - Query
+      summary: Get a specific query by ID.
+      description: Get a specific query by ID.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: >-
+            The name of the system for which the query with the specified ID
+            should be retrieved.
+          required: true
+        - type: number
+          name: id
+          in: path
+          description: The ID of the query to retrieve.
+          required: true
+      responses:
+        '200':
+          description: >-
+            The requested query will be present in the response body. If a query
+            with the specified ID was not found, this value will be null.
+          schema:
+            $ref: '#/definitions/QueryDetails'
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: A query with the specified ID was not found on the specified system.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/queries/{id}/results:
+    get:
+      tags:
+        - Query
+      summary: Get specific query results by ID.
+      description: Get specific query results by ID.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: >-
+            The name of the system for which the results of the specified query
+            should be retrieved.
+          required: true
+        - type: number
+          name: id
+          in: path
+          description: The ID of the query for which to retrieve results.
+          required: true
+        - type: number
+          name: rowOffset
+          in: query
+          description: The number of rows by which the returned results should be offset.
+          required: false
+        - type: number
+          name: rowLimit
+          in: query
+          description: >-
+            The maximum number of rows that should be present in the returned
+            results.
+          required: false
+      responses:
+        '200':
+          description: >-
+            The request to asynchronously retrieve the results of the specified
+            query was retrieved.
+        '400':
+          description: An error was encountered while parsing the results of the query.
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: The spool file for the specified query is missing or not yet ready.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/sessions:
+    get:
+      tags:
+        - Session
+      summary: Get the list of sessions open to a specific target system.
+      description: Get the list of sessions open to a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system for which all sessions should be retrieved
+          required: true
+        - type: string
+          name: createMode
+          in: query
+          description: A CreateMode value that will be used to filter the results.
+          required: false
+          enum:
+            - IMPLICIT
+            - EXPLICIT
+      responses:
+        '200':
+          description: >-
+            The open sessions belonging to the current user will be present in
+            the response body. If the admin identity is provided, the sessions
+            for all users will be returned.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SessionDetails'
+        '401':
+          description: Missing or invalid authorization header.
+      security:
+        - basicAuth: []
+    post:
+      tags:
+        - Session
+      summary: Create an explicit session on a specific target system.
+      description: Create an explicit session on a specific target system.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: The name of the system on which the session should be created.
+          required: true
+        - name: session Request
+          in: body
+          description: The details of the session to create.
+          required: true
+          schema:
+            $ref: '#/definitions/SessionRequest'
+      responses:
+        '200':
+          description: >-
+            The request to asynchronously create a session was successfully
+            submitted.
+        '400':
+          description: Missing or invalid session request.
+        '401':
+          description: Missing or invalid authorization header.
+        '429':
+          description: The configured limit on the number of sessions has been reached.
+      security:
+        - basicAuth: []
+  /systems/{systemName}/sessions/{id}:
+    delete:
+      tags:
+        - Session
+      summary: Close the session with a specific ID.
+      description: >
+        Close the session with the specified ID. Only explicit sessions can be
+        closed. An explicit session that is
+
+        idle for longer than the configured idle_timeout will be closed
+        automatically.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: false
+        - type: string
+          name: systemName
+          in: path
+          description: >-
+            The name of the system for which the session with the specified ID
+            should be closed.
+          required: true
+        - type: number
+          name: id
+          in: path
+          description: The ID of the session to close.
+          required: true
+      responses:
+        '200':
+          description: The session with the specified ID was closed.
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: >-
+            A session with the specified ID was not found on the specified
+            system.
+      security:
+        - basicAuth: []
+    get:
+      tags:
+        - Session
+      summary: Get the session by ID.
+      description: Get the session with the specified ID.
+      parameters:
+        - type: string
+          format: BasicAuth
+          name: Authorization
+          in: header
+          description: >-
+            Basic Authorization. This should be database credentials. An access
+            token can also be used with this API.
+          required: true
+        - type: string
+          name: systemName
+          in: path
+          description: >-
+            The name of the system for which the session with the specified ID
+            should be retrieved.
+          required: true
+        - type: number
+          name: id
+          in: path
+          description: The ID of the session to retrieve.
+          required: true
+      responses:
+        '200':
+          description: The requested session will be present in the response body.
+          schema:
+            $ref: '#/definitions/SessionDetails'
+        '401':
+          description: Missing or invalid authorization header.
+        '404':
+          description: >-
+            A session with the specified ID was not found on the specified
+            system.
+      security:
+        - basicAuth: []
+definitions:
+  Database:
+    title: Database
+    description: Representation of a database on the system.
+    properties:
+      db_kind:
+        type: string
+        title: db_kind
+        description: The Kind will be 'D' for a database. Anything else is a user.
+      name:
+        type: string
+        title: name
+        description: The database name.
+      system:
+        type: string
+        title: system
+        description: The system on which the database resides.
+  AdminPassword:
+    title: AdminPassword
+    description: User Password Model for Admin User password management.
+    properties:
+      oldPassword:
+        type: string
+        title: oldPassword
+        description: oldPassword of a Admin User.
+      newPassword:
+        type: string
+        title: newPassword
+        description: newPassword of a Admin User.
+      confirmPassword:
+        type: string
+        title: confirmPassword
+        description: confirmPassword of a Admin User.
+  GeneralConfig:
+    title: GeneralConfig
+    description: General services configuration.
+    properties:
+      maxThreadCount:
+        type: number
+        title: maxThreadCount
+        description: maxThreadCount of a general service configuration.
+      noRowsSpoolQuery:
+        type: number
+        title: noRowsSpoolQuery
+        description: noRowsSpoolQuery of a general service configuration.
+      noSpoolResultSets:
+        type: number
+        title: maxThreadCount
+        description: noSpoolResultSets of a general service configuration.
+      retentionSpool:
+        type: number
+        title: retentionSpool
+        description: retentionSpool of a general service configuration.
+      spaceAvailable:
+        type: number
+        title: spaceAvailable
+        description: spaceAvailable of a general service configuration.
+      spoolDirectory:
+        type: string
+        title: spoolDirectory
+        description: spoolDirectory.
+  LoginCred:
+    title: LoginCred
+    description: Get a token for this user of a general service configuration.
+    properties:
+      username:
+        type: string
+        title: username
+      password:
+        type: string
+        title: password
+  Successful:
+    title: SuccessResponse
+    properties:
+      status:
+        title: status
+        type: string
+        example: successful
+  Certificate:
+    title: CSR
+    properties:
+      status:
+        title: status
+        type: string
+        example: >-
+          -----BEGIN CERTIFICATE REQUEST----- example -----END CERTIFICATE
+          REQUEST-----
+  RestUser:
+    title: RestUser
+    description: RestUser details.
+    properties:
+      username:
+        type: string
+        title: username
+      authorities:
+        items:
+          $ref: '#/definitions/RestGrantedAuthority'
+        title: authorities
+        description: Authorities of a particular user.
+      previousPasswords:
+        items:
+          type: array
+          items: {}
+        title: previousPasswords
+        description: previousPasswords of a particular user.
+  RestGrantedAuthority:
+    title: RestGrantedAuthority
+    description: RestGrantedAuthority of a user.
+    properties:
+      authority:
+        type: string
+        title: authority
+  CertificateInfo:
+    title: CertificateInfo
+    description: CertificateInfo.
+    properties:
+      alias:
+        type: string
+        title: alias
+        example: tomcat
+      authority:
+        type: string
+        title: authority
+        example: gov-teradata-ca
+      expirationDate:
+        type: string
+        title: expirationDate
+        example: 1683198547000
+      type:
+        type: string
+        title: type
+        example: X.509
+  QueryDetails:
+    title: QueryDetails
+    description: Detailed information of a query
+    properties:
+      batch:
+        type: boolean
+        title: batch
+        description: Is this a batch request?
+      client_id:
+        type: string
+        title: client_id
+        description: >-
+          An arbitrary string used to identify the client that submitted the
+          query.
+      params:
+        type: array
+        items:
+          type: array
+          items: {}
+        title: params
+        description: The parameters for a parameterized query.
+        example:
+          - - joe
+            - 18
+      query:
+        type: string
+        title: query
+        description: The SQL query text.
+      query_bands:
+        title: query_bands
+        type: object
+        description: The query bands that were set for the query.
+        example:
+          app: myapp
+      query_duration:
+        type: number
+        title: query_duration
+        description: >-
+          The number of milliseconds since the Query Service submitted the
+          request to the database.
+      query_id:
+        title: query_id
+        description: The Query Service identifier for the query.
+        example: number
+      query_state:
+        type: string
+        title: query_state
+        description: The current state of the query.
+        enum:
+          - QUEUED
+          - PENDING
+          - SUBMITTED
+          - RESPONDING
+          - SPOOLING
+          - RESULT_SET_READY
+      query_timeout:
+        type: number
+        title: query_timeout
+        description: >-
+          The number of seconds the Query Service will wait for the query to
+          complete before aborting the query.
+      queue_order:
+        type: number
+        title: queue_order
+        description: >-
+          The order of the request in the queue, 0 indicates the query is
+          active.
+      queue_duration:
+        type: number
+        title: queue_duration
+        description: >-
+          The number of milliseconds the query was queued by the Query Service
+          before being submitted to the database.
+      queue_timeout:
+        type: number
+        title: queue_timeout
+        description: >-
+          The number of seconds the Query Service is will wait for a session to
+          become available before aborting the request.
+      session:
+        type: number
+        title: session
+        description: The Query Service identifier for the query's assigned session.
+      status_code:
+        type: number
+        title: status_code
+        description: If the query has failed, this field will contain the status code.
+      system:
+        type: string
+        title: system
+        description: The system on which the query is assinged to execute.
+      user:
+        type: string
+        title: user
+        description: The database user whose account will run the query.
+  QueryRequest:
+    title: QueryRequest
+    description: Representation of a query request.
+    properties:
+      batch:
+        type: boolean
+        description: >-
+          True if the statements are run using JDBC batch processing. Default:
+          false.
+        title: batch
+      client_id:
+        type: string
+        description: An id specified by the client when the query was submitted.
+        title: client_id
+      continue_on_error:
+        type: boolean
+        description: >-
+          If true, then during batch processing, continue executing queries
+          after a failure. Default: false
+        title: continue_on_error
+      date_format:
+        type: string
+        description: The format in which to render dates
+        title: date_format
+        enum:
+          - EPOCH_MILLIS
+          - TD_DB
+          - ISO_8601
+      format:
+        type: string
+        description: >-
+          The format of the result set. "object" means data is returned as an
+          array of JSON objects. "array" means the data is returned as an array
+          of JSON arrays. "csv" means the data is returned as comma separated
+          values. 
+        title: format
+        enum:
+          - OBJECT
+          - ARRAY
+          - CSV
+      include_column_types:
+        type: boolean
+        description: >-
+          If true, include the type of each column in the results. Default
+          false.
+        title: include_column_types
+      include_columns:
+        type: boolean
+        description: >-
+          If true, include the name of each column in the results. Default
+          false.
+        title: include_columns
+      log_mech:
+        type: string
+        description: The logon mechanism to use for the session.
+        title: log_mech
+        enum:
+          - DEFAULT
+          - TD1
+          - TD2
+          - KRB5
+          - LDAP
+          - JWT
+      out_params:
+        type: array
+        description: An array of names of output parameters for a stored procedure.
+        items:
+          type: string
+        title: out_params
+      params:
+        type: array
+        description: >-
+          An array of arrays containing parameters to the SQL statement. If more
+          than one array exists, the statement is run multiple times, each time
+          with the next array of parameters in the array.
+        title: params
+        items:
+          type: array
+          items: {}
+        example:
+          - - joe
+            - 18
+      query:
+        title: query
+        description: The SQL query text to execute.
+        type: string
+      query_bands:
+        title: query_bands
+        description: The query bands to set for the request
+        type: object
+        example:
+          app: myapp
+      query_timeout:
+        title: query_timeout
+        description: >-
+          The maximum number of seconds the request will be allowed to execute.
+          Default: unlimited
+        type: number
+      queue_timeout:
+        title: queue_timeout
+        description: >-
+          The maximum number of seconds the request will be queued waiting to
+          execute. Default: unlimited
+        type: number
+      row_limit:
+        type: number
+        description: >-
+          The maximum number of rows of data to include in the response. Set to
+          zero for no limit. Default: 1000
+        title: row_limit
+      row_offset:
+        type: number
+        description: >-
+          The number of rows to discard at the beginning of the result set.
+          Typically used when implementing paging.
+        title: row_offset
+      session:
+        type: number
+        description: >-
+          The Query Service internal explicit session number to use for this
+          query.
+        title: session
+      trim_white_space:
+        type: boolean
+        description: 'If true, trim white space from fixed length columns. Default: true.'
+        title: trim_white_space
+  SessionDetails:
+    title: SessionDetails
+    description: Representation of a session.
+    properties:
+      account:
+        type: string
+        title: account
+        description: The account string for the session.
+      active_query:
+        type: number
+        title: active_query
+        description: The id of the currently active query, if one exists
+      char_set:
+        type: string
+        title: char_set
+        description: The character set in use for the session.
+        enum:
+          - ASCII
+          - UTF8
+          - UTF16
+          - EBCDIC273_0E
+          - HANGULEBCDIC933_1II
+          - KANJIEBCDIC5026_0I
+          - KANJIEUC_0U
+          - KATAKANAEBCDIC
+          - LATIN1252_0A
+          - EBCDIC037_0E
+          - EBCDIC277_0E
+          - HANGULKSC5601_2R4
+          - KANJIEBCDIC5035_0I
+          - KANJISJIS_0S
+          - LATIN1_0A
+          - LATIN9_0A
+      create_mode:
+        type: string
+        title: create_mode
+        description: 'The type of session: implicit or explicit.'
+        enum:
+          - IMPLICIT
+          - EXPLICIT
+      default_database:
+        type: string
+        title: default_database
+        description: The default database for queries that do not specify a database.
+      log_mech:
+        type: string
+        title: log_mech
+        description: The logon mechanism used to connect the session.
+        enum:
+          - DEFAULT
+          - TD1
+          - TD2
+          - KRB5
+          - LDAP
+          - JWT
+      max_idle_time:
+        type: number
+        description: >-
+          The maximum number of seconds that the session will remain open when
+          there is no query activity.
+        title: max_idle_time
+      query_bands:
+        title: query_bands
+        type: object
+        description: The query bands set for this session.
+        example:
+          app: myapp
+      session_id:
+        type: number
+        title: session_id
+        description: The query service session identifier.
+      state:
+        type: string
+        title: state
+        description: The current state of the session.
+        enum:
+          - NOTREADY
+          - LOGGINGON
+          - READY
+          - QUEUED
+          - ACTIVE
+          - ABORTING
+          - LOGGINGOFF
+      system:
+        type: string
+        title: system
+        description: The database system to which this session is logged on.
+      td_session_no:
+        type: number
+        title: td_session_no
+        description: The Teradata SQL Engine session number.
+      transaction_mode:
+        type: string
+        title: transaction_mode
+        description: The transaction mode being used by this session.
+        enum:
+          - DEFAULT
+          - ANSI
+          - TERA
+      user:
+        type: string
+        title: user
+        description: The database user associated with this session.
+  SessionRequest:
+    title: SessionRequest
+    description: Representation of a session request.
+    properties:
+      auto_commit:
+        type: boolean
+        description: >-
+          True to put the session in autoCommit mode else false to handle
+          transactions explicitly.
+        title: account
+      account:
+        type: string
+        description: The account string to associate with the session.
+        title: account
+      catalog:
+        type: string
+        description: >-
+          The default catalog for the session. Does not apply to Teradata SQL
+          Engine.
+        title: catalog
+      char_set:
+        type: string
+        description: The character set to use for the session.
+        title: char_set
+        enum:
+          - ASCII
+          - UTF8
+          - UTF16
+          - EBCDIC273_0E
+          - HANGULEBCDIC933_1II
+          - KANJIEBCDIC5026_0I
+          - KANJIEUC_0U
+          - KATAKANAEBCDIC
+          - LATIN1252_0A
+          - EBCDIC037_0E
+          - EBCDIC277_0E
+          - HANGULKSC5601_2R4
+          - KANJIEBCDIC5035_0I
+          - KANJISJIS_0S
+          - LATIN1_0A
+          - LATIN9_0A
+      default_database:
+        type: string
+        description: The default database for the session.
+        title: default_database
+      fetch_count:
+        type: number
+        description: The fetch count (Aster specific).
+        title: fetch_count
+      log_mech:
+        type: string
+        description: The logon mechanism (such as TD2, LDAP, etc.) to use for the session.
+        title: log_mech
+        enum:
+          - DEFAULT
+          - TD1
+          - TD2
+          - KRB5
+          - LDAP
+          - JWT
+      query_bands:
+        title: query_bands
+        description: The query bands to set on the session when its created.
+        type: object
+        example:
+          app: myapp
+      schema:
+        type: string
+        description: >-
+          The default schema to use for the session. Does not apply to Teradata
+          SQL Engine.
+        title: schema
+      transaction_mode:
+        type: string
+        description: The transaction mode to use for the session.
+        title: transaction_mode
+        enum:
+          - DEFAULT
+          - ANSI
+          - TERA
+  TeradataSystem:
+    title: TeradataSystem
+    description: |-
+      TeradataSystem contains the information for a system configured in the
+       Query Service.
+    properties:
+      default_char_set:
+        type: string
+        title: default_char_set
+        enum:
+          - ASCII
+          - UTF8
+          - UTF16
+          - EBCDIC273_0E
+          - HANGULEBCDIC933_1II
+          - KANJIEBCDIC5026_0I
+          - KANJIEUC_0U
+          - KATAKANAEBCDIC
+          - LATIN1252_0A
+          - EBCDIC037_0E
+          - EBCDIC277_0E
+          - HANGULKSC5601_2R4
+          - KANJIEBCDIC5035_0I
+          - KANJISJIS_0S
+          - LATIN1_0A
+          - LATIN9_0A
+      default_database:
+        type: string
+        title: default_database
+      default_transaction_mode:
+        type: string
+        title: default_transaction_mode
+        enum:
+          - DEFAULT
+          - ANSI
+          - TERA
+      include_or_exclude_user_list:
+        type: array
+        items:
+          type: string
+        title: include_or_exclude_user_list
+      log_mech:
+        type: string
+        title: log_mech
+        enum:
+          - DEFAULT
+          - TD1
+          - TD2
+          - KRB5
+          - LDAP
+          - JWT
+      query_bands:
+        title: query_bands
+        type: object
+        example:
+          app: myapp
+      system_id:
+        type: string
+        title: system_id
+      system_type:
+        type: string
+        title: system_type
+        enum:
+          - TERADATA
+          - ASTER
+          - PRESTO
+tags:
+  - name: General
+    description: API's for fetching GeneralConfig of Teradata database configuration.
+  - name: Admin
+    description: API's for admin users.
+  - name: Certificates
+    description: API's to install/update/delete certiicates.
+  - name: Database
+    description: API's for fetching metadata about databases, tables, macros, etc.
+  - name: Query
+    description: API's for submitting and managing queries.
+  - name: Session
+    description: >-
+      API's for managing explict sessions. Explicit sessions are an optional
+      feature that give you complete control over the creation, usage, and
+      removal of database sessions. You would want to use excplicit sessions if
+      you are using session specific features such as temporary tables or
+      transactions that span multiple statements.
