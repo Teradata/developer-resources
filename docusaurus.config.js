@@ -10,10 +10,10 @@ import headerItems from './src/config/header.navitems.js';
 import fs from 'fs';
 import footerItems from './src/config/footer.navItems.js';
 import baseHeadTags from './src/config/baseHeadTags.js';
+import { sidebarItemsGenerator } from './custom-sidebar.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
-const gtTagId = 'G-928NX0S21B';
 const getCurrentLocale = () => process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'en';
 
 /**
@@ -54,26 +54,6 @@ const trackingScripts = [
       src: 'https://www.teradata.com/js/Celebrus/bsci.js',
       async: 'true',
     },
-  },
-  {
-    tagName: 'script',
-    attributes: {
-      type: 'text/partytown',
-      src: `https://www.googletagmanager.com/gtag/js?id=${gtTagId}`,
-      async: 'true',
-    },
-  },
-  {
-    tagName: 'script',
-    attributes: {
-      type: 'text/partytown',
-    },
-    innerHTML: `
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${gtTagId}');
-    `,
   },
 ];
 
@@ -160,7 +140,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // Use a custom sidebar generator which is built on top of the default generator
+          sidebarItemsGenerator,
           routeBasePath: 'ai-unlimited',
+          path: 'docs',
           sidebarPath: './sidebars.js',
         },
         blog: {
@@ -175,6 +158,9 @@ const config = {
             './node_modules/@covalent/tokens/index.css',
             './src/css/custom.css',
           ],
+        },
+        googleTagManager: {
+          containerId: 'GTM-PPXTTZ2',
         },
       }),
     ],
