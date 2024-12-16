@@ -1,0 +1,25 @@
+fragment DocParts on Doc {
+  __typename
+  title
+  description
+  sidebar_label
+  sidebar_position
+  displayed_sidebar
+  pagination_prev
+  pagination_next
+  tags
+  body
+}
+
+fragment QuickstartsParts on Quickstarts {
+  __typename
+  title
+  description
+  sidebar_label
+  sidebar_position
+  displayed_sidebar
+  pagination_prev
+  pagination_next
+  tags
+  body
+}
