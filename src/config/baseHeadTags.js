@@ -13,6 +13,7 @@ const allowedUrls = [
     'https://td.doubleclick.net/',
     'https://www.youtube.com/',
     'https://*.algolia.net/',
+    'https://region1.analytics.google.com'
   ];
 
 const baseHeadTags = [
