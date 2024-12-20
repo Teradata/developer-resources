@@ -1,0 +1,37 @@
+.customContainer {
+  position: relative;
+  margin-top: 130px;
+  margin-bottom: -120px;
+}
+
+.customSelect {
+  width: 273px;
+  height: 56px;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.label {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  font-size: 12px;
+  color: #1c2434;
+  background: white;
+  padding: 0 4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 1;
+}
+
+.customSelect:focus + .label,
+.customSelect:not(:placeholder-shown) + .label {
+  opacity: 1;
+}
+
+.customSelect:not(:focus) + .label {
+  opacity: 0;
+}
