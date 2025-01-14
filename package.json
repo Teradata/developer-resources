@@ -17,16 +17,18 @@
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
+    "@covalent/components-react": "^9.0.0-beta.4",
     "@covalent/tokens": "^8.10.1",
     "@docusaurus/core": "3.2.0",
     "@docusaurus/preset-classic": "3.2.0",
     "@docusaurus/theme-mermaid": "3.2.0",
     "@mdx-js/react": "^3.0.0",
-    "@teradata-web/react-components": "^1.12.3",
+    "@teradata-web/react-components": "^1.14.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-select": "^5.9.0",
     "redocusaurus": "^2.1.1"
   },
   "devDependencies": {

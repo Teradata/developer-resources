@@ -1,61 +1,46 @@
 import React, { useState } from 'react';
-import styles from './styles.module.css';
+import { Select, CvListItem } from '@teradata-web/react-components';
 import { useLocation } from 'react-router-dom';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import styles from './styles.module.css';
 
 export default function SelectComponent() {
   const [selectedOption, setSelectedOption] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
   const location = useLocation();
 
-  const normalizePath = (path) => path.replace(/\/$/, ''); 
-
+  const normalizePath = (path) => path.replace(/\/$/, '');
   const pathsNoAlert = normalizePath(`/quickstarts/`);
-
   const currentPath = normalizePath(location.pathname);
+  const shouldDisplayAlert = !currentPath.includes(pathsNoAlert);
 
-  const shouldDisplayAlert = !currentPath.includes(pathsNoAlert);  
+  const handleSelection = (event) => {
+    const selectedIndex = event.detail.index; 
+    setSelectedOption(selectedIndex);
 
-
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-
-    if (event.target.value === 'cloud-service-provider') {
+    if (selectedIndex === 0) {
       window.location.href = '/ai-unlimited/install-ai-unlimited/';
-    } else if (event.target.value === 'microsoft-fabric') {
+    } else if (selectedIndex === 1) {
       window.location.href = '/ai-unlimited/fabric/get-started/';
     }
   };
-
-  const handleFocus = () => setIsFocused(true);
-  const handleBlur = () => setIsFocused(false);
-
-  const shouldShowLabel = isFocused || selectedOption !== '';
 
   if (!shouldDisplayAlert) return null;
 
   return (
     <div className={styles.customContainer}>
-      {shouldShowLabel && (
-        <label className={styles.label} htmlFor="select-screen">
-          Platform
-        </label>
-      )}
-
-      <select
-        id="select-screen"
-        className={styles.customSelect}
+      <Select
+        className={styles.selectInput}
+        outlined
+        label="Platform"
         value={selectedOption}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        onSelected={handleSelection} 
       >
-        <option value="" disabled hidden>
-          Platform
-        </option>
-        <option value="cloud-service-provider">Cloud service provider</option>
-        <option value="microsoft-fabric">Microsoft Fabric</option>
-      </select>
+        <CvListItem tabindex="-1" value="0">
+          Cloud service provider
+        </CvListItem>
+        <CvListItem tabindex="-1" value="1">
+          Microsoft Fabric
+        </CvListItem>
+      </Select>
     </div>
   );
 }
