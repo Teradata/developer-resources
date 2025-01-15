@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Select, CvListItem } from '@teradata-web/react-components';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+//import { Select, CvListItem } from '@teradata-web/react-components';
 import { useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
 
@@ -27,20 +28,28 @@ export default function SelectComponent() {
 
   return (
     <div className={styles.customContainer}>
-      <Select
-        className={styles.selectInput}
-        outlined
-        label="Platform"
-        value={selectedOption}
-        onSelected={handleSelection} 
-      >
-        <CvListItem tabindex="-1" value="0">
-          Cloud service provider
-        </CvListItem>
-        <CvListItem tabindex="-1" value="1">
-          Microsoft Fabric
-        </CvListItem>
-      </Select>
+      <BrowserOnly>
+        {() => {
+          const { Select, CvListItem } = require('@teradata-web/react-components');
+
+          return (
+            <Select
+              className={styles.selectInput}
+              outlined
+              label="Platform"
+              value={selectedOption}
+              onSelected={handleSelection}
+            >
+              <CvListItem tabindex="-1" value="0">
+                Cloud service provider
+              </CvListItem>
+              <CvListItem tabindex="-1" value="1">
+                Microsoft Fabric
+              </CvListItem>
+            </Select>
+          );
+        }}
+      </BrowserOnly>
     </div>
   );
 }
