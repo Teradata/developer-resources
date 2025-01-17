@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-//import { Select, CvListItem } from '@teradata-web/react-components';
 import { useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 export default function SelectComponent() {
   const [selectedOption, setSelectedOption] = useState('');
@@ -13,14 +14,17 @@ export default function SelectComponent() {
   const currentPath = normalizePath(location.pathname);
   const shouldDisplayAlert = !currentPath.includes(pathsNoAlert);
 
+  const aiUnlimitedUrl = useBaseUrl('/ai-unlimited/install-ai-unlimited/');
+  const fabricUrl = useBaseUrl('/ai-unlimited/fabric/get-started/');
+
   const handleSelection = (event) => {
     const selectedIndex = event.detail.index; 
     setSelectedOption(selectedIndex);
 
     if (selectedIndex === 0) {
-      window.location.href = '/ai-unlimited/install-ai-unlimited/';
+      window.location.href = aiUnlimitedUrl;
     } else if (selectedIndex === 1) {
-      window.location.href = '/ai-unlimited/fabric/get-started/';
+      window.location.href = fabricUrl;
     }
   };
 
