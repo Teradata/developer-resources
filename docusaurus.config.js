@@ -55,6 +55,14 @@ const trackingScripts = [
       async: 'true',
     },
   },
+  {
+    tagName: 'script',
+    attributes: {
+      type: 'text/javascript',
+      src: '/js/gtm-events.js',
+      async: 'true',
+    },
+  },
 ];
 
 /** @type {import('@docusaurus/types').Config} */
