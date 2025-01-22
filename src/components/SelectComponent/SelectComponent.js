@@ -31,7 +31,6 @@ export default function SelectComponent() {
   if (!shouldDisplayAlert) return null;
 
   return (
-    <div className={styles.customContainer}>
       <BrowserOnly>
         {() => {
           const { Select, CvListItem } = require('@teradata-web/react-components');
@@ -54,6 +53,5 @@ export default function SelectComponent() {
           );
         }}
       </BrowserOnly>
-    </div>
   );
 }
