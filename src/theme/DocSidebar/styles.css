@@ -9,7 +9,11 @@
     .theme-doc-sidebar-container {
         clip-path: unset !important;
     }
-}
+  }
+
+  .customContainer2{
+    margin-bottom: 10px;
+  }
 
 
  
