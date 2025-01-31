@@ -16,6 +16,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Partytown } from '@builder.io/partytown/react';
 import SearchBar from '../SearchBar';
 import MatDisclaimer from '../../components/MatDisclaimer';
+import SelectComponent from '../../components/SelectComponent/SelectComponent';
+import '../DocSidebar/styles.css';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   const location = useLocation();
@@ -72,7 +74,14 @@ export default function Navbar() {
   ];
 
   const secondaryMenuDetails = {
-    menuElement: useNavbarSecondaryMenu().content as JSX.Element,
+    menuElement: (
+      <>
+        <div className="customContainer2">
+          <SelectComponent/>
+        </div>
+        {useNavbarSecondaryMenu().content}
+      </>
+    ),
     title: translate({
       message: 'sidenav.title',
       description: 'sidenav.title_description',
