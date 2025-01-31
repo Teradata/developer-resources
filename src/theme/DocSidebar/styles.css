@@ -3,3 +3,13 @@
     margin-top: 130px;
     margin-bottom: -120px;
   }
+
+
+  @media (min-width: 997px) {
+    .theme-doc-sidebar-container {
+        clip-path: unset !important;
+    }
+}
+
+
+ 
