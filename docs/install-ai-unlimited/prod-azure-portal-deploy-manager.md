@@ -34,11 +34,10 @@ ARM templates for the manager are here in the AI Unlimited GitHub repository:
 
 `deployments/azure/templates/arm/ai-unlimited`
 
-Choose a template based on whether you intend to use a [load balancer](../glossary.md#load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](../glossary.md#load-balancer).
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `ai-unlimited-with-alb.json`&mdash;Hosts the manager behind an [application load balancer](../glossary.md#application-load-balancer)
     - `ai-unlimited-with-nlb.json`&mdash;Hosts the manager behind a [network load balancer](../glossary.md#network-load-balancer)
     - `ai-unlimited-without-lb.json`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
@@ -135,4 +134,4 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](../resources/create-oauth-app.md) to allow authentication between AI Unlimited and your Git provider account.
+[Create an OAuth app](create-oauth-app.md) to allow authentication between AI Unlimited and your Git provider account.
