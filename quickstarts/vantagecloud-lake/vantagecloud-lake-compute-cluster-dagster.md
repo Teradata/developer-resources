@@ -7,7 +7,6 @@ description: Manage VantageCloud Lake compute clusters with dagster-teradata
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, dagster, dagster-teradata, workflow, teradatasql, ipython-sql, cloud computing, machine learning, vantagecloud, vantagecloud lake, lake]
 ---
 
-import VantageCloudLakeRequest from './_partials/vantagecloud-lake-request.md';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import InstallTabs from '../_partials/tabsDBT.mdx'
@@ -28,7 +27,9 @@ Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/wi
 
 * Ensure you have the necessary credentials and access rights to use Teradata VantageCloud Lake.
     
-        <VantageCloudLakeRequest />
+:::tip
+To request a VantageCloud Lake environment, refer to the form provided in this [link](https://www.teradata.com/about-us/contact). If you already have a VantageCloud Lake environment and seek guidance on configuration, please consult this [guide](https://quickstarts.teradata.com/getting-started-with-vantagecloud-lake.html).
+:::
 
 * Python **3.9** or higher, Python **3.12** is recommended.
 * pip
