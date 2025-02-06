@@ -48,8 +48,8 @@ With your virtual environment active, the next step is to install dagster and th
     ```
 
 2. Note about Optional Dependencies:
-   <br>
-   <br>
+   <br />
+   <br />
    a) dagster-teradata relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since dagster-aws is an optional dependency, users can install it by running:
 
      ```bash
@@ -62,8 +62,8 @@ With your virtual environment active, the next step is to install dagster and th
     ```
 
 3. Verify the Installation: 
-   <br>
-   <br>
+   <br />
+   <br />
    To confirm that Dagster is correctly installed, run:
      ```bash
     dagster –version
@@ -210,23 +210,23 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
         2025-02-04 09:15:46 +0530 - dagster-webserver - INFO - Serving dagster-webserver on http://127.0.0.1:3000 in process 32564,
         ```
         It indicates that the Dagster web server is running successfully. At this point, you can proceed to the next step.
-<br>
-<br>
+<br />
+<br />
 2.	**Access the Dagster UI:** Open a web browser and navigate to http://127.0.0.1:3000. This will open the Dagster UI where you can manage and monitor your pipelines.
-<br>
-<br>
+<br />
+<br />
         ![dagster-teradata1.png](../images/dagster/dagster-teradata1.png)
-<br>
-<br>
+<br />
+<br />
 3.	**Run the Pipeline:**
 * In the top navigation of the Dagster UI, click on Assets > View global asset lineage.
 * Click Materialize to execute the pipeline.
 * In the popup window, click View to see the details of the pipeline run.
-<br>
-<br>
+<br />
+<br />
         ![dagster-teradata2.png](../images/dagster/dagster-teradata2.png)
-<br>
-<br>
+<br />
+<br />
 
 4.	**Monitor the Run:** The Dagster UI allows you to visualize the pipeline's progress, view logs, and inspect the status of each step. You can switch between different views to see the execution logs and metadata for each asset.
 
