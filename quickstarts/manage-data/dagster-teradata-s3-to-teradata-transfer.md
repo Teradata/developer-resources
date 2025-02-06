@@ -10,6 +10,7 @@ keywords: [data warehouses, teradata, vantage, transfer, cloud data platform, ob
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import InstallTabs from '../_partials/tabsDBT.mdx'
 
 # Data Transfer from AWS S3 to Teradata Vantage Using dagster-teradata
 

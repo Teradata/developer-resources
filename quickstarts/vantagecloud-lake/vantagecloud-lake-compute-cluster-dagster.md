@@ -10,6 +10,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 import VantageCloudLakeRequest from './_partials/vantagecloud-lake-request.md';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import InstallTabs from '../_partials/tabsDBT.mdx'
 
 # Manage VantageCloud Lake Compute Clusters with dagster-teradata
 
