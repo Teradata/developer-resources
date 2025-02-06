@@ -187,20 +187,20 @@ Go to the **"Launchpad"** and provide the configuration for the **TeradataResour
 resources:
   s3:
     config:
-      aws_access_key_id: 
-      aws_secret_access_key: 
-      aws_session_token: 
+      aws_access_key_id: <AWS_ACCESS_KEY_ID>
+      aws_secret_access_key: <AWS_SECRET_ACCESS_KEY>
+      aws_session_token: <AWS_SESSION_TOKEN>
       max_attempts: 5
       use_ssl: true
       use_unsigned_session: false
   teradata:
     config:
-      database: 
-      host: 
-      password: 
-      user: 
+      host: <TERADATA_HOST>
+      user: <TERADATA_USER>s
+      password: <TERADATA_PASSWORD>
+      database: <TERADATA_DATABASE>
 ```
-Replace <AWS_ACCESS_KEY_ID>, <AWS_SECRET_ACCESS_KEY>, <AWS_SESSION_TOKEN>, <TERADATA_DATABASE>, <TERADATA_HOST>, <TERADATA_PASSWORD>, and <TERADATA_USER> with the actual values for your S3 and Teradata configuration.
+Replace `<AWS_ACCESS_KEY_ID>, <AWS_SECRET_ACCESS_KEY>, <AWS_SESSION_TOKEN>, <TERADATA_HOST>, <TERADATA_USER>, <TERADATA_PASSWORD>, and <TERADATA_DATABASE>` with the actual values for your S3 and Teradata configuration.
 Once the configuration is done, click on **"Launch Run"** to start the process.
 
 ![dagster-teradata-s33.png](../images/dagster/dagster-teradata-s33.png)
