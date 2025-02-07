@@ -19,10 +19,6 @@ This tutorial showcases how to use dagster-teradata to manage VantageCloud Lake 
 
 Additionally, we leverage dagster-dbt and dbt-teradata to import a dbt project and treat it as an asset within Dagster.
 
-:::note
-Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) on `Windows` to try this quickstart example.
-:::
-
 ## Prerequisites
 
 * Ensure you have the necessary credentials and access rights to use Teradata VantageCloud Lake.
@@ -51,8 +47,7 @@ With your virtual environment active, the next step is to install dagster and th
     ```
 
 2. Verify the Installation: 
-   <br />
-   <br />
+
    To confirm that Dagster is correctly installed, run:
      ```bash
     dagster –version
@@ -218,8 +213,7 @@ Now that you have a Dagster project, you can run Dagster's UI to take a look at 
    ```
 
 3. In your browser, navigate to [http://127.0.0.1:3000](http://127.0.0.1:3000) The page will display the assets:
-   <br />
-   <br />
+
    ![dbt-dagster-teradata1.png](./images/vantagecloud-lake-compute-cluster-dagster/dbt-dagster-teradata1.png)
 
 ### Step 3: Run Your dbt Models in Dagster

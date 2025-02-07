@@ -48,22 +48,19 @@ With your virtual environment active, the next step is to install dagster and th
     ```
 
 2. Note about Optional Dependencies:
-   <br />
-   <br />
-   a) dagster-teradata relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since dagster-aws is an optional dependency, users can install it by running:
+   a) `dagster-teradata` relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since `dagster-aws` is an optional dependency, users can install it by running:
 
      ```bash
     pip install dagster-teradata[aws]
     ```
-   b) dagster-teradata also relies on dagster-azure for ingesting data from an Azure Blob Storage container into Teradata Vantage. To install this dependency, run:
+   b) `dagster-teradata` also relies on `dagster-azure` for ingesting data from an Azure Blob Storage container into Teradata Vantage. To install this dependency, run:
 
      ```bash
     pip install dagster-teradata[azure]
     ```
 
-3. Verify the Installation: 
-   <br />
-   <br />
+3. Verify the Installation:
+
    To confirm that Dagster is correctly installed, run:
      ```bash
     dagster –version
@@ -211,56 +208,53 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
         ```
         It indicates that the Dagster web server is running successfully. At this point, you can proceed to the next step.
 <br />
-<br />
 2.	**Access the Dagster UI:** Open a web browser and navigate to http://127.0.0.1:3000. This will open the Dagster UI where you can manage and monitor your pipelines.
 <br />
-<br />
         ![dagster-teradata1.png](../images/dagster/dagster-teradata1.png)
-<br />
 <br />
 3.	**Run the Pipeline:**
 * In the top navigation of the Dagster UI, click on Assets > View global asset lineage.
 * Click Materialize to execute the pipeline.
 * In the popup window, click View to see the details of the pipeline run.
 <br />
-<br />
         ![dagster-teradata2.png](../images/dagster/dagster-teradata2.png)
-<br />
 <br />
 
 4.	**Monitor the Run:** The Dagster UI allows you to visualize the pipeline's progress, view logs, and inspect the status of each step. You can switch between different views to see the execution logs and metadata for each asset.
 
-## Below are some of the definitions provided by the TeradataResource:
+## Below are some of the operations provided by the TeradataResource:
 
-* **execute_query:**
-    
-    Args:
+### 1. Execute a Query (`execute_query`)
 
-      sql (str): the query to be executed
-      fetch_results (bool, optional): If True, fetch the query results. Defaults to False.
-      single_result_row (bool, optional): If True, return only the first row of the result set.
-        Effective only if `fetch_results` is True. Defaults to False.
+This operation executes a SQL query within Teradata VantageCloud Lake.
 
-* **execute_queries**
+**Args:**
+- `sql` (str) – The query to be executed.
+- `fetch_results` (bool, optional) – If True, fetch the query results. Defaults to False.
+- `single_result_row` (bool, optional) – If True, return only the first row of the result set. Effective only if `fetch_results` is True. Defaults to False.
 
-    Args:
-    
-      sql_queries (Sequence[str]): List of queries to be executed in series
-      fetch_results (bool, optional): If True, fetch the query results. Defaults to False.
-      single_result_row (bool, optional): If True, return only the first row of the result set.
-          Effective only if `fetch_results` is True. Defaults to False.
+### 2. Execute Multiple Queries (`execute_queries`)
 
-* **drop_database** 
+This operation executes a series of SQL queries within Teradata VantageCloud Lake.
 
-  Args:
+**Args:**
+- `sql_queries` (Sequence[str]) – List of queries to be executed in series.
+- `fetch_results` (bool, optional) – If True, fetch the query results. Defaults to False.
+- `single_result_row` (bool, optional) – If True, return only the first row of the result set. Effective only if `fetch_results` is True. Defaults to False.
 
-      databases (Union[str, Sequence[str]]): Database name or list of database names to drop.
+### 3. Drop a Database (`drop_database`)
 
-* **drop_table**
+This operation drops one or more databases from Teradata VantageCloud Lake.
 
-   Args:
+**Args:**
+- `databases` (Union[str, Sequence[str]]) – Database name or list of database names to drop.
 
-      tables (Union[str, Sequence[str]]): Table name or list of table names to drop.
+### 4. Drop a Table (`drop_table`)
+
+This operation drops one or more tables from Teradata VantageCloud Lake.
+
+**Args:**
+- `tables` (Union[str, Sequence[str]]) – Table name or list of table names to drop.
 
 
 ## Summary

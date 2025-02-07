@@ -18,10 +18,6 @@ import InstallTabs from '../_partials/tabsDBT.mdx'
 
 This document provides instructions and guidance for transferring data in CSV, JSON and Parquet formats from AWS S3 to Teradata Vantage using **dagster-teradata**. It outlines the setup, configuration and execution steps required to establish a seamless data transfer pipeline between these platforms.
 
-:::note
-Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) on `Windows` to try this quickstart example.
-:::
-
 ## Prerequisites
 
 * Access to a Teradata Vantage instance.
@@ -47,9 +43,8 @@ With your virtual environment active, the next step is to install dagster and th
     pip install dagster dagster-webserver dagster-teradata[aws]
     ```
 
-2. Verify the Installation: 
-   <br />
-   <br />
+2. Verify the Installation:
+
    To confirm that Dagster is correctly installed, run:
      ```bash
     dagster –version
@@ -167,11 +162,9 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
         2025-02-04 09:15:46 +0530 - dagster-webserver - INFO - Serving dagster-webserver on http://127.0.0.1:3000 in process 32564,
         ```
         It indicates that the Dagster web server is running successfully. At this point, you can proceed to the next step.
-<br />
-<br />
+
 2.	**Access the Dagster UI:** Open a web browser and navigate to http://127.0.0.1:3000. This will open the Dagster UI where you can manage and monitor your pipelines.
-<br />
-<br />
+
 ![dagster-teradata-s31.png](../images/dagster/dagster-teradata-s31.png)
 
 In the Dagster UI, you will see the following:
