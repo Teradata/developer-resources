@@ -48,6 +48,7 @@ With your virtual environment active, the next step is to install dagster and th
     ```
 
 2. Note about Optional Dependencies:
+
    a) `dagster-teradata` relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since `dagster-aws` is an optional dependency, users can install it by running:
 
      ```bash
