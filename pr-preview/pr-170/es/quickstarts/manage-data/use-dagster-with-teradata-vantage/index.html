@@ -18,7 +18,7 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-170/es/assets/css/styles.384e8aed.css">
-<script src="/pr-preview/pr-170/es/assets/js/runtime~main.5e1e95d4.js" defer="defer"></script>
+<script src="/pr-preview/pr-170/es/assets/js/runtime~main.5c39899e.js" defer="defer"></script>
 <script src="/pr-preview/pr-170/es/assets/js/main.cf9fec8e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -59,8 +59,8 @@
 <!-- -->
 </li>
 <li>
-<p>Note about Optional Dependencies:
-a) <code>dagster-teradata</code> relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since <code>dagster-aws</code> is an optional dependency, users can install it by running:</p>
+<p>Note about Optional Dependencies:</p>
+<p>a) <code>dagster-teradata</code> relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since <code>dagster-aws</code> is an optional dependency, users can install it by running:</p>
 <!-- -->
 <p>b) <code>dagster-teradata</code> also relies on <code>dagster-azure</code> for ingesting data from an Azure Blob Storage container into Teradata Vantage. To install this dependency, run:</p>
 <!-- -->
@@ -133,7 +133,7 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="below-are-some-of-the-operations-provided-by-the-teradataresource">Below are some of the operations provided by the TeradataResource:<a href="#below-are-some-of-the-operations-provided-by-the-teradataresource" class="hash-link" aria-label="Enlace directo al Below are some of the operations provided by the TeradataResource:" title="Enlace directo al Below are some of the operations provided by the TeradataResource:">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-execute-a-query-execute_query">1. Execute a Query (<code>execute_query</code>)<a href="#1-execute-a-query-execute_query" class="hash-link" aria-label="Enlace directo al 1-execute-a-query-execute_query" title="Enlace directo al 1-execute-a-query-execute_query">​</a></h3>
-<p>This operation executes a SQL query within Teradata VantageCloud Lake.</p>
+<p>This operation executes a SQL query within Teradata Vantage.</p>
 <p><strong>Args:</strong></p>
 <ul>
 <li><code>sql</code> (str) – The query to be executed.</li>
@@ -141,7 +141,7 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
 <li><code>single_result_row</code> (bool, optional) – If True, return only the first row of the result set. Effective only if <code>fetch_results</code> is True. Defaults to False.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-execute-multiple-queries-execute_queries">2. Execute Multiple Queries (<code>execute_queries</code>)<a href="#2-execute-multiple-queries-execute_queries" class="hash-link" aria-label="Enlace directo al 2-execute-multiple-queries-execute_queries" title="Enlace directo al 2-execute-multiple-queries-execute_queries">​</a></h3>
-<p>This operation executes a series of SQL queries within Teradata VantageCloud Lake.</p>
+<p>This operation executes a series of SQL queries within Teradata Vantage.</p>
 <p><strong>Args:</strong></p>
 <ul>
 <li><code>sql_queries</code> (Sequence[str]) – List of queries to be executed in series.</li>
@@ -149,13 +149,13 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
 <li><code>single_result_row</code> (bool, optional) – If True, return only the first row of the result set. Effective only if <code>fetch_results</code> is True. Defaults to False.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-drop-a-database-drop_database">3. Drop a Database (<code>drop_database</code>)<a href="#3-drop-a-database-drop_database" class="hash-link" aria-label="Enlace directo al 3-drop-a-database-drop_database" title="Enlace directo al 3-drop-a-database-drop_database">​</a></h3>
-<p>This operation drops one or more databases from Teradata VantageCloud Lake.</p>
+<p>This operation drops one or more databases from Teradata Vantage.</p>
 <p><strong>Args:</strong></p>
 <ul>
 <li><code>databases</code> (Union[str, Sequence[str]]) – Database name or list of database names to drop.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-drop-a-table-drop_table">4. Drop a Table (<code>drop_table</code>)<a href="#4-drop-a-table-drop_table" class="hash-link" aria-label="Enlace directo al 4-drop-a-table-drop_table" title="Enlace directo al 4-drop-a-table-drop_table">​</a></h3>
-<p>This operation drops one or more tables from Teradata VantageCloud Lake.</p>
+<p>This operation drops one or more tables from Teradata Vantage.</p>
 <p><strong>Args:</strong></p>
 <ul>
 <li><code>tables</code> (Union[str, Sequence[str]]) – Table name or list of table names to drop.</li>
