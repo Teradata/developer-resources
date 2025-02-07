@@ -120,7 +120,7 @@ This file represents sample data that will be used as input for your ETL pipelin
 
 Now, we’ll define a series of assets for the ETL pipeline inside the assets.py file.
 
-**Edit the assets.py File**: Open the dagster_quickstart/assets.py file and add the following code to define the pipeline:
+Edit the assets.py File: Open the dagster_quickstart/assets.py file and add the following code to define the pipeline:
 
 ```python
 import pandas as pd
