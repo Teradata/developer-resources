@@ -226,7 +226,7 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
 
 ### 1. Execute a Query (`execute_query`)
 
-This operation executes a SQL query within Teradata VantageCloud Lake.
+This operation executes a SQL query within Teradata Vantage.
 
 **Args:**
 - `sql` (str) – The query to be executed.
@@ -235,7 +235,7 @@ This operation executes a SQL query within Teradata VantageCloud Lake.
 
 ### 2. Execute Multiple Queries (`execute_queries`)
 
-This operation executes a series of SQL queries within Teradata VantageCloud Lake.
+This operation executes a series of SQL queries within Teradata Vantage.
 
 **Args:**
 - `sql_queries` (Sequence[str]) – List of queries to be executed in series.
@@ -244,14 +244,14 @@ This operation executes a series of SQL queries within Teradata VantageCloud Lak
 
 ### 3. Drop a Database (`drop_database`)
 
-This operation drops one or more databases from Teradata VantageCloud Lake.
+This operation drops one or more databases from Teradata Vantage.
 
 **Args:**
 - `databases` (Union[str, Sequence[str]]) – Database name or list of database names to drop.
 
 ### 4. Drop a Table (`drop_table`)
 
-This operation drops one or more tables from Teradata VantageCloud Lake.
+This operation drops one or more tables from Teradata Vantage.
 
 **Args:**
 - `tables` (Union[str, Sequence[str]]) – Table name or list of table names to drop.
