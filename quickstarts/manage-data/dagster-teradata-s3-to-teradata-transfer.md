@@ -133,8 +133,6 @@ defs = Definitions(
 )
 ```
 
-##### Explanation of Code
-
 ### Explanation of the Code
 
 1. **Resource Configuration for S3 and Teradata**:  

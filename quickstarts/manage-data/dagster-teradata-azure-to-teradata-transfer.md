@@ -132,7 +132,7 @@ defs = Definitions(
 )
 ```
 
-##### Explanation of Code
+### Explanation of the Code
 
 1. **Resource Setup**:
    - The code sets up two resources: one for **Azure Data Lake Storage** (ADLS2) and one for **Teradata**.
