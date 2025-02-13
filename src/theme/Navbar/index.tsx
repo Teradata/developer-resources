@@ -15,7 +15,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Partytown } from '@builder.io/partytown/react';
 import SearchBar from '../SearchBar';
-//import MatDisclaimer from '../../components/MatDisclaimer';
+import MatDisclaimer from '../../components/MatDisclaimer';
 import SelectComponent from '../../components/SelectComponent/SelectComponent';
 import '../DocSidebar/styles.css';
 
@@ -158,7 +158,7 @@ export default function Navbar() {
         selectedLanguage={defaultLang}
         secondaryMenu={secondaryMenuDetails}
       ></Header>
-      
+      <MatDisclaimer />
     </>
   );
 }
