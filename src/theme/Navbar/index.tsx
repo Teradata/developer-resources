@@ -147,6 +147,7 @@ export default function Navbar() {
         ]}
         loadScriptsOnMainThread={['https://www.teradata.com/js/Celebrus/062424.js']}
       />
+      <MatDisclaimer />
       <Header
         key={defaultLang}
         navItems={translatedNavItems}
@@ -158,7 +159,6 @@ export default function Navbar() {
         selectedLanguage={defaultLang}
         secondaryMenu={secondaryMenuDetails}
       ></Header>
-      <MatDisclaimer />
     </>
   );
 }
