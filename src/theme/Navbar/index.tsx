@@ -82,7 +82,7 @@ export default function Navbar() {
         </div>
         {navbarContent}
       </>
-    ) : null,
+    ) : <></>,
     title: translate({
       message: 'sidenav.title',
       description: 'sidenav.title_description',
