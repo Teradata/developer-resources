@@ -7,6 +7,7 @@ import HeroImageUrl from '@site/static/img/quickstarts-hero.webp';
 import { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import { Typography } from '@teradata-web/react-components';
+import CoveoSearch from '../components/CoveoSearch/CoveoSearch';
 
 function HomepageHeader() {
   return (
@@ -71,6 +72,8 @@ export default function Home() {
         </script>
       </Head>
       <HomepageHeader />
+      <div>TEst</div>
+      <CoveoSearch />
       <main className={styles.features}>
         <QuickstartsPages />
       </main>

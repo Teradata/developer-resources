@@ -11,6 +11,7 @@ import fs from 'fs';
 import footerItems from './src/config/footer.navItems.js';
 import baseHeadTags from './src/config/baseHeadTags.js';
 import { sidebarItemsGenerator } from './custom-sidebar.js';
+import headTags from './src/config/CoveoSearchHeadTags.js';
 
 const baseUrl = '';
 const projectName = 'ai-unlimited-docs';
@@ -82,6 +83,7 @@ const config = {
   headTags: [
     ...baseHeadTags,
     ...trackingScripts,
+    ...headTags
   ],
 
   // Even if you don't use internationalization, you can use this field to set
