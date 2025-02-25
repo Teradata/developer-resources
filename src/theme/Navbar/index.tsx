@@ -74,6 +74,7 @@ export default function Navbar() {
   ];
 
   const navbarContent = useNavbarSecondaryMenu().content as JSX.Element;
+  console.log('navbarContent', navbarContent);
   const secondaryMenuDetails = {
     menuElement: navbarContent ? (
       <>
@@ -82,7 +83,7 @@ export default function Navbar() {
         </div>
         {navbarContent}
       </>
-    ): <></>,
+    ): null,
     title: translate({
       message: 'sidenav.title',
       description: 'sidenav.title_description',
