@@ -11,6 +11,8 @@ export default function SelectComponent() {
   const currentPath = normalizePath(location.pathname);
   const aiUnlimitedUrl = useBaseUrl('/ai-unlimited/install-ai-unlimited');
   const fabricUrl = useBaseUrl('/ai-unlimited/fabric/get-started');
+  const pathsNoAlert = normalizePath(`/quickstarts/`);
+  const shouldDisplayAlert = !currentPath.includes(pathsNoAlert);
 
   useEffect(() => {
     if (currentPath === aiUnlimitedUrl) {
@@ -29,6 +31,8 @@ export default function SelectComponent() {
     }
   };
 
+  if (!shouldDisplayAlert) return null;
+  
   return (
     <BrowserOnly>
       {() => {

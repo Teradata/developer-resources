@@ -73,15 +73,16 @@ export default function Navbar() {
     },
   ];
 
+  const navbarContent = useNavbarSecondaryMenu().content as JSX.Element;
   const secondaryMenuDetails = {
-    menuElement: (
+    menuElement: navbarContent ? (
       <>
         <div className="customContainer2">
           <SelectComponent/>
         </div>
-        {useNavbarSecondaryMenu().content}
+        {navbarContent}
       </>
-    ),
+    ): <></>,
     title: translate({
       message: 'sidenav.title',
       description: 'sidenav.title_description',
