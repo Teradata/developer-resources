@@ -73,20 +73,24 @@ export default function Navbar() {
     },
   ];
 
-  const secondaryMenuDetails = {
-    menuElement: (
-      <>
-        <div className="customContainer2">
-          <SelectComponent/>
-        </div>
-        {useNavbarSecondaryMenu().content}
-      </>
-    ),
-    title: translate({
-      message: 'sidenav.title',
-      description: 'sidenav.title_description',
-    }),
-  };
+  const navbarContent = useNavbarSecondaryMenu().content as JSX.Element | undefined;
+  const secondaryMenuDetails =
+  navbarContent && (
+    {
+      menuElement: (
+        <>
+          <div className="customContainer2">
+            <SelectComponent />
+          </div>
+          {navbarContent}
+        </>
+      ),
+      title: translate({
+        message: "sidenav.title",
+        description: "sidenav.title_description",
+      }),
+    }
+  );
 
   const [defaultLang, setDefaulLang] = useState('');
 
