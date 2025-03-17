@@ -34,11 +34,10 @@ CloudFormation templates for the manager are here in the AI Unlimited GitHub rep
 
 `deployments/aws/templates/ai-unlimited/`
 
-Choose a template based on whether you intend to use a [load balancer](../glossary.md#load-balancer) and what type.
+Choose a template based on whether you intend to use a [load balancer](../glossary.md#load-balancer).
 :::note
 You might want to ask a cloud admin at your organization for guidance.
 :::
-    - `ai-unlimited-with-alb.yaml`&mdash;Hosts the manager behind an [application load balancer](../glossary.md#application-load-balancer)
     - `ai-unlimited-with-nlb.yaml`&mdash;Hosts the manager behind a [network load balancer](../glossary.md#network-load-balancer)
     - `ai-unlimited-without-lb.yaml`&mdash;No load balancer. If you're unsure about which template to use, we recommend this one.
 
@@ -82,8 +81,7 @@ We recommend selecting the region closest to your primary work location.
 |IamPermissionsBoundary	| The ARN of the IAM permissions boundary to associate with the IAM role assigned to the instance. |Optional<br/>Default: NA |
 |AvailabilityZone | The availability zone to which you want to deploy the instance. |Required<br/>Default: NA<br/>The value must match the subnet, the zone of any pre-existing volumes, and the instance type must be available in the selected zone. |
 |LoadBalancerScheme	|If a load balancer is used, this field specifies whether the instance is accessible from the Internet or only from within the VPC.	|Optional with default<br/>Default: Internet-facing<br/>The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the Internet.<br/>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the personal IP addresses of the nodes. Therefore, internal load balancers can route requests from clients with access to the VPC for the load balancer.|
-|LoadBalancerSubnetOne | The subnet where the load balancer is hosted. The subnet determines load balancer availability zones, IP addresses, and endpoints. |Optional with default<br/>Default: NA<br/>You must define a minimum of one available subnet to create a Network Load Balancer (NLB) and two subnets for an Application Load Balancer (ALB).|
-| LoadBalancerSubnetTwo| The subnet where the load balancer is hosted. |Optional. This option is only available in the template with ALB.<br/>Default: NA<br/>|This subnet must be in a different availability zone than the first subnet you chose.|
+|LoadBalancerSubnet | The subnet where the load balancer is hosted. The subnet determines load balancer availability zones, IP addresses, and endpoints. |Optional with default<br/>Default: NA<br/>You must define one available subnet to create a Network Load Balancer (NLB).|
 |HostedZoneID | The ID that Amazon Route 53 assigned to the hosted zone when you created it.|Optional<br/>Default: NA<br/>Each hosted zone corresponds to a domain name, or possibly a subdomain. The hosted zone is the container for DNS records, where you configure how the world interacts with your domain, such as pointing it to an IP address with a record.<br/>On the AWS console, go to **Route 53** > **Hosted zones**. Find your registered domain name and the corresponding Hosted zone ID.|
 |DnsName| The name of the domain. For public hosted zones, this is the name you registered with your DNS registrar. |Optional<br/>Default: NA<br/>For information about how to specify characters other than a-z, 0-9, and - (hyphen) and how to specify internationalized domain names, see [Create Hosted Zone](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html).|
 |Private	|Specifies whether the service is deployed in a private network without public IPs.|Required<br/>Default: false <br/>Make sure you select the `Enable auto-assign public IPv4 address` option in the subnet where the manager resides. If this option is not selected, the installation may fail.|
@@ -166,7 +164,7 @@ If the container, pod, or node crashes or terminates, and the manager's configur
 ## Review and create the stack
 
 1. Review the template settings. 
-2. Select the check box to acknowledge that the template will create IAM resources. 
+2. Select the checkbox to acknowledge that the template will create IAM resources. 
 3. Select **Submit** to deploy the stack.<br />
 On the **Events** tab, you can monitor progress. When the status of all the resources is `CREATE_COMPLETE`, the manager is ready. 
 
@@ -177,7 +175,7 @@ You'll need the URL to access the manager and set up AI Unlimited.
 
 ## What's next
 
-[Create an OAuth app](../resources/create-oauth-app.md) to allow authentication between AI Unlimited and your Git provider account.
+[Create an OAuth app](create-oauth-app.md) to allow authentication between AI Unlimited and your Git provider account.
 
 
 
