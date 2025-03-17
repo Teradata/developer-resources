@@ -3,7 +3,7 @@ id: faq
 title: FAQ
 description: Find answers to your AI Unlimited questions here.
 sidebar_label: FAQ
-sidebar_position: 6
+sidebar_position: 7
 pagination_prev: null
 pagination_next: null
 ---
@@ -17,7 +17,7 @@ pagination_next: null
 Currently, AWS and Azure.
 
 ### What analytics functions can I use?
-[ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions. See the [release notes](./whats-new/release-notes.md) for any functions not currently supported.
+[ClearScape Analytics™](https://docs.teradata.com/access/sources/dita/topic?dita:mapPath=phg1621910019905.ditamap&dita:ditavalPath=pny1626732985837.ditaval&dita:topicPath=gma1702668333653.dita) functions. See the [release notes](./whats-new/august-2024-rn.md) for any functions not currently supported.
 
 ### How do I pay for AI Unlimited?
 You pay your cloud service provider for the hours that AI/ML engine resources are running. The charges depend on instance size and number of instances.
@@ -29,7 +29,7 @@ Email the <a href="mailto:aiunlimited.support@Teradata.com">support team</a>. Al
 ## Projects
 
 ### What is a project?
-A project is a means to explore and analyze data from a Jupyter notebook. Each project has a repository in your GitHub or GitLab account.
+A project is a means to explore and analyze data from a Jupyter notebook. Each project has a repository in your GitLab or GitHub account.
 
 ### How do I use a project?
 In a Jupyter notebook, you  create a project, which automatically creates its Git repository. Then you authorize access to your data store, deploy the project's AI/ML engine, and run analytic workloads. You can suspend the project (and engine) anytime, then restore it, to pay only for the hours you need.
@@ -52,17 +52,13 @@ Each time you, or another user, suspends a project, its schema is backed up in t
 ## Users
 
 ### What are the AI Unlimited user types?
-Admins, project owners, and collaborators:
-- The admin is the user who sets up AI Unlimited for your organization. 
+AI Unlimited owner, project owners, and collaborators:
+- The AI Unlimited owner is the user who sets up AI Unlimited for your organization. 
 - The user who creates a project is the project's owner. 
 - Additional users of a project are collaborators.
 
-### I'm an admin. After the initial setup, can I go back and change settings?
+### I'm the AI Unlimited owner. After the initial setup, can I go back and change settings?
 Yes, sign back in to the setup, and make any changes.
-
-
-### Can an admin add other admins?
-No, AI Unlimited supports one admin.
 
 ### I'm a project owner. How do I add collaborators to a project?
 First, add them to the project's Git repository. 
@@ -86,7 +82,7 @@ The saved project information is there. You can pick up right where you left off
 ### What is the manager?
 The manager is the AI Unlimited component that orchestrates the deployment of the AI/ML engine on your cloud service provider. 
 
-It also provides a web-based user interface from which the AI Unlimited admin sets up AI Unlimited after installing it, and changes settings later as needed. 
+It also provides a web-based user interface from which the AI Unlimited owner sets up AI Unlimited after installing it, and changes settings later as needed. 
 
 From their user profile in the manager, all users get their API key for connecting a Jupyter notebook to the manager.
 

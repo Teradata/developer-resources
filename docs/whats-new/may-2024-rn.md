@@ -1,21 +1,16 @@
 ---
-id: release-notes
-title: Release notes
-description: See details about the paid public preview's initial launch.
-sidebar_label: Release notes
-sidebar_position: 8
+id: may-2024-rn
+title: May 2024 release notes
+description: See details about the initial release of the paid public preview.
+sidebar_label: May 2024 release notes
+sidebar_position: 4
 pagination_prev: null
 pagination_next: null
 ---
 
-# Release notes
+# May 2024 | Release notes
 
-As we continue to enhance AI Unlimited, please be aware of features not currently supported and known issues. 
-
-For the latest features and updates, keep an eye on [What's new](./index.md).
-
-
-## Paid public preview (launch) - May 2024
+See what's not currently supported and learn about known issues.
 
 ### Not supported
 
