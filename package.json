@@ -7,7 +7,7 @@
     "start": "docusaurus start",
     "prestart": "partytown copylib static/~partytown",
     "build": "docusaurus build",
-    "postbuild": "partytown copylib build/~partytown",
+    "prebuild": "partytown copylib static/~partytown",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
