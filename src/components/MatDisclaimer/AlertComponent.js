@@ -1,5 +1,6 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import '@covalent/components/icon';
 
 export default function AlertComponent({ onClose, onOpenDialog, alertDescription, linkLabel }) {
   return (
