@@ -1,6 +1,5 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import '@covalent/components/icon';
 
 export default function AlertComponent({ onClose, onOpenDialog, alertDescription, linkLabel }) {
   return (
@@ -9,6 +8,8 @@ export default function AlertComponent({ onClose, onOpenDialog, alertDescription
         const Alert = require('@teradata-web/react-components')?.Alert;
         const Button = require('@teradata-web/react-components')?.Button;
         const IconButton = require('@teradata-web/react-components')?.IconButton;
+        const Icon = require('@covalent/components/icon');
+
 
         return Alert ? (
           <Alert
