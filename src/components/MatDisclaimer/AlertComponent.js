@@ -10,7 +10,6 @@ export default function AlertComponent({ onClose, onOpenDialog, alertDescription
         const IconButton = require('@teradata-web/react-components')?.IconButton;
         const Icon = require('@covalent/components/icon');
 
-
         return Alert ? (
           <Alert
             icon="language"
