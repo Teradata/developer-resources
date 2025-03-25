@@ -185,7 +185,10 @@ aside.theme-doc-sidebar-container {
 .footer--dark {
   --ifm-footer-background-color: #28353b;
 }
-
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 html:not(.plugin-pages) .main-wrapper {
   padding: 6.75rem 1.5rem 0;
   max-width: 1440px;
