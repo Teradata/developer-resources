@@ -50,21 +50,23 @@ Refer to the [Google Sheets Setup Guide](https://fivetran.com/docs/connectors/fi
    - `Username`: Teradata ClearScape username
    - `Password`: Teradata ClearScape password
    - `Database`: Target Database Name
+   
    ### Optional Connection Parameters
    You can provide additional JDBC or destination-specific parameters to customize the connection. These fields are optional and may not be required for all environments:
-   #### SSL Mode:  Controls the SSL encryption level. Common values:
+   
+   #### `SSL Mode:`  Controls the SSL encryption level. Common values:
      - `DISABLE`: No SSL
      - `ALLOW`: SSL if available
      - `REQUIRE`: Enforce SSL
      - `VERIFY_CA`: Enforce SSL and validate certificate authority
      - `VERIFY_FULL`: Enforce SSL, validate certificate authority, and perform hostname verification
-   #### Transaction Mode: Defines how transactions are handled:
-     - `ANSI`: Enables ANSI-compliant transaction behavior
-     - `TERADATA`: Uses Teradata's native transaction mode
-   #### JDBC Parameters: For example:
-   - `CHARSET=UTF8`: Sets the character encoding.
-   - `ENCRYPTDATA=TRUE`: Enables data encryption in transit.
-   - Refer to [Teradata JDBC Driver](https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html) Documentation for a full list of supported options.
+   #### `Transaction Mode:` Defines how transactions are handled:
+       - `ANSI`: Enables ANSI-compliant transaction behavior
+      - `TERADATA`: Uses Teradata's native transaction mode
+   #### `JDBC Parameters:` For example:
+     - `CHARSET=UTF8`: Sets the character encoding.
+     - `ENCRYPTDATA=TRUE`: Enables data encryption in transit.
+     - Refer to [Teradata JDBC Driver](https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html) Documentation for a full list of supported options.
    
 7. Click `Save and Test`. Ensure the connection test is successful before proceeding.
 
