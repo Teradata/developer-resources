@@ -40,6 +40,7 @@ Refer to the [Google Sheets Setup Guide](https://fivetran.com/docs/connectors/fi
 1. Login to [Fivetran Dashboard](https://fivetran.com/login?_gl=1*9knhuy*_gcl_aw*R0NMLjE3NDM3NDI1MjguQ2p3S0NBanc0N2lfQmhCVEVpd0FhSmZQcHRGNDZmVVFqcnFaMGFiS0VpbVBkSUY3b3lQdTdicDdTZ1R2X3RHZTFGR253OFNYRnI0Nlp4b0MteXdRQXZEX0J3RQ..*_gcl_au*MTg1ODQxODI2LjE3MzgxMzM1Nzg.*_ga*MzM3MDk5MDc3LjE3MzgxMzM1Nzg.*_ga_NE72Z5F3GB*MTc0NDExMjU0MC4xOS4wLjE3NDQxMTI1NDAuNjAuMC4w*_ga_MD1R8Y04Z3*MTc0NDExMjU0MC40LjAuMTc0NDExMjU0MC42MC4wLjA) with valid credentials.
 2. Navigate to `Destinations` from the left menu.
 3. Click on `Add destination`.
+   ![fivetran_add_destination.png](..%2Fimages%2Ffivetran_add_destination.png)
 4. Search for and select `Teradata`.
 5. Provide a name for the destination and Click `Add`.
 6. Enter the required connection details.
@@ -65,7 +66,7 @@ Refer to the [Google Sheets Setup Guide](https://fivetran.com/docs/connectors/fi
      - `CHARSET=UTF8`: Sets the character encoding.
      - `ENCRYPTDATA=TRUE`: Enables data encryption in transit.
      - Refer to [Teradata JDBC Driver](https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html) Documentation for a full list of supported options.
-   
+     ![fivetran_setup_teradata.png](..%2Fimages%2Ffivetran_setup_teradata.png)
 7. Click `Save and Test`. Ensure the connection test is successful before proceeding.
 
 ## Setup Connection with Source as Google Sheets
@@ -80,6 +81,7 @@ Refer to the [Google Sheets Setup Guide](https://fivetran.com/docs/connectors/fi
    - `Authentication Method` - Refer [Google Sheets Setup Guide](https://fivetran.com/docs/connectors/files/google-sheets/google-sheets-setup-guide) to choose appropriate Authentication Method.
    - `Sheet URL`
    - `Select Named Range`
+   ![fivetran_add_google_sheets.png](..%2Fimages%2Ffivetran_add_google_sheets.png)
 7. Click `Save & Test` and confirm the connection success.
 8. Click on `Continue` to begin the initial data load. Wait until the sync status changes to `Initial sync complete`. 
 
