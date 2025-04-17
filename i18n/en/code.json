@@ -262,13 +262,13 @@
     "message": "Categories"
   },
   "home_page.select_platform": {
-    "message": "Select platform"
+    "message": "Select a platform"
   },
   "home_page.select_platform_2": {
     "message": "Get documentation based on the AI Unlimited platform."
   },
   "home_page.edition_cloud": {
-    "message": "Cloud Service Provider"
+    "message": "Cloud service provider"
   },
   "home_page.edition_ms_fabric": {
     "message": "Microsoft Fabric"

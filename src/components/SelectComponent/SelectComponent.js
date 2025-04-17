@@ -5,29 +5,42 @@ import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function SelectComponent() {
-  const [selectedOption, setSelectedOption] = useState('');
   const location = useLocation();
   const normalizePath = (path) => path.replace(/\/$/, '');
   const currentPath = normalizePath(location.pathname);
-  const aiUnlimitedUrl = useBaseUrl('/ai-unlimited/install-ai-unlimited');
-  const fabricUrl = useBaseUrl('/ai-unlimited/fabric/get-started');
   const pathsNoAlert = normalizePath(`/quickstarts/`);
   const shouldDisplayAlert = !currentPath.includes(pathsNoAlert);
 
+  const isPathMatching = (basePath, path) => normalizePath(path).startsWith(normalizePath(basePath));
+
+  const initialOption = isPathMatching('/ai-unlimited/fabric', currentPath)
+    ? '1'
+    : isPathMatching('/ai-unlimited', currentPath)
+    ? '0'
+    : undefined; 
+
+  const [selectedOption, setSelectedOption] = useState(initialOption);
+
   useEffect(() => {
-    if (currentPath === aiUnlimitedUrl) {
-      setSelectedOption('0');
-    } else if (currentPath === fabricUrl) {
+    if (isPathMatching('/ai-unlimited/fabric', currentPath)) {
       setSelectedOption('1');
+    } else if (isPathMatching('/ai-unlimited', currentPath)) {
+      setSelectedOption('0');
+    } else {
+      setSelectedOption(undefined); 
     }
-  }, [currentPath, aiUnlimitedUrl, fabricUrl]);
+  }, [currentPath]);
 
   const handleSelection = (event) => {
     const selectedIndex = event.detail.index?.toString();
-    if (selectedIndex === '0' && currentPath !== aiUnlimitedUrl) {
-      window.location.href = aiUnlimitedUrl;
-    } else if (selectedIndex === '1' && currentPath !== fabricUrl) {
-      window.location.href = fabricUrl;
+    if (selectedIndex === selectedOption || selectedIndex === undefined) {
+      return; 
+    }
+
+    if (selectedIndex === '0') {
+      window.location.href = '/ai-unlimited';
+    } else if (selectedIndex === '1') {
+      window.location.href = '/ai-unlimited/fabric';
     }
   };
 
