@@ -161,7 +161,7 @@ Refer to the [Postgres Setup Guide](https://fivetran.com/docs/connectors/databas
    - `Connection method`: Choose Connection Method based on your postgres setup. Refer [PostgreSQL Setup instructions](https://fivetran.com/docs/connectors/databases/postgresql/setup-guide#setupinstructions) for more details on different connection methods setup.
      This guide uses `Connect directly` connection method.
    - `Update Method`: Choose your incremental sync method. This guide uses `Logical Replication` sync method.
-     ![fivetran_add_posgres_as_source](..%2Fimages%2Ffivetran_add_posgres_as_source)
+     ![fivetran_add_posgres_as_source.png](..%2Fimages%2Ffivetran_add_posgres_as_source.png)
 8. Click `Save & Test` and confirm the connection success.
 9. Click on `Continue` to begin the initial data load. Wait until the sync status changes to `Initial sync complete`.
 
