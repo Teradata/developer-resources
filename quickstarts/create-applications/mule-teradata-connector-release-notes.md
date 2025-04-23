@@ -62,6 +62,7 @@ The version is based and extended on MuleSoft's [Database Connector - Mule 4](ht
 
 ### Fixed Issues
 - Commons-IO is upgraded to version 2.14.0 to address reported security vulnerabilities.
+- ObjectStore Connector is upgraded to version 1.2.2 to be compatible with Java 17.
 
 
 ## See Also
