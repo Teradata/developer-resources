@@ -36,7 +36,7 @@ The initial version is based and extended on MuleSoft's [Database Connector - Mu
 
 
 ## 1.0.1
-Date: April 8, 2025
+Date: April 22, 2025
 
 ### What’s New
 - This connector is now compatible with Java 17.
