@@ -1,8 +1,8 @@
 ---
 sidebar_position: 8
-author: Tan Nguyen
-email: tan.nguyen@teradata.com
-page_last_update: February 13th, 2023
+author: Teradata
+email: DT230354@Teradata.com
+page_last_update: April 22th, 2025
 description: Release Notes for Teradata Connector for MuleSoft's Anypoint Studio.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
 ---
