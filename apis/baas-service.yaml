@@ -4,16 +4,17 @@ info:
   version: "20250501"
   description: |
         "Backup as a Service (BaaS) - Enterprise APIs"
-        The BaaS service is a RESTful web service for Teradata-supported databases that allows web pages, mobile devices,
-        and scripting languages to take backup or perform restore on  Teradata-supported database using HTTP as the wire 
+        
+        The BaaS service is a RESTful web service for the Teradata database that allows console, 
+        and scripting languages to take backup or perform restore of the Teradata database using HTTP as the wire protocol 
         protocol and JSON as the data interchange format. 
         Since support for HTTP and JSON is available in most programming languages, applications can use
-        this service to perform Backup and Restore on a Teradata-supported database.
+        This service performs Backup and restore on a Teradata-supported database.
 
-        First let's cover some information common to all BaaS Service REST API endpoints.
+        First, let's cover some information common to all BaaS Service REST API endpoints.
         ### HTTP Headers
     
-        There are several HTTP headers that must be submitted along with each request and some that are optional.
+        Several HTTP headers must be submitted along with each request, and some are optional.
     
         | Header  | Value | Description | Required |
         | ------- | ----- | ----------- | -------- |
@@ -29,11 +30,11 @@ info:
         | ---- | ---------- | ----------- |
         | 200 | OK | The request was successful. |
         | 201 | Created | The request was successful and the response contains the created object info |
-        | 202 | Accepted | The request was successfully accepted by service and the response contains the resource-id which can be use to progress the monitor |
+        | 202 | Accepted | The request was successfully accepted by the service, and the response contains the resource-id which can be use to progress the monitor |
         | 400 | Bad Request | The request could not be understood by the service due to malformed syntax. The client SHOULD NOT repeat the request without modifications. |
         | 401 | Unauthorized | The request requires user authentication. |
         | 404 | Not Found | The resource referenced by the specified URI was not found. |
-        | 409 | Conflict | The operation performed on specific resource may a conflict with previous operation |
+        | 409 | Conflict | The operation performed on the specific resource may conflict with a previous operation |
         | 500 | Internal Server Error | The service encountered an unexpected condition which prevented it from fulfilling the request. |
 
 servers:
