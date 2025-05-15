@@ -140,7 +140,7 @@
 }
 
 .sideNavPresent .DocSearch-Modal {
-  margin-top: 4.75rem;
+  margin-top: 4.75rem !important;
 }
 
 .DocSearch-MagnifierLabel svg {
