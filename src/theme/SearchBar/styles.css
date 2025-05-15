@@ -89,7 +89,6 @@
 
 .DocSearch-Modal {
   --docsearch-modal-width: 720px;
-  margin-top: 3.5rem !important;
   max-width: 700px;
 }
 
@@ -140,7 +139,7 @@
 }
 
 .sideNavPresent .DocSearch-Modal {
-  margin-top: 4.75rem !important;
+  margin-top: 4.75rem;
 }
 
 .DocSearch-MagnifierLabel svg {
@@ -152,7 +151,9 @@
   .DocSearch-Modal {
     position: absolute;
     right: 0;
+    margin-top: 3.5rem;
   }
+
 
   .DocSearch-MagnifierLabel {
     --docsearch-highlight-color: var(--ifm-color-secondary);
@@ -181,7 +182,6 @@
 
   .DocSearch-Footer {
     bottom: 60px;
-    position: relative; 
   }
 
   .sideNavPresent .DocSearch-Footer {
