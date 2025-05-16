@@ -89,7 +89,6 @@
 
 .DocSearch-Modal {
   --docsearch-modal-width: 720px;
-  margin-top: 3.5rem;
   max-width: 700px;
 }
 
@@ -152,7 +151,9 @@
   .DocSearch-Modal {
     position: absolute;
     right: 0;
+    margin-top: 3.5rem;
   }
+
 
   .DocSearch-MagnifierLabel {
     --docsearch-highlight-color: var(--ifm-color-secondary);
