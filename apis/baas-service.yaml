@@ -1,0 +1,1556 @@
+openapi: "3.0.1"
+info:
+  title: "Teradata Backup as a Service - Enterprise APIs"
+  version: "v2 as of 20250501"
+  description: |
+        "Backup as a Service (BaaS) - Enterprise APIs"
+        
+        The BaaS service is a RESTful web service for the Teradata database that allows console, 
+        and scripting languages to take backup or perform restore of the Teradata database using HTTP as the wire protocol 
+        protocol and JSON as the data interchange format. 
+        Since support for HTTP and JSON is available in most programming languages, applications can use
+        This service performs Backup and restore on a Teradata-supported database.
+
+        First, let's cover some information common to all BaaS Service REST API endpoints.
+        ### HTTP Headers
+    
+        Several HTTP headers must be submitted along with each request, and some are optional.
+    
+        | Header  | Value | Description | Required |
+        | ------- | ----- | ----------- | -------- |
+        | Authorization | Bearer TOKEN | Contains an access token issued by console | One of these two is required
+        | Authorization | Basic _\[Base64 encoded "username:password"\]_ | Contains the credentials used to access the console. The Authorization header is constructed as follows: 1.  Username and password are combined into a string "username:password" 2.  The resulting string is then encoded using the RFC2045-MIME variant of Base64, except not limited to 76 char/line 3.  The authorization method and a space i.e. "Basic " is then put before the encoded string. | One of these two is required
+        | Content-Type | application/json | Instructs the web service that the request contains JSON data. | Yes |
+    
+        ### Status Codes
+    
+        Each HTTP Response will contain a status code as listed in the table below.
+    
+        | Code | Definition | Description |
+        | ---- | ---------- | ----------- |
+        | 200 | OK | The request was successful. |
+        | 201 | Created | The request was successful and the response contains the created object info |
+        | 202 | Accepted | The request was successfully accepted by the service, and the response contains the resource-id which can be use to progress the monitor |
+        | 400 | Bad Request | The request could not be understood by the service due to malformed syntax. The client SHOULD NOT repeat the request without modifications. |
+        | 401 | Unauthorized | The request requires user authentication. |
+        | 404 | Not Found | The resource referenced by the specified URI was not found. |
+        | 409 | Conflict | The operation performed on the specific resource may conflict with a previous operation |
+        | 500 | Internal Server Error | The service encountered an unexpected condition which prevented it from fulfilling the request. |
+
+servers:
+  - url: https://api3.baas.intellicloud.teradata.com
+
+paths:
+  /data-protection/v2/sites/{site-id}/jobs:
+    get:
+      tags:
+      - jobs
+      summary: List all jobs
+      description: Get all jobs for a site
+      parameters:
+        - name: site-id
+          description: Site ID
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: is-active
+          description: Fetch only active jobs if true
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: page
+          description: The page number to fetch
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+        - name: page-size
+          description: The number of items in each page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+        - name: job-type
+          description: Filter jobs by type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - BACKUP
+              - RESTORE
+              - REPLICATION
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/dtos.GetAllJobsDto'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}:
+    get:
+      tags:
+      - jobs
+      summary: Get job
+      description: Get job by ID
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Job ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dtos.GetJobDto'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/snapshot-info:
+    get:
+      tags:
+      - snapshot
+      summary: Get Snapshot information
+      parameters:
+        - name: site-id
+          description: Site ID
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: job-id
+          description: Job ID
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: start-date
+          description: Start date
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: end-date
+          description: End date
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dtos.GetSnapshotInfo'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/execute:
+    post:
+      tags:
+      - jobs
+      summary: Run job
+      description: Execute a job in the site
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Job ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: Run Job
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/dtos.RunJobDto'
+        required: true
+      responses:
+        "202":
+          description: Accepted
+          headers:
+            x-resource-id:
+              description: Execution Id of the job
+              schema:
+                type: number
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "409":
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+      x-codegen-request-body-name: RunJob
+  /data-protection/v2/sites/{site-id}/executions:
+    get:
+      tags:
+      - jobs
+      summary: List all executions
+      description: Get execution for all jobs in a site
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: backup-set-deleted
+        description: Fetch retained backup sets if false
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: page
+        description: The page number to fetch
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page-size
+        description: The number of items in each page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/dtos.GetAllJobExecutionDto'
+        "204":
+          description: No Content
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/executions:
+    get:
+      tags:
+      - jobs
+      summary: List executions for job
+      description: Get all executions for job in a site
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Job ID
+        required: true
+        schema:
+          type: integer
+      - name: backup-set-deleted
+        description: Fetch retained backup sets of a job if false
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: page
+        description: The page number to fetch
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page-size
+        description: The number of items in each page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/dtos.GetAllJobExecutionDto'
+        "204":
+          description: No Content
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/executions/{execution-id}/prepare-objects:
+    post:
+      tags:
+      - objects
+      summary: Start object preparation
+      description: Start object preparation for restore
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Backup Job ID
+        required: true
+        schema:
+          type: integer
+      - name: execution-id
+        in: path
+        description: Backup Execution ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content: {}
+        "202":
+          description: Accepted
+          headers:
+            x-resource-id:
+              description: Job objects status Id
+              schema:
+                type: string
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "409":
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/objects-preparation-status:
+    get:
+      tags:
+      - objects
+      summary: Get object preparation status
+      description: Get object preparation status
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-objects-status-id
+        in: query
+        description: Job objects status ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  details:
+                    type: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/executions/{execution-id}/objects:
+    get:
+      tags:
+      - objects
+      summary: Get job execution objects
+      description: Get objects that were backed up in a job execution
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Backup Job ID
+        required: true
+        schema:
+          type: integer
+      - name: execution-id
+        in: path
+        description: Backup Execution ID
+        required: true
+        schema:
+          type: integer
+      - name: parent-search
+        description: Fetch all child objects of the parent object
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: child-search
+        description: Fetch all child objects with the specified name, irrespective of the parent object
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: child-types
+        description: Fetch all child objects with the specified type
+        in: query
+        required: false
+        schema:
+          type: string
+          example: DATABASE
+          allOf:
+          - $ref: '#/components/schemas/enums.DataBaseObjectType'
+      - name: parent-filter
+        description: Fetch all child objects of the parent object that contain the specified string in their name
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        description: The page number to fetch
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: page-size
+        description: The number of items in each page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    object_name:
+                      type: string
+                    object_type:
+                      type: string
+                      example: DATABASE
+                      allOf:
+                      - $ref: '#/components/schemas/enums.DataBaseObjectType'
+                    parent_name:
+                      type: string
+                    parent_type:
+                      type: string
+                    byte_count:
+                      type: integer
+        "204":
+          description: No Content
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "501":
+          description: Not Implemented
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/executions/{execution-id}/restores/{restore-id}:
+    get:
+      tags:
+      - restores
+      summary: Get restore job
+      description: Get restore job by restore execution ID
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Backup Job ID
+        required: true
+        schema:
+          type: integer
+      - name: execution-id
+        in: path
+        description: Backup Execution ID
+        required: true
+        schema:
+          type: integer
+      - name: restore-id
+        in: path
+        description: Restore Execution ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dtos.GetRestoreByIdDto'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/restores:
+    get:
+      tags:
+      - restores
+      summary: List all restores
+      description: Get all restore executions for a site
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/dtos.GetRestoreByIdDto'
+        "204":
+          description: No Content
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/restore-permissions:
+    post:
+      tags:
+      - restores
+      summary: Check restore permissions
+      description: Check if user has permissions for restore
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content: {}
+        "204":
+          description: No Content
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/databases:
+    get:
+      tags:
+      - restores
+      summary: List databases
+      description: List all databases for a site
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    dbKind:
+                      type: string
+                      example: "D"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+  /data-protection/v2/sites/{site-id}/jobs/{job-id}/executions/{execution-id}/restores:
+    get:
+      tags:
+      - restores
+      summary: List restores for backup execution ID
+      description: Get all restores corresponding to a backup execution ID
+      parameters:
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Backup Job ID
+        required: true
+        schema:
+          type: integer
+      - name: execution-id
+        in: path
+        description: Backup Execution ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/dtos.GetRestoreByIdDto'
+        "204":
+          description: No Content
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+    post:
+      tags:
+      - restores
+      summary: Create and run restore job
+      description: Create and run restore job for a site
+      parameters:
+      - name: x-auth-credentials
+        in: header
+        description: Authentication credential for the API
+        required: true
+        schema:
+          type: string
+        example: Basic <base 64 encoded user-id and password in format user-id:pass>
+      - name: site-id
+        in: path
+        description: Site ID
+        required: true
+        schema:
+          type: string
+      - name: job-id
+        in: path
+        description: Backup Job ID
+        required: true
+        schema:
+          type: integer
+      - name: execution-id
+        in: path
+        description: Backup Execution ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: Run Job
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/dtos.PostRestoreJobDto'
+      responses:
+        "202":
+          description: Accepted
+          headers:
+            x-resource-id:
+              description: Restore Id of the job
+              schema:
+                type: string
+          content: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "409":
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+        "501":
+          description: Not Implemented
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/responses.ErrorResponse'
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    dtos.GetSnapshotInfo:
+      type: object
+      properties:
+        site_id:
+          type: string
+          default: TDICAM73149PP83
+        job_id:
+          type: string
+          default: 12234
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/dtos.GetSnapshotExecution'
+    dtos.GetSnapshotExecution:
+      type: object
+      properties:
+        job_execution_id:
+          type: integer
+          default: 12953383
+        component_details:
+          type: array
+          items:
+            $ref: '#/components/schemas/dtos.GetSnapshotComponent'
+    dtos.GetSnapshotComponent:
+      type: object
+      properties:
+        task_name:
+          type: string
+          default: QUIESCE_TIME
+        server_uuid:
+          type: string
+          default: "527275a9-87bd-4321-bb39-79e3de3ce43d"
+        start_time:
+          type: string
+          default: "2024-03-12T11:55:37.509940Z"
+        end_time:
+          type: string
+          default: "2024-03-12T11:55:37.509940Z"
+        message:
+          type: string
+          default: "default message"
+        status:
+          type: string
+          default: "succeeded"
+    dtos.ExcludeObjects:
+      required:
+      - object_name
+      - object_type
+      type: object
+      properties:
+        object_name:
+          type: string
+          example: DEPARTMENT
+        object_type:
+          type: string
+          example: DATABASE
+          allOf:
+          - $ref: '#/components/schemas/enums.DataBaseObjectType'
+    dtos.GetAllJobsDto:
+      type: object
+      properties:
+        site_id:
+          type: string
+          description: site id
+        auto_abort_in_minutes:
+          type: integer
+          example: 0
+        backup_type:
+          $ref: '#/components/schemas/enums.BackupType'
+        description:
+          type: string
+          example: test backup plan for employee database
+        is_active:
+          type: boolean
+          example: true
+        is_auto_abort_active:
+          type: boolean
+          example: false
+        job_id:
+          type: integer
+          example: 34
+        job_type:
+          type: string
+          example: BACKUP
+          allOf:
+          - $ref: '#/components/schemas/enums.JobType'
+        last_execution_details:
+          $ref: '#/components/schemas/dtos.LastExecutionDetailsDto'
+        name:
+          type: string
+          example: test_backup_plan
+        next_run_time:
+          type: string
+          example: 2022-12-08T11:31:02.282298Z
+        no_of_retention_copies:
+          type: integer
+          example: 2
+        priority:
+          type: integer
+          example: 1
+        siteTargetType:
+          type: string
+          example: AWS
+          allOf:
+          - $ref: '#/components/schemas/enums.SiteTargetType'
+        backup_mechanism:
+          $ref: '#/components/schemas/enums.BackupMechanism'
+        targetSiteDetails:
+          type: object
+          $ref: '#/components/schemas/dtos.TargetSiteDetailsDto'
+    dtos.GetJobDto:
+      type: object
+      properties:
+        site_id:
+          type: string
+          description: site id
+        auto_abort_in_minutes:
+          type: integer
+          example: 0
+        backup_type:
+          $ref: '#/components/schemas/enums.BackupType'
+        description:
+          type: string
+          example: test backup plan for employee database
+        job_settings:
+          $ref: '#/components/schemas/dtos.JobSettings'
+        is_active:
+          type: boolean
+          example: true
+        is_auto_abort_active:
+          type: boolean
+          example: false
+        job_id:
+          type: integer
+          example: 34
+        job_type:
+          type: string
+          example: BACKUP
+          allOf:
+          - $ref: '#/components/schemas/enums.JobType'
+        last_execution_details:
+          $ref: '#/components/schemas/dtos.LastExecutionDetailsDto'
+        name:
+          type: string
+          example: test_backup_plan
+        next_run_time:
+          type: string
+          example: 2022-12-08T11:31:02.282298Z
+        no_of_retention_copies:
+          type: integer
+          example: 2
+        siteTargetType:
+          type: string
+          example: AWS
+          allOf:
+          - $ref: '#/components/schemas/enums.SiteTargetType'
+        targetSiteDetails:
+          type: object
+          $ref: '#/components/schemas/dtos.TargetSiteDetailsDto'
+        priority:
+          type: integer
+          example: 1
+        backup_mechanism:
+          $ref: '#/components/schemas/enums.BackupMechanism'
+
+    dtos.JobObjects:
+      required:
+      - include_all
+      - object_name
+      - object_type
+      - parent_name
+      - parent_type
+      type: object
+      properties:
+        exclude_objects:
+          type: array
+          description: objects that must be excluded from backup
+          items:
+            $ref: '#/components/schemas/dtos.ExcludeObjects'
+        include_all:
+          type: boolean
+          example: true
+        object_name:
+          type: string
+          example: EMPLOYEE
+        object_type:
+          type: string
+          example: DATABASE
+          allOf:
+          - $ref: '#/components/schemas/enums.DataBaseObjectType'
+        parent_name:
+          type: string
+          example: DBC
+        parent_type:
+          type: string
+          example: DATABASE
+          allOf:
+          - $ref: '#/components/schemas/enums.DataBaseObjectParentType'
+        rename_to:
+          type: string
+    dtos.JobSettings:
+      type: object
+      properties:
+        online:
+          type: boolean
+          description: default is true
+          example: false
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/dtos.JobObjects'
+        continue_job_on_access_right_violation:
+          type: boolean
+          description: default is false
+          example: true
+        run_as_a_copy_job:
+          type: boolean
+          description: default is false
+          example: true
+        restore_to_a_different_database_on_target_site:
+          type: string
+          example: DATABASE_NAME
+        skip_statstics:
+          type: boolean
+          description: default is false
+          example: true
+        retained_copy:
+          type: string
+        skip_join_or_hash_indexes:
+          type: boolean
+          description: default is false
+    dtos.PostRestoreJobDto:
+      type: object
+      properties:
+        name:
+          type: string
+          example: test_restore_job
+        target_site:
+          type: string
+          example: TDICGC73149PRD1
+        job_settings:
+          $ref: '#/components/schemas/dtos.JobSettings'
+    dtos.LastExecutionDetailsDto:
+      type: object
+      properties:
+        end_time:
+          type: string
+          example: 2022-12-07T11:35:00.000000Z
+        start_time:
+          type: string
+          example: 2022-12-07T11:31:00.000000Z
+        status:
+          type: string
+          example: SUCCESSFUL
+          allOf:
+          - $ref: '#/components/schemas/enums.JobStatus'
+        backup_set_size:
+          type: integer
+          example: 1000000
+        backup_job_id:
+          type: integer
+          example: 34
+        backup_job_execution_id:
+          type: integer
+          example: 121
+        restore_execution_id:
+          type: integer
+          example: 121
+    dtos.TargetSiteDetailsDto:
+      type: object
+      properties:
+        target_site_id:
+          type: string
+          description: site id
+        target_retention_copies_count:
+          type: integer
+          description: number of retention copies to be kept in target site
+        target_retention_source:
+          type: string
+    dtos.RunJobDto:
+      type: object
+      properties:
+        run_type:
+          type: string
+          description: BACKUP_DR jobs only support FULL, while BACKUP jobs support FULL, DELTA both
+          example: FULL
+          allOf:
+          - $ref: '#/components/schemas/enums.RunType'
+    dtos.GetAllJobExecutionDto:
+      type: object
+      properties:
+        site_id:
+          type: string
+        target_site:
+          type: string
+        job_id:
+          type: integer
+        job_name:
+          type: string
+        backup_mechanism:
+          $ref: '#/components/schemas/enums.BackupMechanism'
+        job_type:
+          $ref: '#/components/schemas/enums.JobType'
+        execution_id:
+          type: string
+        execution_name:
+          type: string
+        start_time:
+          type: string
+        end_time:
+          type: string
+        backup_set_size:
+          type: integer
+        server_execution_id:
+          type: string
+        parent_execution_id:
+          type: string
+        status:
+          $ref: '#/components/schemas/enums.JobStatus'
+        saveset_replication_status:
+          $ref: '#/components/schemas/enums.BackupSetReplicationStatus'
+        is_saveset_retained:
+          type: boolean
+        is_saveset_deleted:
+          type: boolean
+        saveset_id:
+          type: integer
+        run_type:
+          $ref: '#/components/schemas/enums.RunType'
+        site_type:
+          type: string
+          nullable: true
+        status_detail:
+          type: string
+          nullable: true
+    dtos.GetRestoreByIdDto:
+      type: object
+      properties:
+        restore_job_name:
+          type: string
+        restore_job_id:
+          type: integer
+        restore_execution_id:
+          type: integer
+        status:
+          $ref: '#/components/schemas/enums.JobStatus'
+        status_details:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        errors:
+          type: array
+          items:
+            type: string
+        warnings:
+          type: array
+          items:
+            type: string
+        restored_objects_status:
+          type: array
+          items:
+            type: object
+        restore_execution_sub_tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/dtos.GetRestoreExecutionSubTaskDto'
+        dr_site_id:
+          type: string
+        snapshot_name:
+          type: string
+          nullable: true
+        snapshot_size:
+          type: string
+          nullable: true
+        source_site_id:
+          type: string
+          nullable: true
+        target_site:
+          type: string
+          nullable: true
+        is_failover:
+          type: boolean
+          default: false
+    dtos.GetRestoreExecutionSubTaskDto:
+      type: object
+      properties:
+        sub_task_name:
+          type: string
+        status:
+          type: string
+        status_details:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        restore_size:
+          type: integer
+    enums.JobStatus:
+      type: string
+      enum:
+        - SUCCESSFUL
+        - ABORTED
+        - ABORTING
+        - CMD_ISSUED_FAILED
+        - NOT_VALID
+        - RUNNING
+        - COMPLETED_WITH_WARNINGS
+        - QUEUED
+        - COMPLETED_WITH_ERRORS
+        - FAILED
+        - NEW
+        - MIGRATED
+        - PAUSED
+        - PAUSING
+        - INVALID
+        - COPY_STARTED
+        - COPY_FAILED
+      x-enum-varnames:
+        - Complete
+        - Aborted
+        - Aborting
+        - CmdIssuedFailed
+        - NotValid
+        - NotResponding
+        - NotStarted
+        - Running
+        - CompletedWithWarnings
+        - Queued
+        - CompletedWithErrors
+        - Failed
+        - New
+        - Migrated
+        - Paused
+        - Pausing
+        - Invalid
+        - CopyStarted
+        - CopyFailed
+    enums.BackupType:
+      type: string
+      enum:
+      - FULL
+      - BACKUP_DR
+      - SNAPSHOT
+      - SNAPSHOT_DR
+      x-enum-varnames:
+      - FULL
+      - BACKUP_DR
+      - SNAPSHOT
+      - SNAPSHOT_DR
+    enums.DataBaseObjectParentType:
+      type: string
+      enum:
+      - DATABASE
+      - USER
+      - BACKUP_JOB
+      x-enum-varnames:
+      - ParentDatabase
+      - ParentUser
+      - ParentBackupJob
+    enums.DataBaseObjectType:
+      type: string
+      enum:
+      - DATABASE
+      - TABLE
+      - USER
+      - MACRO
+      - VIEW
+      - STANDARD_FUNCTION
+      - TRIGGER
+      - AUTHORIZATION
+      - HASH_INDEX
+      - JAR
+      - JOIN_INDEX
+      - STORED_PROCEDURE
+      - AGGREGATE_FUNCTION
+      - COMBINED_AGGREGATE_FUNCTIONS
+      - EXTERNAL_PROCEDURE
+      - GLOP_SET
+      - INSTANCE_OR_CONSTRUCTOR_METHOD
+      - JOURNAL
+      - NO_PI_TABLE
+      - ORDERED_ANALYTICAL_FUNCTION
+      - QUEUE_TABLE
+      - TABLE_FUNCTION
+      - TABLE_OPERATOR
+      - USER_DEFINED_METHOD
+      - USER_DEFINED_DATA_TYPE
+      - SERVER_OBJECT
+      - USER_INSTALLED_FILE
+      - CONTRACT_FUNCTION
+      x-enum-varnames:
+      - Database
+      - Table
+      - User
+      - Macro
+      - View
+      - StandardFunction
+      - Trigger
+      - Authorization
+      - HashIndex
+      - Jar
+      - JoinIndex
+      - StoredProcedure
+      - AggregateFunction
+      - CombinedAggregateFunctions
+      - ExternalProcedure
+      - GlopSet
+      - InstanceOrConstructorMethod
+      - Journal
+      - NoPiTable
+      - OrderedAnalyticalFunction
+      - QueueTable
+      - TableFunction
+      - TableOperator
+      - UserDefinedMethod
+      - UserDefinedDataType
+      - ServerObject
+      - UserInstalledFile
+      - ContractFunction
+    enums.JobLifeCycle:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - CREATED_SUCCESSFULLY
+      - CREATE_FAILED
+      - UPDATE_IN_PROGRESS
+      - DELETE_IN_PROGRESS
+      - DELETED
+      - MIGRATED
+      - DELETE_FAILED
+      - CMEK_WHITELISTING_PENDING
+      x-enum-varnames:
+      - InProgress
+      - CreatedSuccessfully
+      - CreateFailed
+      - UpdateInProgress
+      - DeleteInProgress
+      - Deleted
+      - JobLifeCycleMigrated
+      - DeleteFailed
+      - CMEKWhitelistingPending
+    enums.JobType:
+      type: string
+      enum:
+      - RESTORE
+      - REPLICATION
+      - BACKUP
+      x-enum-varnames:
+      - Restore
+      - Replication
+      - Backup
+    enums.SiteTargetType:
+      type: string
+      enum:
+      - AWS
+      - AZURE
+      - GCP
+      - TMC
+      x-enum-varnames:
+      - AWS
+      - AZURE
+      - GCP
+      - TMC
+    enums.RunType:
+      type: string
+      enum:
+      - FULL
+      - DELTA
+      x-enum-varnames:
+      - FULL
+      - DELTA
+    enums.BackupMechanism:
+      type: string
+      enum:
+      - DSA
+      - CDP
+      x-enum-varnames:
+      - DSA
+      - CDP
+    enums.BackupSetReplicationStatus:
+      type: string
+      enum:
+      - FAILED
+      - COMPLETED
+      - PENDING
+      x-enum-varnames:
+      - FAILED
+      - COMPLETED
+      - PENDING
+    responses.ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+
+security:
+  - BasicAuth: []  # <-- use the same name here
