@@ -1,7 +1,7 @@
 openapi: "3.0.1"
 info:
   title: "Teradata Backup as a Service - Enterprise APIs"
-  version: "20250501"
+  version: "v2 as of 20250501"
   description: |
         "Backup as a Service (BaaS) - Enterprise APIs"
         
