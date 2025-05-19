@@ -38,9 +38,9 @@ export default function SelectComponent() {
     }
 
     if (selectedIndex === '0') {
-      window.location.href = '/ai-unlimited';
+      window.location.href = '/ai-unlimited/install-ai-unlimited';
     } else if (selectedIndex === '1') {
-      window.location.href = '/ai-unlimited/fabric';
+      window.location.href = '/ai-unlimited/fabric/get-started';
     }
   };
 
