@@ -8,6 +8,9 @@ export default function SelectComponent() {
   const location = useLocation();
   const normalizePath = (path) => path.replace(/\/$/, '');
   const currentPath = normalizePath(location.pathname);
+  const aiUnlimitedUrl = useBaseUrl('/ai-unlimited/install-ai-unlimited');
+  const fabricUrl = useBaseUrl('/ai-unlimited/fabric/get-started');
+
   const pathsNoAlert = normalizePath(`/quickstarts/`);
   const shouldDisplayAlert = !currentPath.includes(pathsNoAlert);
 
@@ -38,9 +41,9 @@ export default function SelectComponent() {
     }
 
     if (selectedIndex === '0') {
-      window.location.href = '/ai-unlimited/install-ai-unlimited';
+      window.location.href = aiUnlimitedUrl;
     } else if (selectedIndex === '1') {
-      window.location.href = '/ai-unlimited/fabric/get-started';
+      window.location.href = fabricUrl;
     }
   };
 
