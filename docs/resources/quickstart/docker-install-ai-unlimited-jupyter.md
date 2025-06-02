@@ -98,12 +98,12 @@ This QuickStart uses the first method.
 	<Tabs>
 		<TabItem value="aws" label="AWS" default>
 		```bash title="Run the Docker Compose file in the background "
-		docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml -d up 
+		docker compose -f ai-unlimited.yaml -f aws-credentials-env-vars.yaml -f jupyter.yaml up -d
 		```
 		</TabItem>
 		<TabItem value="azure" label="Azure">
 		```bash title="Run the Docker Compose file in the background "
-		docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml -d up
+		docker compose -f ai-unlimited.yaml -f azure-credentials-env-vars.yaml -f jupyter.yaml up -d
 		```
 		</TabItem>
 	</Tabs>
