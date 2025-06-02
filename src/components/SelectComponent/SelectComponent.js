@@ -41,6 +41,7 @@ export default function SelectComponent() {
     useBaseUrl('/ai-unlimited/resources/quickstart/run-ai-unlimited-jupyterlab-docker'),
     useBaseUrl(`/ai-unlimited/resources/quickstart/docker-when-you're-done`),
     useBaseUrl('/ai-unlimited/whats-new'),
+    useBaseUrl('/ai-unlimited/whats-new/release-notes'),
     useBaseUrl('/ai-unlimited/faq'),
     useBaseUrl('/ai-unlimited/glossary'),
     useBaseUrl('/ai-unlimited/support'),
@@ -55,6 +56,7 @@ export default function SelectComponent() {
     useBaseUrl('/ai-unlimited/fabric/first-use-case'),
     useBaseUrl('/ai-unlimited/fabric/in-db-functions'),
   ];
+  
   useEffect(() => {
     if (selectedOptionZeroPaths.includes(currentPath)) {
       setSelectedOption('0');
