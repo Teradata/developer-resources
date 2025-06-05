@@ -35,7 +35,7 @@ export default function GetStarted() {
  
      
 
-        <div className={clsx('row', styles.row)}>
+        <div className={clsx(styles.row2)}>
           <div className='col'>
             <TabBar className={clsx(styles.chipSet)}>
               <Tab label={translate({ message: 'developers.data-scientist' })}>
