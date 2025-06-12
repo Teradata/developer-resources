@@ -417,3 +417,20 @@ html[data-navbar='false'] .navbar {
     top: 57px;
   }
 }
+
+a[href^="http"]:not([href*="your-domain.com"])::after {
+  content: '↗';
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-size: 0.75em;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+
+@media (max-width: 400px) {
+  a[href^="http"]:not([href*="your-domain.com"])::after {
+    font-size: 0.7em;
+    margin-left: 0.2rem;
+  }
+}
