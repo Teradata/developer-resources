@@ -19,7 +19,7 @@ function FeatureStayUpToDate({ img, img2, title, description, href }) {
           <Heading as="h3">{title}</Heading>
         </div>
         
-        {description && <p className={styles.text}>{description}</p>}
+        {description && <p>{description}</p>}
       </div>
     </Link>
   );
