@@ -418,7 +418,7 @@ html[data-navbar='false'] .navbar {
   }
 }
 
-a[href^="http"]:not([href*="your-domain.com"])::after {
+a[href^="http"]:not([href*="developers.teradata.com"])::after {
   content: '↗';
   display: inline-block;
   margin-left: 0.25rem;
@@ -429,7 +429,7 @@ a[href^="http"]:not([href*="your-domain.com"])::after {
 
 
 @media (max-width: 400px) {
-  a[href^="http"]:not([href*="your-domain.com"])::after {
+  a[href^="http"]:not([href*="developers.teradata.com"])::after {
     font-size: 0.7em;
     margin-left: 0.2rem;
   }
