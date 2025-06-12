@@ -350,3 +350,14 @@ a.col {
     max-width: 50%;
   }
 }
+
+@media screen and (min-width: 1025px) {
+  .text{
+    height: 156px;
+  }
+}
+@media screen and (min-width: 1225px) {
+  .text{
+    height: 130px;
+  }
+}
