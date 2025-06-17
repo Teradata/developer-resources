@@ -23,7 +23,7 @@
     "@docusaurus/preset-classic": "3.2.0",
     "@docusaurus/theme-mermaid": "3.2.0",
     "@mdx-js/react": "^3.0.0",
-    "@teradata-web/react-components": "1.15.0",
+    "@teradata-web/react-components": "1.16.0",
     "@covalent/components": "^10.0.4",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
