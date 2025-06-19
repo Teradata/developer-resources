@@ -417,3 +417,15 @@ html[data-navbar='false'] .navbar {
     top: 57px;
   }
 }
+
+.markdown a[target=_blank]::after {
+  content: "open_in_new";
+  display: inline-block;
+  font-family: var(--mdc-icon-font, "Material Symbols Outlined");
+  font-size: .875rem;
+  line-height: 1rem;
+  padding-left: 1px;
+  position: relative;
+  text-decoration: none;
+  top: 2px;
+}
