@@ -387,7 +387,6 @@ html.plugin-search-algolia .main-wrapper .container {
   html:not(.plugin-pages) .main-wrapper {
     padding: 0 6.625rem 0;
     margin: 0 auto;
-    width: 100%;
   }
 
   html:not(.plugin-pages).plugin-search-algolia .main-wrapper {
