@@ -383,6 +383,7 @@ html.plugin-search-algolia .main-wrapper .container {
   }
 }
 
+
 @media screen and (min-width: 1025px) {
   html:not(.plugin-pages) .main-wrapper {
     padding: 0 6.625rem 0;
@@ -399,6 +400,11 @@ html.plugin-search-algolia .main-wrapper .container {
 
   html:not(.plugin-pages).plugin-search-algolia .main-wrapper .container {
     padding: 0 6.625rem;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1125px) {
+  html:not(.plugin-pages) .main-wrapper {
+    padding: 0 1.63rem;
   }
 }
 
