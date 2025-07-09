@@ -3,6 +3,7 @@ import { Card, Typography } from '@teradata-web/react-components';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';  
 import clsx from 'clsx';
+import { useLocation } from 'react-router-dom';
 
 function BannerContent() {
     return (
@@ -29,11 +30,22 @@ function BannerContent() {
 }
 
 export default function PossibleBanner() {
+    const location = useLocation();
+    const normalizePath = (path) => path.replace(/\/$/, ''); 
+    const currentPath = normalizePath(location.pathname);
+    let link = '';
+
+    if (currentPath === normalizePath(`/quickstarts`)) {
+        link = 'https://www.teradata.com/events/possible?utm_source=developer-site&utm_medium=display&utm_campaign=gbl-possible-devrel&utm_content=developer-quickstarts&utm_id=701V500000HTemgIAD';
+    } else{
+        link = 'https://www.teradata.com/events/possible?utm_source=developer-site&utm_medium=display&utm_campaign=gbl-possible-devrel&utm_content=developer-portal&utm_id=701V500000HTemgIAD';
+    }
+    
     return (
         <section className={clsx('container', styles.container)}>
             <a
                 className={styles.possibleBannerLink}
-                href="https://www.teradata.com/events/possible"
+                href={link}
                 target="_blank"
                 aria-label={translate({
                     message: 'home_page.possible_banner_title',

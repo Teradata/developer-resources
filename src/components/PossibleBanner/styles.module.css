@@ -102,3 +102,54 @@
     max-width: 1440px;
   }
 }
+
+
+/*Secondary Banner*/
+@media (max-width: 996px) {
+  .secondaryBanner {
+    background: #DFE1F9;
+    height: 50px;
+  }
+}
+
+@media (min-width: 997px) {
+  .secondaryBanner {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    height: 50px;
+    background: #DFE1F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .bannerText {
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-weight: 600;
+    line-height: normal; 
+    color: #171A2C;
+  }
+  .bannerTextLink{
+    color: #171A2C;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+}
