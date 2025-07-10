@@ -12,7 +12,11 @@ const SecondaryBanner = () => {
         normalizePath(`/quickstarts`),
     ];
     const shouldDisplayAlert = !paths.includes(currentPath);
-    
+    console.log("paths:", paths);
+    console.log("currentPath:", currentPath);
+    console.log("shouldDisplayAlert:", shouldDisplayAlert);
+    console.log(currentPath, paths)
+
     if (!shouldDisplayAlert) return null;
 
     const quickstartsLink = "https://www.teradata.com/events/possible?utm_source=developer-site&utm_medium=display&utm_campaign=gbl-possible-devrel&utm_content=developer-quickstarts&utm_id=701V500000HTemgIAD";
