@@ -113,7 +113,11 @@
     margin-bottom: -100px;
     color: #171A2C;
     text-align: center;
-
+  }
+    .bannerTextLink{
+    text-decoration: underline;
+    color: #171A2C;
+    font-weight: 400;
   }
 }
 

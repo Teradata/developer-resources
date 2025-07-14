@@ -2,23 +2,25 @@ import styles from './styles.module.css';
 import { useLocation } from 'react-router-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
+const normalizePath = (path) => path.replace(/\/+$/, '');
+
 const SecondaryBanner = () => {
-    const location = useLocation();
-    const { i18n } = useDocusaurusContext();
+  const location = useLocation();
+  const { i18n } = useDocusaurusContext();
   const currentPath = location.pathname.replace(/\/+$/, '');
+  const developerPath = ``;
+  const quickstartsPath = `/quickstarts`;
+  const aiUnlimitedPath = `/ai-unlimited`;  
+  const pathsNoAlert = [
+    normalizePath(`/${i18n.currentLocale}`),
+    normalizePath(`/${i18n.currentLocale}/ai-unlimited`),
+    normalizePath(`/${i18n.currentLocale}/quickstarts`),
+  ];
+  let shouldDisplayAlert = true;
 
-  const hiddenExactPaths = [
-  '', // para la raíz '/'
-  `/${i18n.currentLocale}`,
-  '/ai-unlimited',
-  `/${i18n.currentLocale}/ai-unlimited`,
-  '/quickstarts',
-  `/${i18n.currentLocale}/quickstarts`,
-];
-
-  const isExactPath = (path) => currentPath === path.replace(/\/+$/, '');
-  const shouldDisplayAlert = !hiddenExactPaths.some(isExactPath);
-
+  if (currentPath === developerPath || currentPath === quickstartsPath || currentPath === aiUnlimitedPath || pathsNoAlert.includes(currentPath)) {
+    shouldDisplayAlert = false;
+  } 
 
   if (!shouldDisplayAlert) return null;
 
