@@ -1,19 +1,24 @@
 import styles from './styles.module.css';  
 import { useLocation } from 'react-router-dom';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const SecondaryBanner = () => {
-  const location = useLocation();
-  const currentPath = location.pathname.replace(/\/+$/, ''); 
+    const location = useLocation();
+    const { i18n } = useDocusaurusContext();
+  const currentPath = location.pathname.replace(/\/+$/, '');
 
   const hiddenExactPaths = [
-    '',
-    '/',
-    '/quickstarts',
-    '/ai-unlimited'
-  ];
+  '', // para la raíz '/'
+  `/${i18n.currentLocale}`,
+  '/ai-unlimited',
+  `/${i18n.currentLocale}/ai-unlimited`,
+  '/quickstarts',
+  `/${i18n.currentLocale}/quickstarts`,
+];
 
   const isExactPath = (path) => currentPath === path.replace(/\/+$/, '');
   const shouldDisplayAlert = !hiddenExactPaths.some(isExactPath);
+
 
   if (!shouldDisplayAlert) return null;
 

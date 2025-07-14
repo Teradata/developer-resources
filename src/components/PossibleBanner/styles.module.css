@@ -109,6 +109,11 @@
   .secondaryBanner {
     background: #DFE1F9;
     height: 50px;
+    margin-top: 107px;
+    margin-bottom: -100px;
+    color: #171A2C;
+    text-align: center;
+
   }
 }
 
