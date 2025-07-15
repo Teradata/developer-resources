@@ -1,27 +1,27 @@
 import styles from './styles.module.css';  
 import { useLocation } from 'react-router-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-const normalizePath = (path) => path.replace(/\/+$/, '');
 
 const SecondaryBanner = () => {
   const location = useLocation();
   const { i18n } = useDocusaurusContext();
-  const currentPath = location.pathname.replace(/\/+$/, '');
-  const developerPath = ``;
-  const quickstartsPath = `/quickstarts`;
-  const aiUnlimitedPath = `/ai-unlimited`;  
+  const normalizePath = (path) => path.replace(/\/+$/, '');
+  const currentPath = normalizePath(location.pathname);
+  const quickstartsPath = useBaseUrl('/quickstarts');
+  const aiUnlimitedPath = useBaseUrl('/ai-unlimited');
+  const baseLocale = useBaseUrl(`/${i18n.currentLocale}`);
   const pathsNoAlert = [
-    normalizePath(`/${i18n.currentLocale}`),
-    normalizePath(`/${i18n.currentLocale}/ai-unlimited`),
-    normalizePath(`/${i18n.currentLocale}/quickstarts`),
+    normalizePath(baseLocale),
+    normalizePath(`${baseLocale}/ai-unlimited`),
+    normalizePath(`${baseLocale}/quickstarts`),
+    normalizePath(quickstartsPath),
+    normalizePath(aiUnlimitedPath),
+    normalizePath(useBaseUrl('/')), 
   ];
-  let shouldDisplayAlert = true;
 
-  if (currentPath === developerPath || currentPath === quickstartsPath || currentPath === aiUnlimitedPath || pathsNoAlert.includes(currentPath)) {
-    shouldDisplayAlert = false;
-  } 
-
+  const shouldDisplayAlert = !pathsNoAlert.includes(currentPath);
   if (!shouldDisplayAlert) return null;
 
   const quickstartsLink = "https://www.teradata.com/events/possible?utm_source=developer-site&utm_medium=display&utm_campaign=gbl-possible-devrel&utm_content=developer-quickstarts&utm_id=701V500000HTemgIAD";
