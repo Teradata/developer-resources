@@ -31,7 +31,6 @@ const SecondaryBanner = () => {
       <span className={styles.bannerText}>
         Learn how to build the future of AI at Possible 2025.
       </span>
-      &nbsp;
       <a className={styles.bannerTextLink} href={quickstartsLink} target="_blank" rel="noopener noreferrer">
         Register now
       </a>

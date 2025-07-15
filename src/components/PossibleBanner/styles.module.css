@@ -113,11 +113,25 @@
     margin-bottom: -100px;
     color: #171A2C;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
     .bannerTextLink{
     text-decoration: underline;
     color: #171A2C;
+    font-size: 12px;
     font-weight: 400;
+  }
+   .bannerText {
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-weight: 600;
+    line-height: normal; 
+    color: #171A2C;
   }
 }
 
@@ -145,6 +159,7 @@
     font-weight: 600;
     line-height: normal; 
     color: #171A2C;
+    padding-right: 0.5rem;
   }
   .bannerTextLink{
     color: #171A2C;
