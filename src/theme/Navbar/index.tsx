@@ -18,6 +18,7 @@ import SearchBar from '../SearchBar';
 import MatDisclaimer from '../../components/MatDisclaimer';
 import SelectComponent from '../../components/SelectComponent/SelectComponent';
 import '../DocSidebar/styles.css';
+import SecondaryBanner from '../../components/PossibleBanner/secondaryBanner';
 
 function translateNavItems(navItems: NavListItem[]): NavListItem[] {
   const location = useLocation();
@@ -162,6 +163,7 @@ export default function Navbar() {
         selectedLanguage={defaultLang}
         secondaryMenu={secondaryMenuDetails}
       ></Header>
+      <SecondaryBanner />
       <MatDisclaimer />
     </>
   );
