@@ -83,7 +83,7 @@ To begin querying:
 
 Click the upper orange arrow to execute the SQL query, or press `Command + Return` (macOS) or `Ctrl + Enter` (Windows).
 
-![query](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/query.png)
+![Query](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/query.png)
 
 
 ## Recommended DBeaver Settings for Teradata Users
@@ -141,6 +141,49 @@ Window -> Preferences -> Editors -> Data Editor
 Check **Use column names instead of column labels**.
 
 ![Column Names](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/column_names.png)
+
+
+## How-to
+
+### Display the Sum, Min, Max, etc. of a Column
+
+After running a query, click the **Calc** button under the **Panels** menu on the right side of the Answer Set.  
+
+
+![Calc](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/calc.png)
+
+You may see existing calculations such as *Count*. Click the **plus (+)** sign to add more.
+
+
+![Add Calculation](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/add_calc.png)
+
+### Change Shortcut Keys
+
+To reassign keyboard shortcuts (e.g., run a query with `F5` instead of `Ctrl+Enter`):
+
+1. Go to `Window` → `Preferences`
+2. Search for **Keys** in the search bar and select `Execute SQL query`
+3. In the **Binding** section:
+   - Remove `Ctrl+Enter`
+   - Press the desired key (e.g., `F5`)
+   - Click **Apply and Close**
+
+
+  ![Change Shortcut Keys](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/change_shortcut_keys.png)
+
+
+## FAQ
+
+| **Question** | **Answer** |
+|--------------|------------|
+| How do I copy both headers and data from results? | Select the data, press `Ctrl+Shift+C`, then click **OK** |
+| How can I get all rows of data from a query? | DBeaver limits results to 2k rows by default. Right-click the results and select **Read All Rows** or change the limit in settings  ![Select ALL Rows in Query](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/select_all_rows.png)|
+| How do I duplicate a connection? | Right-click the existing connection and choose **Copy/Paste** |
+| How do I run multiple DDL/DML statements? | Use **Execute SQL Script** instead of **Execute SQL Query** |
+| How do I change the date format in results? | Teradata defaults to `YYYY-MM-DD`. To change formats, follow DBeaver’s [Managing Data Formats](https://dbeaver.com/docs/dbeaver/Managing-Data-Formats/) guide |
+| How can I run parameterized SQL queries (prompted SQL)? | Go to `Editors` → `SQL Editor` → `SQL Processing`, then enable:<br />• **Anonymous SQL parameters**<br />• **Enable parameters in DDL and $$..$$ blocks**<br /><br />Example: `SELECT * FROM my_table WHERE column = :PARAM;` |
+| How do I rename a connection? | Right-click the connection and choose **Rename** |
+
 
 ## Summary
 
