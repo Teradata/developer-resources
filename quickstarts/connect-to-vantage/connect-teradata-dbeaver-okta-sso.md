@@ -33,7 +33,7 @@ It also provides recommended DBeaver settings to optimize the experience for Ter
 
 2. In the **Select your database** screen, type `teradata`, select the **Teradata** connector, and click **Next**.
 
-   ![Select Teradata connector](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/select_teradata_connector_new.png)
+   ![Select Teradata connector](../other-integrations/images/configure-a-teradata-connection-in-dbeaver/teradata_connector.png)
 
 3. Change **Connect by** value from `Host` to `URL`.
 
