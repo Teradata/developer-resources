@@ -49,7 +49,9 @@ const trackingScripts = [
     // Add Celebrus script
     tagName: 'script',
     attributes: {
+      defer: 'true',
       src: 'https://www.teradata.com/js/Celebrus/bsci.js',
+      async: 'true',
     },
   },
 ];
