@@ -25,11 +25,10 @@ When cost-based join pushdown is enabled, the connector only pushes down join op
 
 The following table describes catalog configuration properties for join pushdown.
 
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1    | Row 1    | Row 1    |
-| Row 2    | Row 2    | Row 2    |
-| Row 3    | Row 3    | Row 3    |
+| Property name           | Description                                                                 | Default value |
+|-------------------------|-----------------------------------------------------------------------------|---------------|
+| join-pushdown.enabled  | Enable join pushdown. `join_pushdown_enabled` is the equivalent catalog session property. | true          |
+| join-pushdown.strategy | Strategy used to evaluate whether join operations are pushed down. Set to `AUTOMATIC` to enable cost-based join pushdown, or `EAGER` to pushdown joins. Note that `EAGER` can push down joins even when table statistics are unavailable. | AUTOMATIC |
 
 The connector does not support pushdown of range predicates, such as ```>```, ```<```, or ```BETWEEN```, on columns with character string types like ```CHAR``` or ```VARCHAR```. Equality predicates, such as ```IN``` or ```=```, and inequality predicates, such as ```!=``` on columns with textual types are pushed down. This ensures correctness of results since the remote data source may sort strings differently than Trino.
 
@@ -64,7 +63,7 @@ Predicate pushdown optimizes row-based filtering. It uses filtering specified in
 
 The predicate pushdown supports SQL statements with following arithmetic, boolean, comparision operators and functions.
 
-* =
+* \=
 
 * <>
 
