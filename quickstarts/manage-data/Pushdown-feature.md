@@ -32,6 +32,7 @@ The following table describes catalog configuration properties for join pushdown
 
 The connector does not support pushdown of range predicates, such as ```>```, ```<```, or ```BETWEEN```, on columns with character string types like ```CHAR``` or ```VARCHAR```. Equality predicates, such as ```IN``` or ```=```, and inequality predicates, such as ```!=``` on columns with textual types are pushed down. This ensures correctness of results since the remote data source may sort strings differently than Trino.
 
+
 ## Limit pushdown
 A LIMIT reduces the number of returned rows for a SQL SELECT statement. Limit pushdown enables connector to push processing of such queries of unsorted records to Teradata. A pushdown of this clause can improve the performance of the query and significantly reduce the amount of data transferred from Teradata to Trino.
 
