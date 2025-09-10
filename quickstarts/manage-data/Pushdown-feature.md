@@ -69,7 +69,7 @@ The predicate pushdown supports SQL statements with following arithmetic, boolea
 
 * <
 
-* <=
+* <\=
 
 * \>
 
