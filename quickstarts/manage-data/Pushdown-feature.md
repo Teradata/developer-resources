@@ -63,43 +63,43 @@ Predicate pushdown optimizes row-based filtering. It uses filtering specified in
 
 The predicate pushdown supports SQL statements with following arithmetic, boolean, comparision operators and functions.
 
-* =
+* `=`
 
-* <>
+* `<>`
 
-* <
+* `<`
 
-* <=
+* `<=`
 
-* \>
+* `>`
 
-* \>=
+* `>=`
 
-* \+
+* `+`
 
-* \-
+* `-`
 
-* \*
+* `*`
 
-* /
+* `/`
 
-* MOD
+* `MOD`
 
-* -Value
+* `-Value`
 
-* IS NOT NULL
+* `IS NOT NULL`
 
-* NOT
+* `NOT`
 
-* IS NULL
+* `IS NULL`
 
-* NULLIF
+* `NULLIF`
 
-* IN
+* `IN`
 
-* LIKE
+* `LIKE`
 
-* LIKE ESCAPE
+* `LIKE ESCAPE`
 
 ## Aggregate pushdown
 Teradata supports Aggregation pushdown for below specified cases.
