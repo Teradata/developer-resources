@@ -63,13 +63,13 @@ Predicate pushdown optimizes row-based filtering. It uses filtering specified in
 
 The predicate pushdown supports SQL statements with following arithmetic, boolean, comparision operators and functions.
 
-* \=
+* =
 
 * <>
 
 * <
 
-* <\=
+* <=
 
 * \>
 
