@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { Typography } from '@teradata-web/react-components';
 import { translate } from '@docusaurus/Translate';
-import PossibleBanner from '../PossibleBanner';
 
 const FeatureTitle = translate({ message: 'home_page.categories' });
 const Guides = [
@@ -103,7 +102,6 @@ function Feature2({ title, description, href }) {
 export default function Categories() {
   return (
     <>
-      <PossibleBanner />
       <section className={clsx(styles.features, styles.fGuides)}>
         <div className={clsx('container', styles.container)}>
             <br/>
