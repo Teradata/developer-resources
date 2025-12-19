@@ -131,6 +131,7 @@ const config = {
         sidebarPath: './sidebars.js',
       },
     ],
+    './plugins/gtm-plugin',
   ],
 
   presets: [
