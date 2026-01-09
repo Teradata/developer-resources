@@ -1,0 +1,41 @@
+.footer-custom-scope [class*="socialLink_"] {
+    align-items: center;
+    background: #00233c;
+    border-radius: 100%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    height: 36px;
+    justify-content: center;
+    margin: 0 12px 0 0;
+    width: 36px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.footer-custom-scope [class*="socialLink_"]:hover {
+    background-color: #FF5F02;
+}
+
+.footer-custom-scope [class*="socialLink_"] svg,
+.footer-custom-scope [class*="socialLink_"] path {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+    height: 16px !important;
+    width: 16px !important;
+    max-width: 16px !important;
+    transition: all .5s ease;
+}
+
+.footer-custom-scope a[href*="medium"] svg,
+.footer-custom-scope a[href*="medium"] path {
+    height: 20px !important;
+    width: 20px !important;
+    max-width: 20px !important;
+}
+
+.footer-custom-scope [class*="socialLink_"]:hover svg,
+.footer-custom-scope [class*="socialLink_"]:hover path {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}

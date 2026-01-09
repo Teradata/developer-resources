@@ -19,246 +19,323 @@ export default function footerItems(currentLocale = 'en') {
   return {
     links: [
       {
-        title: 'footer.why_teradata_title',
+        title: 'Why Teradata',
         items: [
           {
-            label: 'footer.why_teradata',
             href: `https://${footerBaseUrl}/why-teradata`,
+            label: "Why we're trusted"
           },
           {
-            label: 'footer.trusted_ai',
-            href: `https://${footerBaseUrl}/trusted-ai`,
+            href: `https://${footerBaseUrl}/trust-security-center`,
+            label: 'Trust & Security Center'
           },
           {
-            label: 'footer.industries',
-            href: `https://${footerBaseUrl}/industries`,
-          },
-          {
-            label: 'footer.partners',
-            href: `https://${footerBaseUrl}/partners`,
-          },
-          {
-            label: 'footer.partner_registration',
-            external: true,
-            href: `https://${footerBaseUrl}/getattachment/49d347ac-d544-4a6c-9db3-27c9cd2d5afd/new-user-registration-instructions-for-td-partner-community.pdf?lang=en-us`,
-          },
-          {
-            label: 'footer.partner_portal_login',
-            external: true,
-            href: 'https://teradata.my.site.com/teradataPRM/s/login/',
-          },
-          {
-            label: 'footer.solutions',
-            href: `https://${footerBaseUrl}/solutions/business-use-cases`,
-          },
-          {
-            label: 'footer.success_stories',
             href: `https://${footerBaseUrl}/customers`,
+            label: 'Success stories'
           },
           {
-            label: 'footer.services',
-            href: `https://${footerBaseUrl}/how-we-help/teradata-services`,
-          },
-        ],
-      },
-      {
-        title: 'footer.our_platform',
-        items: [
-          {
-            label: 'footer.platform',
-            href: `https://${footerBaseUrl}/platform`,
+            href: `https://${footerBaseUrl}/about-us/awards`,
+            label: 'Awards & recognition'
           },
           {
-            label: 'footer.vantagecloud',
-            href: `https://${footerBaseUrl}/platform/vantagecloud`,
+            href: `https://${footerBaseUrl}/insights/analyst-content`,
+            label: 'Analyst reports'
           },
           {
-            label: 'footer.clearscape_analytics',
-            href: `https://${footerBaseUrl}/platform/clearscape-analytics`,
+            href: `https://${footerBaseUrl}/why-teradata/business-value`,
+            label: 'Business value & ROI'
           },
           {
-            label: 'footer.unleash_ai_innovation',
-            href: `https://${footerBaseUrl}/platform/ai-ml`,
-          },
-          {
-            label: 'footer.workloads',
-            href: `https://${footerBaseUrl}/platform/workloads`,
-          },
-          {
-            label: 'footer.deployment',
             href: `https://${footerBaseUrl}/platform/deployment`,
-          },
-        ],
+            label: 'Deployment'
+          }
+        ]
       },
       {
-        title: 'footer.getting_started',
+        title: 'Product',
         items: [
           {
-            label: 'footer.pricing',
+            href: `https://${footerBaseUrl}/platform/vantagecloud`,
+            label: 'Teradata VantageCloud'
+          },
+          {
+            href: `https://${footerBaseUrl}/platform/deployment/on-premises`,
+            label: 'Teradata on premises'
+          },
+          {
+            href: `https://${footerBaseUrl}/platform/ai-unlimited`,
+            label: 'Teradata AI Unlimited'
+          },
+          {
+            href: `https://${footerBaseUrl}/platform/clearscape-analytics`,
+            label: 'ClearScape Analytics'
+          },
+          {
+            href: `https://${footerBaseUrl}/platform/workloads`,
+            label: 'Workloads'
+          },
+          {
             href: `https://${footerBaseUrl}/getting-started/pricing`,
-          },
-          {
-            label: 'footer.demos',
-            href: `https://${footerBaseUrl}/getting-started/demos`,
-          },
-          {
-            label: 'footer.modernization_workshop',
-            href: `https://${footerBaseUrl}/getting-started/modernization-workshop`,
-          },
-          {
-            label: 'footer.executive_briefing_center',
-            href: `https://${footerBaseUrl}/getting-started/executive-briefing-center`,
-          },
-          {
-            label: 'footer.events',
-            href: `https://${footerBaseUrl}/events`,
-          },
-          {
-            label: 'footer.learning',
-            href: `https://${footerBaseUrl}/university`,
-          },
-        ],
+            label: 'Consumption pricing'
+          }
+        ]
       },
       {
-        title: 'footer.insights',
+        title: 'Solutions',
         items: [
           {
-            label: 'footer.ai_ml',
+            href: `https://${footerBaseUrl}/industries`,
+            label: 'Industries'
+          },
+          {
+            href: `https://${footerBaseUrl}/solutions/customer-experience`,
+            label: 'Customer experience (CX)'
+          },
+          {
+            href: `https://${footerBaseUrl}/solutions/finance-transformation`,
+            label: 'Finance transformation'
+          },
+          {
+            href: `https://${footerBaseUrl}/solutions/fraud-prevention`,
+            label: 'Fraud prevention'
+          },
+          {
+            href: `https://${footerBaseUrl}/solutions/dynamic-supply-chain`,
+            label: 'Supply chain logistics'
+          },
+          {
+            href: `https://${footerBaseUrl}/solutions/business-use-cases`,
+            label: 'Use cases'
+          },
+          {
+            href: `https://${footerBaseUrl}/partners`,
+            label: 'Partners'
+          },
+          {
+            href: 'https://teradata.my.site.com/teradataPRM/s/login/',
+            label: 'Partner portal login',
+            external: true,
+            icon: 'open_in_new'
+          },
+          {
+            href: `https://${footerBaseUrl}/why-teradata/teradata-services`,
+            label: 'Services'
+          }
+        ]
+      },
+      {
+        title: 'Resources',
+        items: [
+          {
             href: `https://${footerBaseUrl}/insights/ai-and-machine-learning`,
+            label: 'AI/ML'
           },
           {
-            label: 'footer.cloud_data_analytics',
-            href: `https://${footerBaseUrl}/insights/cloud-data-analytics`,
+            href: `https://${footerBaseUrl}/insights/data-analytics`,
+            label: 'Data Analytics'
           },
           {
-            label: 'footer.data_architecture',
             href: `https://${footerBaseUrl}/insights/data-architecture`,
+            label: 'Data architecture'
           },
           {
-            label: 'footer.data_platform',
             href: `https://${footerBaseUrl}/insights/data-platform`,
+            label: 'Data platform'
           },
           {
-            label: 'footer.data_security',
             href: `https://${footerBaseUrl}/insights/data-security`,
+            label: 'Data security'
           },
           {
-            label: 'footer.glossary',
-            href: `https://${footerBaseUrl}/glossary`,
+            href: `https://${footerBaseUrl}/university/overview`,
+            label: 'Teradata University'
           },
-        ],
+          {
+            href: `https://${footerBaseUrl}/insights/webinars`,
+            label: 'Webinars'
+          },
+          {
+            href: `https://${footerBaseUrl}/getting-started/demos`,
+            label: 'Demo hub'
+          },
+          {
+            href: 'https://developers.teradata.com/',
+            label: 'Developer portal',
+            external: true,
+            icon: 'open_in_new'
+          },
+          {
+            href: 'https://support.teradata.com/csm',
+            label: 'Support portal',
+            external: true,
+            icon: 'open_in_new'
+          }
+        ]
       },
       {
-        title: 'footer.about_us',
+        title: 'About us',
         items: [
           {
-            label: 'footer.who_we_are',
             href: `https://${footerBaseUrl}/about-us`,
+            label: 'Who we are'
           },
           {
-            label: 'footer.our_leadership',
             href: `https://${footerBaseUrl}/about-us/leadership`,
+            label: 'Our leadership'
           },
           {
-            label: 'footer.newsroom',
+            href: `https://${footerBaseUrl}/about-us/our-story`,
+            label: 'Our story'
+          },
+          {
+            href: `https://${footerBaseUrl}/about-us/environmental-social-governance`,
+            label: 'Sustainability'
+          },
+          {
+            href: `https://${footerBaseUrl}/about-us/inclusion-and-diversity`,
+            label: 'People & culture'
+          },
+          {
+            href: `https://${footerBaseUrl}/about-us/teradata-cares`,
+            label: 'Teradata Cares'
+          },
+          {
+            href: `https://${footerBaseUrl}/about-us/careers`,
+            label: 'Careers'
+          },
+          {
+            href: `https://${footerBaseUrl}/events`,
+            label: 'Events and webinars'
+          },
+          {
+            href: `https://${footerBaseUrl}/getting-started/executive-briefing-center`,
+            label: 'Executive Briefing Center'
+          },
+          {
             href: `https://${footerBaseUrl}/newsroom`,
+            label: 'Newsroom'
           },
           {
-            label: 'footer.careers',
+            href: 'https://investor.teradata.com',
+            label: 'Investors',
             external: true,
-            href: 'https://careers.teradata.com/?_gl=1*ebzjes*_ga*MjIwNzU5MDQuMTcxMDc3MDE3MQ..*_ga_7PE2TMW3FE*MTcxMjc3NjAwNy4yOS4wLjE3MTI3NzYwMDcuNjAuMC4w',
-          },
-          {
-            label: 'footer.investors',
-            external: true,
-            href: 'https://investor.teradata.com/?_gl=1*ebzjes*_ga*MjIwNzU5MDQuMTcxMDc3MDE3MQ..*_ga_7PE2TMW3FE*MTcxMjc3NjAwNy4yOS4wLjE3MTI3NzYwMDcuNjAuMC4w',
-          },
-        ],
-      },
+            icon: 'open_in_new'
+          }
+        ]
+      }
     ],
     socialLinks: {
-      title: 'footer.social_media',
+      title: 'Social media',
       items: [
         {
-          icon: 'linkedin',
+          external: true,
           href: 'https://www.linkedin.com/company/teradata',
-          label: 'footer.social_media.linkedin',
+          icon: 'linkedin',
+          label: 'LinkedIn'
         },
         {
-          icon: 'twitter',
+          external: true,
+          href: 'https://github.com/Teradata',
+          icon: 'github',
+          label: 'GitHub'
+        },
+        {
+          external: true,
+          href: 'https://medium.com/teradata',
+          icon: 'medium',
+          label: 'Medium'
+        },
+        {
+          external: true,
           href: 'https://twitter.com/teradata',
-          label: 'footer.social_media.twitter',
-          external: true,
+          icon: 'twitter',
+          label: 'Twitter'
         },
         {
-          icon: 'facebook',
-          href: 'https://www.facebook.com/Teradata',
-          label: 'footer.social_media.facebook',
           external: true,
-        },
-        {
-          icon: 'instagram',
-          href: 'https://www.instagram.com/teradata/',
-          label: 'footer.social_media.instagram',
-          external: true,
-        },
-        {
-          icon: 'youtube',
           href: 'https://www.youtube.com/user/teradata',
-          label: 'footer.social_media.youtube',
-          external: true,
+          icon: 'youtube',
+          label: 'YouTube'
         },
         {
-          icon: 'rss',
-          href: 'https://www.teradata.com/rss',
-          label: 'footer.social_media.rss',
           external: true,
+          href: 'https://www.facebook.com/Teradata',
+          icon: 'facebook',
+          label: 'Facebook'
         },
-      ],
+        {
+          external: true,
+          href: 'https://www.instagram.com/teradata/',
+          icon: 'instagram',
+          label: 'Instagram'
+        },
+        {
+          external: true,
+          href: 'https://www.teradata.com/rss',
+          icon: 'rss',
+          label: 'RSS'
+        }
+      ]
     },
     legalLinks: [
       {
-        label: 'footer.privacy',
+        href: `https://${footerBaseUrl}/sitemap`,
+        label: 'Sitemap',
+        celebrus: 'Legal - Sitemap'
+      },
+      {
         href: `https://${footerBaseUrl}/privacy`,
+        label: 'Privacy',
+        celebrus: 'Legal - Privacy'
       },
       {
-        label: 'footer.do_not_sell_share',
         href: `https://${footerBaseUrl}/privacy#do-not-sell-share`,
+        label: 'Don’t sell/share my info',
+        celebrus: 'Legal - Don’t sell/share my info'
       },
       {
-        label: 'footer.terms_of_use',
-        href: `https://${footerBaseUrl}/legal/terms-of-use`,
+        href: '#tracking-consent',
+        label: 'Tracking consent',
+        celebrus: 'Legal - Tracking consent'
       },
       {
-        label: 'footer.legal',
         href: `https://${footerBaseUrl}/legal/legal-notice`,
+        label: 'Legal',
+        celebrus: 'Legal - Legal'
       },
       {
-        label: 'footer.support_policy',
+        href: `https://${footerBaseUrl}/legal/terms-of-use`,
+        label: 'Terms of use',
+        celebrus: 'Legal - Terms of use'
+      },
+      {
+        href: `https://${footerBaseUrl}/about-us/environmental-social-governance/teradata-accessibility`,
+        label: 'Accessibility',
+        celebrus: 'Legal - Accessibility'
+      },
+      {
         href: `https://${footerBaseUrl}/product-support-policy`,
-      },
-      {
-        label: 'footer.tracking_consent',
-        href: `#tracking-consent`,
-      },
+        label: 'Support policies',
+        celebrus: 'Legal - Support policies'
+      }
     ],
     linksOfInterest: {
-      title: 'footer.also_of_interest',
+      title: 'Also of Interest',
       items: [
         {
-          label: 'footer.platform_ai_ml',
           href: `https://${footerBaseUrl}/platform/ai-ml`,
+          label: 'Artificial Intelligence and Machine Learning'
         },
         {
-          label: 'footer.big_data',
           href: `https://${footerBaseUrl}/solutions/big-data`,
+          label: 'Big Data Analytics Solutions'
         },
         {
-          label: 'footer.data_security_insights',
           href: `https://${footerBaseUrl}/insights/data-security`,
-        },
-      ],
+          label: 'Data Security'
+        }
+      ]
     },
-    copyright: 'footer.copyright',
+    copyright: '2024 Teradata. All Rights Reserved',
   };
 }
