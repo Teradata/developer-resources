@@ -48,7 +48,7 @@
     "message": "Trusted AI"
   },
   "footer.industries": {
-    "message": "業種別"
+    "message": "業種別ソリューション"
   },
   "footer.partners": {
     "message": "パートナー"
@@ -69,13 +69,13 @@
     "message": "事例"
   },
   "footer.our_platform": {
-    "message": "ご提供できるもの"
+    "message": "製品"
   },
   "footer.platform": {
     "message": "プラットフォーム"
   },
   "footer.vantagecloud": {
-    "message": "VantageCloud"
+    "message": "Teradata VantageCloud"
   },
   "footer.clearscape_analytics": {
     "message": "ClearScape Analytics"
@@ -93,10 +93,10 @@
     "message": "はじめに"
   },
   "footer.pricing": {
-    "message": "価格"
+    "message": "従量課金価格"
   },
   "footer.demos": {
-    "message": "デモ"
+    "message": "デモハブ"
   },
   "footer.modernization_workshop": {
     "message": "モダナイゼーションワークショップ"
@@ -105,13 +105,13 @@
     "message": "エグゼクティブブリーフィングセンター"
   },
   "footer.events": {
-    "message": "イベント"
+    "message": "イベントとウェビナー"
   },
   "footer.learning": {
     "message": "ラーニング"
   },
   "footer.insights": {
-    "message": "インサイト"
+    "message": "リソース"
   },
   "footer.ai_ml": {
     "message": "AIと機械学習"
@@ -130,6 +130,39 @@
   },
   "footer.glossary": {
     "message": "用語集"
+  },
+  "footer.teradata_cares": {
+    "message": "Teradata Cares"
+  },
+  "footer.why_trusted": {
+    "message": "Why we're trusted"
+  },
+  "footer.trust_security_center": {
+    "message": "Trust & Security Center"
+  },
+  "footer.developer_portal": {
+    "message": "Developer portal"
+  },
+  "footer.support_portal": {
+    "message": "Support portal"
+  },
+  "footer.social_media.medium": {
+    "message": "Medium"
+  },
+  "footer.sitemap": {
+    "message": "Sitemap"
+  },
+  "footer.accessibility": {
+    "message": "Accessibility"
+  },
+  "footer.links_interest.ai_ml": {
+    "message": "Artificial Intelligence and Machine Learning"
+  },
+  "footer.links_interest.big_data": {
+    "message": "Big Data Analytics Solutions"
+  },
+  "footer.links_interest.data_security": {
+    "message": "Data Security"
   },
   "footer.about_us": {
     "message": "Teradataについて"
@@ -165,7 +198,7 @@
     "message": "Instagram"
   },
   "footer.social_media.youtube": {
-    "message": "Youtube"
+    "message": "YouTube"
   },
   "footer.social_media.rss": {
     "message": "RSS"

@@ -26,6 +26,39 @@
   "header.community": {
     "message": "커뮤니티"
   },
+  "footer.teradata_cares": {
+    "message": "Teradata Cares"
+  },
+  "footer.why_trusted": {
+    "message": "테라데이타를 선택해야 하는 이유"
+  },
+  "footer.trust_security_center": {
+    "message": "Trust & Security Center"
+  },
+  "footer.developer_portal": {
+    "message": "Developer portal"
+  },
+  "footer.support_portal": {
+    "message": "Support portal"
+  },
+  "footer.social_media.medium": {
+    "message": "Medium"
+  },
+  "footer.sitemap": {
+    "message": "Sitemap"
+  },
+  "footer.accessibility": {
+    "message": "Accessibility"
+  },
+  "footer.links_interest.ai_ml": {
+    "message": "Artificial Intelligence and Machine Learning"
+  },
+  "footer.links_interest.big_data": {
+    "message": "Big Data Analytics Solutions"
+  },
+  "footer.links_interest.data_security": {
+    "message": "Data Security"
+  },
   "header.community.teradata_community": {
     "message": "Teradata 커뮤니티"
   },
@@ -39,13 +72,13 @@
     "message": "스택 오버플로"
   },
   "footer.why_teradata_title": {
-    "message": "왜 Teradata인가"
+    "message": "테라데이타를 선택해야 하는 이유"
   },
   "footer.why_teradata": {
-    "message": "왜 Teradata인가"
+    "message": "테라데이타를 선택해야 하는 이유"
   },
   "footer.trusted_ai": {
-    "message": "신뢰할 수 있는 AI"
+    "message": "Trust & Security Center"
   },
   "footer.industries": {
     "message": "산업"
@@ -69,13 +102,13 @@
     "message": "성공 사례"
   },
   "footer.our_platform": {
-    "message": "우리의 플랫폼"
+    "message": "제품"
   },
   "footer.platform": {
     "message": "플랫폼"
   },
   "footer.vantagecloud": {
-    "message": "VantageCloud"
+    "message": "Teradata VantageCloud"
   },
   "footer.clearscape_analytics": {
     "message": "ClearScape Analytics"
@@ -93,10 +126,10 @@
     "message": "시작하기"
   },
   "footer.pricing": {
-    "message": "가격"
+    "message": "소비 가격"
   },
   "footer.demos": {
-    "message": "데모"
+    "message": "Demo hub"
   },
   "footer.modernization_workshop": {
     "message": "현대화 워크숍"
@@ -105,13 +138,13 @@
     "message": "임원 브리핑 센터"
   },
   "footer.events": {
-    "message": "이벤트"
+    "message": "Events and webinars"
   },
   "footer.learning": {
     "message": "학습"
   },
   "footer.insights": {
-    "message": "인사이트"
+    "message": "리소스"
   },
   "footer.ai_ml": {
     "message": "AI/ML"
@@ -132,7 +165,7 @@
     "message": "용어집"
   },
   "footer.about_us": {
-    "message": "회사 소개"
+    "message": "우리에 관해서"
   },
   "footer.who_we_are": {
     "message": "우리는 누구인가"
@@ -147,7 +180,7 @@
     "message": "경력"
   },
   "footer.investors": {
-    "message": "투자자"
+    "message": "투자자 관계"
   },
   "footer.social_media": {
     "message": "소셜 미디어"
@@ -171,22 +204,22 @@
     "message": "RSS"
   },
   "footer.privacy": {
-    "message": "개인 정보"
+    "message": "사생활"
   },
   "footer.do_not_sell_share": {
-    "message": "내 정보 판매/공유 금지"
+    "message": "Don’t sell/share my info"
   },
   "footer.terms_of_use": {
     "message": "이용약관"
   },
   "footer.legal": {
-    "message": "법률"
+    "message": "합법적인"
   },
   "footer.support_policy": {
     "message": "지원 정책"
   },
   "footer.tracking_consent": {
-    "message": "추적 동의"
+    "message": "동의 추적"
   },
   "footer.copyright": {
     "message": "Teradata. All rights reserved"

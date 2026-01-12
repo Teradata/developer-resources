@@ -45,13 +45,13 @@
     "message": "Warum Teradata"
   },
   "footer.trusted_ai": {
-    "message": "Vertrauenswürdige KI"
+    "message": "Trusted AI"
   },
   "footer.industries": {
     "message": "Branchen"
   },
   "footer.partners": {
-    "message": "Partner-Angebote"
+    "message": "Partner"
   },
   "footer.partner_registration": {
     "message": "Partnerregistrierung"
@@ -59,14 +59,44 @@
   "footer.partner_portal_login": {
     "message": "Partnerportal-Login"
   },
+  "footer.teradata_cares": {
+    "message": "Teradata Cares"
+  },
+  "footer.why_trusted": {
+    "message": "Why we're trusted"
+  },
+  "footer.trust_security_center": {
+    "message": "Trust & Security Center"
+  },
+  "footer.developer_portal": {
+    "message": "Developer portal"
+  },
+  "footer.social_media.medium": {
+    "message": "Medium"
+  },
+  "footer.sitemap": {
+    "message": "Sitemap"
+  },
+  "footer.accessibility": {
+    "message": "Accessibility"
+  },
+  "footer.links_interest.ai_ml": {
+    "message": "Artificial Intelligence and Machine Learning"
+  },
+  "footer.links_interest.big_data": {
+    "message": "Big Data Analytics Solutions"
+  },
+  "footer.links_interest.data_security": {
+    "message": "Data Security"
+  },
   "footer.services": {
-    "message": "Dienste"
+    "message": "Services"
   },
   "footer.solutions": {
     "message": "Lösungen"
   },
   "footer.success_stories": {
-    "message": "Erfolgsstorys"
+    "message": "Erfolgsgeschichten"
   },
   "footer.our_platform": {
     "message": "Unsere Plattform"
@@ -81,13 +111,13 @@
     "message": "ClearScape Analytics"
   },
   "footer.unleash_ai_innovation": {
-    "message": "Ermöglichen Sie KI-Innovation"
+    "message": "KI-Innovationen freisetzen"
   },
   "footer.workloads": {
-    "message": "Arbeitslasten"
+    "message": "Workloads"
   },
   "footer.deployment": {
-    "message": "Bereitstellung"
+    "message": "Deployment"
   },
   "footer.getting_started": {
     "message": "Erste Schritte"
@@ -105,16 +135,16 @@
     "message": "Executive Briefing Center"
   },
   "footer.events": {
-    "message": "Ereignisse"
+    "message": "Events"
   },
   "footer.learning": {
     "message": "Lernen"
   },
   "footer.insights": {
-    "message": "Einblicke"
+    "message": "Insights"
   },
   "footer.ai_ml": {
-    "message": "KI/ML"
+    "message": "AI/ML"
   },
   "footer.cloud_data_analytics": {
     "message": "Cloud-Datenanalyse"
@@ -138,10 +168,10 @@
     "message": "Wer wir sind"
   },
   "footer.our_leadership": {
-    "message": "Unsere Führung"
+    "message": "Unsere Führungskräfte"
   },
   "footer.newsroom": {
-    "message": "Pressemitteilung"
+    "message": "Newsroom"
   },
   "footer.careers": {
     "message": "Karriere"
@@ -150,7 +180,7 @@
     "message": "Investoren"
   },
   "footer.social_media": {
-    "message": "Soziale Medien"
+    "message": "Social Media"
   },
   "footer.social_media.linkedin": {
     "message": "LinkedIn"
@@ -171,7 +201,7 @@
     "message": "RSS"
   },
   "footer.privacy": {
-    "message": "Privatsphäre"
+    "message": "Datenschutz"
   },
   "footer.do_not_sell_share": {
     "message": "Meine Daten nicht verkaufen/teilen"
@@ -180,13 +210,13 @@
     "message": "Nutzungsbedingungen"
   },
   "footer.legal": {
-    "message": "Rechtliches"
+    "message": "Rechtliche Hinweise"
   },
   "footer.support_policy": {
     "message": "Support-Richtlinien"
   },
   "footer.tracking_consent": {
-    "message": "Tracking-Einwilligung"
+    "message": "Tracking-Zustimmung"
   },
   "footer.copyright": {
     "message": "Teradata. Alle Rechte vorbehalten"
@@ -195,10 +225,10 @@
     "message": "Auch interessant"
   },
   "footer.big_data": {
-    "message": "Große Daten"
+    "message": "Big Data"
   },
   "footer.data_security_insights": {
-    "message": "Werden Sie zum Experten im Schutz Ihrer Daten"
+    "message": "Werden Sie Experte für Datensicherheit"
   },
   "footer.platform_ai_ml": {
     "message": "Steigern Sie noch heute den ROI mit Trusted AI"

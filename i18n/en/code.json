@@ -75,7 +75,7 @@
     "message": "Platform"
   },
   "footer.vantagecloud": {
-    "message": "VantageCloud"
+    "message": "Teradata VantageCloud"
   },
   "footer.clearscape_analytics": {
     "message": "ClearScape Analytics"
@@ -93,10 +93,10 @@
     "message": "Getting started"
   },
   "footer.pricing": {
-    "message": "Pricing"
+    "message": "Consumption pricing"
   },
   "footer.demos": {
-    "message": "Demos"
+    "message": "Demo hub"
   },
   "footer.modernization_workshop": {
     "message": "Modernization workshop"
@@ -105,19 +105,19 @@
     "message": "Executive Briefing Center"
   },
   "footer.events": {
-    "message": "Events"
+    "message": "Events and webinars"
   },
   "footer.learning": {
     "message": "Learning"
   },
   "footer.insights": {
-    "message": "Insights"
+    "message": "Resources"
   },
   "footer.ai_ml": {
     "message": "AI/ML"
   },
   "footer.cloud_data_analytics": {
-    "message": "Cloud data analytics"
+    "message": "Data Analytics"
   },
   "footer.data_architecture": {
     "message": "Data architecture"
@@ -165,7 +165,7 @@
     "message": "Instagram"
   },
   "footer.social_media.youtube": {
-    "message": "Youtube"
+    "message": "YouTube"
   },
   "footer.social_media.rss": {
     "message": "RSS"
@@ -183,13 +183,13 @@
     "message": "Legal"
   },
   "footer.support_policy": {
-    "message": "Support Policies"
+    "message": "Support policies"
   },
   "footer.tracking_consent": {
     "message": "Tracking Consent"
   },
   "footer.copyright": {
-    "message": "Teradata. All rights reserved"
+    "message": "2024 Teradata. All Rights Reserved"
   },
   "footer.also_of_interest": {
     "message": "Also of interest"
@@ -202,6 +202,84 @@
   },
   "footer.platform_ai_ml": {
     "message": "Drive ROI with Trusted AI today"
+  },
+  "footer.awards": {
+    "message": "Awards & recognition"
+  },
+  "footer.analyst_reports": {
+    "message": "Analyst reports"
+  },
+  "footer.business_value": {
+    "message": "Business value & ROI"
+  },
+  "footer.on_premises": {
+    "message": "Teradata on premises"
+  },
+  "footer.ai_unlimited": {
+    "message": "Teradata AI Unlimited"
+  },
+  "footer.cx": {
+    "message": "Customer experience (CX)"
+  },
+  "footer.finance": {
+    "message": "Finance transformation"
+  },
+  "footer.fraud": {
+    "message": "Fraud prevention"
+  },
+  "footer.supply_chain": {
+    "message": "Supply chain logistics"
+  },
+  "footer.use_cases": {
+    "message": "Use cases"
+  },
+  "footer.university": {
+    "message": "Teradata University"
+  },
+  "footer.webinars": {
+    "message": "Webinars"
+  },
+  "footer.our_story": {
+    "message": "Our story"
+  },
+  "footer.sustainability": {
+    "message": "Sustainability"
+  },
+  "footer.people_culture": {
+    "message": "People & culture"
+  },
+  "footer.teradata_cares": {
+    "message": "Teradata Cares"
+  },
+  "footer.why_trusted": {
+    "message": "Why we're trusted"
+  },
+  "footer.trust_security_center": {
+    "message": "Trust & Security Center"
+  },
+  "footer.developer_portal": {
+    "message": "Developer portal"
+  },
+  "footer.support_portal": {
+    "message": "Support portal"
+  },
+  "footer.social_media.medium": {
+    "message": "Medium"
+  },
+  "footer.sitemap": {
+    "message": "Sitemap"
+  },
+  "footer.accessibility": {
+    "message": "Accessibility"
+  },
+  "footer.links_interest.ai_ml": {
+    "message": "Artificial Intelligence and Machine Learning"
+  },
+  "footer.links_interest.big_data": {
+    "message": "Big Data Analytics Solutions"
+  },
+  "footer.links_interest.data_security": {
+    "message": "Data Security"
   },
 
   "feature.title.analytic_functions": {
