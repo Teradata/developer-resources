@@ -114,8 +114,7 @@ export default function footerItems(currentLocale = 'en') {
           {
             href: 'https://teradata.my.site.com/teradataPRM/s/login/',
             label: 'footer.partner_portal_login',
-            external: true,
-            icon: 'open_in_new'
+            external: true
           },
           {
             href: `https://${footerBaseUrl}/why-teradata/teradata-services`,
@@ -161,14 +160,12 @@ export default function footerItems(currentLocale = 'en') {
           {
             href: 'https://developers.teradata.com/',
             label: 'footer.developer_portal',
-            external: true,
-            icon: 'open_in_new'
+            external: true
           },
           {
             href: 'https://support.teradata.com/csm',
             label: 'footer.support_portal',
-            external: true,
-            icon: 'open_in_new'
+            external: true
           }
         ]
       },
@@ -218,8 +215,7 @@ export default function footerItems(currentLocale = 'en') {
           {
             href: 'https://investor.teradata.com',
             label: 'footer.investors',
-            external: true,
-            icon: 'open_in_new'
+            external: true
           }
         ]
       }
