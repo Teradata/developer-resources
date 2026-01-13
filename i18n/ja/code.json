@@ -219,10 +219,13 @@
     "message": "サポートポリシー"
   },
   "footer.tracking_consent": {
-    "message": "トラッキング"
+    "message": "Cookieの設定"
   },
   "footer.copyright": {
-    "message": "Teradata. All rights reserved"
+    "message": "Teradata. All Rights Reserved"
+  },
+  "footer.isms": {
+    "message": "ISMS"
   },
   "footer.also_of_interest": {
     "message": "興味深い記事"

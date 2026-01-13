@@ -174,7 +174,7 @@
     "message": "Privacy"
   },
   "footer.do_not_sell_share": {
-    "message": "Don’t Sell/Share My Info"
+    "message": "Don’t sell/share my info"
   },
   "footer.terms_of_use": {
     "message": "Terms of use"
@@ -186,10 +186,10 @@
     "message": "Support policies"
   },
   "footer.tracking_consent": {
-    "message": "Tracking Consent"
+    "message": "Cookie Preferences"
   },
   "footer.copyright": {
-    "message": "2024 Teradata. All Rights Reserved"
+    "message": "Teradata. All Rights Reserved"
   },
   "footer.also_of_interest": {
     "message": "Also of interest"

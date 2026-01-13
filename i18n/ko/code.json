@@ -210,7 +210,7 @@
     "message": "Don’t sell/share my info"
   },
   "footer.terms_of_use": {
-    "message": "이용약관"
+    "message": "이용 약관"
   },
   "footer.legal": {
     "message": "합법적인"
@@ -219,10 +219,10 @@
     "message": "지원 정책"
   },
   "footer.tracking_consent": {
-    "message": "동의 추적"
+    "message": "쿠키 환경설정"
   },
   "footer.copyright": {
-    "message": "Teradata. All rights reserved"
+    "message": "Teradata. 모든 권리 보유"
   },
   "footer.also_of_interest": {
     "message": "기타 관심 사항"
