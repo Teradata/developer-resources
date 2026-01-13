@@ -6,7 +6,6 @@ import {
   SocialLinks,
   Footer as TDFooter,
 } from '@teradata-web/react-components';
-import '../../css/social-hover.css';
 import { ThemeConfig } from '@docusaurus/types';
 import { translate } from '@docusaurus/Translate';
 
