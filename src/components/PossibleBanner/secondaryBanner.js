@@ -24,15 +24,15 @@ const SecondaryBanner = () => {
   const shouldDisplayAlert = !pathsNoAlert.includes(currentPath);
   if (!shouldDisplayAlert) return null;
 
-  const quickstartsLink = "https://www.teradata.com/events/possible?utm_source=developer-site&utm_medium=display&utm_campaign=gbl-possible-devrel&utm_content=developer-quickstarts&utm_id=701V500000HTemgIAD";
+  const quickstartsLink = "https://www.teradata.com/customers/research-panel";
 
   return (
     <div className={styles.secondaryBanner}>
       <span className={styles.bannerText}>
-        Learn how to build the future of AI at Possible 2025.
+        Join our research panel and help shape the future of Teradata.
       </span>
       <a className={styles.bannerTextLink} href={quickstartsLink} target="_blank" rel="noopener noreferrer">
-        Register now
+        Sign up.
       </a>
     </div>
   );
