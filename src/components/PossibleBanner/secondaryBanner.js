@@ -29,7 +29,7 @@ const SecondaryBanner = () => {
   return (
     <div className={styles.secondaryBanner}>
       <span className={styles.bannerText}>
-        Join our Research Panel and help shape the future of Teradata.
+        Join our research panel and help shape the future of Teradata.
       </span>
       <a className={styles.bannerTextLink} href={quickstartsLink} target="_blank" rel="noopener noreferrer">
         Sign up.
