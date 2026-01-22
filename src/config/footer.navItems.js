@@ -233,7 +233,7 @@ export default function footerItems(currentLocale = 'en') {
           external: true,
           href: 'https://github.com/Teradata',
           icon: 'github',
-          label: 'header.community.github'
+          label: 'header.community.github',
         },
         {
           external: true,
