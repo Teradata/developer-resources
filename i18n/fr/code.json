@@ -57,7 +57,7 @@
     "message": "Inscription des partenaires"
   },
   "footer.partner_portal_login": {
-    "message": "Connexion au portail des partenaires"
+    "message": "Connexion au portail partenaire"
   },
   "footer.services": {
     "message": "Services"
@@ -66,10 +66,10 @@
     "message": "Solutions"
   },
   "footer.success_stories": {
-    "message": "Modèles de réussite"
+    "message": "Réussites"
   },
   "footer.our_platform": {
-    "message": "Notre plateforme"
+    "message": "Produit"
   },
   "footer.platform": {
     "message": "Plateforme"
@@ -93,7 +93,7 @@
     "message": "Prise en main"
   },
   "footer.pricing": {
-    "message": "Tarifs"
+    "message": "Prix de consommation"
   },
   "footer.demos": {
     "message": "Démos"
@@ -102,7 +102,7 @@
     "message": "Atelier de modernisation"
   },
   "footer.executive_briefing_center": {
-    "message": "Executive Briefing Center"
+    "message": "Centre d’information exécutif"
   },
   "footer.events": {
     "message": "Événements"
@@ -111,7 +111,7 @@
     "message": "Apprentissage"
   },
   "footer.insights": {
-    "message": "Informations"
+    "message": "Ressources"
   },
   "footer.ai_ml": {
     "message": "AI/ML"
@@ -132,16 +132,16 @@
     "message": "Glossaire"
   },
   "footer.about_us": {
-    "message": "À propos de nous"
+    "message": "Qui sommes-nous"
   },
   "footer.who_we_are": {
-    "message": "Qui sommes-nous"
+    "message": "Qui sommes-nous ?"
   },
   "footer.our_leadership": {
     "message": "Notre direction"
   },
   "footer.newsroom": {
-    "message": "Rédaction"
+    "message": "Médias"
   },
   "footer.careers": {
     "message": "Carrières"
@@ -171,7 +171,7 @@
     "message": "RSS"
   },
   "footer.privacy": {
-    "message": "Confidentialité"
+    "message": "Politique de confidentialité"
   },
   "footer.do_not_sell_share": {
     "message": "Ne pas vendre/partager mes infos"
@@ -180,13 +180,13 @@
     "message": "Conditions d'utilisation"
   },
   "footer.legal": {
-    "message": "Légal"
+    "message": "Mentions légales"
   },
   "footer.support_policy": {
-    "message": "Politiques d'assistance"
+    "message": "Prise en charge des stratégies"
   },
   "footer.tracking_consent": {
-    "message": "Consentement au suivi"
+    "message": ""
   },
   "footer.copyright": {
     "message": "Teradata. Tous droits réservés"
@@ -202,6 +202,84 @@
   },
   "footer.platform_ai_ml": {
     "message": "Augmentez votre retour sur investissement dès aujourd'hui avec Trusted AI"
+  },
+  "footer.awards": {
+    "message": "Récompenses"
+  },
+  "footer.analyst_reports": {
+    "message": "Contenu d’analystes"
+  },
+  "footer.business_value": {
+    "message": "Valeur métier & ROI"
+  },
+  "footer.on_premises": {
+    "message": "Teradata on-premises"
+  },
+  "footer.ai_unlimited": {
+    "message": "Teradata AI Unlimited"
+  },
+  "footer.cx": {
+    "message": "Expérience client (CX)"
+  },
+  "footer.finance": {
+    "message": "Transformation des processus financiers"
+  },
+  "footer.fraud": {
+    "message": "Prévention de la fraude"
+  },
+  "footer.supply_chain": {
+    "message": "Logistique de la chaîne d'approvisionnement"
+  },
+  "footer.use_cases": {
+    "message": "Cas d’utilisation"
+  },
+  "footer.university": {
+    "message": "Université Teradata"
+  },
+  "footer.webinars": {
+    "message": "Webinaires"
+  },
+  "footer.our_story": {
+    "message": "Notre histoire"
+  },
+  "footer.sustainability": {
+    "message": "Développement durable"
+  },
+  "footer.people_culture": {
+    "message": "Personnes & Culture"
+  },
+  "footer.teradata_cares": {
+    "message": "Teradata Cares"
+  },
+  "footer.why_trusted": {
+    "message": "Why we're trusted"
+  },
+  "footer.trust_security_center": {
+    "message": "Centre de confiance et de sécurité"
+  },
+  "footer.developer_portal": {
+    "message": "Developer portal"
+  },
+  "footer.support_portal": {
+    "message": "Support portal"
+  },
+  "footer.social_media.medium": {
+    "message": "Medium"
+  },
+  "footer.sitemap": {
+    "message": "Sitemap"
+  },
+  "footer.accessibility": {
+    "message": "Accessibility"
+  },
+  "footer.links_interest.ai_ml": {
+    "message": "Artificial Intelligence and Machine Learning"
+  },
+  "footer.links_interest.big_data": {
+    "message": "Big Data Analytics Solutions"
+  },
+  "footer.links_interest.data_security": {
+    "message": "Data Security"
   },
   "feature.title.analytic_functions": {
     "message": "Fonctions d'analyse"

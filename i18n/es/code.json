@@ -57,7 +57,37 @@
     "message": "Registro de socios"
   },
   "footer.partner_portal_login": {
-    "message": "Iniciar sesión en el portal de socios"
+    "message": "Acceso al portal de socios"
+  },
+  "footer.teradata_cares": {
+    "message": "Teradata Cares"
+  },
+  "footer.why_trusted": {
+    "message": "Why we're trusted"
+  },
+  "footer.trust_security_center": {
+    "message": "Trust & Security Center"
+  },
+  "footer.developer_portal": {
+    "message": "Developer portal"
+  },
+  "footer.social_media.medium": {
+    "message": "Medium"
+  },
+  "footer.sitemap": {
+    "message": "Sitemap"
+  },
+  "footer.accessibility": {
+    "message": "Accessibility"
+  },
+  "footer.links_interest.ai_ml": {
+    "message": "Artificial Intelligence and Machine Learning"
+  },
+  "footer.links_interest.big_data": {
+    "message": "Big Data Analytics Solutions"
+  },
+  "footer.links_interest.data_security": {
+    "message": "Data Security"
   },
   "footer.services": {
     "message": "Servicios"
@@ -75,13 +105,13 @@
     "message": "Plataforma"
   },
   "footer.vantagecloud": {
-    "message": "VantageCloud"
+    "message": "Teradata VantageCloud"
   },
   "footer.clearscape_analytics": {
     "message": "ClearScape Analytics"
   },
   "footer.unleash_ai_innovation": {
-    "message": "Dar rienda suelta a la innovación en IA"
+    "message": "Innovación en IA"
   },
   "footer.workloads": {
     "message": "Cargas de trabajo"
@@ -93,10 +123,10 @@
     "message": "Introducción"
   },
   "footer.pricing": {
-    "message": "Precios"
+    "message": "Precios de consumo"
   },
   "footer.demos": {
-    "message": "Demostraciones"
+    "message": "Centro de demostraciones"
   },
   "footer.modernization_workshop": {
     "message": "Taller de modernización"
@@ -105,13 +135,13 @@
     "message": "Centro de información ejecutiva"
   },
   "footer.events": {
-    "message": "Eventos"
+    "message": "Eventos y seminarios web"
   },
   "footer.learning": {
     "message": "Aprendizaje"
   },
   "footer.insights": {
-    "message": "Estadísticas"
+    "message": "Recursos"
   },
   "footer.ai_ml": {
     "message": "IA/ML"
@@ -138,7 +168,7 @@
     "message": "Quiénes somos"
   },
   "footer.our_leadership": {
-    "message": "Nuestro liderazgo"
+    "message": "Nuestros líderes"
   },
   "footer.newsroom": {
     "message": "Sala de prensa"
@@ -201,7 +231,7 @@
     "message": "Conviértase en un experto en la defensa de sus datos"
   },
   "footer.platform_ai_ml": {
-    "message": "Impulse el retorno de la inversión con inteligencia artificial de confianza hoy mismo"
+    "message": "Impulse el retorno de la inversión con IA de confianza"
   },
   "feature.title.analytic_functions": {
     "message": "Funciones analíticas"

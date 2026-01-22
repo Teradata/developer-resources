@@ -29,13 +29,27 @@ function translateFooterItems(
   });
 }
 
-function translateFooterNavLinks(
-  footerNavLinks: FooterNavLink[]
-): FooterNavLink[] {
+function translateFooterNavLinks(footerNavLinks: any[]): FooterNavLink[] {
   return footerNavLinks.map((link) => {
     return {
       ...link,
-      label: translate({ message: link.label }),
+      label: (
+        <span>
+          {translate({ message: link.label })}
+          {link.icon && (
+            <span
+              className="material-symbols-outlined"
+              style={{
+                fontSize: '16px', // Match typical icon size
+                verticalAlign: 'middle',
+                marginLeft: '4px',
+              }}
+            >
+              {link.icon}
+            </span>
+          )}
+        </span>
+      ) as unknown as string,
     };
   });
 }
@@ -57,13 +71,15 @@ function Footer() {
   ])[0] as FooterLink;
 
   return (
-    <TDFooter
-      links={translatedLinks}
-      copyright={translatedCopyright}
-      socialLinks={translatedSocialLinks}
-      legalLinks={translatedLegalLinks}
-      linksOfInterest={translatedLinksOfInterest}
-    />
+    <div className="footer-custom-scope">
+      <TDFooter
+        links={translatedLinks}
+        copyright={translatedCopyright}
+        socialLinks={translatedSocialLinks}
+        legalLinks={translatedLegalLinks}
+        linksOfInterest={translatedLinksOfInterest}
+      />
+    </div>
   );
 }
 

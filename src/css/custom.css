@@ -423,3 +423,52 @@ html[data-navbar='false'] .navbar {
     top: 57px;
   }
 }
+
+/* Footer Customization for 2-column layout */
+
+div[class*="_copyrightLinks_"] {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+div[class*="_copyrightText_"] {
+  width: 100%;
+}
+
+ul[class*="_legalLinksWrapper_"] {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+@media (min-width: 992px) {
+  div[class*="_copyrightLinks_"] {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  div[class*="_copyrightText_"] {
+    width: 33.33333%;
+    flex: 0 0 auto;
+  }
+
+  ul[class*="_legalLinksWrapper_"] {
+    width: 66.66667%;
+    justify-content: space-between;
+    flex: 0 0 auto;
+  }
+}
+
+ul[class*="_legalLinksWrapper_"] li {
+  margin-left: 1.5rem;
+}
+ul[class*="_legalLinksWrapper_"] li:first-child {
+  margin-left: 0;
+}
