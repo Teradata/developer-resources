@@ -29,7 +29,7 @@ const Guides = [
     img: 'memory',
     title: translate({ message: 'quickstarts.open_table_formats_title' }),
     description: translate({ message: 'quickstarts.open_table_formats_decription' }),
-    href: 'https://docs.teradata.com/access/sources/dita/map?dita:mapPath=bsr1702324250454.ditamap',
+    href: 'https://docs.teradata.com/access/sources/dita/map?dita:mapPath=qrj1749167830193.ditamap',
   }
 ];
 const FeatureList = [
