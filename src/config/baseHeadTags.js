@@ -1,19 +1,22 @@
 const allowedUrls = [
-    'https://www.teradata.com',
-    'https://*.teradata.com',
-    'https://avatars.githubusercontent.com',
-    'https://github.com',
-    'https://kit.fontawesome.com/',
-    'https://ka-f.fontawesome.com/',
-    'https://fonts.googleapis.com/',
-    'https://fonts.gstatic.com/',
-    'https://www.google-analytics.com/',
-    'https://analytics.google.com/',
-    'https://www.googletagmanager.com/',
-    'https://td.doubleclick.net/',
-    'https://www.youtube.com/',
-    'https://*.algolia.net/',
-  ];
+  'https://www.teradata.com',
+  'https://*.teradata.com',
+  'https://avatars.githubusercontent.com',
+  'https://github.com',
+  'https://kit.fontawesome.com/',
+  'https://ka-f.fontawesome.com/',
+  'https://fonts.googleapis.com/',
+  'https://fonts.gstatic.com/',
+  'https://www.google-analytics.com/',
+  'https://analytics.google.com/',
+  'https://www.googletagmanager.com/',
+  'https://td.doubleclick.net/',
+  'https://www.youtube.com/',
+  'https://*.algolia.net/',
+  'https://cdn.intellimize.co',
+  'https://consent.trustarc.com',
+  'https://*.trustarc.com'
+];
 
 const baseHeadTags = [
     {
