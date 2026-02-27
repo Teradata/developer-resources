@@ -36,14 +36,13 @@ jobs:
         with:
           cache: npm
       - name: Install dependencies
-        run: npx ci
+        run: npm ci
       - name: Build docusaurus artifacts
         run: npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          folder: build
-          branch: gh-pages
-          clean-exclude: pr-preview/
-          force: false
+          path: build
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
