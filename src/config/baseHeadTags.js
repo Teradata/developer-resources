@@ -14,6 +14,9 @@ const allowedUrls = [
   'https://www.youtube.com/',
   'https://*.algolia.net/',
   'https://cdn.intellimize.co',
+  'https://117395157.intellimizeio.com',
+  'https://api.intellimize.co',
+  'https://log.intellimize.co',
   'https://consent.trustarc.com',
   'https://*.trustarc.com'
 ];
