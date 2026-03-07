@@ -17,6 +17,8 @@ const allowedUrls = [
   'https://117395157.intellimizeio.com',
   'https://api.intellimize.co',
   'https://log.intellimize.co',
+  'https://intellimizeditor.com',
+  'https://cdn.bc0a.com',
   'https://consent.trustarc.com',
   'https://*.trustarc.com'
 ];
