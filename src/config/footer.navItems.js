@@ -63,10 +63,6 @@ export default function footerItems(currentLocale = 'en') {
             label: 'footer.on_premises'
           },
           {
-            href: `https://${footerBaseUrl}/platform/ai-unlimited`,
-            label: 'footer.ai_unlimited'
-          },
-          {
             href: `https://${footerBaseUrl}/platform/clearscape-analytics`,
             label: 'footer.clearscape_analytics'
           },
