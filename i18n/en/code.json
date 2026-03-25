@@ -215,9 +215,6 @@
   "footer.on_premises": {
     "message": "Teradata on premises"
   },
-  "footer.ai_unlimited": {
-    "message": "Teradata AI Unlimited"
-  },
   "footer.cx": {
     "message": "Customer experience (CX)"
   },
