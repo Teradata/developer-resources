@@ -20,6 +20,10 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
             href: `${baseUrl ?? ''}${locale ?? ''}/ai-unlimited/`,
           },
           {
+            label: 'Agent Cookbook',
+            href: `${baseUrl ?? ''}${locale ?? ''}/agent-cookbook/`,
+          },
+          {
             label: 'header.docs.all_documentation',
             href: 'https://docs.teradata.com/',
           },

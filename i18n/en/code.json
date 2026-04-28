@@ -677,5 +677,11 @@
   },
   "quickstarts.open_table_formats_decription": {
     "message": "How to set up, query, and update Apache Iceberg and Delta Lake Open Table Format tables."
+  },
+  "agent_cookbook.getting_started": {
+    "message": "Getting Started"
+  },
+  "agent_cookbook.recipes": {
+    "message": "Recipes"
   }
 }

@@ -104,6 +104,16 @@ const config = {
   plugins: [
     tailwindPlugin,
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ai-unlimited',
+        path: 'docs/ai-unlimited',
+        routeBasePath: 'ai-unlimited',
+        sidebarPath: './sidebars/ai-unlimited.js',
+        sidebarItemsGenerator,
+      },
+    ],
+    [
       '@docusaurus/plugin-content-blog',
       {
         /**
@@ -131,6 +141,15 @@ const config = {
         sidebarPath: './sidebars.js',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'agent-cookbook',
+        path: 'docs/agent-cookbook',
+        routeBasePath: 'agent-cookbook',
+        sidebarPath: './sidebars/agent-cookbook.js',
+      },
+    ],
     './plugins/gtm-plugin',
   ],
 
@@ -139,13 +158,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          // Use a custom sidebar generator which is built on top of the default generator
-          sidebarItemsGenerator,
-          routeBasePath: 'ai-unlimited',
-          path: 'docs',
-          sidebarPath: './sidebars.js',
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
