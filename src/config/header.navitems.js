@@ -16,10 +16,6 @@ export default function headerItems(baseUrl = '/', currentLocale = 'en') {
             href: 'https://docs.teradata.com/p/VantageCloud/Lake',
           },
           {
-            label: 'header.docs.ai_unlimited',
-            href: `${baseUrl ?? ''}${locale ?? ''}/ai-unlimited/`,
-          },
-          {
             label: 'header.docs.all_documentation',
             href: 'https://docs.teradata.com/',
           },

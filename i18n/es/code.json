@@ -14,9 +14,6 @@
   "header.docs.vantagecloud_lake": {
     "message": "VantageCloud Lake"
   },
-  "header.docs.ai_unlimited": {
-    "message": "AI Unlimited"
-  },
   "header.docs.all_documentation": {
     "message": "Toda la documentación"
   },
@@ -302,19 +299,19 @@
   "home_page.edition_ms_fabric": {
     "message": "Microsoft Fabric"
   },
-  "home_page.description.get_started":{
+  "home_page.description.get_started": {
     "message": "Find the AI Unlimited Workload in Fabric, and prepare a notebook for trying your first use case."
   },
   "home_page.ms_fabric_use_case": {
     "message": "Try the use case"
   },
-  "home_page.description.use_cases":{
+  "home_page.description.use_cases": {
     "message": "Try the data preparation use case to start. Later you can try the financial customer journey and user segmentation use cases."
   },
   "home_page.ms_fabric_analytic_function": {
     "message": "Analytic functions"
   },
-  "home_page.description.analytic_function":{
+  "home_page.description.analytic_function": {
     "message": "Review our full list of in-database analytics with links to resources on how to use them."
   },
   "home_page.featured_event": {
