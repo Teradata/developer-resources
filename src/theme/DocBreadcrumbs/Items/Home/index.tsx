@@ -10,7 +10,7 @@ const getBreadcrumbTranslationId = (activePluginId = ''): string => {
       return 'header.getting_started';
     case 'default':
     default:
-      return 'header.docs.ai_unlimited';
+      return 'header.docs';
   }
 };
 
