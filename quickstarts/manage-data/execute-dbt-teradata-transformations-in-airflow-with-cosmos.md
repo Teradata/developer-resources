@@ -8,7 +8,7 @@ description: Execute dbt teradata transformation jobs in Apache Airflow using As
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, queries, dbt, cosmos, astronomer]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

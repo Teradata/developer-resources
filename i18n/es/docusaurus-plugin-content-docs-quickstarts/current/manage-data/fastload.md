@@ -22,7 +22,7 @@ A menudo tenemos la necesidad de mover grandes volúmenes de datos a Vantage. Te
 
 ## Requisitos previos
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
   <ClearscapeDocsNote />

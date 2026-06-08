@@ -6,7 +6,7 @@ page_last_update: 4 de agosto de 2023
 description: Integración de dbt y Feast con Teradata
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, AI/ML, AI, ML, feature engineering, feature store, FEAST]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # Utilizar dbt y FEAST para crear un almacén de funciones en Teradata Vantage
 

@@ -7,7 +7,7 @@ description: Enviar consultas mediante REST API. Teradata® Query Service es un 
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # Enviar consultas mediante REST API
 

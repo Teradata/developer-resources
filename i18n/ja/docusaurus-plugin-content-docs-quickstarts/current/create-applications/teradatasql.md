@@ -8,7 +8,7 @@ description: teradatasql Python データベース ドライバを使用して T
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, teradatasql, Python アプリケーション, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Python を使用して Vantage に接続する方法

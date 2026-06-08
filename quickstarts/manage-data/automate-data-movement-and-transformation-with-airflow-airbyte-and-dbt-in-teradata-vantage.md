@@ -8,7 +8,7 @@ description: Using Airflow to Orchestrate Airbyte and dbt for Teradata
 keywords: [data warehouses, airflow, teradata, vantage, orchestration, object storage, airbyte, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import ProfileTabs from '../_partials/tabsDBTProfiles.mdx'
 

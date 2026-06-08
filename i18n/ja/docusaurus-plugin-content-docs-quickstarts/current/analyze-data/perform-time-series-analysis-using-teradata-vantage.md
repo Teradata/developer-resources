@@ -8,7 +8,7 @@ description: Teradata Vantageを使用した時系列解析の実行
 keywords: [data warehouses, analytics, teradata, vantage, time series, business intelligence, enterprise analytics, time series, time series analysis]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Teradata Vantageを使用した時系列解析の実行

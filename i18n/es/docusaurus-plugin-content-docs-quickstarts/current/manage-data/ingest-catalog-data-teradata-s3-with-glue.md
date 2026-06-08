@@ -19,7 +19,7 @@ Para incorporar datos en Amazon S3 cuando la catalogación no es un requisito, t
 
 ### Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una [cuenta de Amazon AWS](https://aws.amazon.com)
 * Acceso a una instancia de Teradata Vantage

@@ -6,7 +6,7 @@ page_last_update: June 28th, 2022
 description: Integrate Teradata Jupyter extensions with Google Vertex AI
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import JupyterClearscapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
 
 # Integrate Teradata Jupyter extensions with Google Vertex AI

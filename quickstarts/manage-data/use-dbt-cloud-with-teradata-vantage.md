@@ -7,7 +7,7 @@ description: Use dbt Cloud (data build tool) with Teradata Vantage.
 keywords: [dbt Cloud, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # dbt Cloud with Teradata Vantage
 

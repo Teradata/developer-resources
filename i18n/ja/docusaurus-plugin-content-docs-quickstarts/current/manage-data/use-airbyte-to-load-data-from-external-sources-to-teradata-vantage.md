@@ -23,7 +23,7 @@ dir: getting-started-with-airbyte
 
 ## 前提条件
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Teradata Vantage インスタンスへのアクセス。これは、Airbyte 接続の宛先として定義されます。Airbyte の構成には、データベース `Host`、 `Username`、 `Password` が必要です。
         <ClearscapeDocsNote />

@@ -6,7 +6,7 @@ page_last_update: 2022 年 1 月 14 日
 description: Teradata Vantage を Power BI Desktop に接続します。
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, microsoft power bi, power bi]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # Vantage を使用して Power BI で視覚化を作成する
 

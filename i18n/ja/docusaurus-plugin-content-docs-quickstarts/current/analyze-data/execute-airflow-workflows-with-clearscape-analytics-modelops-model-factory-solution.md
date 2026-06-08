@@ -6,7 +6,7 @@ page_last_update: 2024年3月19日
 description: モデルファクトリーソリューションのチュートリアル - ClearScape Analytics ModelOps を使用した Airflow ワークフローの実行
 keywords: [modelfactory, modelops, byom, python, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # ModelOps で Airflow ワークフローを実行する - Model Factory ソリューション アクセラレータ
 

@@ -19,7 +19,7 @@ keywords: [data warehouses, object storage, teradata, vantage, cloud data platfo
 
 ### 前提条件
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * アクセス [Amazon AWS アカウント](https://aws.amazon.com)
 * Teradata Vantageインスタンスへのアクセス。

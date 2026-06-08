@@ -8,7 +8,7 @@ description: Almacene eventos de Twilio Segment en Teradata Vantage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, customer data platform, cdp, segment]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import tabsDBT from '../_partials/tabsDBT.mdx'
 

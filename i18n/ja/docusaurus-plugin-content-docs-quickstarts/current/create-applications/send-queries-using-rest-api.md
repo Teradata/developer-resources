@@ -7,7 +7,7 @@ description: REST API を使用してクエリーを送信します。Teradata®
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # REST APIを使ってVantageにクエリーを送信する方法
 

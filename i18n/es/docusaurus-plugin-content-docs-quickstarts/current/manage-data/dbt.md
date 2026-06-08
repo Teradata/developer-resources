@@ -8,7 +8,7 @@ description: Utilizar dbt (herramienta de creación de datos) con Teradata Vanta
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -6,7 +6,7 @@ page_last_update: May 29th, 2022
 description: Tutorial for deploying and monitoring a Python model into Vantage using ModelOps and Git repository
 keywords: [modelops, python, git, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import ModelOpsBasic from '../_partials/modelops-basic.mdx'
 
 # ModelOps - Import and Deploy your first GIT Model

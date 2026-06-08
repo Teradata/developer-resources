@@ -9,7 +9,7 @@ description: Deploy Teradata Jupyter extensions in customer JupyterHub clusters
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Deploy Teradata Jupyter extensions to JupyterHub

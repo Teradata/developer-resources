@@ -8,7 +8,7 @@ description: Teradata Vantage で Apache Airflow を使用します。
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, airflow, workflow.]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Teradata Vantage で Apache Airflow を使用する

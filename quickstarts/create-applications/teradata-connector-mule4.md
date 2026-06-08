@@ -7,7 +7,7 @@ description:  Use Teradata Connector for MuleSoft's Anypoint Studio.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # Teradata Connector - Mule 4
 

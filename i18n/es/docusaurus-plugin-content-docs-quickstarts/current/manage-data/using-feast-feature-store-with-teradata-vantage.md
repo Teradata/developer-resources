@@ -17,7 +17,7 @@ El conector de Feast para Teradata es una implementación completa con soporte p
 
 Acceso a una instancia de Teradata Vantage.
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 <ClearscapeDocsNote />
 

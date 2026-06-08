@@ -44,7 +44,7 @@ Se espera que esté familiarizado con el servicio Amazon AppFlow y Teradata Vant
 
 Necesitará las siguientes cuentas y sistemas:
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
   <ClearscapeDocsNote />

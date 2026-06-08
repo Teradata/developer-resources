@@ -19,7 +19,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 ## Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
   <ClearscapeDocsNote />

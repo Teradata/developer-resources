@@ -9,7 +9,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx';
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx';
 import Tabs from '../_partials/tabsTPT.mdx';
 
 # Teradata Parallel Transporter（TPT）を使用した巨大なデータのバルクロード
