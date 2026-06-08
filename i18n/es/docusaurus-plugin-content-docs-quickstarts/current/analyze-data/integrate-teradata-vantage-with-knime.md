@@ -20,7 +20,7 @@ KNIME Analytics Platform es un banco de trabajo de ciencia de datos. Admite aná
 ## Prerrequisitos
 
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage, versión 17.10 o superior.
   <ClearscapeDocsNote />

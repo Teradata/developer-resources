@@ -20,7 +20,7 @@ KNIME Analytics Platform is a data science workbench. It supports analytics on v
 ## Prerequisites
 
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage instance, version 17.10 or higher.
   <ClearscapeDocsNote />

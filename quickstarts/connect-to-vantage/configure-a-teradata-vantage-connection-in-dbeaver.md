@@ -15,7 +15,7 @@ This how-to demonstrates how to create a connection to Teradata Vantage with DBe
 
 ## Prerequisites
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage instance.
   <ClearscapeDocsNote />

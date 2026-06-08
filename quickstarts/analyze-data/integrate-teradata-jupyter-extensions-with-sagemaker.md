@@ -7,7 +7,7 @@ description: Integrate Teradata Jupyter extensions with SageMaker notebook insta
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import JupyterClearScapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
 
 # Integrate Teradata Jupyter extensions with SageMaker notebook instance

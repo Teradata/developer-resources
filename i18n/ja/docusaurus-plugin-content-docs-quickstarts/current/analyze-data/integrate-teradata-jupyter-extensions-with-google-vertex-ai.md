@@ -6,7 +6,7 @@ page_last_update: 2022 年 6 月 28 日
 description: Google Vertex AIとTeradata Jupyterエクステンションを統合する
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import JupyterClearscapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
 
 # Google Vertex AIとTeradata Jupyterエクステンションを統合する

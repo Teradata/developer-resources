@@ -23,7 +23,7 @@ Este tutorial muestra cómo usar Airbyte para mover datos desde fuentes a Terada
 
 ## Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage. Se definirá como el destino de la conexión de Airbyte. Necesitará una base de datos `Host`, `Username` y `Password` para la configuración de Airbyte.
         <ClearscapeDocsNote />

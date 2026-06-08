@@ -19,7 +19,7 @@ This tutorial is based on the original [dbt Jaffle Shop tutorial](https://github
 
 ## Prerequisites
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage Instance.
   <ClearscapeDocsNote />

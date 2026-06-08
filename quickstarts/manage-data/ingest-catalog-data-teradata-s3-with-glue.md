@@ -19,7 +19,7 @@ For ingesting data to Amazon S3 when cataloging is not a requirement consider [T
 
 ### Prerequisites
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to an [Amazon AWS account](https://aws.amazon.com)
 * Access to a Teradata Vantage instance

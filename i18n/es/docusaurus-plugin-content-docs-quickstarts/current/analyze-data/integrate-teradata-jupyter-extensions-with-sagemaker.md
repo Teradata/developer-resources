@@ -7,7 +7,7 @@ description: Integrar las extensiones de Teradata Jupyter con una instancia de c
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalquimia]
 ---
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 import JupyterClearScapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
 
 # Integrar las extensiones de Teradata Jupyter con una instancia de cuaderno de SageMaker

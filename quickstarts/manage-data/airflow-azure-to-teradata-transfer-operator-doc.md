@@ -9,7 +9,7 @@ keywords: [data warehouses, teradata, vantage, transfer, cloud data platform, ob
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # Data Transfer from Azure Blob to Teradata Vantage Using Apache Airflow
 

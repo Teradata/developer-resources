@@ -6,7 +6,7 @@ page_last_update: 14 de enero de 2022
 description: Conectar Teradata Vantage a Power BI Desktop.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, microsoft power bi, power bi]
 ---
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 # Crear visualizaciones en Power BI mediante Vantage
 

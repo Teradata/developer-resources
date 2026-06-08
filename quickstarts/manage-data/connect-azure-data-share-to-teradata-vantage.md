@@ -42,7 +42,7 @@ For more information see [*documentation*](https://docs.teradata.com/home).
 
 ### Prerequisites
 
-import ClearscapeDocsNote from '../_partials/vantage_clearscape_analytics.mdx'
+import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage instance.
   <ClearscapeDocsNote />
