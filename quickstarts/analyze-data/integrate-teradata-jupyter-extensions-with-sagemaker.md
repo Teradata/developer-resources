@@ -8,12 +8,12 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
-import JupyterClearScapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
+import JupyterTrialsNote from '../_partials/jupyter_notebook_trials_note.mdx';
 
 # Integrate Teradata Jupyter extensions with SageMaker notebook instance
 
 
-<JupyterClearScapeNote />
+<JupyterTrialsNote />
 
 ### Overview
 Teradata Jupyter extensions provide Teradata SQL kernel and several UI extensions to allow users to easily asccess and navigate Teradata database from Jupyter envioronment. This article describes how to integate our Jupyter extensions with SageMaker notebook instance.

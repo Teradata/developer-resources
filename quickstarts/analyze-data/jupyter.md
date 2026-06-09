@@ -9,7 +9,7 @@ description: Use Teradata Vantage from a Jupyter notebook
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, JDBC, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 
-import ClearscapeJyupiter from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx'
+import JupyterTrialsNote from '../_partials/jupyter_notebook_trials_note.mdx';
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
