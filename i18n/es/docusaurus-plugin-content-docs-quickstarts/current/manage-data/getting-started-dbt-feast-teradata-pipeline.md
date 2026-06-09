@@ -6,7 +6,7 @@ page_last_update: 4 de agosto de 2023
 description: Integración de dbt y Feast con Teradata
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, AI/ML, AI, ML, feature engineering, feature store, FEAST]
 ---
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Utilizar dbt y FEAST para crear un almacén de funciones en Teradata Vantage
 
@@ -26,7 +26,7 @@ Este tutorial muestra un enfoque para crear una canalización dbt que toma datos
 
 * Acceso a una instancia de base de datos de Teradata Vantage.
 
-        <ClearscapeDocsNote />
+        <TrialDocsNote />
 
 * Feast-Teradata instalado localmente. Consulte las [Instrucciones de instalación de Feast-Teradata](using-feast-feature-store-with-teradata-vantage.md)
 

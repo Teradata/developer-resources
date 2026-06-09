@@ -8,7 +8,7 @@ description: Realizar análisis de series temporales mediante Teradata Vantage
 keywords: [data warehouses, analytics, teradata, vantage, time series, business intelligence, enterprise analytics, time series, time series analysis]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Realizar análisis de series temporales mediante Teradata Vantage
@@ -21,7 +21,7 @@ Las series temporales son series de puntos de datos indexados en orden temporal.
 
 Necesita acceso a una instancia de Teradata Vantage. Las funcionalidades de serie temporal y NOS están habilitadas en todas las ediciones de Vantage, desde Vantage Express hasta Developer, DYI y Vantage as a Service a partir de la versión 17.10.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Importar conjuntos de datos desde AWS S3 mediante Vantage NOS
 

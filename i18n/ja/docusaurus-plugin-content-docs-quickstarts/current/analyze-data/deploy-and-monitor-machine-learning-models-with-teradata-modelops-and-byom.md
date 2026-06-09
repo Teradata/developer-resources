@@ -7,7 +7,7 @@ description: ClearScape Analytics ModelOps を使用して PMML モデルを Van
 keywords: [modelops, byom, python, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # ModelOps - 初めてのBYOMモデルのインポートとデプロイ
 
@@ -33,7 +33,7 @@ import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 
 ## 最初に知っておくべき重要な概念

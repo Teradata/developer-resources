@@ -42,10 +42,10 @@ Para más información, consulte la [*documentación*](https://docs.teradata.com
 
 ### Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Una cuenta de Azure. Puede comenzar con una [cuenta gratuita](https://azure.microsoft.com/free).
 * Una cuenta de [Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) para almacenar el conjunto de datos
 

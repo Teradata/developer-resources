@@ -9,7 +9,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx';
+import TrialDocsNote from '../_partials/teradata_trial.mdx';
 import Tabs from '../_partials/tabsTPT.mdx';
 
 # Run large bulkloads efficiently with Teradata Parallel Transporter (TPT)
@@ -21,7 +21,7 @@ We often have a need to move large volumes of data into Vantage. Teradata offers
 ## Prerequisites
 
 * Access to a Teradata Vantage instance.
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Download Teradata Tools and Utilities (TTU) -  supported platforms: [Windows](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-windows-installation-package), [MacOS](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-mac-osx-installation-package), [Linux](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-linux-installation-package-0) (requires registration).
 

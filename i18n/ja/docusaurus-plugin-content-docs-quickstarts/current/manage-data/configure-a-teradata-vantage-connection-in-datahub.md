@@ -15,10 +15,10 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 ## 前提条件
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Teradata Vantageインスタンスへのアクセス。
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * DataHubがインストールされています。 [ DataHubクイックスタートガイド](https://datahubproject.io/docs/quickstart)
 
 ## DataHubのセットアップ

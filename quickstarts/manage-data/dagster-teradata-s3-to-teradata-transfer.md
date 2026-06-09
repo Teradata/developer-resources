@@ -9,7 +9,7 @@ keywords: [data warehouses, teradata, vantage, transfer, cloud data platform, ob
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import InstallTabs from '../_partials/tabsDBT.mdx'
 
 # Data Transfer from AWS S3 to Teradata Vantage Using dagster-teradata
@@ -22,7 +22,7 @@ This document provides instructions and guidance for transferring data in CSV, J
 
 * Access to a Teradata Vantage instance.
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Python **3.9** or higher, Python **3.12** is recommended.
 * pip

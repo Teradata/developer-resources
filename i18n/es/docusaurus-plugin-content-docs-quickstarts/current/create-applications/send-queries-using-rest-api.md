@@ -7,7 +7,7 @@ description: Enviar consultas mediante REST API. Teradata® Query Service es un 
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Enviar consultas mediante REST API
 
@@ -22,7 +22,7 @@ Este tutorial proporciona ejemplos de casos de uso comunes para ayudarlo a comen
 Antes de comenzar, asegúrese de tener:
 *	Acceso a un sistema VantageCloud donde se proporcione Query Service, o un VantageCore con conectividad habilitada para Query Service. Si es administrador y necesita instalar Query Service, consulte la [Guía de instalación, configuración y uso de Query Service](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022).
 
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 
 *	Nombre de host del servicio de consulta y nombre del sistema
 * Credenciales de autorización para conectarse a la base de datos

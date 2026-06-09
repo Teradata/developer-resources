@@ -8,7 +8,7 @@ description: Teradata Vantageを使用した時系列解析の実行
 keywords: [data warehouses, analytics, teradata, vantage, time series, business intelligence, enterprise analytics, time series, time series analysis]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Teradata Vantageを使用した時系列解析の実行
@@ -21,7 +21,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 
 Teradata Vantage インスタンスにアクセスする必要があります。時系列機能と NOS は、バージョン 17.10 以降、Vantage Express から Developer、DYI、Vantage as a Service までのすべての Vantage エディションで有効になります。
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Vantage NOSを使用してAWS S3からのデータセットをインポートする
 

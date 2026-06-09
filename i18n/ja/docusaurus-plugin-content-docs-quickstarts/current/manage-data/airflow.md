@@ -8,7 +8,7 @@ description: Teradata Vantage で Apache Airflow を使用します。
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, airflow, workflow.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Teradata Vantage で Apache Airflow を使用する
@@ -19,7 +19,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 ## 前提条件
 * Ubuntu22.x
 * Teradata Vantageインスタンスへのアクセス。
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 * Python **3.8**、**3.9**、**3.10**、または **3.11** がインストールされていること。
 * ピップ
 

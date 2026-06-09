@@ -9,7 +9,7 @@ description: Implementar extensiones de Teradata Jupyter en clústeres JupyterHu
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalquimia]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Implementar extensiones de Teradata Jupyter en JupyterHub
@@ -23,7 +23,7 @@ Para los clientes que tienen sus propios clústeres de JupyterHub, existen dos o
 
 Esta página contiene instrucciones detalladas sobre las dos opciones. Las instrucciones se basan en el supuesto de que la implementación de JupyterHub del cliente se basa en [Zero to JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html).
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Utilizar la imagen de Teradata Jupyter Docker.
 

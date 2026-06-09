@@ -10,7 +10,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 
 import ClearscapeJyupiter from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx'
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Utilizar Vantage desde un Jupyter Notebook
@@ -20,7 +20,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 ## Información general
 En este tutorial, seguiremos los pasos para conectarnos a Teradata Vantage desde un Jupyter Notebook.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Opciones
 

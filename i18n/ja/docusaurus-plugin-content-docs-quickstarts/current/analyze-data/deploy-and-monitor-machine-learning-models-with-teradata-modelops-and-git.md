@@ -6,7 +6,7 @@ page_last_update: 2023 年 5 月 29 日
 description: ModelOps と Git リポジトリを使用して Python モデルを Vantage にデプロイおよび監視するためのチュートリアル
 keywords: [modelops, python, git, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import ModelOpsBasic from '../_partials/modelops-basic.mdx'
 
 # ModelOps - 初めてのGITモデルのインポートとデプロイ
@@ -21,7 +21,7 @@ import ModelOpsBasic from '../_partials/modelops-basic.mdx'
 
 * Jupyter Notebookを実行する機能
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 必要なファイル
 

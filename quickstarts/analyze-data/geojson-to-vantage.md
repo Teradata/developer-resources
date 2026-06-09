@@ -7,7 +7,7 @@ description: How to load and use GeoJson documents with Teradata Vantage.
 keywords: [geospatial, geojson, teradata, vantage, cloud data platform, analytics, maps, 4d analytics, open data]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLinkPartial from '../_partials/community_link.mdx';
 
 # Use geographic reference data with Vantage
@@ -30,7 +30,7 @@ The first method is a straig forward ELT pattern for semi-structured format proc
 You will need:
 
 - Access to a Teradata Vantage instance.
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 - A Python 3 interpreter
 - A SQL Client
 

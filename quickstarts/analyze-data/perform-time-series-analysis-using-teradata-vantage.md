@@ -8,7 +8,7 @@ description: Perform time series analysis using Teradata Vantage
 keywords: [data warehouses, analytics, teradata, vantage, time series, business intelligence, enterprise analytics, time series, time series analysis]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Perform time series analysis using Teradata Vantage
@@ -21,7 +21,7 @@ Time series is series of data points indexed in time order. It is data continuou
 
 You need access to a Teradata Vantage instance. Times series functionalities and NOS are enabled in all Vantage editions from Vantage Express through Developer, DYI to Vantage as a Service starting from version 17.10.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Import data sets from AWS S3 using Vantage NOS
 

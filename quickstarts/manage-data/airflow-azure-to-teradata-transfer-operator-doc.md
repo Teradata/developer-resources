@@ -9,7 +9,7 @@ keywords: [data warehouses, teradata, vantage, transfer, cloud data platform, ob
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Data Transfer from Azure Blob to Teradata Vantage Using Apache Airflow
 
@@ -23,7 +23,7 @@ Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/wi
 
 ## Prerequisites
 * Access to a Teradata Vantage instance, version 17.10 or higher.
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 * Python 3.8, 3.9, 3.10 or 3.11 and python3-env, python3-pip installed.
     <Tabs>
     <TabItem value="linux" label="Linux">

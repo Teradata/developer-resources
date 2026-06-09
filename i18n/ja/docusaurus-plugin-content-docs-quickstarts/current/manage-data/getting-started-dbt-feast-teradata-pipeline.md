@@ -6,7 +6,7 @@ page_last_update: 2023 年 8 月 4 日
 description: dbt Feast と Teradata の統合
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, AI/ML, AI, ML, feature engineering, feature store, FEAST]
 ---
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # dbt と FEAST を使用して Teradata Vantage でフィーチャストアを構築する方法
 
@@ -26,7 +26,7 @@ import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
 
 * Teradata Vantageインスタンスへのアクセス。
 
-        <ClearscapeDocsNote />
+        <TrialDocsNote />
 
 * Feast-Teradata  がローカルにインストールされている。[ Feast-Teradata のインストール手順](using-feast-feature-store-with-teradata-vantage.md) を参照してください。
 

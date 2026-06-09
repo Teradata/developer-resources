@@ -8,7 +8,7 @@ description: Query Teradata Vantage from a Mule service.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, Mule, JDBC, microservices]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Query Teradata Vantage from a Mule service
@@ -23,7 +23,7 @@ It demonstrates how to query a Teradata database and expose results over REST AP
 * Mulesoft Anypoint Studio. You can download a 30-day trial from https://www.mulesoft.com/platform/studio.
 * Access to a Teradata Vantage instance.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Example service
 

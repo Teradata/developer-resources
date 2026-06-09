@@ -8,7 +8,7 @@ description: 'Teradata Vantage Native Object Storage: lectura y escritura desde/
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Consultar datos almacenados en el almacenamiento de objetos
@@ -21,7 +21,7 @@ Native Object Storage (NOS) es una característica de Vantage que le permite con
 
 Necesita acceso a una instancia de Teradata Vantage. NOS está habilitado en todas las ediciones de Vantage, desde Vantage Express hasta Developer, DYI y Vantage as a Service a partir de la versión 17.10.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Explorar datos con NOS
 

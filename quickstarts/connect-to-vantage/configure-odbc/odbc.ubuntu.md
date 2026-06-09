@@ -9,7 +9,7 @@ description: Use Vantage with ODBC on Ubuntu
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, odbc, ubuntu]
 ---
 
-import ClearscapeDocsNote from '../../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../../_partials/teradata_trial.mdx'
 import CommunityLink from '../../_partials/community_link.mdx'
 
 # Use Vantage with ODBC on Ubuntu
@@ -21,7 +21,7 @@ This how-to demonstrates how to use the ODBC driver with Teradata Vantage on Ubu
 ## Prerequisites
 
 * Access to a Teradata Vantage instance.
-    <ClearscapeDocsNote/>
+    <TrialDocsNote/>
 * Root access to a Ubuntu machine.
 
 ## Installation

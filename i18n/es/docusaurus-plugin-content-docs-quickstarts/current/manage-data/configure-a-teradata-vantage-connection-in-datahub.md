@@ -15,10 +15,10 @@ Este tutorial demuestra cómo crear una conexión a Teradata Vantage con DataHub
 
 ## Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * DataHub instalado. Consulte [Guía de inicio rápido de DataHub](https://datahubproject.io/docs/quickstart)
 
 ## Configurar centro de datos

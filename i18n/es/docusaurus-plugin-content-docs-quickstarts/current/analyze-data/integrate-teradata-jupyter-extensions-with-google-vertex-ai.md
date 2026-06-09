@@ -6,7 +6,7 @@ page_last_update: 28 de junio de 2022
 description: Integrar las extensiones de Teradata Jupyter con Google Vertex AI
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalquimia]
 ---
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import JupyterClearscapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
 
 # Integrar las extensiones de Teradata Jupyter con Google Vertex AI
@@ -22,7 +22,7 @@ El banco de trabajo Vertex AI admite dos tipos de cuadernos: cuadernos administr
 ## Prerrequisitos
 
 * Acceso a una instancia de Teradata Vantage
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Cuenta de Google Cloud con Vertex AI habilitado
 * Almacenamiento en Google Cloud para almacenar scripts de inicio y el paquete de extensiones de Teradata Jupyter
 

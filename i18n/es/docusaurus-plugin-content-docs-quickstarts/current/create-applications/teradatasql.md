@@ -8,7 +8,7 @@ description: Cómo conectarse a Teradata Vantage mediante el controlador de base
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, teradatasql, python applications, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Conectarse a Vantage mediante Python
@@ -32,7 +32,7 @@ El paquete `teradatasql` se ejecuta en Windows, macOS (10.14 Mojave o posterior)
 
 * Acceso a una instancia de Teradata Vantage. Actualmente, el controlador es compatible con Teradata Database 16.10 y versiones posteriores.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Código para enviar una consulta
 

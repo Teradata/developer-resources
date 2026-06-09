@@ -23,10 +23,10 @@ dir: getting-started-with-airbyte
 
 ## 前提条件
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Teradata Vantage インスタンスへのアクセス。これは、Airbyte 接続の宛先として定義されます。Airbyte の構成には、データベース `Host`、 `Username`、 `Password` が必要です。
-        <ClearscapeDocsNote />
+        <TrialDocsNote />
 
 * [個人または組織のアカウントで Google Cloud Platform API が有効になっている](https://support.google.com/googleapi/answer/6158841?hl=en)OAuth またはサービス アカウント キー認証システムを使用して Google アカウントを認証する必要があります。この例では、サービス アカウント キー認証システムを使用します。
 

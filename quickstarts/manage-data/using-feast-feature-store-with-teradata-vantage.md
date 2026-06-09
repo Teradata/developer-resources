@@ -17,9 +17,9 @@ Feast's connector for Teradata is a complete implementation with support for all
 
 Access to a Teradata Vantage instance.
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 
 ## Overview

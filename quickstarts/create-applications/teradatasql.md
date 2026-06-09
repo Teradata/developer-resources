@@ -8,7 +8,7 @@ description: How to connect to Teradata Vantage using teradatasql Python databas
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, teradatasql, python applications, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Connect to Vantage using Python
@@ -32,7 +32,7 @@ pip install teradatasql
 
 * Access to a Teradata Vantage instance. Currently driver is supported for use with Teradata Database 16.10 and later releases.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Code to send a query
 

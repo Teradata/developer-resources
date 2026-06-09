@@ -9,7 +9,7 @@ description: 'Entrenar un modelo de ML sin salir de Teradata Vantage: utilice la
 keywords: [data warehouses, database analytic functions, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, AI/ML]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Entrenar modelos de ML en Vantage usando funciones analíticas de bases de datos
@@ -21,7 +21,7 @@ Hay situaciones en las que desea validar rápidamente una idea de modelo de apre
 ## Prerrequisitos
 
 Necesita acceso a una instancia de Teradata Vantage.
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Cargar datos de muestra
 

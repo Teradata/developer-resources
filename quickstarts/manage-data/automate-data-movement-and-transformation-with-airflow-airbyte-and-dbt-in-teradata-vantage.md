@@ -8,7 +8,7 @@ description: Using Airflow to Orchestrate Airbyte and dbt for Teradata
 keywords: [data warehouses, airflow, teradata, vantage, orchestration, object storage, airbyte, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import ProfileTabs from '../_partials/tabsDBTProfiles.mdx'
 
@@ -22,7 +22,7 @@ This quickstart demonstrates how to leverage Apache Airflow as orchestration too
 
 * Access to a Teradata Vantage instance.
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * [Python](https://www.python.org/downloads/) **3.10** or later installed.
 

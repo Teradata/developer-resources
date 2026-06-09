@@ -9,7 +9,7 @@ description: 'Ejecutar aplicaciones en Teradata: utilice Script Table Operator p
 keywords: [data warehouses, compute storage separation, teradata, vantage, script table operator, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Ejecutar scripts en Vantage
@@ -22,7 +22,7 @@ A veces, es necesario aplicar una lógica compleja a los datos que no se puede e
 
 Necesita acceso a una instancia de Teradata Vantage.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Hello World
 

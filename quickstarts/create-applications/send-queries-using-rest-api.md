@@ -7,7 +7,7 @@ description: Send queries using REST API. Teradata® Query Service is a middlewa
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Send queries using REST API
 
@@ -22,7 +22,7 @@ This how-to provides examples of common use cases to help you get started with Q
 Before starting, make sure you have:
 *	Access to a VantageCloud system where Query Service is provisioned, or a VantageCore with Query Service enabled connectivity. If you are an admin and need to install Query Service, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022).
 
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 
 *	Query Service hostname and system name
 * Authorization credentials to connect to the database

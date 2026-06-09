@@ -8,7 +8,7 @@ description: Consulta Teradata Vantage desde un servicio Mule
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, Mule, JDBC, microservicios]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Consulta Teradata Vantage desde un servicio Mule
@@ -23,7 +23,7 @@ Demuestra cómo consultar una base de datos de Teradata y exponer los resultados
 * Mulesoft Anypoint Studio. Puede descargar una prueba de 30 días desde https://www.mulesoft.com/platform/studio.
 * Acceso a una instancia de Teradata Vantage.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Servicio de ejemplo
 

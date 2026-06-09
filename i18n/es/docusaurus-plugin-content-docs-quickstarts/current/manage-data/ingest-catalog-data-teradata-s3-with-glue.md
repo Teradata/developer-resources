@@ -19,11 +19,11 @@ Para incorporar datos en Amazon S3 cuando la catalogación no es un requisito, t
 
 ### Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una [cuenta de Amazon AWS](https://aws.amazon.com)
 * Acceso a una instancia de Teradata Vantage
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Una base de datos [cliente](../connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md) para enviar consultas para cargar los datos de prueba
 
 ### Carga de datos de prueba

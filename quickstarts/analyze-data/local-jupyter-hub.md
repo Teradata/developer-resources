@@ -9,7 +9,7 @@ description: Deploy Teradata Jupyter extensions in customer JupyterHub clusters
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Deploy Teradata Jupyter extensions to JupyterHub
@@ -23,7 +23,7 @@ For customers who have their own JupyterHub clusters, there are two options to i
 
 This page contains detailed instructions on the two options. Instructions are based on the assumption that the customer JupyterHub deployment is based on [Zero to JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html).
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Use Teradata Jupyter Docker image
 

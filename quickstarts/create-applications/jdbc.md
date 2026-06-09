@@ -8,7 +8,7 @@ description: How to connect to Teradata Vantage using JDBC.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, JDBC, java applications, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Connect to Vantage using JDBC
@@ -21,7 +21,7 @@ This how-to demonstrates how to connect to Teradata Vantage using JDBC using a s
 
 * Access to a Teradata Vantage instance.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 * JDK
 * Maven

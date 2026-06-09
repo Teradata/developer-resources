@@ -23,10 +23,10 @@ Este tutorial muestra cómo usar Airbyte para mover datos desde fuentes a Terada
 
 ## Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage. Se definirá como el destino de la conexión de Airbyte. Necesitará una base de datos `Host`, `Username` y `Password` para la configuración de Airbyte.
-        <ClearscapeDocsNote />
+        <TrialDocsNote />
 
 * [API de Google Cloud Platform habilitada para su cuenta personal o de organización](https://support.google.com/googleapi/answer/6158841?hl=en). Tendrás que autenticar tu cuenta de Google a través de OAuth o a través del Autenticador de claves de cuenta de servicio. En este ejemplo, usamos el autenticador de clave de cuenta de servicio.
 

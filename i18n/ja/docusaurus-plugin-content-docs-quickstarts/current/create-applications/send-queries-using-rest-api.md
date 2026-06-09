@@ -7,7 +7,7 @@ description: REST API を使用してクエリーを送信します。Teradata®
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # REST APIを使ってVantageにクエリーを送信する方法
 
@@ -22,7 +22,7 @@ Teradata Query Service は、クライアント側のドライバを管理せず
 始める前に、以下のものが揃っていることを確認してください。
 \* クエリー サービスがプロビジョニングされている VantageCloud システム、またはクエリー サービスが有効な接続を備えた VantageCore へのアクセス。管理者であり、クエリー サービスをインストールする必要がある場合は、 [クエリー サービスのインストール、構成、および使用ガイド](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022)を参照してください。
 
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 
 \* クエリーサービスのホスト名とシステム名
 * データベースに接続するための認証情報

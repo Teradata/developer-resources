@@ -9,7 +9,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx';
+import TrialDocsNote from '../_partials/teradata_trial.mdx';
 import Tabs from '../_partials/tabsTPT.mdx';
 
 # Teradata Parallel Transporter（TPT）を使用した巨大なデータのバルクロード
@@ -21,7 +21,7 @@ import Tabs from '../_partials/tabsTPT.mdx';
 ## 前提条件
 
 * Teradata Vantageインスタンスへのアクセス。
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Teradata Tools and Utilities (TTU) をダウンロード -  サポートされているプラットフォーム: [Windows](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-windows-installation-package), [MacOS](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-mac-osx-installation-package), [Linux](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-linux-installation-package-0) (登録が必要です).
 
