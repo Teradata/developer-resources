@@ -7,12 +7,12 @@ description: Integrate Teradata Jupyter extensions with Google Vertex AI
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
-import JupyterClearscapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
+import JupyterTrialsNote from '../_partials/jupyter_notebook_trials_note.mdx';
 
 # Integrate Teradata Jupyter extensions with Google Vertex AI
 
 
-<JupyterClearscapeNote />
+<JupyterTrialsNote />
 
 ## Overview
 Teradata Jupyter extensions provide Teradata SQL kernel and several UI extensions to allow users to easily access and navigate Teradata database from Jupyter envioronment. Google Vertex AI is Google Cloud's new unified ML platform. Vertex AI Workbench provides a Jupyter-base development environment for the entire data science workflow. This article describes how to integate our Jupyter extensions with Vertex AI Workbench so that Vertex AI users can take advantage of our Teradata extensions in their ML pipeline.
