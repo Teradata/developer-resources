@@ -15,7 +15,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 
 # Use Vantage from a Jupyter notebook
 
-<ClearscapeJyupiter />
+<JupyterTrialsNote />
 
 ## Overview
 In this how-to we will go through the steps for connecting to Teradata Vantage from a Jupyter notebook.
