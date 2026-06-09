@@ -6,7 +6,7 @@ page_last_update: January 14th, 2022
 description: Connect Teradata Vantage to Power BI Desktop.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, microsoft power bi, power bi]
 ---
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Create Vizualizations in Power BI using Vantage
 
@@ -46,7 +46,7 @@ You will need the following accounts and system.
 
 * A Teradata Vantage instance with a user and password. The user must have permission to data that can be used by Power BI Desktop. Vantage must be accessible from Power BI Desktop.
 
-        <ClearscapeDocsNote />
+        <TrialDocsNote />
 
 
 * The [.NET Data Provider for Teradata](https://downloads.teradata.com/download/connectivity/net-data-provider-for-teradata).

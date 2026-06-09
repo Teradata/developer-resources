@@ -8,7 +8,7 @@ description: Teradata Vantage では dbt (データ構築ツール) を使用し
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 * Teradata Vantageインスタンスへのアクセス。
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Python **3.7**、**3.8**、**3.9**、**3.10**、または **3.11** がインストールされていること。
 

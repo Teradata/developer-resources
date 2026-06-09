@@ -8,7 +8,7 @@ description: Almacene eventos de Twilio Segment en Teradata Vantage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, customer data platform, cdp, segment]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import tabsDBT from '../_partials/tabsDBT.mdx'
 
@@ -30,7 +30,7 @@ En esta solución, Twilio Segment escribe datos de eventos sin procesar en Googl
 2. `gcloud` instalado. Consulte https://cloud.google.com/sdk/docs/install.
 3. Una instancia de Teradata Vantage con la que Google Cloud Run pueda comunicarse.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ### Construir e implementar
 

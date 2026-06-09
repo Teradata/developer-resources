@@ -9,7 +9,7 @@ description: Teradataでのアプリケーションの実行:スクリプト テ
 keywords: [data warehouses, compute storage separation, teradata, vantage, script table operator, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Vantage でスクリプトを実行する方法
@@ -22,7 +22,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 
 Teradata Vantageインスタンスへのアクセス。
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 ## Hello World
 

@@ -15,10 +15,10 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 ## 前提条件
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Teradata Vantageインスタンスへのアクセス。
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * DBeaverがインストールされています。インストールオプションについては [DBeaver コミュニティ](https://dbeaver.io/download) または [DBeaver PRO](https://dbeaver.com/download) を参照してください。
 
 ## DBeaverにTeradataの接続を追加する

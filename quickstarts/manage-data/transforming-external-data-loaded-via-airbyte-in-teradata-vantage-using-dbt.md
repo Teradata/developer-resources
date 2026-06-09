@@ -19,10 +19,10 @@ This tutorial is based on the original [dbt Jaffle Shop tutorial](https://github
 
 ## Prerequisites
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage Instance.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Sample data: The sample data [Jaffle Shop Dataset](https://docs.google.com/spreadsheets/d/1-R4F3q8J9KDnFRWpiT3Ysp1RlOoUu3PeQR7xDeLxFts/edit#gid=42273685) can be found in Google Sheets.
 * Reference dbt project repository: [Jaffle Project with Airbyte.](https://github.com/Teradata/airbyte-dbt-jaffle)
 * Python 3.7, 3.8, 3.9, 3.10 or 3.11 installed.

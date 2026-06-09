@@ -6,7 +6,7 @@ page_last_update: 19 de marzo de 2024
 description: 'Tutorial para Model Factory Solution: ejecución de flujos de trabajo de Airflow con ClearScape Analytics ModelOps'
 keywords: [modelfactory, modelops, byom, python, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Ejecute flujos de trabajo de Airflow con ModelOps - Model Factory Solution Accelerator
 
@@ -31,7 +31,7 @@ Para ejecutar comandos de shell, puede instalar la extensión de VS Code **"Remo
 
 
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 
 ## Configuración de Visual Studio Code e instalación de Airflow en docker-compose

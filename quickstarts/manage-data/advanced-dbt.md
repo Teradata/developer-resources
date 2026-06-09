@@ -9,7 +9,7 @@ description: Advanced dbt (data build tool) use cases with Teradata Vantage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Advanced dbt use cases with Teradata Vantage
@@ -31,7 +31,7 @@ The application of these concepts is illustrated through the ELT process of `ted
 
 * Access to a Teradata Vantage instance.
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Python **3.7**, **3.8**, **3.9** or **3.10** installed.
 

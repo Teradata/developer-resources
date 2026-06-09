@@ -19,10 +19,10 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 
 ## Prerequisites
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage instance.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Azure subscription or create [free account](https://azure.microsoft.com/free)
 * [Azure ML Studio workspace](https://docs.microsoft.com/en-us/azure/machine-learning/studio/create-workspace)
 * (Optional) Download [AdventureWorks DW 2016 database](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017) (i.e. _'Training the Model'_ section)

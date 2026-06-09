@@ -15,10 +15,10 @@ Este tutorial demuestra cómo crear una conexión a Teradata Vantage con DBeaver
 
 ## Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * DBeaver instalado. Consulte la [Comunidad de DBeaver](https://dbeaver.io/download) o [DBeaver PRO](https://dbeaver.com/download) para ver las opciones de instalación.
 
 ## Agregue una conexión Teradata a DBeaver

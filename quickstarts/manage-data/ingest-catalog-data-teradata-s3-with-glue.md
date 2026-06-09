@@ -19,11 +19,11 @@ For ingesting data to Amazon S3 when cataloging is not a requirement consider [T
 
 ### Prerequisites
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to an [Amazon AWS account](https://aws.amazon.com)
 * Access to a Teradata Vantage instance
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * A database [client](../connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md) to send queries for loading the test data
 
 ### Loading of test data

@@ -19,10 +19,10 @@ keywords: [dbt, airbyte, data transformation, data warehouses, compute storage s
 
 ## 前提条件
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Teradata Vantageインスタンスへのアクセス。
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * サンプルデータ: サンプルデータ [Jaffleショップデータセット](https://docs.google.com/spreadsheets/d/1-R4F3q8J9KDnFRWpiT3Ysp1RlOoUu3PeQR7xDeLxFts/edit#gid=42273685) はGoogle スプレッドシートにあります。
 * 参照 dbt プロジェクト リポジトリ: [Airbyte との Jaffle プロジェクト。](https://github.com/Teradata/airbyte-dbt-jaffle)
 * Python 3.7、3.8、3.9、3.10、または 3.11 がインストールされています。

@@ -29,10 +29,10 @@ Amazon SageMaker consume datos de prueba y entrenamiento de un depósito de Amaz
 
 ### Prerrequisitos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Permiso de IAM para acceder al depósito de Amazon S3 y utilizar el servicio Amazon SageMaker.
 * Un depósito de Amazon S3 para almacenar datos de entrenamiento.
 

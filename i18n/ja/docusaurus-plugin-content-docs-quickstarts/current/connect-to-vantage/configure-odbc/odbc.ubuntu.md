@@ -9,7 +9,7 @@ description: UbuntuからのODBCによるVantageへの接続
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, odbc, ubuntu]
 ---
 
-import ClearscapeDocsNote from '../../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../../_partials/teradata_trial.mdx'
 import CommunityLink from '../../_partials/community_link.mdx'
 
 # UbuntuからのODBCによるVantageへの接続
@@ -21,7 +21,7 @@ import CommunityLink from '../../_partials/community_link.mdx'
 ## 前提条件
 
 * Teradata Vantageインスタンスへのアクセス。
-    <ClearscapeDocsNote/>
+    <TrialDocsNote/>
 * Ubuntu マシンへのルートアクセス。
 
 ## インストール

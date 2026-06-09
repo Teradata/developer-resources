@@ -7,7 +7,7 @@ description: Tutorial para implementar y supervisar un modelo PMML en Vantage me
 keywords: [modelops, byom, python, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # ModelOps: importar e implementar su primer modelo BYOM
 
@@ -33,7 +33,7 @@ Proporcionamos un cuaderno asociado y datos de muestra que puede importar a su e
 
 
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 
 ## Conceptos clave relevantes inicialmente

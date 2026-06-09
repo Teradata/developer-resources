@@ -15,10 +15,10 @@ This how-to demonstrates how to create a connection to Teradata Vantage with Dat
 
 ## Prerequisites
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage instance.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * DataHub installed. See [DataHub Quickstart Guide](https://datahubproject.io/docs/quickstart)
 
 ## Setup DataHub

@@ -44,10 +44,10 @@ Se espera que esté familiarizado con el servicio Amazon AppFlow y Teradata Vant
 
 Necesitará las siguientes cuentas y sistemas:
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Una cuenta de AWS con el rol que puede crear y ejecutar flujos.
 * Un depósito de Amazon S3 para almacenar datos de Salesforce (es decir, ptctsoutput)
 * Un depósito de Amazon S3 para almacenar datos de Vantage sin procesar (archivo Parquet) (es decir, vantageparquet). Este depósito debe tener una política que permita el acceso a Amazon AppFlow

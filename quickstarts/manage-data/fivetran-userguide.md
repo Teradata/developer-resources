@@ -8,7 +8,7 @@ description: Use Fivetran with Teradata Vantage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, fivetran.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Use Fivetran to load data from external sources to Teradata Vantage
@@ -31,7 +31,7 @@ Make sure you:
 * Active [Fivetran Account](https://fivetran.com/login?_gl=1*9knhuy*_gcl_aw*R0NMLjE3NDM3NDI1MjguQ2p3S0NBanc0N2lfQmhCVEVpd0FhSmZQcHRGNDZmVVFqcnFaMGFiS0VpbVBkSUY3b3lQdTdicDdTZ1R2X3RHZTFGR253OFNYRnI0Nlp4b0MteXdRQXZEX0J3RQ..*_gcl_au*MTg1ODQxODI2LjE3MzgxMzM1Nzg.*_ga*MzM3MDk5MDc3LjE3MzgxMzM1Nzg.*_ga_NE72Z5F3GB*MTc0NDExMjU0MC4xOS4wLjE3NDQxMTI1NDAuNjAuMC4w*_ga_MD1R8Y04Z3*MTc0NDExMjU0MC40LjAuMTc0NDExMjU0MC42MC4wLjA)
 * Access to a Teradata Vantage instance.
    
-   <ClearscapeDocsNote />
+   <TrialDocsNote />
 
 ### Setup Google Sheets
 Refer to the [Google Sheets Setup Guide](https://fivetran.com/docs/connectors/files/google-sheets/google-sheets-setup-guide) to configure sharing permissions and named ranges for data transfer using Fivetran.
@@ -105,7 +105,7 @@ Once the sync is complete, connect to your `Teradata Vantage` instance using a c
 * Access to a Postgres Instance.
 * Access to a Teradata Vantage instance.
 
-   <ClearscapeDocsNote />
+   <TrialDocsNote />
 
 ### Setup PostgreSQL
 Refer to the [Postgres Setup Guide](https://fivetran.com/docs/connectors/databases/postgresql/setup-guide) to configure postgres on Fivetran.
@@ -182,7 +182,7 @@ Once the sync is complete, connect to your `Teradata Vantage` instance using a c
 * Access to Amazon S3.
 * Access to a Teradata Vantage instance.
 
-   <ClearscapeDocsNote />
+   <TrialDocsNote />
 
 ### Setup Amazon S3
 Refer to the [Amazon S3 Setup Guide](https://fivetran.com/docs/connectors/files/amazon-s3/setup-guide-new) to configure postgres on Fivetran.

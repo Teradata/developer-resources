@@ -7,7 +7,7 @@ description: Use dbt Cloud (data build tool) with Teradata Vantage.
 keywords: [dbt Cloud, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # dbt Cloud with Teradata Vantage
 
@@ -18,7 +18,7 @@ This tutorial demonstrates how to use dbt Cloud with Teradata Vantage. It's base
 * You have a [dbt Cloud account](https://www.getdbt.com/signup/).
 * Access to a Teradata Vantage instance.
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 ### About the Jaffle Shop warehouse
 

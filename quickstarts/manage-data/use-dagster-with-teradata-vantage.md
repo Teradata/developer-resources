@@ -7,7 +7,7 @@ description: Use dagster-teradata with Teradata Vantage.
 keywords: [dagster, dagster-teradata, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import InstallTabs from '../_partials/tabsDBT.mdx'
 
 # dagster-teradata with Teradata Vantage
@@ -26,7 +26,7 @@ This guide walks you through integrating Dagster with Teradata Vantage to create
 
 * Access to a Teradata Vantage instance.
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Python **3.9** or higher, Python **3.12** is recommended.
 * pip

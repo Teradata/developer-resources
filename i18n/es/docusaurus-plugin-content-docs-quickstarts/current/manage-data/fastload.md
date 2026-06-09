@@ -22,10 +22,10 @@ A menudo tenemos la necesidad de mover grandes volúmenes de datos a Vantage. Te
 
 ## Requisitos previos
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Acceso a una instancia de Teradata Vantage.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Descargue Teradata Tools and Utilities (TTU) -  plataformas compatibles: [Windows](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-windows-installation-package), [MacOS](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-macos-installation-package), [Linux](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-linux-installation-package-0) (requires registration).
 
 ## Install TTU

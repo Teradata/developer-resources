@@ -29,10 +29,10 @@ Amazon SageMaker consumes training and test data from an Amazon S3 bucket. This 
 
 ### Prerequisites
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to a Teradata Vantage instance.
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * IAM permission to access Amazon S3 bucket, and to use Amazon SageMaker service.
 * An Amazon S3 bucket to store training data.
 

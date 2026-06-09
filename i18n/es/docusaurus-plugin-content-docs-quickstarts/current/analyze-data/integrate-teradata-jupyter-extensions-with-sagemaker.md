@@ -7,7 +7,7 @@ description: Integrar las extensiones de Teradata Jupyter con una instancia de c
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalquimia]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import JupyterClearScapeNote from '../_partials/jupyter_notebook_clearscape_analytics_note.mdx';
 
 # Integrar las extensiones de Teradata Jupyter con una instancia de cuaderno de SageMaker
@@ -22,7 +22,7 @@ Las extensiones de Teradata Jupyter proporcionan el kernel Teradata SQL y varias
 
 
 * Acceso a una instancia de Teradata Vantage
-  <ClearscapeDocsNote />
+  <TrialDocsNote />
 * Cuenta de AWS
 * Depósito de AWS S3 para almacenar scripts de configuración del ciclo de vida y paquete de extensiones de Teradata Jupyter
 

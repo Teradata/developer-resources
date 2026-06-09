@@ -8,7 +8,7 @@ description: Utilizar Apache Airflow con Teradata Vantage
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, airflow, workflow.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # Utilizar Apache Airflow con Teradata Vantage
@@ -19,7 +19,7 @@ Este tutorial demuestra cómo utilizar Airflow con Teradata Vantage. Airflow se 
 ## Prerrequisitos
 * Ubuntu 22.x
 * Acceso a una instancia de Teradata Vantage.
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 * Python **3.8**, **3.9**, **3.10** o **3.11** instalado.
 * pip
 

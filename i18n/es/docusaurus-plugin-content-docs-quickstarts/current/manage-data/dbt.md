@@ -8,7 +8,7 @@ description: Utilizar dbt (herramienta de creación de datos) con Teradata Vanta
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -23,7 +23,7 @@ En este tutorial se realiza una demostración de cómo utilizar dbt (Data Build 
 
 * Acceso a una instancia de Teradata Vantage.
 
-    <ClearscapeDocsNote />
+    <TrialDocsNote />
 
 * Python **3.7**, **3.8**, **3.9**, **3.10** o **3.11** instalado.
 

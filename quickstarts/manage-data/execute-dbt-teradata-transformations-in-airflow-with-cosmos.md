@@ -8,7 +8,7 @@ description: Execute dbt teradata transformation jobs in Apache Airflow using As
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, queries, dbt, cosmos, astronomer]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -26,7 +26,7 @@ Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/wi
 ## Prerequisites
 * Access to a Teradata Vantage instance, version 17.10 or higher.
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 * Python 3.8, 3.9, 3.10 or 3.11 and python3-env, python3-pip installed.
 

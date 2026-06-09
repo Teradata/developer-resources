@@ -8,7 +8,7 @@ description: JDBCでVantageに接続する方法
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, ODBC ドライバ, Java アプリケーション, business intelligence, enterprise analytics]
 ---
 
-import ClearscapeDocsNote from '../_partials/teradata_trial.mdx'
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
 import CommunityLink from '../_partials/community_link.mdx'
 
 # JDBC を使用して Vantage に接続する方法
@@ -21,7 +21,7 @@ import CommunityLink from '../_partials/community_link.mdx'
 
 * Teradata Vantageインスタンスへのアクセス。
 
-<ClearscapeDocsNote />
+<TrialDocsNote />
 
 * JDK
 * Maven
