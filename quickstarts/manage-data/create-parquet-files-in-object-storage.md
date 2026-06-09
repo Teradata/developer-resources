@@ -8,7 +8,7 @@ description: Teradata Vantage Native Object Storage - read and write from/to obj
 keywords: [data warehouses, compute storage separation, Teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, parquet, create parquet files]
 ---
 
-import UseCase from '../_partials/use-csae.mdx';
+import UseCase from '../_partials/use-trials.mdx';
 import CommunityLink from '../_partials/community_link.mdx';
 
 # Create Parquet files in object storage
