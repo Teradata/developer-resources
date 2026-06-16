@@ -4,7 +4,7 @@ author: Adam Tworkiewicz, Janeth Graziani
 email: developer.relations@teradata.com
 page_last_update: April 6th, 2022
 title: Load data with TPT
-description: Load data into Teradata Database efficiently using Teradata Parallel Transporter (TPT).
+description: Load data into Teradata efficiently using Teradata Parallel Transporter (TPT).
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, object storage, business intelligence, enterprise analytics, Fastload, Teradata Parallel Transporter, TPT]
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---
@@ -16,11 +16,11 @@ import Tabs from '../_partials/tabsTPT.mdx';
 
 ## Overview
 
-We often have a need to move large volumes of data into a Teradata Database. Teradata offers `Teradata Parallel Transporter (TPT)` utility that can efficiently load large amounts of data into a Teradata Database. This how-to demonstrates how to use `TPT`. In this scenario, we will load over 300k records, over 40MB of data, in a couple of seconds.
+We often have a need to move large volumes of data into Teradata. Teradata offers `Teradata Parallel Transporter (TPT)` utility that can efficiently load large amounts of data into Teradata. This how-to demonstrates how to use `TPT`. In this scenario, we will load over 300k records, over 40MB of data, in a couple of seconds.
 
 ## Prerequisites
 
-* Access to a Teradata Database instance.
+* Access to a Teradata instance.
     <TrialDocsNote />
 
 * Download Teradata Tools and Utilities (TTU) -  supported platforms: [Windows](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-windows-installation-package), [MacOS](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-mac-osx-installation-package), [Linux](https://downloads.teradata.com/download/tools/teradata-tools-and-utilities-linux-installation-package-0) (requires registration).
@@ -46,11 +46,11 @@ AS PERMANENT = 120e6, -- 120MB
 
 ## Run TPT
 
-We will now run `TPT`. `TPT` is a command-line tool that can be used to load, extract and update data in a Teradata Database. These various functions are implemented in so called `operators`. For example, loading data into a Teradata Database is handled by the `Load` operator. The `Load` operator is very efficient in uploading large amounts of data into Teradata. The `Load` operator, in order to be fast, has several restrictions in place. It can only populate empty tables. Inserts to already populated tables are not supported. It doesn't support tables with secondary indices. Also, it won't insert duplicate records, even if a table is a `MULTISET` table. For the full list of restrictions check out [Teradata® TPT Reference - Load Operator - Restrictions and Limitations](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Reference/February-2022/Load-Operator/Usage-Notes/Normalized-Tables/Restrictions-and-Limitations).
+We will now run `TPT`. `TPT` is a command-line tool that can be used to load, extract and update data in Teradata. These various functions are implemented in so called `operators`. For example, loading data into Teradata is handled by the `Load` operator. The `Load` operator is very efficient in uploading large amounts of data into Teradata. The `Load` operator, in order to be fast, has several restrictions in place. It can only populate empty tables. Inserts to already populated tables are not supported. It doesn't support tables with secondary indices. Also, it won't insert duplicate records, even if a table is a `MULTISET` table. For the full list of restrictions check out [Teradata® TPT Reference - Load Operator - Restrictions and Limitations](https://docs.teradata.com/r/Teradata-Parallel-Transporter-Reference/February-2022/Load-Operator/Usage-Notes/Normalized-Tables/Restrictions-and-Limitations).
 
-TPT has its own scripting language. The language allows you to prepare the database with arbitrary SQL commands, declare the input source and define how the data should be inserted into a Teradata Database.
+TPT has its own scripting language. The language allows you to prepare the database with arbitrary SQL commands, declare the input source and define how the data should be inserted into Teradata.
 
-To load the csv data to a Teradata Database, we will define and run a job. The job will prepare the database. It will remove old log and error tables and create the target table. It will then read the file and insert the data into the database.
+To load the csv data to Teradata, we will define and run a job. The job will prepare the database. It will remove old log and error tables and create the target table. It will then read the file and insert the data into the database.
 
 * Create a job variable file that will tell TPT how to connect to our Teradata database. Create file `jobvars.txt` and insert the following content. Replace `host` with the host name of your database. For example, if you are using a local Teradata Express instance, use `127.0.0.1`. `username` with the database user name, and `password` with the database password. Note that the preparation step (DDL) and the load step have their own configuration values and that the config values need to be entered twice to configure both the DDL and the load step.
 
@@ -241,11 +241,11 @@ AS (
 NO PRIMARY INDEX;
 ```
 
-The NOS solution is convenient as it doesn't depend on additional tools. It can be implemented using only SQL. It performs well, especially for Teradata Database deployments with a high number of AMPs as NOS tasks are delegated to AMPs and run in parallel. Also, splitting the data in object storage into multiple files may further improve performance.
+The NOS solution is convenient as it doesn't depend on additional tools. It can be implemented using only SQL. It performs well, especially for Teradata database deployments with a high number of AMPs as NOS tasks are delegated to AMPs and run in parallel. Also, splitting the data in object storage into multiple files may further improve performance.
 
 ## Summary
 
-This how-to demonstrated how to ingest large amounts of data into a Teradata Database. We loaded hundreds of thousands or records in a couple of seconds using `TPT`.
+This how-to demonstrated how to ingest large amounts of data into Teradata. We loaded hundreds of thousands or records in a couple of seconds using `TPT`.
 
 ## Further reading
 * [Teradata® TPT User Guide](https://docs.teradata.com/r/Teradata-Parallel-Transporter-User-Guide/February-2022)
