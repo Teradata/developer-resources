@@ -36,7 +36,7 @@ const FeatureList = [
   {
     title: translate({ message: 'quickstarts.introduction' }),
     description: translate({ message: 'quickstarts.introduction_description' }),
-    href: '/quickstarts/introduction/teradata-vantage-engine-architecture-and-concepts/',
+    href: '/quickstarts/introduction/teradata-engine-architecture-and-concepts/',
   },
   {
     title: translate({ message: 'quickstarts.get_access_vantage' }),
