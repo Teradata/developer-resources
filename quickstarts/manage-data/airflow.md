@@ -1,27 +1,26 @@
 ---
 sidebar_position: 3
 id: airflow
-author: Satish Chinthanippu
-email: satish.chinthanippu@teradata.com
-page_last_update: February 06th, 2024
-description: Use Apache Airflow with Teradata Vantage.
+author: Satish Chinthanippu, Daniel Herrera
+email: developer.relations@teradata.com
+page_last_update: June 22nd, 2026
+description: Use Apache Airflow with Teradata Database.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, airflow, workflow.]
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
-import CommunityLink from '../_partials/community_link.mdx'
 
-# Use Apache Airflow with Teradata Vantage
+# Use Apache Airflow with Teradata Database
 
 ## Overview
-This quickstart demonstrates how to use airflow with Teradata Vantage. Airflow will be installed on a Ubuntu System.
+This quickstart demonstrates how to use airflow with Teradata Database. Airflow will be installed on a Ubuntu System.
 
 ## Prerequisites
-* Ubuntu 22.x
-* Access to a Teradata Vantage instance.
+* Ubuntu 22.x (Or Windows System for Linux WSL)
+* Access to a Teradata Database instance.
     <TrialDocsNote />
-* Python **3.8**, **3.9**, **3.10** or **3.11** installed.
-* pip
+* Python **3.9**, **3.10**, **3.11** or **3.12** installed.
+* uv
 
 
 
@@ -32,17 +31,15 @@ This quickstart demonstrates how to use airflow with Teradata Vantage. Airflow w
     export AIRFLOW_HOME=~/airflow
     ```
 
-2. Install `apache-airflow` stable version 2.8.2 from PyPI repository:
+2. Install `apache-airflow` stable version 3.2.2 from PyPI repository:
     ```bash
-    AIRFLOW_VERSION=2.8.2
-    PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
-    CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
-    pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+    AIRFLOW_VERSION=3.2.2
+    uv pip install "apache-airflow==${AIRFLOW_VERSION}"
     ```
 
 3. Install the Airflow Teradata provider stable version from PyPI repository:
     ```bash
-    pip install "apache-airflow-providers-teradata"
+    uv pip install "apache-airflow-providers-teradata"
     ```
 
     :::note
@@ -55,32 +52,42 @@ This quickstart demonstrates how to use airflow with Teradata Vantage. Airflow w
 
 ## Start Airflow Standalone
 
+:::note
+If you have a previous Airflow installation, run `airflow db migrate` before starting `airflow standalone` to ensure your configuration file is up to date for the installed version.
+:::
+
 1. Run Airflow Standalone
     ```bash
     airflow standalone
-    ````
-2. Access the Airflow UI. Visit https://localhost:8080 in the browser and log in with the admin account details shown in the terminal.
+    ```
+2. Access the Airflow UI. Visit http://localhost:8080 in the browser and log in with the admin account details shown in the terminal.
 
 
-Teradata Connections may be defined in Airflow in the following ways:
+Teradata connections may be defined in Airflow in the following ways:
 
-1. Using Airflow Web UI
-2. Using Environment Variable
+1. Using the Airflow CLI
+2. Using an Environment Variable
 
-## Define a Teradata connection in Airflow Web UI
+## Define a Teradata connection using the Airflow CLI
 
-1. Open the Admin -> Connections section of the UI. Click the Create link to create a new connection.
-    ![Airflow admin dropdown](../images/airflow-connection.png)
+Use the `airflow connections add` command to register a connection directly from the terminal. Replace the placeholder values with your actual Teradata host, login, and password.
 
-2. Fill in input details in New Connection Page.
-    ![Airflow New Connection](../images/airflow-newconnection.png)
-    * Connection Id: Unique ID of Teradata Connection.
-    * Connection Type: Type of the system. Select Teradata.
-    * Database Server URL (required): Teradata instance hostname to connect to.
-    * Database (optional): Specify the name of the database to connect to
-    * Login (required): Specify the user name to connect.
-    * Password (required): Specify the password to connect.
-    * Click on Test and Save.
+```bash
+airflow connections add Teradata_TestConn \
+    --conn-type teradata \
+    --conn-host <host> \
+    --conn-login <user> \
+    --conn-password <password> \
+    --conn-schema <schema>
+```
+
+Verify the connection was created:
+
+```bash
+airflow connections get Teradata_TestConn
+```
+
+Refer [Teradata Hook](https://airflow.apache.org/docs/apache-airflow-providers-teradata/stable/connections/teradata.html) for the full list of supported connection parameters.
 
 ## Define a Teradata connection in Environment Variable
 Airflow connections may be defined in environment variables in either of one below formats.
@@ -117,13 +124,13 @@ export AIRFLOW_CONN_TERADATA_CONN_ID='{
 export AIRFLOW_CONN_TERADATA_CONN_ID='teradata://teradata_user:my-password@my-host/my-schema?tmode=TERA&sslmode=verify-ca'
 ```
 
-Refer [Teradata Hook](https://airflow.apache.org/docs/apache-airflow-providers-teradata/stable/connections/teradata.html)  for detailed information on Teradata Connection in Airflow.
+Refer [Teradata Hook](https://airflow.apache.org/docs/apache-airflow-providers-teradata/stable/connections/teradata.html) for detailed information on Teradata Connection in Airflow.
 
 ## Define a DAG in Airflow
 
-Create a DAG as a python file like sample.py under `DAG_FOLDER` - `$AIRFLOW_HOME/files/dags` directory.
+Create a DAG as a python file like sample.py under `DAG_FOLDER` - `$AIRFLOW_HOME/dags` directory.
 
-```sql
+```python
 from datetime import datetime
 from airflow import DAG
 from airflow.providers.teradata.operators.teradata import TeradataOperator
@@ -137,7 +144,7 @@ with DAG(
 ) as dag:
     create = TeradataOperator(
         task_id="table_create",
-        conn_id=CONN_ID,
+        teradata_conn_id=CONN_ID,
         sql="""
             CREATE TABLE my_users,
             FALLBACK (
@@ -155,7 +162,7 @@ with DAG(
 
 ## Load DAG
 
-Airflow loads DAGs from Python source files, which it looks for inside its configured `DAG_FOLDER` - `$AIRFLOW_HOME/files/dags` directory.
+Airflow loads DAGs from Python source files, which it looks for inside its configured `DAG_FOLDER` - `$AIRFLOW_HOME/dags` directory.
 
 ## Run DAG
 DAGs will run in one of two ways:
@@ -173,12 +180,8 @@ with DAG(
 
 ## Summary
 
-This quickstart demonstrated how to use Airflow and the Airflow Teradata provider with a Teradata Vantage instance. The example DAG provided creates `my_users` table in the Teradata Vantage instance defined in Connection UI.
+This quickstart demonstrated how to use Airflow and the Airflow Teradata provider with a Teradata Database instance. The example DAG provided creates `my_users` table in the Teradata Database instance defined via the Airflow CLI connection.
 
 ## Further reading
 * [airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
 * [airflow DAGs](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html)
-
-
-<CommunityLink />
-

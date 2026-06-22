@@ -15,7 +15,6 @@ Anypoint Connector for Teradata (Teradata Connector) establishes communication b
 
 Reference: [Teradata Connector Reference](./teradata-connector-mule4-reference.md) 
 
-Release Notes: [Teradata Connector Release Notes](./mule-teradata-connector-release-notes.md) 
 
 ## Before You Begin
 
