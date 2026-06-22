@@ -8,9 +8,6 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 
 # Teradata Connector Reference - Mule 4
- 
-
-Release Notes: [Teradata Connector Release Notes](./mule-teradata-connector-release-notes.md)
 
 ## Configurations
 ---
