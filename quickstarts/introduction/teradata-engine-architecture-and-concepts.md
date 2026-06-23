@@ -14,11 +14,11 @@ keywords: [data warehouses, teradata engine architecture, teradata, teradata dat
 
 ### Overview
 
-This article explains the underlying concepts of Teradata engine architecture. All editions of Teradata, including the Primary Cluster in VantageCloud Lake, use the same engine.  
+This article explains the underlying concepts of Teradata engine architecture. All editions of Teradata use the same engine.  
 
 Teradata's architecture is based on a Massively Parallel Processing (MPP), shared-nothing architecture that enables high-performance data processing and analytics. MPP distributes workloads across multiple vprocs, or virtual processors. The virtual processor responsible for query processing is commonly referred to as Access Module Processor (AMP). Each AMP is isolated from other AMPs, and processes queries in parallel, allowing Teradata to process large volumes of data rapidly. 
 
-The major architectural components of the Teradata engine include the Parsing Engines (PEs), BYNET, Access Module Processors (AMPs), and Virtual Disks (Vdisks). Vdisks are assigned to AMPs in enterprise platforms and in the Primary Cluster for VantageCloud Lake environments. 
+The major architectural components of the Teradata engine include the Parsing Engines (PEs), BYNET, Access Module Processors (AMPs), and Virtual Disks (Vdisks). Vdisks are assigned to AMPs in enterprise platforms. 
 
 ![Teradata Major Architectural Components](./images/teradata-architecture-concepts/teradata_architecture_major_components.png)
 
@@ -54,11 +54,6 @@ AMPs are responsible for data storage and retrieval. Each AMP is associated with
 * Disk space management. 
 * Accounting. 
 * Recovery processing. 
-
-:::note
-AMPs in VantageCore IntelliFlex, VantageCore VMware, VantageCloud Enterprise, and the Primary Cluster in the case of VantageCloud Lake, store data in a Block File System (BFS) format on Vdisks. 
-AMPs in Compute Clusters and Compute Worker Nodes on VantageCloud Lake do not have BFS. They can only access data in object storage using the Object File System (OFS). 
-:::
 
 ### Virtual Disks (Vdisks)
 Virtual Disks are units of storage space owned by an AMP. Vdisks hold user data, such as rows within tables, and map to physical space on a disk.
