@@ -1,17 +1,17 @@
 ---
 sidebar_position: 7
-author: Tan Nguyen
-email: tan.nguyen@teradata.com
-page_last_update: February 10th, 2023
+author: Tan Nguyen, Vidhan Bhonsle
+email: developer.relations@teradata.com
+page_last_update: June 22nd, 2026
 description:  Use Teradata Connector for MuleSoft's Anypoint Studio.
-keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
+keywords: [data warehouses, compute storage separation, teradata, teradata database, teradata connector, object storage, business intelligence, enterprise analytics, mule, mulesoft, anypoint studio.]
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 # Teradata Connector - Mule 4
 
-Anypoint Connector for Teradata (Teradata Connector) establishes communication between your Mule app and a Teradata Vantage database, enabling you to connect with your Teradata Vantage instance to load data and run SQL queries in Teradata Vantage tables.
+Anypoint Connector for Teradata (Teradata Connector) establishes communication between your Mule app and a Teradata database, enabling you to connect with your Teradata instance to load data and run SQL queries in Teradata tables.
 
 Reference: [Teradata Connector Reference](./teradata-connector-mule4-reference.md) 
 
@@ -20,7 +20,7 @@ Reference: [Teradata Connector Reference](./teradata-connector-mule4-reference.m
 
 To use this connector, you must be familiar with:
 
-- Teradata Vantage SQL
+- Teradata SQL
 - Anypoint Connectors
 - Mule runtime engine (Mule)
 - Elements and global elements in a Mule flow
@@ -29,7 +29,7 @@ To use this connector, you must be familiar with:
 Before creating an app, you must have:
 
 - Anypoint Studio version 7.5 or later
-- Credentials to access the Teradata Vantage target resource
+- Credentials to access the Teradata target resource
 
 <TrialDocsNote/>
 
@@ -53,7 +53,7 @@ The Teradata Connector supports:
 
 After you complete the prerequisites, you can try the examples and configure the connector using Anypoint Studio.
 
-- [Query Teradata Vantage from a Mule service](https://quickstarts.teradata.com/mule.jdbc.example.html)
+- [Query Teradata from a Mule service](https://quickstarts.teradata.com/mule.jdbc.example.html)
 - [Using Anypoint Studio to Configure Teradata Connector](./examples-configuration.md) 
 
 ## See Also
