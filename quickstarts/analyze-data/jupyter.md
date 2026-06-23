@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
 id: jupyter
-title: Use Teradata Database from a Jupyter notebook
+title: Use Teradata from a Jupyter notebook
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 page_last_update: June 9th, 2026
-description: Use Teradata Database from a Jupyter notebook
+description: Use Teradata from a Jupyter notebook
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, JDBC, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, jupysql, teradatasqlalchemy]
 ---
 
@@ -13,21 +13,21 @@ import JupyterTrialsNote from '../_partials/jupyter_notebook_trials_note.mdx';
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 
-# Use Teradata Database from a Jupyter notebook
+# Use Teradata from a Jupyter notebook
 
 <JupyterTrialsNote />
 
 ## Overview
-In this how-to we will go through the steps for connecting to Teradata Database from a Jupyter notebook.
+In this how-to we will go through the steps for connecting to Teradata from a Jupyter notebook.
 
 <TrialDocsNote />
 
 ## Options
 
-There are a couple of ways to connect to Teradata Database from a Jupyter Notebook:
+There are a couple of ways to connect to Teradata from a Jupyter Notebook:
 
 1. [Use python or R libraries in a regular Python/R kernel notebook](#teradata-libraries) - this option works well when you are in a restricted environment that doesn't allow you to spawn your own Docker images. Also, it's useful in traditional datascience scenarios when you have to mix SQL and Python/R in a notebook. If you are proficient with Jupyter and have your own set of preferred libraries and extensions, start with this option.
-2. [Use the Teradata Jupyter Docker image](#teradata-jupyter-docker-image) - the Teradata Jupyter Docker image bundles the Teradata SQL kernel (more on this later), `teradataml` and `tdplyr` libraries, python and R drivers. It also contains Jupyter extensions that allow you to manage Teradata connections, explore objects in Teradata Database. It's convenient when you work a lot with SQL or would find a visual Navigator helpful. If you are new to Jupyter or if you prefer to get a currated assembly of libraries and extensions, start with this option.
+2. [Use the Teradata Jupyter Docker image](#teradata-jupyter-docker-image) - the Teradata Jupyter Docker image bundles the Teradata SQL kernel (more on this later), `teradataml` and `tdplyr` libraries, python and R drivers. It also contains Jupyter extensions that allow you to manage Teradata connections, explore objects in Teradata. It's convenient when you work a lot with SQL or would find a visual Navigator helpful. If you are new to Jupyter or if you prefer to get a currated assembly of libraries and extensions, start with this option.
 
 ### Teradata libraries
 
@@ -70,7 +70,7 @@ The connection string format is `teradatasql://username:password@host/database`.
 ```python
 import pandas as pd
 # Define the db connection string. Pandas uses SQLAlchemy connection strings.
-# For Teradata Database, it's teradatasql://username:password@host/database_name .
+# For Teradata, it's teradatasql://username:password@host/database_name .
 # See https://pypi.org/project/teradatasqlalchemy/ for details.
 
 # For a remote/cloud/trial Teradata instance:
@@ -125,7 +125,7 @@ There are many other features that jupysql provides, including variable substitu
 
 ### Teradata Jupyter Docker image
 
-The Teradata Jupyter Docker image builds on `quay.io/jupyter/datascience-notebook` Docker image. It adds the Teradata SQL kernel, Teradata Python and R libraries, Jupyter extensions to make you productive while interacting with Teradata Database. The image also contains sample notebooks that demonstrate how to use the SQL kernel and Teradata libraries.
+The Teradata Jupyter Docker image builds on `quay.io/jupyter/datascience-notebook` Docker image. It adds the Teradata SQL kernel, Teradata Python and R libraries, Jupyter extensions to make you productive while interacting with Teradata. The image also contains sample notebooks that demonstrate how to use the SQL kernel and Teradata libraries.
 
 The SQL kernel and Teradata Jupyter extensions are useful for people that spend a lot of time with the SQL interface. Think about it as a notebook experience that, in many cases, is more convenient than using Teradata Studio. The Teradata Jupyter Docker image doesn't try to replace Teradata Studio. It doesn't have all the features. It's designed for people who need a lightweight, web-based interface and enjoy the notebook UI.
 
@@ -167,9 +167,9 @@ Steps 3 and 4 require a desktop browser. If you are running in a headless or ser
 
 ## Summary
 
-This quick start covered different options to connect to Teradata Database from a Jupyter Notebook. We learned about the Teradata Jupyter Docker image that bundles multiple Teradata Python and R libraries. It also provides an SQL kernel, database object explorer and connection management. These features are useful when you spend a lot of time with the SQL interface. For more traditional data science scenarios, we explored the standalone Teradata Python driver and integration through the `jupysql` extension.
+This quick start covered different options to connect to Teradata from a Jupyter Notebook. We learned about the Teradata Jupyter Docker image that bundles multiple Teradata Python and R libraries. It also provides an SQL kernel, database object explorer and connection management. These features are useful when you spend a lot of time with the SQL interface. For more traditional data science scenarios, we explored the standalone Teradata Python driver and integration through the `jupysql` extension.
 
 ## Further reading
 * [Teradata Jupyter Extensions Website](https://teradata.github.io/jupyterextensions)
-* [Teradata Vantage™ Modules for Jupyter Installation Guide](https://docs.teradata.com/r/KQLs1kPXZ02rGWaS9Ktoww/root)
+* [Teradata Modules for Jupyter Installation Guide](https://docs.teradata.com/r/KQLs1kPXZ02rGWaS9Ktoww/root)
 * [Teradata® Package for Python User Guide](https://docs.teradata.com/r/1YKutX2ODdO9ppo_fnguTA/root)
