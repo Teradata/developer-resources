@@ -1,8 +1,8 @@
 ---
 sidebar_position: 19
 author: Daniel Herrera
-email: daniel.herrera2@teradata.com
-page_last_update: March 18, 2024
+email: developer.relations@teradata.com
+page_last_update: 2026-06-24
 description: Ingest and catalog data from Teradata Vantage to Amazon S3
 keywords: [data warehouses, object storage, teradata, vantage, cloud data platform, data engineering, enterprise analytics, aws glue, aws lake formation, aws glue catalog]
 ---
@@ -22,7 +22,7 @@ For ingesting data to Amazon S3 when cataloging is not a requirement consider [T
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to an [Amazon AWS account](https://aws.amazon.com)
-* Access to a Teradata Vantage instance
+* Access to a Teradata Vantage instance (Teradata Cloud, Teradata Factory, or Teradata Trial)
   <TrialDocsNote />
 * A database [client](../connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md) to send queries for loading the test data
 
@@ -84,7 +84,7 @@ In this section, we will cover in detail each of the steps below:
     * USER
     * PASSWORD
 :::tip
-In the case of ClearScape Analytics Experience, the user is always "demo_user," and the password is the one you defined when creating your ClearScape Analytics Experience environment.
+In the case of Teradata Trial, the user is always "demo_user," and the password is the one you defined when creating your Teradata Trial environment.
 :::
 ![secret values](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-2.PNG)
 * Assign a name to the secret.
@@ -122,7 +122,7 @@ The role you create should have access to the typical permissions of a Glue Serv
             "Sid": "FullAccessToSpecificBucket",
             "Effect": "Allow",
             "Action": "s3:*",
-            "Resource": [1
+            "Resource": [
                 "arn:aws:s3:::<bucket-name>",
                 "arn:aws:s3:::<bucket-name>/*"
             ]
@@ -144,7 +144,7 @@ The role you create should have access to the typical permissions of a Glue Serv
 ![teradata type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-2.PNG)
 * In the dialog box, enter the URL of your Teradata Vantage instance in JDBC format.
 :::tip
-In the case of ClearScape Analytics Experience, the URL follows the following structure: 
+In the case of Teradata Trial, the URL follows the following structure: 
 `jdbc:teradata://<URL Host>/DATABASE=demo_user,DBS_PORT=1025`
 :::
 * Select the AWS Secret created in the previous step.
@@ -270,7 +270,3 @@ In this quick start, we learned how to ingest and catalog data in Teradata Vanta
 
 ### Further reading
 * [Integrate Teradata Vantage with Google Cloud Data Catalog](./integrate-teradata-vantage-with-google-cloud-data-catalog.md)
-
-import CommunityLinkPartial from '../_partials/community_link.mdx';
-
-<CommunityLinkPartial />
