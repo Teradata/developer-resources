@@ -1,11 +1,11 @@
 ---
 sidebar_position: 3.5
 title: Apache Airflow using Astronomer Cosmos
-author: Satish Chinthanippu
-email: satish.chinthanippu@teradata.com
-page_last_update: July 15th, 2024
+author: Satish Chinthanippu, Janeth Graziani
+email: developer.relations@teradata.com
+page_last_update: June 30th, 2024
 description: Execute dbt teradata transformation jobs in Apache Airflow using Astronomer Cosmos library
-keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, queries, dbt, cosmos, astronomer]
+keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, queries, dbt, cosmos, astronomer]
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
@@ -16,15 +16,15 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-This tutorial demonstrates how to install Apache Airflow on a local machine, configure the workflow to use dbt teradata to run dbt transformations using the astronomer cosmos library, and run it against a Teradata Vantage database. Apache Airflow is a task scheduling tool that is typically used to build data pipelines to process and load data. [Astronomer cosmos](https://astronomer.github.io/astronomer-cosmos/) library simplifies orchestrating dbt data transformations in Apache Airflow. Using Cosmos, allows running dbt Core projects as Apache Airflow DAGs and Task Groups with a few lines of code.
-In this example, we will explain how to use astronomer cosmos to run dbt transformations in airflow against Teradata Vantage database.
+This tutorial demonstrates how to install Apache Airflow on a local machine, configure the workflow to use dbt teradata to run dbt transformations using the astronomer cosmos library, and run it against a Teradata database. Apache Airflow is a task scheduling tool that is typically used to build data pipelines to process and load data. [Astronomer cosmos](https://astronomer.github.io/astronomer-cosmos/) library simplifies orchestrating dbt data transformations in Apache Airflow. Using Cosmos, allows running dbt Core projects as Apache Airflow DAGs and Task Groups with a few lines of code.
+In this example, we will explain how to use astronomer cosmos to run dbt transformations in airflow against Teradata.
 
 :::note
 Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) on `Windows` to try this quickstart example.
 :::
 
 ## Prerequisites
-* Access to a Teradata Vantage instance, version 17.10 or higher.
+* Access to a Teradata instance, version 17.10 or higher.
 
 <TrialDocsNote />
 
@@ -72,6 +72,14 @@ Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/wi
     ```bash
     export AIRFLOW_HOME=~/airflow
     ```
+
+    :::tip
+    Add this line to your shell profile (e.g. `~/.zshrc` on macOS, `~/.bashrc` on Linux/WSL) so it's set automatically in every new terminal session, instead of having to re-export it each time:
+    ```bash
+    echo 'export AIRFLOW_HOME=~/airflow' >> ~/.zshrc
+    ```
+    ::: 
+
 
 ## Install dbt
 1. Create a new python environment to manage dbt and its dependencies. Activate the environment:
@@ -124,24 +132,30 @@ Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/wi
 1. Run airflow web server
     ```bash
     airflow standalone
-    ```
-2. Access the airflow UI. Visit https://localhost:8080 in the browser and log in with the admin account details shown in the terminal.
-    ![Airflow Password](../images/execute-dbt-teradata-cosmos-airflow.png)
+    ```    
+    
+    This prints the auto-generated `admin` password directly in the terminal — copy it down. This command blocks the terminal it runs in (it's now your Airflow scheduler, dag processor, and API server), so leave it running and do all further steps in a **new terminal window or tab**.
 
-## Define Apache Airflow connection to Vantage
+2. Access the airflow UI. Visit http://localhost:8080 in the browser and log in with the admin account details shown in the terminal.
+    ![Airflow Password](../images/execute-dbt-teradata-cosmos-airflow.png)
+    :::note
+    Standalone Airflow serves the UI over plain HTTP by default — use `http://localhost:8080`.
+    :::
+
+## Define Apache Airflow connection to Teradata
 
 1. Click on Admin - Connections
-2. Click on + to define new connection to Teradata Vantage instance.
-3. Define new connection with id `teradata_default` with Teradata Vantage instance details.
+2. Click on + to define new connection to a Teradata instance.
+3. Define new connection with id `teradata_default` with Teradata database details.
     * Connection Id: teradata_default
     * Connection Type: Teradata
-    * Database Server URL (required): Teradata Vantage instance hostname to connect to.
+    * Database Server URL (required): Teradata instance hostname to connect to.
     * Database: jaffle_shop
     * Login (required): database user
     * Password (required): database user password
 
 ## Define DAG in Apache Airflow
-Dags in airflow are defined as python files. The dag below runs the dbt transformations defined in the `jaffle_shop` dbt project on a Teradata Vantage system using cosmos.Copy the python code below and save it as `airflow-cosmos-dbt-teradata-integration.py` under the directory $AIRFLOW_HOME/dags.
+Dags in airflow are defined as python files. The dag below runs the dbt transformations defined in the `jaffle_shop` dbt project on a Teradata system using cosmos.Copy the python code below and save it as `airflow-cosmos-dbt-teradata-integration.py` under the directory $AIRFLOW_HOME/dags.
 
 
 ```python
@@ -195,7 +209,7 @@ Run the dag as shown in the image below.
 
 ## Summary
 
-In this quick start guide, we explored how to utilize Astronomer Cosmos library in Apache Airflow to execute `dbt transformations` against a Teradata Vantage instance.
+In this quick start guide, we explored how to utilize Astronomer Cosmos library in Apache Airflow to execute `dbt transformations` against a Teradata instance.
 
 ## Further reading
 * [Apache Airflow DAGs reference](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html)
