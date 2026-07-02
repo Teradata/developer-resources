@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -45,7 +45,16 @@
 <p>A Python virtual environment. The recommended workflow using system <code>venv</code> is shown below. If you have <code>uv</code> installed, an alternative workflow is provided.</p>
 </li>
 </ul>
-<!-- -->
+<pre><code class="language-bash"># Recommended (system venv):
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+pip install teradatasql
+ 
+# Alternative (uv):
+uv venv .venv
+uv pip install teradatasql
+</code></pre>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Note</div><div class="admonitionContent_UjKb"><p><code>teradatasql</code> package runs on Windows, macOS (10.14 Mojave or later) and Linux. For Linux, currently only Linux x86-64 architecture is supported.</p></div></span></div>
 <ul>
 <li>Access to a Teradata instance. Currently driver is supported for use with Teradata Database 16.10 and later releases.</li>
@@ -53,9 +62,54 @@
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Note</div><div class="admonitionContent_UjKb"><p>If you need a test instance of Teradata, you can provision one for free at <a href="https://www.teradata.com/try" target="_blank" rel="noopener noreferrer">https://www.teradata.com/try</a></p></div></span></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="code-to-send-a-query">Code to send a query<a href="#code-to-send-a-query" class="hash-link" aria-label="Direct link to Code to send a query" title="Direct link to Code to send a query">​</a></h2>
 <p>Create a file called <code>app.py</code> and paste in the following code. Fill in your host, username, and password before running:</p>
-<!-- -->
+<pre><code class="language-python">import teradatasql
+
+DB_URL = &quot;&quot;                                 #Add Host
+USER = &quot;&quot;                                   #Add Username
+PASS = &quot;&quot;                                   #Add Password
+
+try:
+    # Establish a connection to the Teradata database
+    with teradatasql.connect(host=DB_URL, user=USER, password=PASS) as con:
+        # Create a cursor to execute queries
+        with con.cursor() as cur:
+            try:
+                # Creating the table SampleEmployee
+                cur.execute (f&quot;CREATE SET TABLE {USER}.SampleEmployee \
+                            (Associate_Id     INTEGER, \
+                            Associate_Name   CHAR(25), \
+                            Job_Title        VARCHAR(25)) \
+                            UNIQUE PRIMARY INDEX (Associate_Id);&quot;)
+                
+                print(f&quot;Sample table {USER}.SampleEmployee created.&quot;)
+
+                # Adding sample data into SampleEmployee table
+                cur.execute (f&quot;INSERT INTO {USER}.SampleEmployee VALUES (1, &#x27;Richard Hendricks&#x27;,&#x27;CEO&#x27;)&quot;)
+                cur.execute (f&quot;INSERT INTO {USER}.SampleEmployee VALUES (2, &#x27;Jared Dunn&#x27;,&#x27;CFO&#x27;)&quot;)
+                cur.execute (f&quot;INSERT INTO {USER}.SampleEmployee VALUES (3, &#x27;Jian Yang&#x27;,&#x27;Intern&#x27;)&quot;)
+
+                print(f&quot;Sample data added to table {USER}.SampleEmployee.&quot;)
+
+                # Execute the SELECT query to get the results from SampleEmployee table 
+                cur.execute(f&quot;SELECT * FROM {USER}.SampleEmployee&quot;)
+
+                # Extract data from the result set and print it
+                for row in cur:
+                    print(f&quot;Associate ID: {row[0]}, Associate_Name: {row[1]}, Job_Title:{row[2]}&quot;)
+
+                
+
+            except teradatasql.DatabaseError as db_err:
+                # Handle any errors that occur during query execution
+                print(&quot;Error while executing the query:&quot;, db_err)
+
+except teradatasql.DatabaseError as db_err:
+    # Handle any errors that occur during the database connection
+    print(&quot;Error while connecting to the Teradata database:&quot;, db_err)
+</code></pre>
 <p>Run the script from your terminal:</p>
-<!-- -->
+<pre><code class="language-bash">python app.py
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>This how-to demonstrated how to connect to Teradata using <code>teradatasql</code> Python database driver. It described a sample Python code to send SQL queries to Teradata  using <code>teradatasql</code>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-reading">Further reading<a href="#further-reading" class="hash-link" aria-label="Direct link to Further reading" title="Direct link to Further reading">​</a></h2>

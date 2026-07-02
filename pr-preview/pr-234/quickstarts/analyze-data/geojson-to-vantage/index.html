@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -63,24 +63,66 @@
 <li>getpass</li>
 </ul>
 <p>Download and read the cities dataset:</p>
-<!-- -->
+<pre><code class="language-python">import wget
+world_cities=wget.download(&#x27;https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_populated_places.geojson&#x27;)
+with open(world_cities) as geo_json:
+    jmap = jmap = geo_json.read()
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="load-the-geojson-document-in-vantage">Load the GeoJson document in Vantage<a href="#load-the-geojson-document-in-vantage" class="hash-link" aria-label="Direct link to Load the GeoJson document in Vantage" title="Direct link to Load the GeoJson document in Vantage">​</a></h3>
 <p>Modify this code as needed with your Vantage host name, user name and specify an advanced login mechanism if any (eg. LDAP, Kerberos...) with the <em>logmech</em> parameter if you need to.
 All the connection parameters are documented on the teradatasql PyPi page there: <a href="https://pypi.org/project/teradatasql/" target="_blank" rel="noopener noreferrer">https://pypi.org/project/teradatasql/</a></p>
 <p>The code below simply creates a Vantage connection, and opens a cursor creating a table and loading it with our file.</p>
-<!-- -->
+<pre><code class="language-python">import teradatasql
+import getpass
+tdhost=&#x27;&lt;Your-Vantage-System-HostName-Here&gt;&#x27;
+tdUser=&#x27;&lt;Your-Vantage-User-Name-Here&gt;&#x27;
+
+# Create a connection to Teradata Vantage
+con = teradatasql.connect(None, host=tdhost, user=tdUser, password=getpass.getpass())
+
+# Create a table named geojson_src and load the JSON map into it as a single CLOB
+with con.cursor () as cur:
+    cur.execute (&quot;create table geojson_src (geojson_nm VARCHAR(32), geojson_clob CLOB CHARACTER SET UNICODE);&quot;)
+    r=cur.execute (&quot;insert into geojson_src (?, ?)&quot;, [&#x27;cities&#x27;,jmap])
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-the-map-from-vantage">Use the map from Vantage<a href="#use-the-map-from-vantage" class="hash-link" aria-label="Direct link to Use the map from Vantage" title="Direct link to Use the map from Vantage">​</a></h3>
 <p>Now open your favourite <strong>SQL client</strong> and connect to your Vantage system.</p>
 <p>We will use ClearScape analytics JSON functions to parse our GeoJson document and extract the most relevant properties and the geometry itself (the coordinates of the city) for each feature (each feature representing a city in this example).
 We then use the GeomFromGeoJSON function to cast our geometry as a native Vantage geometry data type (ST_GEOMETRY).</p>
 <p>For user convenience, will wrap all this SQL code in a view:</p>
-<!-- -->
+<pre><code class="language-python">REPLACE VIEW cities_geo AS
+SEL city_name, country_name, region_name, code_country_isoa3, GeomFromGeoJSON(geom, 4326) city_coord
+FROM JSON_Table
+(ON (
+    SEL
+     geojson_nm id
+    ,cast(geojson_clob as JSON) jsonCol
+    FROM geojson_src where geojson_nm=&#x27;cities&#x27;
+)
+USING rowexpr(&#x27;$.features[*]&#x27;)
+               colexpr(&#x27;[ {&quot;jsonpath&quot; : &quot;$.geometry&quot;,
+                           &quot;type&quot; : &quot;VARCHAR(32000)&quot;},
+                          {&quot;jsonpath&quot; : &quot;$.properties.NAME&quot;,
+                           &quot;type&quot; : &quot;VARCHAR(50)&quot;},
+                          {&quot;jsonpath&quot; : &quot;$.properties.SOV0NAME&quot;,
+                           &quot;type&quot; : &quot;VARCHAR(50)&quot;},
+                          {&quot;jsonpath&quot; : &quot;$.properties.ADM1NAME&quot;,
+                           &quot;type&quot; : &quot;VARCHAR(50)&quot;},
+                          {&quot;jsonpath&quot; : &quot;$.properties.SOV_A3&quot;,
+                           &quot;type&quot; : &quot;VARCHAR(50)&quot;}]&#x27;)
+) AS JT(id, geom, city_name, country_name, region_name, code_country_isoa3);
+</code></pre>
 <p>That&#x27;s all, you can now view the prepared geometry data as a table, ready to enrich your analytics:</p>
-<!-- -->
+<pre><code class="language-sql">SEL TOP 5 * FROM cities_geo;
+</code></pre>
 <p>Result:</p>
 <table><thead><tr><th>city_name</th><th>country_name</th><th>region_name</th><th>code_country_isoa3</th><th>city_coord</th></tr></thead><tbody><tr><td>Potenza</td><td>Italy</td><td>Basilicata</td><td>ITA</td><td>POINT (15.798996495640267 40.642002130098206)</td></tr><tr><td>Mariehamn</td><td>Finland</td><td>Finström</td><td>ALD</td><td>POINT (19.949004471869102 60.096996184895431)</td></tr><tr><td>Ramallah</td><td>Indeterminate</td><td></td><td>PSE</td><td>POINT (35.206209378189556 31.902944751424059)</td></tr><tr><td>Poitier</td><td>French Republic</td><td>Poitou-Charentes</td><td>FRA</td><td>POINT (0.333276528534554 46.583292255736581)</td></tr><tr><td>Clermont-Ferrand</td><td>French Republic</td><td>Auvergne</td><td>FRA</td><td>POINT (3.080008095928406 45.779982115759424)</td></tr></tbody></table>
 <p>Calculate the distance between two cities:</p>
-<!-- -->
+<pre><code class="language-sql">SEL b.city_coord.ST_SphericalDistance(l.city_coord)
+FROM
+(SEL city_coord FROM cities_geo WHERE city_name=&#x27;Bordeaux&#x27;) b
+CROSS JOIN (SEL city_coord FROM cities_geo WHERE city_name=&#x27;Lvov&#x27;) l
+</code></pre>
 <p>Result:</p>
 <table><thead><tr><th>city_coord.ST_SPHERICALDISTANCE(city_coord)</th></tr></thead><tbody><tr><td>1.9265006861079421e+06</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="option-2-prepare-a-geojson-document-with-python-and-load-it-into-vantage">Option 2: Prepare a GeoJson document with Python and load it into Vantage<a href="#option-2-prepare-a-geojson-document-with-python-and-load-it-into-vantage" class="hash-link" aria-label="Direct link to Option 2: Prepare a GeoJson document with Python and load it into Vantage" title="Direct link to Option 2: Prepare a GeoJson document with Python and load it into Vantage">​</a></h2>
@@ -97,12 +139,21 @@ We then use the GeomFromGeoJSON function to cast our geometry as a native Vantag
 <li>getpass</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="get-and-load-the-geojson-document-1">Get and load the GeoJson document<a href="#get-and-load-the-geojson-document-1" class="hash-link" aria-label="Direct link to Get and load the GeoJson document" title="Direct link to Get and load the GeoJson document">​</a></h3>
-<!-- -->
+<pre><code class="language-python">import wget
+countries_geojson=wget.download(&#x27;https://datahub.io/core/geo-countries/r/countries.geojson&#x27;)
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="open-the-geojson-file-and-type-it-as-a-dictionary">Open the GeoJson file and type it as a dictionary<a href="#open-the-geojson-file-and-type-it-as-a-dictionary" class="hash-link" aria-label="Direct link to Open the GeoJson file and type it as a dictionary" title="Direct link to Open the GeoJson file and type it as a dictionary">​</a></h3>
-<!-- -->
+<pre><code class="language-python">import json
+with open(countries_geojson) as geo_json:
+    countries_json = json.load(geo_json)
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="optional-check-the-content-of-the-file">Optional Check the content of the file<a href="#optional-check-the-content-of-the-file" class="hash-link" aria-label="Direct link to Optional Check the content of the file" title="Direct link to Optional Check the content of the file">​</a></h3>
 <p>The good thing about loading this JSON in memory, if you are using an interactive Python terminal, is that you can now explore the document to understand its structure. For example</p>
-<!-- -->
+<pre><code class="language-python">print(countries_json.keys())
+print(countries_json[&#x27;type&#x27;])
+print(countries_json[&#x27;features&#x27;][0][&#x27;properties&#x27;].keys())
+print(countries_json[&#x27;features&#x27;][0][&#x27;geometry&#x27;][&#x27;coordinates&#x27;])
+</code></pre>
 <p>What we have here is a collection of GeoFeatures (as earlier).</p>
 <p>We will now lightly model this data in a Vantage table, for that:</p>
 <ul>
@@ -113,21 +164,53 @@ We then use the GeomFromGeoJSON function to cast our geometry as a native Vantag
 <p>To load a set of rows with a teradatasql cursor, we need to represent each row as an array (or tuples) of values, and the complete dataset as an array of all the row-arrays.
 This is fairly easy to do as a list comprehension</p>
 <p>For example:</p>
-<!-- -->
+<pre><code class="language-python">[(f[&#x27;properties&#x27;][&#x27;ADMIN&#x27;], f[&#x27;properties&#x27;][&#x27;ISO_A3&#x27;], f[&#x27;geometry&#x27;]) for f in countries_json[&#x27;features&#x27;][:1]]
+</code></pre>
 <p>NB: Not featured here, but recommended for richer datasets, consider loading the entire and original feature payload as a separate column (this is a JSON document). This will allow you to go back to the original record and extract new properties that you may have missed during your first analysis but have become relevant, directly in SQL and without having to reload the file entirely.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-vantage-connection-and-load-our-file-in-a-staging-table">Create a Vantage connection and load our file in a staging table<a href="#create-a-vantage-connection-and-load-our-file-in-a-staging-table" class="hash-link" aria-label="Direct link to Create a Vantage connection and load our file in a staging table" title="Direct link to Create a Vantage connection and load our file in a staging table">​</a></h3>
 <p>Modify this code as needed with your Vantage host name, user name and specify an advanced login mechanism if any (eg. LDAP, Kerberos...) with the <em>logmech</em> parameter if you need to.
 All the connection parameters are documented on the teradatasql PyPi page there: <a href="https://pypi.org/project/teradatasql/" target="_blank" rel="noopener noreferrer">https://pypi.org/project/teradatasql/</a></p>
 <p>The code below simply creates a Vantage connection, and opens a cursor creating a table and loading it with our list.</p>
-<!-- -->
+<pre><code class="language-python">import teradatasql
+import getpass
+tdhost=&#x27;&lt;Your-Vantage-System-HostName-Here&gt;&#x27;
+tdUser=&#x27;&lt;Your-Vantage-User-Name-Here&gt;&#x27;
+
+# Create a connection to Teradata Vantage
+con = teradatasql.connect(None, host=tdhost, user=tdUser, password=tdPassword)
+
+# Create a table and load our country names, codes, and geometries.
+with con.cursor () as cur:
+    cur.execute (&quot;create table stg_countries_map (country_nm VARCHAR(32), ISO_A3_cd VARCHAR(32), boundaries_geo CLOB CHARACTER SET UNICODE);&quot;)
+    r=cur.execute (&quot;insert into stg_countries_map (?, ?, ?)&quot;, [(f[&#x27;properties&#x27;][&#x27;ADMIN&#x27;], f[&#x27;properties&#x27;][&#x27;ISO_A3&#x27;], str(f[&#x27;geometry&#x27;])) for f in countries_json[&#x27;features&#x27;]])
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-and-our-geography-refernce-table">Create and our geography refernce table<a href="#create-and-our-geography-refernce-table" class="hash-link" aria-label="Direct link to Create and our geography refernce table" title="Direct link to Create and our geography refernce table">​</a></h3>
 <p>The code below performs the table creation from the Python interpreter, you can also run the <em>sql</em> statement defined below in your prefered SQL client you might as well simply define this logic as a SQL view to avoid having to refresh this table.</p>
 <p>We will use ClearScape analytics the GeomFromGeoJSON function to cast our geometry as a native Vantage geometry data type (ST_GEOMETRY).</p>
-<!-- -->
+<pre><code class="language-python"># Now create our final reference table, casting the geometry CLOB as a ST_GEOMETRY object
+sql=&#x27;&#x27;&#x27;
+CREATE TABLE ref_countries_map AS
+(
+SEL
+ISO_A3_cd
+,country_nm
+,GeomFromGeoJSON(boundaries_geo, 4326) boundaries_geo
+FROM stg_countries_map
+) WITH DATA
+&#x27;&#x27;&#x27;
+
+WITH con.cursor () AS cur:
+    cur.execute (sql)
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-your-data">Use your data<a href="#use-your-data" class="hash-link" aria-label="Direct link to Use your data" title="Direct link to Use your data">​</a></h3>
 <p>That&#x27;s all, you may now query your tables using your favourite <em>SQL client</em> and Teradata&#x27;s excellent <a href="https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-VantageTM-Geospatial-Data-Types-17.20" target="_blank" rel="noopener noreferrer">Geospatial data types and analytic functions</a>.</p>
 <p>For example, using the two datasets we have loaded during this tutorial, check in what countries are</p>
-<!-- -->
+<pre><code class="language-sql">SEL cty.city_name, cty.city_coord, ctry.country_nm
+FROM cities_geo cty
+LEFT JOIN ref_countries_map ctry
+	ON ctry.boundaries_geo.ST_Contains(cty.city_coord)=1
+WHERE cty.city_name LIKE &#x27;a%&#x27;
+</code></pre>
 <table><thead><tr><th>city_name</th><th>city_coord</th><th>country_nm</th></tr></thead><tbody><tr><td>Acapulco</td><td>POINT (-99.915979046410712 16.849990864016206)</td><td>Mexico Aosta</td></tr><tr><td>POINT (7.315002595706176 45.737001067072299)</td><td>Italy Ancona</td><td>POINT (13.499940550397127 43.600373554552903)</td></tr><tr><td>Italy Albany</td><td>POINT (117.891604776075155 -35.016946595501224)</td><td>Australia</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>Note that none of the above code does not implement any control procedure or checks to, for example, manage the state of the target tables, manage locking, control error codes, etc... This is meant to be a demonstrations of the available features to acquire and use geospatial reference data.</p>

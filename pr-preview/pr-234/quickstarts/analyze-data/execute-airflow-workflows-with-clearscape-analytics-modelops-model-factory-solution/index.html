@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -61,15 +61,24 @@
 <p>Set the AIRFLOW_HOME environment variable. Airflow requires a home directory and uses ~/airflow by default, but you can set a different location if you prefer. The AIRFLOW_HOME environment variable is used to inform Airflow of the desired location.</p>
 </li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">AIRFLOW_HOME=./[folder_name]
+</code></pre>
 <ul>
 <li>Install apache-airflow stable version 2.8.2 from PyPI repository.:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">    AIRFLOW_VERSION=2.8.2
+
+    PYTHON_VERSION=&quot;$(python3 --version | cut -d &quot; &quot; -f 2 | cut -d &quot;.&quot; -f 1-2)&quot;
+
+    CONSTRAINT_URL=&quot;https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt&quot;
+
+    pip install &quot;apache-airflow==${AIRFLOW_VERSION}&quot; --constraint &quot;${CONSTRAINT_URL}&quot; --default-timeout=100
+</code></pre>
 <ul>
 <li>Install the Airflow Teradata provider stable version from PyPI repository.</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">pip install &quot;apache-airflow-providers-teradata&quot; --default-timeout=100
+</code></pre>
 <ul>
 <li>
 <p>Install Docker Desktop so that you can use docker container for running airflow. Ensure that the docker desktop is running.</p>
@@ -78,38 +87,459 @@
 <p>Check docker version using this command:</p>
 </li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">docker --version
+</code></pre>
 <p>Check the version of docker compose. Docker Compose is a tool for defining and running multi-container applications</p>
-<!-- -->
+<pre><code class="language-bash">docker-compose --version
+</code></pre>
 <p>To deploy Airflow on Docker Compose, you need to fetch docker-compose.yaml using this curl command.</p>
-<!-- -->
+<pre><code class="language-bash">    curl -LfO &#x27;https://airflow.apache.org/docs/apache-airflow/2.8.2/docker-compose.yaml&#x27;
+</code></pre>
 <p>Create these folders to use later using following command:</p>
-<!-- -->
+<pre><code class="language-bash">mkdir -p ./dags ./logs ./plugins ./config
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="configuring-model-factory-solution-accelerator">Configuring Model Factory Solution Accelerator<a href="#configuring-model-factory-solution-accelerator" class="hash-link" aria-label="Direct link to Configuring Model Factory Solution Accelerator" title="Direct link to Configuring Model Factory Solution Accelerator">​</a></h2>
 <p>Create a config file inside config folder and set the parameters to corresponding values depending on which model you want to train.</p>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Click to reveal the Python code</summary><div><div class="collapsibleContent_i85q"><pre></pre></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Click to reveal the Python code</summary><div><div class="collapsibleContent_i85q"><pre><pre><code class="language-python">from configparser import ConfigParser
+import os
+
+config = ConfigParser()
+
+config[&#x27;MAIN&#x27;] = {
+    &quot;projectId&quot;: &quot;23e1df4b-b630-47a1-ab80-7ad5385fcd8d&quot;,
+    &quot;bearerToken&quot;: os.environ[&#x27;BEARER_TOKEN&#x27;],
+    &quot;trainDatasetId&quot;: &quot;ba39e766-2fdf-426f-ba5c-4ca3e90955fc&quot;,
+    &quot;evaluateDatasetId&quot;: &quot;74489d62-2af5-4402-b264-715e151a420a&quot;,
+    &quot;datasetConnectionId&quot; : &quot;151abf05-1914-4d38-a90d-272d850f212c&quot;,
+    &quot;datasetTemplateId&quot;: &quot;d8a35d98-21ce-47d0-b9f2-00d355777de1&quot;
+}
+
+config[&#x27;HYPERPARAMETERS&#x27;] = {
+    &quot;eta&quot;: 0.2,
+    &quot;max_depth&quot;: 6
+}
+
+config[&#x27;RESOURCES&#x27;] = {
+    &quot;memory&quot;: &quot;500m&quot;,
+    &quot;cpu&quot;: &quot;0.5&quot;
+}
+
+config[&#x27;MODEL&#x27;] = {
+    &quot;modelId&quot;: &quot;f937b5d8-02c6-5150-80c7-1e4ff07fea31&quot;,
+    &quot;approvalComments&quot;: &quot;Approving this model!&quot;,
+    &quot;cron&quot;: &quot;@once&quot;,
+    &quot;engineType&quot;: &quot;DOCKER_BATCH&quot;,
+    &quot;engine&quot;: &quot;python-batch&quot;,
+    &quot;dockerImage&quot;: &quot;artifacts.td.teradata.com/tdproduct-docker-snapshot/avmo/aoa-python-base:3.9.13-1&quot;
+}
+
+
+with open(&#x27;./config/modelOpsConfig.ini&#x27;, &#x27;w&#x27;) as f:
+    config.write(f)
+</code></pre></pre></div></div></details>
 <p>Now copy the Bearer token from the ModelOps user interface (Left Menu -&gt; Your Account -&gt; Session Details) and set it here as an environment varibale using the following command:</p>
-<!-- -->
+<pre><code class="language-bash">export BEARER_TOKEN=&#x27;your_token_here&#x27;
+</code></pre>
 <p>Now you can execute the previously created config file, which will create a new ini file inside config folder containing all the required parameters which will be used in the DAG creation step.</p>
-<!-- -->
+<pre><code class="language-python">python3 createConfig.py
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-airflow-dag-containing-full-modelops-lifecycle">Create a Airflow DAG containing full ModelOps Lifecycle<a href="#create-a-airflow-dag-containing-full-modelops-lifecycle" class="hash-link" aria-label="Direct link to Create a Airflow DAG containing full ModelOps Lifecycle" title="Direct link to Create a Airflow DAG containing full ModelOps Lifecycle">​</a></h2>
 <p>Now you can create a DAG using the following python code. Add this python code file inside dags folder. This DAG contains 5 tasks of ModelOps lifecycle (i.e., Train, Evaluate, Approve, Deploy and Retire)</p>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Click to reveal the Python code</summary><div><div class="collapsibleContent_i85q"><pre></pre></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Click to reveal the Python code</summary><div><div class="collapsibleContent_i85q"><pre><pre><code class="language-python">import base64
+from datetime import datetime, timedelta, date
+import json
+import os
+import time
+
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+
+import requests
+
+from configparser import ConfigParser
+
+# Read from Config file
+config = ConfigParser()
+config.read(&#x27;config/modelOpsConfig.ini&#x27;)
+
+config_main = config[&quot;MAIN&quot;]
+config_hyper_params = config[&quot;HYPERPARAMETERS&quot;]
+config_resources = config[&quot;RESOURCES&quot;]
+config_model = config[&quot;MODEL&quot;]
+
+# Default args for DAG
+default_args = {
+    &#x27;owner&#x27;: &#x27;Tayyaba&#x27;,
+    &#x27;retries&#x27;: 5,
+    &#x27;retry_delay&#x27;: timedelta(minutes=2)
+}
+
+def get_job_status(job_id):
+
+    # Use the fetched Job ID to check Job Status
+    headers_for_status = {
+    &#x27;AOA-PROJECT-ID&#x27;: config_main[&#x27;projectid&#x27;],
+    &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + config_main[&#x27;bearertoken&#x27;],
+    }
+
+    status_response = requests.get(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/jobs/&#x27; + job_id + &#x27;?projection=expandJob&#x27;, headers=headers_for_status)
+    status_json = status_response.json()
+    job_status = status_json.get(&#x27;status&#x27;)
+    return job_status
+
+
+def train_model(ti):
+
+    headers = {
+    &#x27;AOA-Project-ID&#x27;: config_main[&#x27;projectid&#x27;],
+    &#x27;Accept&#x27;: &#x27;application/json, text/plain, */*&#x27;,
+    &#x27;Accept-Language&#x27;: &#x27;en-US,en;q=0.9&#x27;,
+    &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + config_main[&#x27;bearertoken&#x27;],
+    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+    }
+
+    json_data = {
+        &#x27;datasetId&#x27;: config_main[&#x27;trainDatasetId&#x27;],
+        &#x27;datasetConnectionId&#x27;: config_main[&#x27;datasetConnectionId&#x27;],
+        &#x27;modelConfigurationOverrides&#x27;: {
+            &#x27;hyperParameters&#x27;: {
+                &#x27;eta&#x27;: config_hyper_params[&#x27;eta&#x27;],
+                &#x27;max_depth&#x27;: config_hyper_params[&#x27;max_depth&#x27;],
+            },
+        },
+        &#x27;automationOverrides&#x27;: {
+            &#x27;resources&#x27;: {
+                &#x27;memory&#x27;: config_resources[&#x27;memory&#x27;],
+                &#x27;cpu&#x27;: config_resources[&#x27;cpu&#x27;],
+            },
+            &#x27;dockerImage&#x27;:  config_model[&#x27;dockerImage&#x27;],
+        },
+    }
+
+    
+    response = requests.post(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/models/&#x27; + config_model[&#x27;modelid&#x27;] + &#x27;/train&#x27;, headers=headers, json=json_data)
+    
+    json_data = response.json()
+
+    # Get the Training Job ID
+    job_id = json_data.get(&#x27;id&#x27;)
+    ti.xcom_push(key=&#x27;train_job_id&#x27;, value=job_id)
+
+    job_status = get_job_status(job_id)
+    print(&quot;Started - Training Job - Status: &quot;, job_status)
+
+    while job_status != &quot;COMPLETED&quot;:
+        if job_status==&quot;ERROR&quot;:
+            print(&quot;The training job is terminated due to an Error&quot;)
+            ti.xcom_push(key=&#x27;trained_model_id&#x27;, value=&#x27;NONE&#x27;) # Setting the Trained Model Id to None here and check in next step (Evaluate)
+            break
+        elif job_status==&quot;CANCELLED&quot;:
+            ti.xcom_push(key=&#x27;trained_model_id&#x27;, value=&#x27;NONE&#x27;) 
+            print(&quot;The training job is Cancelled !!&quot;)
+            break
+        print(&quot;Job is not completed yet. Current status&quot;, job_status)
+        time.sleep(5) #wait 5s
+        job_status = get_job_status(job_id)
+
+    # Checking Job status at the end to push the correct trained_model_id
+    if(job_status == &quot;COMPLETED&quot;):
+        train_model_id = json_data[&#x27;metadata&#x27;][&#x27;trainedModel&#x27;][&#x27;id&#x27;]
+        ti.xcom_push(key=&#x27;trained_model_id&#x27;, value=train_model_id)
+        print(&#x27;Model Trained Successfully! Job ID is : &#x27;, job_id, &#x27;Trained Model Id : &#x27;, train_model_id, &#x27; Status : &#x27;, job_status)
+    else:
+        ti.xcom_push(key=&#x27;trained_model_id&#x27;, value=&#x27;NONE&#x27;)
+        print(&quot;Training Job is terminated !!&quot;)
+
+
+def evaluate_model(ti):
+
+    trained_model_id = ti.xcom_pull(task_ids = &#x27;task_train_model&#x27;, key = &#x27;trained_model_id&#x27;)
+
+    headers = {
+    &#x27;AOA-Project-ID&#x27;: config_main[&#x27;projectid&#x27;],
+    &#x27;Accept&#x27;: &#x27;application/json, text/plain, */*&#x27;,
+    &#x27;Accept-Language&#x27;: &#x27;en-US,en;q=0.9&#x27;,
+    &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + config_main[&#x27;bearertoken&#x27;],
+    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+    }
+
+    json_data = {
+        &#x27;datasetId&#x27;: config_main[&#x27;evaluatedatasetid&#x27;],
+        &#x27;datasetConnectionId&#x27;: config_main[&#x27;datasetConnectionId&#x27;],
+        &#x27;modelConfigurationOverrides&#x27;: {
+            &#x27;hyperParameters&#x27;: {
+                &#x27;eta&#x27;: config_hyper_params[&#x27;eta&#x27;],
+                &#x27;max_depth&#x27;: config_hyper_params[&#x27;max_depth&#x27;],
+            },
+        },
+        &#x27;automationOverrides&#x27;: {
+            &#x27;resources&#x27;: {
+                &#x27;memory&#x27;: config_resources[&#x27;memory&#x27;],
+                &#x27;cpu&#x27;: config_resources[&#x27;cpu&#x27;],
+            },
+            &#x27;dockerImage&#x27;:  config_model[&#x27;dockerImage&#x27;],
+        },
+    }
+
+    if trained_model_id == &#x27;NONE&#x27;:
+        ti.xcom_push(key=&#x27;evaluated_model_status&#x27;, value=&#x27;FALIED&#x27;)
+        print(&quot;Evaluation cannot be done as the Training Job was terminated !!&quot;) 
+    else:
+        response = requests.post(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/trainedModels/&#x27; + trained_model_id + &#x27;/evaluate&#x27;, headers=headers, json=json_data)
+        json_data = response.json()
+
+        # Get the Evaluation Job ID
+        eval_job_id = json_data.get(&#x27;id&#x27;)
+        ti.xcom_push(key=&#x27;evaluate_job_id&#x27;, value=eval_job_id)
+
+        job_status = get_job_status(eval_job_id)
+        print(&quot;Started - Job - Status: &quot;, job_status)
+
+        while job_status != &quot;COMPLETED&quot;:
+            if job_status==&quot;ERROR&quot;:
+                print(&quot;The evaluation job is terminated due to an Error&quot;)
+                # Set the Trained Model Id to None here and check in next step (Evaluate)
+                break
+            elif job_status==&quot;CANCELLED&quot;:
+                print(&quot;The evaluation job is Cancelled !!&quot;)
+                break
+            print(&quot;Job is not completed yet. Current status&quot;, job_status)
+            time.sleep(5) # wait 5s
+            job_status = get_job_status(eval_job_id)
+
+        # Checking Job status at the end to push the correct evaluate_job_id
+        if(job_status == &quot;COMPLETED&quot;):
+            ti.xcom_push(key=&#x27;evaluated_model_status&#x27;, value=&#x27;EVALUATED&#x27;)
+            print(&#x27;Model Evaluated Successfully! Job ID is : &#x27;, eval_job_id, &#x27; Status : &#x27;, job_status)
+        else:
+            ti.xcom_push(key=&#x27;evaluated_model_status&#x27;, value=&#x27;FAILED&#x27;)
+            print(&quot;Evaluation Job is terminated !!&quot;)
+
+
+def approve_model(ti):
+
+    evaluated_model_status = ti.xcom_pull(task_ids = &#x27;task_evaluate_model&#x27;, key = &#x27;evaluated_model_status&#x27;)
+
+    if evaluated_model_status == &#x27;FAILED&#x27;:
+        ti.xcom_push(key=&#x27;approve_model_status&#x27;, value=&#x27;FALIED&#x27;)
+        print(&quot;Approval cannot be done as the Evaluation was failed !!&quot;) 
+    else:
+        trained_model_id = ti.xcom_pull(task_ids = &#x27;task_train_model&#x27;, key = &#x27;trained_model_id&#x27;) 
+
+        headers = {
+        &#x27;AOA-Project-ID&#x27;: config_main[&#x27;projectid&#x27;],
+        &#x27;Accept&#x27;: &#x27;application/json, text/plain, */*&#x27;,
+        &#x27;Accept-Language&#x27;: &#x27;en-US,en;q=0.9&#x27;,
+        &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + config_main[&#x27;bearertoken&#x27;],
+        &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+        }
+
+        json_data = {
+            &quot;comments&quot;: (base64.b64encode(config_model[&#x27;approvalComments&#x27;].encode()).decode())
+        }
+
+        response = requests.post(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/trainedModels/&#x27; + trained_model_id + &#x27;/approve&#x27; , headers=headers, json=json_data)
+        response_json = response.json()
+        approval_status = response_json[&#x27;status&#x27;]
+        if(approval_status == &#x27;APPROVED&#x27;):
+            ti.xcom_push(key=&#x27;approve_model_status&#x27;, value=&#x27;EVALUATED&#x27;)
+            print(&#x27;Model Approved Successfully! Status: &#x27;, approval_status)
+        else:
+            ti.xcom_push(key=&#x27;approve_model_status&#x27;, value=&#x27;FAILED&#x27;)
+            print(&#x27;Model not approved! Status: &#x27;, approval_status)
+
+
+def deploy_model(ti):
+
+    approve_model_status = ti.xcom_pull(task_ids = &#x27;task_approve_model&#x27;, key = &#x27;approve_model_status&#x27;)
+ 
+    headers = {
+        &#x27;AOA-Project-ID&#x27;: config_main[&#x27;projectid&#x27;],
+        &#x27;Accept&#x27;: &#x27;application/json, text/plain, */*&#x27;,
+        &#x27;Accept-Language&#x27;: &#x27;en-US,en;q=0.9&#x27;,
+        &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + config_main[&#x27;bearertoken&#x27;],
+        &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+    }
+
+
+    json_data = {
+        &#x27;engineType&#x27;: config_model[&#x27;engineType&#x27;],
+        &#x27;engineTypeConfig&#x27;: {
+            &#x27;dockerImage&#x27;:  config_model[&#x27;dockerImage&#x27;],
+            &#x27;engine&#x27;: &quot;python-batch&quot;,
+            &#x27;resources&#x27;: {
+                &#x27;memory&#x27;: config_resources[&#x27;memory&#x27;],
+                &#x27;cpu&#x27;: config_resources[&#x27;cpu&#x27;],
+            }
+        },
+        &#x27;language&#x27;:&quot;python&quot;,
+        &#x27;datasetConnectionId&#x27;: config_main[&#x27;datasetConnectionId&#x27;],
+        &#x27;datasetTemplateId&#x27;: config_main[&#x27;datasetTemplateId&#x27;],
+        &#x27;cron&#x27;: config_model[&#x27;cron&#x27;],
+        &#x27;publishOnly&#x27;: &quot;false&quot;,
+        &#x27;args&#x27;:{}
+    }
+
+    if approve_model_status == &#x27;FAILED&#x27;:
+        ti.xcom_push(key=&#x27;deploy_model_status&#x27;, value=&#x27;FALIED&#x27;)
+        print(&quot;Deployment cannot be done as the model is not approved !!&quot;) 
+    else:
+        trained_model_id = ti.xcom_pull(task_ids = &#x27;task_train_model&#x27;, key = &#x27;trained_model_id&#x27;) 
+
+        response = requests.post(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/trainedModels/&#x27; + trained_model_id + &#x27;/deploy&#x27;, headers=headers, json=json_data)
+        json_data = response.json()
+
+        # Get the Deployment Job ID
+        deploy_job_id = json_data.get(&#x27;id&#x27;)
+        ti.xcom_push(key=&#x27;deploy_job_id&#x27;, value=deploy_job_id)
+
+        # deployed_model_id = json_data[&#x27;metadata&#x27;][&#x27;deployedModel&#x27;][&#x27;id&#x27;]
+
+        job_status = get_job_status(deploy_job_id)
+        print(&quot;Started - Deployment Job - Status: &quot;, job_status)
+
+        while job_status != &quot;COMPLETED&quot;:
+            if job_status==&quot;ERROR&quot;:
+                ti.xcom_push(key=&#x27;deploy_model_status&#x27;, value=&#x27;FAILED&#x27;)
+                print(&quot;The deployment job is terminated due to an Error&quot;)
+                break
+            elif job_status==&quot;CANCELLED&quot;:
+                ti.xcom_push(key=&#x27;deploy_model_status&#x27;, value=&#x27;FAILED&#x27;)
+                print(&quot;The deployment job is Cancelled !!&quot;)
+                break
+            print(&quot;Job is not completed yet. Current status&quot;, job_status)
+            time.sleep(5) # wait 5s
+    job_status = get_job_status(deploy_job_id)
+
+    # Checking Job status at the end to push the correct deploy_model_status
+    if(job_status == &quot;COMPLETED&quot;):
+        ti.xcom_push(key=&#x27;deploy_model_status&#x27;, value=&#x27;DEPLOYED&#x27;)
+        print(&#x27;Model Deployed Successfully! Job ID is : &#x27;, deploy_job_id, &#x27; Status : &#x27;, job_status)
+    else:
+        ti.xcom_push(key=&#x27;deploy_model_status&#x27;, value=&#x27;FAILED&#x27;)
+        print(&quot;Deployment Job is terminated !!&quot;)
+
+
+
+def retire_model(ti):
+
+    deployed_model_status = ti.xcom_pull(task_ids = &#x27;task_deploy_model&#x27;, key = &#x27;deploy_model_status&#x27;)
+
+    if deployed_model_status == &#x27;FAILED&#x27;:
+        ti.xcom_push(key=&#x27;retire_model_status&#x27;, value=&#x27;FALIED&#x27;)
+        print(&quot;Retirement cannot be done as the model is not deployed !!&quot;) 
+    else:
+        trained_model_id = ti.xcom_pull(task_ids = &#x27;task_train_model&#x27;, key = &#x27;trained_model_id&#x27;) 
+
+        headers = {
+        &#x27;AOA-Project-ID&#x27;: config_main[&#x27;projectid&#x27;],
+        &#x27;Accept&#x27;: &#x27;application/json, text/plain, */*&#x27;,
+        &#x27;Accept-Language&#x27;: &#x27;en-US,en;q=0.9&#x27;,
+        &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + config_main[&#x27;bearertoken&#x27;],
+        &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+        }
+
+        # Identifying the deployment ID
+        get_deployment_id_response = requests.get(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/deployments/search/findByStatusAndTrainedModelId?projection=expandDeployment&amp;status=DEPLOYED&amp;trainedModelId=&#x27; + trained_model_id , headers=headers)
+  
+        get_deployment_id_json = get_deployment_id_response.json()
+        deployment_id = get_deployment_id_json[&#x27;_embedded&#x27;][&#x27;deployments&#x27;][0][&#x27;id&#x27;]
+
+        json_data = {
+            &quot;deploymentId&quot;: deployment_id
+        }
+
+        # Retire the specific deployment
+        retire_model_response = requests.post(&#x27;https://airflow-u9usja4twtauvt3s.env.clearscape.teradata.com:8443/modelops/core/api/trainedModels/&#x27; + trained_model_id + &#x27;/retire&#x27;, headers=headers, json=json_data)
+        retire_model_response_json = retire_model_response.json()
+
+                # Get the Evaluation Job ID
+        retire_job_id = retire_model_response_json.get(&#x27;id&#x27;)
+        ti.xcom_push(key=&#x27;retire_job_id&#x27;, value=retire_job_id)
+
+        job_status = get_job_status(retire_job_id)
+        print(&quot;Started - Job - Status: &quot;, job_status)
+
+        while job_status != &quot;COMPLETED&quot;:
+            if job_status==&quot;ERROR&quot;:
+                print(&quot;The Retire job is terminated due to an Error&quot;)
+                # Set the Trained Model Id to None here and check in next step (Evaluate)
+                break
+            elif job_status==&quot;CANCELLED&quot;:
+                print(&quot;The Retire job is Cancelled !!&quot;)
+                break
+            print(&quot;Job is not completed yet. Current status&quot;, job_status)
+            time.sleep(5) # wait 5s
+            job_status = get_job_status(retire_job_id)
+
+        # Checking Job status at the end to push the correct evaluate_job_id
+        if(job_status == &quot;COMPLETED&quot;):
+            ti.xcom_push(key=&#x27;retire_model_status&#x27;, value=&#x27;RETIRED&#x27;)
+            print(&#x27;Model Retired Successfully! Job ID is : &#x27;, retire_job_id, &#x27; Status : &#x27;, job_status)
+        else:
+            ti.xcom_push(key=&#x27;retire_model_status&#x27;, value=&#x27;FAILED&#x27;)
+            print(&quot;Retire Job is terminated !!&quot;)
+
+
+
+with DAG(
+    dag_id = &#x27;ModelOps_Accelerator_v1&#x27;,
+    default_args=default_args,
+    description = &#x27;ModelOps lifecycle accelerator for Python Diabetes Prediction model&#x27;,
+    start_date=datetime.now(), # Set the start_date as per requirement
+    schedule_interval=&#x27;@daily&#x27;
+) as dag:
+    task1 = PythonOperator(
+        task_id=&#x27;task_train_model&#x27;,
+        python_callable=train_model
+    )
+    task2 = PythonOperator(
+        task_id=&#x27;task_evaluate_model&#x27;,
+        python_callable=evaluate_model
+    )
+    task3 = PythonOperator(
+        task_id=&#x27;task_approve_model&#x27;,
+        python_callable=approve_model
+    )
+    task4 = PythonOperator(
+        task_id=&#x27;task_deploy_model&#x27;,
+        python_callable=deploy_model
+    )
+    task5 = PythonOperator(
+        task_id=&#x27;task_retire_model&#x27;,
+        python_callable=retire_model
+    )
+    
+
+task1.set_downstream(task2)
+task2.set_downstream(task3)
+task3.set_downstream(task4)
+task4.set_downstream(task5)
+</code></pre></pre></div></div></details>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="initialize-airflow-in-docker-compose">Initialize Airflow in Docker Compose<a href="#initialize-airflow-in-docker-compose" class="hash-link" aria-label="Direct link to Initialize Airflow in Docker Compose" title="Direct link to Initialize Airflow in Docker Compose">​</a></h2>
 <p>While initializing Airflow services like the internal Airflow database, for operating systems other than Linux, you may get a warning that AIRFLOW_UID is not set, but you can safely ignore it. by setting its environment variable using the following command.</p>
-<!-- -->
+<pre><code class="language-bash">echo -e &quot;AIRFLOW_UID=5000&quot; &gt; .env
+</code></pre>
 <p>To run internal database migrations and create the first user account, initialize the database using this command:</p>
-<!-- -->
+<pre><code class="language-bash">docker compose up airflow-init
+</code></pre>
 <p>After initialization is complete, you should see a message like this:</p>
-<!-- -->
+<pre><code class="language-bash"> airflow-init_1       | Upgrades done
+ airflow-init_1       | Admin user airflow created
+ airflow-init_1       | 2.8.2
+ start_airflow-init_1 exited with code 0
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="clean-up-airflow-demo-environment">Clean up Airflow demo environment<a href="#clean-up-airflow-demo-environment" class="hash-link" aria-label="Direct link to Clean up Airflow demo environment" title="Direct link to Clean up Airflow demo environment">​</a></h2>
 <p>You can clean up the environment which will remove the preloaded example DAGs using this command:</p>
-<!-- -->
+<pre><code class="language-bash">docker-compose down -v
+</code></pre>
 <p>Then update this parameter in docker-compose.yaml file as given below:</p>
-<!-- -->
+<pre><code class="language-bash">AIRFLOW__CORE__LOAD_EXAMPLES: &#x27;false&#x27;
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="launch-airflow-with-model-factory-solution-accelerator">Launch Airflow with Model Factory Solution Accelerator<a href="#launch-airflow-with-model-factory-solution-accelerator" class="hash-link" aria-label="Direct link to Launch Airflow with Model Factory Solution Accelerator" title="Direct link to Launch Airflow with Model Factory Solution Accelerator">​</a></h2>
 <p>Launch Airflow using this command:</p>
-<!-- -->
+<pre><code class="language-bash">docker-compose up -d
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-airflow-dag-of-model-factory-solution-with-modelops">Run Airflow DAG of Model Factory Solution with ModelOps<a href="#run-airflow-dag-of-model-factory-solution-with-modelops" class="hash-link" aria-label="Direct link to Run Airflow DAG of Model Factory Solution with ModelOps" title="Direct link to Run Airflow DAG of Model Factory Solution with ModelOps">​</a></h2>
 <ul>
 <li>Now you can access Airflow UI uisng the following <a href="http://localhost:8080/" target="_blank" rel="noopener noreferrer">http://localhost:8080/</a></li>

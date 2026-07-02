@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -47,23 +47,47 @@
 <ul>
 <li>Install dependencies:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">apt update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt install -y wget unixodbc unixodbc-dev iodbc python3-pip
+</code></pre>
 <ul>
 <li>Install Teradata ODBC driver for Ubuntu:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">wget https://downloads.teradata.com/download/cdn/connectivity/odbc/17.10.x.x/tdodbc1710__ubuntu_x8664.17.10.00.14-1.tar.gz \
+    &amp;&amp; tar -xzf tdodbc1710__ubuntu_x8664.17.10.00.14-1.tar.gz \
+    &amp;&amp; dpkg -i tdodbc1710/tdodbc1710-17.10.00.14-1.x86_64.deb
+</code></pre>
 <ul>
 <li>Configure ODBC, by creating file <code>/etc/odbcinst.ini</code> with the following content:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">[ODBC Drivers]
+Teradata Database ODBC Driver 17.10=Installed
+
+[Teradata Database ODBC Driver 17.10]
+Description=Teradata Database ODBC Driver 17.10
+Driver=/opt/teradata/client/17.10/odbc_64/lib/tdataodbc_sb64.so
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="use-odbc">Use ODBC<a href="#use-odbc" class="hash-link" aria-label="Direct link to Use ODBC" title="Direct link to Use ODBC">​</a></h2>
 <p>We will validate the installation with a sample Python application. Create <code>test.py</code> file with the following content.
 Replace <code>DBCName=192.168.86.33;UID=dbc;PWD=dbc</code> with the IP address of your Teradata Vantage instance, username and password:</p>
-<!-- -->
+<pre><code class="language-python">import pyodbc
+
+print(pyodbc.drivers())
+
+cnxn = pyodbc.connect(&#x27;DRIVER={Teradata Database ODBC Driver 17.10};DBCName=192.168.86.33;UID=dbc;PWD=dbc;&#x27;)
+cursor = cnxn.cursor()
+
+cursor.execute(&quot;SELECT CURRENT_DATE&quot;)
+for row in cursor.fetchall():
+    print(row)
+EOF
+</code></pre>
 <p>Run the test application:</p>
-<!-- -->
+<pre><code class="language-python">python3 test.py
+</code></pre>
 <p>You should get output similar to:</p>
-<!-- -->
+<pre><code class="language-python">[&#x27;ODBC Drivers&#x27;, &#x27;Teradata Database ODBC Driver 17.10&#x27;]
+(datetime.date(2022, 1, 5), )
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>This how-to demonstrated how to use ODBC with Teradata Vantage on Ubuntu. The how-to shows how to install the ODBC Teradata driver and the dependencies. It then shows how to configure ODBC and validate connectivity with a simple Python application.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-reading">Further reading<a href="#further-reading" class="hash-link" aria-label="Direct link to Further reading" title="Direct link to Further reading">​</a></h2>

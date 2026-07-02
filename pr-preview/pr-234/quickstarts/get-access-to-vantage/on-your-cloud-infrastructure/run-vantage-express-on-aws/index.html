@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -47,39 +47,176 @@
 <ul>
 <li>You will need a VPC with an Internet-facing subnet. If you don&#x27;t have one available, here is how you can create it:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash"># Copied from https://cloudaffaire.com/how-to-create-a-custom-vpc-using-aws-cli/
+
+# Create VPC
+AWS_VPC_ID=$(aws ec2 create-vpc \
+  --cidr-block 10.0.0.0/16 \
+  --query &#x27;Vpc.{VpcId:VpcId}&#x27; \
+  --output text)
+
+# Enable DNS hostname for your VPC
+aws ec2 modify-vpc-attribute \
+  --vpc-id $AWS_VPC_ID \
+  --enable-dns-hostnames &quot;{\&quot;Value\&quot;:true}&quot;
+
+# Create a public subnet
+AWS_SUBNET_PUBLIC_ID=$(aws ec2 create-subnet \
+  --vpc-id $AWS_VPC_ID --cidr-block 10.0.1.0/24 \
+  --query &#x27;Subnet.{SubnetId:SubnetId}&#x27; \
+  --output text)
+
+# Enable Auto-assign Public IP on Public Subnet
+aws ec2 modify-subnet-attribute \
+  --subnet-id $AWS_SUBNET_PUBLIC_ID \
+  --map-public-ip-on-launch
+
+# Create an Internet Gateway
+AWS_INTERNET_GATEWAY_ID=$(aws ec2 create-internet-gateway \
+  --query &#x27;InternetGateway.{InternetGatewayId:InternetGatewayId}&#x27; \
+  --output text)
+
+# Attach Internet gateway to your VPC
+aws ec2 attach-internet-gateway \
+  --vpc-id $AWS_VPC_ID \
+  --internet-gateway-id $AWS_INTERNET_GATEWAY_ID
+
+# Create a route table
+AWS_CUSTOM_ROUTE_TABLE_ID=$(aws ec2 create-route-table \
+  --vpc-id $AWS_VPC_ID \
+  --query &#x27;RouteTable.{RouteTableId:RouteTableId}&#x27; \
+  --output text )
+
+# Create route to Internet Gateway
+aws ec2 create-route \
+  --route-table-id $AWS_CUSTOM_ROUTE_TABLE_ID \
+  --destination-cidr-block 0.0.0.0/0 \
+  --gateway-id $AWS_INTERNET_GATEWAY_ID \
+  --output text
+
+# Associate the public subnet with route table
+AWS_ROUTE_TABLE_ASSOID=$(aws ec2 associate-route-table  \
+  --subnet-id $AWS_SUBNET_PUBLIC_ID \
+  --route-table-id $AWS_CUSTOM_ROUTE_TABLE_ID \
+  --output text | head -1)
+
+# Create a security group
+aws ec2 create-security-group \
+  --vpc-id $AWS_VPC_ID \
+  --group-name myvpc-security-group \
+  --description &#x27;My VPC non default security group&#x27; \
+  --output text
+
+# Get security group ID&#x27;s
+AWS_DEFAULT_SECURITY_GROUP_ID=$(aws ec2 describe-security-groups \
+  --filters &quot;Name=vpc-id,Values=$AWS_VPC_ID&quot; \
+  --query &#x27;SecurityGroups[?GroupName == `default`].GroupId&#x27; \
+  --output text) &amp;&amp;
+  AWS_CUSTOM_SECURITY_GROUP_ID=$(aws ec2 describe-security-groups \
+  --filters &quot;Name=vpc-id,Values=$AWS_VPC_ID&quot; \
+  --query &#x27;SecurityGroups[?GroupName == `myvpc-security-group`].GroupId&#x27; \
+  --output text)
+
+# Create security group ingress rules
+aws ec2 authorize-security-group-ingress \
+  --group-id $AWS_CUSTOM_SECURITY_GROUP_ID \
+  --ip-permissions &#x27;[{&quot;IpProtocol&quot;: &quot;tcp&quot;, &quot;FromPort&quot;: 22, &quot;ToPort&quot;: 22, &quot;IpRanges&quot;: [{&quot;CidrIp&quot;: &quot;0.0.0.0/0&quot;, &quot;Description&quot;: &quot;Allow SSH&quot;}]}]&#x27; \
+  --output text
+
+# Add a tag to the VPC
+aws ec2 create-tags \
+  --resources $AWS_VPC_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc&quot;
+
+# Add a tag to public subnet
+aws ec2 create-tags \
+  --resources $AWS_SUBNET_PUBLIC_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc-public-subnet&quot;
+
+# Add a tag to the Internet-Gateway
+aws ec2 create-tags \
+  --resources $AWS_INTERNET_GATEWAY_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc-internet-gateway&quot;
+
+# Add a tag to the default route table
+AWS_DEFAULT_ROUTE_TABLE_ID=$(aws ec2 describe-route-tables \
+  --filters &quot;Name=vpc-id,Values=$AWS_VPC_ID&quot; \
+  --query &#x27;RouteTables[?Associations[0].Main != `false`].RouteTableId&#x27; \
+  --output text) &amp;&amp;
+  aws ec2 create-tags \
+  --resources $AWS_DEFAULT_ROUTE_TABLE_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc-default-route-table&quot;
+
+# Add a tag to the public route table
+aws ec2 create-tags \
+  --resources $AWS_CUSTOM_ROUTE_TABLE_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc-public-route-table&quot;
+
+# Add a tags to security groups
+aws ec2 create-tags \
+  --resources $AWS_CUSTOM_SECURITY_GROUP_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc-security-group&quot; &amp;&amp;
+  aws ec2 create-tags \
+  --resources $AWS_DEFAULT_SECURITY_GROUP_ID \
+  --tags &quot;Key=Name,Value=vantage-express-vpc-default-security-group&quot;
+
+</code></pre>
 <ul>
 <li>To create a VM you will need an ssh key pair. If you don&#x27;t have it already, create one:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">aws ec2 create-key-pair --key-name vantage-key --query &#x27;KeyMaterial&#x27; --output text &gt; vantage-key.pem
+</code></pre>
 <ul>
 <li>Restrict access to the private key. Replace <code>&lt;path_to_private_key_file&gt;</code> with the private key path returned by the previous command:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">chmod 600 vantage-key.pem
+</code></pre>
 <ul>
 <li>Get the AMI id of the latest Ubuntu image in your region:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">AWS_AMI_ID=$(aws ec2 describe-images \
+  --filters &#x27;Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*amd64*&#x27; \
+  --query &#x27;Images[*].[Name,ImageId,CreationDate]&#x27; --output text \
+  | sort -k3 -r | head -n1 | cut -f 2)
+</code></pre>
 <ul>
 <li>Create a Ubuntu VM with 4 CPU&#x27;s and 8GB of RAM, and a 70GB disk.</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">AWS_INSTANCE_ID=$(aws ec2 run-instances \
+  --image-id $AWS_AMI_ID \
+  --count 1 \
+  --instance-type c5n.metal \
+  --block-device-mapping DeviceName=/dev/sda1,Ebs={VolumeSize=70} \
+  --key-name vantage-key \
+  --security-group-ids $AWS_CUSTOM_SECURITY_GROUP_ID \
+  --subnet-id $AWS_SUBNET_PUBLIC_ID \
+  --query &#x27;Instances[0].InstanceId&#x27; \
+  --output text)
+</code></pre>
 <ul>
 <li>ssh to your VM:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">AWS_INSTANCE_PUBLIC_IP=$(aws ec2 describe-instances \
+  --query &quot;Reservations[*].Instances[*].PublicIpAddress&quot; \
+  --output=text --instance-ids $AWS_INSTANCE_ID)
+ssh -i vantage-key.pem ubuntu@$AWS_INSTANCE_PUBLIC_IP
+</code></pre>
 <ul>
 <li>Once in the VM, switch to <code>root</code> user:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">sudo -i
+</code></pre>
 <ul>
 <li>Prepare the download directory for Vantage Express:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">mkdir /opt/downloads
+cd /opt/downloads
+</code></pre>
 <ul>
 <li>Install VirtualBox and 7zip:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">apt update &amp;&amp; apt-get install p7zip-full p7zip-rar virtualbox -y
+</code></pre>
 <ul>
 <li>
 <p>Retrieve the curl command to download Vantage Express.</p>
@@ -99,77 +236,194 @@
 <p>Head back to the ssh session and download Vantage Express by pasting the curl command. Add <code>-o ve.7z</code> to the command to save the download to file named <code>ve.7z</code>. You can remove all the HTTP headers, e.g.:</p>
 </li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">curl -o ve.7z &#x27;http://d289lrf5tw1zls.cloudfront.net/database/teradata-express/VantageExpress17.20_Sles12_202108300444.7z?Expires=1638719978&amp;Signature=GKBkNvery_long_signature__&amp;Key-Pair-Id=********************&#x27;
+</code></pre>
 <ul>
 <li>Unzip the downloaded file. It will take several minutes:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">7z x ve.7z
+</code></pre>
 <ul>
 <li>Start the VM in VirtualBox. The command will return immediately but the VM init process will take several minutes:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">export VM_IMAGE_DIR=&quot;/opt/downloads/VantageExpress17.20_Sles12&quot;
+DEFAULT_VM_NAME=&quot;vantage-express&quot;
+VM_NAME=&quot;${VM_NAME:-$DEFAULT_VM_NAME}&quot;
+vboxmanage createvm --name &quot;$VM_NAME&quot; --register --ostype openSUSE_64
+vboxmanage modifyvm &quot;$VM_NAME&quot; --ioapic on --memory 6000 --vram 128 --nic1 nat --cpus 4
+vboxmanage storagectl &quot;$VM_NAME&quot; --name &quot;SATA Controller&quot; --add sata --controller IntelAhci
+vboxmanage storageattach &quot;$VM_NAME&quot; --storagectl &quot;SATA Controller&quot; --port 0 --device 0 --type hdd --medium  &quot;$(find $VM_IMAGE_DIR -name &#x27;*disk1*&#x27;)&quot;
+vboxmanage storageattach &quot;$VM_NAME&quot; --storagectl &quot;SATA Controller&quot; --port 1 --device 0 --type hdd --medium  &quot;$(find $VM_IMAGE_DIR -name &#x27;*disk2*&#x27;)&quot;
+vboxmanage storageattach &quot;$VM_NAME&quot; --storagectl &quot;SATA Controller&quot; --port 2 --device 0 --type hdd --medium  &quot;$(find $VM_IMAGE_DIR -name &#x27;*disk3*&#x27;)&quot;
+vboxmanage modifyvm &quot;$VM_NAME&quot; --natpf1 &quot;tdssh,tcp,,4422,,22&quot;
+vboxmanage modifyvm &quot;$VM_NAME&quot; --natpf1 &quot;tddb,tcp,,1025,,1025&quot;
+vboxmanage startvm &quot;$VM_NAME&quot; --type headless
+vboxmanage controlvm &quot;$VM_NAME&quot; keyboardputscancode 1c 1c
+</code></pre>
 <ul>
 <li>ssh to Vantage Express VM. Use <code>root</code> as password:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">ssh -p 4422 root@localhost
+</code></pre>
 <ul>
 <li>Validate that the DB is up:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">pdestate -a
+</code></pre>
 <p>If the command returns <code>PDE state is RUN/STARTED. DBS state is 5: Logons are enabled - The system is quiescent</code>, it means that Vantage Express has started.
 If the status is different, repeat <code>pdestate -a</code> till you get the correct status.</p>
 <ul>
 <li>Once Vantage Express is up and running, start <code>bteq</code> client command line client. BTEQ (pronounced “bee-teek”) is a general-purpose, command-based client tool used to submit SQL queries to a Teradata Database.</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">bteq
+</code></pre>
 <ul>
 <li>Once in bteq, connect to your Vantage Express instance. When asked for the password, enter <code>dbc</code>:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">.logon localhost/dbc
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-sample-queries">Run sample queries<a href="#run-sample-queries" class="hash-link" aria-label="Direct link to Run sample queries" title="Direct link to Run sample queries">​</a></h2>
 <ul>
 <li>Using <code>dbc</code> user, we will create a new database called <code>HR</code>. Copy/paste this query and run press <kbd>Enter</kbd>:</li>
 </ul>
-<!-- -->
+<pre><code class="language-sql">CREATE DATABASE HR
+AS PERMANENT = 60e6, -- 60MB
+    SPOOL = 120e6; -- 120MB
+</code></pre>
 <ul>
 <li>Let’s create a sample table and insert some data and query it. We will first create a table to hold employee information:</li>
 </ul>
-<!-- -->
+<pre><code class="language-sql">CREATE SET TABLE HR.Employees (
+   GlobalID INTEGER,
+   FirstName VARCHAR(30),
+   LastName VARCHAR(30),
+   DateOfBirth DATE FORMAT &#x27;YYYY-MM-DD&#x27;,
+   JoinedDate DATE FORMAT &#x27;YYYY-MM-DD&#x27;,
+   DepartmentCode BYTEINT
+)
+UNIQUE PRIMARY INDEX ( GlobalID );
+</code></pre>
 <ul>
 <li>Now, let&#x27;s insert a record:</li>
 </ul>
-<!-- -->
+<pre><code class="language-sql">INSERT INTO HR.Employees (
+   GlobalID,
+   FirstName,
+   LastName,
+   DateOfBirth,
+   JoinedDate,
+   DepartmentCode
+)
+VALUES (
+   101,
+   &#x27;Adam&#x27;,
+   &#x27;Tworkowski&#x27;,
+   &#x27;1980-01-05&#x27;,
+   &#x27;2004-08-01&#x27;,
+   01
+);
+</code></pre>
 <ul>
 <li>Finally, let&#x27;s see if we can retrieve the data:</li>
 </ul>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM HR.Employees;
+</code></pre>
 <p>You should get the following results:</p>
-<!-- -->
+<pre><code class="language-sql">GlobalID  FirstName  LastName   DateOfBirth  JoinedDate  DepartmentCode
+--------  ---------  ---------- -----------  ----------  --------------
+     101  Adam       Tworkowski  1980-01-05  2004-08-01               1
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="optional-setup">Optional setup<a href="#optional-setup" class="hash-link" aria-label="Direct link to Optional setup" title="Direct link to Optional setup">​</a></h2>
 <ul>
 <li>If you intend to stop and start the VM, you may want to add Vantage Express to autostart. ssh to your VM and run the following commands:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">sudo -i
+
+cat &lt;&lt;EOF &gt;&gt; /etc/default/virtualbox
+VBOXAUTOSTART_DB=/etc/vbox
+VBOXAUTOSTART_CONFIG=/etc/vbox/autostart.cfg
+EOF
+
+cat &lt;&lt;EOF &gt; /etc/systemd/system/vantage-express.service
+[Unit]
+Description=vm1
+After=network.target virtualbox.service
+Before=runlevel2.target shutdown.target
+[Service]
+User=root
+Group=root
+Type=forking
+Restart=no
+TimeoutSec=5min
+IgnoreSIGPIPE=no
+KillMode=process
+GuessMainPID=no
+RemainAfterExit=yes
+ExecStart=/usr/bin/VBoxManage startvm vantage-express --type headless
+ExecStop=/usr/bin/VBoxManage controlvm vantage-express savestate
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable vantage-express
+systemctl start vantage-express
+</code></pre>
 <ul>
 <li>If you would like to connect to Vantage Express from the Internet, you will need to open up firewall holes to your VM. You should also change the default password to <code>dbc</code> user:</li>
 <li>To change the password for <code>dbc</code> user go to your VM and start bteq:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">bteq
+</code></pre>
 <ul>
 <li>Login to your database using <code>dbc</code> as username and password:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">.logon localhost/dbc
+</code></pre>
 <ul>
 <li>Change the password for <code>dbc</code> user:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">MODIFY USER dbc AS PASSWORD = new_password;
+</code></pre>
 <ul>
 <li>You can now open up port 1025 to the internet:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">aws ec2 authorize-security-group-ingress \
+  --group-id $AWS_CUSTOM_SECURITY_GROUP_ID \
+  --ip-permissions &#x27;[{&quot;IpProtocol&quot;: &quot;tcp&quot;, &quot;FromPort&quot;: 1025, &quot;ToPort&quot;: 1025, &quot;IpRanges&quot;: [{&quot;CidrIp&quot;: &quot;0.0.0.0/0&quot;, &quot;Description&quot;: &quot;Allow Teradata port&quot;}]}]&#x27;
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="cleanup">Cleanup<a href="#cleanup" class="hash-link" aria-label="Direct link to Cleanup" title="Direct link to Cleanup">​</a></h2>
 <p>To stop incurring charges, delete all the resources:</p>
-<!-- -->
+<pre><code class="language-bash"># Delete the VM
+aws ec2 terminate-instances --instance-ids $AWS_INSTANCE_ID --output text
+
+# Wait for the VM to terminate
+
+# Delete custom security group
+aws ec2 delete-security-group \
+  --group-id $AWS_CUSTOM_SECURITY_GROUP_ID
+
+# Delete internet gateway
+aws ec2 detach-internet-gateway \
+  --internet-gateway-id $AWS_INTERNET_GATEWAY_ID \
+  --vpc-id $AWS_VPC_ID &amp;&amp;
+  aws ec2 delete-internet-gateway \
+  --internet-gateway-id $AWS_INTERNET_GATEWAY_ID
+
+# Delete the custom route table
+aws ec2 disassociate-route-table \
+  --association-id $AWS_ROUTE_TABLE_ASSOID &amp;&amp;
+  aws ec2 delete-route-table \
+  --route-table-id $AWS_CUSTOM_ROUTE_TABLE_ID
+
+# Delete the public subnet
+aws ec2 delete-subnet \
+  --subnet-id $AWS_SUBNET_PUBLIC_ID
+
+# Delete the vpc
+aws ec2 delete-vpc \
+  --vpc-id $AWS_VPC_ID
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps">​</a></h2>
 <ul>
 <li><a href="/pr-preview/pr-234/quickstarts/manage-data/nos/">Query data stored in object storage</a></li>

@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -53,22 +53,103 @@
 </ul></div></span></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-maven-project">Create a Maven project<a href="#create-a-maven-project" class="hash-link" aria-label="Direct link to Create a Maven project" title="Direct link to Create a Maven project">​</a></h2>
 <p>Create a new Maven project using the standard quickstart archetype:</p>
-<!-- -->
+<pre><code class="language-bash">mvn archetype:generate \
+  -DgroupId=com.teradata.app \
+  -DartifactId=jdbc-sample-app \
+  -DarchetypeArtifactId=maven-archetype-quickstart \
+  -DarchetypeVersion=1.4 \
+  -DinteractiveMode=false
+cd jdbc-sample-app
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-dependency-to-your-maven-project">Add dependency to your maven project<a href="#add-dependency-to-your-maven-project" class="hash-link" aria-label="Direct link to Add dependency to your maven project" title="Direct link to Add dependency to your maven project">​</a></h2>
 <p>Replace the contents of <code>pom.xml</code> with the following. This adds the Teradata JDBC driver and sets the compiler to Java 11:</p>
-<!-- -->
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.teradata.app&lt;/groupId&gt;
+  &lt;artifactId&gt;jdbc-sample-app&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+  &lt;properties&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;maven.compiler.release&gt;11&lt;/maven.compiler.release&gt;
+  &lt;/properties&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.teradata.jdbc&lt;/groupId&gt;
+      &lt;artifactId&gt;terajdbc&lt;/artifactId&gt;
+      &lt;version&gt;20.00.00.06&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.13.2&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="code-to-send-a-query">Code to send a query<a href="#code-to-send-a-query" class="hash-link" aria-label="Direct link to Code to send a query" title="Direct link to Code to send a query">​</a></h2>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Note</div><div class="admonitionContent_UjKb"><p>Replace <code>&lt;host&gt;</code>, <code>&lt;user&gt;</code>, and <code>&lt;password&gt;</code> with your Teradata environment credentials. If you are running Vantage Express, the default host is <code>localhost</code>, user is <code>dbc</code>, and password is <code>dbc</code>. You may need to expose port <code>1025</code> from your VM to the host machine — refer to your virtualization software documentation on how to forward ports.</p></div></span></div>
 <p>Replace <code>src/main/java/com/teradata/app/App.java</code> with the following:</p>
-<!-- -->
+<pre><code class="language-java">package com.teradata.app;
+
+import java.sql.*;
+
+public class App {
+    static final String DB_URL = &quot;jdbc:teradata://&lt;host&gt;&quot;;
+    static final String USER = &quot;&lt;user&gt;&quot;;
+    static final String PASS = &quot;&lt;password&gt;&quot;;
+    static final String QUERY = &quot;SELECT * FROM dbc.dbcinfo&quot;;
+
+    public static void main(String[] args) {
+        new App().query();
+    }
+
+    public void query() {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(QUERY)) {
+
+            while (rs.next()) {
+                System.out.println(String.format(&quot;setting: %s, value: %s&quot;,
+                    rs.getString(1), rs.getString(2)));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(&quot;Failed to connect or query Teradata&quot;, e);
+        }
+    }
+}
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-a-test">Add a test<a href="#add-a-test" class="hash-link" aria-label="Direct link to Add a test" title="Direct link to Add a test">​</a></h2>
 <p>Replace <code>src/test/java/com/teradata/app/AppTest.java</code> with the following:</p>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Note</div><div class="admonitionContent_UjKb"><p>The test connects to your live Teradata instance, so it requires the credentials you set in <code>App.java</code> to be valid and the instance to be reachable.</p></div></span></div>
-<!-- -->
+<pre><code class="language-java">package com.teradata.app;
+
+import org.junit.Test;
+
+public class AppTest {
+    @Test
+    public void shouldConnectAndQueryTeradata() {
+        new App().query();
+    }
+}
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="run-the-tests">Run the tests<a href="#run-the-tests" class="hash-link" aria-label="Direct link to Run the tests" title="Direct link to Run the tests">​</a></h3>
-<!-- -->
+<pre><code class="language-bash">mvn test
+</code></pre>
 <p>You should see output similar to:</p>
-<!-- -->
+<pre><code>setting: VERSION, value: 20.00.xx.xx
+setting: LANGUAGE SUPPORT MODE, value: Standard
+setting: RELEASE, value: 20.00.xx.xx
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>This how-to demonstrated how to connect to Teradata using JDBC. It described a sample Java application with Maven as the build tool that uses the Teradata JDBC driver to send SQL queries to Teradata Database.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-reading">Further reading<a href="#further-reading" class="hash-link" aria-label="Direct link to Further reading" title="Direct link to Further reading">​</a></h2>

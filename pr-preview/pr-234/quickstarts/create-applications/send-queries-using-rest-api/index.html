@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -70,9 +70,34 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="http-basic-authentication">HTTP Basic authentication<a href="#http-basic-authentication" class="hash-link" aria-label="Direct link to HTTP Basic authentication" title="Direct link to HTTP Basic authentication">​</a></h3>
 <p>The database username and password are combined into a string (<code>&quot;username : password&quot;</code>) which is then encoded using Base64. The API response contains the authorization method and encoded credentials.</p>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">import requests
+import json
+import base64
+requests.packages.urllib3.disable_warnings()
+
+# run it from local.
+
+db_user, db_password = &#x27;dbc&#x27;,&#x27;dbc&#x27;
+auth_encoded = db_user + &#x27;:&#x27; + db_password
+auth_encoded = base64.b64encode(bytes(auth_encoded, &#x27;utf-8&#x27;))
+auth_str = &#x27;Basic &#x27; + auth_encoded.decode(&#x27;utf-8&#x27;)
+
+print(auth_str)
+
+headers = {
+  &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+  &#x27;Authorization&#x27;: auth_str # base 64 encoded username:password
+}
+
+print(headers)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-python">Basic ZGJjOmRiYw==
+{
+  &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+  &#x27;Authorization&#x27;: &#x27;Basic ZGJjOmRiYw==&#x27;
+}
+</code></pre>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="jwt-authentication">JWT authentication<a href="#jwt-authentication" class="hash-link" aria-label="Direct link to JWT authentication" title="Direct link to JWT authentication">​</a></h3>
 <p>Prerequisites:</p>
 <ul>
@@ -80,9 +105,25 @@
 <li>The database must be JWT enabled.</li>
 </ul>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">import requests
+import json
+requests.packages.urllib3.disable_warnings()
+
+# run it from local. 
+
+auth_encoded_jwt = &quot;&lt;YOUR_JWT_HERE&gt;&quot;
+auth_str = &quot;Bearer &quot; + auth_encoded_jwt
+
+headers = {
+  &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+  &#x27;Authorization&#x27;: auth_str
+}
+
+print(headers)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-python">{&#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Authorization&#x27;: &#x27;Bearer &lt;YOUR_JWT_HERE&gt;&#x27;}
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="make-a-simple-api-request-with-basic-options">Make a simple API request with basic options<a href="#make-a-simple-api-request-with-basic-options" class="hash-link" aria-label="Direct link to Make a simple API request with basic options" title="Direct link to Make a simple API request with basic options">​</a></h2>
 <p>In the following example, the request includes:</p>
 <ul>
@@ -101,17 +142,146 @@
 </li>
 </ul>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries&#x27;
+
+payload = {
+  &#x27;query&#x27;: example_query, # &#x27;SELECT * FROM DBC.DBCInfo;&#x27;,
+  &#x27;format&#x27;: &#x27;OBJECT&#x27;,
+  &#x27;includeColumns&#x27;: True,
+  &#x27;rowLimit&#x27;: 4
+}
+
+payload_json = json.dumps(payload)
+
+response = requests.request(&#x27;POST&#x27;, url, headers=headers, data=payload_json, verify=False)
+
+num_rows = response.json().get(&#x27;results&#x27;](0].get(&#x27;rowCount&#x27;)
+print(&#x27;NUMBER of ROWS&#x27;, num_rows)
+print(&#x27;==========================================================&#x27;)
+
+print(response.json())
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-json">NUMBER of ROWS 4
+==========================================================
+{
+  &quot;queueDuration&quot;:7,
+  &quot;queryDuration&quot;:227,
+  &quot;results&quot;:[
+    {
+      &quot;resultSet&quot;:True,
+      &quot;columns&quot;:[
+        {
+          &quot;name&quot;:&quot;DatabaseName&quot;,
+          &quot;type&quot;:&quot;CHAR&quot;
+        },
+        {
+          &quot;name&quot;:&quot;USEDSPACE_IN_GB&quot;,
+          &quot;type&quot;:&quot;FLOAT&quot;
+        },
+        {
+          &quot;name&quot;:&quot;MAXSPACE_IN_GB&quot;,
+          &quot;type&quot;:&quot;FLOAT&quot;
+        },
+        {
+          &quot;name&quot;:&quot;Percentage_Used&quot;,
+          &quot;type&quot;:&quot;FLOAT&quot;
+        },
+        {
+          &quot;name&quot;:&quot;REMAININGSPACE_IN_GB&quot;,
+          &quot;type&quot;:&quot;FLOAT&quot;
+        }
+      ],
+      &quot;data&quot;:[
+        {
+          &quot;DatabaseName&quot;:&quot;DBC&quot;,
+          &quot;USEDSPACE_IN_GB&quot;:317.76382541656494,
+          &quot;MAXSPACE_IN_GB&quot;:1510.521079641879,
+          &quot;Percentage_Used&quot;:21.03670247964377,
+          &quot;REMAININGSPACE_IN_GB&quot;:1192.757254225314
+        },
+        {
+          &quot;DatabaseName&quot;:&quot;EM&quot;,
+          &quot;USEDSPACE_IN_GB&quot;:0.0007491111755371094,
+          &quot;MAXSPACE_IN_GB&quot;:11.546071618795395,
+          &quot;Percentage_Used&quot;:0.006488017745513208,
+          &quot;REMAININGSPACE_IN_GB&quot;:11.545322507619858
+        },
+        {
+          &quot;DatabaseName&quot;:&quot;user10&quot;,
+          &quot;USEDSPACE_IN_GB&quot;:0.019153594970703125,
+          &quot;MAXSPACE_IN_GB&quot;:9.313225746154785,
+          &quot;Percentage_Used&quot;:0.20566016,
+          &quot;REMAININGSPACE_IN_GB&quot;:9.294072151184082
+        },
+        {
+          &quot;DatabaseName&quot;:&quot;EMEM&quot;,
+          &quot;USEDSPACE_IN_GB&quot;:0.006140708923339844,
+          &quot;MAXSPACE_IN_GB&quot;:4.656612873077393,
+          &quot;Percentage_Used&quot;:0.13187072,
+          &quot;REMAININGSPACE_IN_GB&quot;:4.650472164154053
+        },
+        {
+          &quot;DatabaseName&quot;:&quot;EMWork&quot;,
+          &quot;USEDSPACE_IN_GB&quot;:0.0,
+          &quot;MAXSPACE_IN_GB&quot;:4.656612873077393,
+          &quot;Percentage_Used&quot;:0.0,
+          &quot;REMAININGSPACE_IN_GB&quot;:4.656612873077393
+        }
+      ],
+      &quot;rowCount&quot;:4,
+      &quot;rowLimitExceeded&quot;:True
+    }
+  ]
+}
+</code></pre>
 <p>For response parameters, see <a href="https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body" target="_blank" rel="noopener noreferrer">Query Service Installation, Configuration, and Usage Guide</a>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="request-a-response-in-csv-format">Request a response in CSV format<a href="#request-a-response-in-csv-format" class="hash-link" aria-label="Direct link to Request a response in CSV format" title="Direct link to Request a response in CSV format">​</a></h3>
 <p>To return an API response in CSV format, set the <code>*format*</code> field in the request with the value <code>*CSV*</code>.</p>
 <p>The CSV format contains only the query results and not response metadata. The response contains a line for each row, where each line contains the row columns separated by a comma. The following example returns the data as comma-separated values.</p>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python"># CSV with all rows included
+
+url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries&#x27;
+
+payload = {
+  &#x27;query&#x27;: example_query, # &#x27;SELECT * FROM DBC.DBCInfo;&#x27;,
+  &#x27;format&#x27;: &#x27;CSV&#x27;,
+  &#x27;includeColumns&#x27;: True
+}
+
+payload_json = json.dumps(payload)
+
+response = requests.request(&#x27;POST&#x27;, url, headers=headers, data=payload_json, verify=False)
+
+print(response.text)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-python">DatabaseName,USEDSPACE_IN_GB,MAXSPACE_IN_GB,Percentage_Used,REMAININGSPACE_IN_GB
+DBC                           ,317.7634754180908,1510.521079641879,21.036679308932754,1192.7576042237881
+EM                            ,7.491111755371094E-4,11.546071618795395,0.006488017745513208,11.545322507619858
+user10                        ,0.019153594970703125,9.313225746154785,0.20566016,9.294072151184082
+EMEM                          ,0.006140708923339844,4.656612873077393,0.13187072,4.650472164154053
+EMWork                        ,0.0,4.656612873077393,0.0,4.656612873077393
+EMJI                          ,0.0,2.3283064365386963,0.0,2.3283064365386963
+USER_NAME                     ,0.0,2.0,0.0,2.0
+readonly                      ,0.0,0.9313225746154785,0.0,0.9313225746154785
+aug12_db                      ,7.200241088867188E-5,0.9313225746154785,0.0077312,0.9312505722045898
+SystemFe                      ,1.8024444580078125E-4,0.7450580596923828,0.024192,0.744877815246582
+dbcmngr                       ,3.814697265625E-6,0.09313225746154785,0.004096,0.09312844276428223
+EMViews                       ,0.027594566345214844,0.09313225746154785,29.62944,0.06553769111633301
+tdwm                          ,6.732940673828125E-4,0.09313225746154785,0.722944,0.09245896339416504
+Crashdumps                    ,0.0,0.06984921544790268,0.0,0.06984921544790268
+SYSLIB                        ,0.006252288818359375,0.03725290298461914,16.78336,0.031000614166259766
+SYSBAR                        ,4.76837158203125E-6,0.03725290298461914,0.0128,0.03724813461303711
+SYSUDTLIB                     ,3.5381317138671875E-4,0.029802322387695312,1.1872,0.029448509216308594
+External_AP                   ,0.0,0.01862645149230957,0.0,0.01862645149230957
+SysAdmin                      ,0.002307891845703125,0.01862645149230957,12.3904,0.016318559646606445
+KZXaDtQp                      ,0.0,0.009313225746154785,0.0,0.009313225746154785
+s476QJ6O                      ,0.0,0.009313225746154785,0.0,0.009313225746154785
+hTzz03i7                      ,0.0,0.009313225746154785,0.0,0.009313225746154785
+Y5WYUUXj                      ,0.0,0.009313225746154785,0.0,0.009313225746154785
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="use-explicit-session-to-submit-a-query">Use explicit session to submit a query<a href="#use-explicit-session-to-submit-a-query" class="hash-link" aria-label="Direct link to Use explicit session to submit a query" title="Direct link to Use explicit session to submit a query">​</a></h2>
 <p>Use explicit sessions when a transaction needs to span multiple requests or when using volatile tables. These sessions are only reused if you reference the sessions in a query request. The request is queued if a request references an explicit session already in use.</p>
 <ol>
@@ -120,9 +290,30 @@
 Send a POST request to the <code>/system/&lt;SYSTEM_NAME&gt;/sessions</code> endpoint. The request creates a new database session and returns the session details as the response.</p>
 <p>In the following example, the request includes <code>&#x27;auto_commit&#x27;: True</code> - the request to commit the query upon completion.</p>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python"># first create a session
+url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/sessions&#x27;
+
+payload = {
+  &#x27;auto_commit&#x27;: True
+}
+
+payload_json = json.dumps(payload)
+
+response = requests.request(&#x27;POST&#x27;, url, headers=headers, data=payload_json, verify=False)
+
+print(response.text)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-python">{
+  &#x27;sessionId&#x27;: 1366010,
+  &#x27;system&#x27;: &#x27;testsystem&#x27;,
+  &#x27;user&#x27;: &#x27;dbc&#x27;,
+  &#x27;tdSessionNo&#x27;: 1626922,
+  &#x27;createMode&#x27;: &#x27;EXPLICIT&#x27;,
+  &#x27;state&#x27;: &#x27;LOGGINGON&#x27;,
+  &#x27;autoCommit&#x27;: true
+}
+</code></pre>
 </li>
 <li>
 <p>Use the session created in Step 1 to submit queries</p>
@@ -135,9 +326,48 @@ Send a POST request to the <code>/system/&lt;SYSTEM_NAME&gt;/sessions</code> end
 <li><code>&#x27;Session&#x27; : &lt;Session ID&gt;</code>: The session ID returned in Step 1 to create an explicit session.</li>
 </ul>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python"># use this session to submit queries afterwards
+
+url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries&#x27;
+
+payload = {
+  &#x27;query&#x27;: &#x27;SELECT * FROM DBC.DBCInfo;&#x27;,
+  &#x27;format&#x27;: &#x27;OBJECT&#x27;,
+  &#x27;session&#x27;: 1366010 # &lt;-- sessionId
+}
+payload_json = json.dumps(payload)
+
+response = requests.request(&#x27;POST&#x27;, url, headers=headers, data=payload_json, verify=False)
+
+print(response.text)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-json">{
+  &quot;queueDuration&quot;:6,
+  &quot;queryDuration&quot;:41,
+  &quot;results&quot;:[
+    {
+      &quot;resultSet&quot;:true,
+      &quot;data&quot;:[
+        {
+          &quot;InfoKey&quot;:&quot;LANGUAGE SUPPORT MODE&quot;,
+          &quot;InfoData&quot;:&quot;Standard&quot;
+        },
+        {
+          &quot;InfoKey&quot;:&quot;RELEASE&quot;,
+          &quot;InfoData&quot;:&quot;15.10.07.02&quot;
+        },
+        {
+          &quot;InfoKey&quot;:&quot;VERSION&quot;,
+          &quot;InfoData&quot;:&quot;15.10.07.02&quot;
+        }
+      ],
+      &quot;rowCount&quot;:3,
+      &quot;rowLimitExceeded&quot;:false
+    }
+  ]
+}
+</code></pre>
 </li>
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="use-asynchronous-queries">Use asynchronous queries<a href="#use-asynchronous-queries" class="hash-link" aria-label="Direct link to Use asynchronous queries" title="Direct link to Use asynchronous queries">​</a></h2>
@@ -153,35 +383,157 @@ In the following example, the request includes:</p>
 <li><code>&#x27;spooled_result_set&#x27;: True</code>: The indication that the request is asynchronous.</li>
 </ul>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">## Run async query .
+
+url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries&#x27;
+
+payload = {
+  &#x27;query&#x27;: &#x27;SELECT * FROM DBC.DBCInfo;&#x27;,
+  &#x27;format&#x27;: &#x27;OBJECT&#x27;,
+  &#x27;spooled_result_set&#x27;: True
+}
+
+payload_json = json.dumps(payload)
+response = requests.request(&#x27;POST&#x27;, url, headers=headers, data=payload_json, verify=False)
+
+print(response.text)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code>{&quot;id&quot;:1366025}
+</code></pre>
 </li>
 <li>
 <p>Get query details using the ID retrieved from Step 1</p>
 <p>Send a GET request to the <code>/system/&lt;SYSTEM_NAME&gt;/queries/&lt;queryID&gt;</code> endpoint, replacing <code>&lt;queryID&gt;</code> with the ID retrieved from Step 1.</p>
 <p>The request returns the details of the specific query, including <strong><code>queryState</code></strong>, <strong><code>queueOrder</code></strong>, <strong><code>queueDuration</code></strong>, and so on. For a complete list of the response fields and their descriptions, see <a href="https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body" target="_blank" rel="noopener noreferrer">Query Service Installation, Configuration, and Usage Guide</a>.</p>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">## response for async query .
+
+url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries/1366025&#x27;
+
+payload_json = json.dumps(payload)
+response = requests.request(&#x27;GET&#x27;, url, headers=headers, verify=False)
+
+print(response.text)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-python">{
+  &quot;queryId&quot;:1366025,
+  &quot;query&quot;:&quot;SELECT * FROM DBC.DBCInfo;&quot;,
+  &quot;batch&quot;:false,
+  &quot;system&quot;:&quot;testsystem&quot;,
+  &quot;user&quot;:&quot;dbc&quot;,
+  &quot;session&quot;:1366015,
+  &quot;queryState&quot;:&quot;RESULT_SET_READY&quot;,
+  &quot;queueOrder&quot;:0,
+  &quot;queueDuration&quot;:6,
+  &quot;queryDuration&quot;:9,
+  &quot;statusCode&quot;:200,
+  &quot;resultSets&quot;:{
+
+  },
+  &quot;counts&quot;:{
+
+  },
+  &quot;exceptions&quot;:{
+
+  },
+  &quot;outParams&quot;:{
+
+  }
+}
+</code></pre>
 </li>
 <li>
 <p>View resultset for asynchronous query</p>
 <p>Send a GET request to the <code>/system/&lt;SYSTEM_NAME&gt;/queries/&lt;queryID&gt;/results</code> endpoint, replacing <code>&lt;queryID&gt;</code> with the ID retrieved from Step 1.</p>
 <p>The request returns an array of the result sets and update counts produced by the submitted query.</p>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries/1366025/results&#x27;
+
+payload_json = json.dumps(payload)
+response = requests.request(&#x27;GET&#x27;, url, headers=headers, verify=False)
+
+print(response.text)
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-json">{
+  &quot;queueDuration&quot;:6,
+  &quot;queryDuration&quot;:9,
+  &quot;results&quot;:[
+    {
+      &quot;resultSet&quot;:true,
+      &quot;data&quot;:[
+        {
+          &quot;InfoKey&quot;:&quot;LANGUAGE SUPPORT MODE&quot;,
+          &quot;InfoData&quot;:&quot;Standard&quot;
+        },
+        {
+          &quot;InfoKey&quot;:&quot;RELEASE&quot;,
+          &quot;InfoData&quot;:&quot;15.10.07.02&quot;
+        },
+        {
+          &quot;InfoKey&quot;:&quot;VERSION&quot;,
+          &quot;InfoData&quot;:&quot;15.10.07.02&quot;
+        }
+      ],
+      &quot;rowCount&quot;:3,
+      &quot;rowLimitExceeded&quot;:false
+    }
+  ]
+}
+</code></pre>
 </li>
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="get-a-list-of-active-or-queued-queries">Get a list of active or queued queries<a href="#get-a-list-of-active-or-queued-queries" class="hash-link" aria-label="Direct link to Get a list of active or queued queries" title="Direct link to Get a list of active or queued queries">​</a></h2>
 <p>Send a GET request to the <code>/system/&lt;SYSTEM_NAME&gt;/queries</code> endpoint. The request returns the IDs of active queries.</p>
 <p><strong>Request</strong></p>
-<!-- -->
+<pre><code class="language-python">url = &#x27;https://&lt;QS_HOSTNAME&gt;:1443/systems/&lt;SYSTEM_NAME&gt;/queries&#x27;
+
+payload={}
+
+response = requests.request(&#x27;GET&#x27;, url, headers=headers, data=payload, verify=False)
+
+print(response.json())
+</code></pre>
 <p><strong>Response</strong></p>
-<!-- -->
+<pre><code class="language-json">[
+  {
+    &quot;queryId&quot;: 12516087,
+    &quot;query&quot;: &quot;SELECt * from dbcmgr.AlertRequest;&quot;,
+    &quot;batch&quot;: false,
+    &quot;system&quot;: &quot;BasicTestSys&quot;,
+    &quot;user&quot;: &quot;dbc&quot;,
+    &quot;session&quot;: 12516011,
+    &quot;queryState&quot;: &quot;REST_SET_READY&quot;,
+    &quot;queueOrder&quot;: 0,
+    &quot;queueDurayion&quot;: 3,
+    &quot;queryDuration&quot;: 3,
+    &quot;statusCode&quot;: 200,
+    &quot;resultSets&quot;: {},
+    &quot;counts&quot;: {},
+    &quot;exceptions&quot;: {},
+    &quot;outparams&quot;: {}
+  },
+  {
+    &quot;queryId&quot;: 12516088,
+    &quot;query&quot;: &quot;SELECt * from dbc.DBQLAmpDataTbl;&quot;,
+    &quot;batch&quot;: false,
+    &quot;system&quot;: &quot;BasicTestSys&quot;,
+    &quot;user&quot;: &quot;dbc&quot;,
+    &quot;session&quot;: 12516011,
+    &quot;queryState&quot;: &quot;REST_SET_READY&quot;,
+    &quot;queueOrder&quot;: 0,
+    &quot;queueDurayion&quot;: 3,
+    &quot;queryDuration&quot;: 3,
+    &quot;statusCode&quot;: 200,
+    &quot;resultSets&quot;: {},
+    &quot;counts&quot;: {},
+    &quot;exceptions&quot;: {},
+    &quot;outparams&quot;: {}
+  }
+]
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="resources">Resources<a href="#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources">​</a></h2>
 <ul>
 <li>Features, examples, and references: <a href="https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022" target="_blank" rel="noopener noreferrer">Query Service Installation, Configuration, and Usage Guide</a></li>

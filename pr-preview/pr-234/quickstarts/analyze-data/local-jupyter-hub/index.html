@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -60,17 +60,24 @@
 <p>Load the image:</p>
 </li>
 </ol>
-<!-- -->
+<pre><code class="language-bash">docker load -i teradatajupyterlabext_VERSION.tar.gz
+</code></pre>
 <ol start="3">
 <li>Push the image to your Docker registry:</li>
 </ol>
-<!-- -->
-<div class="theme-admonition theme-admonition-tip admonition_Gfwi alert alert--success admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Tip</div><div class="admonitionContent_UjKb"><p>You may want to consider changing the name of the loaded image for simplicity:</p></div></span></div>
+<pre><code class="language-bash">docker push REGISTRY_URL/teradatajupyterlabext_VERSION
+</code></pre>
+<div class="theme-admonition theme-admonition-tip admonition_Gfwi alert alert--success admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Tip</div><div class="admonitionContent_UjKb"><p>You may want to consider changing the name of the loaded image for simplicity:</p><pre><code class="language-bash">docker tag OLD_IMAGE_NAME NEW_IMAGE_NAME
+</code></pre></div></span></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-teradata-jupyter-docker-image-in-jupyterhub">Use Teradata Jupyter Docker image in JupyterHub<a href="#use-teradata-jupyter-docker-image-in-jupyterhub" class="hash-link" aria-label="Direct link to Use Teradata Jupyter Docker image in JupyterHub" title="Direct link to Use Teradata Jupyter Docker image in JupyterHub">​</a></h3>
 <ol>
 <li>To use the Teradata Jupyter Docker image directly in your JupyterHub cluster, modify the override file as described in <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/jupyterhub/customizing/user-environment.html#choose-and-use-an-existing-docker-image" target="_blank" rel="noopener noreferrer">herein the JupyterHub documentation</a>. Replace <code>REGISTRY_URL</code> and <code>VERSION</code> with appropriate values from the step above:</li>
 </ol>
-<!-- -->
+<pre><code class="language-yaml">singleuser:
+  image:
+    name: REGISTRY_URL/teradatajupyterlabext_VERSION
+    tag: latest
+</code></pre>
 <ol start="2">
 <li>Apply the changes to the cluster as described in <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/jupyterhub/customizing/extending-jupyterhub.html#applying-configuration-changes" target="_blank" rel="noopener noreferrer">JupyterHub documentation</a>.</li>
 </ol>
@@ -78,7 +85,14 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="customize-teradata-jupyter-docker-image">Customize Teradata Jupyter Docker image<a href="#customize-teradata-jupyter-docker-image" class="hash-link" aria-label="Direct link to Customize Teradata Jupyter Docker image" title="Direct link to Customize Teradata Jupyter Docker image">​</a></h3>
 <p>If your users need some packages or notebooks that are not bundled in the Teradata Jupyter Docker image, we recommend that you use Teradata image as a base image and build a new one on top of it.</p>
 <p>Here is an example Dockerfile that builds on top of Teradata image and adds additional packages and notebooks. Use the Dockerfile to build a new Docker image, push the image to a designated registry, modify override file as shown above to use the new image as singleuser image, apply the changes to the cluster as described above. Replace <code>REGISTRY_URL</code> and <code>VERSION</code> with appropriate values:</p>
-<!-- -->
+<pre><code class="language-dockerfile">FROM REGISTRY_URL/teradatajupyterlabext_VERSION:latest
+
+# install additional packages
+RUN pip install --no-cache-dir astropy
+
+# copy notebooks
+COPY notebooks/. /tmp/JupyterLabRoot/DemoNotebooks/
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="customize-an-existing-docker-image-to-include-teradata-extensions">Customize an existing Docker image to include Teradata extensions<a href="#customize-an-existing-docker-image-to-include-teradata-extensions" class="hash-link" aria-label="Direct link to Customize an existing Docker image to include Teradata extensions" title="Direct link to Customize an existing Docker image to include Teradata extensions">​</a></h2>
 <p>If you prefer, you can include the Teradata SQL kernel and extensions into an existing image you are currently using.</p>
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Note</div><div class="admonitionContent_UjKb"><p>Downloading from <code>downloads.teradata.com</code> requires an authenticated Teradata customer account. Contact your Teradata representative if you do not have one.</p></div></span></div>
@@ -91,7 +105,69 @@
 </li>
 <li>
 <p>Below is an example Dockerfile to add Teradata Jupyter extensions to your existing Docker image. Use the Dockerfile to build a new Docker image, push the image to a designated registry, modify override file as shown above to use the new image as singleuser image, apply the changes to the cluster:</p>
-<!-- -->
+<pre><code class="language-dockerfile">FROM REGISTRY_URL/your-existing-image:tag
+ENV NB_USER=jovyan \
+  HOME=/home/jovyan \
+  EXT_DIR=/opt/teradata/jupyterext/packages
+
+USER root
+
+##############################################################
+# Install kernel and copy supporting files
+##############################################################
+
+# Copy the kernel
+COPY ./teradatakernel /usr/local/bin
+RUN chmod 755 /usr/local/bin/teradatakernel
+
+# Copy directory with kernel.json file into image
+COPY ./teradatasql teradatasql/
+
+##############################################################
+# Switch to user jovyan to copy the notebooks and license files.
+##############################################################
+
+USER $NB_USER
+
+# Copy notebooks
+COPY ./notebooks/ /tmp/JupyterLabRoot/TeradataSampleNotebooks/
+
+# Copy license files
+COPY ./ThirdPartyLicenses /tmp/JupyterLabRoot/ThirdPartyLicenses/
+
+USER root
+
+# Install the kernel file to /opt/conda jupyter lab instance
+RUN jupyter kernelspec install ./teradatasql --prefix=/opt/conda
+
+##############################################################
+# Install Teradata extensions
+##############################################################
+
+COPY ./teradata_*.tgz $EXT_DIR
+
+WORKDIR $EXT_DIR
+
+# TODO: replace the lines below with the current pip-based installation
+# commands from https://teradata.github.io/jupyterextensions
+# The jupyter labextension install approach below is deprecated in
+# JupyterLab 3+ and will fail without Node.js. See report.md Issue #3.
+RUN jupyter labextension install --no-build teradata_database* &amp;&amp; \
+  jupyter labextension install --no-build teradata_resultset* &amp;&amp; \
+  jupyter labextension install --no-build teradata_sqlhighlighter* &amp;&amp; \
+  jupyter labextension install --no-build teradata_connection_manager* &amp;&amp; \
+  jupyter labextension install --no-build teradata_preferences* &amp;&amp; \
+  jupyter lab build --dev-build=False --minimize=False &amp;&amp; \
+  rm -rf *
+
+WORKDIR $HOME
+
+# Give back ownership of /opt/conda to  jovyan
+RUN chown -R jovyan:users /opt/conda
+
+# Jupyter will create .local directory
+RUN rm -rf $HOME/.local
+</code></pre>
 </li>
 <li>
 <p>You can optionally install Teradata package for Python and Teradata package for R. See the following pages for details:</p>

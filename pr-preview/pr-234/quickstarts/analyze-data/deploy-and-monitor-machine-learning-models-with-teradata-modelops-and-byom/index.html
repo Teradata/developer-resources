@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -177,11 +177,13 @@ Once you have your compatible model created or converted using a supported forma
 </ul>
 <p><img decoding="async" loading="lazy" alt="ModelOps dataset edit" src="/pr-preview/pr-234/assets/images/dataset_template2-61f31a705004661cd16a6a3da32a1a53.png" width="1728" height="1760" class="img_ev3q"></p>
 <p>Click next and enter the Features Query: This query will be used to identify the features table, you can also Validate statistics and preview Data:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_features
+</code></pre>
 <p><img decoding="async" loading="lazy" alt="ModelOps dataset features" src="/pr-preview/pr-234/assets/images/dataset_template_features-4a57918926f1b5d471a41b5156d51e3e.png" width="1724" height="1756" class="img_ev3q"></p>
 <p>Continue to Entity &amp; Target and include the query: This query will be used to join with the features based on the same entity and to filter the rows of the Training, Evaluation and Scoring Datasets.</p>
 <p>You need to select HasDiabetes as the target variable from this query, then Validate Statistics</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_diagnoses
+</code></pre>
 <p><img decoding="async" loading="lazy" alt="ModelOps dataset features" src="/pr-preview/pr-234/assets/images/dataset_template_target-0398c7b6e87a876146134264b88943a6.png" width="1730" height="1758" class="img_ev3q"></p>
 <p>Continue to Predictions and include the details of the database, table, and the query: This query will be used as the Input of the execution of your model in Production when this model will be deployed as BATCH (Note: BYOM models can only be deployed as batch in ModelOps version 7)</p>
 <ul>
@@ -195,19 +197,22 @@ Once you have your compatible model created or converted using a supported forma
 <p>Query:</p>
 </li>
 </ul>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_features WHERE patientid MOD 5 = 0
+</code></pre>
 <p><img decoding="async" loading="lazy" alt="ModelOps dataset features" src="/pr-preview/pr-234/assets/images/dataset_template_prediction-ed7fe00f68f3da38e690e4ecfdf66960.png" width="1714" height="1744" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-training-dataset">Create Training dataset<a href="#create-training-dataset" class="hash-link" aria-label="Direct link to Create Training dataset" title="Direct link to Create Training dataset">​</a></h3>
 <p>Click on create dataset, Enter the name and description and Select training and click next.</p>
 <p>This query we want to filter and get 80% of rows of the dataset, we use <code>MOD 5 &lt;&gt; 0</code> to get this:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_diagnoses WHERE patientid MOD 5 &lt;&gt; 0
+</code></pre>
 <p><img decoding="async" loading="lazy" alt="ModelOps dataset basic" src="/pr-preview/pr-234/assets/images/training_dataset_basic-7527a07979359636e31a606b38aea248.png" width="1728" height="1762" class="img_ev3q">
 <img decoding="async" loading="lazy" alt="ModelOps dataset training" src="/pr-preview/pr-234/assets/images/training_dataset-0039c26ab3b6ff2100f3349854601100.png" width="1728" height="1762" class="img_ev3q"></p>
 <p>Confirm the query and click on create.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-evaluation-dataset">Create Evaluation dataset<a href="#create-evaluation-dataset" class="hash-link" aria-label="Direct link to Create Evaluation dataset" title="Direct link to Create Evaluation dataset">​</a></h3>
 <p>Click on create dataset, Enter the name and description and Select evaluation and click next.</p>
 <p>This query we want to filter and get 20% of rows of the dataset, we use MOD 5 = 0 to get this:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_diagnoses WHERE patientid MOD 5 = 0
+</code></pre>
 <p><img decoding="async" loading="lazy" alt="ModelOps eval dataset" src="/pr-preview/pr-234/assets/images/evaluation_dataset_basic-e8a2c7066c74c0eccc92bdfb90df141f.png" width="1722" height="1758" class="img_ev3q">
 <img decoding="async" loading="lazy" alt="ModelOps eval dataset details" src="/pr-preview/pr-234/assets/images/evaluation_dataset-f79fa2269685d7e4c34a074ea9cef7f1.png" width="1712" height="1750" class="img_ev3q"></p>
 <p>Confirm the query and click on create.</p>
@@ -338,7 +343,8 @@ CAST(CAST(json_report AS JSON).JSONExtractValue(&#x27;$.predicted_HasDiabetes&#x
 </ul>
 <p><img decoding="async" loading="lazy" alt="ModelOps evaluation2" src="/pr-preview/pr-234/assets/images/evaluation2-a4feaa043a146a60abf41f1ec636fdaa.png" width="1696" height="1720" class="img_ev3q"></p>
 <p>And let&#x27;s simulate the new evaluation with a new dataset query</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_features WHERE patientid MOD 10 = 0
+</code></pre>
 <p>And click on create to generate new dataset for evaluation</p>
 <p><img decoding="async" loading="lazy" alt="ModelOps evaluation detail" src="/pr-preview/pr-234/assets/images/evaluation2_detail-c0007a365e3c1a9f20b9fb95f2fac0f6.png" width="1708" height="1716" class="img_ev3q"></p>
 <p>Now you can go back to your deployment to evaluate the model version deployed:</p>

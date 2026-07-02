@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -54,13 +54,17 @@
 <p><a href="/pr-preview/pr-234/assets/files/ModelOps_Data_files_v6-701b22c6cdf97c7c3747f4795c976e60.zip/" target="_blank">Download data files for demo use case</a></p>
 <p><a href="/pr-preview/pr-234/assets/files/ModelOps_BYOM_files_v6-91b491ab46de8f533a76f321d4e17d5d.zip/" target="_blank">Download BYOM code files for demo use case</a></p>
 <p>Alternatively you can git clone following repos</p>
-<!-- -->
+<pre><code class="language-bash">git clone https://github.com/willfleury/modelops-getting-started
+git clone https://github.com/Teradata/modelops-demo-models/
+</code></pre>
 <p>ModelOps version 7 (April 2023):</p>
 <p><a href="/pr-preview/pr-234/assets/files/ModelOps_Training_v7-9733bd4f8f5af50d0cf7d90a4ddf7083.ipynb/" target="_blank">Download the ModelOps training Notebook</a></p>
 <p><a href="/pr-preview/pr-234/assets/files/BYOM_v7-0880e49b76a9cc93fe3ff62ad6cd45d7.ipynb/" target="_blank">Download BYOM Notebook file for demo use case</a></p>
 <p><a href="/pr-preview/pr-234/assets/files/ModelOps_Data_files_v7-6c60bad364605243445122176bdd603b.zip/" target="_blank">Download data files for demo use case</a></p>
 <p><a href="/pr-preview/pr-234/assets/files/ModelOps_BYOM_files_v7-f0d48a0b1997bd0c54753b3a2a9be118.zip/" target="_blank">Download BYOM code files for demo use case</a></p>
-<!-- -->
+<pre><code class="language-bash">git clone -b v7 https://github.com/willfleury/modelops-getting-started.git
+git clone https://github.com/Teradata/modelops-demo-models/
+</code></pre>
 <p>Setting up the database and Jupyter environment</p>
 <p>Follow the ModelOps_Training Jupyter Notebook to setup the database, tables and libraries needed for the demo.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="understand-where-we-are-in-the-methodology">Understand where we are in the Methodology<a href="#understand-where-we-are-in-the-methodology" class="hash-link" aria-label="Direct link to Understand where we are in the Methodology" title="Direct link to Understand where we are in the Methodology">​</a></h2>
@@ -154,12 +158,14 @@
 </ul>
 <p>Features
 Query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM {your-db}.pima_patient_features
+</code></pre>
 <p>Entity Key: PatientId
 Features: NumTimesPrg, PlGlcConc, BloodP, SkinThick, TwoHourSerIns, BMI, DiPedFunc, Age</p>
 <p>Entity &amp; Target
 Query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM {your-db}.pima_patient_diagnoses
+</code></pre>
 <p>Entity Key: PatientId
 Target: HasDiabetes</p>
 <p>Predictions</p>
@@ -173,7 +179,8 @@ Target: HasDiabetes</p>
 </ul>
 <p>Entity selection:</p>
 <p>Query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM pima_patient_features WHERE patientid MOD 5 = 0
+</code></pre>
 <p>Only for v6 (in v7 you will define this in the BYOM no code screen): BYOM Target Column: CAST(CAST(json_report AS JSON).JSONExtractValue(&#x27;$.predicted_HasDiabetes&#x27;) AS INT)</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-training-dataset">Create training dataset<a href="#create-training-dataset" class="hash-link" aria-label="Direct link to Create training dataset" title="Direct link to Create training dataset">​</a></h2>
 <p>Basic</p>
@@ -192,7 +199,8 @@ Target: HasDiabetes</p>
 </li>
 </ul>
 <p>Query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM {your-db}.pima_patient_diagnoses WHERE patientid MOD 5 = 1
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-evaluation-dataset-1">Create evaluation dataset 1<a href="#create-evaluation-dataset-1" class="hash-link" aria-label="Direct link to Create evaluation dataset 1" title="Direct link to Create evaluation dataset 1">​</a></h2>
 <p>Basic</p>
 <ul>
@@ -210,7 +218,8 @@ Target: HasDiabetes</p>
 </li>
 </ul>
 <p>Query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM {your-db}.pima_patient_diagnoses WHERE patientid MOD 5 = 2
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-evaluation-dataset-2">Create evaluation dataset 2<a href="#create-evaluation-dataset-2" class="hash-link" aria-label="Direct link to Create evaluation dataset 2" title="Direct link to Create evaluation dataset 2">​</a></h2>
 <p>Basic</p>
 <ul>
@@ -228,7 +237,8 @@ Target: HasDiabetes</p>
 </li>
 </ul>
 <p>Query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM {your-db}.pima_patient_diagnoses WHERE patientid MOD 5 = 3
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="prepare-code-templates">Prepare code templates<a href="#prepare-code-templates" class="hash-link" aria-label="Direct link to Prepare code templates" title="Direct link to Prepare code templates">​</a></h2>
 <p>For Git Models we need to fill the code templates available when adding a new model.</p>
 <p>These code scripts will be stored in the git repository under: model_definitions/your-model/model_modules/</p>
@@ -240,26 +250,68 @@ Target: HasDiabetes</p>
 <p>training.py: this script contains train function</p>
 </li>
 </ul>
-<!-- -->
+<pre><code class="language-python">def train(context: ModelContext, **kwargs):
+    aoa_create_context()
+
+    # your training code
+
+    # save your model
+    joblib.dump(model, f&quot;{context.artifact_output_path}/model.joblib&quot;)
+
+    record_training_stats(...)
+</code></pre>
 <p>Review the Operationalize notebook to see how you can execute this from CLI or from notebook as an alternative to ModelOps UI.</p>
 <ul>
 <li>evaluation.py: this script contains evaluate function</li>
 </ul>
-<!-- -->
+<pre><code class="language-python">def evaluate(context: ModelContext, **kwargs):
+    aoa_create_context()
+
+    # read your model
+    model = joblib.load(f&quot;{context.artifact_input_path}/model.joblib&quot;)
+
+    # your evaluation logic
+
+    record_evaluation_stats(...)
+</code></pre>
 <p>Review the Operationalize notebook to see how you can execute this from CLI or from notebook as an alternative to ModelOps UI.</p>
 <ul>
 <li>scoring.py: this script contains score function</li>
 </ul>
-<!-- -->
+<pre><code class="language-python">def score(context: ModelContext, **kwargs):
+    aoa_create_context()
+
+    # read your model
+    model = joblib.load(f&quot;{context.artifact_input_path}/model.joblib&quot;)
+
+    # your evaluation logic
+
+    record_scoring_stats(...)
+</code></pre>
 <p>Review the Operationalize notebook to see how you can execute this from CLI or from notebook as an alternative to ModelOps UI.</p>
 <ul>
 <li>requirements.txt: this file contains the library names and versions required for your code scripts. Example:</li>
 </ul>
-<!-- -->
+<pre><code class="language-python">%%writefile ../model_modules/requirements.txt
+xgboost==0.90
+scikit-learn==0.24.2
+shap==0.36.0
+matplotlib==3.3.1
+teradataml==17.0.0.4
+nyoka==4.3.0
+aoa==6.0.0
+</code></pre>
 <ul>
 <li>config.json: this file located in the parent folder (your-model folder) contains default hyper-parameters</li>
 </ul>
-<!-- -->
+<pre><code class="language-python">%%writefile ../config.json
+{
+   &quot;hyperParameters&quot;: {
+      &quot;eta&quot;: 0.2,
+      &quot;max_depth&quot;: 6
+   }
+}
+</code></pre>
 <p>Go and review the code scripts for the demo model in the repository: <a href="https://github.com/Teradata/modelops-demo-models/" target="_blank" rel="noopener noreferrer">https://github.com/Teradata/modelops-demo-models/</a></p>
 <p>Go into model_definitions-&gt;python-diabetes-&gt;model_modules</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="model-lifecycle-for-a-new-git">Model Lifecycle for a new GIT<a href="#model-lifecycle-for-a-new-git" class="hash-link" aria-label="Direct link to Model Lifecycle for a new GIT" title="Direct link to Model Lifecycle for a new GIT">​</a></h2>

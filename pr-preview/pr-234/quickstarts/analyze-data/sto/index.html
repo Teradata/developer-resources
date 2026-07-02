@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -41,50 +41,163 @@
 <div class="theme-admonition theme-admonition-note admonition_Gfwi alert alert--secondary admonitionWrapper_Mm55"><span class="admonitionIcon_kpSf"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><span class="admonitionContentWrapper_oDLF"><div class="admonitionHeading_f1Ed">Note</div><div class="admonitionContent_UjKb"><p>If you need a test instance of Teradata, you can provision one for free at <a href="https://www.teradata.com/try" target="_blank" rel="noopener noreferrer">https://www.teradata.com/try</a></p></div></span></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="hello-world">Hello World<a href="#hello-world" class="hash-link" aria-label="Direct link to Hello World" title="Direct link to Hello World">​</a></h2>
 <p>Let&#x27;s start with something simple. What if you wanted the database to print &quot;Hello World&quot;?</p>
-<!-- -->
+<pre><code class="language-sql">SELECT *
+FROM
+  SCRIPT(
+    SCRIPT_COMMAND(&#x27;echo Hello World!&#x27;)
+    RETURNS (&#x27;Message varchar(512)&#x27;));
+</code></pre>
 <p>Here is what I&#x27;ve got:</p>
-<!-- -->
+<pre><code class="language-sql">Message
+------------
+Hello World!
+Hello World!
+</code></pre>
 <p>Let&#x27;s analyze what just happened here. The SQL includes <code>echo Hello World!</code>. This is a Bash command. OK, so now we know how to run Bash commands. But why did we get 2 rows and not one? That&#x27;s because our simple script was run once on each AMP and I happen to have 2 AMPs:</p>
-<!-- -->
+<pre><code class="language-sql">-- Teradata magic that returns the number of AMPs in a system
+SELECT hashamp()+1 AS number_of_amps;
+</code></pre>
 <p>Returns:</p>
-<!-- -->
+<pre><code class="language-sql">number_of_amps
+--------------
+             2
+</code></pre>
 <p>This simple script demonstrates the idea behind the Script Table Operator (STO). You provide your script and the database runs it in parallel, once for each AMP. This is an attractive model in case you have transformation logic in a script and a lot of data to process. Normally, you would need to build concurrency into your application. By letting STO do it, you let Teradata select the right concurrency level for your data.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="supported-languages">Supported languages<a href="#supported-languages" class="hash-link" aria-label="Direct link to Supported languages" title="Direct link to Supported languages">​</a></h2>
 <p>OK, so we did <code>echo</code> in Bash but Bash is hardly a productive environment to express complex logic. What other languages are supported then? The good news is that any binary that can run on Vantage nodes can be used in STO. Remember, that the binary and all its dependencies need to be installed on all your Vantage nodes. In practice, it means that your options will be limited to what your administrator is willing and able to maintain on your servers. Python is a very popular choice.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="uploading-scripts">Uploading scripts<a href="#uploading-scripts" class="hash-link" aria-label="Direct link to Uploading scripts" title="Direct link to Uploading scripts">​</a></h2>
 <p>Ok, Hello World is super exciting, but what if we have existing logic in a large file. Surely, you don&#x27;t want to paste your entire script and escape quotes in an SQL query. We solve the script upload issue with the User Installed Files (UIF) feature.</p>
 <p>Say you have <code>helloworld.py</code> script with the following content:</p>
-<!-- -->
+<pre><code class="language-bash">print(&quot;Hello World!&quot;)
+</code></pre>
 <p>Let&#x27;s assume the script is on your local machine at <code>/tmp/helloworld.py</code>.</p>
 <p>First, we need to setup permissions in Vantage. We are going to do this using a new database to keep it clean.</p>
-<!-- -->
+<pre><code class="language-sql">-- Create a new database called sto
+CREATE DATABASE STO
+AS PERMANENT = 60e6, -- 60MB
+    SPOOL = 120e6; -- 120MB
+
+-- Allow dbc user to create scripts in database STO
+GRANT CREATE EXTERNAL PROCEDURE ON STO to dbc;
+</code></pre>
 <p>You can upload the script to Vantage using the following procedure call:</p>
-<!-- -->
+<pre><code class="language-python">call SYSUIF.install_file(&#x27;helloworld&#x27;,
+                         &#x27;helloworld.py&#x27;, &#x27;cz!/tmp/helloworld.py&#x27;);
+</code></pre>
 <p>Now that the script has been uploaded, you can call it like this:</p>
-<!-- -->
+<pre><code class="language-sql">-- We switch to STO database
+DATABASE STO
+
+-- We tell Vantage where to look for the script. This can be
+-- any string and it will create a symbolic link to the directory
+-- where our script got uploaded. By convention, we use the
+-- database name.
+SET SESSION SEARCHUIFDBPATH = sto;
+
+-- We now call the script. Note, how we use a relative path that
+-- starts with `./sto/`, which is where SEARCHUIFDBPATH
+-- is pointing.
+SELECT *
+FROM SCRIPT(
+  SCRIPT_COMMAND(&#x27;python3 ./sto/helloworld.py&#x27;)
+  RETURNS (&#x27;Message varchar(512)&#x27;));
+</code></pre>
 <p>The last call should return:</p>
-<!-- -->
+<pre><code class="language-sql">Message
+------------
+Hello World!
+Hello World!
+</code></pre>
 <p>That was a lot of work and we are still at Hello World. Let&#x27;s try to pass some data into <code>SCRIPT</code>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="passing-data-stored-in-vantage-to-script">Passing data stored in Vantage to SCRIPT<a href="#passing-data-stored-in-vantage-to-script" class="hash-link" aria-label="Direct link to Passing data stored in Vantage to SCRIPT" title="Direct link to Passing data stored in Vantage to SCRIPT">​</a></h2>
 <p>So far, we have been using <code>SCRIPT</code> operator to run standalone scripts. But the main purpose to run scripts on Vantage is to process data that is in Vantage. Let&#x27;s see how we can retrieve data from Vantage and pass it to <code>SCRIPT</code>.</p>
 <p>We will start with creating a table with a few rows.</p>
-<!-- -->
+<pre><code class="language-sql">-- Switch to STO database.
+DATABASE STO
+
+-- Create a table with a few urls
+CREATE TABLE urls(url varchar(10000));
+INS urls(&#x27;https://www.google.com/finance?q=NYSE:TDC&#x27;);
+INS urls(&#x27;http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR0.TRC0.H0.Xteradata+merchandise&amp;_nkw=teradata+merchandise&amp;_sacat=0&amp;_from=R40&#x27;);
+INS urls(&#x27;https://www.youtube.com/results?search_query=teradata%20commercial&amp;sm=3&#x27;);
+INS urls(&#x27;https://www.contrivedexample.com/example?mylist=1&amp;mylist=2&amp;mylist=...testing&#x27;);
+</code></pre>
 <p>We will use the following script to parse out query parameters:</p>
-<!-- -->
+<pre><code class="language-python">from urllib.parse import urlparse
+from urllib.parse import parse_qsl
+import sys
+
+for line in sys.stdin:
+    # remove leading and trailing whitespace
+    url = line.strip()
+    parsed_url = urlparse(url)
+    query_params = parse_qsl(parsed_url.query)
+
+    for element in query_params:
+        print(&quot;\t&quot;.join(element))
+</code></pre>
 <p>Note, how the scripts assumes that urls will be fed into <code>stdin</code> one by one, line by line. Also, note how it prints results line by line, using the tab character as a delimiter between values.</p>
 <p>Let&#x27;s install the script. Here, we assume that the script file is at <code>/tmp/urlparser.py</code> on our local machine:</p>
-<!-- -->
+<pre><code class="language-python">CALL SYSUIF.install_file(&#x27;urlparser&#x27;,
+	&#x27;urlparser.py&#x27;, &#x27;cz!/tmp/urlparser.py&#x27;);
+</code></pre>
 <p>With the script installed, we will now retrieve data from <code>urls</code> table and feed it into the script to retrieve query parameters:</p>
-<!-- -->
+<pre><code class="language-sql">-- We inform Vantage to create a symbolic link from the UIF directory to ./sto/
+SET SESSION SEARCHUIFDBPATH = sto ;
+
+SELECT *
+  FROM SCRIPT(
+    ON(SELECT url FROM urls)
+    SCRIPT_COMMAND(&#x27;python3 ./sto/urlparser.py&#x27;)
+    RETURNS (&#x27;param_key varchar(512)&#x27;, &#x27;param_value varchar(512)&#x27;));
+</code></pre>
 <p>As a result, we get query params and their values. There are as many rows as key/value pairs. Also, since we inserted a tab between the key and the value output in the script, we get 2 columns from STO.</p>
-<!-- -->
+<pre><code class="language-sql">param_key   |param_value
+-----------------------------------------------------------------
+q           |NYSE:TDC
+_trksid     |p2050601.m570.l1313.TR0.TRC0.H0.Xteradata merchandise
+search_query|teradata commercial
+_nkw        |teradata merchandise
+sm          |3
+_sacat      |0
+mylist      |1
+_from       |R40
+mylist      |2
+mylist      |...testing
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="inserting-script-output-into-a-table">Inserting SCRIPT output into a table<a href="#inserting-script-output-into-a-table" class="hash-link" aria-label="Direct link to Inserting SCRIPT output into a table" title="Direct link to Inserting SCRIPT output into a table">​</a></h2>
 <p>We have learned how to take data from Vantage, pass it to a script and get output. Is there an easy way to store this output in a table? Sure, there is. We can combine the select above with <code>CREATE TABLE</code> statement:</p>
-<!-- -->
+<pre><code class="language-sql">-- We inform Vantage to create a symbolic link from the UIF directory to ./sto/
+SET SESSION SEARCHUIFDBPATH = sto ;
+
+CREATE MULTISET TABLE
+    url_params(param_key, param_value)
+AS (
+    SELECT *
+    FROM SCRIPT(
+      ON(SELECT url FROM urls)
+      SCRIPT_COMMAND(&#x27;python3 ./sto/urlparser.py&#x27;)
+      RETURNS (&#x27;param_key varchar(512)&#x27;, &#x27;param_value varchar(512)&#x27;))
+) WITH DATA
+NO PRIMARY INDEX;
+</code></pre>
 <p>Now, let&#x27;s inspect the contents of <code>url_params</code> table:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM url_params;
+</code></pre>
 <p>You should see the following output:</p>
-<!-- -->
+<pre><code class="language-sql">param_key   |param_value
+------------+-----------------------------------------------------
+q           |NYSE:TDC
+_trksid     |p2050601.m570.l1313.TR0.TRC0.H0.Xteradata merchandise
+search_query|teradata commercial
+_nkw        |teradata merchandise
+sm          |3
+_sacat      |0
+mylist      |1
+_from       |R40
+mylist      |2
+mylist      |...testing
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>In this quick start we have learned how to run scripts against data in Vantage. We ran scripts using Script Table Operator (STO). The operator allows us to bring logic to the data. It offloads concurrency considerations to the database by running our scripts in parallel, one per AMP. All you need to do is provide a script and the database will execute it in parallel.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-reading">Further reading<a href="#further-reading" class="hash-link" aria-label="Direct link to Further reading" title="Direct link to Further reading">​</a></h2>

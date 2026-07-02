@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -49,17 +49,20 @@ It demonstrates how to query a Teradata database and expose results over REST AP
 <p>The Mule HTTP connector listens for HTTP GET requests with the form: <code>http://&lt;host&gt;:8081/?lastname=&lt;parameter&gt;</code>.
 The HTTP connector passes the value of <code>&lt;parameter&gt;</code> as one of the message properties to a database connector.
 The database connector is configured to extract this value and use it in this SQL query:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM hr.employees WHERE LastName = :lastName
+</code></pre>
 <p>As you can see, we are using parameterized query with reference to the value of the parameter passed to the HTTP connector.
 So if the HTTP connector receives <a href="http://localhost:8081/?lastname=Smith" target="_blank" rel="noopener noreferrer">http://localhost:8081/?lastname=Smith</a>, the SQL query will be:</p>
-<!-- -->
+<pre><code class="language-sql">SELECT * FROM employees WHERE last_name = Smith
+</code></pre>
 <p>The database connector instructs the database server to run the SQL query, retrieves the result of the query, and passes it to the Transform message processor which converts the result to JSON.
 Since the HTTP connector is configured as request-response, the result is returned to the originating HTTP client.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="setup">Setup<a href="#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup">​</a></h2>
 <ul>
 <li>Clone <code>Teradata/mule-jdbc-example</code> repository:</li>
 </ul>
-<!-- -->
+<pre><code class="language-bash">  git clone https://github.com/Teradata/mule-jdbc-example
+</code></pre>
 <ul>
 <li>Edit <code>src/main/mule/querying-a-teradata-database.xml</code>, find the Teradata connection string <code>jdbc:teradata://&lt;HOST&gt;/user=&lt;username&gt;,password=&lt;password&gt;</code> and replace Teradata connection parameters to match your environment.</li>
 </ul>
@@ -68,7 +71,38 @@ Since the HTTP connector is configured as request-response, the result is return
 <li>Create a sample database in your Vantage instance.
 Populate it with sample data.</li>
 </ul>
-<!-- -->
+<pre><code class="language-sql"> -- create database
+ CREATE DATABASE HR
+   AS PERMANENT = 60e6, SPOOL = 120e6;
+
+ -- create table
+ CREATE SET TABLE HR.Employees (
+   GlobalID INTEGER,
+   FirstName VARCHAR(30),
+   LastName VARCHAR(30),
+   DateOfBirth DATE FORMAT &#x27;YYYY-MM-DD&#x27;,
+   JoinedDate DATE FORMAT &#x27;YYYY-MM-DD&#x27;,
+   DepartmentCode BYTEINT
+ )
+ UNIQUE PRIMARY INDEX ( GlobalID );
+
+ -- insert a record
+ INSERT INTO HR.Employees (
+   GlobalID,
+   FirstName,
+   LastName,
+   DateOfBirth,
+   JoinedDate,
+   DepartmentCode
+ ) VALUES (
+   101,
+   &#x27;Test&#x27;,
+   &#x27;Testowsky&#x27;,
+   &#x27;1980-01-05&#x27;,
+   &#x27;2004-08-01&#x27;,
+   01
+ );
+</code></pre>
 <ul>
 <li>
 <p>Open the project in Anypoint Studio.</p>
@@ -92,7 +126,17 @@ The project will now build and run. It will take a minute.</li>
 <li>Go to your web browser and send the following request: <a href="http://localhost:8081/?lastname=Testowsky" target="_blank" rel="noopener noreferrer">http://localhost:8081/?lastname=Testowsky</a>.</li>
 </ul>
 <p>You should get the following JSON response:</p>
-<!-- -->
+<pre><code class="language-json">[
+  {
+    &quot;JoinedDate&quot;: &quot;2004-08-01T00:00:00&quot;,
+    &quot;DateOfBirth&quot;: &quot;1980-01-05T00:00:00&quot;,
+    &quot;FirstName&quot;: &quot;Test&quot;,
+    &quot;GlobalID&quot;: 101,
+    &quot;DepartmentCode&quot;: 1,
+    &quot;LastName&quot;: &quot;Testowsky&quot;
+  }
+]
+</code></pre>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-reading">Further reading<a href="#further-reading" class="hash-link" aria-label="Direct link to Further reading" title="Direct link to Further reading">​</a></h2>
 <ul>
 <li>View this <a href="http://www.mulesoft.org/documentation/display/current/Database+Connector" target="_blank" rel="noopener noreferrer">document</a> for more information on how to configure a database connector on your machine.</li>

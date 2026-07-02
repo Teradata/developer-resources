@@ -19,8 +19,8 @@
 
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: data: https://www.teradata.com https://*.teradata.com https://avatars.githubusercontent.com https://github.com https://kit.fontawesome.com/ https://ka-f.fontawesome.com/ https://fonts.googleapis.com/ https://fonts.gstatic.com/ https://www.google-analytics.com/ https://analytics.google.com/ https://www.googletagmanager.com/ https://td.doubleclick.net/ https://www.youtube.com/ https://*.algolia.net/ https://cdn.intellimize.co https://117395157.intellimizeio.com https://api.intellimize.co https://log.intellimize.co https://intellimizeditor.com https://cdn.bc0a.com https://consent.trustarc.com https://*.trustarc.com;">
 <script defer="true" type="text/partytown" src="https://kit.fontawesome.com/17a35e44e3.js" crossorigin="anonymous"></script><link rel="stylesheet" href="/pr-preview/pr-234/assets/css/styles.242c16aa.css">
-<script src="/pr-preview/pr-234/assets/js/runtime~main.6f335e12.js" defer="defer"></script>
-<script src="/pr-preview/pr-234/assets/js/main.d16d60bd.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/runtime~main.f932bf41.js" defer="defer"></script>
+<script src="/pr-preview/pr-234/assets/js/main.c7746e6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPXTTZ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -68,7 +68,32 @@
 </li>
 </ol>
 <p>Below is a sample script. It fetches Teradata Jupyter extension package from cloud storage bucket and installs Teradata SQL kernel and extensions.</p>
-<!-- -->
+<pre><code class="language-bash">#! /bin/bash
+
+cd /home/jupyter
+mkdir teradata
+cd teradata
+gsutil cp gs://teradata-jupyter/* .
+unzip teradatasql*.zip
+
+# Install Teradata kernel
+cp teradatakernel /usr/local/bin
+
+jupyter kernelspec install ./teradatasql --prefix=/opt/conda
+
+# Install Teradata extensions
+pip install --find-links . teradata_preferences_prebuilt
+pip install --find-links . teradata_connection_manager_prebuilt
+pip install --find-links . teradata_sqlhighlighter_prebuilt
+pip install --find-links . teradata_resultset_renderer_prebuilt
+pip install --find-links . teradata_database_explorer_prebuilt
+
+# PIP install the Teradata Python library
+pip install teradataml
+
+# Install Teradata R library (optional, uncomment this line only if you use an environment that supports R)
+#Rscript -e &quot;install.packages(&#x27;tdplyr&#x27;,repos=c(&#x27;https://r-repo.teradata.com&#x27;,&#x27;https://cloud.r-project.org&#x27;))&quot;
+</code></pre>
 <ol start="4">
 <li>
 <p>Create a new notebook and add the startup script from cloud storage bucket
@@ -95,11 +120,56 @@
 </ol>
 <p>The custom container must expose a service on port 8080. It is recommended to create a container derived from a Google Deep Learning Containers image, because those images are already configured to be compatible with user-managed notebooks.</p>
 <p>Below is a sample Dockerfile you can use to build a Docker image with Teradata SQL kernel and extensions installed:</p>
-<!-- -->
+<pre><code class="language-bash"># Use one of the deep learning images as base image
+# if you need both Python and R, use one of the R images
+FROM gcr.io/deeplearning-platform-release/r-cpu:latest
+
+USER root
+
+##############################################################
+# Install kernel and copy supporting files
+##############################################################
+
+# Copy the kernel
+COPY ./teradatakernel /usr/local/bin
+
+RUN chmod 755 /usr/local/bin/teradatakernel
+
+# Copy directory with kernel.json file into image
+COPY ./teradatasql teradatasql/
+
+# Copy notebooks and licenses
+COPY ./notebooks/ /home/jupyter
+COPY ./license.txt /home/jupyter
+COPY ./ThirdPartyLicenses/ /home/jupyter
+
+# Install the kernel file to /opt/conda jupyter lab instance
+RUN jupyter kernelspec install ./teradatasql --prefix=/opt/conda
+
+##############################################################
+# Install Teradata extensions
+##############################################################
+
+RUN pip install --find-links . teradata_preferences_prebuilt &amp;&amp; \
+    pip install --find-links . teradata_connection_manager_prebuilt &amp;&amp; \
+    pip install --find-links . teradata_sqlhighlighter_prebuilt &amp;&amp; \
+    pip install --find-links . teradata_resultset_renderer_prebuilt &amp;&amp; \
+    pip install --find-links . teradata_database_explorer_prebuilt
+
+# Give back ownership of /opt/conda to jovyan
+RUN chown -R jupyter:users /opt/conda
+
+# PIP install the Teradata Python libraries
+RUN pip install teradataml
+
+# Install Teradata R library (optional, include it only if you use a base image that supports R)
+RUN Rscript -e &quot;install.packages(&#x27;tdplyr&#x27;,repos=c(&#x27;https://r-repo.teradata.com&#x27;,&#x27;https://cloud.r-project.org&#x27;))&quot;
+</code></pre>
 <ol start="4">
 <li>In your work directory (where you unzipped Teradata Jupyter extensions package), run <code>docker build</code> to build the image:</li>
 </ol>
-<!-- -->
+<pre><code class="language-bash">docker build -f Dockerfile imagename:imagetag .
+</code></pre>
 <ol start="5">
 <li>Push the docker image to Google container registry or artifact registry</li>
 </ol>
