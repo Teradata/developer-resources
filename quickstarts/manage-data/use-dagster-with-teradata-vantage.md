@@ -1,8 +1,9 @@
 ---
 id: use-dagster-with-teradata-vantage
 sidebar_position: 4.5
-author: Mohan Talla
-email: mohan.talla@teradata.com
+author: Mohan Talla, Daniel Herrera
+email: developer.relations@teradata.com
+page_last_update: 2026-06-23
 description: Use dagster-teradata with Teradata Vantage.
 keywords: [dagster, dagster-teradata, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt]
 ---
@@ -24,16 +25,21 @@ This guide walks you through integrating Dagster with Teradata Vantage to create
 
 ## Prerequisites
 
-* Access to a Teradata Vantage instance.
+* Access to a Teradata Vantage instance (Teradata Cloud, Teradata Factory, or Teradata Trial).
 
     <TrialDocsNote />
 
 * Python **3.9** or higher, Python **3.12** is recommended.
 * pip
+* A Teradata database where you have CREATE TABLE privileges. You can create one by running:
+
+  ```sql
+  CREATE DATABASE dagster_pipeline_db AS PERMANENT = 100e6;
+  ```
 
 ## Setting Up a Virtual Enviroment
 
-A virtual environment is recommended to isolate project dependencies and avoid conflicts with system-wide Python packages. Here’s how to set it up:
+A virtual environment is recommended to isolate project dependencies and avoid conflicts with system-wide Python packages. Here's how to set it up:
      
       <InstallTabs/>
 
@@ -52,19 +58,19 @@ With your virtual environment active, the next step is to install dagster and th
    a) `dagster-teradata` relies on dagster-aws for ingesting data from an S3 bucket into Teradata Vantage. Since `dagster-aws` is an optional dependency, users can install it by running:
 
      ```bash
-    pip install dagster-teradata[aws]
+     pip install dagster-teradata[aws]
     ```
    b) `dagster-teradata` also relies on `dagster-azure` for ingesting data from an Azure Blob Storage container into Teradata Vantage. To install this dependency, run:
 
      ```bash
-    pip install dagster-teradata[azure]
+     pip install dagster-teradata[azure]
     ```
 
 3. Verify the Installation:
 
    To confirm that Dagster is correctly installed, run:
      ```bash
-    dagster –version
+     dagster --version
     ```
    If installed correctly, it should show the version of Dagster.
 
@@ -116,49 +122,76 @@ id,name,age,city
  ```
 This file represents sample data that will be used as input for your ETL pipeline.
 
+## Create a Database for the Pipeline
+
+Before defining assets, create a database where the pipeline can create and drop tables:
+
+```sql
+CREATE DATABASE dagster_pipeline_db AS PERMANENT = 100e6;
+```
+
+Update the database name (`dagster_pipeline_db`) in your environment variables and asset code to match your chosen database name.
+
 ## Define Assets for the ETL Pipeline
 
-Now, we’ll define a series of assets for the ETL pipeline inside the assets.py file.
+Now, we'll define a series of assets for the ETL pipeline inside the assets.py file.
 
 Edit the assets.py File: Open the dagster_quickstart/assets.py file and add the following code to define the pipeline:
 
 ```python
 import pandas as pd
+from pathlib import Path
 from dagster import asset
 
 @asset(required_resource_keys={"teradata"})
 def read_csv_file(context):
-    df = pd.read_csv("dagster_quickstart/data/sample_data.csv")
+    csv_path = Path(__file__).parent / "data" / "sample_data.csv"
+    df = pd.read_csv(csv_path)
     context.log.info(df)
     return df
 
 @asset(required_resource_keys={"teradata"})
 def drop_table(context):
-    result = context.resources.teradata.drop_table(["tmp_table"])
-    context.log.info(result)
+    try:
+        result = context.resources.teradata.drop_table(["dagster_pipeline_db.tmp_table"])
+        context.log.info(result)
+    except Exception as e:
+        context.log.warning(f"Drop table warning (may not exist): {e}")
 
 @asset(required_resource_keys={"teradata"})
 def create_table(context, drop_table):
-    result = context.resources.teradata.execute_query('''CREATE TABLE tmp_table (
-                                                            id INTEGER,
-                                                            name VARCHAR(50),
-                                                            age INTEGER,
-                                                            city VARCHAR(50));''')
-    context.log.info(result)
+    try:
+        result = context.resources.teradata.execute_query('''CREATE TABLE dagster_pipeline_db.tmp_table (
+                                                                id INTEGER,
+                                                                name VARCHAR(50),
+                                                                age INTEGER,
+                                                                city VARCHAR(50));''')
+        context.log.info(result)
+    except Exception as e:
+        context.log.error(f"Failed to create table: {e}")
+        raise
 
 @asset(required_resource_keys={"teradata"}, deps=[read_csv_file])
 def insert_rows(context, create_table, read_csv_file):
-    data_tuples = [tuple(row) for row in read_csv_file.to_numpy()]
-    for row in data_tuples:
-        result = context.resources.teradata.execute_query(
-            f"INSERT INTO tmp_table (id, name, age, city) VALUES ({row[0]}, '{row[1]}', {row[2]}, '{row[3]}');"
-        )
-        context.log.info(result)
+    try:
+        data_tuples = [tuple(row) for row in read_csv_file.to_numpy()]
+        for row in data_tuples:
+            result = context.resources.teradata.execute_query(
+                f"INSERT INTO dagster_pipeline_db.tmp_table (id, name, age, city) VALUES ({row[0]}, '{row[1]}', {row[2]}, '{row[3]}');"
+            )
+            context.log.info(result)
+    except Exception as e:
+        context.log.error(f"Failed to insert rows: {e}")
+        raise
 
 @asset(required_resource_keys={"teradata"})
 def read_table(context, insert_rows):
-    result = context.resources.teradata.execute_query("select * from tmp_table;", True)
-    context.log.info(result)
+    try:
+        result = context.resources.teradata.execute_query("select * from dagster_pipeline_db.tmp_table;", True)
+        context.log.info(result)
+    except Exception as e:
+        context.log.error(f"Failed to read table: {e}")
+        raise
 
 ```
 
@@ -209,7 +242,7 @@ After executing the command dagster dev, the Dagster logs will be displayed dire
         ```
         It indicates that the Dagster web server is running successfully. At this point, you can proceed to the next step.
 <br />
-2.	**Access the Dagster UI:** Open a web browser and navigate to http://127.0.0.1:3000. This will open the Dagster UI where you can manage and monitor your pipelines.
+2.	**Access the Dagster UI:** Open a web browser and navigate to http://127.0.0.1:3000. This will open the Dagster UI where we can manage and monitor your pipelines.
 <br />
         ![dagster-teradata1.png](../images/dagster/dagster-teradata1.png)
 <br />
@@ -259,7 +292,7 @@ This operation drops one or more tables from Teradata Vantage.
 
 
 ## Summary
-This guide provides a step-by-step approach to integrating Dagster with Teradata Vantage for building ETL pipelines
+This guide provides a step-by-step approach to integrating Dagster with Teradata Vantage for building ETL pipelines.
 
 ## Further reading
 * https://docs.dagster.io/
