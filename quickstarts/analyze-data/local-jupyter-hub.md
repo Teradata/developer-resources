@@ -26,7 +26,7 @@ This page contains detailed instructions on the two options. Instructions are ba
 
 ## Use Teradata Jupyter Docker image
 
-Teradata provides a ready-to-run Docker image that builds on the [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/) image. It bundles the Teradata SQL kernel, Teradata Python and R libraries and drivers and Teradata extensions for Jupyter to make you productive while interacting with Teradata Database. The image also contains sample notebooks that demonstrate how to use the SQL kernel, extensions and Teradata libraries.
+Teradata provides a ready-to-run Docker image that builds on the [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/) image. It bundles the Teradata SQL kernel, Teradata Python and R libraries and drivers and Teradata extensions for Jupyter to make you productive while interacting with Teradata. The image also contains sample notebooks that demonstrate how to use the SQL kernel, extensions and Teradata libraries.
 
 You can use this image in the following ways:
 

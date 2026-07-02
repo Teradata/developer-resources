@@ -4,21 +4,21 @@ id: jdbc
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 page_last_update: June 9th, 2026
-description: How to connect to Teradata Database using JDBC.
+description: How to connect to Teradata using JDBC.
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, JDBC, java applications, business intelligence, enterprise analytics]
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
-# Connect to Teradata Database using JDBC
+# Connect to Teradata using JDBC
 
 ## Overview
 
-This how-to demonstrates how to connect to Teradata Database using JDBC using a sample Java application.
+This how-to demonstrates how to connect to Teradata using JDBC using a sample Java application.
 
 ## Prerequisites
 
-* Access to a Teradata Database instance.
+* Access to a Teradata instance.
 
 <TrialDocsNote />
 
@@ -128,7 +128,7 @@ public class App {
 Replace `src/test/java/com/teradata/app/AppTest.java` with the following:
 
 :::note
-The test connects to your live Teradata Database instance, so it requires the credentials you set in `App.java` to be valid and the instance to be reachable.
+The test connects to your live Teradata instance, so it requires the credentials you set in `App.java` to be valid and the instance to be reachable.
 :::
 
 ```java
@@ -162,7 +162,7 @@ setting: RELEASE, value: 20.00.xx.xx
 
 ## Summary
 
-This how-to demonstrated how to connect to Teradata Database using JDBC. It described a sample Java application with Maven as the build tool that uses the Teradata JDBC driver to send SQL queries to Teradata Database.
+This how-to demonstrated how to connect to Teradata using JDBC. It described a sample Java application with Maven as the build tool that uses the Teradata JDBC driver to send SQL queries to Teradata Database.
 
 ## Further reading
 * [Teradata JDBC Driver Reference](https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/frameset.html)
