@@ -1,10 +1,10 @@
 ---
 sidebar_position: 5
-author: Tan Nguyen
-email: tan.nguyen@teradata.com
-page_last_update: February 13th, 2023
+author: Tan Nguyen, Janeth Graziani
+email: developer.relations@teradata.com
+page_last_update: June 30th, 2026
 description: Use Teradata Connector for MuleSoft's Anypoint Studio.
-keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
+keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
 ---
 
 import CommunityLinkPartial from '../_partials/community_link.mdx';
@@ -15,11 +15,12 @@ Anypoint Studio (Studio) editors help you design and update your Mule applicatio
 
 To add and configure a connector in Studio:
 
-1. [Create a Mule Project.](#create-a-mule-project)
-2. [Add the connector to your Mule project.](#add-the-connector-to-your-mule-project)
-3. [Configure a source for the connector’s flow.](#configure-a-source)
-4. [Add a connector operation to the flow.](#add-a-connector-operation-to-the-flow)
-5. [Configure a global element for the connector.](#configure-a-global-element-for-the-connector)
+1. Download and install [MuleSoft Anypoint Studio](https://www.mulesoft.com/lp/dl/anypoint-mule-studio) 
+2. [Create a Mule Project.](#create-a-mule-project)
+3. [Add the connector to your Mule project.](#add-the-connector-to-your-mule-project)
+4. [Configure a source for the connector’s flow.](#configure-a-source)
+5. [Add a connector operation to the flow.](#add-a-connector-operation-to-the-flow)
+6. [Configure a global element for the connector.](#configure-a-global-element-for-the-connector)
 
 
 When you run the connector, you can view the app log to check for problems, as described in [View the App Log](#view-the-app-log).
@@ -40,8 +41,8 @@ In Studio, create a new Mule project in which to add and configure the connector
 
 Add Teradata Connector to your Mule project to automatically populate the XML code with the connector's namespace and schema location and to add the required dependencies to the project's `pom.xml` file:
 
-- In the **Mule Palette** view, click **(X) Search in Exchange**.
-- In the **Add Dependencies to Project** window, type `teradata` in the search field.
+- In the **Mule Palette** view, click **(X) Search in Exchange** (Sign-in may be required).
+- In the **Add Dependencies or Add API to Project** window, type `teradata` in the search field.
 - Click **Teradata Connector** in **Available modules**.
 - Click **Add**.
 - Click **Finish**.
@@ -123,4 +124,3 @@ Unless the log file path is customized in the app’s log file (`log4j2.xml`), y
 * [Teradata Connector Reference](./teradata-connector-mule4-reference.md).
 * [MuleSoft Help Center](https://help.mulesoft.com)
 
-<CommunityLinkPartial />
