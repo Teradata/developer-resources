@@ -28,7 +28,7 @@ import TrialDocsNote from '../_partials/teradata_trial.mdx'
 * Python 3.7, 3.8, 3.9, 3.10 or 3.11 installed.
 
 ## Sample Data Loading
-* Follow the steps in the [Airbyte tutorial](./use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md). Make sure you load data from the [Jaffle Shop spreadsheet](https://docs.google.com/spreadsheets/d/1-R4F3q8J9KDnFRWpiT3Ysp1RlOoUu3PeQR7xDeLxFts/edit#gid=42273685) and not the default dataset referenced by the Airbyte tutorial. Also, set the `Default Schema` in the Teradata destination to `airbyte_jaffle_shop`.
+* Follow the steps in the [Airbyte tutorial](./use-airbyte-to-load-data-from-external-sources-to-teradata.md). Make sure you load data from the [Jaffle Shop spreadsheet](https://docs.google.com/spreadsheets/d/1-R4F3q8J9KDnFRWpiT3Ysp1RlOoUu3PeQR7xDeLxFts/edit#gid=42273685) and not the default dataset referenced by the Airbyte tutorial. Also, set the `Default Schema` in the Teradata destination to `airbyte_jaffle_shop`.
 
 :::note
 When you configure a Teradata destination in Airbyte, it will ask for a `Default Schema`. Set the `Default Schema` to `airbyte_jaffle_shop`. 
