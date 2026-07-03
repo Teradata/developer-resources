@@ -11,14 +11,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 // We want to fail-safe and allow both "php" and "PHP"
 // See https://github.com/facebook/docusaurus/issues/9012
 function normalizeLanguage(language) {
-  const normalized = language?.toLowerCase();
-  const languageAliases = {
-    powershell: 'shell',
-    ps1: 'shell',
-    csv: 'plaintext',
-  };
-
-  return languageAliases[normalized] ?? normalized;
+  return language?.toLowerCase();
 }
 /**
  * Best attempt to make the children a plain string so it is copyable. If there
@@ -46,7 +39,6 @@ export default function CodeBlock({ children: rawChildren, ...props }) {
   } = props;
   const isBrowser = useIsBrowser();
   const children = maybeStringifyChildren(rawChildren);
-  const codeContent = typeof children === 'string' ? children : String(children ?? '');
   const {
     prism: { defaultLanguage },
   } = useThemeConfig();
@@ -57,15 +49,7 @@ export default function CodeBlock({ children: rawChildren, ...props }) {
   const title = parseCodeBlockTitle(metastring) || titleProp;
 
   return (
-    <BrowserOnly
-      fallback={
-        <pre>
-          <code className={language ? `language-${language}` : undefined}>
-            {codeContent}
-          </code>
-        </pre>
-      }
-    >
+    <BrowserOnly>
       {() => {
         // Need to dynamically import the component to render it after the react app has hydrated
         const CodeSnippet =
@@ -76,11 +60,9 @@ export default function CodeBlock({ children: rawChildren, ...props }) {
             label={title}
             maxHeight={0}
             language={language || 'text'}
-            content={codeContent}
+            content={children}
             hideHeader={!title}
-          >
-            <span>{codeContent}</span>
-          </CodeSnippet>
+          ></CodeSnippet>
         ) : (
           <></>
         );
