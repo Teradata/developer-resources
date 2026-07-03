@@ -212,7 +212,7 @@ Before running the pipeline, we need to prepare our AWS S3 environment with samp
 
 Create a file named `sample_data.csv` with the following content:
 
-```csv
+```bash
 id,name,email,city
 1,John Doe,john.doe@example.com,New York
 2,Jane Smith,jane.smith@example.com,Los Angeles
@@ -234,7 +234,7 @@ Set the following environment variables for your pipeline:
   <TabItem value="Windows" label="Windows" default>
 Run in PowerShell:
 
-```powershell
+```bash
 $env:TERADATA_HOST="<your-teradata-host>"
 $env:TERADATA_USER="<your-teradata-user>"
 $env:TERADATA_PASSWORD="<your-teradata-password>"
@@ -305,7 +305,7 @@ The Dagster web server is running successfully.
 
 **Windows (PowerShell):**
 
-```powershell
+```bash
 $env:DAGSTER_HOME="$env:USERPROFILE\.dagster_home"
 uv run dg dev
 ```
