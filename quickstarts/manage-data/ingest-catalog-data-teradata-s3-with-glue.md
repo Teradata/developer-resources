@@ -24,7 +24,7 @@ import TrialDocsNote from '../_partials/teradata_trial.mdx'
 * Access to an [Amazon AWS account](https://aws.amazon.com)
 * Access to a Teradata Vantage instance (Teradata Cloud, Teradata Factory, or Teradata Trial)
   <TrialDocsNote />
-* A database [client](../connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md) to send queries for loading the test data
+* A database [client](../connect-to-vantage/configure-a-teradata-connection-in-dbeaver.md) to send queries for loading the test data
 
 ### Loading of test data
 * In your favorite database client run the following queries

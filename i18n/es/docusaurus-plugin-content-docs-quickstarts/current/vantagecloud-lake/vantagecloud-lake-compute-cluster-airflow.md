@@ -85,7 +85,7 @@ Use [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/wi
 ## Create a database
 
 :::note
-A database client connected to VantageCloud Lake is needed to execute SQL statements. [Vantage Editor Desktop](https://downloads.teradata.com/download/tools/vantage-editor-desktop), or [dbeaver](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-vantage-connection-in-dbeaver.html) can be used for this purpose.
+A database client connected to VantageCloud Lake is needed to execute SQL statements. [Vantage Editor Desktop](https://downloads.teradata.com/download/tools/vantage-editor-desktop), or [dbeaver](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-connection-in-dbeaver.html) can be used for this purpose.
 :::
 
 Let's create the `jaffle_shop` database in the VantageCloud Lake instance with TD_OFSSTORAGE as default.
@@ -100,7 +100,7 @@ PERMANENT = 120e6, -- 120MB
 ## Create a database user
 
 :::note
-A database client connected to VantageCloud Lake is needed to execute SQL statements. [Vantage Editor Desktop](https://downloads.teradata.com/download/tools/vantage-editor-desktop), or [dbeaver](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-vantage-connection-in-dbeaver.html) can be used to execute `CREATE USER` query.
+A database client connected to VantageCloud Lake is needed to execute SQL statements. [Vantage Editor Desktop](https://downloads.teradata.com/download/tools/vantage-editor-desktop), or [dbeaver](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-connection-in-dbeaver.html) can be used to execute `CREATE USER` query.
 :::
 
 Let's create a `lake_user` user in the VantageCloud Lake instance.
@@ -115,7 +115,7 @@ DEFAULT DATABASE = jaffle_shop;
 
 ## Grant access to user
 :::note
-A database client connected to VantageCloud Lake is needed to execute SQL statements. [Vantage Editor Desktop](https://downloads.teradata.com/download/tools/vantage-editor-desktop), or [dbeaver](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-vantage-connection-in-dbeaver.html) can be used to execute `GRANT ACCESS` queries.
+A database client connected to VantageCloud Lake is needed to execute SQL statements. [Vantage Editor Desktop](https://downloads.teradata.com/download/tools/vantage-editor-desktop), or [dbeaver](https://quickstarts.teradata.com/other-integrations/configure-a-teradata-connection-in-dbeaver.html) can be used to execute `GRANT ACCESS` queries.
 :::
 
 Let's provide the required privileges to the user `lake_user` to manage compute clusters.

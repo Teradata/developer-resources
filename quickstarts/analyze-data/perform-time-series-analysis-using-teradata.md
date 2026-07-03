@@ -249,5 +249,5 @@ In this quick start we have learnt how easy it is to analyse time series dataset
 
 ## Further reading
 * [Teradata - Time Series Tables and Operations](https://docs.teradata.com/r/Teradata-VantageTM-Time-Series-Tables-and-Operations/July-2021/Introduction-to-Teradata-Time-Series-Tables-and-Operations)
-* [Query data stored in object storage](../manage-data/nos.md)
+* [Query data stored in object storage](../../manage-data/nos)
 * [Teradata - Native Object Store Getting Started Guide](https://docs.teradata.com/r/2mw8ooFr~xX0EaaGFaDW8A/root)
