@@ -68,11 +68,11 @@ const FeatureList = [
     description: translate({ message: 'quickstarts.td_ai_unlimited_descrip' }),
     href: '/ai-unlimited/',
   },
-  {
-    title: translate({ message: 'quickstarts.vantageCloud_lake' }),
-    description: translate({ message: 'quickstarts.vantageCloud_lake_descrip' }),
-    href: '/quickstarts/vantagecloud-lake/getting-started-with-vantagecloud-lake/',
-  },
+  // {
+  //   title: translate({ message: 'quickstarts.vantageCloud_lake' }),
+  //   description: translate({ message: 'quickstarts.vantageCloud_lake_descrip' }),
+  //   href: '/quickstarts/vantagecloud-lake/getting-started-with-vantagecloud-lake/',
+  // },
 ];
 
 
