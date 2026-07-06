@@ -61,7 +61,7 @@ In this section, we will cover in detail each of the steps below:
 
 ### Create an Amazon S3 Bucket to Ingest Data
 * In Amazon S3, select `Create bucket`.
-![create bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-1.png)
+![create bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-1.PNG)
 * Assign a name to your bucket and take note of it.
 ![name bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-2.png)
 * Leave all settings at their default values.
