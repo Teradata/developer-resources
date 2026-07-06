@@ -62,7 +62,7 @@ export const FeatureList2 = [
     img2: '',
     title: translate({ message: 'developers.top-picks-from-teradata-title-card4' }),
     description: translate({ message: 'developers.top-picks-from-teradata-text-card4' }),
-    href: '/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/',
+    href: '/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata/',
   },
   {
     img: 'article',
