@@ -2,15 +2,15 @@
 sidebar_position: 19
 author: Daniel Herrera
 email: developer.relations@teradata.com
-page_last_update: 2026-06-24
-description: Ingest and catalog data from Teradata Vantage to Amazon S3
+page_last_update: 2026-07-06
+description: Ingest and catalog data from Teradata to Amazon S3
 keywords: [data warehouses, object storage, teradata, vantage, cloud data platform, data engineering, enterprise analytics, aws glue, aws lake formation, aws glue catalog]
 ---
 
-# Ingest and Catalog Data from Teradata Vantage to Amazon S3 with AWS Glue Scripts
+# Ingest and Catalog Data from Teradata to Amazon S3 with AWS Glue Scripts
 
 ### Overview
-This quickstart details the process of ingesting and cataloging data from Teradata Vantage to Amazon S3 with AWS Glue. 
+This quickstart details the process of ingesting and cataloging data from Teradata to Amazon S3 with AWS Glue. 
 
 :::tip
 For ingesting data to Amazon S3 when cataloging is not a requirement consider [Teradata Write NOS capabilities](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/SQL-Data-Manipulation-Language/Working-with-External-Data/WRITE_NOS).
@@ -22,9 +22,9 @@ For ingesting data to Amazon S3 when cataloging is not a requirement consider [T
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 * Access to an [Amazon AWS account](https://aws.amazon.com)
-* Access to a Teradata Vantage instance (Teradata Cloud, Teradata Factory, or Teradata Trial)
+* Access to a Teradata instance (Teradata Cloud, Teradata Factory, or Teradata Trial)
   <TrialDocsNote />
-* A database [client](../connect-to-vantage/configure-a-teradata-connection-in-dbeaver.md) to send queries for loading the test data
+* A database client to send queries for loading the test data, we recommend Teradata SQL Extension for Visual Studio Code.
 
 ### Loading of test data
 * In your favorite database client run the following queries
@@ -53,35 +53,35 @@ In this section, we will cover in detail each of the steps below:
 
 * Create an Amazon S3 bucket to ingest data
 * Create an AWS Glue Catalog Database for storing metadata
-* Store Teradata Vantage credentials in AWS Secrets Manager
+* Store Teradata credentials in AWS Secrets Manager
 * Create an AWS Glue Service Role to assign to ETL jobs
-* Create a connection to a Teradata Vantage Instance in AWS Glue
+* Create a connection to a Teradata Instance in AWS Glue
 * Create an AWS Glue Job
-* Draft a script for automated ingestion and cataloging of Teradata Vantage data into Amazon S3
+* Draft a script for automated ingestion and cataloging of Teradata data into Amazon S3
 
 ### Create an Amazon S3 Bucket to Ingest Data
 * In Amazon S3, select `Create bucket`.
-![create bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-1.PNG)
+![create bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-1.PNG)
 * Assign a name to your bucket and take note of it.
-![name bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-2.PNG)
+![name bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-2.PNG)
 * Leave all settings at their default values.
 * Click on `Create bucket`.
-![save bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-3.PNG)
+![save bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-3.PNG)
 
 ### Create an AWS Glue Catalog Database for Storing Metadata
 
 * In AWS Glue, select Data catalog, Databases.
 * Click on `Add database`.
-![add database](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Cat-1.PNG)
+![add database](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/cat-1.PNG)
 * Define a database name and click on `Create database`.
-![add database name](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Cat-2.PNG)
+![add database name](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/cat-2.PNG)
 
-### Store Teradata Vantage credentials in AWS Secrets Manager
+### Store Teradata credentials in AWS Secrets Manager
 
 * In AWS Secrets Manager, select `Create new secret`.
 ![create secret](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-1.PNG)
-* The secret should be an `Other type of secret` with the following keys and values according to your Teradata Vantage Instance:
-    * USER
+* The secret should be an `Other type of secret` with the following keys and values according to your Teradata instance:
+    * USERNAME
     * PASSWORD
 :::tip
 In the case of Teradata Trial, the user is always "demo_user," and the password is the one you defined when creating your Teradata Trial environment.
@@ -97,9 +97,9 @@ The role you create should have access to the typical permissions of a Glue Serv
 * In AWS, go to the IAM service.
 * Under Access Management, select `Roles`.
 * In roles, click on `Create role`.
-![create role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-1.PNG)
+![create role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-1.PNG)
 * In select trusted entity, select `AWS service` and pick `Glue` from the dropdown.
-![role type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-2.PNG)
+![role type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-2.PNG)
 * In add permissions:
     * Search for `AWSGlueServiceRole`.
     * Click the related checkbox.
@@ -107,8 +107,9 @@ The role you create should have access to the typical permissions of a Glue Serv
     * Click the related checkbox.
 * In Name, review, and create:
     * Define a name for your role.
-![name role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-3.PNG)
-* Click on `Create role`.
+    * Click on `Create role`.
+![name role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-3.PNG)
+
 * Return to Access Management, Roles, and search for the role you've just created.
 * Select your role.
 * Click on `Add permissions`, then `Create inline policy`.
@@ -131,38 +132,35 @@ The role you create should have access to the typical permissions of a Glue Serv
 }
 ```
 * Click `Next`.
-![inline policy](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-4.PNG)
+![inline policy](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-4.PNG)
 * Assign a name to your policy.
 * Click on `Create policy`.
 
-### Create a connection to a Teradata Vantage Instance in AWS Glue
+### Create a connection to a Teradata Instance in AWS Glue
 
 * In AWS Glue, select `Data connections`.
-![connection](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-1.PNG)
+![connection](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-1.PNG)
 * Under Connectors, select `Create connection`.
-* Search for and select the Teradata Vantage data source.
-![teradata type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-2.PNG)
-* In the dialog box, enter the URL of your Teradata Vantage instance in JDBC format.
-:::tip
-In the case of Teradata Trial, the URL follows the following structure: 
-`jdbc:teradata://<URL Host>/DATABASE=demo_user,DBS_PORT=1025`
-:::
+* Search for and select the Teradata data source, as shown in the image.
+![teradata type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-2.PNG)
+* Enter the information required by the dialog box.
 * Select the AWS Secret created in the previous step.
 * Name your connection and finish the creation process.
-![connection configuration](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-3.PNG)
+![connection configuration](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-3.PNG)
 
 ### Create an AWS Glue Job
 * In AWS Glue, select `ETL Jobs` and click on `Script editor`.
-![script editor creation](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-1.PNG)
+![script editor creation](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-script-1.PNG)
 * Select `Spark` as the engine and choose to start fresh.
-![script editor type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-2.PNG)
+![script editor type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-script-2.PNG)
 
-### Draft a script for automated ingestion and cataloging of Teradata Vantage data into Amazon S3
+### Draft a script for automated ingestion and cataloging of Teradata data into Amazon S3
 
 * Copy the following script into the editor.
     * The script requires the following modifications:
         * Substitute the name of your S3 bucket.
         * Substitute the name of your Glue catalog database.
+        * Substitute the name of the Teradata Connection with the one you've just created.
         * If you are not following the example in the guide, modify the database name and the tables to be ingested and cataloged.
         * For cataloging purposes, only the first row of each table is ingested in the example. This query can be modified to ingest the whole table or to filter selected rows.
 
@@ -204,7 +202,7 @@ def process_table(table_name, transformation_ctx_prefix, catalog_database, catal
         connection_type="teradata",
         connection_options={
             "dbtable": table_name,
-            "connectionName": "Teradata connection default",
+            "connectionName": <your-teradata-connection>,
             "query": f"SELECT TOP 1 * FROM {table_name}", # This line can be modified to ingest the full table or rows that fulfill an specific condition
         },
         transformation_ctx=transformation_ctx_prefix + "_read",
@@ -237,36 +235,38 @@ for table_name in table_names:
 
 job.commit()
 ```
-
-* Assign a name to your script
-![script in editor](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.PNG)
-
 * In Job details, Basic properties:
+    * Assign a name to your script
     * Select the IAM role you created for the ETL job.
     * For testing, select "2" as the Requested number of workers, this is the minimum allowed.
-![script configurations](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.PNG)
-    * In `Advanced properties`, `Connections` select your connection to Teradata Vantage. 
+![script in editor](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.PNG)
+
+* In `Advanced properties`, `Connections` select your connection to Teradata. 
+
 :::tip
 The connection created must be referenced twice, once in the job configuration, once in the script itself.
 :::
-![script configuration connection](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-5.PNG)
+
+![script configurations](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.PNG)    
+
 * Click on `Save`.
 * Click on `Run`.
-    * The ETL job takes a couple of minutes to complete, most of this time is related to starting the Spark cluster.
-
+*   The ETL job takes a couple of minutes to complete, most of this time is related to starting the Spark cluster.
+  
 ### Checking the Results
 
 * After the job is finished:
     * Go to Data Catalog, Databases.
     * Click on the catalog database you created.
     * In this location, you will see the tables extracted and cataloged through your Glue ETL job.
-![result tables](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Results.PNG)
+
+![result tables](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/results.PNG)
 
 * All tables ingested are also present as compressed files in S3. Rarely, these files would be queried directly. Services such as AWS Athena can be used to query the files relying on the catalog metadata.
 
 ### Summary
 
-In this quick start, we learned how to ingest and catalog data in Teradata Vantage to Amazon S3 with AWS Glue Scripts.
+In this quick start, we learned how to ingest and catalog data from Teradata to Amazon S3 with AWS Glue Scripts.
 
 ### Further reading
-* [Integrate Teradata Vantage with Google Cloud Data Catalog](./integrate-teradata-vantage-with-google-cloud-data-catalog.md)
+* [Integrate Teradata with Google Cloud Data Catalog](./integrate-teradata-vantage-with-google-cloud-data-catalog.md)
