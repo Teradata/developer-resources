@@ -1,23 +1,23 @@
 ---
 sidebar_position: 18
 author: Paul Ibberson
-email: paul.ibberson2@teradata.com
+email: paul.ibberson2@teradata.com, developer.relations@teradata.com
 page_last_update: October 3rd 2024
-description: Configure a Teradata Vantage connection in DataHub.
-keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, datahub, data catalog, data lineage]
+description: Configure a Teradata connection in DataHub.
+keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, datahub, data catalog, data lineage]
 ---
 
-# Configure a Teradata Vantage connection in DataHub
+# Configure a Teradata connection in DataHub
 
 ## Overview
 
-This how-to demonstrates how to create a connection to Teradata Vantage with DataHub, and ingest metadata about tables and views, along with usage and lineage information.
+This how-to demonstrates how to create a connection to Teradata with DataHub, and ingest metadata about tables and views, along with usage and lineage information.
 
 ## Prerequisites
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
-* Access to a Teradata Vantage instance.
+* Access to a Teradata instance.
   <TrialDocsNote />
 * DataHub installed. See [DataHub Quickstart Guide](https://datahubproject.io/docs/quickstart)
 
@@ -120,12 +120,8 @@ Clicking on "Succeeded" after a sucessful execution will bring up a dialogue sim
 
 ## Summary
 
-This how-to demonstrated how to create a connection to Teradata Vantage with DataHub in order to capture metadata of tables, views along with lineage and usage statistics.
+This how-to demonstrated how to create a connection to Teradata with DataHub in order to capture metadata of tables, views along with lineage and usage statistics.
 
 ## Further reading
-* [Integrate DataHub with Teradata Vantage](https://datahubproject.io/docs/generated/ingestion/sources/teradata)
+* [Integrate DataHub with Teradata](https://datahubproject.io/docs/generated/ingestion/sources/teradata)
 * [DataHub Integration Options for Recipes](https://datahubproject.io/docs/metadata-ingestion/#recipes)
-
-import CommunityLinkPartial from '../_partials/community_link.mdx';
-
-<CommunityLinkPartial />
