@@ -2,17 +2,20 @@
 sidebar_position: 3
 author: Nick Pyzik
 editor: Janeth Graziani (Developer Advocate, Teradata)
-email: janeth.graziani@teradata.com
-page_last_update: July 16, 2025
-description: Connect to Teradata VantageCloud Using DBeaver and Okta SSO (Browser Logon)
-keywords: [data warehouses, compute storage separation, teradata, vantagecloud, cloud data platform, object storage, business intelligence, enterprise analytics, dbeaver, dbeaver prod, sql ide, sso]
+email: developer.relations@teradata.com
+page_last_update: July 2, 2026
+description: Connect to Teradata Cloud Using DBeaver and Okta SSO (Browser Logon)
+keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, dbeaver, dbeaver prod, sql ide, sso]
 ---
 
-# Connect to Teradata VantageCloud Using DBeaver and SSO (Browser Logon)
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Connect to Teradata Cloud Using DBeaver and SSO (Browser Logon)
 
 ## Overview
 
-This guide demonstrates how to connect to Teradata VantageCloud using DBeaver with secure **browser-based SSO authentication**.
+This guide demonstrates how to connect to Teradata Cloud using DBeaver with secure **browser-based SSO authentication**.
 
 This method uses the Teradata JDBC driver and the `LOGMECH=BROWSER` setting to enable a federated login experience, commonly used in enterprise environments. 
 
@@ -20,7 +23,7 @@ It also provides recommended DBeaver settings to optimize the experience for Ter
 
 ## Prerequisites
 
-* Access to a Teradata VantageCloud instance configured for browser-based [SSO](https://docs.teradata.com/r/Teradata-VantageCloud-Enterprise/Security/Single-Sign-on)
+* Access to a Teradata Cloud instance configured for browser-based [SSO](https://docs.teradata.com/r/Teradata-VantageCloud-Enterprise/Security/Single-Sign-on)
 
 * A valid enterprise login (e.g., @company.com credentials)
 * DBeaver installed (Community or PRO version)
@@ -37,7 +40,7 @@ It also provides recommended DBeaver settings to optimize the experience for Ter
 
 3. Change **Connect by** value from `Host` to `URL`.
 
-4. In the **JDBC URL** field, paste the following URL (replace the YOUR-TERADATA-HOST to your VantageCloud host):
+4. In the **JDBC URL** field, paste the following URL (replace the YOUR-TERADATA-HOST to your Teradata Cloud host):
 
    ```text
    jdbc:teradata://<YOUR-TERADATA-HOST>/LOGMECH=BROWSER,BROWSER_TAB_TIMEOUT=0 
@@ -71,6 +74,37 @@ and close very quickly with the following message:
 
 DBeaver is now able to connect to Teradata!
 
+:::note Network Access via SSH Tunnel
+If your Teradata instance is on a private network (not publicly accessible), you will need to set up an SSH port-forwarding tunnel before connecting with DBeaver.
+
+1. Open a terminal and run the following command, replacing the placeholders with values provided by your admin:
+
+<Tabs>
+  <TabItem value="mac" label="Mac/Linux" default>
+```bash
+    ssh -i ~/.ssh/tunneluser_key.pem \
+      -L 1025:<VANTAGE-INTERNAL-IP>:1025 \
+      -N <SSH-USER>@<JUMP-SERVER>
+```
+  </TabItem>
+  <TabItem value="windows" label="Windows (PowerShell)">
+```bash
+    ssh -i "$env:USERPROFILE\.ssh\tunneluser_key.pem" `
+      -L 1025:<VANTAGE-INTERNAL-IP>:1025 `
+      -N <SSH-USER>@<JUMP-SERVER>
+```
+  </TabItem>
+</Tabs>
+
+2. Leave this terminal open while using DBeaver.
+
+3. Use `127.0.0.1` as the host in your JDBC URL:
+```text
+    jdbc:teradata://127.0.0.1/LOGMECH=BROWSER,BROWSER_TAB_TIMEOUT=0
+```
+
+Your admin will provide the values for `<VANTAGE-INTERNAL-IP>`, `<SSH-USER>`, and `<JUMP-SERVER>`.
+:::
 ## Running Teradata Queries in Dbeaver
 
 To begin querying:
