@@ -63,30 +63,30 @@ In this section, we will cover in detail each of the steps below:
 * In Amazon S3, select `Create bucket`.
 ![create bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-1.PNG)
 * Assign a name to your bucket and take note of it.
-![name bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-2.png)
+![name bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-2.PNG)
 * Leave all settings at their default values.
 * Click on `Create bucket`.
-![save bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/buckets-3.png)
+![save bucket](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Buckets-3.PNG)
 
 ### Create an AWS Glue Catalog Database for Storing Metadata
 
 * In AWS Glue, select Data catalog, Databases.
 * Click on `Add database`.
-![add database](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/cat-1.png)
+![add database](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Cat-1.PNG)
 * Define a database name and click on `Create database`.
-![add database name](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/cat-2.png)
+![add database name](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Cat-2.PNG)
 
 ### Store Teradata credentials in AWS Secrets Manager
 
 * In AWS Secrets Manager, select `Create new secret`.
-![create secret](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-1.png)
+![create secret](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-1.PNG)
 * The secret should be an `Other type of secret` with the following keys and values according to your Teradata instance:
     * USERNAME
     * PASSWORD
 :::tip
 In the case of Teradata Trial, the user is always "demo_user," and the password is the one you defined when creating your Teradata Trial environment.
 :::
-![secret values](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-2.png)
+![secret values](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/secret-2.PNG)
 * Assign a name to the secret.
 * The rest of the steps can be left with the default values.
 * Create the secret.
@@ -97,9 +97,9 @@ The role you create should have access to the typical permissions of a Glue Serv
 * In AWS, go to the IAM service.
 * Under Access Management, select `Roles`.
 * In roles, click on `Create role`.
-![create role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-1.png)
+![create role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-1.PNG)
 * In select trusted entity, select `AWS service` and pick `Glue` from the dropdown.
-![role type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-2.png)
+![role type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-2.PNG)
 * In add permissions:
     * Search for `AWSGlueServiceRole`.
     * Click the related checkbox.
@@ -108,7 +108,7 @@ The role you create should have access to the typical permissions of a Glue Serv
 * In Name, review, and create:
     * Define a name for your role.
     * Click on `Create role`.
-![name role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-3.png)
+![name role](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-3.PNG)
 
 * Return to Access Management, Roles, and search for the role you've just created.
 * Select your role.
@@ -132,27 +132,27 @@ The role you create should have access to the typical permissions of a Glue Serv
 }
 ```
 * Click `Next`.
-![inline policy](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/role-4.png)
+![inline policy](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Role-4.PNG)
 * Assign a name to your policy.
 * Click on `Create policy`.
 
 ### Create a connection to a Teradata Instance in AWS Glue
 
 * In AWS Glue, select `Data connections`.
-![connection](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-1.png)
+![connection](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-1.PNG)
 * Under Connectors, select `Create connection`.
 * Search for and select the Teradata data source, as shown in the image.
-![teradata type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-2.png)
+![teradata type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-2.PNG)
 * Enter the information required by the dialog box.
 * Select the AWS Secret created in the previous step.
 * Name your connection and finish the creation process.
-![connection configuration](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-3.png)
+![connection configuration](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-3.PNG)
 
 ### Create an AWS Glue Job
 * In AWS Glue, select `ETL Jobs` and click on `Script editor`.
-![script editor creation](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-script-1.png)
+![script editor creation](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-1.PNG)
 * Select `Spark` as the engine and choose to start fresh.
-![script editor type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/glue-script-2.png)
+![script editor type](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-2.PNG)
 
 ### Draft a script for automated ingestion and cataloging of Teradata data into Amazon S3
 
@@ -239,7 +239,7 @@ job.commit()
     * Assign a name to your script
     * Select the IAM role you created for the ETL job.
     * For testing, select "2" as the Requested number of workers, this is the minimum allowed.
-![script in editor](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.png)
+![script in editor](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-3.PNG)
 
 * In `Advanced properties`, `Connections` select your connection to Teradata. 
 
@@ -247,7 +247,7 @@ job.commit()
 The connection created must be referenced twice, once in the job configuration, once in the script itself.
 :::
 
-![script configurations](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.png)    
+![script configurations](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Glue-script-4.PNG)    
 
 * Click on `Save`.
 * Click on `Run`.
@@ -260,7 +260,7 @@ The connection created must be referenced twice, once in the job configuration, 
     * Click on the catalog database you created.
     * In this location, you will see the tables extracted and cataloged through your Glue ETL job.
 
-![result tables](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/results.png)
+![result tables](../cloud-guides/images/ingest-catalog-data-teradata-s3-with-glue/Results.PNG)
 
 * All tables ingested are also present as compressed files in S3. Rarely, these files would be queried directly. Services such as AWS Athena can be used to query the files relying on the catalog metadata.
 
