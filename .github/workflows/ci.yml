@@ -6,6 +6,9 @@ on:
     types: [opened, edited, reopened, closed, synchronize]
     branches: [main]
 
+permissions:
+  contents: write
+
 concurrency:
     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
     cancel-in-progress: true
@@ -28,6 +31,7 @@ jobs:
       - name: PR Number
         run: echo "PR-${{ github.event.pull_request.number }}"
       - name: Deploy PR Preview
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
         uses: rossjrw/pr-preview-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
