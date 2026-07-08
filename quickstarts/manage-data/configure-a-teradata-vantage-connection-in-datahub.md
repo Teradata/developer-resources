@@ -2,7 +2,7 @@
 sidebar_position: 18
 author: Paul Ibberson
 email: paul.ibberson2@teradata.com, developer.relations@teradata.com
-page_last_update: October 3rd 2024
+page_last_update: July 07 2026
 description: Configure a Teradata connection in DataHub.
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, datahub, data catalog, data lineage]
 ---
@@ -63,14 +63,11 @@ Learn more about query logging in this document:
 ## Add a Teradata connection to DataHub
 With DataHub running, open the DataHub GUI and login.  In this example this is running at localhost:9002 
 
-* Start the new connection wizard by clicking on the ingestion plug icon 
-![Ingestion Label](../other-integrations/images/configure-a-teradata-connection-in-datahub/ingestion-icon.png)
-
-  and then selecting "Create new source" 
+* Start the new connection wizard by clicking on the ingestion plug icon and then selecting "Create new source" 
   
 ![Create New Source](../other-integrations/images/configure-a-teradata-connection-in-datahub/create-new-source.png)
 
-* Scroll the list of available sources and select Other 
+* Scroll the list of available sources and select Custom Source.  This will allow you to paste in a recipe to configure the connection to Teradata. 
 ![Select Source](../other-integrations/images/configure-a-teradata-connection-in-datahub/select-other-source.png)
 
 * A recipe is needed to configure the connection to Teradata and define the options required such as whether to capture table and column lineage, profile the data or retrieve usage statistics.  Below is a simple recipe to get you started. The host, username and password should be changed to match your environment.
@@ -88,7 +85,7 @@ source:
     #    - "my_database"
     #  ignoreCase: true
     include_table_lineage: true
-    include_usage_statistics: true
+    include_usage_statistics: false
     stateful_ingestion:
       enabled: true
 ```
@@ -99,13 +96,14 @@ Pasting the recipe into the window should look like this:
 * Click Next and then setup the required schedule. 
 ![Set Schedule](../other-integrations/images/configure-a-teradata-connection-in-datahub/set-schedule.png)
 
-* Click Next to Finish Up and give the connection a name. Click Advanced so that the correct CLI version can be set. DataHub support for Teradata became available in CLI 0.12.x.  Suggest selecting the most current version to ensure the best compatibility.
+* Click Next to Finish Up and give the connection a name. Click Advanced so that the correct CLI version can be set. Set this CLI value to same as the DataHub version which you can find by typing datahub version in the command line.  In this example the DataHub version is 1.6.0 and so the CLI value is set to 1.6.0.
+* Click Save & Run to save the new source and run it immediately.  You can also click Save to save the source and run it later.
+  
+
 ![Finish up](../other-integrations/images/configure-a-teradata-connection-in-datahub/finish-up.png)
 
-* Once the new source has been saved, it can be executed manually by clicking Run. 
-![Execute](../other-integrations/images/configure-a-teradata-connection-in-datahub/execute.png)
 
-Clicking on "Succeeded" after a sucessful execution will bring up a dialogue similar to this one where you can see the Databases, Tables and Views that have been ingested into DataHub.  
+Clicking on "Success" after a sucessful execution will bring up a dialogue similar to this one where you can see the Databases, Tables and Views that have been ingested into DataHub.  
 ![Ingestion Result](../other-integrations/images/configure-a-teradata-connection-in-datahub/ingestion-result.png)
 
 * The metadata can now be explored in the GUI by browsing:
