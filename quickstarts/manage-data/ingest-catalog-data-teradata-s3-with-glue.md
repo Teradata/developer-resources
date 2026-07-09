@@ -268,5 +268,3 @@ The connection created must be referenced twice, once in the job configuration, 
 
 In this quick start, we learned how to ingest and catalog data in Teradata Vantage to Amazon S3 with AWS Glue Scripts.
 
-### Further reading
-* [Integrate Teradata Vantage with Google Cloud Data Catalog](./integrate-teradata-vantage-with-google-cloud-data-catalog.md)
