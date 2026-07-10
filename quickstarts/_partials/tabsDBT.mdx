@@ -5,20 +5,20 @@ import TabItem from '@theme/TabItem';
   <TabItem value="Windows" label="Windows" default>
     Run in Powershell:
     ```bash
-    python -m venv env
-    .\env\Scripts\activate
+    uv venv .venv
+    .venv\Scripts\activate
     ```
   </TabItem>
-  <TabItem value="MacOS" label="MacOS">
+  <TabItem value="macOS" label="macOS">
     ```bash
-    python3 -m venv env
-    source env/bin/activate
+    uv venv .venv
+    source .venv/bin/activate
     ```
   </TabItem>
   <TabItem value="Linux" label="Linux">
     ```bash
-    python3 -m venv env
-    source env/bin/activate
+    uv venv .venv
+    source .venv/bin/activate
     ```
   </TabItem>
 </Tabs>
