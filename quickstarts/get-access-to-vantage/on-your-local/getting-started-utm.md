@@ -11,9 +11,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 import GettingStartedIntro from '../../_partials/getting-started-intro.mdx';
 import RunVantage from '../../_partials/run-vantage.mdx';
-import RunSimpleQueries from '../../_partials/running-sample-queries.mdx';
 import GettingStartedSummary from '../../_partials/getting-started-summary.mdx';
-import CommunityLink from '../../_partials/community_link.mdx';
 
 # Run Vantage Express on UTM
 
@@ -78,7 +76,6 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 
 <RunVantage />
 
-<RunSimpleQueries />
 
 <GettingStartedSummary />
 
@@ -87,5 +84,3 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)
-
-<CommunityLink />
