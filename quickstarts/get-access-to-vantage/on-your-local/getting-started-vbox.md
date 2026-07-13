@@ -8,9 +8,7 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 import GettingStartedIntro from '../../_partials/getting-started-intro.mdx';
 import RunVantage from '../../_partials/run-vantage.mdx';
-import RunSimpleQueries from '../../_partials/running-sample-queries.mdx';
 import GettingStartedSummary from '../../_partials/getting-started-summary.mdx';
-import CommunityLink from '../../_partials/community_link.mdx';
 
 # Run Vantage Express on VirtualBox
 
@@ -64,7 +62,6 @@ import CommunityLink from '../../_partials/community_link.mdx';
 
 <RunVantage />
 
-<RunSimpleQueries />
 
 ## Updating VirtualBox Guest Extensions
 
@@ -90,5 +87,3 @@ mount /dev/cdrom /media/dvd; /media/dvd/VBoxLinuxAdditions.run
 
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)
-
-<CommunityLink />
