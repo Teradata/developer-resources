@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-author: Sudha Vedula
-email: sudha.vedula@teradata.com
-page_last_update: May 29th, 2023
-description: Send queries using REST API. Teradata® Query Service is a middleware that provides REST APIs for Vantage.
+author: Sudha Vedula, Vidhan Bhonsle
+email: developer.relations@teradata.com
+page_last_update: July 15th, 2026
+description: Send queries using REST API. Teradata® Query Service is a middleware that provides REST APIs for Teradata.
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 
@@ -13,14 +13,14 @@ import TrialDocsNote from '../_partials/teradata_trial.mdx'
 
 ## Overview
 
-Teradata Query Service is a REST API for Vantage that you can use to run standard SQL statements without managing client-side drivers. Use Query Service if you are looking to query and access the Analytics Database through a REST API.
+Teradata Query Service is a REST API for Teradata that you can use to run standard SQL statements without managing client-side drivers. Use Query Service if you are looking to query and access the Analytics Database through a REST API.
 
 This how-to provides examples of common use cases to help you get started with Query Service API.
 
 ## Prerequisites
 
 Before starting, make sure you have:
-*	Access to a VantageCloud system where Query Service is provisioned, or a VantageCore with Query Service enabled connectivity. If you are an admin and need to install Query Service, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022).
+* Access to a Teradata Cloud system where Query Service is provisioned, or an on-premises instance (Teradata Factory) with Query Service connectivity enabled. If you are an admin and need to install Query Service, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers-4.01.03.01-4.01.07.00).
 
   <TrialDocsNote />
 
@@ -41,13 +41,13 @@ When using the examples, please keep in mind that:
     * `<SYSTEM_NAME>`: Preconfigured alias of the system
 
 :::note
-If your Vantage instance is provided through ClearScape Analytics Experience,`<QS_HOSTNAME>`, is the host URL of your ClearScape Analytics Experience environment, `<SYSTEM_NAME>` is 'local'.
+If your Teradata instance is provided through Teradata Trial, `<QS_HOSTNAME>` is the host URL of your Teradata Trial environment, and `<SYSTEM_NAME>` is 'local'.
 :::
 
 
 ## Connect to your Query Service instance
 
-Provide valid credentials to access the target Analytics Database using HTTP Basic or JWT authentication.
+Provide valid credentials to access the target Analytics using HTTP Basic or JWT authentication.
 
 ### HTTP Basic authentication
 
@@ -77,6 +77,11 @@ headers = {
 
 print(headers)
 ```
+
+:::note
+If you are using Teradata Trial, replace the sample values `dbc` and `dbc` with your Teradata Trial username and password. The values shown in this example are placeholders and may not be valid for your environment.
+:::
+
 
 **Response**
 ```python
@@ -150,7 +155,7 @@ payload_json = json.dumps(payload)
 
 response = requests.request('POST', url, headers=headers, data=payload_json, verify=False)
 
-num_rows = response.json().get('results'](0].get('rowCount')
+num_rows = response.json().get('results')[0].get('rowCount')
 print('NUMBER of ROWS', num_rows)
 print('==========================================================')
 
@@ -234,7 +239,7 @@ NUMBER of ROWS 4
 }
 ```
 
-For response parameters, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body).
+For response parameters, see [Submitting SQL statements](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers-4.01.03.01-4.01.07.00/Using-the-Query-Service-APIs/Submitting-SQL-Statement).
 
 
 ### Request a response in CSV format
@@ -428,7 +433,7 @@ Use asynchronous queries when a system or network performance is affected by que
 
     Send a GET request to the `/system/<SYSTEM_NAME>/queries/<queryID>` endpoint, replacing `<queryID>` with the ID retrieved from Step 1.
 
-    The request returns the details of the specific query, including **`queryState`**, **`queueOrder`**, **`queueDuration`**, and so on. For a complete list of the response fields and their descriptions, see [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022/Using-the-Query-Service-APIs/Submitting-SQL-Statement/Request-Body).
+    The request returns the details of the specific query, including **`queryState`**, **`queueOrder`**, **`queueDuration`**, and so on. For a complete list of the response fields and their descriptions, see [Submitting SQL statements](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers-4.01.03.01-4.01.07.00/Using-the-Query-Service-APIs/Submitting-SQL-Statement).
 
     **Request**
     ``` python
@@ -578,9 +583,5 @@ print(response.json())
 
 ## Resources
 
-* Features, examples, and references: [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers/April-2022)
-* [Query Service API OpenAPI Specification](https://downloads.teradata.com/api/teradata_query_service)
-
-import CommunityLinkPartial from '../_partials/community_link.mdx';
-
-<CommunityLinkPartial />
+* Features, examples, and references: [Query Service Installation, Configuration, and Usage Guide](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-Query-Service-Installation-Configuration-and-Usage-Guide-for-Customers-4.01.03.01-4.01.07.00/Overview/Welcome-to-Query-Service-Installation-Configuration-and-Usage-Guide)
+* [Query Service API OpenAPI Specification](https://developers.teradata.com/api/teradata_datalabs/)
