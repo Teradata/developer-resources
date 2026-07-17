@@ -19,10 +19,10 @@ import GettingStartedSummary from '../../_partials/getting-started-summary.mdx';
 
 ## Prerequisites
 
-1. A Mac computer. Both Intel and M1/M2/M3 chips are supported.
+1. An Intel-based Mac computer.
 
 :::note
-Vantage Express runs on x86 architecture. When you run the VM on M1/M2/M3 chips, UTM has to emulate x86. This is significantly slower then virtualization. If you determine that Vantage Express on M1/M2 is too slow for your needs, consider running Vantage Express in the cloud: [AWS](../on-your-cloud-infrastructure/run-vantage-express-on-aws.md), [Azure](../on-your-cloud-infrastructure/run-vantage-express-on-microsoft-azure.md), [Google Cloud](../on-your-cloud-infrastructure/vantage-express-gcp.md).
+Vantage Express runs on x86 architecture and is only supported on Intel-based Macs. Apple Silicon (M1/M2/M3) is not supported. If you have an Apple Silicon Mac, consider running Vantage Express in the cloud: [AWS](../on-your-cloud-infrastructure/run-vantage-express-on-aws.md), [Azure](../on-your-cloud-infrastructure/run-vantage-express-on-microsoft-azure.md), [Google Cloud](../on-your-cloud-infrastructure/vantage-express-gcp.md).
 :::
 
 2. 30GB of disk space and enough CPU and RAM to be able to dedicate at least one core and 4GB RAM to the virtual machine.
@@ -47,11 +47,9 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 
 1. Go to the directory where you downloaded Vantage Express and unzip the downloaded file.
 2. Start UTM, click on the `+` sign and select `Create a New Virtual Machine`.
-3. Select `Virtualize` (Intel Macs) or `Emulate` (M1/M2/M3 Macs).
+3. Select `Virtualize` (Intel Macs).
 4. On `Operating System` screen select `Other`.
 5. On `Hardware` screen allocate at least 4GB of RAM and at least 1 CPU core. We recommend 10GB RAM and 2 CPUs.
-
-    ![UTM Hardware](../../images/utm.hardware.png)
 6. On the **Other** screen, set **Boot Device** to **None** and uncheck **UEFI Boot**, then click **Continue**.
 7. On `Storage` screen accept the defaults by clicking `Next`.
 8. On `Shared Directory` screen click `Continue`.
@@ -78,17 +76,10 @@ No admin rights on your local machine? Have a look at how to run Vantage Express
 
 12. Save the configuration and start the VM.
 
-    :::note
-    Initial boot on Apple Silicon (M1/M2/M3) via emulation can take 5-15 minutes. Do not force quit the VM.
-    :::
-
-    ![UTM Booting](../../images/utm.booting.png)
-
-
 <RunVantage />
 
 
-In this guide we have covered how to quickly create a working Teradata Vantage environment on Apple Mac M1/M2/M3. We used Teradata Vantage Express in a VM running on UTM. We installed all software locally and didn't have to pay for cloud resources.
+In this guide we have covered how to quickly create a working Teradata Vantage environment on an Intel-based Mac. We used Teradata Vantage Express in a VM running on UTM. We installed all software locally and didn't have to pay for cloud resources.
 
 ## Next steps
 * [Query data stored in object storage](../../manage-data/nos.md)
