@@ -8,7 +8,6 @@ keywords: [data warehouses, compute storage separation, teradata, vantage, cloud
 ---
 
 import UseCase from '../../_partials/use-trials.mdx';
-import CommunityLink from '../../_partials/community_link.mdx';
 import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 
 # Run Vantage Express on AWS
@@ -27,7 +26,7 @@ Vantage Express is distributed as a virtual machine image. This how-to uses the 
 
 If you want a cheaper option, try [Google Cloud](./vantage-express-gcp.md) and [Azure](run-vantage-express-on-microsoft-azure.md) which support nested virtualization and can run Vantage Express on cheap VM's.
 
-If you do not wish to pay for cloud usage, you can get a free hosted instance of Vantage at [https://clearscape.teradata.com/](https://clearscape.teradata.com/). Alternatively, you install Vantage Express locally using [VMware](../on-your-local/getting-started-vmware.md), [VirtualBox](../on-your-local/getting-started-vbox.md), or [UTM](../on-your-local/getting-started-utm.md).
+If you do not wish to pay for cloud usage, you can get a free hosted instance of Teradata at [https://www.teradata.com/try](https://www.teradata.com/try). Alternatively, you install Vantage Express locally using [VMware](../on-your-local/getting-started-vmware.md), [VirtualBox](../on-your-local/getting-started-vbox.md), or [UTM](../on-your-local/getting-started-utm.md).
 :::
 
 ## Prerequisites
@@ -269,7 +268,3 @@ aws ec2 delete-vpc \
 ## Further reading
 * [Teradata® Studio™ and Studio™ Express Installation Guide](https://docs.teradata.com/r/Teradata-StudioTM-and-StudioTM-Express-Installation-Guide-17.20)
 * [Introduction to BTEQ](https://docs.teradata.com/r/jmAxXLdiDu6NiyjT6hhk7g/root)
-
-<CommunityLink />
-
-
