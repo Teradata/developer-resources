@@ -1,103 +1,108 @@
 ---
 sidebar_position: 4.7
 author: Mohan Talla
-email: mohan.talla@teradata.com
-page_last_update: February 5th, 2025
-description: Transferring CSV, JSON, and Parquet data from Azure Blob Storage to Teradata Vantage with dagster-teradata
-keywords: [data warehouses, teradata, vantage, transfer, cloud data platform, object storage, business intelligence, enterprise analytics, dagster, dagster-teradata, microsoft azure blob storage]
+email: mohan.talla@teradata.com, developer.relations@teradata.com
+page_last_update: July 16th, 2026
+description: Transferring CSV, JSON, and Parquet data from Azure Blob Storage to Teradata with dagster-teradata
+keywords: [data warehouses, teradata, transfer, cloud data platform, object storage, business intelligence, enterprise analytics, dagster, dagster-teradata, microsoft azure blob storage]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TrialDocsNote from '../_partials/teradata_trial.mdx'
-import InstallTabs from '../_partials/tabsDBT.mdx'
 
-# Data Transfer from Azure Blob to Teradata Vantage Using dagster-teradata
+# Data Transfer from Azure Blob to Teradata Using dagster-teradata
 
 ## Overview
 
-This document provides instructions and guidance for transferring data in CSV, JSON and Parquet formats from Microsoft Azure Blob Storage to Teradata Vantage using **dagster-teradata**. It outlines the setup, configuration and execution steps required to establish a seamless data transfer pipeline between these platforms.
+This quickstart shows how to transfer data in CSV, JSON, and Parquet formats from Microsoft Azure Blob Storage to Teradata using `dagster-teradata`.
+
+The example uses a public Azure Blob Storage dataset that is accessible through Teradata Native Object Store (NOS). An Azure account is not required to run the example.
 
 ## Prerequisites
 
-* Access to a Teradata Vantage instance.
+* Access to a Teradata instance.
 
     <TrialDocsNote />
 
-* Python **3.9** or higher, Python **3.12** is recommended.
-* pip
+* Python **3.9** or higher. Python **3.12** is recommended.
+* The [`uv` package manager](https://docs.astral.sh/uv/getting-started/installation/) for Python environment management.
 
-## Setting Up a Virtual Enviroment
+## Set Up the Project with `uv`
 
-A virtual environment is recommended to isolate project dependencies and avoid conflicts with system-wide Python packages. Here’s how to set it up:
-     
-      <InstallTabs/>
-
-## Install dagster and dagster-teradata
-
-With your virtual environment active, the next step is to install dagster and the Teradata provider package (dagster-teradata) to interact with Teradata Vantage.
-
-1. Install the Required Packages:
-    
-    ```bash
-    pip install dagster dagster-webserver dagster-teradata[azure]
-    ```
-
-2. Verify the Installation: 
-
-   To confirm that Dagster is correctly installed, run:
-     ```bash
-    dagster –version
-    ```
-   If installed correctly, it should show the version of Dagster.
-
+This quickstart uses `uv` to manage dependencies and run commands. Manual virtual environment activation is not required.
 
 ## Initialize a Dagster Project
 
-Now that you have the necessary packages installed, the next step is to create a new Dagster project.
+Use `uvx` to create a new Dagster project. The command automatically creates a `pyproject.toml` file for dependency management.
 
-### Scaffold a New Dagster Project
+### Create a New Dagster Project
 
-Run the following command:
-
-```bash
-dagster project scaffold --name dagster-teradata-azure
- ```
-This command will create a new project named dagster-teradata-azure. It will automatically generate the following directory structure:
+Run:
 
 ```bash
-dagster-teradata-azure
-│   pyproject.toml
-│   README.md
-│   setup.cfg
-│   setup.py
-│
-├───dagster_teradata_azure
-│       assets.py
-│       definitions.py
-│       __init__.py
-│
-└───dagster_teradata_azure_tests
-        test_assets.py
-        __init__.py
- ```
+uvx create-dagster@latest project dagster-teradata-azure
+```
 
-Refer [here](https://docs.dagster.io/guides/build/projects/dagster-project-file-reference) to know more above this directory structure
+When prompted to run `uv sync`, enter `y`. This creates an isolated environment and installs the initial project dependencies.
 
-You need to modify the `definitions.py` file inside the `jaffle_dagster/jaffle_dagster` directory. 
+The command creates a project with the following structure:
 
-### Step 1: Open `definitions.py` in `dagster-teradata-azure/dagster-teradata-azure` Directory  
-Locate and open the file where Dagster job definitions are configured.  
-This file manages resources, jobs, and assets needed for the Dagster project.  
+```text
+dagster-teradata-azure/
+├── .dg/
+├── .venv/
+├── src/
+│   └── dagster_teradata_azure/
+│       ├── definitions.py
+│       ├── defs/
+│       │   └── __init__.py
+│       └── __init__.py
+├── tests/
+│   └── __init__.py
+├── .gitignore
+├── pyproject.toml
+├── README.md
+└── uv.lock
+```
 
-### Step 2: Implement Azure to Teradata Transfer in Dagster
+For more information, see the [Dagster project documentation](https://docs.dagster.io/guides/build/projects).
 
-``` python
+### Add the Required Dependencies
+
+Open `pyproject.toml` in the project root and add `dagster-teradata` and `dagster-azure` to the `dependencies` section:
+
+```toml
+dependencies = [
+    ...
+    "dagster-teradata",
+    "dagster-azure",
+]
+```
+
+From the project root, sync the dependencies:
+
+```bash
+cd dagster-teradata-azure
+uv sync
+```
+
+## Configure the Dagster Project
+
+Open:
+
+```text
+src/dagster_teradata_azure/definitions.py
+```
+
+Replace its contents with the following code:
+
+```python
 import os
 
-from dagster import job, op, Definitions, EnvVar, DagsterError
+from dagster import DagsterError, Definitions, job, op
 from dagster_azure.adls2 import ADLS2Resource, ADLS2SASToken
-from dagster_teradata import TeradataResource, teradata_resource
+from dagster_teradata import TeradataResource
 
 azure_resource = ADLS2Resource(
     storage_account="",
@@ -111,131 +116,249 @@ td_resource = TeradataResource(
     database=os.getenv("TERADATA_DATABASE"),
 )
 
+
 @op(required_resource_keys={"teradata"})
-def drop_existing_table(context):
-     context.resources.teradata.drop_table("people")
-     return "Tables Dropped"
+def drop_existing_table(context) -> str:
+    try:
+        context.resources.teradata.drop_table("people")
+        context.log.info("Table 'people' dropped successfully")
+        return "Tables Dropped"
+    except Exception as error:
+        context.log.error(f"Failed to drop table: {error}")
+        raise
+
 
 @op(required_resource_keys={"teradata", "azure"})
-def ingest_azure_to_teradata(context, status):
-    if status == "Tables Dropped":
-        context.resources.teradata.azure_blob_to_teradata(azure_resource, "/az/akiaxox5jikeotfww4ul.blob.core.windows.net/td-usgs/CSVDATA/09380000/2018/06/", "people", True)
-    else:
-        raise DagsterError("Tables not dropped")
+def ingest_azure_to_teradata(context, status: str) -> str:
+    try:
+        if status != "Tables Dropped":
+            raise DagsterError("Table was not dropped")
 
-@job(resource_defs={"teradata": td_resource, "azure": azure_resource})
+        azure_blob_location = (
+            "/az/akiaxox5jikeotfww4ul.blob.core.windows.net/"
+            "td-usgs/CSVDATA/09380000/2018/06/"
+        )
+
+        context.log.info(
+            f"Using Azure Blob Storage location: {azure_blob_location}"
+        )
+
+        context.resources.teradata.azure_blob_to_teradata(
+            context.resources.azure,
+            azure_blob_location,
+            "people",
+            public_bucket=True,
+        )
+
+        context.log.info(
+            "Data ingested successfully from Azure Blob Storage to Teradata"
+        )
+        return "Data Ingested"
+    except Exception as error:
+        context.log.error(f"Failed to ingest data: {error}")
+        raise
+
+
+@job
 def example_job():
-     ingest_azure_to_teradata(drop_existing_table())
+    ingest_azure_to_teradata(drop_existing_table())
+
 
 defs = Definitions(
-    jobs=[example_job]
+    jobs=[example_job],
+    resources={
+        "teradata": td_resource,
+        "azure": azure_resource,
+    },
 )
 ```
 
-### Explanation of the Code
+## Understand the Code
 
-1. **Resource Setup**:
-   - The code sets up two resources: one for **Azure Data Lake Storage** (ADLS2) and one for **Teradata**.
-     - **Azure Blob Storage**:
-       - For a **public bucket**, the `storage_account` and `credential` (SAS token) are left empty.
-       - For a **private bucket**, the `storage_account` (Azure Storage account name) and a valid SAS `credential` are required for access.
-     - **Teradata resource**: The `teradata_resource` is configured using credentials pulled from environment variables (`TERADATA_HOST`, `TERADATA_USER`, `TERADATA_PASSWORD`, `TERADATA_DATABASE`).
+### Resource Configuration
 
-2. **Operations**:
-   - **`drop_existing_table`**: This operation drops the "people" table in Teradata using the `teradata_resource`.
-   - **`ingest_azure_to_teradata`**: This operation checks if the "people" table was successfully dropped. If the table is dropped successfully, it loads data from Azure Blob Storage into Teradata. The data is ingested using the `azure_blob_to_teradata` method, which fetches data from the specified Azure Blob Storage path.
+The code configures:
 
-3. **Job Execution**:
-   - The **`example_job`** runs the operations in sequence. First, it drops the table, and if successful, it transfers data from the Azure Blob Storage (either public or private) to Teradata.
+* `ADLS2Resource` for the public Azure Blob Storage dataset.
+* `TeradataResource` for the Teradata connection.
 
-This setup allows for dynamic handling of both **public** and **private Azure Blob Storage** configurations while transferring data into Teradata.
+The Azure resource uses empty storage account and SAS token values because the example dataset is public. The Teradata connection values are read from environment variables.
 
-## Running the Pipeline
+The `public_bucket=True` argument instructs Teradata to access the public Azure Blob Storage location without a Teradata `AUTHORIZATION` object.
 
-After setting up the project, you can now run your Dagster pipeline:
+### Operations
 
-1.	**Start the Dagster Dev Server:** In your terminal, navigate to the root directory of your project and run:
-dagster dev
-After executing the command dagster dev, the Dagster logs will be displayed directly in the terminal. Any errors encountered during startup will also be logged here. Once you see a message similar to:
-        ```bash
-        2025-02-04 09:15:46 +0530 - dagster-webserver - INFO - Serving dagster-webserver on http://127.0.0.1:3000 in process 32564,
-        ```
-        It indicates that the Dagster web server is running successfully. At this point, you can proceed to the next step.
+* `drop_existing_table` drops the `people` table.
+* `ingest_azure_to_teradata` transfers the public Azure Blob Storage dataset into the `people` table.
 
-2.	**Access the Dagster UI:** Open a web browser and navigate to http://127.0.0.1:3000. This will open the Dagster UI where you can manage and monitor your pipelines.
+### Job Execution
+
+The `example_job` runs the operations sequentially. It first drops the target table and then transfers the data from Azure Blob Storage to Teradata.
+
+## Use the Public Azure Blob Storage Dataset
+
+This quickstart uses the following public CSV dataset:
+
+```text
+/az/akiaxox5jikeotfww4ul.blob.core.windows.net/td-usgs/CSVDATA/09380000/2018/06/
+```
+
+Azure Blob Storage locations used by Teradata NOS must begin with `/az/` or `/AZ/` and follow this format:
+
+```text
+/az/<storage-account>.blob.core.windows.net/<container>/<blob-location>
+```
+
+The dataset used in this example is configured for public access and works with:
+
+```python
+public_bucket=True
+```
+
+An Azure account, storage account key, SAS token, and Teradata `AUTHORIZATION` object are not required for this public example.
+
+## Set Environment Variables
+
+Set the Teradata connection values in the same terminal from which you will run Dagster.
+
+<Tabs>
+  <TabItem value="Windows" label="Windows" default>
+
+Run in PowerShell:
+
+```bash
+$env:TERADATA_HOST="<your-teradata-host>"
+$env:TERADATA_USER="<your-teradata-user>"
+$env:TERADATA_PASSWORD="<your-teradata-password>"
+$env:TERADATA_DATABASE="<target-database>"
+```
+
+  </TabItem>
+  <TabItem value="MacOS/Linux" label="macOS/Linux">
+
+```bash
+export TERADATA_HOST="<your-teradata-host>"
+export TERADATA_USER="<your-teradata-user>"
+export TERADATA_PASSWORD="<your-teradata-password>"
+export TERADATA_DATABASE="<target-database>"
+```
+
+  </TabItem>
+</Tabs>
+
+## Prepare Teradata
+
+The job begins by dropping the `people` table. Create the table before running the job for the first time:
+
+```sql
+CREATE MULTISET TABLE people (
+    placeholder_column INTEGER
+);
+```
+
+The `azure_blob_to_teradata` method drops the placeholder table and creates a new `people` table from the columns in the public CSV dataset.
+
+:::note
+Create the table in the database specified by `TERADATA_DATABASE`. If the table already exists, skip this step.
+:::
+
+## Run the Pipeline
+
+### Start the Dagster Development Server
+
+From the project root, run:
+
+```bash
+uv run dg dev
+```
+
+The `uv run` command runs `dg dev` in the isolated project environment defined by `pyproject.toml`.
+
+When the logs show that the Dagster UI is available at `http://127.0.0.1:3000`, proceed to the next step.
+
+:::note
+`dg dev` uses an ephemeral Dagster instance by default. To preserve run history, set `DAGSTER_HOME` before starting the server.
+:::
+
+<Tabs>
+  <TabItem value="WindowsDagsterHome" label="Windows" default>
+
+```bash
+$env:DAGSTER_HOME="$env:USERPROFILE\.dagster_home"
+uv run dg dev
+```
+
+  </TabItem>
+  <TabItem value="MacOSLinuxDagsterHome" label="macOS/Linux">
+
+```bash
+export DAGSTER_HOME=~/.dagster_home
+uv run dg dev
+```
+
+  </TabItem>
+</Tabs>
+
+### Access the Dagster UI
+
+Open `http://127.0.0.1:3000` in a browser.
 
 ![dagster-teradata-azure1.png](../images/dagster/dagster-teradata-azure1.png)
 
-In the Dagster UI, you will see the following:
-
-- The job **`example_job`** is displayed, along with the associated dbt asset.
-- The dbt asset is organized under the **"default"** asset group.
-- In the middle, you can view the **lineage** of each `@op`, showing its dependencies and how each operation is related to others.
+The **Jobs** page displays `example_job` and the dependency between its two operations.
 
 ![dagster-teradata-azure2.png](../images/dagster/dagster-teradata-azure2.png)
 
-Go to the **"Launchpad"** and provide the configuration for the **TeradataResource** as follows:
+### Launch the Job
 
-```yaml
-resources:
-  teradata:
-    config:
-      host: <host>
-      user: <user>
-      password: <password>
-      database: <database>
-```
-Replace `<host>, <user>, <password> and <database>` with the actual hostname and credentials of the Teradata VantageCloud Lake instance.
+Open the **Launchpad** tab and select **Launch Run**.
 
-Once the configuration is done, click on **"Launch Run"** to start the process.
+The Teradata connection values are read from the environment variables set earlier, so no additional Launchpad configuration is required.
 
 ![dagster-teradata-azure3.png](../images/dagster/dagster-teradata-azure3.png)
 
-The Dagster UI allows you to visualize the pipeline's progress, view logs, and inspect the status of each step.
+Use the Dagster UI to monitor the run, view logs, and inspect the status of each operation.
 
-## Arguments Supported by `azure_blob_to_teradata`
+![dagster-teradata-azure4.png](../images/dagster/dagster-teradata-azure4.png)
 
-- **azure (ADLS2Resource)**:  
-  The `ADLS2Resource` object used to interact with the Azure Blob Storage.
+## Verify the Data Transfer
 
-- **blob_source_key (str)**:  
-  The URI specifying the location of the Azure Blob object. The format is:  
-  `/az/YOUR-STORAGE-ACCOUNT.blob.core.windows.net/YOUR-CONTAINER/YOUR-BLOB-LOCATION`  
-  For more details, refer to the Teradata documentation:  
-  [Teradata Documentation - Native Object Store](https://docs.teradata.com/search/documents?query=native+object+store&sort=last_update&virtual-field=title_only&content-lang=en-US)
+After the job succeeds, run:
 
-- **teradata_table (str)**:  
-  The name of the Teradata table where the data will be loaded.
+```sql
+SELECT TOP 10 *
+FROM people;
+```
 
-- **public_bucket (bool, optional)**:  
-  Indicates whether the Azure Blob container is public. If `True`, the objects in the container can be accessed without authentication.  
-  Defaults to `False`.
+The query should return rows transferred from the public Azure Blob Storage dataset.
 
-- **teradata_authorization_name (str, optional)**:  
-  The name of the Teradata Authorization Database Object used to control access to the Azure Blob object store. This is required for secure access to private containers.  
-  Defaults to an empty string.  
-  For more details, refer to the documentation:  
-  [Teradata Vantage Native Object Store - Setting Up Access](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-VantageTM-Native-Object-Store-Getting-Started-Guide-17.20/Setting-Up-Access/Controlling-Foreign-Table-Access-with-an-AUTHORIZATION-Object)
+## Transfer data from a private Blob Storage container to Teradata
 
-## Transfer data from Private Blob Storage Container to Teradata instance
-To successfully transfer data from a Private Blob Storage Container to a Teradata instance, the following prerequisites are necessary.
+To transfer data from a private Azure Blob Storage container to Teradata, complete the following prerequisites:
 
-* An Azure account. You can start with a [free account](https://azure.microsoft.com/free/).
-* Create an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal)
-* Create a [blob container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) under Azure storage account
-* [Upload](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) CSV/JSON/Parquest format files to blob container
-* Create a Teradata Authorization object with the Azure Blob Storage Account and the Account Secret Key
+* Create an [Azure account](https://azure.microsoft.com/free/).
+* Create an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
+* Create a [blob container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) in the Azure storage account.
+* [Upload](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) CSV, JSON, or Parquet files to the blob container.
+* Create a Teradata authorization object using the Azure Blob Storage account name and access key.
 
-    ``` sql
-    CREATE AUTHORIZATION azure_authorization USER 'azuretestquickstart' PASSWORD 'AZURE_BLOB_ACCOUNT_SECRET_KEY'
+    ```sql
+    CREATE AUTHORIZATION azure_authorization
+    USER 'azuretestquickstart'
+    PASSWORD 'AZURE_BLOB_ACCOUNT_SECRET_KEY';
     ```
 
     :::note
-    Replace `AZURE_BLOB_ACCOUNT_SECRET_KEY` with Azure storage account `azuretestquickstart`  [access key](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&bc=%2Fazure%2Fstorage%2Fblobs%2Fbreadcrumb%2Ftoc.json&tabs=azure-portal)
+    Replace `AZURE_BLOB_ACCOUNT_SECRET_KEY` with the [access key](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&bc=%2Fazure%2Fstorage%2Fblobs%2Fbreadcrumb%2Ftoc.json&tabs=azure-portal) for the `azuretestquickstart` Azure storage account.
     :::
 
 ## Summary
-This guide details the utilization of the dagster-teradata to seamlessly transfer CSV, JSON, and Parquet data from Microsoft Azure Blob Storage to Teradata Vantage, facilitating streamlined data operations between these platforms.
+
+In this quickstart, you created a Dagster project with `uvx`, configured the Azure and Teradata resources, and transferred data from a public Azure Blob Storage dataset to Teradata.
 
 ## Further reading
+
+* [Dagster Azure integration](https://docs.dagster.io/integrations/libraries/azure/dagster-azure)
+* [Dagster Teradata reference](https://docs.dagster.io/integrations/libraries/teradata/teradata-reference)
+* [Dagster project documentation](https://docs.dagster.io/guides/build/projects)
 * [Teradata Authorization](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/SQL-Data-Definition-Language-Syntax-and-Examples/Authorization-Statements-for-External-Routines/CREATE-AUTHORIZATION-and-REPLACE-AUTHORIZATION)
