@@ -1,3 +1,5 @@
+> **Archive Notice:** This branch contains legacy code for developers.teradata.com. Beginning 31 JULY 2026, developer content will be published on docs.teradata.com. 
+
 # Teradata Developer Resources
 
 This repository is the home of all code and content for [developers.teradata.com](https://developers.teradata.com/).
