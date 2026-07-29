@@ -1,0 +1,242 @@
+---
+sidebar_position: 5.5
+title: Automate Data Movement and Transformation with Airflow, Airbyte, and dbt in Teradata
+author: Vidhan Bhonsle, Daniel Herrera
+email: developer.relations@teradata.com
+ft:lastEdition: "2026-07-15"
+description: Using Airflow to Orchestrate Airbyte and dbt for Teradata
+keywords: [data warehouses, airflow, teradata, vantage, orchestration, object storage, airbyte, enterprise analytics, elt, dbt.]
+---
+
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
+
+# Automate Data Movement and Transformation with Airflow, Airbyte, and dbt in Teradata
+
+## Overview
+
+This quickstart demonstrates how to leverage Apache Airflow as an orchestration tool to automate data movement to Teradata using Airbyte. Once the data is in Teradata, dbt performs transformations, ensuring the data is clean, reliable, and ready for analysis.
+
+## Prerequisites
+
+* Access to a Teradata Vantage instance.
+
+    <TrialDocsNote />
+
+* [Python](https://www.python.org/downloads/) **3.10** or later installed.
+
+* [Docker and Docker Compose (Docker Desktop)](https://docs.docker.com/get-started/get-docker/)
+
+* [Airbyte command line tool](https://docs.airbyte.com/using-airbyte/getting-started/oss-quickstart)
+
+**System Requirements:**
+* **RAM:** Minimum 4GB (8GB recommended for smooth execution)
+* **CPU:** Minimum 2 cores (4+ cores recommended)
+* **Disk space:** Minimum 10GB free (for Docker volumes and Airbyte/Airflow data)
+* **Network:** Stable internet connection for Docker image pulls and external data source access
+
+**For Windows users:**
+This quickstart is designed to run on macOS, Linux, or Windows using WSL (Windows Subsystem for Linux).
+* Ensure Docker Desktop is installed and running.
+* In Docker Desktop Settings, go to **Resources > WSL Integration** and enable integration for your WSL distribution.
+* Restart Docker Desktop for changes to take effect.
+* Verify Docker is accessible from WSL by running `wsl -d Ubuntu -- docker --version` (replace "Ubuntu" with your WSL distribution name).
+* If it is available, run WSL with `wsl -d Ubuntu`
+
+
+**Known Issue: Docker Rate-Limiting**
+
+At the time of writing this quickstart, Airbyte installed with `abctl` performs unauthenticated pulls even if Docker credentials are provided: https://github.com/airbytehq/airbyte/issues/46309. Since Docker limits unauthenticated pulls, a `429 Too Many Requests` error may occur. If you encounter this error, launch Airbyte using the `run-ab-platform.sh` script as described in [the Airbyte quickstart](https://developers.teradata.com/quickstarts/manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage/#airbyte-open-source).
+
+## Demo project setup
+
+1. Clone the tutorial repository:
+```bash
+git clone https://github.com/Teradata/airflow-demos.git
+```
+
+2. Navigate to the directory:
+```bash
+cd airflow-demos/airbyte_dbt_airflow_teradata
+```
+Open the code in your preferred IDE.
+
+## Airbyte setup
+
+1. Install Airbyte according to the instructions in the [Airbyte Quickstart](https://docs.airbyte.com/using-airbyte/getting-started/oss-quickstart).
+
+2. After installing Airbyte OSS locally using `abctl`, generate and copy the credentials:
+
+```bash
+abctl local credentials
+```
+
+The output displays your Airbyte credentials. Copy all the values, specifically Client ID and Client Secret.
+
+You can also run the following commands to set a custom email and password:
+
+```bash
+abctl local credentials --email <desired email>
+abctl local credentials --password <desired password>
+```
+
+![Airbyte Credentials](./../images/airbyte_creds.png)
+
+3. Launch the Airbyte UI by opening [http://localhost:8000/](http://localhost:8000/) in your preferred browser. 
+
+   * You might see a "Sign in to access this site" message; ignore it by clicking "Cancel".
+
+![Site login request](./../images/airbyte-login-ignore.png)
+
+   * Log in with the credentials from the previous step.
+
+![Airbyte UI](./../images/airbyte_ui.png)
+
+
+3. Create a source:
+
+    * Go to the **Sources** tab and click **+ New source**.
+    * Search for "Sample Data" using the search bar and select **Sample Data**.
+    * Adjust the Count and optional fields as needed for your use case, or leave the defaults.
+    * Click **Set up source**.
+
+
+    ![Airbyte Sample Data Connection](./../images/airbyte_sample_connection.png) 
+
+
+4. Create a destination:
+
+    * Go to the **Destinations** tab and click **+ New destination**.
+    * Search for "Teradata" using the search bar and select **Teradata Vantage**.
+    * Enter the connection details:
+        * **Host**: Your Teradata instance hostname
+        * **Authorization mechanism**: For trials, use TD2
+        * **User**: Your Teradata username
+        * **Password**: Your Teradata instance password
+        * You can change the default schema in the optional fields, or leave the defaults.
+    * Click **Set up destination**.
+
+    ![Airbyte Teradata Connection](./../images/airbyte_teradata_connection.png) 
+
+5. Create a connection:
+
+    * Go to the **Connections** tab and click **+ New connection**.
+    * Select the source and destination you just created.
+    * Enter the connection details as needed.
+    * Click **Set up connection**.
+ 
+    ![Airbyte Connection](./../images/airbyte_connection.png)
+
+## Airflow setup
+
+Airflow is at the center of this tutorial. It is responsible for orchestrating Airbyte to move data to Teradata and triggering dbt to transform the data.
+
+1. **Rename the file from `.env.example` to `.env`.**
+   * On Linux/WSL, ensure `AIRFLOW_UID` in `.env` matches your host user id (for example, `1000`).
+   * For Airflow 3, set the following two variables in `.env` (they are included in `.env.example` as placeholders):
+     * `AIRFLOW__API_AUTH__JWT_SECRET`
+     * `AIRFLOW__API__SECRET_KEY`
+   * Why these are required:
+     * `AIRFLOW__API_AUTH__JWT_SECRET` is used to sign and validate Execution API JWTs exchanged between Airflow services (webserver, scheduler, worker, dag-processor).
+     * `AIRFLOW__API__SECRET_KEY` is used to sign API/session-related data consistently across services.
+     * If these values are missing or inconsistent between containers, tasks can fail with errors such as `Invalid auth token` or JWT signature validation failures.
+   * How to define them:
+     * Use long random values and keep them identical for all Airflow services in the same deployment.
+     * Example generation commands:
+
+   ```bash
+   openssl rand -hex 64
+   openssl rand -hex 64
+   ```
+
+   * Then set the first output as `AIRFLOW__API_AUTH__JWT_SECRET` and the second as `AIRFLOW__API__SECRET_KEY` in `.env`.
+
+2. **Build the custom Airflow image**
+
+   ```bash
+   docker compose build
+   ```
+
+3. **Launch the Airflow container**
+
+   ```bash
+   docker compose up
+   ```
+
+   This might take a few minutes initially as it sets up necessary databases and metadata.
+
+4. **Setting up Airflow Connections**
+
+   Both Airbyte and dbt require connections to be set up in Airflow:
+
+   * Access the Airflow UI by navigating to `http://localhost:8080` in your browser.
+   * The Username is admin, the password is retrieved by searching on docker desktop logs.
+
+   ![Airflow Credentials](./../images/airflow-credentials.png) 
+
+   * Go to **Admin** > **Connections**.
+
+   * **Create Airbyte Connection**
+   * Go to **Admin** > **Connections**.
+
+     Click the _+ Add Connection_ button to create a new connection and fill in the following details:
+
+     * **Connection Id**: A unique ID for the Airbyte connection that will be used in DAGs to trigger Airbyte syncs. Name it `airbyte_connection`.
+     * **Connection Type**: Select `Airbyte`.
+     * **Server URL**: The URL of the Airbyte instance. For local setups, use `http://host.docker.internal:8000/api/public/v1`. For remote instances, use the instance URL.
+     * **Client ID**: Copy from the Airbyte credentials generated above.
+     * **Client Secret**: Copy from the Airbyte credentials generated above.
+     * **Token URL**: For local deployments, use `http://host.docker.internal:8000/api/public/v1/applications/token`.
+
+     Click **Save**.
+     
+     ![Airflow Airbyte Connection](./../images/airflow-airbyte-connection.png)
+
+   * **Create Teradata Connection**
+
+     Click the `+` button to create a new connection and fill in the following details:
+     * **Connection Id**: A unique ID for the Teradata connection. Name it `teradata_connection`.
+     * **Connection Type**: Select **Teradata**.
+     * **Database Server URL** (required): The Teradata instance hostname to connect to.
+     * **Username** (required): Your Teradata username.
+     * **Password** (required): Your Teradata password.
+     * **Database** (optional): The name of the database to connect to. Specify `ecommerce`.
+
+     Click **Save**.
+
+     ![Airflow Teradata Connection](./../images/airflow-teradata-connection.png)
+
+5. **Link Airbyte connection to the Airflow DAG**
+
+   The last step before executing the DAG in Airflow is to link the `connection_id` from Airbyte:
+
+   * Visit the Airbyte UI at http://localhost:8000/.
+   * In the **Connections** tab, select the **Sample Data to Teradata** connection and copy its connection ID from the URL.
+   * Update the `connection_id` in the `extract_data` task within `orchestration/airflow/dags/elt_dag.py` with this ID.
+
+   That's it! Airflow is now configured to work with dbt and Airbyte.
+
+## Orchestrating with Airflow
+
+After verifying that all previous steps are working correctly, it's time to run your data pipeline.
+
+1. In the Airflow UI, go to the **DAGs** section, locate `elt_dag`, and click **Trigger**.
+    * This initiates the complete data pipeline: Airbyte syncs data from Sample Data to Teradata, then dbt transforms the raw data into `staging` and `marts` models.
+    * Check the status of `elt_dag` by clicking on it.
+
+![DAGs](./../images/airflow-dags.png)
+
+2. After both DAGs complete, check the `dbt_dag` graph.
+
+![DAGs two complete](./../images/dags-complete.png)
+
+
+!!! note
+    The dbt project is located in the `dbt_project` folder.
+
+3. You can check the newly created views in the `transformed_data` dataset on Teradata using a database client UI.
+
+![Materialized Models](./../images/materialized-models.png)
+
+## Conclusion
+
+After completing all the steps above, you should have a working stack of Airbyte, dbt, and Airflow with Teradata. You can use this as a starting point for your projects and adapt it to your specific needs.

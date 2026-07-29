@@ -1,0 +1,225 @@
+name: Publish to Fluid Topics
+
+# ── Triggers ──────────────────────────────────────────────────────────────────
+#
+# workflow_dispatch — manual publish with environment selection
+# pull_request — publish to stage when tech-guides/ changes
+# push (main) — publish to prod when merged to main
+#
+# Stage publishes are internal-only.
+# Prod publishes are public (docs.teradata.com).
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        type: choice
+        options:
+          - stage
+          - prod
+      dry_run:
+        description: "Dry run: validate but do not publish"
+        required: false
+        type: boolean
+        default: false
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths:
+      - 'tech-guides/**'
+      - '.github/scripts/build.py'
+      - '.github/workflows/publish-fluid-topics.yml'
+
+  push:
+    branches: [main]
+    paths:
+      - 'tech-guides/**'
+      - '.github/scripts/build.py'
+      - '.github/workflows/publish-fluid-topics.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# ── Permissions ───────────────────────────────────────────────────────────────
+permissions:
+  contents: read
+  pull-requests: write  # For adding comments to merged PRs
+
+# ── Jobs ──────────────────────────────────────────────────────────────────────
+jobs:
+
+  # ── Determine target environment ───────────────────────────────────────────
+  determine-environment:
+    name: Determine Environment
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.set-env.outputs.environment }}
+      dry_run: ${{ steps.set-env.outputs.dry_run }}
+    steps:
+      - name: Set environment
+        id: set-env
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "environment=${{ inputs.environment }}" >> $GITHUB_OUTPUT
+            echo "dry_run=${{ inputs.dry_run }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "push" && "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "environment=prod" >> $GITHUB_OUTPUT
+            echo "dry_run=false" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "environment=stage" >> $GITHUB_OUTPUT
+            echo "dry_run=false" >> $GITHUB_OUTPUT
+          fi
+
+  # ── Build and publish ──────────────────────────────────────────────────────
+  publish:
+    name: Publish — tech-guides → ${{ needs.determine-environment.outputs.environment }}
+    needs: determine-environment
+    runs-on: ubuntu-latest
+    environment: ${{ needs.determine-environment.outputs.environment }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Set up Python environment ───────────────────────────────────────────
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install ftpub CLI
+        run: |
+          # ftpub is installed in the runner environment or via pip
+          # Adjust this based on your actual ftpub installation method
+          pip install --upgrade pip
+          # pip install ftpub  # If available via PyPI
+          # OR: sudo apt-get install ftpub  # If via system package
+          echo "Checking for ftpub..."
+          which ftpub || echo "::warning::ftpub not found - install step may need adjustment"
+
+      # ── Build and validate ──────────────────────────────────────────────────
+      # Preprocess MDX, validate syntax, run TOC checks.
+      # Always runs, even in dry-run mode, to catch issues early.
+
+      - name: Build and validate
+        run: |
+          python .github/scripts/build.py --dry-run
+
+      # ── Dry run gate ────────────────────────────────────────────────────────
+
+      - name: Dry run — skip publish
+        if: needs.determine-environment.outputs.dry_run == 'true'
+        run: |
+          echo "::notice::Dry run enabled — ftpub will not be called."
+          echo "Build and validation completed successfully."
+
+      # ── Publish with ftpub ──────────────────────────────────────────────────
+      # Environment-scoped secrets (FT_PORTAL_URL, FT_API_KEY) are automatically
+      # provided based on the environment: stage or prod.
+      #
+      # ftpub collect_and_publish uploads the entire build directory and waits
+      # for Fluid Topics processing to complete.
+
+      - name: Publish to Fluid Topics
+        if: needs.determine-environment.outputs.dry_run != 'true'
+        env:
+          FT_PORTAL_URL: ${{ secrets.FT_PORTAL_URL }}
+          FT_API_KEY: ${{ secrets.FT_API_KEY }}
+        run: |
+          # Verify secrets are configured
+          if [ -z "$FT_PORTAL_URL" ]; then
+            echo "::error::FT_PORTAL_URL secret not configured for ${{ needs.determine-environment.outputs.environment }} environment"
+            exit 1
+          fi
+          if [ -z "$FT_API_KEY" ]; then
+            echo "::error::FT_API_KEY secret not configured for ${{ needs.determine-environment.outputs.environment }} environment"
+            exit 1
+          fi
+
+          echo "Publishing to ${{ needs.determine-environment.outputs.environment }}: $FT_PORTAL_URL"
+
+          # Call ftpub with environment variables set
+          # The publish() function in .github/scripts/build.py reads FT_URL and FT_API_KEY from env
+          FT_URL="$FT_PORTAL_URL" FT_API_KEY="$FT_API_KEY" python .github/scripts/build.py
+
+      # ── Add PR comment (prod only) ──────────────────────────────────────────
+
+      - name: Add PR comment with docs link
+        if: |
+          needs.determine-environment.outputs.environment == 'prod' && 
+          github.event_name == 'push' &&
+          needs.determine-environment.outputs.dry_run != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = `✅ Documentation published to [docs.teradata.com](https://docs.teradata.com/)`;
+            
+            // Find the PR that was just merged
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              sort: 'updated',
+              direction: 'desc',
+              per_page: 10
+            });
+            
+            const mergedPR = prs.find(pr => 
+              pr.merge_commit_sha === context.sha && pr.merged_at
+            );
+            
+            if (mergedPR) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: mergedPR.number,
+                body: message
+              });
+            }
+
+      # ── Job summary ─────────────────────────────────────────────────────────
+
+      - name: Write job summary
+        if: always()
+        env:
+          ENVIRONMENT: ${{ needs.determine-environment.outputs.environment }}
+          DRY_RUN: ${{ needs.determine-environment.outputs.dry_run }}
+          PORTAL_URL: ${{ secrets.FT_PORTAL_URL }}
+          ACTOR: ${{ github.actor }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'EOF'
+          import os, datetime
+
+          timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+          dry_run = os.environ.get("DRY_RUN", "false") == "true"
+          env = os.environ.get("ENVIRONMENT", "unknown")
+          portal = os.environ.get("PORTAL_URL", "")
+
+          lines = [
+              "## Publish Summary",
+              "",
+              "| Field | Value |",
+              "|---|---|",
+              f"| Content | `tech-guides/` (Markdown) |",
+              f"| Environment | **{env}** |",
+              f"| Portal URL | {portal if portal else '(not set)'} |",
+              f"| Dry run | {'Yes — ftpub was not called' if dry_run else 'No'} |",
+              f"| Triggered by | {os.environ.get('ACTOR', 'unknown')} |",
+              f"| Event | {os.environ.get('EVENT', 'unknown')} |",
+              f"| Timestamp | {timestamp} |",
+              "",
+          ]
+
+          if not dry_run:
+              lines.append(f"✅ Content published to **{env}** environment.")
+          else:
+              lines.append("ℹ️ Dry run completed. No changes published.")
+
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
+              f.write("\n".join(lines))
+          EOF

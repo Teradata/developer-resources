@@ -1,0 +1,137 @@
+<svg width="600" height="180" viewBox="0 0 600 180" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Product Knowledge</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5F02"/>
+      <stop offset="50%" stop-color="#AE5A5F"/>
+      <stop offset="100%" stop-color="#3053F4"/>
+    </linearGradient>
+    <linearGradient id="underline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5F02"/>
+      <stop offset="50%" stop-color="#AE5A5F"/>
+      <stop offset="100%" stop-color="#3053F4"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect x="32" y="82" width="536" height="60"/>
+    </clipPath>
+    <style>
+      @keyframes flip-docs {
+        0%         { transform: translateY(60px); }
+        2%         { transform: translateY(0px); }
+        11%        { transform: translateY(0px); }
+        13%        { transform: translateY(-60px); }
+        100%       { transform: translateY(-60px); }
+      }
+      @keyframes flip-skills {
+        0%         { transform: translateY(60px); }
+        11%        { transform: translateY(60px); }
+        13%        { transform: translateY(0px); }
+        22%        { transform: translateY(0px); }
+        24%        { transform: translateY(-60px); }
+        100%       { transform: translateY(-60px); }
+      }
+      @keyframes flip-content {
+        0%         { transform: translateY(60px); }
+        22%        { transform: translateY(60px); }
+        24%        { transform: translateY(0px); }
+        33%        { transform: translateY(0px); }
+        35%        { transform: translateY(-60px); }
+        100%       { transform: translateY(-60px); }
+      }
+      @keyframes flip-context {
+        0%         { transform: translateY(60px); }
+        33%        { transform: translateY(60px); }
+        35%        { transform: translateY(0px); }
+        44%        { transform: translateY(0px); }
+        46%        { transform: translateY(-60px); }
+        100%       { transform: translateY(-60px); }
+      }
+      @keyframes flip-localization {
+        0%         { transform: translateY(60px); }
+        44%        { transform: translateY(60px); }
+        46%        { transform: translateY(0px); }
+        55%        { transform: translateY(0px); }
+        57%        { transform: translateY(-60px); }
+        100%       { transform: translateY(-60px); }
+      }
+      @keyframes flip-knowledge {
+        0%         { transform: translateY(60px); }
+        55%        { transform: translateY(60px); }
+        57%        { transform: translateY(0px); }
+        96%        { transform: translateY(0px); }
+        100%       { transform: translateY(60px); }
+      }
+      .w { animation-duration: 12s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); }
+      .docs         { animation-name: flip-docs; }
+      .skills       { animation-name: flip-skills; }
+      .content      { animation-name: flip-content; }
+      .context      { animation-name: flip-context; }
+      .localization { animation-name: flip-localization; }
+      .knowledge    { animation-name: flip-knowledge; }
+    </style>
+  </defs>
+
+  <!-- Gradient background -->
+  <rect width="600" height="180" rx="12" fill="url(#bg)"/>
+
+  <!-- Subtle dark overlay to deepen bg so text pops -->
+  <rect width="600" height="180" rx="12" fill="#00233C" opacity="0.72"/>
+
+  <!-- Static "product" -->
+  <text x="32" y="76"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="42" font-weight="300" fill="#ffffff" letter-spacing="-0.5">product</text>
+
+  <!-- Flip slot -->
+  <g clip-path="url(#clip)">
+    <text class="w docs" x="32" y="130"
+      font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      font-size="42" font-weight="600" fill="#ffffff" letter-spacing="-0.5"
+      style="transform: translateY(60px)">quick starts</text>
+
+    <text class="w skills" x="32" y="130"
+      font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      font-size="42" font-weight="600" fill="#ffffff" letter-spacing="-0.5"
+      style="transform: translateY(60px)">best practices</text>
+
+    <text class="w content" x="32" y="130"
+      font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      font-size="42" font-weight="600" fill="#ffffff" letter-spacing="-0.5"
+      style="transform: translateY(60px)">integrations</text>
+
+    <text class="w context" x="32" y="130"
+      font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      font-size="42" font-weight="600" fill="#ffffff" letter-spacing="-0.5"
+      style="transform: translateY(60px)">demos</text>
+
+    <text class="w localization" x="32" y="130"
+      font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      font-size="42" font-weight="600" fill="#ffffff" letter-spacing="-0.5"
+      style="transform: translateY(60px)">deep dives</text>
+
+    <text class="w knowledge" x="32" y="133"
+      font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+      font-size="46" font-weight="800" fill="#FF5F02" letter-spacing="-1"
+      style="transform: translateY(60px)">tech articles</text>
+  </g>
+
+  <!-- Gradient underline -->
+  <rect x="32" y="152" width="290" height="4" rx="2" fill="url(#underline)"/>
+
+  <!-- Orange dot -->
+  <circle cx="330" cy="154" r="3" fill="#FF5F02"/>
+
+  <!-- Teradata wordmark scaled to 14px tall, white fill -->
+  <g transform="translate(340, 147) scale(0.7)">
+    <path d="M0 2.30155H3.63859V5.66123H7.69681V8.88018H3.63859V14.5069C3.63859 15.9629 4.39343 16.4388 5.45788 16.4388H7.69681V19.6578H5.45788C1.73485 19.6578 0 18.0355 0 14.5069V2.30155Z" fill="#FF5F02"/>
+    <path d="M16.4018 19.9904C11.9239 19.9904 8.92759 17.0504 8.92759 12.6851C8.92759 8.31981 11.8676 5.32347 16.2048 5.32347C20.5419 5.32347 23.3694 8.17907 23.3694 12.5444C23.3694 12.964 23.3412 13.4118 23.2568 13.944H12.7351C13.0703 15.904 14.2754 16.8278 16.4581 16.8278C17.8296 16.8278 18.8377 16.2392 19.2292 15.4562H22.9804C22.1411 18.1711 19.7896 19.9904 16.4018 19.9904ZM12.7913 10.9784H19.5644C19.2011 9.21538 18.1366 8.3761 16.2048 8.3761C14.3855 8.3761 13.211 9.27167 12.7913 10.9784Z" fill="#FF5F02"/>
+    <path d="M25.3857 5.65867H28.8835V7.33723C30.1706 6.05017 31.711 5.40535 33.1669 5.65867V9.01835C31.3476 8.79574 30.1732 9.63502 29.0243 11.1166V19.6526H25.3857V5.65867Z" fill="#FF5F02"/>
+    <path d="M37.6985 19.8215C35.1244 19.8215 33.0799 18.3093 33.0799 15.1748C33.0799 12.6006 34.7022 10.8376 38.3408 10.8376H41.5034V10.418C41.5034 9.13094 40.6923 8.59871 38.676 8.59871C37.3326 8.59871 36.2682 8.73945 34.8122 9.15909V5.88385C35.933 5.57679 37.3326 5.37977 38.983 5.37977C43.182 5.37977 45.1395 6.97389 45.1395 10.418V19.6552H41.5853V18.8441L40.7742 19.1793C39.7379 19.5989 38.676 19.8241 37.696 19.8241L37.6985 19.8215ZM39.6867 16.5463L41.506 15.7633V13.6932H38.7348C37.4759 13.6932 36.7185 14.2818 36.7185 15.2055C36.7185 16.2981 37.4734 16.8278 38.4252 16.8278C38.8167 16.8278 39.2645 16.7152 39.6841 16.5488L39.6867 16.5463Z" fill="#FF5F02"/>
+    <path d="M58.0178 19.6552V18.7315L57.8233 18.8159C56.5363 19.4326 55.1648 19.7396 53.8496 19.7396C50.3517 19.7396 47.2709 17.4726 47.2709 12.6595C47.2709 7.84643 50.3491 5.5512 53.8777 5.5512C55.1648 5.5512 56.5363 5.85826 57.8233 6.47492L57.9359 6.53122V0.341525H61.5745V19.6552H58.0178ZM54.52 16.38C55.3029 16.38 56.1704 16.1829 57.0659 15.7633L57.9334 15.3437V9.97022L57.0659 9.55058C56.1704 9.13094 55.3029 8.93391 54.52 8.93391C52.5036 8.93391 50.994 10.1928 50.994 12.6569C50.994 15.121 52.5062 16.38 54.52 16.38Z" fill="#FF5F02"/>
+    <path d="M68.1506 19.8215C65.5765 19.8215 63.532 18.3093 63.532 15.1748C63.532 12.6006 65.1543 10.8376 68.7928 10.8376H71.9555V10.418C71.9555 9.13094 71.1444 8.59871 69.128 8.59871C67.7847 8.59871 66.7202 8.73945 65.2643 9.15909V5.88385C66.385 5.57679 67.7847 5.37977 69.4351 5.37977C73.634 5.37977 75.5915 6.97389 75.5915 10.418V19.6552H72.0374V18.8441L71.2262 19.1793C70.1899 19.5989 69.128 19.8241 68.148 19.8241L68.1506 19.8215ZM70.1388 16.5463L71.9581 15.7633V13.6932H69.1869C67.928 13.6932 67.1706 14.2818 67.1706 15.2055C67.1706 16.2981 67.9254 16.8278 68.8773 16.8278C69.2688 16.8278 69.7166 16.7152 70.1362 16.5488L70.1388 16.5463Z" fill="#FF5F02"/>
+    <path d="M78.2808 2.30155H81.9194V5.66123H85.9776V8.88018H81.9194V14.5069C81.9194 15.9629 82.6742 16.4388 83.7387 16.4388H85.9776V19.6578H83.7387C80.0157 19.6578 78.2808 18.0355 78.2808 14.5069V2.30155Z" fill="#FF5F02"/>
+    <path d="M91.8551 19.8215C89.281 19.8215 87.2365 18.3093 87.2365 15.1748C87.2365 12.6006 88.8588 10.8376 92.4974 10.8376H95.66V10.418C95.66 9.13094 94.8489 8.59871 92.8326 8.59871C91.4892 8.59871 90.4248 8.73945 88.9688 9.15909V5.88385C90.0896 5.57679 91.4892 5.37977 93.1396 5.37977C97.3386 5.37977 99.2961 6.97389 99.2961 10.418V19.6552H95.7419V18.8441L94.9308 19.1793C93.8945 19.5989 92.8326 19.8241 91.8526 19.8241L91.8551 19.8215ZM93.8433 16.5463L95.6626 15.7633V13.6932H92.8914C91.6325 13.6932 90.8751 14.2818 90.8751 15.2055C90.8751 16.2981 91.63 16.8278 92.5818 16.8278C92.9733 16.8278 93.4211 16.7152 93.8408 16.5488L93.8433 16.5463Z" fill="#FF5F02"/>
+    <path d="M101.399 18.0585C101.399 16.9941 102.239 16.1548 103.331 16.1548C104.424 16.1548 105.263 16.9941 105.263 18.0585C105.263 19.123 104.396 19.9904 103.331 19.9904C102.267 19.9904 101.399 19.123 101.399 18.0585Z" fill="#FF5F02"/>
+  </g>
+
+</svg>

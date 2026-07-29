@@ -1,0 +1,2 @@
+# Python dependencies for building and publishing to Fluid Topics
+# ftpub - Fluid Topics publisher CLI (adjust based on actual installation method)
