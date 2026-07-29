@@ -17,6 +17,26 @@ import subprocess
 import sys
 from typing import Optional
 
+
+def load_env_file():
+    """Load environment variables from .env file if it exists (for local development)."""
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), ".env")
+    if os.path.exists(env_path):
+        with open(env_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, value = line.split("=", 1)
+                    key = key.strip()
+                    value = value.strip()
+                    # Only set if not already in environment
+                    if key not in os.environ:
+                        os.environ[key] = value
+
+
+# Load .env for local development (ignored in CI where secrets are injected)
+load_env_file()
+
 SOURCE_DIR = "tech-guides"
 BUILD_DIR = "build/tech-guides"
 # Default to staging, override via environment variables in CI

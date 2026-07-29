@@ -5,9 +5,6 @@ name: Publish to Fluid Topics
 # workflow_dispatch — manual publish with environment selection
 # pull_request — publish to stage when tech-guides/ changes
 # push (main) — publish to prod when merged to main
-#
-# Stage publishes are internal-only.
-# Prod publishes are public (docs.teradata.com).
 
 on:
   workflow_dispatch:
@@ -30,15 +27,11 @@ on:
     branches: [main]
     paths:
       - 'tech-guides/**'
-      - '.github/scripts/build.py'
-      - '.github/workflows/publish-fluid-topics.yml'
 
   push:
     branches: [main]
     paths:
       - 'tech-guides/**'
-      - '.github/scripts/build.py'
-      - '.github/workflows/publish-fluid-topics.yml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
@@ -79,7 +72,7 @@ jobs:
     name: Publish — tech-guides → ${{ needs.determine-environment.outputs.environment }}
     needs: determine-environment
     runs-on: ubuntu-latest
-    environment: ${{ needs.determine-environment.outputs.environment }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -118,33 +111,25 @@ jobs:
           echo "Build and validation completed successfully."
 
       # ── Publish with ftpub ──────────────────────────────────────────────────
-      # Environment-scoped secrets (FT_PORTAL_URL, FT_API_KEY) are automatically
-      # provided based on the environment: stage or prod.
-      #
       # ftpub collect_and_publish uploads the entire build directory and waits
       # for Fluid Topics processing to complete.
 
       - name: Publish to Fluid Topics
         if: needs.determine-environment.outputs.dry_run != 'true'
         env:
-          FT_PORTAL_URL: ${{ secrets.FT_PORTAL_URL }}
-          FT_API_KEY: ${{ secrets.FT_API_KEY }}
+          FT_URL: ${{ needs.determine-environment.outputs.environment == 'prod' && 'https://docs.teradata.com' || 'https://docs-dev.teradata.com' }}
+          FT_API_KEY: ${{ needs.determine-environment.outputs.environment == 'prod' && secrets.FT_API_PROD_KEY || secrets.FT_API_STAGE_KEY }}
         run: |
-          # Verify secrets are configured
-          if [ -z "$FT_PORTAL_URL" ]; then
-            echo "::error::FT_PORTAL_URL secret not configured for ${{ needs.determine-environment.outputs.environment }} environment"
-            exit 1
-          fi
+          # Verify API key is configured
           if [ -z "$FT_API_KEY" ]; then
-            echo "::error::FT_API_KEY secret not configured for ${{ needs.determine-environment.outputs.environment }} environment"
+            echo "::error::FT_API_${{ needs.determine-environment.outputs.environment == 'prod' && 'PROD' || 'STAGE' }}_KEY secret not configured"
             exit 1
           fi
 
-          echo "Publishing to ${{ needs.determine-environment.outputs.environment }}: $FT_PORTAL_URL"
+          echo "Publishing to ${{ needs.determine-environment.outputs.environment }}: $FT_URL"
 
-          # Call ftpub with environment variables set
-          # The publish() function in .github/scripts/build.py reads FT_URL and FT_API_KEY from env
-          FT_URL="$FT_PORTAL_URL" FT_API_KEY="$FT_API_KEY" python .github/scripts/build.py
+          # Call build.py which reads FT_URL and FT_API_KEY from environment
+          python .github/scripts/build.py
 
       # ── Add PR comment (prod only) ──────────────────────────────────────────
 
@@ -188,7 +173,7 @@ jobs:
         env:
           ENVIRONMENT: ${{ needs.determine-environment.outputs.environment }}
           DRY_RUN: ${{ needs.determine-environment.outputs.dry_run }}
-          PORTAL_URL: ${{ secrets.FT_PORTAL_URL }}
+          FT_URL: ${{ needs.determine-environment.outputs.environment == 'prod' && 'https://docs.teradata.com' || 'https://docs-dev.teradata.com' }}
           ACTOR: ${{ github.actor }}
           EVENT: ${{ github.event_name }}
         run: |
@@ -198,7 +183,7 @@ jobs:
           timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
           dry_run = os.environ.get("DRY_RUN", "false") == "true"
           env = os.environ.get("ENVIRONMENT", "unknown")
-          portal = os.environ.get("PORTAL_URL", "")
+          portal = os.environ.get("FT_URL", "")
 
           lines = [
               "## Publish Summary",
