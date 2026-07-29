@@ -174,6 +174,84 @@ def resolve_content(
     return content
 
 
+def normalize_image_paths(content: str, file_path: str) -> str:
+    """
+    Normalize relative image paths to work correctly in Fluid Topics.
+    
+    When partials with relative image paths (e.g., ../images/foo.png) are inlined
+    into files in different directories, the paths need to be adjusted to point
+    to the actual image location relative to BUILD_DIR.
+    
+    file_path: absolute path to the markdown file (e.g., build/tech-guides/subdir/file.md)
+    """
+    file_dir = os.path.dirname(file_path)
+    
+    def normalize_path(img_path: str) -> str:
+        """Convert a relative image path to be relative to BUILD_DIR."""
+        # Skip absolute URLs
+        if img_path.startswith(('http://', 'https://', '//')):
+            return img_path
+        
+        # Skip absolute paths
+        if img_path.startswith('/'):
+            return img_path
+        
+        # Only process paths with directory separators
+        if '/' not in img_path:
+            return img_path
+        
+        # Resolve the path relative to the file's directory
+        resolved_path = os.path.normpath(os.path.join(file_dir, img_path))
+        
+        # Check if the resolved path exists
+        if os.path.exists(resolved_path):
+            # Convert to relative from BUILD_DIR
+            try:
+                rel_path = os.path.relpath(resolved_path, BUILD_DIR)
+                return rel_path.replace(os.sep, '/')
+            except ValueError:
+                return img_path
+        else:
+            # Path doesn't exist as resolved. Try stripping ../ and ./ to find it
+            cleaned_path = img_path
+            while cleaned_path.startswith(('../', './')):
+                cleaned_path = cleaned_path.replace('../', '', 1).replace('./', '', 1)
+            
+            # Try this cleaned path from BUILD_DIR
+            candidate = os.path.join(BUILD_DIR, cleaned_path)
+            if os.path.exists(candidate):
+                # Use the cleaned path (relative to BUILD_DIR)
+                return cleaned_path.replace(os.sep, '/')
+            
+            # Couldn't find it, return original
+            return img_path
+    
+    # Pattern for markdown images: ![alt](path)
+    def replace_md_img(match):
+        alt_text = match.group(1)
+        img_path = match.group(2)
+        new_path = normalize_path(img_path)
+        return f"![{alt_text}]({new_path})"
+    
+    # Pattern for HTML img tags: <img ...src="path"...>
+    def replace_html_img(match):
+        prefix = match.group(1) or ''
+        img_path = match.group(2)
+        suffix = match.group(3)
+        new_path = normalize_path(img_path)
+        return f'{prefix}src="{new_path}"{suffix}'
+    
+    # Replace markdown images
+    md_img_pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
+    content = md_img_pattern.sub(replace_md_img, content)
+    
+    # Replace HTML images (match src attribute with single or double quotes)
+    html_img_pattern = re.compile(r'(<img\s+(?:[^>]*\s+)?)src=["\']([^"\']+)["\']([^>]*>)', re.IGNORECASE)
+    content = html_img_pattern.sub(replace_html_img, content)
+    
+    return content
+
+
 def process_file(file_path: str) -> str:
     """
     Resolve all MDX partial imports in a markdown file and return
@@ -190,6 +268,9 @@ def process_file(file_path: str) -> str:
         print(f"  WARNING: unresolved partials in {rel}:")
         for m in missing:
             print(m)
+
+    # Normalize image paths to be relative to build root
+    content = normalize_image_paths(content, file_path)
 
     # Collapse runs of 3+ blank lines down to 2
     content = re.sub(r"\n{3,}", "\n\n", content)

@@ -276,6 +276,6 @@ We now have a source, destination, and connection on Airbyte Cloud created and m
 
 ### Additional Resources 
 
-- [Use Airbyte to Load Data from External Sources to Teradata](./use-airbyte-to-load-data-from-external-sources-to-teradata.md)
+- [Use Airbyte to Load Data from External Sources to Teradata](./use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md)
 - [Airbyte API Reference Documentation](https://reference.airbyte.com/reference/createsource).
 - [Terraform Airbyte Provider Docs](https://registry.terraform.io/providers/airbytehq/airbyte/latest/docs/resources/destination_teradata#example-usage)

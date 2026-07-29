@@ -84,8 +84,6 @@ toc:
       - filepath: "analyze-data/ml.md"
       - filepath: "analyze-data/sto.md"
       - filepath: "analyze-data/perform-time-series-analysis-using-teradata.md"
-      - filepath: "analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-byom.md"
-      - filepath: "analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git.md"
       - filepath: "analyze-data/execute-airflow-workflows-with-clearscape-analytics-modelops-model-factory-solution.md"
       - filepath: "analyze-data/sagemaker-with-teradata-vantage.md"
       - filepath: "analyze-data/use-teradata-vantage-with-azure-machine-learning-studio.md"

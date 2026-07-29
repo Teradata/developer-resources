@@ -77,4 +77,4 @@ In this article, we explored various data ingestion use cases, provided a list o
 
 * [Teradata Fabric](https://docs.teradata.com/r/Enterprise_IntelliFlex_Lake_VMware/QueryGrid-Installation-and-User-Guide-3.10)
 
-* [Use Airbyte to load data from external sources to Teradata](./use-airbyte-to-load-data-from-external-sources-to-teradata.md)
+* [Use Airbyte to load data from external sources to Teradata](./use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md)

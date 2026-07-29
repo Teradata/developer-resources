@@ -3,3 +3,5 @@ ftpub.sh
 ftpub.sh
 /build
 .env
+*.backup
+*.syntax-backup
