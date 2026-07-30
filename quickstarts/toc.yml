@@ -1,6 +1,6 @@
 metadata:
   - key: "ft:originId"
-    value: "technical-articles"
+    value: "technical-guides"
   - key: "ft:title"
     value: "Technical Guides"
   - key: "ft:description"
@@ -11,6 +11,8 @@ metadata:
     value: ["Teradata Cloud", "Teradata Factory"]
   - key: "td:contentType"
     value: "Technical Guides"
+  - key: "access"
+    value: "teradata-only"
 
 toc:
   - filepath: "introduction/teradata-engine-architecture-and-concepts.md"
