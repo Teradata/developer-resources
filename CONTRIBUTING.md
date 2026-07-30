@@ -10,17 +10,156 @@
   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 
-### Write a New Article
+## Authoring Workflow
 
-...
+Content in this repository is published to Teradata's documentation portal, which
+runs on **Fluid Topics**. Fluid Topics uses a Markdown flavor that differs from the
+Docusaurus/MDX syntax previously used on the developer site — follow the conventions
+below so your topic renders correctly.
 
-### Validate Your Changes Locally
+A complete, copy-pasteable example of every convention lives in **[template.md](template.md)**.
 
-...
+### 1. Adding and Editing Topics
 
-### Submit Your Contribution for Review
+Topics live under `quickstarts/<section>/`, for example
+`quickstarts/manage-data/my-topic.md`.
 
-...
+**To add a new topic:**
+
+1. Copy [template.md](template.md) into the appropriate section folder and rename it. Use a descriptive, hyphenated filename (e.g. `load-data-with-airbyte.md`).
+1. Fill in the frontmatter (see [Required Metadata](#2-required-metadata)) and write the body starting with a single H1.
+1. Place any images in the nearest `images/` folder (e.g. `quickstarts/manage-data/images/`, or the shared `quickstarts/images/`) and reference them with a relative path.
+1. Add the file to `quickstarts/toc.yml` so it publishes (see [Add a Topic to the Table of Contents](#4-add-a-topic-to-the-table-of-contents)).
+
+**To edit an existing topic:** edit the file in place and update the `ft:lastEdition`
+date in its frontmatter.
+
+> **Important:** A topic is only published if it is listed in `quickstarts/toc.yml`.
+> Files that aren't in the TOC remain in the repository but are skipped at build time —
+> so you can keep drafts and not-yet-ready guides in the tree without publishing them.
+
+### 2. Required Metadata
+
+Every topic begins with a YAML frontmatter block delimited by `---`:
+
+```yaml
+---
+id: my-topic-id
+sidebar_position: 3
+author: Jane Doe
+email: jane.doe@teradata.com
+ft:lastEdition: "2026-07-30"
+description: One-sentence summary of the topic. Used for search results and link previews.
+keywords: [teradata, vantage, object storage, elt]
+---
+```
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `ft:lastEdition` | **Yes** | Fluid Topics-specific. ISO `YYYY-MM-DD`, **double-quoted**. Replaces Docusaurus `page_last_update`. |
+| `description` | **Yes** | One sentence; appears in search results and previews. |
+| `id` | Recommended | Stable slug for the topic. |
+| `sidebar_position` | Recommended | Intended order within its section. |
+| `author` / `email` | Recommended | Contributor attribution. |
+| `keywords` | Recommended | YAML list; improves search. |
+
+Immediately after the frontmatter, the body must begin with **exactly one H1**
+(`# Title`). More than one H1, or none, will fail validation.
+
+### 3. Common Syntax Formatting (Fluid Topics rules)
+
+These conventions differ from Docusaurus/MDX. See [template.md](template.md) for live
+examples of each.
+
+**Admonitions** — use `!!! <type>`, not `:::note`. Indent the body 4 spaces.
+Supported types: `note`, `info`, `tip`, `warning`.
+
+```markdown
+!!! note
+    Body text, indented four spaces.
+```
+
+**Tabbed content** — use `=== "Label"`, not `<Tabs>`/`<TabItem>`. Leave a blank line
+after each tab header and indent the body 4 spaces.
+
+```markdown
+=== "Windows"
+
+    Content indented four spaces.
+
+=== "macOS / Linux"
+
+    Content indented four spaces.
+```
+
+**Code blocks** — use plain fenced blocks with a language tag. Do **not** add
+Docusaurus attributes like `id=`, `role=`, or `title=`; the Fluid Topics connector
+rejects them.
+
+- Good: <code>```bash</code>
+- Bad: <code>``` bash , id="install", role="content-editable"</code>
+
+**Images** — relative paths to an `images/` folder. The target file must exist (the
+build fails on missing images), and do not URL-encode slashes (`%2F`).
+
+```markdown
+![Descriptive alt text](images/example.png)
+```
+
+**Headings** — exactly one H1 (`#`) per file; use `##` and `###` for sections.
+
+**Links**
+- Internal links must include the `.md` extension and the correct relative path, e.g. `[NOS](../manage-data/nos.md)`. The target must also be published (listed in `toc.yml`) or the link will not resolve.
+- External links use standard Markdown: `[Teradata Docs](https://docs.teradata.com)`.
+
+**Reusable content (partials)** — shared snippets live in `_partials/`. Import the
+partial and drop its component tag where the content belongs; the build inlines it.
+
+```markdown
+import TrialDocsNote from '../_partials/teradata_trial.mdx'
+
+<TrialDocsNote/>
+```
+
+### 4. Add a Topic to the Table of Contents
+
+`quickstarts/toc.yml` controls the left-hand navigation — both the order and the
+hierarchy — and determines what gets published. **A topic must be listed here to appear.**
+
+Each section is a folder represented by an `_index.md` container page, with its topics
+nested underneath as `children`. To add a topic, insert a `- filepath:` line under the
+correct parent's `children:`, in the position where you want it to appear:
+
+```yaml
+  - filepath: "manage-data/_index.md"
+    children:
+      - filepath: "manage-data/nos.md"
+      - filepath: "manage-data/my-new-topic.md"   # <- your new topic
+      - filepath: "manage-data/airflow.md"
+```
+
+- Paths are relative to `quickstarts/`.
+- To add a **new section**, create the folder, add an `_index.md` (a short container page with a single H1 and a one-line intro), and add a container entry with its own `children:`.
+
+### 5. Validate Your Changes Locally
+
+Before opening a pull request, run the build in dry-run mode. This resolves partials,
+prunes files that aren't in the TOC, and runs the Markdown and TOC validation checks —
+without uploading anything:
+
+```bash
+python .github/scripts/build.py --dry-run
+```
+
+Fix anything it reports (broken TOC references, missing images, multiple H1s,
+unsupported code-fence attributes, etc.) before submitting.
+
+### 6. Submit Your Contribution for Review
+
+1. Create a branch for your change.
+1. Commit your new/edited topic, any images, and the `toc.yml` update together.
+1. Open a pull request against `main` and fill in the description.
+1. Address review feedback, then a maintainer will merge and publish.
 
 ## How to Avoid Duplicating Content
 
@@ -43,104 +182,11 @@ To ensure high-quality contributions and maintain consistency across the project
 1. **Review and Edit**: Before submitting a pull request, review your changes for accuracy, clarity, and completeness. Edit as needed to ensure high quality.
 1. **Collaborate and Communicate**: Engage with other contributors and maintainers through comments, discussions, and reviews to ensure alignment and address any issues.
 
+
 ---
 
-## TOC Generation
+## Table of Contents
 
-The [toc.yml](tech-guides/toc.yml) file determines the structure and order in which articles display in the left-hand navigation. Add new articles to this file.
-
-```yml
-metadata:
-  - key: "ft:originId"
-    value: "technical-articles"
-  - key: "ft:title"
-    value: "Technical Articles Library"
-  - key: "ft:locale"
-    value: "en-US"
-  - key: "td:productName"
-  - key: "td:contentType"
-    value: "Technical Articles"
-    
-toc:
-  - filepath: "introduction/teradata-engine-architecture-and-concepts.md"
-  - filepath: "get-access-to-vantage/_index.md"
-    children:
-      - filepath: "get-access-to-vantage/on-your-local/_index.md"
-        children:
-          - filepath: "get-access-to-vantage/on-your-local/getting-started-vmware.md"
-          - filepath: "get-access-to-vantage/on-your-local/getting-started-vbox.md"
-          - filepath: "get-access-to-vantage/on-your-local/getting-started-utm.md"
-      - filepath: "get-access-to-vantage/on-your-cloud-infrastructure/_index.md"
-        children:
-          - filepath: "get-access-to-vantage/on-your-cloud-infrastructure/run-vantage-express-on-aws.md"
-          - filepath: "get-access-to-vantage/on-your-cloud-infrastructure/vantage-express-gcp.md"
-          - filepath: "get-access-to-vantage/on-your-cloud-infrastructure/run-vantage-express-on-microsoft-azure.md"
-      - filepath: "get-access-to-vantage/clearscape-analytics-experience/_index.md"
-        children:
-          - filepath: "get-access-to-vantage/clearscape-analytics-experience/getting-started-with-csae.md"
-  - filepath: "connect-to-vantage/_index.md"
-    children:
-      - filepath: "connect-to-vantage/install-teradata-studio-on-mac-m1-m2.md"
-      - filepath: "connect-to-vantage/configure-a-teradata-vantage-connection-in-dbeaver.md"
-      - filepath: "connect-to-vantage/connect-teradata-dbeaver-okta-sso.md"
-      - filepath: "connect-to-vantage/configure-odbc/_index.md"
-        children:
-          - filepath: "connect-to-vantage/configure-odbc/odbc.ubuntu.md"
-  - filepath: "manage-data/_index.md"
-    children:
-      - filepath: "manage-data/nos.md"
-      - filepath: "manage-data/select-the-right-data-ingestion-tools-for-teradata-vantage.md"
-      - filepath: "manage-data/airflow.md"
-      - filepath: "manage-data/fivetran-userguide.md"
-      - filepath: "manage-data/airflow-azure-to-teradata-transfer-operator-doc.md"
-      - filepath: "manage-data/execute-dbt-teradata-transformations-in-airflow-with-cosmos.md"
-      - filepath: "manage-data/use-dagster-with-teradata-vantage.md"
-      - filepath: "manage-data/dbt.md"
-      - filepath: "manage-data/use-dbt-cloud-with-teradata-vantage.md"
-      - filepath: "manage-data/dagster-teradata-s3-to-teradata-transfer.md"
-      - filepath: "manage-data/dagster-teradata-azure-to-teradata-transfer.md"
-      - filepath: "manage-data/advanced-dbt.md"
-      - filepath: "manage-data/automate-data-movement-and-transformation-with-airflow-airbyte-and-dbt-in-teradata-vantage.md"
-      - filepath: "manage-data/using-feast-feature-store-with-teradata-vantage.md"
-      - filepath: "manage-data/getting-started-dbt-feast-teradata-pipeline.md"
-      - filepath: "manage-data/use-airbyte-to-load-data-from-external-sources-to-teradata-vantage.md"
-      - filepath: "manage-data/terraform-airbyte-provider.md"
-      - filepath: "manage-data/transforming-external-data-loaded-via-airbyte-in-teradata-vantage-using-dbt.md"
-      - filepath: "manage-data/run-bulkloads-efficiently-with-teradata-parallel-transporter.md"
-      - filepath: "manage-data/create-parquet-files-in-object-storage.md"
-      - filepath: "manage-data/execute-airflow-workflows-that-use-dbt-with-teradata-vantage.md"
-      - filepath: "manage-data/integrate-teradata-vantage-to-salesforce-using-amazon-appflow.md"
-      - filepath: "manage-data/segment.md"
-      - filepath: "manage-data/connect-azure-data-share-to-teradata-vantage.md"
-      - filepath: "manage-data/integrate-teradata-vantage-with-google-cloud-data-catalog.md"
-      - filepath: "manage-data/configure-a-teradata-vantage-connection-in-datahub.md"
-      - filepath: "manage-data/ingest-catalog-data-teradata-s3-with-glue.md"
-      - filepath: "manage-data/Pushdown-feature.md"
-      - filepath: "manage-data/Trino Installation & Setup.md"
-  - filepath: "create-applications/_index.md"
-    children:
-      - filepath: "create-applications/jdbc.md"
-      - filepath: "create-applications/teradatasql.md"
-      - filepath: "create-applications/mule-dbc-example.md"
-      - filepath: "create-applications/send-queries-using-rest-api.md"
-      - filepath: "create-applications/examples-configuration.md"
-      - filepath: "create-applications/teradata-connector-mule4-reference.md"
-      - filepath: "create-applications/teradata-connector-mule4.md"
-  - filepath: "analyze-data/_index.md"
-    children:
-      - filepath: "analyze-data/jupyter.md"
-      - filepath: "analyze-data/local-jupyter-hub.md"
-      - filepath: "analyze-data/ml.md"
-      - filepath: "analyze-data/sto.md"
-      - filepath: "analyze-data/perform-time-series-analysis-using-teradata.md"
-      - filepath: "analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-byom.md"
-      - filepath: "analyze-data/deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git.md"
-      - filepath: "analyze-data/execute-airflow-workflows-with-clearscape-analytics-modelops-model-factory-solution.md"
-      - filepath: "analyze-data/sagemaker-with-teradata-vantage.md"
-      - filepath: "analyze-data/use-teradata-vantage-with-azure-machine-learning-studio.md"
-      - filepath: "analyze-data/integrate-teradata-jupyter-extensions-with-google-vertex-ai.md"
-      - filepath: "analyze-data/integrate-teradata-jupyter-extensions-with-sagemaker.md"
-      - filepath: "analyze-data/create-stunning-visualizations-in-power-bi-using-data-from-teradata-vantage.md"
-      - filepath: "analyze-data/integrate-teradata-vantage-with-knime.md"
-      - filepath: "analyze-data/geojson-to-vantage.md"
-```
+New topics must be added to `quickstarts/toc.yml` to be published. See
+[Add a Topic to the Table of Contents](#4-add-a-topic-to-the-table-of-contents)
+in the Authoring Workflow above for the format and an example.
