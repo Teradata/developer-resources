@@ -1,3 +1,3 @@
-# ClearScape Analytics Experience
+# Teradata Trial
 
-Get started with Teradata ClearScape Analytics Experience, a free hosted environment for exploring Vantage capabilities.
+Get started with Teradata Trial, a free hosted environment for exploring Vantage capabilities.
