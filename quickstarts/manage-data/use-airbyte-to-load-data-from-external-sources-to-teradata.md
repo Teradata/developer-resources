@@ -5,8 +5,6 @@ email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-29"
 description: Use Airbyte with Teradata.
 keywords: [airbyte, google sheets, teradata, teradata database, data ingestion, elt, data sync, data replication]
-
-dir: getting-started-with-airbyte
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx'

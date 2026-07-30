@@ -1,6 +1,5 @@
 ---
 id: my-topic-id
-sidebar_position: 99
 author: Jane Doe
 email: jane.doe@teradata.com
 ft:lastEdition: "2026-07-30"

@@ -152,5 +152,6 @@ dbt docs serve
 This tutorial demonstrated how to use dbt with Teradata. The sample project takes raw data and produces a dimensional data mart. We used multiple dbt commands to populate tables from CSV files (`dbt seed`), create models (`dbt run`), test the data (`dbt test`), and generate and serve model documentation (`dbt docs generate`, `dbt docs serve`).
 
 ## Further reading
+
 * [dbt documentation](https://docs.getdbt.com/docs/)
 * [dbt-teradata plugin documentation](https://github.com/Teradata/dbt-teradata)

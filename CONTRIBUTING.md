@@ -45,7 +45,6 @@ Every topic begins with a YAML frontmatter block delimited by `---`:
 ```yaml
 ---
 id: my-topic-id
-sidebar_position: 3
 author: Jane Doe
 email: jane.doe@teradata.com
 ft:lastEdition: "2026-07-30"
@@ -59,7 +58,6 @@ keywords: [teradata, vantage, object storage, elt]
 | `ft:lastEdition` | **Yes** | Fluid Topics-specific. ISO `YYYY-MM-DD`, **double-quoted**. Replaces Docusaurus `page_last_update`. |
 | `description` | **Yes** | One sentence; appears in search results and previews. |
 | `id` | Recommended | Stable slug for the topic. |
-| `sidebar_position` | Recommended | Intended order within its section. |
 | `author` / `email` | Recommended | Contributor attribution. |
 | `keywords` | Recommended | YAML list; improves search. |
 

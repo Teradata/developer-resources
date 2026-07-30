@@ -1,4 +1,4 @@
-﻿---
+---
 id: use-dagster-with-teradata
 sidebar_position: 4.5
 author: Mohan Talla, Daniel Herrera
@@ -24,10 +24,9 @@ This guide walks you through integrating Dagster with Teradata to create and man
 
 ## Prerequisites
 
+<TrialDocsNote />
+
 * Access to a Teradata cloud or on-premises instance (Teradata Cloud, Teradata Factory, or Teradata Trial).
-
-    <TrialDocsNote />
-
 * Python **3.9** or higher, Python **3.12** is recommended.
 * `uv` package manager for Python environment management.
 * A Teradata database where you have CREATE TABLE privileges. You can create one by running:
