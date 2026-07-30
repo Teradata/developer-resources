@@ -37,8 +37,10 @@ def load_env_file():
 # Load .env for local development (ignored in CI where secrets are injected)
 load_env_file()
 
-SOURCE_DIR = "tech-guides"
-BUILD_DIR = "build/tech-guides"
+# Source/build dirs are env-overridable so the pipeline can be pointed at a
+# different content root (e.g. SOURCE_DIR=quickstarts) without editing code.
+SOURCE_DIR = os.environ.get("SOURCE_DIR", "quickstarts")
+BUILD_DIR = os.environ.get("BUILD_DIR", os.path.join("build", os.path.basename(SOURCE_DIR)))
 # Default to staging, override via environment variables in CI
 FT_URL = os.environ.get("FT_URL", "https://docs-dev.teradata.com/")
 API_KEY = os.environ.get("FT_API_KEY")  # Must be set via environment variable
@@ -310,10 +312,70 @@ def process_file(file_path: str) -> str:
     return content
 
 
+# Matches TOC entries like:  - filepath: "manage-data/nos.md"
+TOC_FILEPATH_RE = re.compile(
+    r"^\s*-\s*filepath:\s*['\"]?([^'\"#\n]+?)['\"]?\s*(?:#.*)?$",
+    re.MULTILINE,
+)
+
+
+def toc_referenced_md(build_dir: str) -> Optional[set[str]]:
+    """
+    Return the set of markdown files (relative to build_dir, forward slashes)
+    referenced by build_dir/toc.yml. Returns None if there is no toc.yml, so
+    callers can skip pruning rather than delete everything.
+    """
+    toc_path = os.path.join(build_dir, "toc.yml")
+    if not os.path.isfile(toc_path):
+        return None
+    with open(toc_path, "r", encoding="utf-8") as f:
+        toc = f.read()
+    referenced: set[str] = set()
+    for raw in TOC_FILEPATH_RE.findall(toc):
+        path = raw.strip().lstrip("./")
+        if path.endswith(".md"):
+            referenced.add(path)
+    return referenced
+
+
+def prune_unreferenced(build_dir: str) -> None:
+    """
+    Delete markdown files in build_dir that are not referenced by toc.yml.
+
+    This lets unfinished/not-ready guides remain in the source tree (so they can
+    be worked on) while ensuring only toc-linked files are published to Fluid
+    Topics. Only .md files are pruned — images and other assets are untouched.
+    _partials are ignored here (they are stripped separately).
+    """
+    referenced = toc_referenced_md(build_dir)
+    if referenced is None:
+        print("  No toc.yml found in build output; skipping unreferenced-md prune.")
+        return
+
+    removed = []
+    for root, dirs, files in os.walk(build_dir):
+        if "_partials" in root.split(os.sep):
+            continue
+        for fname in files:
+            if not fname.endswith(".md"):
+                continue
+            rel = os.path.relpath(os.path.join(root, fname), build_dir).replace(os.sep, "/")
+            if rel not in referenced:
+                os.remove(os.path.join(root, fname))
+                removed.append(rel)
+
+    print(f"Pruned {len(removed)} markdown file(s) not referenced in toc.yml (kept {len(referenced)} referenced).")
+    for rel in sorted(removed):
+        print(f"  pruned: {rel}")
+
+
 def build():
     if os.path.exists(BUILD_DIR):
         shutil.rmtree(BUILD_DIR)
     shutil.copytree(SOURCE_DIR, BUILD_DIR)
+
+    # Drop markdown not linked from toc.yml so unfinished guides never publish.
+    prune_unreferenced(BUILD_DIR)
 
     md_files = []
     for root, dirs, files in os.walk(BUILD_DIR):
