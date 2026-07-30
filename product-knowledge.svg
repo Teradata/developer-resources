@@ -112,7 +112,7 @@
     <text class="w knowledge" x="32" y="133"
       font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
       font-size="46" font-weight="800" fill="#FF5F02" letter-spacing="-1"
-      style="transform: translateY(60px)">tech articles</text>
+      style="transform: translateY(60px)">tech guides</text>
   </g>
 
   <!-- Gradient underline -->
