@@ -8,7 +8,7 @@ description: Use Teradata Native Object Storage to read from and write to object
 keywords: [data warehouses, compute storage separation, Teradata, cloud data platform, object storage, business intelligence, enterprise analytics, parquet, create parquet files]
 ---
 
-import UseCase from '../_partials/use-trials.mdx';
+import TrialDocsNote from '../_partials/teradata_trial.mdx';
 
 # Create Parquet files in object storage
 
@@ -26,7 +26,7 @@ You need access to a Teradata instance. NOS is available in Teradata editions st
 !!! info
     This tutorial uses Amazon S3 object storage. To complete the tutorial, you need an S3 bucket with write permissions.
 
-<UseCase />
+<TrialDocsNote />
 
 ## Create a Parquet file with WRITE_NOS function
 

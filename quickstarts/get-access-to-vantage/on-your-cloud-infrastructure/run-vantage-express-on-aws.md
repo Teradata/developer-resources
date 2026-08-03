@@ -7,12 +7,12 @@ description: Run Vantage Express on AWS.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, AWS]
 ---
 
-import UseCase from '../../_partials/use-trials.mdx';
+import TrialDocsNote from '../_partials/teradata_trial.mdx';
 import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 
 # Run Vantage Express on AWS
 
-<UseCase />
+<TrialDocsNote />
 
 ## Overview
 
@@ -24,9 +24,10 @@ This how-to demonstrates how to run Vantage Express on AWS. Vantage Express is a
 
     Vantage Express is distributed as a virtual machine image. This how-to uses the EC2 `c5n.metal` instance type. It's a bare metal instance that costs over $3/h.
 
-    If you want a cheaper option, try [Google Cloud](./vantage-express-gcp.md) and [Azure](run-vantage-express-on-microsoft-azure.md) which support nested virtualization and can run Vantage Express on cheap VM's.
+    <!-- If you want a cheaper option, try [Google Cloud](./vantage-express-gcp.md) and [Azure](run-vantage-express-on-microsoft-azure.md) which support nested virtualization and can run Vantage Express on cheap VM's. -->
 
-    If you do not wish to pay for cloud usage, you can get a free hosted instance of Teradata at [https://www.teradata.com/try](https://www.teradata.com/try). Alternatively, you install Vantage Express locally using [VMware](../on-your-local/getting-started-vmware.md), [VirtualBox](../on-your-local/getting-started-vbox.md), or [UTM](../on-your-local/getting-started-utm.md).
+    If you do not wish to pay for cloud usage, you can get a free hosted instance of Teradata at [https://www.teradata.com/try](https://www.teradata.com/try). Alternatively, you install Vantage Express locally using [VMware](../on-your-local/getting-started-vmware.md).
+    <!-- , [VirtualBox](../on-your-local/getting-started-vbox.md), or [UTM](../on-your-local/getting-started-utm.md). -->
 
 ## Prerequisites
 

@@ -20,7 +20,7 @@ Today we be gathering reference geographical data (official maps, points of inte
 
 You will learn two methods to get your GeoJson data into Teradata:
 
-1. Load it as a single document and use native ClearScape analytics functions to parse it into a table usable for analytics.
+1. Load it as a single document and use native Teradata Database functions to parse it into a table usable for analytics.
 2. Lightly transform it in native Python as we load it into Teradata to produce an analytics ready dataset.
 
 The first method is a straig forward ELT pattern for semi-structured format processing in Teradata with a single SQL statement, the second one involves some lightweight preparation in (pure) Python and may allow more flexibility (for example to add early quality checks or optimize the load of large documents).
@@ -29,13 +29,13 @@ The first method is a straig forward ELT pattern for semi-structured format proc
 
 You will need:
 
-- Access to a Teradata Teradata instance.
+- Access to a Teradata instance.
     <TrialDocsNote />
 - A Python 3 interpreter
 - A SQL Client
 
 ## Option 1: Load a GeoJson document into Teradata
-Here we will load a GeoJson document as a single Character Large OBject (CLOB) into the Teradata Data Store and use a single SQL statement, backed by ClearScape Analytics native functions, to parse this document into a usable structure for geospatial analytics.
+Here we will load a GeoJson document as a single Character Large OBject (CLOB) into the Teradata Data Store and use a single SQL statement, backed by native Teradata Database functions, to parse this document into a usable structure for geospatial analytics.
 
 ### Get and load the GeoJson document
 The http://geojson.xyz/ website is a fantastic source for open geographical data in GeoJson format. We will load the "Populated Places" dataset that provides with a list of over 1000 significant world cities.
@@ -80,7 +80,7 @@ with con.cursor () as cur:
 
 Now open your favourite **SQL client** and connect to your Teradata system.
 
-We will use ClearScape analytics JSON functions to parse our GeoJson document and extract the most relevant properties and the geometry itself (the coordinates of the city) for each feature (each feature representing a city in this example).
+We will use Teradata Database JSON functions to parse our GeoJson document and extract the most relevant properties and the geometry itself (the coordinates of the city) for each feature (each feature representing a city in this example).
 We then use the GeomFromGeoJSON function to cast our geometry as a native Teradata geometry data type (ST_GEOMETRY).
 
 For user convenience, will wrap all this SQL code in a view:
@@ -240,7 +240,7 @@ with con.cursor () as cur:
 
 The code below performs the table creation from the Python interpreter, you can also run the _sql_ statement defined below in your prefered SQL client you might as well simply define this logic as a SQL view to avoid having to refresh this table.
 
-We will use ClearScape analytics the GeomFromGeoJSON function to cast our geometry as a native Teradata geometry data type (ST_GEOMETRY).
+We will use the GeomFromGeoJSON function to cast our geometry as a native Teradata geometry data type (ST_GEOMETRY).
 
 
 ```python
@@ -262,7 +262,7 @@ WITH con.cursor () AS cur:
 
 ### Use your data
 
-That's all, you may now query your tables using your favourite *SQL client* and Teradata's excellent [Geospatial data types and analytic functions](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Teradata-VantageTM-Geospatial-Data-Types-17.20).
+That's all, you may now query your tables using your favourite *SQL client* and Teradata's excellent [Geospatial data types and analytic functions](https://docs.teradata.com/r/Enterprise_IntelliFlex_VMware/Geospatial-Data-Types).
 
 For example, using the two datasets we have loaded during this tutorial, check in what countries are
 

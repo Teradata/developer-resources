@@ -7,14 +7,14 @@ description: Run Vantage Express on Google Cloud.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 
-import UseCase from '../../_partials/use-trials.mdx';
+import TrialDocsNote from '../_partials/teradata_trial.mdx';
 import CommunityLink from '../../_partials/community_link.mdx';
 import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 import Tabs from '../../_partials/tabsGCP.mdx';
 
 # Run Vantage Express on Google Cloud
 
-<UseCase />
+<TrialDocsNote />
 
 ## Overview
 
