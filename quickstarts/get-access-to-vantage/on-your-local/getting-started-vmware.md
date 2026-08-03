@@ -4,7 +4,7 @@ author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-13"
 description: Run Vantage Express on your laptop using VMware.
-keywords: [data warehouses, compute storage separation, Teradata, Vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
+keywords: [data warehouses, compute storage separation, Teradata, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 import GettingStartedIntro from '../../_partials/getting-started-intro.mdx';
 import RunVantage from '../../_partials/run-vantage.mdx';
@@ -17,7 +17,7 @@ import RunVantage from '../../_partials/run-vantage.mdx';
 
 1. A computer running one of the following operating systems: Windows, Linux, or Intel-based macOS.
     !!! note
-        For M1/M2 macOS systems, see [Run Vantage Express on UTM](./getting-started-utm.md).
+        VMware is supported only on Intel-based Macs. Apple silicon is not currently supported.
 2. At least 30GB of available disk space, sufficient CPU resources, and enough RAM to allocate at least one core and 6GB of memory to the virtual machine.
 3. Administrator rights to install and run software on your system.
 

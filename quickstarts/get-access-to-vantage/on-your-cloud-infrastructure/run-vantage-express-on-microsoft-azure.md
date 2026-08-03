@@ -7,14 +7,14 @@ description: Run Vantage Express on Microsoft Azure.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 
-import UseCase from '../../_partials/use-trials.mdx';
+import TrialDocsNote from '../_partials/teradata_trial.mdx';
 import Tabs from '../../_partials/tabsAzure.mdx';
 import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 import CommunityLink from '../../_partials/community_link.mdx';
 
 # Run Vantage Express on Azure
 
-<UseCase />
+<TrialDocsNote />
 
 ## Overview
 
