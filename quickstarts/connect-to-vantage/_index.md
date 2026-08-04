@@ -1,3 +1,3 @@
-# Connect to Vantage
+# Connect to Teradata
 
-Connect to Teradata Vantage using tools like Teradata Studio, DBeaver, and ODBC drivers.
+Connect to Teradata using tools like Teradata Studio, DBeaver, and ODBC drivers.
