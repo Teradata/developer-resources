@@ -25,7 +25,7 @@ concise.
 
 ## Prerequisites
 
-* A running Teradata Vantage instance
+* A running Teradata Trial instance
 * Familiarity with SQL
 
 ## Admonitions (notes and callouts)
