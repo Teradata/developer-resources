@@ -1,5 +1,6 @@
 ---
 sidebar_position: 13
+ft:originId: integrate-teradata-with-knime
 author: Jeremy Yu, Janeth Graziani
 email: Jeremy.yu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2022-05-18"

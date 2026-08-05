@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+ft:originId: getting-started-vmware
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-13"

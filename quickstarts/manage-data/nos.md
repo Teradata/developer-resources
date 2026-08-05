@@ -1,5 +1,5 @@
 ---
-id: nos
+ft:originId: nos
 sidebar_position: 1
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com

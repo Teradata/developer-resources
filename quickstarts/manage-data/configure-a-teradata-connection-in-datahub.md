@@ -1,5 +1,6 @@
 ---
 sidebar_position: 18
+ft:originId: configure-a-teradata-connection-in-datahub
 author: Paul Ibberson
 email: paul.ibberson2@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-07"

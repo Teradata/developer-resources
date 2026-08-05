@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-id: perform-time-series-analysis-using-teradata
+ft:originId: perform-time-series-analysis-using-teradata
 author: Remi Turpaud, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"

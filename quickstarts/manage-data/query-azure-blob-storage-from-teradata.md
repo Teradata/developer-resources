@@ -1,5 +1,6 @@
 ---
 sidebar_position: 16
+ft:originId: query-azure-blob-storage-from-teradata
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-13"

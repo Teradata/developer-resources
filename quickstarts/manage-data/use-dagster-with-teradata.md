@@ -1,5 +1,5 @@
 ---
-id: use-dagster-with-teradata
+ft:originId: use-dagster-with-teradata
 sidebar_position: 4.5
 author: Mohan Talla, Daniel Herrera
 email: developer.relations@teradata.com

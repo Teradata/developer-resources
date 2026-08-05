@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4.6
+ft:originId: dagster-teradata-s3-to-teradata-transfer
 author: Mohan Talla, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-29"

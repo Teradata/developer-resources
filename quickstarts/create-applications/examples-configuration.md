@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+ft:originId: examples-configuration
 author: Tan Nguyen, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-30"

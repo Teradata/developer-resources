@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-id: advanced-dbt
+ft:originId: advanced-dbt
 title: Advanced dbt use cases with Teradata
 author: Daniel Herrera
 email: developer.relations@teradata.com

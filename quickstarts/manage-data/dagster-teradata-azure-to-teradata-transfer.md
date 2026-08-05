@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4.7
+ft:originId: dagster-teradata-azure-to-teradata-transfer
 author: Mohan Talla
 email: mohan.talla@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-16"

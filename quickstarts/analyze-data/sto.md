@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-id: sto
+ft:originId: sto
 title: Run scripts on Teradata
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com

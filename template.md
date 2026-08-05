@@ -1,5 +1,5 @@
 ---
-id: my-topic-id
+ft:originId: my-topic-id
 author: Jane Doe
 email: jane.doe@teradata.com
 ft:lastEdition: "2026-07-30"

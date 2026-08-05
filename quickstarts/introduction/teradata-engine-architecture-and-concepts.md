@@ -1,5 +1,5 @@
 ---
-id: teradata-engine-architecture-and-concepts
+ft:originId: teradata-engine-architecture-and-concepts
 title: Teradata Engine Architecture and Concepts
 sidebar_label: Teradata Engine Architecture and Concepts
 sidebar_position: 1

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+ft:originId: send-queries-using-rest-api
 author: Sudha Vedula, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-15"

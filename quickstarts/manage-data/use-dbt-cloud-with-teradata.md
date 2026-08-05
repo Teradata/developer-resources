@@ -1,5 +1,5 @@
 ---
-id: use-dbt-cloud-with-teradata
+ft:originId: use-dbt-cloud-with-teradata
 sidebar_position: 4.4
 author: Mohan Talla, Vidhan Bhonsle
 email: developer.relations@teradata.com

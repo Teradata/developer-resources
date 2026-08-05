@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-id: run-vantage-express-on-utm
+ft:originId: run-vantage-express-on-utm
 title: Run Vantage Express on UTM
 author: Adam Tworkiewicz, Janeth Graziani
 email: adam.tworkiewicz@teradata.com

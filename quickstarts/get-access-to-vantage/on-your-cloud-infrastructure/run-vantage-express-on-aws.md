@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+ft:originId: run-vantage-express-on-aws
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2022-12-12"

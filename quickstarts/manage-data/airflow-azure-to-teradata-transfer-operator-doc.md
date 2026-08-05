@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+ft:originId: airflow-azure-to-teradata-transfer-operator-doc
 author: Satish Chinthanippu
 email: satish.chinthanippu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-22"

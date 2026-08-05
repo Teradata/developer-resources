@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+ft:originId: using-feast-feature-store-with-teradata-vantage
 author: Mohammmad Taha Wahab, Mohammad Harris Mansur and Will Fleury
 email: mohammadtaha.wahab@teradata.com , mohammadharris.mansur@teradata.com and will.fleury@teradata.com
 ft:lastEdition: "2023-01-05"

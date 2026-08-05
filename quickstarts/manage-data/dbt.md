@@ -1,5 +1,5 @@
 ---
-id: dbt
+ft:originId: dbt
 sidebar_position: 4.5
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 9
+ft:originId: sagemaker-with-teradata
 author: Wenjie Tehan, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-23"

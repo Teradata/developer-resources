@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-id: teradatasql
+ft:originId: teradatasql
 author: Krutik Pathak, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-17"

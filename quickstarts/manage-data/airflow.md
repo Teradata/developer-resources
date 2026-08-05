@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-id: airflow
+ft:originId: airflow
 author: Satish Chinthanippu, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+ft:originId: vantage-express-gcp
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2022-08-23"

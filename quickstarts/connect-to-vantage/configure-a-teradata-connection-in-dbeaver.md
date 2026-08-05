@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+ft:originId: configure-a-teradata-connection-in-dbeaver
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-30"

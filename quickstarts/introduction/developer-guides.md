@@ -1,5 +1,5 @@
 ---
-id: teradata-developer-guides
+ft:originId: teradata-developer-guides
 author: Brendon Paucek
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-08-05"

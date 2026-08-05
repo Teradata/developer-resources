@@ -1,5 +1,6 @@
 ---
 sidebar_position: 19
+ft:originId: ingest-catalog-data-teradata-s3-with-glue
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-06"

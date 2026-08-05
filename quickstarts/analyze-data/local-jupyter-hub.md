@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-id: local-jupyter-hub
+ft:originId: local-jupyter-hub
 title: Deploy Teradata Jupyter extensions to JupyterHub
 author: Hailing Jiang, Daniel Herrera
 email: developer.relations@teradata.com

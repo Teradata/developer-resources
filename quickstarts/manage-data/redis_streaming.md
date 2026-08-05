@@ -1,6 +1,6 @@
 ---
 sidebar_position: 15
-id: redis-streaming
+ft:originId: redis-streaming
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-14"

@@ -1,5 +1,5 @@
 ---
-id: install-teradata-studio-on-mac-m1-m2
+ft:originId: install-teradata-studio-on-mac-m1-m2
 sidebar_position: 1
 
 author: Satish Chinthanippu, Janeth Graziani

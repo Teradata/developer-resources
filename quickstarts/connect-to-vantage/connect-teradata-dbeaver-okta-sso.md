@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+ft:originId: connect-teradata-dbeaver-okta-sso
 author: Nick Pyzik
 editor: Janeth Graziani (Developer Advocate, Teradata)
 email: developer.relations@teradata.com

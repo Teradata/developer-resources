@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+ft:originId: deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-byom
 author: Pablo Escobar de la Oliva
 email: pablo.escobardelaoliva@teradata.com
 ft:lastEdition: "2024-05-01"
@@ -263,7 +264,7 @@ Click on Save Model & Import versions
 
 Fill the field for external id to track it from the training tool, and upload the model.pmml file - NOTE It has to be this exact name: model.pmml
 
-* External id: 001
+* External ft:originId: 001
 
 * model file: model.pmml
 

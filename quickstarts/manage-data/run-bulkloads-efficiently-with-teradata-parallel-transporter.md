@@ -6,7 +6,7 @@ ft:lastEdition: "2022-04-06"
 title: Load data with TPT
 ft:description: Load data into Teradata efficiently using Teradata Parallel Transporter (TPT).
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, object storage, business intelligence, enterprise analytics, Fastload, Teradata Parallel Transporter, TPT]
-id: run-bulkloads-efficiently-with-teradata-parallel-transporter
+ft:originId: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---
 
 import TrialDocsNote from '../_partials/teradata_trial.mdx';

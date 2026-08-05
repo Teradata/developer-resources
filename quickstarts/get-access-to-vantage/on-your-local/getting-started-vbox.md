@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+ft:originId: getting-started-vbox
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2023-01-09"

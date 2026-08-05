@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3.5
+ft:originId: execute-dbt-teradata-transformations-in-airflow-with-cosmos
 title: Apache Airflow using Astronomer Cosmos
 author: Satish Chinthanippu, Janeth Graziani
 email: developer.relations@teradata.com

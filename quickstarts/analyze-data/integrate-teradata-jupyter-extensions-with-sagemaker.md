@@ -1,5 +1,6 @@
 ---
 sidebar_position: 11
+ft:originId: integrate-teradata-jupyter-extensions-with-sagemaker
 author: Hailing Jiang, Janeth Graziani
 email: Hailing.Jiang@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-09"

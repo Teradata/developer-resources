@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+ft:originId: deploy-and-monitor-machine-learning-models-with-teradata-modelops-and-git
 author: Pablo Escobar de la Oliva
 email: pablo.escobardelaoliva@teradata.com
 ft:lastEdition: "2022-05-29"

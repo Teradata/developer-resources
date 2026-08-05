@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-id: mule-dbc-example
+ft:originId: mule-dbc-example
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-14"

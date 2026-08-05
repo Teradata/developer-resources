@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-id: create-parquet-files-in-object-storage
+ft:originId: create-parquet-files-in-object-storage
 author: Obed Vega, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-06"

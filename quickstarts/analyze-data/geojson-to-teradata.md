@@ -1,5 +1,6 @@
 ---
 sidebar_position: 14
+ft:originId: geojson-to-teradata
 author: Rémi Turpaud
 email: remi.turpaud@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2022-02-14"

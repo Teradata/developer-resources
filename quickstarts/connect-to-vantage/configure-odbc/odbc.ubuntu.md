@@ -1,5 +1,5 @@
 ---
-id: ubuntu
+ft:originId: ubuntu
 title: Ubuntu
 sidebar_position: 1
 author: Adam Tworkiewicz, Janeth Graziani

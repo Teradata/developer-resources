@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+ft:originId: teradata-connector-mule4
 author: Tan Nguyen, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"

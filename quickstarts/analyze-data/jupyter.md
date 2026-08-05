@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-id: jupyter
+ft:originId: jupyter
 title: Use Teradata from a Jupyter notebook
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com

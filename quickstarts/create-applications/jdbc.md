@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-id: jdbc
+ft:originId: jdbc
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-09"

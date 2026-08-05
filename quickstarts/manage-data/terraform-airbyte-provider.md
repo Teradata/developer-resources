@@ -1,5 +1,6 @@
 ---
 sidebar_position: 9
+ft:originId: terraform-airbyte-provider
 author: Janeth Graziani, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-10"

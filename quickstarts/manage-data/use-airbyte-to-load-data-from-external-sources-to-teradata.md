@@ -1,5 +1,6 @@
 ---
 sidebar_position: 8
+ft:originId: use-airbyte-to-load-data-from-external-sources-to-teradata
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-29"

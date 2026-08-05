@@ -1,5 +1,5 @@
 ---
-id: select-the-right-data-ingestion-tools-for-teradata
+ft:originId: select-the-right-data-ingestion-tools-for-teradata
 sidebar_position: 2
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com

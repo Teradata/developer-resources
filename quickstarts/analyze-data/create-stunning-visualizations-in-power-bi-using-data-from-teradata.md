@@ -1,5 +1,6 @@
 ---
 sidebar_position: 12
+ft:originId: create-stunning-visualizations-in-power-bi-using-data-from-teradata
 author: Kevin Bogusch, Paul Ibberson, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-08"

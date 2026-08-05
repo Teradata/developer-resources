@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5.5
+ft:originId: automate-data-movement-and-transformation-with-airflow-airbyte-and-dbt-in-teradata
 title: Automate Data Movement and Transformation with Airflow, Airbyte, and dbt in Teradata
 author: Vidhan Bhonsle, Daniel Herrera
 email: developer.relations@teradata.com

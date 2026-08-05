@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+ft:originId: getting-started-with-teradata-trial
 author: Vidhan Bhonsle, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-18"

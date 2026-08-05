@@ -1,5 +1,6 @@
 ---
 sidebar_position: 13
+ft:originId: execute-airflow-workflows-that-use-dbt-with-teradata-vantage
 author: Igor Machin, Ambrose Inman
 email: igor.machin@teradata.com
 ft:lastEdition: "2022-11-18"

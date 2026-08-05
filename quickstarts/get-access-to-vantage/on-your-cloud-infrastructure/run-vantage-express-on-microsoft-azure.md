@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+ft:originId: run-vantage-express-on-microsoft-azure
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2022-08-23"

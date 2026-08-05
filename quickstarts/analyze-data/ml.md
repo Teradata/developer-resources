@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-id: ml
+ft:originId: ml
 title: Train ML models in Teradata using In-Database Analytic Functions
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com

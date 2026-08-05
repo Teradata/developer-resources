@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-id: fivetran
+ft:originId: fivetran
 author: Satish Chinthanippu, Vidhan Bhonsle
 email: satish.chinthanippu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-16"
