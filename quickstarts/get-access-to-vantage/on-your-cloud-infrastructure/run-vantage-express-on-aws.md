@@ -8,7 +8,7 @@ ft:description: Run Vantage Express on AWS.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, AWS]
 ---
 
-import TrialDocsNote from '../_partials/teradata_trial.mdx';
+import TrialDocsNote from '../../_partials/teradata_trial.mdx';
 import InstallVeInPublic from '../../_partials/install-ve-in-public.mdx';
 
 # Run Vantage Express on AWS
