@@ -4,7 +4,7 @@ id: redis-streaming
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-14"
-description: Stream event data from local Redis to Teradata
+ft:description: Stream event data from local Redis to Teradata
 keywords: [redis, streaming, events, teradata, python]
 ---
 

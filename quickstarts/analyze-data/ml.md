@@ -5,7 +5,7 @@ title: Train ML models in Teradata using In-Database Analytic Functions
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-02"
-description: Train an ML model without leaving Teradata - use Teradata In-Database Analytic Functions to create ML models.
+ft:description: Train an ML model without leaving Teradata - use Teradata In-Database Analytic Functions to create ML models.
 keywords: [data warehouses, in-database analytic functions, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, AI/ML]
 ---
 

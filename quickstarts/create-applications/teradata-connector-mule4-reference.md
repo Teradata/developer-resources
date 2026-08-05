@@ -3,7 +3,7 @@ sidebar_position: 6
 author: Tan Nguyen, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"
-description: Technical Reference for Teradata Connector for MuleSoft's Anypoint Studio.
+ft:description: Technical Reference for Teradata Connector for MuleSoft's Anypoint Studio.
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, object storage, business intelligence, enterprise analytics, mule, mulesoft, teradata connector, anypoint studio.]
 ---
 

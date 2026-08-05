@@ -5,7 +5,7 @@ sidebar_position: 1
 author: Adam Tworkiewicz, Janeth Graziani
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2026-07-10"
-description: Use Teradata with ODBC on Ubuntu
+ft:description: Use Teradata with ODBC on Ubuntu
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, odbc, ubuntu]
 ---
 

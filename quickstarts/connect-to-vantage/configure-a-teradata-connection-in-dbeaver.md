@@ -3,7 +3,7 @@ sidebar_position: 2
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-30"
-description: Configure a Teradata connection in DBeaver.
+ft:description: Configure a Teradata connection in DBeaver.
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, dbeaver, DBeaver PRO, sql ide]
 ---
 

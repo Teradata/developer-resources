@@ -3,7 +3,7 @@ sidebar_position: 2
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2023-01-09"
-description: Run Vantage Express on your laptop using VMware.
+ft:description: Run Vantage Express on your laptop using VMware.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 import GettingStartedIntro from '../../_partials/getting-started-intro.mdx';

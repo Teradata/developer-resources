@@ -3,7 +3,7 @@ sidebar_position: 8
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-29"
-description: Use Airbyte with Teradata.
+ft:description: Use Airbyte with Teradata.
 keywords: [airbyte, google sheets, teradata, teradata database, data ingestion, elt, data sync, data replication]
 ---
 

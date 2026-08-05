@@ -4,7 +4,7 @@ id: teradatasql
 author: Krutik Pathak, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-17"
-description: How to connect to Teradata using teradatasql Python database driver
+ft:description: How to connect to Teradata using teradatasql Python database driver
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, teradatasql, python applications, business intelligence, enterprise analytics]
 ---
 

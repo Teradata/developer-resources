@@ -5,7 +5,7 @@ sidebar_position: 1
 author: Satish Chinthanippu, Janeth Graziani
 email: satish.chinthanippu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-15"
-description: Run Teradata Studio on Apple Mac M1/M2/M3.
+ft:description: Run Teradata Studio on Apple Mac M1/M2/M3.
 keywords: [Teradata Studio, Teradata Studio Express, teradata, vantage, Mac, Apple Mac, Apple Mac M1,Apple Mac M2, Apple Mac M3, Arm based Processor.]
 ---
 

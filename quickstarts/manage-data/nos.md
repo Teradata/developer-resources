@@ -4,7 +4,7 @@ sidebar_position: 1
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"
-description: Teradata Native Object Storage - read and write from/to object storage, unified SQL interface for Teradata and object storage.
+ft:description: Teradata Native Object Storage - read and write from/to object storage, unified SQL interface for Teradata and object storage.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 

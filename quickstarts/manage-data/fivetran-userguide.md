@@ -4,7 +4,7 @@ id: fivetran
 author: Satish Chinthanippu, Vidhan Bhonsle
 email: satish.chinthanippu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-16"
-description: Use Fivetran with Teradata.
+ft:description: Use Fivetran with Teradata.
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, elt, fivetran]
 ---
 

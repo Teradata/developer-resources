@@ -4,7 +4,7 @@ id: airflow
 author: Satish Chinthanippu, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"
-description: Use Apache Airflow with Teradata Database.
+ft:description: Use Apache Airflow with Teradata Database.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, airflow, workflow.]
 ---
 

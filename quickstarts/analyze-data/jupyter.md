@@ -5,7 +5,7 @@ title: Use Teradata from a Jupyter notebook
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-09"
-description: Use Teradata from a Jupyter notebook
+ft:description: Use Teradata from a Jupyter notebook
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, JDBC, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, jupysql, teradatasqlalchemy]
 ---
 

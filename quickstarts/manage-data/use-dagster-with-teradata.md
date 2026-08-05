@@ -4,7 +4,7 @@ sidebar_position: 4.5
 author: Mohan Talla, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-23"
-description: Use dagster-teradata with Teradata.
+ft:description: Use dagster-teradata with Teradata.
 keywords: [dagster, dagster-teradata, data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt]
 ---
 

@@ -3,7 +3,7 @@ sidebar_position: 19
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-06"
-description: Ingest and catalog data from Teradata to Amazon S3
+ft:description: Ingest and catalog data from Teradata to Amazon S3
 keywords: [data warehouses, object storage, teradata, vantage, cloud data platform, data engineering, enterprise analytics, aws glue, aws lake formation, aws glue catalog]
 ---
 

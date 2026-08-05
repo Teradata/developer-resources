@@ -3,7 +3,7 @@ id: use-dbt-cloud-with-teradata
 sidebar_position: 4.4
 author: Mohan Talla, Vidhan Bhonsle
 email: developer.relations@teradata.com
-description: Use dbt Cloud (data build tool) with Teradata.
+ft:description: Use dbt Cloud (data build tool) with Teradata.
 keywords: [dbt Cloud, data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt]
 ft:lastEdition: "2026-07-06"
 ---

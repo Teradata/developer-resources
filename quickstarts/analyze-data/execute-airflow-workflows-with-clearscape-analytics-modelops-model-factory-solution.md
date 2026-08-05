@@ -3,7 +3,7 @@ sidebar_position: 8
 author: Tayyaba Batool
 email: tayyaba.batool@teradata.com
 ft:lastEdition: "2024-03-19"
-description: Tutorial for Model Factory Solution - Executing Airflow workflows with ClearScape Analytics ModelOps
+ft:description: Tutorial for Model Factory Solution - Executing Airflow workflows with ClearScape Analytics ModelOps
 keywords: [modelfactory, modelops, byom, python, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
 import TrialDocsNote from '../_partials/teradata_trial.mdx'

@@ -5,7 +5,7 @@ title: Deploy Teradata Jupyter extensions to JupyterHub
 author: Hailing Jiang, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-09"
-description: Deploy Teradata Jupyter extensions in customer JupyterHub clusters
+ft:description: Deploy Teradata Jupyter extensions in customer JupyterHub clusters
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, java applications, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 

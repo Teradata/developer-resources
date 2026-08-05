@@ -3,7 +3,7 @@ sidebar_position: 4.7
 author: Mohan Talla
 email: mohan.talla@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-16"
-description: Transferring CSV, JSON, and Parquet data from Azure Blob Storage to Teradata with dagster-teradata
+ft:description: Transferring CSV, JSON, and Parquet data from Azure Blob Storage to Teradata with dagster-teradata
 keywords: [data warehouses, teradata, transfer, cloud data platform, object storage, business intelligence, enterprise analytics, dagster, dagster-teradata, microsoft azure blob storage]
 ---
 

@@ -3,7 +3,7 @@ sidebar_position: 3
 author: Adam Tworkiewicz
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2022-08-23"
-description: Run Vantage Express on Microsoft Azure.
+ft:description: Run Vantage Express on Microsoft Azure.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 

@@ -6,7 +6,7 @@ sidebar_position: 1
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-19"
-description: Teradata Architecture and Concepts.
+ft:description: Teradata Architecture and Concepts.
 keywords: [data warehouses, teradata engine architecture, teradata, teradata database, Access Module Processors (AMP), Parsing Engines (PEs), Massively Parallel Processing (MPP), Virtual Disks (Vdisks), BYNET]
 ---
 

@@ -3,7 +3,7 @@ sidebar_position: 4
 author: Sudha Vedula, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-15"
-description: Send queries using REST API. Teradata® Query Service is a middleware that provides REST APIs for Teradata.
+ft:description: Send queries using REST API. Teradata® Query Service is a middleware that provides REST APIs for Teradata.
 keywords: [query service, teradata, vantage, query, REST API]
 ---
 

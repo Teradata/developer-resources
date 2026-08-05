@@ -3,7 +3,7 @@ sidebar_position: 11
 author: Hailing Jiang, Janeth Graziani
 email: Hailing.Jiang@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-09"
-description: Integrate Teradata Jupyter extensions with SageMaker notebook instance
+ft:description: Integrate Teradata Jupyter extensions with SageMaker notebook instance
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradatasqlalchemy]
 ---
 

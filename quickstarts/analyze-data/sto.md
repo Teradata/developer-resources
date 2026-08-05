@@ -5,7 +5,7 @@ title: Run scripts on Teradata
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-13"
-description: Run Applications on Teradata - use Script Table Operator to run applications on your data without data movement.
+ft:description: Run Applications on Teradata - use Script Table Operator to run applications on your data without data movement.
 keywords: [data warehouses, compute storage separation, teradata, script table operator, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 

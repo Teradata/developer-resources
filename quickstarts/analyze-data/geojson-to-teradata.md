@@ -3,7 +3,7 @@ sidebar_position: 14
 author: Rémi Turpaud
 email: remi.turpaud@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2022-02-14"
-description: How to load and use GeoJson documents with Teradata.
+ft:description: How to load and use GeoJson documents with Teradata.
 keywords: [geospatial, geojson, teradata, cloud data platform, analytics, maps, 4d analytics, open data]
 ---
 

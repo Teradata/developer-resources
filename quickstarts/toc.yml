@@ -1,20 +1,17 @@
 metadata:
   - key: "ft:originId"
-    value: "technical-guides"
+    value: "developer-guides"
   - key: "ft:title"
-    value: "Technical Guides"
+    value: "Teradata Developer Guides"
   - key: "ft:description"
     value: "Getting started guides, best practices, and technical deep dives for Teradata developers."
   - key: "ft:locale"
     value: "en-US"
-  - key: "td:productName"
-    value: ["Teradata Cloud", "Teradata Factory"]
   - key: "td:contentType"
-    value: "Technical Guides"
-  - key: "access"
-    value: "teradata-only"
+    value: "Developer Guides"
 
 toc:
+  - filepath: "introduction/developer-guides.md"
   - filepath: "introduction/teradata-engine-architecture-and-concepts.md"
   - filepath: "get-access-to-vantage/_index.md"
     children:

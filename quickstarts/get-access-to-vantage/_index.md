@@ -1,3 +1,3 @@
-# Get Access to Vantage
+# Get Access to Teradata
 
-Learn how to get access to Teradata Vantage through local installations, cloud infrastructure, or ClearScape Analytics Experience.
+Learn how to get access to Teradata through local installations, cloud infrastructure, or Teradata Trial.

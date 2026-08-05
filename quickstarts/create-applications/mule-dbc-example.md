@@ -4,7 +4,7 @@ id: mule-dbc-example
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-14"
-description: Query Teradata from a Mule service.
+ft:description: Query Teradata from a Mule service.
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, Mule, JDBC, microservices]
 ---
 

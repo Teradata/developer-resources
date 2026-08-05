@@ -3,7 +3,7 @@ sidebar_position: 18
 author: Paul Ibberson
 email: paul.ibberson2@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-07"
-description: Configure a Teradata connection in DataHub.
+ft:description: Configure a Teradata connection in DataHub.
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, datahub, data catalog, data lineage]
 ---
 

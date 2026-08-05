@@ -4,7 +4,7 @@ sidebar_position: 2
 author: Krutik Pathak, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-23"
-description: Recommendation of data ingestion tools to be used in different use cases for Teradata
+ft:description: Recommendation of data ingestion tools to be used in different use cases for Teradata
 keywords: [data ingestion, teradata, nos, tpt, bteq, teradata fabric, airbyte, object store, saas, teradata database, apache, spark, presto, oracle, Flow]
 ---
 

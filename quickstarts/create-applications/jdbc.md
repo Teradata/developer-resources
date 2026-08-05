@@ -4,7 +4,7 @@ id: jdbc
 author: Adam Tworkiewicz, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-09"
-description: How to connect to Teradata using JDBC.
+ft:description: How to connect to Teradata using JDBC.
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, JDBC, java applications, business intelligence, enterprise analytics]
 ---
 

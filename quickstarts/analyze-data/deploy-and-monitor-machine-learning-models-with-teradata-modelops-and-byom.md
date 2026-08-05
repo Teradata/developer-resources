@@ -3,7 +3,7 @@ sidebar_position: 6
 author: Pablo Escobar de la Oliva
 email: pablo.escobardelaoliva@teradata.com
 ft:lastEdition: "2024-05-01"
-description: Tutorial for deploying and monitoring a PMML model into Vantage using ClearScape Analytics ModelOps
+ft:description: Tutorial for deploying and monitoring a PMML model into Vantage using ClearScape Analytics ModelOps
 keywords: [modelops, byom, python, clearscape analytics, teradata, data warehouses, teradata, vantage, cloud data platform, machine learning, artificial intelligence, business intelligence, enterprise analytics]
 ---
 

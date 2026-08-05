@@ -3,7 +3,7 @@ sidebar_position: 4
 author: Satish Chinthanippu
 email: satish.chinthanippu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2026-07-22"
-description: Transferring CSV, JSON, and Parquet data from Azure Blob Storage to Teradata with Airflow's Azure Cloud Transfer Operator
+ft:description: Transferring CSV, JSON, and Parquet data from Azure Blob Storage to Teradata with Airflow's Azure Cloud Transfer Operator
 keywords: [data warehouses, teradata, transfer, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, airflow teradata provider, microsoft azure blob storage]
 ---
 

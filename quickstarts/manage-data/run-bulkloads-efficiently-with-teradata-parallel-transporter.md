@@ -4,7 +4,7 @@ author: Adam Tworkiewicz, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2022-04-06"
 title: Load data with TPT
-description: Load data into Teradata efficiently using Teradata Parallel Transporter (TPT).
+ft:description: Load data into Teradata efficiently using Teradata Parallel Transporter (TPT).
 keywords: [data warehouses, compute storage separation, teradata, teradata database, cloud data platform, object storage, business intelligence, enterprise analytics, Fastload, Teradata Parallel Transporter, TPT]
 id: run-bulkloads-efficiently-with-teradata-parallel-transporter
 ---

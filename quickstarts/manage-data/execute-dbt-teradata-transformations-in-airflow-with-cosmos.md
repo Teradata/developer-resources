@@ -4,7 +4,7 @@ title: Apache Airflow using Astronomer Cosmos
 author: Satish Chinthanippu, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2024-06-30"
-description: Execute dbt teradata transformation jobs in Apache Airflow using Astronomer Cosmos library
+ft:description: Execute dbt teradata transformation jobs in Apache Airflow using Astronomer Cosmos library
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, airflow, queries, dbt, cosmos, astronomer]
 ---
 

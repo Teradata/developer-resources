@@ -4,7 +4,7 @@ id: perform-time-series-analysis-using-teradata
 author: Remi Turpaud, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"
-description: Perform time series analysis using Teradata
+ft:description: Perform time series analysis using Teradata
 keywords: [data warehouses, analytics, teradata, vantage, time series, business intelligence, enterprise analytics, time series, time series analysis]
 ---
 

@@ -4,7 +4,7 @@ id: create-parquet-files-in-object-storage
 author: Obed Vega, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-06"
-description: Use Teradata Native Object Storage to read from and write to object storage using a unified SQL interface for Teradata and object storage.
+ft:description: Use Teradata Native Object Storage to read from and write to object storage using a unified SQL interface for Teradata and object storage.
 keywords: [data warehouses, compute storage separation, Teradata, cloud data platform, object storage, business intelligence, enterprise analytics, parquet, create parquet files]
 ---
 

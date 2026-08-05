@@ -3,7 +3,7 @@ sidebar_position: 7
 author: Tan Nguyen, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"
-description:  Use Teradata Connector for MuleSoft's Anypoint Studio.
+ft:description:  Use Teradata Connector for MuleSoft's Anypoint Studio.
 keywords: [data warehouses, compute storage separation, teradata, teradata database, teradata connector, object storage, business intelligence, enterprise analytics, mule, mulesoft, anypoint studio.]
 ---
 

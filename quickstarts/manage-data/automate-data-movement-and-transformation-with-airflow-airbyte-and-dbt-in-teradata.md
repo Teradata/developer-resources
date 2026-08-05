@@ -4,7 +4,7 @@ title: Automate Data Movement and Transformation with Airflow, Airbyte, and dbt 
 author: Vidhan Bhonsle, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-15"
-description: Using Airflow to Orchestrate Airbyte and dbt for Teradata
+ft:description: Using Airflow to Orchestrate Airbyte and dbt for Teradata
 keywords: [data warehouses, airflow, teradata, vantage, orchestration, object storage, airbyte, enterprise analytics, elt, dbt.]
 ---
 

@@ -5,7 +5,7 @@ title: Run Vantage Express on UTM
 author: Adam Tworkiewicz, Janeth Graziani
 email: adam.tworkiewicz@teradata.com
 ft:lastEdition: "2026-07-16"
-description: Run Vantage Express on your Mac using UTM
+ft:description: Run Vantage Express on your Mac using UTM
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics]
 
 ---

@@ -3,7 +3,7 @@ sidebar_position: 4.6
 author: Mohan Talla, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-29"
-description: Transferring CSV, JSON, and Parquet data from AWS S3 Storage to Teradata with dagster-teradata
+ft:description: Transferring CSV, JSON, and Parquet data from AWS S3 Storage to Teradata with dagster-teradata
 keywords: [data warehouses, teradata, database, transfer, cloud data platform, object storage, business intelligence, enterprise analytics, dagster, dagster-teradata, aws s3 storage]
 ---
 

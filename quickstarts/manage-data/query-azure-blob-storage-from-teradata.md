@@ -3,7 +3,7 @@ sidebar_position: 16
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-13"
-description: Query Azure Blob Storage from Teradata using Native Object Store (NOS).
+ft:description: Query Azure Blob Storage from Teradata using Native Object Store (NOS).
 keywords: [data warehouses, compute storage separation, Teradata, Teradata, cloud data platform, object storage, Azure Blob Storage, NOS, native object store, Parquet, external data]
 ---
 

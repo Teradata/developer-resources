@@ -3,7 +3,7 @@ sidebar_position: 1
 author: Vidhan Bhonsle, Janeth Graziani
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-18"
-description: Getting started with Teradata Trial
+ft:description: Getting started with Teradata Trial
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, business intelligence, enterprise analytics, jupyter, teradatasql, ipython-sql, teradata trial, autonomous knowledge platform]
 ---
 

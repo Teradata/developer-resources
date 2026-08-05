@@ -3,7 +3,7 @@ sidebar_position: 13
 author: Jeremy Yu, Janeth Graziani
 email: Jeremy.yu@teradata.com, developer.relations@teradata.com
 ft:lastEdition: "2022-05-18"
-description: Integrate Teradata with KNIME.
+ft:description: Integrate Teradata with KNIME.
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics]
 ---
 

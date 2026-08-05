@@ -5,7 +5,7 @@ title: Advanced dbt use cases with Teradata
 author: Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-06-22"
-description: Advanced dbt (data build tool) use cases with Teradata.
+ft:description: Advanced dbt (data build tool) use cases with Teradata.
 keywords: [data warehouses, compute storage separation, teradata, vantage, cloud data platform, object storage, business intelligence, enterprise analytics, elt, dbt.]
 ---
 

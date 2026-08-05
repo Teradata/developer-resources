@@ -3,7 +3,7 @@ sidebar_position: 12
 author: Kevin Bogusch, Paul Ibberson, Daniel Herrera
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-08"
-description: Connect Teradata to Power BI Desktop.
+ft:description: Connect Teradata to Power BI Desktop.
 keywords: [data warehouses, compute storage separation, teradata, Teradata, cloud data platform, object storage, business intelligence, enterprise analytics, microsoft power bi, power bi]
 ---
 

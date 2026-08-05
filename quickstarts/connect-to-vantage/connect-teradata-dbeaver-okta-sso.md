@@ -4,7 +4,7 @@ author: Nick Pyzik
 editor: Janeth Graziani (Developer Advocate, Teradata)
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-02"
-description: Connect to Teradata Cloud Using DBeaver and Okta SSO (Browser Logon)
+ft:description: Connect to Teradata Cloud Using DBeaver and Okta SSO (Browser Logon)
 keywords: [data warehouses, compute storage separation, teradata, cloud data platform, object storage, business intelligence, enterprise analytics, dbeaver, dbeaver prod, sql ide, sso]
 ---
 

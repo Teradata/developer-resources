@@ -4,7 +4,7 @@ sidebar_position: 4.5
 author: Adam Tworkiewicz, Vidhan Bhonsle
 email: developer.relations@teradata.com
 ft:lastEdition: "2026-07-06"
-description: Use dbt (data build tool) with Teradata.
+ft:description: Use dbt (data build tool) with Teradata.
 keywords: [data warehouses, data transformation, teradata, analytics engineering, business intelligence, enterprise analytics, elt, dbt]
 ---
 
