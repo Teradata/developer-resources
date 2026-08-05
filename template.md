@@ -1,10 +1,10 @@
 ---
 ft:originId: my-topic-id
-author: Jane Doe
-email: jane.doe@teradata.com
 ft:lastEdition: "2026-07-30"
 ft:description: One-sentence summary of the topic. Used for search results and link previews.
 keywords: [teradata, vantage, example, template]
+author: Jane Doe
+email: jane.doe@teradata.com
 ---
 
 <!--

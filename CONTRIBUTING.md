@@ -45,21 +45,21 @@ Every topic begins with a YAML frontmatter block delimited by `---`:
 ```yaml
 ---
 ft:originId: my-topic-id
-author: Jane Doe
-email: jane.doe@teradata.com
 ft:lastEdition: "2026-07-30"
 ft:description: One-sentence summary of the topic. Used for search results and link previews.
 keywords: [teradata, vantage, object storage, elt]
+author: Jane Doe
+email: jane.doe@teradata.com
 ---
 ```
 
 | Field | Required | Notes |
 | --- | --- | --- |
+| `ft:originId` | **Yes** | Fluid Topics-specific. Sets the URL. Must be unique and cannot be changed once established. |
 | `ft:lastEdition` | **Yes** | Fluid Topics-specific. ISO `YYYY-MM-DD`, **double-quoted**. Replaces Docusaurus `page_last_update`. |
-| `description` | **Yes** | One sentence; appears in search results and previews. |
-| `id` | Recommended | Stable slug for the topic. |
-| `author` / `email` | Recommended | Contributor attribution. |
-| `keywords` | Recommended | YAML list; improves search. |
+| `ft:description` | **Yes** | One sentence; appears in search results and previews. |
+| `author` / `email` | Recommended | Topic owner for continued maintenance. |
+| `keywords` | Optional | YAML list for keyword based search. Use sparingly. |
 
 Immediately after the frontmatter, the body must begin with **exactly one H1**
 (`# Title`). More than one H1, or none, will fail validation.
