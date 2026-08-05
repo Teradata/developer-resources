@@ -299,9 +299,9 @@ def process_file(file_path: str) -> str:
 
     if missing:
         rel = os.path.relpath(file_path, BUILD_DIR)
-        print(f"  WARNING: unresolved partials in {rel}:")
+        print(f"\n  ⚠ WARNING: Unresolved partials in {rel}:")
         for m in missing:
-            print(m)
+            print(f"     {m}")
 
     # Clean up image paths to remove ./ prefix
     content = clean_image_paths(content)
@@ -338,6 +338,41 @@ def toc_referenced_md(build_dir: str) -> Optional[set[str]]:
     return referenced
 
 
+def validate_toc_references(build_dir: str) -> bool:
+    """
+    Validate that all files referenced in toc.yml actually exist.
+    Returns True if valid, False if broken references found.
+    This should be called BEFORE pruning unreferenced files.
+    """
+    toc_path = os.path.join(build_dir, "toc.yml")
+    if not os.path.isfile(toc_path):
+        print("  ⚠ No toc.yml found; skipping TOC validation")
+        return True
+    
+    with open(toc_path, "r", encoding="utf-8") as f:
+        toc = f.read()
+    
+    broken: list[str] = []
+    for raw in TOC_FILEPATH_RE.findall(toc):
+        path = raw.strip().lstrip("./")
+        if path.endswith(".md"):
+            full_path = os.path.join(build_dir, path)
+            if not os.path.isfile(full_path):
+                broken.append(path)
+    
+    if broken:
+        print(f"\n{'=' * 80}")
+        print("✗ BROKEN TOC REFERENCES")
+        print(f"{'=' * 80}")
+        print(f"\nFound {len(broken)} file(s) referenced in toc.yml that don't exist:\n")
+        for path in sorted(broken):
+            print(f"  ✗ {path}")
+        print(f"\n{'=' * 80}")
+        return False
+    
+    return True
+
+
 def prune_unreferenced(build_dir: str) -> None:
     """
     Delete markdown files in build_dir that are not referenced by toc.yml.
@@ -349,7 +384,7 @@ def prune_unreferenced(build_dir: str) -> None:
     """
     referenced = toc_referenced_md(build_dir)
     if referenced is None:
-        print("  No toc.yml found in build output; skipping unreferenced-md prune.")
+        print("  ℹ No toc.yml found; skipping unreferenced file pruning")
         return
 
     removed = []
@@ -364,19 +399,42 @@ def prune_unreferenced(build_dir: str) -> None:
                 os.remove(os.path.join(root, fname))
                 removed.append(rel)
 
-    print(f"Pruned {len(removed)} markdown file(s) not referenced in toc.yml (kept {len(referenced)} referenced).")
-    for rel in sorted(removed):
-        print(f"  pruned: {rel}")
+    if removed:
+        print(f"\n  Pruned {len(removed)} unreferenced file(s):")
+        for rel in sorted(removed):
+            print(f"    - {rel}")
+    
+    print(f"  ✓ Keeping {len(referenced)} file(s) referenced in toc.yml")
 
 
 def build():
+    print(f"\n{'=' * 80}")
+    print("BUILD PIPELINE")
+    print(f"{'=' * 80}")
+    print(f"Source: {SOURCE_DIR}")
+    print(f"Build:  {BUILD_DIR}")
+    print(f"{'=' * 80}\n")
+    
+    # Step 1: Copy source to build directory
+    print("[1/6] Copying source files...")
     if os.path.exists(BUILD_DIR):
         shutil.rmtree(BUILD_DIR)
     shutil.copytree(SOURCE_DIR, BUILD_DIR)
+    print("  ✓ Source files copied\n")
 
-    # Drop markdown not linked from toc.yml so unfinished guides never publish.
+    # Step 2: Validate TOC references (fail fast if broken)
+    print("[2/6] Validating TOC references...")
+    if not validate_toc_references(BUILD_DIR):
+        sys.exit(1)
+    print("  ✓ All TOC references valid\n")
+
+    # Step 3: Prune unreferenced files
+    print("[3/6] Pruning unreferenced files...")
     prune_unreferenced(BUILD_DIR)
+    print()
 
+    # Step 4: Process markdown files (resolve MDX partials)
+    print("[4/6] Resolving MDX partials...")
     md_files = []
     for root, dirs, files in os.walk(BUILD_DIR):
         # Skip _partials directories during walk (they'll be deleted after)
@@ -385,13 +443,15 @@ def build():
             if fname.endswith(".md"):
                 md_files.append(os.path.join(root, fname))
 
-    print(f"Processing {len(md_files)} markdown files...")
+    print(f"  Processing {len(md_files)} markdown file(s)...")
     for file_path in md_files:
         processed = process_file(file_path)
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(processed)
+    print("  ✓ Partials resolved\n")
 
-    # Remove _partials directories and .mdx files from build output
+    # Step 5: Remove _partials directories and .mdx files from build output
+    print("[5/6] Cleaning build artifacts...")
     removed_dirs = 0
     removed_files = 0
     for root, dirs, files in os.walk(BUILD_DIR, topdown=False):
@@ -404,36 +464,49 @@ def build():
                 os.remove(os.path.join(root, fname))
                 removed_files += 1
 
-    print(f"Removed {removed_dirs} _partials directories and {removed_files} .mdx files from build output.")
+    print(f"  ✓ Removed {removed_dirs} _partials dir(s) and {removed_files} .mdx file(s)\n")
 
 
 def run_checks():
-    """Run the existing validation scripts against the build output."""
-    env = os.environ.copy()
-    # Override PROJECT_DIR so the check scripts point at the build output
-    env["PROJECT_DIR"] = BUILD_DIR
-
-    for script in [
-        ".github/scripts/check-quickstarts-toc.sh",
-        ".github/scripts/check-fluidtopics-markdown.sh",
-    ]:
-        print(f"\nRunning {script}...")
-        result = subprocess.run(
-            ["bash", "-c", f'PROJECT_DIR="{BUILD_DIR}" bash {script}'],
-            capture_output=False,
-        )
-        if result.returncode != 0:
-            print(f"Check failed: {script}", file=sys.stderr)
-            sys.exit(result.returncode)
+    """Run markdown validation checks against the build output."""
+    print("[6/6] Running markdown validation...")
+    
+    # Run Fluid Topics markdown validation
+    script = ".github/scripts/check-fluidtopics-markdown.sh"
+    result = subprocess.run(
+        ["bash", "-c", f'PROJECT_DIR="{BUILD_DIR}" bash {script}'],
+        capture_output=False,
+    )
+    if result.returncode != 0:
+        print(f"\n{'=' * 80}")
+        print("✗ VALIDATION FAILED")
+        print(f"{'=' * 80}")
+        print("\nPlease fix the issues above before publishing.\n")
+        sys.exit(result.returncode)
+    
+    print("  ✓ Markdown validation passed")
 
 
 def publish():
-    print(f"\nPublishing {BUILD_DIR} to {FT_URL}...")
+    print(f"\n{'=' * 80}")
+    print("PUBLISHING")
+    print(f"{'=' * 80}")
+    print(f"Target: {FT_URL}")
+    print(f"Source: {SOURCE}")
+    print(f"{'=' * 80}\n")
+    
     result = subprocess.run(
         ["ftpub", "collect_and_publish", BUILD_DIR, FT_URL, "-s", SOURCE, "-a", API_KEY],
     )
     if result.returncode != 0:
+        print(f"\n{'=' * 80}")
+        print("✗ PUBLISH FAILED")
+        print(f"{'=' * 80}\n")
         sys.exit(result.returncode)
+    
+    print(f"\n{'=' * 80}")
+    print("✓ PUBLISH SUCCESSFUL")
+    print(f"{'=' * 80}\n")
 
 
 def main():
@@ -441,15 +514,25 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Build and check only, skip ftpub publish step.")
     args = parser.parse_args()
 
-    print(f"Building from {SOURCE_DIR} -> {BUILD_DIR}")
     build()
-
     run_checks()
 
+    print(f"\n{'=' * 80}")
+    print("BUILD SUMMARY")
+    print(f"{'=' * 80}")
+    
     if args.dry_run:
-        print("\nDry run complete. Skipping publish.")
+        print("Mode:   DRY RUN")
+        print("Status: ✓ READY FOR REVIEW")
+        print(f"\nBuild output: {BUILD_DIR}")
+        print("\nAll validation checks passed. Your changes are ready for review.")
+        print("To publish, run without --dry-run flag.")
     else:
+        print("Mode:   PUBLISH")
         publish()
+        print(f"Documentation published to: {FT_URL}")
+    
+    print(f"{'=' * 80}\n")
 
 
 if __name__ == "__main__":
