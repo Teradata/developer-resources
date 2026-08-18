@@ -66,4 +66,4 @@ The DB Connector settings panel will appear on the right. Configure the followin
 This how-to demonstrats how to connect from KNIME Analytics Platform to Teradata.
 
 ## Further reading
-* [Train ML models in Vantage using only SQL](./ml.md)
+* [Train ML models in Teradata using only SQL](./ml.md)

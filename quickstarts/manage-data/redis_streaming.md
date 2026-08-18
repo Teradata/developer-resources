@@ -26,7 +26,7 @@ Teradata (event data storage)
 
 ## Prerequisites
 
-- Teradata Vantage instance with network access
+- Teradata instance with network access
 - Python 3.8+
 - `uv` (Python package manager - install from [uv.astral.sh](https://docs.astral.sh/uv/getting-started/))
 - Redis (Docker or local installation)

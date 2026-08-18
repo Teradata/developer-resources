@@ -83,7 +83,7 @@ DBeaver is now able to connect to Teradata!
 
         ```bash
         ssh -i ~/.ssh/tunneluser_key.pem \
-          -L 1025:<VANTAGE-INTERNAL-IP>:1025 \
+          -L 1025:<Teradata-INTERNAL-IP>:1025 \
           -N <SSH-USER>@<JUMP-SERVER>
         ```
 
@@ -91,7 +91,7 @@ DBeaver is now able to connect to Teradata!
 
         ```bash
         ssh -i "$env:USERPROFILE\.ssh\tunneluser_key.pem" `
-          -L 1025:<VANTAGE-INTERNAL-IP>:1025 `
+          -L 1025:<TERADATA-INTERNAL-IP>:1025 `
           -N <SSH-USER>@<JUMP-SERVER>
         ```
 
@@ -103,7 +103,7 @@ DBeaver is now able to connect to Teradata!
         jdbc:teradata://127.0.0.1/LOGMECH=BROWSER,BROWSER_TAB_TIMEOUT=0
     ```
 
-    Your admin will provide the values for `<VANTAGE-INTERNAL-IP>`, `<SSH-USER>`, and `<JUMP-SERVER>`.
+    Your admin will provide the values for `<TERADATA-INTERNAL-IP>`, `<SSH-USER>`, and `<JUMP-SERVER>`.
 ## Running Teradata Queries in Dbeaver
 
 To begin querying:
@@ -220,4 +220,4 @@ To reassign keyboard shortcuts (e.g., run a query with `F5` instead of `Ctrl+Ent
 
 ## Summary
 
-This guide demonstrated how to connect to Teradata Vantage using browser-based SSO in DBeaver. This method enables secure enterprise login without manually entering credentials. It also provided recommended DBeaver settings to optimize the experience for Teradata users familiar with SQL Assistant.
+This guide demonstrated how to connect to Teradata using browser-based SSO in DBeaver. This method enables secure enterprise login without manually entering credentials. It also provided recommended DBeaver settings to optimize the experience for Teradata users familiar with SQL Assistant.

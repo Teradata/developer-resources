@@ -111,7 +111,7 @@ provider "airbyte" {
   token_url     = var.airbyte_token_url
 }
 
-# Teradata Vantage Destination Configuration
+# Teradata Destination Configuration
 # For optional parameters visit https://registry.terraform.io/providers/airbytehq/airbyte/latest/docs/resources/destination_teradata 
 resource "airbyte_destination_teradata" "my_destination_teradata" {
   configuration = {
@@ -188,7 +188,7 @@ variable "workspace_id" {
     type = string
 }
 
-# Teradata Vantage connection credentials
+# Teradata connection credentials
 variable "host" {
   type = string
 }
@@ -220,7 +220,7 @@ airbyte_client_id     = "your-airbyte-client-id-here"
 airbyte_client_secret = "your-airbyte-client-secret-here"
 workspace_id = "your-workspace-id-here"
 
-# Teradata Vantage connection credentials
+# Teradata connection credentials
 host     = "your-teradata-host-here"
 username = "your-teradata-username-here"
 password = "your-teradata-password-here"
