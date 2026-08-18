@@ -5,3 +5,6 @@ ftpub.sh
 .env
 *.backup
 *.syntax-backup
+.docusaurus/
+node_modules/
+static/
